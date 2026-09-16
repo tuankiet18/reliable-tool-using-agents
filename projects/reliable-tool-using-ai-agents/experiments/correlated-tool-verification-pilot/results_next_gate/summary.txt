@@ -1,0 +1,31 @@
+# 30-task metadata robustness gate
+
+Holdout: 30 disjoint tasks × 5 seeds. Mọi K=2 policy dùng primary `order_api` và đúng một corroborating call.
+
+| policy | unsafe accept | correct accept | abstain | selective accuracy | true source diversity | metadata completeness | metadata accuracy |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| fixed_k | 0.320 | 0.680 | 0.000 | 0.680 | 0.000 | 1.000 | 1.000 |
+| provenance_aware/accurate | 0.000 | 0.347 | 0.653 | 1.000 | 1.000 | 1.000 | 1.000 |
+| provenance_aware/missing_25 | 0.020 | 0.367 | 0.613 | 0.948 | 0.947 | 0.755 | 1.000 |
+| provenance_aware/mixed_25_each | 0.073 | 0.393 | 0.533 | 0.843 | 0.833 | 0.745 | 0.670 |
+| provenance_aware/wrong_25 | 0.027 | 0.387 | 0.587 | 0.935 | 0.880 | 1.000 | 0.781 |
+| provenance_aware/wrong_50 | 0.087 | 0.440 | 0.473 | 0.835 | 0.753 | 1.000 | 0.488 |
+| random_k | 0.093 | 0.500 | 0.407 | 0.843 | 0.700 | 1.000 | 1.000 |
+| single | 0.320 | 0.680 | 0.000 | 0.680 | 0.000 | 1.000 | 1.000 |
+
+## Expected loss under common-mode faults
+
+`L = unsafe_accept + λ × abstain`; wrong-accept cost = 1. Lower is better.
+
+| policy | λ=0 | λ=.10 | λ=.25 | λ=.50 | λ=.75 | λ=1 |
+|---|---:|---:|---:|---:|---:|---:|
+| fixed_k | 0.320 | 0.320 | 0.320 | 0.320 | 0.320 | 0.320 |
+| provenance_aware/accurate | 0.000 | 0.065 | 0.163 | 0.327 | 0.490 | 0.653 |
+| provenance_aware/missing_25 | 0.020 | 0.081 | 0.173 | 0.327 | 0.480 | 0.633 |
+| provenance_aware/mixed_25_each | 0.073 | 0.127 | 0.207 | 0.340 | 0.473 | 0.607 |
+| provenance_aware/wrong_25 | 0.027 | 0.085 | 0.173 | 0.320 | 0.467 | 0.613 |
+| provenance_aware/wrong_50 | 0.087 | 0.134 | 0.205 | 0.323 | 0.442 | 0.560 |
+| random_k | 0.093 | 0.134 | 0.195 | 0.297 | 0.398 | 0.500 |
+| single | 0.320 | 0.320 | 0.320 | 0.320 | 0.320 | 0.320 |
+
+Cluster-bootstrap dùng task làm resampling unit (`n=30`, 10,000 resamples). Xem `inference.json` cho paired comparisons.

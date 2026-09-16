@@ -1,0 +1,23 @@
+{
+  "artifact": "data/tasks_main_30.json",
+  "sha256": "a122dda63a40ab8db43d1af2a6a7019ca561c4c9e533db0e798fe9470e88cfa6",
+  "status": "frozen_before_main_harness",
+  "purpose": "Fresh deterministic main-study task split for Action-Boundary Provenance Verification; not used by exploratory, holdout, or action-boundary mechanism gates.",
+  "generator": {
+    "upstream_repository": "https://github.com/mohammadi-hadi/trajectory-judge",
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5",
+    "seed": 20260914,
+    "offset": 60,
+    "count": 30
+  },
+  "task_id_range": "INS-00060..INS-00089",
+  "validated": {
+    "rerun_sha256_matches": true,
+    "no_overlap_with_ids_INS_00000_to_INS_00059": true,
+    "difficulty_strata": 6,
+    "tasks_per_difficulty": 5,
+    "fact_keys": 10,
+    "tasks_per_fact_key": 3
+  },
+  "generated_at": "2026-09-15T00:12:18+07:00"
+}

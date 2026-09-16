@@ -1,0 +1,26 @@
+{
+  "study": "Imperfect Provenance and Partial Correlation Robustness Gate",
+  "task_sha256": "9215aa09a4a28f7853f3dbd209c6ee66dcee30216b9b7b556ad380ee39e6a05c",
+  "upstream_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5",
+  "seeds": [
+    607,
+    719,
+    823,
+    929,
+    1031
+  ],
+  "metadata_conditions": [
+    "accurate",
+    "missing_25",
+    "wrong_25",
+    "mixed_25_each"
+  ],
+  "leakage_levels": [
+    0.0,
+    0.1,
+    0.25,
+    0.5
+  ],
+  "episodes": 3750,
+  "raw_sha256": "f22e7f29c97a89eda20bdb57f9e59fa43581adb3d3b6475ee40e926492ab1982"
+}

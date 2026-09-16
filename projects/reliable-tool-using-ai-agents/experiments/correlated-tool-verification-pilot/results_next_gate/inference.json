@@ -1,0 +1,1010 @@
+[
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/accurate",
+    "control": "fixed_k",
+    "metric": "unsafe_accept",
+    "difference": -0.32,
+    "ci95": [
+      -0.38666666666666666,
+      -0.25333333333333335
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/accurate",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.00",
+    "difference": -0.32,
+    "ci95": [
+      -0.38666666666666666,
+      -0.25333333333333335
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/accurate",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.10",
+    "difference": -0.25466666666666665,
+    "ci95": [
+      -0.318,
+      -0.19133333333333333
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/accurate",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.25",
+    "difference": -0.15666666666666668,
+    "ci95": [
+      -0.21666666666666667,
+      -0.09333333333333334
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/accurate",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.50",
+    "difference": 0.006666666666666665,
+    "ci95": [
+      -0.05333333333333334,
+      0.06666666666666667
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/accurate",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.75",
+    "difference": 0.16999999999999998,
+    "ci95": [
+      0.10333333333333333,
+      0.2366666666666667
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/accurate",
+    "control": "fixed_k",
+    "metric": "expected_loss@1.00",
+    "difference": 0.3333333333333333,
+    "ci95": [
+      0.25333333333333335,
+      0.41333333333333333
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware/accurate",
+    "control": "fixed_k",
+    "metric": "unsafe_accept",
+    "difference": 0.006666666666666667,
+    "ci95": [
+      -0.02666666666666667,
+      0.04000000000000001
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware/accurate",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.00",
+    "difference": 0.006666666666666667,
+    "ci95": [
+      -0.02666666666666667,
+      0.04000000000000001
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware/accurate",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.10",
+    "difference": 0.0019999999999999996,
+    "ci95": [
+      -0.032,
+      0.036016666666666426
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware/accurate",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.25",
+    "difference": -0.005000000000000001,
+    "ci95": [
+      -0.043333333333333335,
+      0.035
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware/accurate",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.50",
+    "difference": -0.016666666666666666,
+    "ci95": [
+      -0.06666666666666667,
+      0.03333333333333333
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware/accurate",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.75",
+    "difference": -0.028333333333333332,
+    "ci95": [
+      -0.09666666666666666,
+      0.035
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware/accurate",
+    "control": "fixed_k",
+    "metric": "expected_loss@1.00",
+    "difference": -0.04000000000000001,
+    "ci95": [
+      -0.12000000000000001,
+      0.04000000000000001
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/accurate",
+    "control": "random_k",
+    "metric": "unsafe_accept",
+    "difference": -0.09333333333333334,
+    "ci95": [
+      -0.14666666666666667,
+      -0.04666666666666667
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/accurate",
+    "control": "random_k",
+    "metric": "expected_loss@0.00",
+    "difference": -0.09333333333333334,
+    "ci95": [
+      -0.14666666666666667,
+      -0.04666666666666667
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/accurate",
+    "control": "random_k",
+    "metric": "expected_loss@0.10",
+    "difference": -0.06866666666666667,
+    "ci95": [
+      -0.11800000000000001,
+      -0.025333333333333333
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/accurate",
+    "control": "random_k",
+    "metric": "expected_loss@0.25",
+    "difference": -0.03166666666666667,
+    "ci95": [
+      -0.07833333333333334,
+      0.013333333333333334
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/accurate",
+    "control": "random_k",
+    "metric": "expected_loss@0.50",
+    "difference": 0.030000000000000002,
+    "ci95": [
+      -0.02666666666666667,
+      0.08333333333333333
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/accurate",
+    "control": "random_k",
+    "metric": "expected_loss@0.75",
+    "difference": 0.09166666666666666,
+    "ci95": [
+      0.01333333333333333,
+      0.165
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/accurate",
+    "control": "random_k",
+    "metric": "expected_loss@1.00",
+    "difference": 0.15333333333333335,
+    "ci95": [
+      0.05333333333333334,
+      0.24666666666666667
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware/accurate",
+    "control": "random_k",
+    "metric": "unsafe_accept",
+    "difference": 0.0,
+    "ci95": [
+      -0.03333333333333333,
+      0.03333333333333333
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware/accurate",
+    "control": "random_k",
+    "metric": "expected_loss@0.00",
+    "difference": 0.0,
+    "ci95": [
+      -0.03333333333333333,
+      0.03333333333333333
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware/accurate",
+    "control": "random_k",
+    "metric": "expected_loss@0.10",
+    "difference": -0.0013333333333333342,
+    "ci95": [
+      -0.03266666666666666,
+      0.029333333333333333
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware/accurate",
+    "control": "random_k",
+    "metric": "expected_loss@0.25",
+    "difference": -0.003333333333333333,
+    "ci95": [
+      -0.035,
+      0.02666666666666667
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware/accurate",
+    "control": "random_k",
+    "metric": "expected_loss@0.50",
+    "difference": -0.006666666666666666,
+    "ci95": [
+      -0.043333333333333335,
+      0.030000000000000002
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware/accurate",
+    "control": "random_k",
+    "metric": "expected_loss@0.75",
+    "difference": -0.01,
+    "ci95": [
+      -0.058333333333333334,
+      0.035
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware/accurate",
+    "control": "random_k",
+    "metric": "expected_loss@1.00",
+    "difference": -0.013333333333333334,
+    "ci95": [
+      -0.07333333333333333,
+      0.04000000000000001
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/missing_25",
+    "control": "fixed_k",
+    "metric": "unsafe_accept",
+    "difference": -0.3,
+    "ci95": [
+      -0.36666666666666664,
+      -0.23333333333333334
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/missing_25",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.00",
+    "difference": -0.3,
+    "ci95": [
+      -0.36666666666666664,
+      -0.23333333333333334
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/missing_25",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.10",
+    "difference": -0.23866666666666667,
+    "ci95": [
+      -0.3026666666666667,
+      -0.17466666666666666
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/missing_25",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.25",
+    "difference": -0.14666666666666667,
+    "ci95": [
+      -0.21,
+      -0.08166666666666668
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/missing_25",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.50",
+    "difference": 0.0066666666666666645,
+    "ci95": [
+      -0.05666666666666667,
+      0.07341666666666545
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/missing_25",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.75",
+    "difference": 0.16,
+    "ci95": [
+      0.08833333333333333,
+      0.235
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/missing_25",
+    "control": "fixed_k",
+    "metric": "expected_loss@1.00",
+    "difference": 0.31333333333333335,
+    "ci95": [
+      0.23333333333333334,
+      0.4
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/missing_25",
+    "control": "random_k",
+    "metric": "unsafe_accept",
+    "difference": -0.07333333333333333,
+    "ci95": [
+      -0.12000000000000001,
+      -0.02666666666666667
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/missing_25",
+    "control": "random_k",
+    "metric": "expected_loss@0.00",
+    "difference": -0.07333333333333333,
+    "ci95": [
+      -0.12000000000000001,
+      -0.02666666666666667
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/missing_25",
+    "control": "random_k",
+    "metric": "expected_loss@0.10",
+    "difference": -0.05266666666666667,
+    "ci95": [
+      -0.1,
+      -0.01
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/missing_25",
+    "control": "random_k",
+    "metric": "expected_loss@0.25",
+    "difference": -0.021666666666666667,
+    "ci95": [
+      -0.06833333333333333,
+      0.021666666666666667
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/missing_25",
+    "control": "random_k",
+    "metric": "expected_loss@0.50",
+    "difference": 0.030000000000000002,
+    "ci95": [
+      -0.023333333333333334,
+      0.08666666666666667
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/missing_25",
+    "control": "random_k",
+    "metric": "expected_loss@0.75",
+    "difference": 0.08166666666666668,
+    "ci95": [
+      0.011666666666666665,
+      0.15333333333333332
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/missing_25",
+    "control": "random_k",
+    "metric": "expected_loss@1.00",
+    "difference": 0.13333333333333333,
+    "ci95": [
+      0.04666666666666666,
+      0.22666666666666663
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_25",
+    "control": "fixed_k",
+    "metric": "unsafe_accept",
+    "difference": -0.29333333333333333,
+    "ci95": [
+      -0.36666666666666664,
+      -0.22000000000000003
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_25",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.00",
+    "difference": -0.29333333333333333,
+    "ci95": [
+      -0.36000000000000004,
+      -0.22000000000000003
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_25",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.10",
+    "difference": -0.23466666666666666,
+    "ci95": [
+      -0.3026666666666667,
+      -0.16599999999999998
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_25",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.25",
+    "difference": -0.14666666666666667,
+    "ci95": [
+      -0.21,
+      -0.08166666666666668
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_25",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.50",
+    "difference": 1.8503717077085942e-18,
+    "ci95": [
+      -0.05666666666666667,
+      0.06000000000000001
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_25",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.75",
+    "difference": 0.14666666666666667,
+    "ci95": [
+      0.08666666666666667,
+      0.20833333333333334
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_25",
+    "control": "fixed_k",
+    "metric": "expected_loss@1.00",
+    "difference": 0.29333333333333333,
+    "ci95": [
+      0.22666666666666668,
+      0.36000000000000004
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_25",
+    "control": "random_k",
+    "metric": "unsafe_accept",
+    "difference": -0.06666666666666667,
+    "ci95": [
+      -0.12666666666666668,
+      -0.013333333333333332
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_25",
+    "control": "random_k",
+    "metric": "expected_loss@0.00",
+    "difference": -0.06666666666666667,
+    "ci95": [
+      -0.12666666666666668,
+      -0.013333333333333332
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_25",
+    "control": "random_k",
+    "metric": "expected_loss@0.10",
+    "difference": -0.048666666666666664,
+    "ci95": [
+      -0.10466666666666667,
+      0.002683333333333094
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_25",
+    "control": "random_k",
+    "metric": "expected_loss@0.25",
+    "difference": -0.021666666666666664,
+    "ci95": [
+      -0.07166666666666667,
+      0.025
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_25",
+    "control": "random_k",
+    "metric": "expected_loss@0.50",
+    "difference": 0.02333333333333333,
+    "ci95": [
+      -0.020000000000000004,
+      0.06666666666666667
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_25",
+    "control": "random_k",
+    "metric": "expected_loss@0.75",
+    "difference": 0.06833333333333333,
+    "ci95": [
+      0.019999999999999997,
+      0.11833333333333333
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_25",
+    "control": "random_k",
+    "metric": "expected_loss@1.00",
+    "difference": 0.11333333333333334,
+    "ci95": [
+      0.05333333333333334,
+      0.18000000000000002
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/mixed_25_each",
+    "control": "fixed_k",
+    "metric": "unsafe_accept",
+    "difference": -0.24666666666666667,
+    "ci95": [
+      -0.3066666666666667,
+      -0.18666666666666668
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/mixed_25_each",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.00",
+    "difference": -0.24666666666666667,
+    "ci95": [
+      -0.3066666666666667,
+      -0.18666666666666668
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/mixed_25_each",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.10",
+    "difference": -0.19333333333333333,
+    "ci95": [
+      -0.25,
+      -0.13866666666666666
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/mixed_25_each",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.25",
+    "difference": -0.11333333333333333,
+    "ci95": [
+      -0.165,
+      -0.065
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/mixed_25_each",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.50",
+    "difference": 0.020000000000000004,
+    "ci95": [
+      -0.02666666666666667,
+      0.06666666666666667
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/mixed_25_each",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.75",
+    "difference": 0.15333333333333335,
+    "ci95": [
+      0.1,
+      0.20833333333333334
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/mixed_25_each",
+    "control": "fixed_k",
+    "metric": "expected_loss@1.00",
+    "difference": 0.2866666666666667,
+    "ci95": [
+      0.22000000000000003,
+      0.35333333333333333
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/mixed_25_each",
+    "control": "random_k",
+    "metric": "unsafe_accept",
+    "difference": -0.02,
+    "ci95": [
+      -0.08,
+      0.03333333333333333
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/mixed_25_each",
+    "control": "random_k",
+    "metric": "expected_loss@0.00",
+    "difference": -0.02,
+    "ci95": [
+      -0.08,
+      0.03333333333333333
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/mixed_25_each",
+    "control": "random_k",
+    "metric": "expected_loss@0.10",
+    "difference": -0.007333333333333332,
+    "ci95": [
+      -0.06266666666666668,
+      0.042
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/mixed_25_each",
+    "control": "random_k",
+    "metric": "expected_loss@0.25",
+    "difference": 0.011666666666666665,
+    "ci95": [
+      -0.03833333333333334,
+      0.058333333333333334
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/mixed_25_each",
+    "control": "random_k",
+    "metric": "expected_loss@0.50",
+    "difference": 0.043333333333333335,
+    "ci95": [
+      -0.0033333333333333335,
+      0.09000000000000001
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/mixed_25_each",
+    "control": "random_k",
+    "metric": "expected_loss@0.75",
+    "difference": 0.075,
+    "ci95": [
+      0.02,
+      0.12833333333333333
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/mixed_25_each",
+    "control": "random_k",
+    "metric": "expected_loss@1.00",
+    "difference": 0.10666666666666667,
+    "ci95": [
+      0.03333333333333333,
+      0.17333333333333334
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_50",
+    "control": "fixed_k",
+    "metric": "unsafe_accept",
+    "difference": -0.23333333333333334,
+    "ci95": [
+      -0.3,
+      -0.16666666666666666
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_50",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.00",
+    "difference": -0.23333333333333334,
+    "ci95": [
+      -0.3,
+      -0.16666666666666666
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_50",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.10",
+    "difference": -0.186,
+    "ci95": [
+      -0.2533333333333333,
+      -0.12066666666666666
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_50",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.25",
+    "difference": -0.115,
+    "ci95": [
+      -0.17833333333333332,
+      -0.05333333333333333
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_50",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.50",
+    "difference": 0.0033333333333333335,
+    "ci95": [
+      -0.060000000000000005,
+      0.07
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_50",
+    "control": "fixed_k",
+    "metric": "expected_loss@0.75",
+    "difference": 0.12166666666666666,
+    "ci95": [
+      0.05333333333333334,
+      0.19333333333333333
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_50",
+    "control": "fixed_k",
+    "metric": "expected_loss@1.00",
+    "difference": 0.24000000000000002,
+    "ci95": [
+      0.16666666666666666,
+      0.32
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_50",
+    "control": "random_k",
+    "metric": "unsafe_accept",
+    "difference": -0.006666666666666665,
+    "ci95": [
+      -0.08,
+      0.05333333333333334
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_50",
+    "control": "random_k",
+    "metric": "expected_loss@0.00",
+    "difference": -0.006666666666666665,
+    "ci95": [
+      -0.07333333333333333,
+      0.05333333333333334
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_50",
+    "control": "random_k",
+    "metric": "expected_loss@0.10",
+    "difference": 1.1564823173178714e-19,
+    "ci95": [
+      -0.06333333333333334,
+      0.058
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_50",
+    "control": "random_k",
+    "metric": "expected_loss@0.25",
+    "difference": 0.010000000000000002,
+    "ci95": [
+      -0.04833333333333333,
+      0.065
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_50",
+    "control": "random_k",
+    "metric": "expected_loss@0.50",
+    "difference": 0.02666666666666667,
+    "ci95": [
+      -0.030000000000000002,
+      0.08666666666666667
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_50",
+    "control": "random_k",
+    "metric": "expected_loss@0.75",
+    "difference": 0.043333333333333335,
+    "ci95": [
+      -0.02,
+      0.11166666666666666
+    ],
+    "clusters": 30
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware/wrong_50",
+    "control": "random_k",
+    "metric": "expected_loss@1.00",
+    "difference": 0.060000000000000005,
+    "ci95": [
+      -0.020000000000000004,
+      0.14
+    ],
+    "clusters": 30
+  }
+]

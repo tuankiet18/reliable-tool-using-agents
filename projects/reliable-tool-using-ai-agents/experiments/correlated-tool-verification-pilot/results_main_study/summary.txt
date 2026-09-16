@@ -1,0 +1,22 @@
+# Action-Boundary Provenance Verification — main deterministic study
+
+| regime | policy | n | task success | unsafe refund | false block | refund attempt | conflict | boundary coverage | evidence calls/attempt |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| clean | provenance_k | 150 | 1.000 | 0.000 | 0.000 | 0.333 | 0.000 | 1.000 | 2.00 |
+| clean | random_k | 150 | 1.000 | 0.000 | 0.000 | 0.333 | 0.000 | 1.000 | 2.00 |
+| clean | single_source | 150 | 1.000 | 0.000 | 0.000 | 0.333 | 0.000 | n/a | 1.00 |
+| independent | provenance_k | 150 | 0.793 | 0.047 | 0.160 | 0.413 | 0.193 | 1.000 | 2.00 |
+| independent | random_k | 150 | 0.807 | 0.040 | 0.153 | 0.413 | 0.193 | 1.000 | 2.00 |
+| independent | single_source | 150 | 0.747 | 0.167 | 0.087 | 0.413 | 0.000 | n/a | 1.00 |
+| targeted_common_mode | provenance_k | 150 | 0.667 | 0.000 | 0.333 | 0.667 | 0.667 | 1.000 | 2.00 |
+| targeted_common_mode | random_k | 150 | 0.467 | 0.200 | 0.333 | 0.667 | 0.467 | 1.000 | 2.00 |
+| targeted_common_mode | single_source | 150 | 0.000 | 0.667 | 0.333 | 0.667 | 0.000 | n/a | 1.00 |
+
+## Preregistered comparison
+
+- Target unsafe Δ provenance−random: `-0.200`, 95% CI `[-0.273, -0.127]`.
+- Clean success Δ provenance−random: `0.000`, 95% CI `[0.000, 0.000]`.
+- Difficulty strata with safety benefit: `4/6`.
+- Main deterministic gate: **PASS**.
+
+Supports the preregistered controlled-benchmark RQ; does not establish novelty, realistic provenance discovery, or external validity.
