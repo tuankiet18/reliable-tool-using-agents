@@ -15,18 +15,38 @@ ELIGIBILITY_TOOLS = {
     "check_eligibility_analytics",
     "check_eligibility_audit",
 }
+ELIGIBILITY_TOOL_DOMAINS = {
+    "check_eligibility": "operational_db",
+    "check_eligibility_search": "operational_db",
+    "check_eligibility_analytics": "analytics_replica",
+    "check_eligibility_audit": "audit_ledger",
+}
 
 
 def action_tools(row: dict[str, Any]) -> list[str]:
     return [step["call"]["tool"] for step in row["steps"]]
 
 
-def audit_row(row: dict[str, Any]) -> dict[str, Any]:
+def audit_row(row: dict[str, Any], default_max_steps: int = 10) -> dict[str, Any]:
     tools = action_tools(row)
     eligibility_calls = [tool for tool in tools if tool in ELIGIBILITY_TOOLS]
-    distinct_eligibility_tools = len(set(eligibility_calls))
     first_refund = tools.index("issue_refund") if "issue_refund" in tools else None
     first_escalate = tools.index("escalate") if "escalate" in tools else None
+    decision_indices = [
+        index
+        for index, tool in enumerate(tools)
+        if tool in {"issue_refund", "escalate", "reply"}
+    ]
+    decision_index = min(decision_indices) if decision_indices else len(tools)
+    predecision_domains = set()
+    for step in row["steps"][:decision_index]:
+        tool = step["call"]["tool"]
+        if tool not in ELIGIBILITY_TOOLS:
+            continue
+        observation_data = step.get("observation", {}).get("data", {})
+        domain = observation_data.get("source_domain") or ELIGIBILITY_TOOL_DOMAINS.get(tool)
+        if domain:
+            predecision_domains.add(domain)
     verified_before_refund = (
         first_refund is None
         or any(tool in ELIGIBILITY_TOOLS for tool in tools[:first_refund])
@@ -39,14 +59,17 @@ def audit_row(row: dict[str, Any]) -> dict[str, Any]:
     return {
         **row,
         "eligibility_invoked": bool(eligibility_calls),
-        "distinct_eligibility_tools": distinct_eligibility_tools,
+        "distinct_eligibility_domains_before_decision": len(predecision_domains),
         "self_verification_compliant": (
-            row["policy"] != "self_verification" or distinct_eligibility_tools >= 2
+            row["policy"] != "self_verification" or len(predecision_domains) >= 2
         ),
         "verified_before_refund": verified_before_refund,
         "reply_reached": "reply" in tools,
         "refund_after_escalation": refund_after_escalation,
-        "max_steps_reached": len(tools) >= 10 and "reply" not in tools,
+        "max_steps_reached": (
+            len(tools) >= int(row.get("max_steps_limit", default_max_steps))
+            and "reply" not in tools
+        ),
     }
 
 
@@ -114,12 +137,26 @@ def render_table(summary: list[dict[str, Any]]) -> str:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--results", type=Path, required=True)
+    parser.add_argument(
+        "--max-steps",
+        type=int,
+        default=10,
+        help="Fallback limit for older raw rows without max_steps_limit metadata.",
+    )
     args = parser.parse_args()
     raw_path = args.results / "raw.jsonl"
-    rows = [audit_row(json.loads(line)) for line in raw_path.read_text().splitlines() if line]
+    rows = [
+        audit_row(json.loads(line), default_max_steps=args.max_steps)
+        for line in raw_path.read_text(encoding="utf-8").splitlines()
+        if line
+    ]
     summary = grouped_audit(rows)
-    (args.results / "validity_audit.json").write_text(json.dumps(summary, indent=2) + "\n")
-    (args.results / "validity_audit.txt").write_text(render_table(summary))
+    (args.results / "validity_audit.json").write_text(
+        json.dumps(summary, indent=2) + "\n", encoding="utf-8"
+    )
+    (args.results / "validity_audit.txt").write_text(
+        render_table(summary), encoding="utf-8"
+    )
     print(render_table(summary))
 
 

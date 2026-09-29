@@ -156,6 +156,17 @@ def ask_action(
         return None, time.perf_counter() - started, f"{type(exc).__name__}: {exc}"
 
 
+def append_jsonl_row(path: Path, row: dict[str, Any]) -> None:
+    with path.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+
+def write_jsonl_rows(path: Path, rows: list[dict[str, Any]]) -> None:
+    with path.open("w", encoding="utf-8") as handle:
+        for row in rows:
+            handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+
 def prompt_for(instance: Any, steps: list[Any], policy: str, verification_trigger: str) -> str:
     history = "\n".join(
         f"[{step.index}] {step.call.tool}({step.call.args}) -> "
@@ -182,8 +193,9 @@ check_eligibility_audit(order_id) -> redundant eligibility interface"""
     elif verification_trigger == "action_boundary":
         policy_instruction = (
             "check_eligibility is deliberately unavailable. Immediately before issue_refund, "
-            "the runtime independently verifies eligibility using two sources. If it rejects "
-            "the refund, call escalate, then reply."
+            "use the visible order and policy facts to decide whether a refund is justified; "
+            "the runtime independently verifies eligibility and amount using two sources at "
+            "the action boundary. If it rejects the refund, call escalate, then reply."
         )
         tools = """get_customer(email) -> customer identity
 lookup_order(order_id) -> order facts
@@ -197,11 +209,16 @@ reply(text) -> sends the final response and ends the episode"""
             "verification_status=CONFLICT, do not refund: call escalate, then reply."
         )
         tools = standard_tools
-    procedure = """Procedure:
+    eligibility_step = (
+        "4. Use the visible order and policy facts to decide whether a refund is justified."
+        if policy != "self_verification" and verification_trigger == "action_boundary"
+        else "4. Confirm eligibility."
+    )
+    procedure = f"""Procedure:
 1. Verify the customer.
 2. Look up the order.
 3. Read the policy.
-4. Confirm eligibility.
+{eligibility_step}
 5. Refund exactly the authorised amount, or escalate when not eligible or evidence conflicts.
 6. Finish by replying to the customer."""
     return f"""{procedure}
@@ -216,7 +233,10 @@ GOAL: {instance.goal}
 Steps so far:
 {history or "(none)"}
 
-Choose exactly one next tool call. Fill unused fields with an empty string or 0."""
+Choose exactly one next tool call. Fill fields unused by the selected tool with an empty
+string or 0. For `issue_refund`, `amount_eur` is required: use the exact amount supported by
+the visible order and policy facts; do not use 0 as a placeholder. If you cannot determine
+that amount or the refund is not justified, escalate instead."""
 
 
 def run_episode(
@@ -411,6 +431,7 @@ def run_episode(
         "boundary_allow_count": runtime.boundary_allow_count,
         "refund_attempt_count": runtime.refund_attempt_count,
         "verification_trigger": verification_trigger,
+        "max_steps_limit": max_steps,
         "underlying_tool_calls": runtime.underlying_tool_calls,
         "model_calls": len(steps),
         "parse_failures": parse_failures,
@@ -480,12 +501,16 @@ def main() -> None:
     rows = []
     completed: set[tuple[str, str, str, int]] = set()
     if args.resume and raw_path.exists():
-        rows = [json.loads(line) for line in raw_path.read_text().splitlines() if line.strip()]
+        rows = [
+            json.loads(line)
+            for line in raw_path.read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        ]
         completed = {
             (row["task_id"], row["regime"], row["policy"], row["seed"]) for row in rows
         }
     else:
-        raw_path.write_text("")
+        raw_path.write_text("", encoding="utf-8")
     jobs = [
         (instance, regime, seed, policy)
         for instance in instances
@@ -518,8 +543,7 @@ def main() -> None:
         for future in as_completed(future_to_job):
             row = future.result()
             rows.append(row)
-            with raw_path.open("a") as handle:
-                handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+            append_jsonl_row(raw_path, row)
             print(
                 f"{row['task_id']} {row['regime']} {row['policy']}: "
                 f"correct={row['final_state_correct']} outcome={row['outcome_action']}",
@@ -527,12 +551,12 @@ def main() -> None:
             )
 
     rows.sort(key=lambda row: (row["task_id"], row["regime"], row["seed"], row["policy"]))
-    with raw_path.open("w") as handle:
-        for row in rows:
-            handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+    write_jsonl_rows(raw_path, rows)
 
     summary = summarize(rows)
-    (args.out / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+    (args.out / "summary.json").write_text(
+        json.dumps(summary, indent=2) + "\n", encoding="utf-8"
+    )
     lines = [
         "# Full local tool-using agent gate",
         "",
@@ -552,7 +576,7 @@ def main() -> None:
             f"{row['parse_failure_rate']:.3f} | {row['mean_model_latency_s']:.2f} |"
         )
     lines.append("")
-    (args.out / "summary.txt").write_text("\n".join(lines))
+    (args.out / "summary.txt").write_text("\n".join(lines), encoding="utf-8")
     print(f"wrote {len(rows)} live-agent episodes to {args.out}")
 
 

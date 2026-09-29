@@ -1,5 +1,7 @@
 import importlib.util
+import json
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -10,6 +12,13 @@ SPEC = importlib.util.spec_from_file_location(
 gate = importlib.util.module_from_spec(SPEC)
 sys.modules[SPEC.name] = gate
 SPEC.loader.exec_module(gate)
+
+AUDIT_SPEC = importlib.util.spec_from_file_location(
+    "analyze_live_agent_gate", ROOT / "src" / "analyze_live_agent_gate.py"
+)
+audit = importlib.util.module_from_spec(AUDIT_SPEC)
+sys.modules[AUDIT_SPEC.name] = audit
+AUDIT_SPEC.loader.exec_module(audit)
 
 
 class LiveAgentGateTests(unittest.TestCase):
@@ -69,6 +78,75 @@ class LiveAgentGateTests(unittest.TestCase):
         )
         self.assertNotIn("check_eligibility", available)
         self.assertIn("issue_refund", available)
+
+    def test_action_boundary_prompt_distinguishes_visible_evidence_from_runtime_check(self):
+        class Instance:
+            goal = "Refund the eligible order."
+
+        prompt = gate.prompt_for(Instance(), [], "provenance_enforced", "action_boundary")
+        self.assertIn("visible order and policy facts", prompt)
+        self.assertIn("amount_eur` is required", prompt)
+        self.assertIn("do not use 0 as a placeholder", prompt)
+
+    def test_self_verification_prompt_keeps_eligibility_step(self):
+        class Instance:
+            goal = "Refund the eligible order."
+
+        prompt = gate.prompt_for(Instance(), [], "self_verification", "action_boundary")
+        self.assertIn("4. Confirm eligibility.", prompt)
+        self.assertIn("at least two differently named eligibility tools", prompt)
+
+    def test_self_verification_requires_independent_domains_before_decision(self):
+        row = {
+            "policy": "self_verification",
+            "steps": [
+                {
+                    "call": {"tool": "check_eligibility"},
+                    "observation": {
+                        "ok": True,
+                        "data": {"source_domain": "operational_db"},
+                    },
+                },
+                {
+                    "call": {"tool": "check_eligibility_search"},
+                    "observation": {
+                        "ok": True,
+                        "data": {"source_domain": "operational_db"},
+                    },
+                },
+                {
+                    "call": {"tool": "issue_refund"},
+                    "observation": {"ok": False, "data": {}},
+                },
+            ],
+        }
+        self.assertFalse(audit.audit_row(row)["self_verification_compliant"])
+        self.assertEqual(
+            audit.audit_row(row)["distinct_eligibility_domains_before_decision"], 1
+        )
+
+    def test_max_steps_audit_uses_episode_limit(self):
+        row = {
+            "policy": "provenance_enforced",
+            "max_steps_limit": 6,
+            "steps": [{"call": {"tool": "lookup_order"}} for _ in range(6)],
+        }
+        self.assertTrue(audit.audit_row(row)["max_steps_reached"])
+
+    def test_older_rows_can_supply_max_steps_fallback(self):
+        row = {
+            "policy": "provenance_enforced",
+            "steps": [{"call": {"tool": "lookup_order"}} for _ in range(6)],
+        }
+        self.assertTrue(audit.audit_row(row, default_max_steps=6)["max_steps_reached"])
+
+    def test_jsonl_round_trip_preserves_unicode(self):
+        row = {"thought": "退回", "task_id": "INS-00030"}
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "raw.jsonl"
+            gate.append_jsonl_row(path, row)
+            decoded = json.loads(path.read_text(encoding="utf-8"))
+        self.assertEqual(decoded, row)
 
 
 if __name__ == "__main__":
