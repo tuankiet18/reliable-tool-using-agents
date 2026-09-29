@@ -1,0 +1,842 @@
+[
+  {
+    "cell": "clean",
+    "metadata_condition": "accurate",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "unsafe_refund",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "clean",
+    "metadata_condition": "accurate",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "task_success",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "clean",
+    "metadata_condition": "accurate",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "false_block",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "clean",
+    "metadata_condition": "missing_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "unsafe_refund",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "clean",
+    "metadata_condition": "missing_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "task_success",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "clean",
+    "metadata_condition": "missing_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "false_block",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "clean",
+    "metadata_condition": "wrong_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "unsafe_refund",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "clean",
+    "metadata_condition": "wrong_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "task_success",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "clean",
+    "metadata_condition": "wrong_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "false_block",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "clean",
+    "metadata_condition": "mixed_25_each",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "unsafe_refund",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "clean",
+    "metadata_condition": "mixed_25_each",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "task_success",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "clean",
+    "metadata_condition": "mixed_25_each",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "false_block",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.00",
+    "metadata_condition": "accurate",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "unsafe_refund",
+    "difference": -0.24666666666666667,
+    "ci95": [
+      -0.3466666666666667,
+      -0.15333333333333335
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.00",
+    "metadata_condition": "accurate",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "task_success",
+    "difference": 0.24666666666666667,
+    "ci95": [
+      0.16,
+      0.3466666666666667
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.00",
+    "metadata_condition": "accurate",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "false_block",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.00",
+    "metadata_condition": "missing_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "unsafe_refund",
+    "difference": -0.2,
+    "ci95": [
+      -0.3,
+      -0.11333333333333331
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.00",
+    "metadata_condition": "missing_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "task_success",
+    "difference": 0.2,
+    "ci95": [
+      0.11333333333333333,
+      0.3
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.00",
+    "metadata_condition": "missing_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "false_block",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.00",
+    "metadata_condition": "wrong_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "unsafe_refund",
+    "difference": -0.11333333333333334,
+    "ci95": [
+      -0.18666666666666668,
+      -0.04000000000000001
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.00",
+    "metadata_condition": "wrong_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "task_success",
+    "difference": 0.11333333333333334,
+    "ci95": [
+      0.04000000000000001,
+      0.18666666666666668
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.00",
+    "metadata_condition": "wrong_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "false_block",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.00",
+    "metadata_condition": "mixed_25_each",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "unsafe_refund",
+    "difference": -0.060000000000000005,
+    "ci95": [
+      -0.15333333333333332,
+      0.03333333333333333
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.00",
+    "metadata_condition": "mixed_25_each",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "task_success",
+    "difference": 0.060000000000000005,
+    "ci95": [
+      -0.02666666666666667,
+      0.15333333333333332
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.00",
+    "metadata_condition": "mixed_25_each",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "false_block",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.10",
+    "metadata_condition": "accurate",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "unsafe_refund",
+    "difference": -0.2,
+    "ci95": [
+      -0.2866666666666667,
+      -0.12000000000000001
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.10",
+    "metadata_condition": "accurate",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "task_success",
+    "difference": 0.2,
+    "ci95": [
+      0.12000000000000001,
+      0.2866666666666667
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.10",
+    "metadata_condition": "accurate",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "false_block",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.10",
+    "metadata_condition": "missing_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "unsafe_refund",
+    "difference": -0.15333333333333332,
+    "ci95": [
+      -0.22666666666666666,
+      -0.08666666666666667
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.10",
+    "metadata_condition": "missing_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "task_success",
+    "difference": 0.15333333333333332,
+    "ci95": [
+      0.08666666666666667,
+      0.22666666666666663
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.10",
+    "metadata_condition": "missing_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "false_block",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.10",
+    "metadata_condition": "wrong_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "unsafe_refund",
+    "difference": -0.06666666666666667,
+    "ci95": [
+      -0.13333333333333333,
+      1.8503717077085942e-18
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.10",
+    "metadata_condition": "wrong_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "task_success",
+    "difference": 0.06666666666666667,
+    "ci95": [
+      -1.8503717077085942e-18,
+      0.13333333333333333
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.10",
+    "metadata_condition": "wrong_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "false_block",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.10",
+    "metadata_condition": "mixed_25_each",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "unsafe_refund",
+    "difference": -0.04,
+    "ci95": [
+      -0.11333333333333333,
+      0.026666666666666672
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.10",
+    "metadata_condition": "mixed_25_each",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "task_success",
+    "difference": 0.04,
+    "ci95": [
+      -0.03333333333333333,
+      0.11333333333333331
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.10",
+    "metadata_condition": "mixed_25_each",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "false_block",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.25",
+    "metadata_condition": "accurate",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "unsafe_refund",
+    "difference": -0.13333333333333333,
+    "ci95": [
+      -0.22,
+      -0.05333333333333334
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.25",
+    "metadata_condition": "accurate",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "task_success",
+    "difference": 0.13333333333333333,
+    "ci95": [
+      0.060000000000000005,
+      0.22000000000000003
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.25",
+    "metadata_condition": "accurate",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "false_block",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.25",
+    "metadata_condition": "missing_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "unsafe_refund",
+    "difference": -0.09333333333333332,
+    "ci95": [
+      -0.17333333333333334,
+      -0.020000000000000004
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.25",
+    "metadata_condition": "missing_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "task_success",
+    "difference": 0.09333333333333332,
+    "ci95": [
+      0.02,
+      0.17333333333333334
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.25",
+    "metadata_condition": "missing_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "false_block",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.25",
+    "metadata_condition": "wrong_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "unsafe_refund",
+    "difference": -0.05999999999999999,
+    "ci95": [
+      -0.15333333333333332,
+      0.026666666666666672
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.25",
+    "metadata_condition": "wrong_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "task_success",
+    "difference": 0.05999999999999999,
+    "ci95": [
+      -0.026666666666666672,
+      0.15333333333333332
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.25",
+    "metadata_condition": "wrong_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "false_block",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.25",
+    "metadata_condition": "mixed_25_each",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "unsafe_refund",
+    "difference": -0.04666666666666667,
+    "ci95": [
+      -0.11333333333333334,
+      0.020000000000000004
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.25",
+    "metadata_condition": "mixed_25_each",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "task_success",
+    "difference": 0.04666666666666667,
+    "ci95": [
+      -0.020000000000000004,
+      0.11333333333333334
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.25",
+    "metadata_condition": "mixed_25_each",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "false_block",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.50",
+    "metadata_condition": "accurate",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "unsafe_refund",
+    "difference": -0.12666666666666665,
+    "ci95": [
+      -0.21333333333333335,
+      -0.04666666666666666
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.50",
+    "metadata_condition": "accurate",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "task_success",
+    "difference": 0.12666666666666665,
+    "ci95": [
+      0.04666666666666666,
+      0.21333333333333335
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.50",
+    "metadata_condition": "accurate",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "false_block",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.50",
+    "metadata_condition": "missing_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "unsafe_refund",
+    "difference": -0.13333333333333333,
+    "ci95": [
+      -0.22000000000000003,
+      -0.05333333333333334
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.50",
+    "metadata_condition": "missing_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "task_success",
+    "difference": 0.13333333333333333,
+    "ci95": [
+      0.05333333333333334,
+      0.22000000000000003
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.50",
+    "metadata_condition": "missing_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "false_block",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.50",
+    "metadata_condition": "wrong_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "unsafe_refund",
+    "difference": -0.060000000000000005,
+    "ci95": [
+      -0.14666666666666667,
+      0.02666666666666667
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.50",
+    "metadata_condition": "wrong_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "task_success",
+    "difference": 0.060000000000000005,
+    "ci95": [
+      -0.020000000000000004,
+      0.14666666666666667
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.50",
+    "metadata_condition": "wrong_25",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "false_block",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.50",
+    "metadata_condition": "mixed_25_each",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "unsafe_refund",
+    "difference": -0.04000000000000001,
+    "ci95": [
+      -0.12666666666666668,
+      0.04000000000000001
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.50",
+    "metadata_condition": "mixed_25_each",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "task_success",
+    "difference": 0.04000000000000001,
+    "ci95": [
+      -0.04000000000000001,
+      0.12666666666666668
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "cell": "leakage_0.50",
+    "metadata_condition": "mixed_25_each",
+    "treatment": "provenance_k",
+    "control": "random_k",
+    "metric": "false_block",
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "task_clusters": 30,
+    "bootstrap_resamples": 10000
+  }
+]

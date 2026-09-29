@@ -1,0 +1,20 @@
+# Local model-in-loop verification subset
+
+Model: `qwen2.5-1.5b-instruct-q5_0.gguf`; tasks: 6; seeds: `[101, 211]`; total episodes: 144.
+
+> Đây là partial live gate: deterministic policy chọn tool, local LLM chỉ quyết định `ACCEPT`/`ABSTAIN` từ observations.
+
+| schema order | regime | policy | episodes | parse success | decision adherence | unsafe accept | correct accept | abstain | mean latency (s) |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|
+| abstain_first | clean | provenance_aware | 12 | 1.000 | 0.833 | 0.000 | 0.833 | 0.167 | 0.710 |
+| abstain_first | clean | random_k | 12 | 1.000 | 0.833 | 0.000 | 0.833 | 0.167 | 0.722 |
+| abstain_first | common_mode | provenance_aware | 12 | 1.000 | 1.000 | 0.000 | 0.250 | 0.750 | 0.823 |
+| abstain_first | common_mode | random_k | 12 | 1.000 | 0.833 | 0.000 | 0.333 | 0.667 | 0.780 |
+| abstain_first | independent | provenance_aware | 12 | 1.000 | 0.833 | 0.000 | 0.667 | 0.333 | 0.735 |
+| abstain_first | independent | random_k | 12 | 1.000 | 0.917 | 0.000 | 0.417 | 0.583 | 0.774 |
+| accept_first | clean | provenance_aware | 12 | 1.000 | 0.833 | 0.000 | 0.833 | 0.167 | 1.046 |
+| accept_first | clean | random_k | 12 | 1.000 | 0.833 | 0.000 | 0.833 | 0.167 | 1.904 |
+| accept_first | common_mode | provenance_aware | 12 | 1.000 | 1.000 | 0.000 | 0.250 | 0.750 | 1.179 |
+| accept_first | common_mode | random_k | 12 | 1.000 | 0.833 | 0.000 | 0.333 | 0.667 | 1.309 |
+| accept_first | independent | provenance_aware | 12 | 1.000 | 0.833 | 0.000 | 0.667 | 0.333 | 1.083 |
+| accept_first | independent | random_k | 12 | 1.000 | 0.917 | 0.000 | 0.417 | 0.583 | 1.205 |

@@ -1,0 +1,506 @@
+[
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware",
+    "control": "fixed_k",
+    "metric": "unsafe_accept",
+    "abstention_cost": null,
+    "estimate": 0.0,
+    "ci95": [
+      -0.06000000000000001,
+      0.06000000000000001
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware",
+    "control": "fixed_k",
+    "metric": "alarm",
+    "abstention_cost": null,
+    "estimate": -0.06000000000000001,
+    "ci95": [
+      -0.2,
+      0.08
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware",
+    "control": "fixed_k",
+    "metric": "accepted_correct",
+    "abstention_cost": null,
+    "estimate": 0.06000000000000001,
+    "ci95": [
+      -0.06000000000000001,
+      0.2
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware",
+    "control": "fixed_k",
+    "metric": "expected_loss",
+    "abstention_cost": 0.0,
+    "estimate": 0.0,
+    "ci95": [
+      -0.06000000000000001,
+      0.06000000000000001
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware",
+    "control": "fixed_k",
+    "metric": "expected_loss",
+    "abstention_cost": 0.1,
+    "estimate": -0.006,
+    "ci95": [
+      -0.057999999999999996,
+      0.048
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware",
+    "control": "fixed_k",
+    "metric": "expected_loss",
+    "abstention_cost": 0.25,
+    "estimate": -0.015000000000000003,
+    "ci95": [
+      -0.065,
+      0.034999999999999996
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware",
+    "control": "fixed_k",
+    "metric": "expected_loss",
+    "abstention_cost": 0.5,
+    "estimate": -0.030000000000000006,
+    "ci95": [
+      -0.1,
+      0.04
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware",
+    "control": "fixed_k",
+    "metric": "expected_loss",
+    "abstention_cost": 0.75,
+    "estimate": -0.045,
+    "ci95": [
+      -0.145,
+      0.045
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware",
+    "control": "fixed_k",
+    "metric": "expected_loss",
+    "abstention_cost": 1.0,
+    "estimate": -0.06000000000000001,
+    "ci95": [
+      -0.18,
+      0.06000000000000001
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware",
+    "control": "random_k",
+    "metric": "unsafe_accept",
+    "abstention_cost": null,
+    "estimate": -0.02,
+    "ci95": [
+      -0.08,
+      0.04
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware",
+    "control": "random_k",
+    "metric": "alarm",
+    "abstention_cost": null,
+    "estimate": 0.06000000000000001,
+    "ci95": [
+      -0.04,
+      0.18
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware",
+    "control": "random_k",
+    "metric": "accepted_correct",
+    "abstention_cost": null,
+    "estimate": -0.04,
+    "ci95": [
+      -0.16,
+      0.06000000000000001
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware",
+    "control": "random_k",
+    "metric": "expected_loss",
+    "abstention_cost": 0.0,
+    "estimate": -0.02,
+    "ci95": [
+      -0.08,
+      0.04
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware",
+    "control": "random_k",
+    "metric": "expected_loss",
+    "abstention_cost": 0.1,
+    "estimate": -0.014000000000000002,
+    "ci95": [
+      -0.076,
+      0.048
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware",
+    "control": "random_k",
+    "metric": "expected_loss",
+    "abstention_cost": 0.25,
+    "estimate": -0.005,
+    "ci95": [
+      -0.065,
+      0.06000000000000001
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware",
+    "control": "random_k",
+    "metric": "expected_loss",
+    "abstention_cost": 0.5,
+    "estimate": 0.01,
+    "ci95": [
+      -0.06000000000000001,
+      0.08
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware",
+    "control": "random_k",
+    "metric": "expected_loss",
+    "abstention_cost": 0.75,
+    "estimate": 0.025,
+    "ci95": [
+      -0.06,
+      0.11499999999999999
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "independent",
+    "treatment": "provenance_aware",
+    "control": "random_k",
+    "metric": "expected_loss",
+    "abstention_cost": 1.0,
+    "estimate": 0.04,
+    "ci95": [
+      -0.06000000000000001,
+      0.16
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware",
+    "control": "fixed_k",
+    "metric": "unsafe_accept",
+    "abstention_cost": null,
+    "estimate": -0.34,
+    "ci95": [
+      -0.42000000000000004,
+      -0.26
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware",
+    "control": "fixed_k",
+    "metric": "alarm",
+    "abstention_cost": null,
+    "estimate": 0.64,
+    "ci95": [
+      0.52,
+      0.78
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware",
+    "control": "fixed_k",
+    "metric": "accepted_correct",
+    "abstention_cost": null,
+    "estimate": -0.3,
+    "ci95": [
+      -0.42000000000000004,
+      -0.18
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware",
+    "control": "fixed_k",
+    "metric": "expected_loss",
+    "abstention_cost": 0.0,
+    "estimate": -0.34,
+    "ci95": [
+      -0.42000000000000004,
+      -0.26
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware",
+    "control": "fixed_k",
+    "metric": "expected_loss",
+    "abstention_cost": 0.1,
+    "estimate": -0.27599999999999997,
+    "ci95": [
+      -0.354,
+      -0.20400000000000001
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware",
+    "control": "fixed_k",
+    "metric": "expected_loss",
+    "abstention_cost": 0.25,
+    "estimate": -0.18,
+    "ci95": [
+      -0.26,
+      -0.11499999999999999
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware",
+    "control": "fixed_k",
+    "metric": "expected_loss",
+    "abstention_cost": 0.5,
+    "estimate": -0.019999999999999997,
+    "ci95": [
+      -0.10999999999999999,
+      0.06000000000000001
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware",
+    "control": "fixed_k",
+    "metric": "expected_loss",
+    "abstention_cost": 0.75,
+    "estimate": 0.13999999999999999,
+    "ci95": [
+      0.035,
+      0.24
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware",
+    "control": "fixed_k",
+    "metric": "expected_loss",
+    "abstention_cost": 1.0,
+    "estimate": 0.3,
+    "ci95": [
+      0.18,
+      0.42000000000000004
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware",
+    "control": "random_k",
+    "metric": "unsafe_accept",
+    "abstention_cost": null,
+    "estimate": -0.06000000000000001,
+    "ci95": [
+      -0.12000000000000002,
+      0.0
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware",
+    "control": "random_k",
+    "metric": "alarm",
+    "abstention_cost": null,
+    "estimate": 0.16,
+    "ci95": [
+      0.0,
+      0.32
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware",
+    "control": "random_k",
+    "metric": "accepted_correct",
+    "abstention_cost": null,
+    "estimate": -0.1,
+    "ci95": [
+      -0.31999999999999995,
+      0.1
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware",
+    "control": "random_k",
+    "metric": "expected_loss",
+    "abstention_cost": 0.0,
+    "estimate": -0.06000000000000001,
+    "ci95": [
+      -0.12000000000000002,
+      0.0
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware",
+    "control": "random_k",
+    "metric": "expected_loss",
+    "abstention_cost": 0.1,
+    "estimate": -0.044,
+    "ci95": [
+      -0.11400000000000002,
+      0.02
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware",
+    "control": "random_k",
+    "metric": "expected_loss",
+    "abstention_cost": 0.25,
+    "estimate": -0.02,
+    "ci95": [
+      -0.11000000000000001,
+      0.06499999999999999
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware",
+    "control": "random_k",
+    "metric": "expected_loss",
+    "abstention_cost": 0.5,
+    "estimate": 0.019999999999999997,
+    "ci95": [
+      -0.1,
+      0.13999999999999999
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware",
+    "control": "random_k",
+    "metric": "expected_loss",
+    "abstention_cost": 0.75,
+    "estimate": 0.06,
+    "ci95": [
+      -0.1,
+      0.22999999999999998
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  },
+  {
+    "regime": "common_mode",
+    "treatment": "provenance_aware",
+    "control": "random_k",
+    "metric": "expected_loss",
+    "abstention_cost": 1.0,
+    "estimate": 0.1,
+    "ci95": [
+      -0.1,
+      0.31999999999999995
+    ],
+    "clusters": 10,
+    "bootstrap_resamples": 10000
+  }
+]

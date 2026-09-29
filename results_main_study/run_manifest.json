@@ -1,0 +1,25 @@
+{
+  "study": "Action-Boundary Provenance Verification Main Study",
+  "tasks_sha256": "a122dda63a40ab8db43d1af2a6a7019ca561c4c9e533db0e798fe9470e88cfa6",
+  "upstream_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5",
+  "seeds": [
+    101,
+    211,
+    307,
+    401,
+    503
+  ],
+  "regimes": [
+    "clean",
+    "independent",
+    "targeted_common_mode"
+  ],
+  "policies": [
+    "single_source",
+    "random_k",
+    "provenance_k"
+  ],
+  "independent_probability": 0.25,
+  "episodes": 1350,
+  "raw_sha256": "a51aebcb207f996e7a4d065b2e424fe794346d685d5f37a615d0de6bcb872234"
+}

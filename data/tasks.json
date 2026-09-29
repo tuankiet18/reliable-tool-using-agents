@@ -1,0 +1,13 @@
+[
+  {"task_id":"INS-00000","difficulty":"happy","goal":"Customer farid.dubois60@example.com has asked for a refund on order ORD-20000.","fact_key":"order_status","true_value":"delivered"},
+  {"task_id":"INS-00001","difficulty":"restocking","goal":"Customer jonas.bakker74@example.com has asked for a refund on order ORD-20001.","fact_key":"customer_id","true_value":"CUS-1001"},
+  {"task_id":"INS-00002","difficulty":"expired","goal":"Customer bram.silva64@example.com has asked for a refund on order ORD-20002.","fact_key":"sku","true_value":"SKU-TENT-23"},
+  {"task_id":"INS-00003","difficulty":"non_refundable","goal":"Customer jonas.bakker83@example.com has asked for a refund on order ORD-20003.","fact_key":"total_eur","true_value":469.17},
+  {"task_id":"INS-00004","difficulty":"wrong_customer","goal":"Customer chiara.fischer63@example.com has asked for a refund on order ORD-20004.","fact_key":"days_since_purchase","true_value":18},
+  {"task_id":"INS-00005","difficulty":"already_refunded","goal":"Customer chiara.costa84@example.com has asked for a refund on order ORD-20005.","fact_key":"refundable","true_value":true},
+  {"task_id":"INS-00006","difficulty":"happy","goal":"Customer jonas.bakker89@example.com has asked for a refund on order ORD-20006.","fact_key":"refund_window_days","true_value":30},
+  {"task_id":"INS-00007","difficulty":"restocking","goal":"Customer farid.petrov84@example.com has asked for a refund on order ORD-20007.","fact_key":"restocking_fee_pct","true_value":5.0},
+  {"task_id":"INS-00008","difficulty":"expired","goal":"Customer bram.fischer77@example.com has asked for a refund on order ORD-20008.","fact_key":"eligible","true_value":false},
+  {"task_id":"INS-00009","difficulty":"non_refundable","goal":"Customer bram.silva63@example.com has asked for a refund on order ORD-20009.","fact_key":"max_refund_eur","true_value":0.0}
+]
+

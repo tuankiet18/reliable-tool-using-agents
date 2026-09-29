@@ -1,0 +1,65 @@
+{
+  "robustness_gate": "FAIL ROBUSTNESS",
+  "conditions": {
+    "invariants_pass": true,
+    "accurate_at_leakage_0_25": true,
+    "missing_25_at_leakage_0_10": true,
+    "wrong_25_at_leakage_0_10": false,
+    "clean_guardrail_all_conditions": true
+  },
+  "invariants": {
+    "episode_count_3750": true,
+    "fresh_task_count_30": true,
+    "policy_counts": true,
+    "boundary_coverage_1": true,
+    "matched_k2_on_attempt": true,
+    "clean_has_no_corruption": true,
+    "accurate_metadata_selects_independent": true,
+    "all_provenance_cells_have_random_pair": true
+  },
+  "primary_comparisons": {
+    "accurate_at_leakage_0_25": {
+      "cell": "leakage_0.25",
+      "metadata_condition": "accurate",
+      "treatment": "provenance_k",
+      "control": "random_k",
+      "metric": "unsafe_refund",
+      "difference": -0.13333333333333333,
+      "ci95": [
+        -0.22,
+        -0.05333333333333334
+      ],
+      "task_clusters": 30,
+      "bootstrap_resamples": 10000
+    },
+    "missing_25_at_leakage_0_10": {
+      "cell": "leakage_0.10",
+      "metadata_condition": "missing_25",
+      "treatment": "provenance_k",
+      "control": "random_k",
+      "metric": "unsafe_refund",
+      "difference": -0.15333333333333332,
+      "ci95": [
+        -0.22666666666666666,
+        -0.08666666666666667
+      ],
+      "task_clusters": 30,
+      "bootstrap_resamples": 10000
+    },
+    "wrong_25_at_leakage_0_10": {
+      "cell": "leakage_0.10",
+      "metadata_condition": "wrong_25",
+      "treatment": "provenance_k",
+      "control": "random_k",
+      "metric": "unsafe_refund",
+      "difference": -0.06666666666666667,
+      "ci95": [
+        -0.13333333333333333,
+        1.8503717077085942e-18
+      ],
+      "task_clusters": 30,
+      "bootstrap_resamples": 10000
+    }
+  },
+  "interpretation_guardrail": "Same-environment robustness only; this is not external validation."
+}
