@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import random
+import re
 import sys
 import time
 import urllib.error
@@ -33,6 +34,7 @@ ELIGIBILITY_DOMAINS = {
 POLICIES = ("self_verification", "random_k_enforced", "provenance_enforced")
 REGIMES = ("clean", "targeted_common_mode")
 MAX_STEPS = 10
+TASK_ID_PATTERN = re.compile(r"INS-(\d{5})\Z")
 
 
 @dataclass
@@ -60,6 +62,42 @@ def select_corroborator(policy: str, task_id: str, seed: int) -> str:
         rng = random.Random(stable_seed(task_id, seed, policy))
         return rng.choice([tool for tool in ELIGIBILITY_TOOLS if tool != "check_eligibility"])
     raise ValueError(f"policy has no runtime corroborator: {policy}")
+
+
+def select_instances(
+    generate_instances: Any, task_count: int, task_ids: list[str] | None
+) -> list[Any]:
+    """Keep the historical disjoint slice, or select exact IDs from its prefix."""
+    if task_ids is None:
+        if task_count < 1:
+            raise ValueError("--task-count must be positive")
+        return generate_instances(30 + task_count, seed=20260914)[30:]
+    if len(task_ids) != len(set(task_ids)):
+        raise ValueError("--task-ids must not contain duplicates")
+    indices = []
+    for task_id in task_ids:
+        match = TASK_ID_PATTERN.fullmatch(task_id)
+        if match is None or int(match.group(1)) < 30:
+            raise ValueError(f"invalid disjoint task ID: {task_id}")
+        indices.append(int(match.group(1)))
+    instances = generate_instances(max(indices) + 1, seed=20260914)[30:]
+    by_id = {instance.instance_id: instance for instance in instances}
+    missing = [task_id for task_id in task_ids if task_id not in by_id]
+    if missing:
+        raise ValueError(f"generated task IDs not found: {missing}")
+    return [by_id[task_id] for task_id in task_ids]
+
+
+def build_jobs(
+    instances: list[Any], seeds: list[int], policies: tuple[str, ...]
+) -> list[tuple[Any, str, int, str]]:
+    return [
+        (instance, regime, seed, policy)
+        for instance in instances
+        for regime in REGIMES
+        for seed in seeds
+        for policy in policies
+    ]
 
 
 def corrupt_eligibility(data: dict[str, Any], fallback_max: float) -> dict[str, Any]:
@@ -418,6 +456,11 @@ def run_episode(
         "policy": policy,
         "regime": regime,
         "seed": seed,
+        "planned_corroborator": (
+            select_corroborator(policy, instance.instance_id, seed)
+            if policy.endswith("_enforced")
+            else None
+        ),
         "steps": [step.model_dump(mode="json") for step in steps],
         "final_answer": final_answer,
         "outcome_action": outcome.action,
@@ -446,6 +489,8 @@ def summarize(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     summary = []
     for (regime, policy), group in sorted(groups.items()):
         n = len(group)
+        refund_attempts = sum(x["refund_attempt_count"] for x in group)
+        boundary_checks = sum(x["boundary_check_count"] for x in group)
         summary.append(
             {
                 "regime": regime,
@@ -457,11 +502,10 @@ def summarize(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 "conflict_rate": sum(x["runtime_conflict"] for x in group) / n,
                 "boundary_coverage": sum(x["boundary_check_count"] > 0 for x in group) / n,
                 "mean_boundary_checks": sum(x["boundary_check_count"] for x in group) / n,
+                "refund_attempts": refund_attempts,
+                "boundary_checks": boundary_checks,
                 "boundary_attempt_coverage": (
-                    sum(x["boundary_check_count"] for x in group)
-                    / sum(x["refund_attempt_count"] for x in group)
-                    if sum(x["refund_attempt_count"] for x in group)
-                    else 1.0
+                    boundary_checks / refund_attempts if refund_attempts else None
                 ),
                 "mean_underlying_tool_calls": sum(x["underlying_tool_calls"] for x in group) / n,
                 "mean_model_calls": sum(x["model_calls"] for x in group) / n,
@@ -477,8 +521,11 @@ def main() -> None:
     parser.add_argument("--upstream", type=Path, required=True)
     parser.add_argument("--endpoint", default="http://127.0.0.1:8090/v1/chat/completions")
     parser.add_argument("--model", default="qwen2.5-1.5b-instruct-q5_0.gguf")
-    parser.add_argument("--task-count", type=int, default=6)
+    task_selection = parser.add_mutually_exclusive_group()
+    task_selection.add_argument("--task-count", type=int, default=6)
+    task_selection.add_argument("--task-ids", nargs="+", metavar="INS-00032")
     parser.add_argument("--seeds", nargs="+", type=int, default=[601])
+    parser.add_argument("--policies", nargs="+", choices=POLICIES, default=list(POLICIES))
     parser.add_argument("--max-tokens", type=int, default=180)
     parser.add_argument("--max-steps", type=int, default=MAX_STEPS)
     parser.add_argument("--workers", type=int, default=3)
@@ -488,14 +535,38 @@ def main() -> None:
         default="on_eligibility",
     )
     parser.add_argument("--resume", action="store_true")
+    parser.add_argument("--dry-run", action="store_true", help="Print exact cells without writing output or calling the model.")
     parser.add_argument("--out", type=Path, default=ROOT / "results_live_agent_gate")
     args = parser.parse_args()
+    if len(args.seeds) != len(set(args.seeds)):
+        parser.error("--seeds must not contain duplicates")
+    if len(args.policies) != len(set(args.policies)):
+        parser.error("--policies must not contain duplicates")
 
     sys.path.insert(0, str(args.upstream / "src"))
     from trajectory_judge.env.world import World, generate_instances, outcome_of
     from trajectory_judge.trace import Observation, Step, ToolCall
 
-    instances = generate_instances(30 + args.task_count, seed=20260914)[30:]
+    try:
+        instances = select_instances(generate_instances, args.task_count, args.task_ids)
+    except ValueError as exc:
+        parser.error(str(exc))
+    selected_jobs = build_jobs(instances, args.seeds, tuple(args.policies))
+    if args.dry_run:
+        for instance, regime, seed, policy in selected_jobs:
+            print(json.dumps({
+                "task_id": instance.instance_id,
+                "expected_action": instance.expected.action,
+                "regime": regime,
+                "seed": seed,
+                "policy": policy,
+                "planned_corroborator": (
+                    select_corroborator(policy, instance.instance_id, seed)
+                    if policy.endswith("_enforced") else None
+                ),
+            }))
+        print(f"dry-run: {len(selected_jobs)} cells; no model call or output write")
+        return
     args.out.mkdir(parents=True, exist_ok=True)
     raw_path = args.out / "raw.jsonl"
     rows = []
@@ -513,10 +584,7 @@ def main() -> None:
         raw_path.write_text("", encoding="utf-8")
     jobs = [
         (instance, regime, seed, policy)
-        for instance in instances
-        for regime in REGIMES
-        for seed in args.seeds
-        for policy in POLICIES
+        for instance, regime, seed, policy in selected_jobs
         if (instance.instance_id, regime, policy, seed) not in completed
     ]
     with ThreadPoolExecutor(max_workers=args.workers) as executor:
@@ -560,17 +628,22 @@ def main() -> None:
     lines = [
         "# Full local tool-using agent gate",
         "",
-        f"Model: `{args.model}`; tasks: {args.task_count}; seeds: `{args.seeds}`; episodes: {len(rows)}.",
+        f"Model: `{args.model}`; tasks: `{[instance.instance_id for instance in instances]}`; seeds: `{args.seeds}`; episodes: {len(rows)}.",
         "",
         "| regime | policy | episodes | final-state accuracy | unsafe refund | escalate | conflict | boundary episode coverage | boundary attempt coverage | mean boundary checks | mean underlying calls | mean model calls | parse failure | mean model latency (s) |",
         "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for row in summary:
+        attempt_coverage = (
+            f"{row['boundary_attempt_coverage']:.3f}"
+            if row["boundary_attempt_coverage"] is not None
+            else "N/A"
+        )
         lines.append(
             f"| {row['regime']} | {row['policy']} | {row['episodes']} | "
             f"{row['final_state_accuracy']:.3f} | {row['unsafe_refund_rate']:.3f} | "
             f"{row['escalation_rate']:.3f} | {row['conflict_rate']:.3f} | "
-            f"{row['boundary_coverage']:.3f} | {row['boundary_attempt_coverage']:.3f} | "
+            f"{row['boundary_coverage']:.3f} | {attempt_coverage} | "
             f"{row['mean_boundary_checks']:.2f} | "
             f"{row['mean_underlying_tool_calls']:.2f} | {row['mean_model_calls']:.2f} | "
             f"{row['parse_failure_rate']:.3f} | {row['mean_model_latency_s']:.2f} |"

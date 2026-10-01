@@ -1,9 +1,13 @@
 import importlib.util
+import io
 import json
 import sys
 import tempfile
 import unittest
+from contextlib import redirect_stdout
 from pathlib import Path
+from types import ModuleType, SimpleNamespace
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location(
@@ -22,6 +26,180 @@ AUDIT_SPEC.loader.exec_module(audit)
 
 
 class LiveAgentGateTests(unittest.TestCase):
+    def test_model_request_keeps_local_diagnostic_metadata_out_of_api_payload(self):
+        class FakeResponse:
+            def __enter__(self):
+                return self
+
+            def __exit__(self, exc_type, exc, traceback):
+                return False
+
+            def read(self):
+                content = json.dumps({"tool": "reply", "text": "done"})
+                return json.dumps({"choices": [{"message": {"content": content}}]}).encode()
+
+        def fake_urlopen(request, timeout):
+            payload = json.loads(request.data)
+            self.assertEqual(payload["seed"], 809)
+            self.assertNotIn("planned_corroborator", payload)
+            self.assertEqual(payload["temperature"], 0)
+            return FakeResponse()
+
+        with patch.object(gate.urllib.request, "urlopen", side_effect=fake_urlopen):
+            action, _, _ = gate.ask_action(
+                "http://127.0.0.1:11434/v1/chat/completions", "local-model",
+                "test prompt", ("reply",), 809, 180,
+            )
+        self.assertEqual(action["tool"], "reply")
+
+    def test_episode_records_planned_corroborator_in_raw_row(self):
+        class FakeWorld:
+            def __init__(self, instance):
+                self.max_refund_eur = 0.0
+
+            def call(self, tool, args):
+                return SimpleNamespace(ok=True, data={}, error=None)
+
+        class FakeStep:
+            def __init__(self, index, thought, call, observation):
+                self.index = index
+                self.thought = thought
+                self.call = call
+                self.observation = observation
+
+            def model_dump(self, mode):
+                return {
+                    "index": self.index,
+                    "call": {"tool": self.call.tool, "args": self.call.args},
+                    "observation": {"ok": self.observation.ok, "data": self.observation.data},
+                }
+
+        class FakeOutcome:
+            action = "escalate"
+            amount_eur = 0.0
+
+            def matches(self, expected):
+                return expected.action == "escalate"
+
+        instance = SimpleNamespace(
+            instance_id="INS-00032", difficulty="expired", goal="Escalate.",
+            expected=SimpleNamespace(action="escalate", amount_eur=0.0),
+        )
+        with patch.object(gate, "ask_action", return_value=({"tool": "escalate", "text": "review"}, 0.1, "")):
+            result = gate.run_episode(
+                instance, FakeWorld, SimpleNamespace, FakeStep, SimpleNamespace,
+                lambda steps: FakeOutcome(), "local-endpoint", "local-model",
+                "provenance_enforced", "targeted_common_mode", 809, 180,
+                verification_trigger="action_boundary", max_steps=1,
+            )
+        self.assertEqual(result["planned_corroborator"], "check_eligibility_audit")
+        self.assertEqual(result["steps"][0]["call"]["tool"], "escalate")
+
+    def test_cli_dry_run_lists_eight_cells_without_writing_or_calling_model(self):
+        world_module = ModuleType("trajectory_judge.env.world")
+        world_module.World = object
+        world_module.outcome_of = lambda steps: None
+        world_module.generate_instances = lambda count, seed: [
+            SimpleNamespace(
+                instance_id=f"INS-{index:05d}",
+                expected=SimpleNamespace(action="escalate"),
+            )
+            for index in range(count)
+        ]
+        trace_module = ModuleType("trajectory_judge.trace")
+        for name in ("Observation", "Step", "ToolCall"):
+            setattr(trace_module, name, object)
+        fake_modules = {
+            "trajectory_judge": ModuleType("trajectory_judge"),
+            "trajectory_judge.env": ModuleType("trajectory_judge.env"),
+            "trajectory_judge.env.world": world_module,
+            "trajectory_judge.trace": trace_module,
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            destination = Path(directory) / "must-not-exist"
+            argv = [
+                "run_live_agent_gate.py", "--upstream", directory,
+                "--task-ids", "INS-00032",
+                "--policies", "random_k_enforced", "provenance_enforced",
+                "--seeds", "701", "809", "--dry-run", "--out", str(destination),
+            ]
+            output = io.StringIO()
+            old_path = sys.path[:]
+            try:
+                with patch.dict(sys.modules, fake_modules), patch.object(sys, "argv", argv), redirect_stdout(output):
+                    gate.main()
+            finally:
+                sys.path[:] = old_path
+            self.assertFalse(destination.exists())
+            lines = output.getvalue().splitlines()
+            cells = [json.loads(line) for line in lines[:-1]]
+            self.assertEqual(len(cells), 8)
+            self.assertEqual({cell["expected_action"] for cell in cells}, {"escalate"})
+            self.assertEqual(lines[-1], "dry-run: 8 cells; no model call or output write")
+
+    def test_exact_task_and_policy_selection_builds_eight_cells(self):
+        def generate_instances(count, seed):
+            self.assertEqual(seed, 20260914)
+            self.assertEqual(count, 33)
+            return [SimpleNamespace(instance_id=f"INS-{index:05d}") for index in range(count)]
+
+        instances = gate.select_instances(generate_instances, 6, ["INS-00032"])
+        jobs = gate.build_jobs(
+            instances, [701, 809], ("random_k_enforced", "provenance_enforced")
+        )
+        self.assertEqual(len(jobs), 8)
+        self.assertEqual({job[0].instance_id for job in jobs}, {"INS-00032"})
+        self.assertEqual({job[3] for job in jobs}, {"random_k_enforced", "provenance_enforced"})
+
+    def test_task_selection_preserves_default_slice(self):
+        def generate_instances(count, seed):
+            self.assertEqual(count, 32)
+            return [SimpleNamespace(instance_id=f"INS-{index:05d}") for index in range(count)]
+
+        self.assertEqual(
+            [instance.instance_id for instance in gate.select_instances(generate_instances, 2, None)],
+            ["INS-00030", "INS-00031"],
+        )
+
+    def test_task_selection_rejects_invalid_or_duplicate_ids(self):
+        def generate_instances(count, seed):
+            return [SimpleNamespace(instance_id=f"INS-{index:05d}") for index in range(count)]
+
+        for task_ids in (["INS-00029"], ["INS-00032", "INS-00032"], ["INS-32"]):
+            with self.subTest(task_ids=task_ids), self.assertRaises(ValueError):
+                gate.select_instances(generate_instances, 6, task_ids)
+
+    def test_ins32_seed_mapping_is_explicit(self):
+        self.assertEqual(
+            gate.select_corroborator("random_k_enforced", "INS-00032", 809),
+            "check_eligibility_search",
+        )
+        self.assertEqual(
+            gate.select_corroborator("provenance_enforced", "INS-00032", 809),
+            "check_eligibility_audit",
+        )
+        self.assertNotEqual(
+            gate.ELIGIBILITY_DOMAINS[gate.select_corroborator("random_k_enforced", "INS-00032", 701)],
+            "operational_db",
+        )
+
+    def test_zero_refund_attempt_coverage_is_not_one(self):
+        row = {
+            "regime": "targeted_common_mode",
+            "policy": "provenance_enforced",
+            "final_state_correct": True,
+            "unsafe_refund": False,
+            "escalated": True,
+            "runtime_conflict": False,
+            "boundary_check_count": 0,
+            "refund_attempt_count": 0,
+            "underlying_tool_calls": 1,
+            "model_calls": 1,
+            "parse_failures": 0,
+            "model_latency_s": 1.0,
+        }
+        self.assertIsNone(gate.summarize([row])[0]["boundary_attempt_coverage"])
+
     def test_provenance_corroborator_is_independent(self):
         for seed in range(20):
             tool = gate.select_corroborator("provenance_enforced", "T-1", seed)
