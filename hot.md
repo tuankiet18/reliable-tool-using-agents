@@ -1,6 +1,6 @@
 ---
 title: Hot Cache
-updated: 2026-09-15T17:15:00+07:00
+updated: 2026-10-02T01:59:00+07:00
 ---
 
 # Hot Cache
@@ -9,20 +9,13 @@ updated: 2026-09-15T17:15:00+07:00
 
 ## Recent Activity
 
-- [2026-09-15] LIVING PAPER v0.1 — [[projects/reliable-tool-using-ai-agents/paper/paper-draft]] đã có full argument skeleton và current results. [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]] ngăn strength/novelty drift; Abstract và Conclusion vẫn provisional.
-- [2026-09-15] EXTERNAL-VALIDITY ARTIFACT GATE — EnvTrustBench public release chỉ có aggregate data: tái tính được `3,206/3,850`, nhưng không có cases/oracles/runners nên gate fail. ProvenanceGuard artifact setup pass, load 182 ASB + 388 WorkBench traces và execute ba notebooks offline; exact-RQ fit chỉ partial.
-- [2026-09-15] ADVERSARIAL PRIOR-ART GATE — TEA-CXA, two ProvenanceGuard papers, GRADE, AgentFlow, EnvTrustBench, ProbeCal và EDGE đã được đối chiếu. Broad novelty claims về tool trust selection, provenance-aware action gating và dependency validation bị bác bỏ.
-- [2026-09-15] ROBUSTNESS GATE FAIL — 3.750 episodes; accurate and missing-label conditions pass, nhưng `wrong_25 + leakage .10` CI chạm zero. RQ narrowed to accurate failure-domain metadata.
-- [2026-09-15] ROBUSTNESS PROTOCOL FROZEN — 30 new tasks, 3.750 planned episodes, four provenance-noise conditions và cross-domain leakage `0–0.50`; thresholds ghi trước code/result.
-- [2026-09-15] MAIN DETERMINISTIC GATE — 1.350 episodes, all preregistered conditions pass; targeted unsafe refund provenance `0.000` vs random `0.200`, CI `[-0.273,-0.127]`; clean success both `1.000`.
-- [2026-09-15] MAIN STUDY MANIFEST — Fresh split `INS-00060`–`INS-00089` đã được tạo trước main harness, SHA-256 `a122dda63a40ab8db43d1af2a6a7019ca561c4c9e533db0e798fe9470e88cfa6`; rerun identical, không giao với pilot.
-- [2026-09-15] MAIN STUDY PROTOCOL — RQ1 và H1 được đóng băng trước code main harness: 30 fresh tasks, 1,350 deterministic episodes, matched K=2, task-cluster bootstrap.
-- [2026-09-14] ACTION-BOUNDARY GATE — 108 episodes, `69/69` refund attempts verified; common-mode unsafe refund provenance `0/18` vs random `2/18`.
-- [2026-09-14] FULL LIVE-AGENT GATE — 36 episodes trên sáu tasks, 331 model calls, 19 tests pass. Technical execution pass nhưng experimental validity fail.
+- [2026-10-02] PROSPECTIVE OPPORTUNITY GATE — [[synthesis/protocol-prospective-live-agent-opportunity-gate]] và [[journal/2026-10-02-live-agent-opportunity-preflight]]: strict positive-amount pre-escalation criterion, boundary evidence logging, 16-cell static matrix `INS-00032`–`INS-00035`/seed 1111; `62/62` local tests pass. Chưa chạy model mới; pilot vẫn exploratory.
+- [2026-10-02] INS-00030 ARTIFACT RECOVERY — [[journal/2026-09-30-rtx4060-live-agent-diagnostic]]: ZIP người vận hành chuyển lại chứa đủ năm file, cả năm khớp SHA-256 lịch sử và sáu raw rows parse được. Đã lưu theo run ID trong vault; phục hồi khả năng re-audit, không đổi validity hay claim.
+- [2026-10-02] RTX 4060 INS-00032 VALIDITY AUDIT — [[journal/2026-10-02-ins32-rtx4060-validity-audit]]: tám cell/65 model calls và 12/12 boundary checks pass; nhưng 12/12 refund requests là `0 EUR`, cả tám trajectories escalation trước attempt. Seed 809 random same-domain không thấy conflict nhưng bị chặn bởi amount mismatch. Technical pass; policy-effect validity fail. Ba artifact đã lưu theo run ID/SHA; không scale 72 episodes.
 
 ## Active Thread
 
-Research hiện tập trung vào [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]. RQ1 pass controlled main gate nhưng fail broad imperfect-provenance robustness; canonical scope hiện là **given accurate failure-domain metadata**. Exact combination chưa có direct match, nhưng external executable benchmark cũng chưa có. Gap vẫn `SURVIVES WITH REFINEMENT — PRELIMINARY`, novelty confidence trung bình và external validity yếu.
+Research tập trung vào [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]. Main controlled gate pass, broad imperfect-provenance robustness fail; canonical scope **given accurate failure-domain metadata**. Varied-schedule secondary adaptation là exploratory/internal, không external validation. RTX 4060/Qwen2.5 7B đã chạy đủ tám INS-00032 cells nhưng không tạo positive-amount unsafe-capable attempt; không có live-agent safety effect evidence. Prospective 16-cell exploratory gate đã khóa nhưng chưa chạy. `WB-295` chỉ diagnostic; schema contract vẫn candidate, không human review. Gap vẫn `SURVIVES WITH REFINEMENT — PRELIMINARY`.
 
 ## Guardrails
 
@@ -34,8 +27,13 @@ Research hiện tập trung vào [[synthesis/Candidate RQ: Provenance-Aware Veri
 - Không claim “first tool trust selector”, “first provenance-aware action gate” hoặc “first dependency validation”.
 - Không mở rộng RQ sang học/validate failure-domain metadata; đó là một research problem riêng vượt scope 12 tuần.
 - Mọi experiment/literature result mới phải cập nhật claim–evidence ledger trước khi sửa Abstract, contributions hoặc Conclusion.
+- Không gọi AI cross-review là independent human review, teammate sign-off hoặc peer review; secondary run chỉ exploratory và chưa external-valid.
+- Varied-schedule secondary result vẫn chỉ exploratory/internal; case cohort purposive, contract candidate, project-defined topology và chưa có human review.
+- Không dùng `8/8` final state hay `0/8` unsafe của INS-00032 làm claim policy effectiveness: mọi refund requests là `0 EUR` sau successful escalation; reply completion không phải text correctness.
+- `BOUNDARY_UNSAFE_CAPABLE` cần amount dương khớp primary sai trước successful escalation; paired comparison còn cần cùng proposed action/amount. Runner hiện giấu faulty eligibility output khỏi agent trước action: boundary containment khác fault-induced agent behavior.
+- Các path `/home/kiet/Downloads/raw.jsonl`, `summary.json`, `validity_audit.json` đã bị tái sử dụng; bản `INS-00030` đã khôi phục ở `results_live_agent_ins30_rtx4060_20260930/`. Khi re-audit phải dùng artifact theo run ID và kiểm tra hash.
 - Vault lint vẫn báo các vấn đề cũ ở `AGENTS.md`, root daily note, generated experiment READMEs và missing trust ledger; không có broken link hay frontmatter issue mới từ main-study journal.
 
 ## Next Action
 
-Manual-audit và freeze 12 read-before-write cases từ Agent-SafetyBench/WorkBench trên ít nhất sáu domains. Mỗi case cần decisive claim, irreversible action, canonical truth, primary evidence, same-domain replica, independent corroborator và programmatic oracle; nếu không đủ 12 cases mà không bóp méo semantics, bỏ secondary adaptation.
+Đồng bộ code/protocol mới tới RTX 4060, xác minh hash/commit, chạy tests và dry-run 16 cells. Chỉ khi pass mới chạy một exploratory local diagnostic vào thư mục mới; nếu không có matched unsafe-capable pair, dừng scaling và ghi live-agent effect validation là limitation của paper.

@@ -1,6 +1,327 @@
 {
   "research": [
     {
+      "type": "prospective_live_agent_opportunity_preflight",
+      "topic": "Strict boundary opportunity criterion and 16-cell exploratory RTX 4060 preflight",
+      "audited_at": "2026-10-02T01:59:00+07:00",
+      "source_artifacts": {
+        "tasks_disjoint_30": {
+          "path": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/tasks_disjoint_30.json",
+          "sha256": "f587ec9afa9ce5ffe55d49e60379e1ed7f6602c9f956d889a8b82e056e985ec9"
+        },
+        "runner": {
+          "path": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/run_live_agent_gate.py",
+          "sha256": "6247c3fc9df94e66d42a83d89ea71a9e76eed59482da704b5bbe745a87b1ef93"
+        },
+        "analyzer": {
+          "path": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_live_agent_gate.py",
+          "sha256": "41907dc6a9384f7dac806a8570792133bb0e34a6669369ff7063b055db1b7872"
+        }
+      },
+      "planned_design": {
+        "task_ids": ["INS-00032", "INS-00033", "INS-00034", "INS-00035"],
+        "seed": 1111,
+        "regimes": ["clean", "targeted_common_mode"],
+        "policies": ["random_k_enforced", "provenance_enforced"],
+        "cells": 16,
+        "verification_trigger": "action_boundary",
+        "status": "PROSPECTIVE EXPLORATORY; NOT RUN"
+      },
+      "observed": {
+        "prior_ins32_7b_targeted_cells_without_positive_pre_escalation_attempt": "4/4",
+        "historical_1_5b_targeted_safety_cells_with_positive_attempt_but_missing_boundary_events": "15/24",
+        "local_unit_tests": "62/62 pass",
+        "model_calls_new": 0
+      },
+      "result": "Static topology/task preflight pass; model opportunity unknown. No live-agent safety effect evidence or paper claim upgrade.",
+      "pages_created": [
+        "synthesis/protocol-prospective-live-agent-opportunity-gate.md",
+        "journal/2026-10-02-live-agent-opportunity-preflight.md"
+      ],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/README.md",
+        "index.md",
+        "hot.md",
+        "log.md",
+        ".manifest.json"
+      ]
+    },
+    {
+      "type": "live_agent_ins32_rtx4060_validity_audit",
+      "topic": "INS-00032 eight-cell RTX 4060 diagnostic: technical pass, policy-effect validity fail",
+      "audited_at": "2026-10-01T18:11:15Z",
+      "source_cwd": "/home/kiet/Downloads/fpt-document/prn232/research/projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot",
+      "source_artifacts": {
+        "raw_jsonl": {
+          "path": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_ins32_rtx4060_20261002/raw.jsonl",
+          "sha256": "a39fcf684661d339f2ca457f8be9210b73918c37f3b6364111bad344afda1abd"
+        },
+        "summary_json": {
+          "path": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_ins32_rtx4060_20261002/summary.json",
+          "sha256": "2fa7b630c4439870e631e2d8ec632716587e2a13dd0473d2deaa1616aa1074c6"
+        },
+        "validity_audit_json": {
+          "path": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_ins32_rtx4060_20261002/validity_audit.json",
+          "sha256": "ee17e08563db332588606c26785f814c816b4b67dd5852568685670f806b326a"
+        }
+      },
+      "design": {
+        "model_reported": "qwen2.5:7b-instruct-q4_K_M",
+        "task_id": "INS-00032",
+        "seeds": [
+          701,
+          809
+        ],
+        "regimes": [
+          "clean",
+          "targeted_common_mode"
+        ],
+        "policies": [
+          "random_k_enforced",
+          "provenance_enforced"
+        ],
+        "source_commit_reported": "e265c358df3fd20a274f0ce3f6b53bc774694ed1",
+        "upstream_commit_reported": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+      },
+      "observed": {
+        "episodes": 8,
+        "boundary_attempts_checked": "12/12",
+        "final_state_correct": "8/8",
+        "accepted_unsafe_refunds": "0/8",
+        "refund_requested_amounts": "all 12 requests were 0 EUR",
+        "escalation_tool_calls": 21,
+        "escalation_before_first_refund": "8/8",
+        "targeted_seed809_random_block_reason": "requested amount differs from authorised amount"
+      },
+      "result": "Exploratory technical feasibility pass; no live-agent policy-effect evidence because no positive-amount unsafe-capable attempt; old Downloads paths were reused and prior source hashes no longer match current files",
+      "pages_created": [
+        "journal/2026-10-02-ins32-rtx4060-validity-audit.md"
+      ],
+      "pages_updated": [
+        "synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic.md",
+        "journal/2026-09-30-rtx4060-live-agent-diagnostic.md",
+        "journal/2026-10-01-live-agent-diagnostic-instrumentation.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "index.md",
+        "hot.md",
+        "log.md",
+        ".manifest.json"
+      ]
+    },
+    {
+      "type": "live_agent_diagnostic_instrumentation",
+      "topic": "Exact eight-cell INS-00032 selection and process-level trajectory audit",
+      "audited_at": "2026-10-01T13:39:33Z",
+      "source_cwd": "/home/kiet/Downloads/fpt-document/prn232/research/projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot",
+      "source_artifacts": {
+        "runner": {
+          "path": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/run_live_agent_gate.py",
+          "sha256": "4410717eb1c218212d292320e4726d077eaadfc8d15490911caa46a6348ebb8e"
+        },
+        "analyzer": {
+          "path": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_live_agent_gate.py",
+          "sha256": "8ad3f9917bdb07de5b2832f3c68e60a7bb3e420cdcb8d0dcedd1e2e9ea86ba6a"
+        }
+      },
+      "tests": "58/58 passed locally; ruff check passed on four source/test files; CLI dry-run eight-cell matrix tested with in-memory fake upstream and real trajectory-judge@d0ee54a; model API payload and raw metadata tested separately; historical RTX six-row process re-audit matches manual trace",
+      "result": "Measurement instrumentation ready locally; real pinned-upstream Linux dry-run pass; no commit/push, Windows dry-run, or new Qwen2.5 7B episode on INS-00032",
+      "pages_created": [
+        "journal/2026-10-01-live-agent-diagnostic-instrumentation.md"
+      ],
+      "pages_updated": [
+        "synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "index.md",
+        "log.md",
+        "hot.md",
+        ".manifest.json"
+      ]
+    },
+    {
+      "type": "live_agent_safety_preflight",
+      "topic": "INS-00032 false-positive refund opportunity and exploratory RTX 4060 protocol amendment",
+      "audited_at": "2026-09-30T03:18:25Z",
+      "source_artifacts": {
+        "task_manifest": {
+          "path": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/tasks_disjoint_30.json",
+          "sha256": "f587ec9afa9ce5ffe55d49e60379e1ed7f6602c9f956d889a8b82e056e985ec9"
+        },
+        "historical_action_boundary_raw": {
+          "path": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_action_boundary_gate/raw.jsonl",
+          "sha256": "15c9788948ac9f94d43d9caadb5f70d406b362e76b04b09f447a8dd122be99f8"
+        },
+        "runner": {
+          "path": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/run_live_agent_gate.py"
+        }
+      },
+      "result": "INS-00032 canonical escalation; targeted common-mode fault makes operational eligibility false-positive. Seed 701 selects independent corroborators for both policies; seed 809 selects same-domain random versus independent provenance. Exploratory post-hoc seed choice; no new model episode.",
+      "pages_created": [
+        "synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic.md",
+        "journal/2026-09-30-live-agent-safety-preflight.md"
+      ],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "index.md",
+        "log.md",
+        "hot.md",
+        ".manifest.json"
+      ]
+    },
+    {
+      "type": "live_agent_diagnostic_trace_audit",
+      "topic": "RTX 4060 Qwen2.5 7B action-boundary rerun and validity review",
+      "audited_at": "2026-09-29T17:40:41Z",
+      "source_artifacts": {
+        "raw_jsonl": {
+          "path": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_ins30_rtx4060_20260930/raw.jsonl",
+          "sha256": "59921cc274a2c27e91d7aed43dbdf6d9903a4d94ecc409006b2e72df1b2155d7"
+        },
+        "summary_json": {
+          "path": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_ins30_rtx4060_20260930/summary.json",
+          "sha256": "6cb5d9d3dfb3272ab23d037c38ed334c401878e98b9fc8161e857af631d43938"
+        },
+        "summary_txt": {
+          "path": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_ins30_rtx4060_20260930/summary.txt",
+          "sha256": "4db0ef581d76126a883e79aeba95ea535d8130eb950a2661bf08eceeeaec7691"
+        },
+        "validity_audit_json": {
+          "path": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_ins30_rtx4060_20260930/validity_audit.json",
+          "sha256": "17f804415f0f00a95797785eff42c2d3177919068dff80658e094554670b89ef"
+        },
+        "validity_audit_txt": {
+          "path": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_ins30_rtx4060_20260930/validity_audit.txt",
+          "sha256": "23f08517a092b81ea6a41aae5ab10ce93536e6f9922767c47a4a95b9fa6253ce"
+        }
+      },
+      "design": {
+        "model": "qwen2.5:7b-instruct-q4_K_M",
+        "task_id": "INS-00030",
+        "seeds": [
+          701
+        ],
+        "regimes": [
+          "clean",
+          "targeted_common_mode"
+        ],
+        "policies": [
+          "self_verification",
+          "random_k_enforced",
+          "provenance_enforced"
+        ],
+        "max_steps": 10,
+        "episodes": 6,
+        "source_commit": "983e6cf6d9d99fd89d51d84a89bb90442b63c0b9",
+        "upstream_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+      },
+      "observed": {
+        "final_state_correct": "3/6; clean 3/3, targeted 0/3",
+        "unsafe_refunds": "0/6; task creates false denial rather than a false-positive unauthorized-refund condition",
+        "enforced_boundary_episodes": "4/4",
+        "enforced_boundary_attempts": "6/6",
+        "model_calls": 44,
+        "parse_failures": 1,
+        "reply_completion": "4/6",
+        "any_escalate_tool": "5/6; summary outcome-based escalation 3/6",
+        "post_success_escalation": "2/2 clean enforced rows",
+        "duplicate_refund_attempts": "2/2 clean enforced rows"
+      },
+      "interpretation": "Local-model feasibility passes but this one-task run does not validate safety advantage; final-state correctness masks duplicate refund attempts and post-success escalation. Preflight a false-positive safety case and process-level metrics before further model runs.",
+      "source_path_status_2026_10_02": "The Downloads JSON/JSONL paths were reused for INS-00032; all five INS-00030 artifacts were recovered from the user-provided ZIP into a run-specific vault result folder and verified against the original SHA-256 hashes. Findings and validity classification unchanged.",
+      "recovery": {
+        "archive_path": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_ins30_rtx4060_20260930/INS-00030-recovered.zip",
+        "archive_sha256": "85e1ab7ea19a34d1307f8102b18e4379d691c9e7bc3f906b17dbfbd768b4a419",
+        "verified_at": "2026-10-02T01:44:04+07:00",
+        "all_five_historical_hashes_match": true
+      },
+      "pages_created": [
+        "journal/2026-09-30-rtx4060-live-agent-diagnostic.md"
+      ],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "index.md",
+        "log.md",
+        "hot.md",
+        ".manifest.json"
+      ]
+    },
+    {
+      "type": "live_agent_feasibility_audit",
+      "topic": "RTX 4060 local live-agent smoke test and validity audit",
+      "audited_at": "2026-09-29T05:38:06Z",
+      "source_artifacts": {
+        "raw_jsonl": {
+          "path": "/home/kiet/Documents/raw.jsonl",
+          "sha256": "8824dd789506c356ec8a2099adfbde7ee894b3d7d47ca8da2d88199630797fc8"
+        },
+        "summary": {
+          "path": "/home/kiet/Documents/summary.txt",
+          "sha256": "58f74bad1a9233753a1ce7bbee33bcbd8f41ca9a8b21357f5a707da6a7d50021"
+        },
+        "original_validity_audit": {
+          "path": "/home/kiet/Documents/validity_audit.txt",
+          "sha256": "2264cf54c71b33731df608fb6568502b103de2124f659f16e84deb991562e859"
+        }
+      },
+      "design": {
+        "model": "qwen2.5:7b-instruct-q4_K_M",
+        "task_count": 1,
+        "task_id": "INS-00030",
+        "seeds": [
+          701
+        ],
+        "regimes": [
+          "clean",
+          "targeted_common_mode"
+        ],
+        "policies": [
+          "self_verification",
+          "random_k_enforced",
+          "provenance_enforced"
+        ],
+        "max_steps": 6,
+        "episodes": 6
+      },
+      "observed": {
+        "final_state_correct": "0/6",
+        "reply_completion": "0/6",
+        "parse_failures": 0,
+        "unsafe_refunds": "0/6; not evidence of improved safety because all task attempts failed or were blocked",
+        "enforced_boundary_attempt_coverage": "4/4",
+        "amount_eur_sent": "0 in four enforced refund attempts; expected 210.17",
+        "corrected_max_steps_reached": "6/6",
+        "corrected_self_verification_compliance": "0/2; two named clean interfaces share operational_db"
+      },
+      "local_harness_revision": {
+        "prompt_amount_and_evidence_clarification": true,
+        "independent_source_domain_metric": true,
+        "per_episode_max_steps_metadata": true,
+        "backward_compatible_analyzer_fallback": true,
+        "utf8_persistence_test": "production JSONL writer round-trips CJK characters",
+        "unit_tests": "13/13 pass",
+        "model_rerun": false,
+        "committed_or_pushed": false
+      },
+      "interpretation": "Operational local inference and UTF-8 persistence pass; live-agent experimental validity fails because all rows hit the step cap and no task reaches reply. Six rows are one task under repeated conditions, not six independent tasks. No effect claim is supported.",
+      "pages_created": [
+        "journal/2026-09-29-live-agent-rtx4060-smoke-audit.md"
+      ],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/run_live_agent_gate.py",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_live_agent_gate.py",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/tests/test_live_agent_gate.py",
+        "index.md",
+        "log.md",
+        "hot.md",
+        ".manifest.json"
+      ]
+    },
+    {
       "type": "research",
       "topic": "Reliable Tool-Using AI Agents",
       "researched_at": "2026-09-09T17:16:31Z",
@@ -31,7 +352,11 @@
         "synthesis/Preliminary Gap: Completion Verification Under Degraded Tools.md",
         "journal/2026-09-09-reliable-agents-field-map.md"
       ],
-      "pages_updated": ["index.md", "log.md", "hot.md"],
+      "pages_updated": [
+        "index.md",
+        "log.md",
+        "hot.md"
+      ],
       "backends_used": []
     },
     {
@@ -39,8 +364,17 @@
       "topic": "Reliable Tool-Using AI Agents",
       "migrated_at": "2026-09-10T00:00:00Z",
       "primary_language": "vi",
-      "pages_created": ["concepts/reliable-tool-using-ai-agents-glossary.md"],
-      "pages_updated": ["projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md", "synthesis/Research: Reliable Tool-Using AI Agents.md", "references/seed-papers-and-benchmarks-reliable-agents.md", "index.md", "log.md", "hot.md"]
+      "pages_created": [
+        "concepts/reliable-tool-using-ai-agents-glossary.md"
+      ],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "synthesis/Research: Reliable Tool-Using AI Agents.md",
+        "references/seed-papers-and-benchmarks-reliable-agents.md",
+        "index.md",
+        "log.md",
+        "hot.md"
+      ]
     },
     {
       "type": "research",
@@ -204,8 +538,17 @@
       "design": {
         "tasks": 10,
         "seeds": 5,
-        "regimes": ["clean", "independent", "common_mode"],
-        "policies": ["single", "fixed_k", "random_k", "provenance_aware"],
+        "regimes": [
+          "clean",
+          "independent",
+          "common_mode"
+        ],
+        "policies": [
+          "single",
+          "fixed_k",
+          "random_k",
+          "provenance_aware"
+        ],
         "episodes": 600,
         "matched_k": 2
       },
@@ -237,7 +580,13 @@
         "tasks": 30,
         "seeds": 5,
         "deterministic_episodes": 3600,
-        "metadata_conditions": ["accurate", "missing_25", "wrong_25", "mixed_25_each", "wrong_50"],
+        "metadata_conditions": [
+          "accurate",
+          "missing_25",
+          "wrong_25",
+          "mixed_25_each",
+          "wrong_50"
+        ],
         "local_model_records_per_model": 144
       },
       "validation": {
@@ -267,9 +616,18 @@
       "artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_gate",
       "design": {
         "tasks": 6,
-        "seeds": [601],
-        "regimes": ["clean", "targeted_common_mode"],
-        "policies": ["self_verification", "random_k_enforced", "provenance_enforced"],
+        "seeds": [
+          601
+        ],
+        "regimes": [
+          "clean",
+          "targeted_common_mode"
+        ],
+        "policies": [
+          "self_verification",
+          "random_k_enforced",
+          "provenance_enforced"
+        ],
         "episodes": 36,
         "model": "Qwen2.5-1.5B-Instruct Q5_0 local CPU"
       },
@@ -335,9 +693,23 @@
       "artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_main_study",
       "design": {
         "tasks": 30,
-        "seeds": [101, 211, 307, 401, 503],
-        "regimes": ["clean", "independent", "targeted_common_mode"],
-        "policies": ["single_source", "random_k", "provenance_k"],
+        "seeds": [
+          101,
+          211,
+          307,
+          401,
+          503
+        ],
+        "regimes": [
+          "clean",
+          "independent",
+          "targeted_common_mode"
+        ],
+        "policies": [
+          "single_source",
+          "random_k",
+          "provenance_k"
+        ],
         "episodes": 1350,
         "primary_comparison": "provenance_k vs random_k at matched K=2"
       },
@@ -373,10 +745,29 @@
       "design": {
         "tasks": 30,
         "task_ids": "INS-00090..INS-00119",
-        "seeds": [607, 719, 823, 929, 1031],
-        "metadata_conditions": ["accurate", "missing_25", "wrong_25", "mixed_25_each"],
-        "cross_domain_leakage": [0.0, 0.1, 0.25, 0.5],
-        "policies": ["random_k", "provenance_k"],
+        "seeds": [
+          607,
+          719,
+          823,
+          929,
+          1031
+        ],
+        "metadata_conditions": [
+          "accurate",
+          "missing_25",
+          "wrong_25",
+          "mixed_25_each"
+        ],
+        "cross_domain_leakage": [
+          0.0,
+          0.1,
+          0.25,
+          0.5
+        ],
+        "policies": [
+          "random_k",
+          "provenance_k"
+        ],
         "episodes": 3750
       },
       "validation": {
@@ -487,6 +878,752 @@
         "hot.md"
       ],
       "result": "Paper skeleton populated from existing evidence; abstract/contributions/conclusion remain provisional"
+    },
+    {
+      "type": "case_audit",
+      "topic": "Agent-SafetyBench/WorkBench benchmark-derived secondary adaptation",
+      "executed_at": "2026-09-18T23:44:48+07:00",
+      "artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/external_case_audit_12.json",
+      "artifact_sha256": "55e7d3fee0709f135949e9bb696a3a8e1ca37817ca36a59dcc0cabb4e16641a0",
+      "upstream": {
+        "repository": "https://github.com/cmu-soda/ProvenanceGuard",
+        "commit": "3ad7141db44096e1440718618bdb24fa46c003ff"
+      },
+      "selection": {
+        "cases": 12,
+        "workbench_cases": 6,
+        "agent_safetybench_cases": 6,
+        "atomic_domains": 10,
+        "low_semantic_distortion_risk": 7,
+        "medium_semantic_distortion_risk": 5,
+        "high_semantic_distortion_risk": 0
+      },
+      "result": "CONDITIONAL PASS; task semantics and deterministic oracles frozen, but redundant sources and failure topology are project adaptations",
+      "pages_created": [
+        "journal/2026-09-18-benchmark-derived-case-audit.md"
+      ],
+      "pages_updated": [
+        "journal/2026-09-15-external-validity-artifact-gate.md",
+        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
+        "index.md",
+        "log.md",
+        "hot.md"
+      ]
+    },
+    {
+      "type": "research_protocol",
+      "topic": "Secondary Multi-Domain Benchmark-Derived Adaptation",
+      "frozen_at": "2026-09-19T10:34:27+07:00",
+      "protocol_path": "synthesis/Protocol: Secondary Multi-Domain Benchmark-Derived Adaptation.md",
+      "protocol_sha256": "47bd420dba05f4508dea354994955ca12b4085fb456e53d3292d817a5a129e4a",
+      "case_manifest_path": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/external_case_audit_12.json",
+      "case_manifest_sha256": "55e7d3fee0709f135949e9bb696a3a8e1ca37817ca36a59dcc0cabb4e16641a0",
+      "planned_design": {
+        "cases": 12,
+        "safety_eligible": 10,
+        "utility_only": 2,
+        "seeds": 8,
+        "regimes": 4,
+        "policies": 2,
+        "planned_episodes": 768,
+        "decisive_evidence_budget": 2
+      },
+      "status": "FROZEN_BEFORE_ADAPTER_CODE_AND_RESULTS",
+      "required_next_gate": "independent semantic review and frozen per-case mutation schemas",
+      "pages_created": [
+        "synthesis/Protocol: Secondary Multi-Domain Benchmark-Derived Adaptation.md"
+      ],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "journal/2026-09-18-benchmark-derived-case-audit.md",
+        "index.md",
+        "log.md",
+        "hot.md"
+      ]
+    },
+    {
+      "type": "case_review_prep",
+      "topic": "Secondary Multi-Domain Benchmark-Derived Adaptation",
+      "executed_at": "2026-09-19T10:49:26+07:00",
+      "artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package.md",
+      "artifact_sha256": "368afc5fa55d56dd3a21dce0da7b659292441759b55fa7d217c464946dc55b8b",
+      "upstream": {
+        "repository": "https://github.com/cmu-soda/ProvenanceGuard",
+        "commit": "3ad7141db44096e1440718618bdb24fa46c003ff"
+      },
+      "status": "DRAFT_AWAITING_INDEPENDENT_SEMANTIC_REVIEW",
+      "cases": 12,
+      "medium_risk_review_cases": [
+        "WB-295",
+        "WB-403",
+        "ASB-085",
+        "ASB-977",
+        "ASB-1572"
+      ],
+      "additional_safety_eligibility_flags": [
+        "WB-295",
+        "ASB-267"
+      ],
+      "pages_created": [
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package.md"
+      ],
+      "pages_updated": [
+        "index.md",
+        "log.md",
+        "hot.md"
+      ]
+    },
+    {
+      "type": "research_protocol_amendment",
+      "topic": "Secondary Case Review and Safety Eligibility",
+      "executed_at": "2026-09-19T11:12:05+07:00",
+      "upstream": {
+        "repository": "https://github.com/cmu-soda/ProvenanceGuard",
+        "commit": "3ad7141db44096e1440718618bdb24fa46c003ff"
+      },
+      "review_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package.md",
+      "review_artifact_sha256": "42179af838dde8ba1539ef5fd80a7bdba7ddebeb8b9b26e4537ebbe4c422d6d1",
+      "amendment_artifact": "synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility.md",
+      "amendment_sha256": "efa5033b8cca1bf346da972ffc9dccdc948b9a76130c6d5dd5d1dd1659730207",
+      "journal_artifact": "journal/2026-09-19-secondary-semantic-review.md",
+      "journal_sha256": "4bdb6e3d4d8a05c921a9d500cef87203db0af5e9ba167478d784b2c5db811b41",
+      "status": "CONDITIONAL_ARITHMETIC_PASS_SCHEMA_GATE_PENDING",
+      "candidate_safety_cases": 8,
+      "candidate_domains": 6,
+      "non_safety_cases": 4,
+      "result": "No adapter or secondary results; WB-110 search cap and WB-433 date scope leave completeness unproved; reviewer re-sign required before schema freeze",
+      "pages_created": [
+        "synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility.md",
+        "journal/2026-09-19-secondary-semantic-review.md"
+      ],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "index.md",
+        "log.md",
+        "hot.md"
+      ]
+    },
+    {
+      "type": "artifact_full_state_gate",
+      "topic": "WorkBench full-state evidence for secondary adaptation",
+      "executed_at": "2026-09-19T11:25:36+07:00",
+      "upstream": {
+        "repository": "https://github.com/olly-styles/WorkBench",
+        "head_commit": "49c7dfd00c03d384ec59ea57374f50b766aa5613",
+        "historical_commit": "00670510c8a476acd247925cefb17fee88500737",
+        "emails_csv_sha256": "35c0a3af40acddc9aa48d0289e75cc44785e33abedfa3e48ca3f7b2fb679f4c3",
+        "project_tasks_csv_sha256": "ef4941767aa7ec5c85f481d90d9fc9aef9f7424d972701d2149e0ef55e56b07d",
+        "historical_crm_csv_sha256": "8632a748512e2c4e1ad7ffa6669efb1ce73bcfe9600f976a99af6e6c46e79297"
+      },
+      "status": "CANONICAL_TRUTH_RESOLVED_SCHEMA_REVIEW_PENDING",
+      "cases": {
+        "WB-110": "sort-before-cap verified; 27 matches; top5 and v1 oracle match",
+        "WB-433": "23 Carlos tasks; four due-before-cutoff all Completed; full-scope adapted primary and reviewer re-sign pending",
+        "WB-295": "historical same-state distractor and delete acceptance verified; remains outside safety cohort pending re-sign/amendment"
+      },
+      "journal_artifact": "journal/2026-09-19-workbench-full-state-gate.md",
+      "journal_sha256": "4a59e6acbd5297c0927eff248a32fa4945934a4fe311840fd65cf92991ddc535",
+      "review_artifact_sha256": "5ec6c7f9be8cafc6da45f0534fd1599f209cfacb269f0716995d5816f5e08fe5",
+      "amendment_sha256": "b683f2cc6ae76c4cd80d4fb18831710281daf012cb291b255892ffabf798f105",
+      "pages_created": [
+        "journal/2026-09-19-workbench-full-state-gate.md"
+      ],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package.md",
+        "synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "index.md",
+        "log.md",
+        "hot.md"
+      ]
+    },
+    {
+      "type": "secondary_freeze_readiness",
+      "topic": "Secondary Multi-Domain Benchmark-Derived Adaptation",
+      "executed_at": "2026-09-20T16:42:00+07:00",
+      "review_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package.md",
+      "review_artifact_sha256": "e497935b1adae0afe004593fc2b64dc1c3b51816e0f9a3b04845a6611dfc0691",
+      "amendment_artifact": "synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility.md",
+      "amendment_sha256": "78b81ba84f1a0170b3a6e516f55da81128aeb44feb865deb29b281156cbc1359",
+      "journal_artifact": "journal/2026-09-20-secondary-resign-freeze-readiness.md",
+      "journal_sha256": "86057c39cb4e4fc7f4b696839b081428e6d878884b98f0598f92a664c4bfc9f2",
+      "status": "SEMANTIC_RE_SIGN_PASS_SCHEMA_MATRIX_GATE_PENDING",
+      "candidate_safety_cases": 8,
+      "candidate_domains": 6,
+      "wb295_restoration_status": "CONDITIONAL_NOT_IN_CURRENT_DENOMINATOR",
+      "result": "No exact P/S/I schema freeze, cohort restoration amendment, runnable matrix, adapter or secondary results",
+      "pages_created": [
+        "journal/2026-09-20-secondary-resign-freeze-readiness.md"
+      ],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package.md",
+        "synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "index.md",
+        "log.md",
+        "hot.md"
+      ]
+    },
+    {
+      "type": "secondary_schema_preflight",
+      "topic": "Secondary Multi-Domain Benchmark-Derived Adaptation",
+      "executed_at": "2026-09-20T17:10:43+07:00",
+      "status": "STATIC_SCHEMA_PREFLIGHT_PASS_REVIEW_RUNNABLE_PENDING",
+      "upstream": {
+        "provenanceguard_commit": "3ad7141db44096e1440718618bdb24fa46c003ff",
+        "workbench_historical_commit": "00670510c8a476acd247925cefb17fee88500737",
+        "frozen_case_manifest_sha256": "55e7d3fee0709f135949e9bb696a3a8e1ca37817ca36a59dcc0cabb4e16641a0"
+      },
+      "contract_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/secondary_schema_contract_v1.json",
+      "contract_sha256": "869cc7f301af43bc8905626115910f18fda7524414b12599ec4e3a9ec866225f",
+      "validator_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/validate_secondary_schema_contract.py",
+      "validator_sha256": "6858baac0362a4a4caca233f5e2de453993d69ca9f76a9c9246c13c257091fb7",
+      "schema_note": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate.md",
+      "schema_note_sha256": "5f5cf0b818d07d7187f41fba23462defcdb05003ce76b361679934176520fcf0",
+      "journal_artifact": "journal/2026-09-20-secondary-schema-preflight.md",
+      "journal_sha256": "9fb1e299e9a84e223cabb15a9b789aac16c5e9229db48c9ecb1b9456f364aa6e",
+      "source_hashes_verified": 6,
+      "clean_claims_verified": 12,
+      "native_shaped_mutations_verified": 11,
+      "candidate_matrix_rows": 704,
+      "candidate_matrix_pairs": 352,
+      "candidate_matrix_sha256": "c80169f1711779089ecdd8bc6961e3cefbbffc650838a6753ba1ed0db5f39771",
+      "current_safety_cases": 8,
+      "current_safety_domains": 6,
+      "excluded_case": "ASB-267",
+      "result": "No adapted executor, exact-schema reviewer sign-off, cohort restoration amendment, or secondary episodes",
+      "pages_created": [
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate.md",
+        "journal/2026-09-20-secondary-schema-preflight.md"
+      ],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package.md",
+        "synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility.md",
+        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "index.md",
+        "log.md",
+        "hot.md"
+      ]
+    },
+    {
+      "type": "review_provenance_correction",
+      "topic": "Secondary Multi-Domain Benchmark-Derived Adaptation",
+      "executed_at": "2026-09-20T17:37:41+07:00",
+      "source": "User clarification in conversation on 2026-09-20",
+      "status": "AI_ASSISTED_CROSS_REVIEW_NOT_HUMAN_SIGNOFF",
+      "researcher_count": 1,
+      "review_method": "another AI asked by the researcher; model and prompt unrecorded",
+      "human_review_performed": false,
+      "exact_schema_verdicts": {
+        "approve": 2,
+        "revise": 5
+      },
+      "original_protocol_deviation": "second reviewer/teammate sign-off was planned but did not occur; resolve prospectively before secondary run",
+      "journal_artifact": "journal/2026-09-20-ai-review-provenance-correction.md",
+      "journal_sha256": "f25c92f831d7003db27b54daa0836ac2be888f1c7b809091d03de5d5453fd185",
+      "pages_created": [
+        "journal/2026-09-20-ai-review-provenance-correction.md"
+      ],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package.md",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate.md",
+        "synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility.md",
+        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "journal/2026-09-19-secondary-semantic-review.md",
+        "journal/2026-09-20-secondary-resign-freeze-readiness.md",
+        "journal/2026-09-20-secondary-schema-preflight.md",
+        "index.md",
+        "hot.md",
+        "log.md"
+      ]
+    },
+    {
+      "type": "secondary_schema_contract_revision",
+      "topic": "Secondary Multi-Domain Benchmark-Derived Adaptation",
+      "executed_at": "2026-09-20T17:48:00+07:00",
+      "contract_version": "1.1-revised-candidate",
+      "status": "SPECIFICATION_REVISED_READY_FOR_AI_RECHECK_NOT_FROZEN",
+      "revised_blockers_addressed": [
+        "Native-to-P mapping: typed field_schema, envelope, row_order, cap, and cutoff added for all 12 cases",
+        "S/I adaptation: policy-visible vs oracle-only boundary enforced, existing_wrong_id and post_trace_stability moved to oracle claims",
+        "WB-295 historical CRM: pinned executor_binding with fixture path/hash, initial 200 rows, Kerry Moore target and Kerry Thompson distractor, and post-state assertions; retained as restoration candidate",
+        "WB-433 full-scope fairness: pinned shared_context with narrow query args, 2 Completed tasks, full-scope P reference, and 3 total calls fairness invariant",
+        "Oracle/action acceptance: structured typed actions clean_action_typed and fault_action_typed, typed_oracle with verification mechanisms and upstream code acceptance citations"
+      ],
+      "contract_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/secondary_schema_contract_v1.json",
+      "contract_sha256": "a503601f4084ff752eca3595113a6540adda73a374980fac042bdef60ef928a6",
+      "validator_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/validate_secondary_schema_contract.py",
+      "validator_sha256": "781f01eaa15fff6f24cfe0834057a4091dd0cc21bbc19616704a1e01fc52a1bc",
+      "schema_note": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate.md",
+      "schema_note_sha256": "49c368afac4ab9d2bb075713a1ffd843d837c06420323365e1b557d2cd411637",
+      "journal_artifact": "journal/2026-09-20-secondary-schema-contract-revision.md",
+      "journal_sha256": "a8beab82f46b21e28ba68573bc03d05567c37db5adf1b90ff6aab5ff43966c83",
+      "source_hashes_verified": 6,
+      "clean_claims_verified": 12,
+      "native_shaped_mutations_verified": 11,
+      "typed_field_schemas_verified": 12,
+      "typed_actions_and_oracles_verified": 12,
+      "wb295_executor_binding_verified": true,
+      "wb433_fairness_invariants_verified": true,
+      "candidate_matrix_rows": 704,
+      "candidate_matrix_pairs": 352,
+      "candidate_matrix_sha256": "9f45844dcf64ccca70e03719ec263b5ac877ef821a51bc96f0105f07dfc8a01f",
+      "current_safety_cases": 8,
+      "current_safety_domains": 6,
+      "restoration_candidate_safety_cases": 9,
+      "restoration_candidate_domains": 7,
+      "excluded_case": "ASB-267",
+      "secondary_episodes_run": 0,
+      "pages_created": [
+        "journal/2026-09-20-secondary-schema-contract-revision.md"
+      ],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/secondary_schema_contract_v1.json",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/validate_secondary_schema_contract.py",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate.md",
+        "index.md",
+        "log.md",
+        "hot.md"
+      ]
+    },
+    {
+      "type": "secondary_schema_v12_recheck",
+      "topic": "Secondary Multi-Domain Benchmark-Derived Adaptation",
+      "executed_at": "2026-09-24T11:52:03+07:00",
+      "contract_version": "1.2-recheck-candidate",
+      "status": "SPECIFICATION_RECHECK_PASS_READY_FOR_ADAPTER_RUNTIME_GATE_PENDING",
+      "impl_validator_verdict": "WARN",
+      "contract_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/secondary_schema_contract_v1.json",
+      "contract_sha256": "552ef2c689cae93494d68c9114482d1550f5bcfa4653e9bff8902d3b19cfed1a",
+      "validator_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/validate_secondary_schema_contract.py",
+      "validator_sha256": "42f11f0b91f736ecb8195713115ea011cb56357b1e936b5694556efb1d50e38c",
+      "schema_note": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate.md",
+      "schema_note_sha256": "b85b889db10353c23ff8c3ea34e43694bb3ff97ff815d1a55ff11b8603c8ab15",
+      "journal_artifact": "journal/2026-09-24-secondary-schema-v12-recheck.md",
+      "journal_sha256": "1ce1b5a9b6d20d5e0505bccb3d8c4b1586fa0a9d83224eaecf96dc478ac7e82a",
+      "source_hashes_verified": 6,
+      "clean_claims_verified": 12,
+      "native_shaped_mutations_verified": 11,
+      "typed_field_schemas_verified": 12,
+      "clean_action_trace_bindings_verified": 12,
+      "machine_oracle_specs_verified": 12,
+      "source_payload_contracts_verified": 12,
+      "wb295_executor_binding_verified": true,
+      "wb433_observation_hashes_verified": true,
+      "negative_tests_expected_fail": 4,
+      "negative_tests_unexpected_pass": 0,
+      "candidate_matrix_rows": 704,
+      "candidate_matrix_pairs": 352,
+      "candidate_matrix_sha256": "1b803d2e209bc82827989207f34cefde73630f60579a2ed0c701a87c8bfc2c59",
+      "current_safety_cases": 8,
+      "current_safety_domains": 6,
+      "secondary_episodes_run": 0,
+      "human_review_performed": false,
+      "next_gate": "deterministic adapter smoke-test slice for WB-000 and ASB-085",
+      "pages_created": [
+        "journal/2026-09-24-secondary-schema-v12-recheck.md"
+      ],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/secondary_schema_contract_v1.json",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/validate_secondary_schema_contract.py",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate.md",
+        "synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility.md",
+        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
+        "index.md",
+        "hot.md",
+        "log.md"
+      ]
+    },
+    {
+      "type": "secondary_adapter_smoke_test",
+      "topic": "Secondary Multi-Domain Benchmark-Derived Adaptation",
+      "executed_at": "2026-09-26T09:30:00+07:00",
+      "status": "ADAPTER_SMOKE_PASS_8_OF_8_CURRENT_SAFETY_CASES_FULL_RUNTIME_GATE_PENDING",
+      "contract_version": "1.2-recheck-candidate",
+      "contract_status": "SCHEMA_CANDIDATE_NOT_FROZEN",
+      "contract_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/secondary_schema_contract_v1.json",
+      "contract_sha256": "552ef2c689cae93494d68c9114482d1550f5bcfa4653e9bff8902d3b19cfed1a",
+      "validator_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/validate_secondary_schema_contract.py",
+      "validator_sha256": "42f11f0b91f736ecb8195713115ea011cb56357b1e936b5694556efb1d50e38c",
+      "runner_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/run_secondary_smoke_tests.py",
+      "runner_sha256": "55d44932246f33a0cc52f258451934fda6895d27fe7d7a302d959dff5133085e",
+      "result_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_secondary_smoke/summary.json",
+      "result_sha256": "7247ea20ad6ddc738cbeba77926164736f915db10460751c9232e1e2f451df72",
+      "provenanceguard_commit": "3ad7141db44096e1440718618bdb24fa46c003ff",
+      "workbench_historical_commit": "00670510c8a476acd247925cefb17fee88500737",
+      "cases": [
+        "WB-000",
+        "WB-110",
+        "WB-203",
+        "WB-433",
+        "ASB-085",
+        "ASB-087",
+        "ASB-090",
+        "ASB-977"
+      ],
+      "current_safety_cohort": {
+        "cases": 8,
+        "domains": 6
+      },
+      "smoke_scope": {
+        "seeds": [
+          1103
+        ],
+        "regimes": [
+          "clean",
+          "targeted_common_mode_0"
+        ],
+        "policies": [
+          "random_k",
+          "provenance_k"
+        ],
+        "episodes": 32,
+        "policy_pairs": 16
+      },
+      "checks": {
+        "p_s_i_materialization": true,
+        "metadata_information_boundary": true,
+        "fresh_state_typed_action_execution": true,
+        "structured_oracle_assertions": true,
+        "matched_pair_invariants": true,
+        "rerun_byte_identical": true
+      },
+      "human_review_performed": false,
+      "secondary_effect_estimate": false,
+      "not_external_validation": true,
+      "next_gate": "record prospective protocol amendment and row-level runtime plan before runtime matrix/freeze decision",
+      "pages_created": [
+        "journal/2026-09-26-secondary-adapter-smoke-tests.md"
+      ],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/README.md",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "index.md",
+        "hot.md",
+        "log.md"
+      ]
+    },
+    {
+      "type": "secondary_exploratory_runtime_matrix",
+      "topic": "Secondary Multi-Domain Benchmark-Derived Adaptation",
+      "executed_at": "2026-09-28T10:20:00+07:00",
+      "status": "EXPLORATORY_INTERNAL_MATRIX_COMPLETE_DEGENERATE_CI",
+      "contract_version": "1.2-recheck-candidate",
+      "contract_status": "SCHEMA_CANDIDATE_NOT_FROZEN",
+      "contract_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/secondary_schema_contract_v1.json",
+      "contract_sha256": "552ef2c689cae93494d68c9114482d1550f5bcfa4653e9bff8902d3b19cfed1a",
+      "matrix_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/validate_secondary_schema_contract.py",
+      "matrix_rows": 704,
+      "matched_policy_pairs": 352,
+      "matrix_sha256": "1b803d2e209bc82827989207f34cefde73630f60579a2ed0c701a87c8bfc2c59",
+      "runner_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/run_secondary_matrix.py",
+      "runner_sha256": "93381549e6d9b4dae7d2e96f55af5e9c0e4fe27d6020df6aca48a8822cb11a79",
+      "analyzer_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_secondary_matrix.py",
+      "analyzer_sha256": "56815ec2f67db0b6874bd2935c862c032debbef67ec403ece27ca13cc397cf22",
+      "result_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_secondary_matrix/episodes.jsonl",
+      "result_sha256": "d07e929b9c932866046d28ee8f77476e800f5a80f4a41b363036f90e815b94f7",
+      "analysis_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_secondary_matrix/analysis-summary.json",
+      "analysis_sha256": "1a7ad25e78eb8d67fd8ca683d7283f63b545c32c6d3ef267648e2505ceda0bdb",
+      "run_summary_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_secondary_matrix/run-summary.json",
+      "run_summary_sha256": "b70428b38d6868ffc2c4379c2d7263ea3297091cdb6bb0a11e1e3a1bdeed302e",
+      "current_safety_cohort": {
+        "cases": 8,
+        "domains": 6
+      },
+      "diagnostic_cases": {
+        "wb295_restoration_candidate": 1,
+        "utility_only": 2,
+        "invalid_not_run": [
+          "ASB-267"
+        ]
+      },
+      "targeted_common_mode_25": {
+        "random_unsafe": "40/64",
+        "provenance_unsafe": "16/64",
+        "mean_case_difference": -0.375,
+        "case_cluster_bootstrap_95_ci": [
+          -0.375,
+          -0.375
+        ],
+        "identical_case_differences": true,
+        "utility_false_blocks": {
+          "random_k": "6/16",
+          "provenance_k": "12/16"
+        }
+      },
+      "reproducibility": {
+        "full_rerun_byte_identical": true,
+        "api_calls": 0,
+        "gpu_required": false
+      },
+      "human_review_performed": false,
+      "external_validation": false,
+      "protocol_deviation": "AI-assisted case cross-review only; exploratory-only amendment, not equivalent to human/peer review",
+      "pages_created": [
+        "synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix.md",
+        "journal/2026-09-28-secondary-exploratory-matrix.md",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/run_secondary_matrix.py",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_secondary_matrix.py",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_secondary_matrix/episodes.jsonl",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_secondary_matrix/run-summary.json",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_secondary_matrix/analysis-summary.json"
+      ],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/README.md",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "index.md",
+        "hot.md",
+        "log.md"
+      ]
+    },
+    {
+      "type": "supervisor_review_briefing",
+      "topic": "Failure-Domain-Aware Verification — RQ and Methodology Review",
+      "created_at": "2026-09-28T11:08:31+07:00",
+      "scope": "RQ, methodology, contribution framing, and validation sufficiency; detailed case/oracle review excluded",
+      "current_evidence": {
+        "main_controlled_episodes": 1350,
+        "robustness_episodes": 3750,
+        "secondary_exploratory_episodes": 704,
+        "live_agent_gate_episodes": 36
+      },
+      "hardware": {
+        "gpu": "RTX 4060 8GB VRAM",
+        "system_ram": "16GB"
+      },
+      "deadline": "week 8; week 9 buffer if approved",
+      "result": "Supervisor briefing created; no new experiment run",
+      "pages_created": [
+        "projects/reliable-tool-using-ai-agents/paper/supervisor-methodology-rq-briefing.md"
+      ],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "index.md",
+        "hot.md",
+        "log.md",
+        ".manifest.json"
+      ]
+    },
+    {
+      "type": "secondary_varied_schedule_replication",
+      "topic": "Secondary benchmark-derived provenance verification — varied schedule",
+      "executed_at": "2026-09-28T14:27:00+07:00",
+      "status": "EXPLORATORY_INTERNAL_REPLICATION_COMPLETE",
+      "contract_version": "1.2-recheck-candidate",
+      "contract_status": "SCHEMA_CANDIDATE_NOT_FROZEN; no human case review",
+      "contract_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/secondary_schema_contract_v1.json",
+      "contract_sha256": "552ef2c689cae93494d68c9114482d1550f5bcfa4654e3b9bff8902d3b19cfed1a",
+      "schedule_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/secondary_varied_schedule_v1/schedule.jsonl",
+      "schedule_sha256": "f630cb0a34276c23462d838eb23113ea2e4d6c4270958b292db25d26ce725469",
+      "schedule_manifest_sha256": "0da3b084a0e86593ecd1abde4db7422aaf4336f3b353a63cfe014f1d7e949d52",
+      "generator_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/generate_secondary_varied_schedule.py",
+      "generator_sha256": "f8fe8d1d791406b2c5037c74d890bf2efdcb9e09b366435e467c355c786e64e3",
+      "runner_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/run_secondary_varied.py",
+      "runner_sha256": "161e85d8718a6bf5d6e491f7f5d8573113b01132f704f6d67b05130d17ac9a09",
+      "analyzer_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_secondary_varied.py",
+      "analyzer_sha256": "9f5abaad426b4949057600aa8354ac240e9dc7289f64619eb353abd0b7cca7e0",
+      "result_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_secondary_varied/episodes.jsonl",
+      "result_sha256": "40a419491011308dcce04db477c4a98dbda2e543d2db531b0a4fb07c08b43c35",
+      "analysis_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_secondary_varied/analysis-summary.json",
+      "analysis_sha256": "ba8bda32d76c79e0aaf6cb5fe0195899d871f4ad4449ddc71c7f38a50600dd4b",
+      "run_summary_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_secondary_varied/run-summary.json",
+      "run_summary_sha256": "86bf1899c910521961816db9f518fef31a5f5bac5029d24698411730c2365ec7",
+      "upstream": {
+        "provenanceguard_commit": "3ad7141db44096e1440718618bdb24fa46c003ff",
+        "workbench_historical_commit": "00670510c8a476acd247925cefb17fee88500737",
+        "source_hashes_verified": 6
+      },
+      "design": {
+        "runnable_cases": 11,
+        "seeds_per_case": 12,
+        "regimes": 4,
+        "policies": 2,
+        "episodes": 1056,
+        "matched_pairs": 528,
+        "safety_cases": 8,
+        "utility_only_cases": [
+          "WB-403",
+          "ASB-1572"
+        ],
+        "restoration_diagnostic": "WB-295",
+        "invalid_not_run": [
+          "ASB-267"
+        ]
+      },
+      "targeted_common_mode_25": {
+        "random_unsafe": "59/96",
+        "provenance_unsafe": "24/96",
+        "mean_case_difference": -0.3645833333333333,
+        "median_case_difference": -0.375,
+        "improved_cases": 8,
+        "leave_one_case_out_mean_range": [
+          -0.38095238095238093,
+          -0.35714285714285715
+        ],
+        "case_cluster_bootstrap_95_ci": [
+          -0.3958333333333333,
+          -0.3229166666666667
+        ],
+        "utility_false_blocks": {
+          "random_k": "9/24",
+          "provenance_k": "18/24"
+        },
+        "utility_task_success": {
+          "random_k": "15/24",
+          "provenance_k": "6/24"
+        },
+        "safety_task_success": {
+          "random_k": "0/96",
+          "provenance_k": "0/96"
+        }
+      },
+      "reproducibility": {
+        "rerun_raw_sha256": "40a419491011308dcce04db477c4a98dbda2e543d2db531b0a4fb07c08b43c35",
+        "byte_identical": true,
+        "old_matrix_sha256_before_after": "d07e929b9c932866046d28ee8f77476e800f5a80f4a41b363036f90e815b94f7",
+        "api_calls": 0,
+        "gpu_required": false,
+        "execution_errors": 0
+      },
+      "interpretation": "Schedule sensitivity result only; eight cases are purposive, P/S/I topology and faults are project-defined, and results are not confirmatory, native benchmark reproduction, or external validation.",
+      "pages_created": [
+        "journal/2026-09-28-secondary-varied-schedule-replication.md",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/secondary_varied_schedule_v1/schedule.jsonl",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/secondary_varied_schedule_v1/manifest.json",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/generate_secondary_varied_schedule.py",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/run_secondary_varied.py",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_secondary_varied.py",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_secondary_varied/episodes.jsonl",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_secondary_varied/run-summary.json",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_secondary_varied/analysis-summary.json",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_secondary_varied/rerun/episodes.jsonl",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_secondary_varied/rerun/run-summary.json"
+      ],
+      "pages_updated": [
+        "synthesis/Protocol: Secondary Varied-Schedule Replication.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
+        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/README.md",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate.md",
+        "index.md",
+        "hot.md",
+        "log.md",
+        ".manifest.json"
+      ]
     }
-  ]
+  ],
+  "stats": {
+    "total_sources_ingested": 8,
+    "total_pages": 110
+  },
+  "sources": {
+    "/home/kiet/Downloads/fpt-document/prn232/research/projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_ins30_rtx4060_20260930/raw.jsonl": {
+      "content_hash": "59921cc274a2c27e91d7aed43dbdf6d9903a4d94ecc409006b2e72df1b2155d7",
+      "last_ingested": "2026-10-02T01:44:04+07:00",
+      "source_type": "data",
+      "project": "reliable-tool-using-ai-agents",
+      "pages_produced": [
+        "journal/2026-09-30-rtx4060-live-agent-diagnostic.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md"
+      ]
+    },
+    "/home/kiet/Downloads/fpt-document/prn232/research/projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_ins30_rtx4060_20260930/summary.json": {
+      "content_hash": "6cb5d9d3dfb3272ab23d037c38ed334c401878e98b9fc8161e857af631d43938",
+      "last_ingested": "2026-10-02T01:44:04+07:00",
+      "source_type": "data",
+      "project": "reliable-tool-using-ai-agents",
+      "pages_produced": [
+        "journal/2026-09-30-rtx4060-live-agent-diagnostic.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md"
+      ]
+    },
+    "/home/kiet/Downloads/fpt-document/prn232/research/projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_ins30_rtx4060_20260930/summary.txt": {
+      "content_hash": "4db0ef581d76126a883e79aeba95ea535d8130eb950a2661bf08eceeeaec7691",
+      "last_ingested": "2026-10-02T01:44:04+07:00",
+      "source_type": "data",
+      "project": "reliable-tool-using-ai-agents",
+      "pages_produced": [
+        "journal/2026-09-30-rtx4060-live-agent-diagnostic.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md"
+      ]
+    },
+    "/home/kiet/Downloads/fpt-document/prn232/research/projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_ins30_rtx4060_20260930/validity_audit.json": {
+      "content_hash": "17f804415f0f00a95797785eff42c2d3177919068dff80658e094554670b89ef",
+      "last_ingested": "2026-10-02T01:44:04+07:00",
+      "source_type": "data",
+      "project": "reliable-tool-using-ai-agents",
+      "pages_produced": [
+        "journal/2026-09-30-rtx4060-live-agent-diagnostic.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md"
+      ]
+    },
+    "/home/kiet/Downloads/fpt-document/prn232/research/projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_ins30_rtx4060_20260930/validity_audit.txt": {
+      "content_hash": "23f08517a092b81ea6a41aae5ab10ce93536e6f9922767c47a4a95b9fa6253ce",
+      "last_ingested": "2026-10-02T01:44:04+07:00",
+      "source_type": "data",
+      "project": "reliable-tool-using-ai-agents",
+      "pages_produced": [
+        "journal/2026-09-30-rtx4060-live-agent-diagnostic.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md"
+      ]
+    },
+    "/home/kiet/Downloads/fpt-document/prn232/research/projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_ins32_rtx4060_20261002/raw.jsonl": {
+      "content_hash": "a39fcf684661d339f2ca457f8be9210b73918c37f3b6364111bad344afda1abd",
+      "last_ingested": "2026-10-01T18:16:02.109713+00:00",
+      "source_type": "data",
+      "project": "reliable-tool-using-ai-agents",
+      "pages_produced": [
+        "journal/2026-10-02-ins32-rtx4060-validity-audit.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic.md"
+      ]
+    },
+    "/home/kiet/Downloads/fpt-document/prn232/research/projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_ins32_rtx4060_20261002/summary.json": {
+      "content_hash": "2fa7b630c4439870e631e2d8ec632716587e2a13dd0473d2deaa1616aa1074c6",
+      "last_ingested": "2026-10-01T18:16:02.257339+00:00",
+      "source_type": "data",
+      "project": "reliable-tool-using-ai-agents",
+      "pages_produced": [
+        "journal/2026-10-02-ins32-rtx4060-validity-audit.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic.md"
+      ]
+    },
+    "/home/kiet/Downloads/fpt-document/prn232/research/projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_ins32_rtx4060_20261002/validity_audit.json": {
+      "content_hash": "ee17e08563db332588606c26785f814c816b4b67dd5852568685670f806b326a",
+      "last_ingested": "2026-10-01T18:16:02.377982+00:00",
+      "source_type": "data",
+      "project": "reliable-tool-using-ai-agents",
+      "pages_produced": [
+        "journal/2026-10-02-ins32-rtx4060-validity-audit.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic.md"
+      ]
+    }
+  }
 }

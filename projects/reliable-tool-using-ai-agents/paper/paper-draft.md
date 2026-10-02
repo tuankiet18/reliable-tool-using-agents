@@ -8,10 +8,19 @@ sources:
   - "journal/2026-09-15-action-boundary-main-study.md"
   - "journal/2026-09-15-imperfect-provenance-robustness-gate.md"
   - "journal/2026-09-15-external-validity-artifact-gate.md"
+  - "journal/2026-09-18-benchmark-derived-case-audit.md"
+  - "journal/2026-09-20-secondary-schema-preflight.md"
+  - "journal/2026-09-20-ai-review-provenance-correction.md"
+  - "journal/2026-09-24-secondary-schema-v12-recheck.md"
+  - "journal/2026-09-26-secondary-adapter-smoke-tests.md"
+  - "synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix.md"
+  - "journal/2026-09-28-secondary-exploratory-matrix.md"
+  - "synthesis/Protocol: Secondary Varied-Schedule Replication.md"
+  - "journal/2026-09-28-secondary-varied-schedule-replication.md"
   - "https://arxiv.org/abs/2603.02345"
   - "https://proceedings.mlr.press/v267/kim25e.html"
 created: 2026-09-15T17:15:00+07:00
-updated: 2026-09-15T17:15:00+07:00
+updated: 2026-09-28T14:27:00+07:00
 summary: >-
   Living paper draft cho controlled study về mandatory action-boundary verification chọn corroborator độc lập theo failure domain dưới correlated silent tool failures.
 lifecycle: draft
@@ -249,6 +258,14 @@ Overall robustness gate `FAIL` vì cả ba required conditions phải pass. Miss
 
 EnvTrustBench không public executable cases. ProvenanceGuard replication artifact setup thành công, load được 182 Agent-SafetyBench và 388 WorkBench traces, đồng thời chạy được ba analysis notebooks offline. Tuy nhiên các datasets không có failure-domain topology hoặc redundant corroborators. Hiện chưa có direct external validation.
 
+Follow-up case audit đã đóng băng 12 read-before-write cases từ hai artifacts, gồm sáu WorkBench và sáu Agent-SafetyBench cases trên 10 atomic application domains. Các case giữ nguyên user goal, original action boundary và có programmatic oracle, nhưng same-domain replica, independent corroborator và fault topology đều phải được project bổ sung. Vì vậy audit chỉ pass feasibility cho một **benchmark-derived secondary adaptation**; nó chưa tạo thêm experimental evidence và không thay đổi kết luận “chưa có direct external validation”.
+
+AI-assisted semantic cross-review và static schema preflight sau audit đã thu hẹp kế hoạch: tám safety cases hiện hành trên sáu domains, `WB-295` là restoration diagnostic ngoài denominator, `ASB-267` là `INVALID_NOT_RUN`. Exact-schema AI cross-review trả `2 APPROVE / 5 REVISE`, **không phải human sign-off**. Specification re-check v1.2 pass typed P/S/I materialization, trace-bound actions, structured oracle assertions, `WB-433` hashes và negative tests; smoke test 32 episodes chỉ xác nhận adapter mechanics. Protocol amendment đã công khai deviation và giới hạn mọi secondary runtime result thành exploratory/internal. Ma trận 704-row đầu tiên có unsafe `40/64` (`random_k`) vs `16/64` (`provenance_k`), nhưng cùng `−0.375` ở cả tám case và CI suy biến. Đây là kết quả lịch sử, được giữ nguyên để truy vết chứ không dùng thay cho varied-schedule analysis [[journal/2026-09-28-secondary-exploratory-matrix]].
+
+### 5.6 Secondary exploratory runtime matrix — không confirmatory
+
+Một replication exploratory mới giữ nguyên cohort/contract nhưng thay lịch chọn source và fault theo `case_id × seed × purpose`. Lịch 11 case × 12 seed × 4 regime × 2 policy có 1.056 rows/528 matched pairs và được khóa trước runtime (schedule SHA-256 `f630cb0a34276c23462d838eb23113ea2e4d6c4270958b292db25d26ce725469`). Ở `targeted_common_mode_25`, unsafe accepted actions là `59/96` (`random_k`) so với `24/96` (`provenance_k`). Mean paired rate difference trên tám safety cases là `−0.3646`, median `−0.375`, advantage mô tả ở `8/8` cases; từng case nằm trong khoảng `−0.250` đến `−0.417`. Case-cluster bootstrap percentile 95% CI là `[-0.396,-0.323]`, nhưng chỉ resample tám cases được chọn có chủ đích; hai domains có case lặp nên bootstrap theo case chưa mô hình hóa hết phụ thuộc trong domain. Đây không phải population-level inference. Utility-only false blocks là `9/24` (`random_k`) và `18/24` (`provenance_k`), trong khi utility task success là `15/24` và `6/24`. Clean safety/utility success là 100% cho cả hai. Ở targeted common-mode regimes, safety task success là `0/96` cho cả hai: gate block/allow nhưng không sửa proposal. Raw output được chạy hai lần byte-identical; ma trận cũ vẫn không đổi. Kết quả cho thấy schedule overlap từng phần giải thích khác biệt giữa cases, nhưng task cohort, fault topology, policy và oracle vẫn do project định nghĩa; contract còn candidate và không có human review. Vì vậy đây là sensitivity result nội bộ, không phải native benchmark reproduction, confirmatory result hay external validation [[journal/2026-09-28-secondary-varied-schedule-replication]].
+
 ## 6. Discussion
 
 ### 6.1 Trả lời RQ trong phạm vi controlled study
@@ -285,7 +302,7 @@ Matched `K=2`, paired fault maps và deterministic oracle giảm confounding. Tu
 
 ### 7.3 External validity
 
-Main tasks cùng xuất phát từ một synthetic support workflow. Full live-agent gate fail experimental validity. EnvTrustBench chưa executable, còn Agent-SafetyBench/WorkBench không có native correlated-failure design. Kết quả chưa generalize sang production agents, models hoặc tools.
+Main tasks cùng xuất phát từ một synthetic support workflow. Full live-agent gate fail experimental validity. EnvTrustBench chưa executable, còn Agent-SafetyBench/WorkBench không có native correlated-failure design. Audit 12 cases làm tăng semantic breadth khả dụng cho experiment tiếp theo, nhưng source topology vẫn synthetic. Kết quả chưa generalize sang production agents, models hoặc tools.
 
 ### 7.4 Metadata validity
 
@@ -294,6 +311,10 @@ Main claim giả định accurate failure-domain metadata. Robustness experiment
 ### 7.5 Statistical conclusion validity
 
 Bootstrap cluster theo 30 tasks, không theo 150 episodes độc lập, để tránh pseudo-replication từ five seeds. Tuy vậy 30 tasks và six strata vẫn nhỏ; CI không phải proof of practical generalization hoặc novelty.
+
+### 7.6 Secondary case-review provenance and protocol deviation
+
+Hai vòng secondary case review do một AI khác hỗ trợ theo yêu cầu của một researcher duy nhất; **không có independent human reviewer hoặc peer review**. Các verdict có trích dẫn code/trace giúp phát hiện lỗi thiết kế, nhưng không thể tự xác nhận semantic correctness. Amendment [[synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix]] công khai deviation và hạ run xuống exploratory/internal; amendment không thay thế human review. Không dùng kết quả này như confirmatory hoặc external-validation evidence. Cần human audit độc lập trước khi đưa claim mạnh hơn. [[journal/2026-09-20-ai-review-provenance-correction]]
 
 ## 8. Reproducibility
 
@@ -329,17 +350,17 @@ Controlled evidence cho thấy gọi hai tool khác tên không bảo đảm hai
 
 ## Writing status
 
-| Section | Status | Evidence gate còn thiếu |
-|---|---|---|
-| Abstract | Provisional | external-validity decision và final claim audit |
-| Introduction | Draft complete | supervisor feedback |
-| Related Work | Draft complete | formal citation-chain audit |
-| Problem Formulation | Draft complete | notation cleanup |
-| Methodology | Draft complete | independent reproduction audit |
-| Results | Current results inserted | final figures/tables |
-| Discussion | Draft | external task-domain evidence |
-| Threats to Validity | Draft complete | supervisor review |
-| Conclusion | Provisional | final RQ decision |
+| Section             | Status                   | Evidence gate còn thiếu                         |
+| ------------------- | ------------------------ | ----------------------------------------------- |
+| Abstract            | Provisional              | external-validity decision và final claim audit |
+| Introduction        | Draft complete           | supervisor feedback                             |
+| Related Work        | Draft complete           | formal citation-chain audit                     |
+| Problem Formulation | Draft complete           | notation cleanup                                |
+| Methodology         | Draft complete           | independent reproduction audit                  |
+| Results             | Current results inserted | final figures/tables                            |
+| Discussion          | Draft                    | Human case audit, supervisor review, independent task/topology replication |
+| Threats to Validity | Draft complete           | supervisor review                               |
+| Conclusion          | Provisional              | final RQ decision                               |
 
 ## Related vault notes
 
@@ -347,4 +368,3 @@ Controlled evidence cho thấy gọi hai tool khác tên không bảo đảm hai
 - [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
 - [[synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures]]
 - [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]]
-

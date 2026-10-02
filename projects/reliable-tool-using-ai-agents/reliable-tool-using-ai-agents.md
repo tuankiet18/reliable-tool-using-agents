@@ -3,7 +3,22 @@ title: >-
   Reliable Tool-Using AI Agents — Undergraduate Research Project
 category: project
 tags: [ai-agents, reliability, tool-use, software-engineering, research]
-sources: []
+sources:
+  - "projects/reliable-tool-using-ai-agents/paper/supervisor-methodology-rq-briefing.md"
+  - "journal/2026-09-20-ai-review-provenance-correction.md"
+  - "journal/2026-09-24-secondary-schema-v12-recheck.md"
+  - "journal/2026-09-26-secondary-adapter-smoke-tests.md"
+  - "synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix.md"
+  - "journal/2026-09-28-secondary-exploratory-matrix.md"
+  - "synthesis/Protocol: Secondary Varied-Schedule Replication.md"
+  - "journal/2026-09-28-secondary-varied-schedule-replication.md"
+  - "journal/2026-09-30-rtx4060-live-agent-diagnostic.md"
+  - "journal/2026-09-30-live-agent-safety-preflight.md"
+  - "synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic.md"
+  - "journal/2026-10-01-live-agent-diagnostic-instrumentation.md"
+  - "journal/2026-10-02-ins32-rtx4060-validity-audit.md"
+  - "synthesis/protocol-prospective-live-agent-opportunity-gate.md"
+  - "journal/2026-10-02-live-agent-opportunity-preflight.md"
 summary: >-
   Dự án 12 tuần, dựa trên bằng chứng, nghiên cứu phát hiện, chẩn đoán, phục hồi, xác minh và kiểm soát đặc quyền tối thiểu cho AI agent dùng tool.
 provenance:
@@ -15,7 +30,7 @@ lifecycle: draft
 lifecycle_changed: 2026-09-09
 tier: core
 created: 2026-09-09T17:16:31Z
-updated: 2026-09-15T17:15:00+07:00
+updated: 2026-10-02T01:59:00+07:00
 ---
 
 # AI Agent dùng tool đáng tin cậy
@@ -62,6 +77,20 @@ Adversarial prior-art gate cho metadata/source selection đã hoàn tất. TEA-C
 
 External-validity artifact gate tiếp theo cho kết quả âm quan trọng. EnvTrustBench không public executable cases/oracles/runners nên không thể dùng để chạy external experiment hiện tại. ProvenanceGuard artifact setup và offline notebooks pass, cung cấp 182 Agent-SafetyBench cùng 388 WorkBench traces, nhưng không có failure domains hoặc redundant evidence. Nó chỉ phù hợp làm nguồn task semantics cho benchmark-derived secondary pilot. Xem [[journal/2026-09-15-external-validity-artifact-gate]].
 
+Case-audit gate sau đó đã `CONDITIONAL PASS`: đóng băng `12` cases từ Agent-SafetyBench/WorkBench trên `10` atomic domains, với decisive claim, action boundary, canonical truth và programmatic oracle. Vì independent corroborators và failure topology vẫn do project bổ sung, đây chỉ là benchmark-derived adaptation nhằm kiểm tra semantic breadth, chưa phải external validation. Xem [[journal/2026-09-18-benchmark-derived-case-audit]].
+
+Secondary protocol gốc được freeze trước adapter, nhưng quy trình review dự kiến đã không diễn ra như kế hoạch: project chỉ có một researcher và các verdict là AI-assisted, không có human sign-off. Case audit hạ `ASB-267` khỏi ma trận safety, giữ `WB-295` ngoài denominator, sửa mutation `ASB-977`, và khóa tám safety cases/sáu domains. Static v1.2 checks cùng smoke test 32 episodes pass; chi tiết chronology nằm tại [[synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility]], [[journal/2026-09-24-secondary-schema-v12-recheck]] và [[journal/2026-09-26-secondary-adapter-smoke-tests]].
+
+Ngày 2026-09-28, varied-schedule replication tiếp tục trong cùng nhãn **exploratory internal adaptation**. 1.056 episodes/528 pairs chạy hai lần byte-identical, với schedule theo case được hash trước runtime. Tại `targeted_common_mode_25`, unsafe accepted actions là `59/96` (`random_k`) so với `24/96` (`provenance_k`); mean case difference `−0.3646`, advantage mô tả ở `8/8` safety cases và bootstrap CI theo case `[-0.396,-0.323]`. Các differences không còn đồng nhất như ở ma trận đầu, cho thấy overlap giữa lịch selector/leakage ảnh hưởng mức effect trong thiết kế này. Utility false blocks là `9/24` so với `18/24`; safety task success dưới targeted faults vẫn là 0 vì gate không tự sửa action. Đây không phải confirmatory evidence, native benchmark reproduction hay external validation: cohort purposive, source topology/fault model project-defined, schema còn candidate và chưa có human review. Xem [[journal/2026-09-28-secondary-varied-schedule-replication]] và [[synthesis/Protocol: Secondary Varied-Schedule Replication]].
+
+RTX 4060/Qwen2.5 7B đã chạy được sáu episode diagnostic, nhưng case `INS-00030` chỉ thử false denial và trace lộ refund attempt lặp cùng escalation sau refund thành công; **chưa có live-agent safety validation**. Preflight offline tiếp theo xác nhận `INS-00032` là false-positive safety case: canonical phải escalation, còn targeted fault báo đủ điều kiện refund. Seed `809` tạo khác biệt về failure domain giữa selectors nhưng được chọn hậu nghiệm, nên diagnostic dự kiến vẫn `EXPLORATORY`; tại thời điểm preflight đó chưa có episode Qwen2.5 7B mới. Xem [[journal/2026-09-30-rtx4060-live-agent-diagnostic]], [[journal/2026-09-30-live-agent-safety-preflight]] và [[synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic]].
+
+Ngày 2026-10-01, runner/analyzer cho diagnostic tám cell đã được instrument: chọn exact task/policies, CLI dry-run không gọi model, và các process metrics đọc trực tiếp raw trajectory. Unit tests `58/58` pass; re-audit sáu RTX rows cũ khớp kiểm tra thủ công. Dry-run trên upstream `trajectory-judge` commit pinned tại Linux in đúng tám cells và expected action `escalate`; **tại thời điểm đó** code chưa sync sang Windows. Xem [[journal/2026-10-01-live-agent-diagnostic-instrumentation]].
+
+Ngày 2026-10-02, branch Windows-safe `codex/rtx4060-ins32-diagnostic@e265c358df3fd20a274f0ce3f6b53bc774694ed1` đã được chạy trên RTX 4060 với Qwen2.5 7B: tám cells/65 model calls, `12/12` refund attempts đi qua boundary, `8/8` final states đúng và `0/8` unsafe accepted refunds. Nhưng **cả 12 requests đều là `0 EUR` và tất cả tám trajectories đã escalation trước refund attempt**. Seed `809` random không phát hiện conflict nhưng vẫn bị chặn do amount mismatch. Vì vậy technical gate pass, **live-agent policy-effect validity fail**; không scale lên 72 episodes hoặc nâng claim paper. Artifact được lưu riêng theo hash tại [[journal/2026-10-02-ins32-rtx4060-validity-audit]].
+
+Sau audit, đã khóa [[synthesis/protocol-prospective-live-agent-opportunity-gate]] cho diagnostic tương lai: refund request phải có amount dương khớp primary sai **trước** successful escalation, và hai policies phải có matched proposal mới được so sánh. Static preflight chọn bốn safety tasks `INS-00032`–`INS-00035` cùng seed topology `1111` (16 cells); code mới ghi boundary evidence, `62/62` tests local pass. **Chưa chạy** 16 cells trên RTX, chưa có effect evidence mới; nếu không có matched unsafe-capable pair thì dừng live-agent scaling. Xem [[journal/2026-10-02-live-agent-opportunity-preflight]].
+
 Living paper version `0.1` đã được mở tại [[projects/reliable-tool-using-ai-agents/paper/paper-draft]]. Draft hiện có Introduction, Related Work, Problem Formulation, Methodology, Results, Discussion, Threats to Validity và working references. [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]] giữ ranh giới giữa supported, preliminary, inferred và rejected claims; mọi result mới phải cập nhật ledger trước manuscript.
 
 ## Khái niệm chính
@@ -84,6 +113,16 @@ Living paper version `0.1` đã được mở tại [[projects/reliable-tool-usi
 - [[synthesis/Research: Correlated Silent Tool Failures and Verification]] — adversarial search cho semantic verification và common-mode fault.
 - [[synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures]] — gap hẹp `SURVIVES WITH REFINEMENT — PRELIMINARY`.
 - [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]] — novelty boundary sau adversarial search.
+- [[synthesis/Protocol: Secondary Multi-Domain Benchmark-Derived Adaptation]] — protocol gốc, giữ nguyên lịch sử.
+- [[synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility]] — eligibility và giới hạn safety denominator.
+- [[synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix]] — deviation và scope đã khóa trước full run.
+- [[synthesis/Protocol: Secondary Varied-Schedule Replication]] — varied schedule prospective; kết quả exploratory đã chạy.
+- [[journal/2026-09-19-workbench-full-state-gate]] — original WorkBench fixture/code xác lập WB-110/433 truth và WB-295 distractor; adapter/schema còn mở.
+- [[journal/2026-09-20-secondary-resign-freeze-readiness]] — re-sign semantic pass; schema/matrix gate pending và WB-295 chưa vào cohort.
+- [[projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate]] — contract v1.2 và kết quả full exploratory matrix.
+- [[journal/2026-09-20-secondary-schema-preflight]] — hashes, claims, mutations, exclusions và giới hạn của preflight.
+- [[journal/2026-09-28-secondary-exploratory-matrix]] — ma trận 704 episodes ban đầu, degenerate CI và limitations.
+- [[journal/2026-09-28-secondary-varied-schedule-replication]] — 1.056 episodes, phân tích theo case và schedule sensitivity.
 
 ## Nhật ký nghiên cứu
 
@@ -99,8 +138,17 @@ Living paper version `0.1` đã được mở tại [[projects/reliable-tool-usi
 - [[journal/2026-09-15-imperfect-provenance-robustness-gate]]
 - [[journal/2026-09-15-adversarial-prior-art-provenance-metadata]]
 - [[journal/2026-09-15-external-validity-artifact-gate]]
+- [[journal/2026-09-18-benchmark-derived-case-audit]]
+- [[journal/2026-09-19-secondary-semantic-review]]
+- [[journal/2026-09-19-workbench-full-state-gate]]
+- [[journal/2026-09-20-secondary-resign-freeze-readiness]]
+- [[journal/2026-09-20-secondary-schema-preflight]]
+- [[journal/2026-10-02-ins32-rtx4060-validity-audit]] — diagnostic RTX 4060 đủ tám cell nhưng chưa có unsafe-capable live attempt.
+- [[synthesis/protocol-prospective-live-agent-opportunity-gate]] — tiêu chí và 16-cell exploratory matrix cho diagnostic tương lai.
+- [[journal/2026-10-02-live-agent-opportunity-preflight]] — kiểm tra offline, code/test status và giới hạn claim trước RTX run.
 
 ## Living paper
 
 - [[projects/reliable-tool-using-ai-agents/paper/paper-draft]] — manuscript version 0.1, Vietnamese reasoning draft.
 - [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]] — claim, evidence, scope và prohibited wording.
+- [[projects/reliable-tool-using-ai-agents/paper/supervisor-methodology-rq-briefing]] — briefing ngắn để giảng viên review RQ, methodology, contribution và validation plan; không yêu cầu review case/oracle chi tiết.

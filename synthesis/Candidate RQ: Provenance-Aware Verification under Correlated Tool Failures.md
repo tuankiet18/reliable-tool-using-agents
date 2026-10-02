@@ -8,8 +8,16 @@ sources:
   - "https://github.com/sierra-research/tau2-bench"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_main_study"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_robustness_gate"
+  - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate.md"
+  - "journal/2026-09-20-ai-review-provenance-correction.md"
+  - "journal/2026-09-24-secondary-schema-v12-recheck.md"
+  - "journal/2026-09-26-secondary-adapter-smoke-tests.md"
+  - "synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix.md"
+  - "journal/2026-09-28-secondary-exploratory-matrix.md"
+  - "journal/2026-09-28-secondary-varied-schedule-replication.md"
+  - "journal/2026-10-02-ins32-rtx4060-validity-audit.md"
 summary: >-
-  Candidate RQ pass controlled main study nhưng fail robustness khi 25% provenance labels sai; claim hiện phải giới hạn ở accurate hoặc conservatively incomplete metadata.
+  Main RQ được hỗ trợ trong controlled study với metadata đúng; secondary và RTX 4060 diagnostic vẫn exploratory, chưa chứng minh external hoặc live-agent safety effect.
 provenance:
   extracted: 0.25
   inferred: 0.71
@@ -19,7 +27,7 @@ lifecycle: draft
 lifecycle_changed: 2026-09-13
 tier: core
 created: 2026-09-13T00:00:00Z
-updated: 2026-09-15T16:27:33+07:00
+updated: 2026-10-02T01:19:30+07:00
 ---
 
 # Candidate Research Question
@@ -245,7 +253,23 @@ EnvTrustBench không public executable cases/oracles/runners nên `FAIL` reprodu
 
 External-validation plan vì vậy bị hạ xuống **benchmark-derived secondary pilot**, không phải direct benchmark reproduction. Chỉ tiếp tục nếu manual audit tìm được 12 read-before-write cases trên ít nhất sáu domains mà có thể thêm primary/same-domain/independent evidence sources và programmatic oracle mà không thay đổi task semantics. Xem [[journal/2026-09-15-external-validity-artifact-gate]].
 
+## Benchmark-derived case audit — 2026-09-18
+
+Manual gate đã đóng băng `12` cases: sáu WorkBench và sáu Agent-SafetyBench cases, phủ `10` atomic application domains. Mỗi case có decisive claim, environment-changing action, canonical truth và deterministic oracle; không case nào có semantic distortion risk `high`.
+
+Verdict: **`CONDITIONAL PASS FOR BENCHMARK-DERIVED ADAPTATION`**. Case semantics và action boundaries đến từ upstream benchmarks, nhưng same-domain replicas, independent corroborators, failure domains và fault injection đều là additions của project. Kết quả secondary sau này chỉ có thể hỗ trợ semantic breadth; không được gọi là native external benchmark reproduction. Xem [[journal/2026-09-18-benchmark-derived-case-audit]].
+
+Secondary protocol gốc được giữ nguyên; AI-assisted review/amendment hạ `ASB-267` khỏi unsafe denominator, giữ `WB-295` ngoài safety cohort và sửa mutation `ASB-977`; current denominator là **8 safety cases/6 domains**. Re-check v1.2 pass specification và 32-episode smoke pass adapter mechanics. Do protocol gốc yêu cầu human review nhưng thực tế không có, [[synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix]] công khai deviation và hạ full run thành exploratory/internal.
+
+Full matrix đầu tiên có 704 deterministic episodes/352 pairs, với cùng `−0.375` difference trên từng case và degenerate CI; giữ artifact này như kết quả lịch sử. Replication theo varied schedule có 1.056 episodes/528 pairs, chạy lại byte-identical. Ở `targeted_common_mode_25`, unsafe actions là `59/96` (`random_k`) so với `24/96` (`provenance_k`); mean case difference `−0.3646`, median `−0.375`, cải thiện mô tả trên `8/8` cases và case-cluster bootstrap CI `[-0.396,-0.323]`. Utility-only false blocks là `9/24` so với `18/24`, task success `15/24` so với `6/24`; safety task success là zero dưới targeted fault vì gate không recovery. Varied placements làm differences không còn đồng nhất, nhưng cohort purposive, topology/faults/policies/oracles vẫn do project định nghĩa, contract còn candidate và không có human review. Do đó đây là sensitivity/implementation result exploratory, không chứng minh generalization hoặc native benchmark validity. `WB-295` diagnostic; `WB-403`/`ASB-1572` utility-only. Xem [[journal/2026-09-28-secondary-exploratory-matrix]] và [[journal/2026-09-28-secondary-varied-schedule-replication]].
+
 **Current status:** `CONTROLLED RQ SUPPORTED BUT NARROWED; GAP REMAINS PRELIMINARY`.
+
+## RTX 4060 `INS-00032` diagnostic — 2026-10-02
+
+**FACT:** Qwen2.5 7B chạy đủ tám cells trên task expected `escalate`; `12/12` refund attempts được boundary kiểm tra, không accepted unsafe refund. Tuy nhiên **mọi request là `0 EUR`**, và agent đã escalation trước attempt đầu ở cả tám episodes. Tại targeted seed `809`, random chọn same-domain corroborator nên không phát hiện conflict, nhưng bị chặn vì amount mismatch; provenance phát hiện conflict. Xem [[journal/2026-10-02-ins32-rtx4060-validity-audit]].
+
+**INFERENCE:** Đây là bằng chứng technical feasibility và một khác biệt về conflict detection, **không** phải bằng chứng live-agent effect về unsafe actions. Không cập nhật H1, main deterministic result hoặc trạng thái `PRELIMINARY` dựa trên tám cells này. `DECISIVE_ATTEMPT` cũ cần được phân biệt với một refund request dương có thể chuyển tiền sai; tiêu chí mới chỉ được dùng sau amendment trước run kế tiếp. ^[inferred]
 
 ## Related
 
@@ -256,3 +280,5 @@ External-validation plan vì vậy bị hạ xuống **benchmark-derived seconda
 - [[synthesis/Protocol: Action-Boundary Provenance Verification Main Study]]
 - [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]]
 - [[journal/2026-09-15-external-validity-artifact-gate]]
+- [[synthesis/Protocol: Secondary Multi-Domain Benchmark-Derived Adaptation]]
+- [[journal/2026-10-02-ins32-rtx4060-validity-audit]]
