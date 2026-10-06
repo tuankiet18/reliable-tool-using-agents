@@ -1,3 +1,15 @@
+---
+title: Correlated Tool Verification Pilot
+category: projects
+tags: [experiment, reproducibility, verification]
+sources: []
+created: 2026-10-06
+updated: 2026-10-06
+summary: README của pilot kiểm tra provenance-aware verification dưới correlated silent tool failures.
+base_confidence: 0.55
+lifecycle: draft
+---
+
 # Correlated Tool Verification Pilot
 
 > **Current paper package:** [[projects/reliable-tool-using-ai-agents/paper/reproducibility-package]]

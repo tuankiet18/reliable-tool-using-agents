@@ -28,7 +28,7 @@ updated: 2026-09-20T17:48:00+07:00
 
 ## FACT — Các thay đổi kỹ thuật đã thực hiện
 
-Đã cập nhật [[projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/secondary_schema_contract_v1.json]] lên phiên bản `1.1-revised-candidate` và nâng cấp bộ kiểm tra tĩnh (static validator) [[projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/validate_secondary_schema_contract.py]]. Toàn bộ năm mục `REVISE` đã được xử lý cụ thể:
+Đã cập nhật `projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/secondary_schema_contract_v1.json` lên phiên bản `1.1-revised-candidate` và nâng cấp bộ kiểm tra tĩnh (static validator) `projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/validate_secondary_schema_contract.py`. Toàn bộ năm mục `REVISE` đã được xử lý cụ thể:
 
 1. **Native-to-P mapping cho 12 case IDs (Item 1):**
    - Đã đặc tả kiểu dữ liệu trường (field types) và tính chấp nhận rỗng (nullability) qua `field_schema` cho toàn bộ 12 cases. Đáng chú ý, trường `customer_phone` trong `WB-295` được xác định chính xác là `nullable: true` (giá trị `None` trong bản ghi gốc của Kerry Moore).

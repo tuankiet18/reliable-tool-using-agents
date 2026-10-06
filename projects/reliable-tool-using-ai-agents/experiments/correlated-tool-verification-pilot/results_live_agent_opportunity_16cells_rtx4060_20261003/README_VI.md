@@ -1,3 +1,15 @@
+---
+title: Exploratory Opportunity Diagnostic (16 cells)
+category: projects
+tags: [experiment, reproducibility, external-validity]
+sources: []
+created: 2026-10-06
+updated: 2026-10-06
+summary: Diagnostic thăm dò nhỏ về runtime và boundary containment của live agent, không phải bằng chứng confirmatory.
+base_confidence: 0.55
+lifecycle: draft
+---
+
 # Exploratory opportunity diagnostic (16 cells)
 
 **Interpretation:** this is a small exploratory diagnostic of runtime and boundary containment. It is not evidence that either policy is more effective, not confirmatory evidence, and does not support external-validity claims or fault-induced agent behavior claims.

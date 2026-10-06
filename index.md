@@ -145,3 +145,6 @@ title: Wiki Index
 - [[projects/reliable-tool-using-ai-agents/paper/supervisor-methodology-rq-briefing]] — Briefing để giảng viên review RQ, methodology, contribution và validation plan ( #research-question #research-methods)
 - [[projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package]] — AI-assisted semantic verdicts và re-check bốn case; không phải human sign-off ( #research-protocol #external-validity)
 - [[projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate]] — Contract v1.2 candidate, 704-row matrix và varied-schedule 1.056-row exploratory results ( #research-protocol #external-validity)
+
+## Meta
+- [[_meta/taxonomy]] — bộ tag chuẩn của vault
