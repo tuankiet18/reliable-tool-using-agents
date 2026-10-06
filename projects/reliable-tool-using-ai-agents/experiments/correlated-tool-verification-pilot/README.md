@@ -1,5 +1,10 @@
 # Correlated Tool Verification Pilot
 
+> **Current paper package:** [[projects/reliable-tool-using-ai-agents/paper/reproducibility-package]]
+> có inventory và safe reanalysis recipe đã kiểm. Các ví dụ historical bên dưới có output mặc định
+> và một số scripts có thể overwrite frozen results: luôn dùng output directory mới theo package.
+> Local analysis reproduction không đồng nghĩa fresh-machine generation, human review hoặc public release.
+
 Pilot nhỏ cho candidate RQ về **provenance-aware verification under correlated/common-mode silent tool failures**.
 
 Đây chưa phải full agent experiment và không dùng kết quả này để tuyên bố RQ đã được xác nhận. Mục đích là kiểm tra ba điều trước khi đầu tư vào `tau2-bench` và live LLM runs:
@@ -183,7 +188,7 @@ Diagnostic RTX 4060 ngày 2026-10-02 đã chạy đủ tám cells, nhưng mọi 
 **sau** successful escalation; `DECISIVE_ATTEMPT` cũ chỉ nói “có call”, không đủ để đo safety
 effect. Artifact và validity verdict ở [[journal/2026-10-02-ins32-rtx4060-validity-audit]].
 
-### Prospective opportunity gate — chưa chạy model
+### Prospective opportunity gate — đã chạy exploratory diagnostic
 
 Theo [[synthesis/protocol-prospective-live-agent-opportunity-gate]], runner mới ghi
 `boundary_events` cho từng refund attempt: step, requested amount, primary/corroborator
@@ -194,7 +199,7 @@ boundary event được giữ `UNKNOWN_BOUNDARY_EVIDENCE`, không tự nâng th�
 kiểm tra *boundary containment*, không chứng minh lỗi tool đã làm agent đổi quyết định.
 
 Static preflight đã chọn bốn safety tasks `INS-00032`–`INS-00035`, seed topology `1111`,
-hai regimes và hai enforced policies: **16 cells exploratory**. Chưa gọi model theo ma trận này.
+hai regimes và hai enforced policies: **16 cells exploratory**. Ma trận đã chạy trên RTX 4060 ngày 2026-10-03; thông số và stop rule dưới đây được giữ để truy vết thiết kế trước run.
 Sau khi code được đồng bộ tới máy RTX và đối chiếu hash/commit, chạy dry-run trước:
 
 ```bash
@@ -213,7 +218,9 @@ mới; không `--resume` hoặc ghi đè hai archive RTX cũ. Sau run, báo cả
 matched-pair proposal và strict opportunity trước khi diễn giải policy effect. Nếu không có
 matched unsafe-capable pair, dừng mở rộng live-agent và giữ đây là limitation.
 
-## Preregistered deterministic main study
+Kết quả thực tế: `16/16` rows hợp lệ, `6/6` refund attempts có boundary events nhưng đều `0 EUR` và sau escalation; targeted `BOUNDARY_UNSAFE_CAPABLE=0/8`, matched pairs `0/4`. Vì vậy **đã dừng scaling**. `0/16` unsafe accepted refunds không đo được hiệu quả tương đối của hai policies. Xem [[journal/2026-10-03-live-agent-opportunity-diagnostic]] và artifact `results_live_agent_opportunity_16cells_rtx4060_20261003/`.
+
+## Internal pre-specified deterministic main study
 
 Main study dùng frozen split `data/tasks_main_30.json` (`INS-00060`–`INS-00089`) và kiểm tra hash
 từ `data/tasks_main_30.manifest.json` trước khi chạy. Script không gọi LLM: cùng một deterministic
@@ -324,3 +331,28 @@ là `9/24` vs `18/24`; safety task success dưới targeted faults là 0 cho c�
 phục hồi action. Xem [[journal/2026-09-28-secondary-varied-schedule-replication]] để biết counts,
 overlap, clean/negative controls và interpretation guardrails. Không gộp seeds thành task độc lập
 hay dùng CI này như bằng chứng generalization.
+
+## Post-hoc topology and abstention diagnostics — 2026-10-03
+
+`src/analyze_topology_diagnostics.py` tái phân tích frozen artifacts bằng Python standard library;
+không gọi model/API, không chạy policy episodes mới và không cần upstream environments.
+Script xác minh sáu SHA-256 của runner, raw, summary, contract và schedule trước phân tích.
+
+Chạy từ thư mục experiment này, với **output mới chưa tồn tại**:
+
+```bash
+python3 src/analyze_topology_diagnostics.py --output /path/to/new-output/analysis.json
+```
+
+Output đã lưu là `results_topology_diagnostics_20261003/analysis.json`. Nếu không truyền `--output`,
+script dùng đường dẫn này và từ chối ghi đè file đã có. Không xóa output cũ để chạy lại.
+
+Phân tích gồm: main targeted expectation `pi * q = (2/3) * (1/3) = 2/9`; always-escalate
+counterfactual từ canonical oracle; proxy loss sensitivity hậu nghiệm; và tái dựng unsafe counts
+secondary bằng overlap giữa lịch chọn `S` và lịch leakage của `I`. Always-block diagnostic cũ được
+deduplicate theo `(case_id, seed, regime)`; `WB-295` vẫn ngoài safety/utility denominators.
+
+Đây là **POST_HOC ANALYTICAL / COUNTERFACTUAL DIAGNOSTIC**, không thêm observations hoặc CI mới,
+không phải measured matched-`K=2` baseline. Chi phí human approval, latency và API chưa được đo.
+Main perfect targeted safety là hệ quả của giả định independent corroborators còn đúng; toàn bộ
+secondary unsafe-count variation được tái dựng từ designed schedule, không chứng minh generalization.

@@ -4,6 +4,14 @@ title: >-
 category: project
 tags: [ai-agents, reliability, tool-use, software-engineering, research]
 sources:
+  - "journal/2026-10-05-main-study-influence-audit.md"
+  - "journal/2026-10-04-clean-environment-core-reproduction.md"
+  - "journal/2026-10-04-pre-action-prior-art-audit.md"
+  - "projects/reliable-tool-using-ai-agents/paper/figure-guide.md"
+  - "projects/reliable-tool-using-ai-agents/paper/review/paper-review-v0.9-2026-10-05.pdf"
+  - "projects/reliable-tool-using-ai-agents/paper/reproducibility-package.md"
+  - "projects/reliable-tool-using-ai-agents/paper/supplementary-appendix.md"
+  - "projects/reliable-tool-using-ai-agents/paper/related-work-citation-audit-2026-10-03.md"
   - "projects/reliable-tool-using-ai-agents/paper/supervisor-methodology-rq-briefing.md"
   - "journal/2026-09-20-ai-review-provenance-correction.md"
   - "journal/2026-09-24-secondary-schema-v12-recheck.md"
@@ -19,6 +27,10 @@ sources:
   - "journal/2026-10-02-ins32-rtx4060-validity-audit.md"
   - "synthesis/protocol-prospective-live-agent-opportunity-gate.md"
   - "journal/2026-10-02-live-agent-opportunity-preflight.md"
+  - "journal/2026-10-03-live-agent-opportunity-diagnostic.md"
+  - "projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03.md"
+  - "projects/reliable-tool-using-ai-agents/paper/paper-draft.md"
+  - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_topology_diagnostics_20261003/analysis.json"
 summary: >-
   Dự án 12 tuần, dựa trên bằng chứng, nghiên cứu phát hiện, chẩn đoán, phục hồi, xác minh và kiểm soát đặc quyền tối thiểu cho AI agent dùng tool.
 provenance:
@@ -30,7 +42,7 @@ lifecycle: draft
 lifecycle_changed: 2026-09-09
 tier: core
 created: 2026-09-09T17:16:31Z
-updated: 2026-10-02T01:59:00+07:00
+updated: 2026-10-05T09:14:46+07:00
 ---
 
 # AI Agent dùng tool đáng tin cậy
@@ -41,6 +53,9 @@ Mục tiêu của dự án là tìm và kiểm chứng một can thiệp về đ
 
 ## Phạm vi và ràng buộc
 
+**Cập nhật 2026-10-04:** Paper v0.9 bổ sung clean-venv core reproduction trên cùng host: mới clone/cài pinned upstream, replay main/robustness và analyses, 10 selected files byte-identical, 15 focused tests đạt. Không thêm independent samples, đổi RQ/results, nâng novelty hoặc live scaling. Đọc [[journal/2026-10-04-clean-environment-core-reproduction]] để hiểu evidence mới, rồi [[projects/reliable-tool-using-ai-agents/paper/submission-readiness]] để hoàn thiện course paper. Related Work vẫn 15 IDs; PRELIMINARY/MAJOR REVISION và human feedback gate giữ nguyên.
+
+- Quyết định hiện hành 2026-10-03: hoàn thiện **controlled empirical paper cho môn học**. Môn học không bắt buộc kết quả trên agent thật; dừng live-agent scaling theo stop rule, không biến external validation thành điều kiện phải đạt để nộp bản course paper.
 - 12 tuần; không huấn luyện foundation model; chỉ dùng API/local model và Docker với chi phí vừa phải.
 - Ưu tiên benchmark có thể chạy được, quỹ đạo thực thi (execution trajectory) có thể quan sát, và metric rõ ràng về hiệu quả, chi phí, an toàn.
 - Ưu tiên agent gọi API tool; chỉ dùng coding agent khi benchmark tái lập được và mô hình quyền truy cập đủ rõ.
@@ -53,9 +68,13 @@ Mục tiêu của dự án là tìm và kiểm chứng một can thiệp về đ
 
 ## Candidate RQ hiện tại
 
+Reviewer-style audit ngày 2026-10-03 cho verdict **MAJOR REVISION**: main/robustness đo **action-oracle correctness**, không thực thi refund rồi đo final state; main `false_block` gộp actor abstention với gate blocking. Targeted main condition có `0/50` correct expected-refund outcomes ở cả hai policies. Paper v0.2–v0.4 sửa construct, thêm analytical/counterfactual diagnostics và thu hẹp Contributions/Related Work; v0.5 thêm structure/appendix/reproduction package, v0.6 thêm frozen-data figures. Raw, estimates và RQ/H1 không đổi; không study episodes mới hoặc human sign-off. Course formatting/author proofreading và human methodology feedback còn mở. Xem [[projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03]] và ledger.
+
+**INFERENCE — GIỚI HẠN CONTRIBUTION:** Main random unsafe expectation là `2/9`; observed fixed seeds cho `30/150=0.20`. Provenance zero unsafe phụ thuộc independent sources còn đúng. Dưới main targeted faults, luôn escalation có cùng safety/correctness với provenance; provenance hơn ở clean refund utility (`50/50` vs `0/50`). Secondary unsafe counts `59/96` vs `24/96` được tái dựng hoàn toàn từ schedule overlap. Do đó contribution nên là controlled characterization, metadata/utility trade-offs và artifact tái lập, không phát minh nguyên lý independence hoặc generalization trên agent thật.
+
 **PRELIMINARY:**
 
-> Given accurate failure-domain metadata, under targeted common-mode silent tool-output failures, does mandatory action-boundary verification that selects a provenance-independent corroborator reduce unsafe irreversible actions while maintaining clean-task correctness, compared with random-source verification at a matched K=2 tool-call budget?
+> Given accurate failure-domain metadata, under targeted common-mode silent tool-output failures, does independent-domain corroboration reduce unsafe refund authorization decisions relative to random corroboration at a matched two-observation boundary budget, while preserving clean action-oracle correctness in a deterministic controlled workflow?
 
 Giải thích và thiết kế thực nghiệm nằm tại [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]. Đây là RQ tốt nhất hiện tại sau novelty gate, chưa phải thesis topic được xác nhận.
 
@@ -89,9 +108,13 @@ Ngày 2026-10-01, runner/analyzer cho diagnostic tám cell đã được instrum
 
 Ngày 2026-10-02, branch Windows-safe `codex/rtx4060-ins32-diagnostic@e265c358df3fd20a274f0ce3f6b53bc774694ed1` đã được chạy trên RTX 4060 với Qwen2.5 7B: tám cells/65 model calls, `12/12` refund attempts đi qua boundary, `8/8` final states đúng và `0/8` unsafe accepted refunds. Nhưng **cả 12 requests đều là `0 EUR` và tất cả tám trajectories đã escalation trước refund attempt**. Seed `809` random không phát hiện conflict nhưng vẫn bị chặn do amount mismatch. Vì vậy technical gate pass, **live-agent policy-effect validity fail**; không scale lên 72 episodes hoặc nâng claim paper. Artifact được lưu riêng theo hash tại [[journal/2026-10-02-ins32-rtx4060-validity-audit]].
 
-Sau audit, đã khóa [[synthesis/protocol-prospective-live-agent-opportunity-gate]] cho diagnostic tương lai: refund request phải có amount dương khớp primary sai **trước** successful escalation, và hai policies phải có matched proposal mới được so sánh. Static preflight chọn bốn safety tasks `INS-00032`–`INS-00035` cùng seed topology `1111` (16 cells); code mới ghi boundary evidence, `62/62` tests local pass. **Chưa chạy** 16 cells trên RTX, chưa có effect evidence mới; nếu không có matched unsafe-capable pair thì dừng live-agent scaling. Xem [[journal/2026-10-02-live-agent-opportunity-preflight]].
+Sau audit, đã khóa [[synthesis/protocol-prospective-live-agent-opportunity-gate]]: refund request phải có amount dương khớp primary sai **trước** successful escalation, và hai policies phải có matched proposal mới được so sánh. Static preflight chọn bốn safety tasks `INS-00032`–`INS-00035` cùng seed topology `1111`. Diagnostic **16 cells đã chạy** trên RTX 4060; raw/analyzer được kiểm tra lại local, `62/62` tests pass. Không có targeted unsafe-capable cell (`0/8`) hoặc matched pair (`0/4`), nên **dừng live-agent scaling theo protocol**. `0/16` unsafe accepted refunds không phải policy-effect evidence. Xem [[journal/2026-10-02-live-agent-opportunity-preflight]] và [[journal/2026-10-03-live-agent-opportunity-diagnostic]].
 
-Living paper version `0.1` đã được mở tại [[projects/reliable-tool-using-ai-agents/paper/paper-draft]]. Draft hiện có Introduction, Related Work, Problem Formulation, Methodology, Results, Discussion, Threats to Validity và working references. [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]] giữ ranh giới giữa supported, preliminary, inferred và rejected claims; mọi result mới phải cập nhật ledger trước manuscript.
+Living paper version `0.9` nằm tại [[projects/reliable-tool-using-ai-agents/paper/paper-draft]]. Giữ RQ/H1, outcomes, appendix, 21-file inventory và hai SVG; thêm §8 clean-venv core replay, không fresh-machine reproduction. Historical figure tests/reanalysis giữ chronology riêng. Package còn CANDIDATE; course/public-release gates được tách trong [[projects/reliable-tool-using-ai-agents/paper/submission-readiness]]. Paper vẫn MAJOR REVISION, novelty PRELIMINARY. Bước tiếp theo: tác giả viết explanation một trang về assumptions/endpoints/trade-offs trước final template/citations và giảng viên feedback; không tăng independent experiment rows.
+
+Đã bổ sung ba worked examples vào [[projects/reliable-tool-using-ai-agents/paper/figure-guide]] §6, không tạo note trùng: cùng backend sai → đồng thuận sai; false denial → không có proposal nên gate không được gọi; always-escalate → zero unsafe nhưng mất clean refund utility. Bảy frozen rows có line IDs/khóa task-regime-seed-policy và raw hash để đối chiếu. Đây là hỗ trợ học cách đọc evidence, không thêm independent samples hoặc thay author readback/human review. Đọc phần này trước khi tự viết explanation.
+
+**Cập nhật paper 2026-10-05:** [[journal/2026-10-05-main-study-influence-audit]] kiểm tra mức tập trung của main effect bằng cách lần lượt bỏ task, seed hoặc stratum. Targeted Δ vẫn âm (stratum-deletion từ −24 đến −16 pp), nhưng sign một phần do constructed zero-unsafe treatment; independent-fault difference đổi dấu theo thành phần task. Appendix §F và ledger C32 giữ nhãn hậu nghiệm; paper v0.9/primary estimates/CIs không đổi. Đã xuất [[projects/reliable-tool-using-ai-agents/paper/review/paper-review-v0.9-2026-10-05.pdf]] để tác giả/giảng viên đọc; PDF gắn với paper source hash và chưa theo template môn học. Tiếp theo, tác giả proofread rồi gửi giảng viên xin góp ý RQ/methodology/contribution; author readback, course format và supervisor feedback vẫn mở. Không scale RTX hoặc mở thêm sensitivity variants để tăng evidence count.
 
 ## Khái niệm chính
 
@@ -146,9 +169,11 @@ Living paper version `0.1` đã được mở tại [[projects/reliable-tool-usi
 - [[journal/2026-10-02-ins32-rtx4060-validity-audit]] — diagnostic RTX 4060 đủ tám cell nhưng chưa có unsafe-capable live attempt.
 - [[synthesis/protocol-prospective-live-agent-opportunity-gate]] — tiêu chí và 16-cell exploratory matrix cho diagnostic tương lai.
 - [[journal/2026-10-02-live-agent-opportunity-preflight]] — kiểm tra offline, code/test status và giới hạn claim trước RTX run.
+- [[journal/2026-10-03-live-agent-opportunity-diagnostic]] — kiểm tra artifact 16 cells, opportunity gate `0/4`, stop scaling và giới hạn claim live-agent.
 
 ## Living paper
 
-- [[projects/reliable-tool-using-ai-agents/paper/paper-draft]] — manuscript version 0.1, Vietnamese reasoning draft.
+- [[projects/reliable-tool-using-ai-agents/paper/paper-draft]] — manuscript version 0.9, controlled results và clean-venv core replay; chưa submission approval.
+- [[projects/reliable-tool-using-ai-agents/paper/figure-guide]] — hướng dẫn đọc safety, utility và metadata sensitivity trước buổi review.
 - [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]] — claim, evidence, scope và prohibited wording.
 - [[projects/reliable-tool-using-ai-agents/paper/supervisor-methodology-rq-briefing]] — briefing ngắn để giảng viên review RQ, methodology, contribution và validation plan; không yêu cầu review case/oracle chi tiết.

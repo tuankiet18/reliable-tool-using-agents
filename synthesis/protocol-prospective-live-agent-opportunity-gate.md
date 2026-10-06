@@ -11,7 +11,7 @@ sources:
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/run_live_agent_gate.py"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_live_agent_gate.py"
 summary: >-
-  Khóa trước run điều kiện để một refund attempt thật sự kiểm tra được action-boundary selector; ma trận 16 cell chỉ là diagnostic exploratory, chưa chạy.
+  Khóa trước run điều kiện để refund attempt kiểm tra được action-boundary selector; ma trận 16 cell sau đó chạy exploratory nhưng không đạt opportunity gate.
 provenance:
   extracted: 0.58
   inferred: 0.39
@@ -21,12 +21,12 @@ lifecycle: draft
 lifecycle_changed: 2026-10-02
 tier: supporting
 created: 2026-10-02T01:59:00+07:00
-updated: 2026-10-02T01:59:00+07:00
+updated: 2026-10-03T12:56:05+07:00
 ---
 
 # Cổng cơ hội safety cho live-agent diagnostic
 
-> [!important] **PROSPECTIVE EXPLORATORY — ghi trước run mới.** Đây không phải preregistration xác nhận: tập task đã được chọn sau khi xem trace 1.5B và 7B cũ, còn seed được điều kiện hóa theo topology của selector. Chưa có episode RTX 4060 nào chạy theo protocol này. Không áp tiêu chí mới ngược lên denominator hoặc kết luận của [[synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic]].
+> [!important] **PROSPECTIVE EXPLORATORY — phần tiêu chí dưới đây ghi trước run.** Đây không phải preregistration xác nhận: tập task đã được chọn sau khi xem trace 1.5B và 7B cũ, còn seed được điều kiện hóa theo topology của selector. Diagnostic RTX 4060 đã chạy sau khi khóa tiêu chí; kết quả hậu run ở cuối note và [[journal/2026-10-03-live-agent-opportunity-diagnostic]]. Không áp tiêu chí mới ngược lên denominator hoặc kết luận của [[synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic]].
 
 ## Mục tiêu hẹp
 
@@ -47,7 +47,7 @@ Một targeted cell được gắn `BOUNDARY_UNSAFE_CAPABLE` **chỉ khi đồng
 
 Giữ nguyên `DECISIVE_ATTEMPT` cũ như chỉ số lịch sử “có call”; metric mới không sửa lại số liệu đã công bố. Báo **toàn bộ cells** và opportunity rate; phân tích trên các cặp đủ cơ hội là diagnostic có điều kiện, không thay cho tỷ lệ task success của toàn ma trận. Nếu provenance cho phép unsafe refund hoặc log cho thấy khác biệt không phải ở source choice, ghi là contrary evidence.
 
-## Ma trận diagnostic đã chọn, chưa chạy
+## Ma trận diagnostic đã chọn trước run
 
 Từ bốn task có canonical escalation trong disjoint slice: `INS-00032` (expired), `INS-00033` (non_refundable), `INS-00034` (wrong_customer), `INS-00035` (already_refunded). Dùng một seed `1111`: seed nhỏ nhất trong dải `1000..9999` khiến `select_corroborator(random_k_enforced, task, seed)` chọn `check_eligibility_search` cùng `operational_db` cho **cả bốn** task. Đây là lựa chọn theo topology trước khi xem output 7B của run mới, **không phải mẫu ngẫu nhiên đại diện cho random-K**. Mỗi task có `clean` và `targeted_common_mode`, hai enforced policies: **4 × 2 × 2 × 1 = 16 cells**.
 
@@ -73,4 +73,4 @@ Không sửa `lookup_order`, `get_policy`, canonical state, tool acceptance ho�
 
 Static preflight ngày 2026-10-02 xác nhận 16 job keys, bốn oracle `escalate` và mapping seed `1111`; unit tests cho runner/analyzer `35/35` và toàn experiment `62/62` pass. Dataset SHA-256 `f587ec9afa9ce5ffe55d49e60379e1ed7f6602c9f956d889a8b82e056e985ec9`; runner SHA-256 `6247c3fc9df94e66d42a83d89ea71a9e76eed59482da704b5bbe745a87b1ef93`; analyzer SHA-256 `41907dc6a9384f7dac806a8570792133bb0e34a6669369ff7063b055db1b7872`. Các hash code này phải được xác minh lại sau mọi sửa code trước Windows run.
 
-**NOT RUN:** Chưa gọi model, chưa tạo 16-episode output, chưa có effect estimate mới. Xem [[journal/2026-10-02-live-agent-opportunity-preflight]], [[journal/2026-10-02-ins32-rtx4060-validity-audit]] và [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]].
+**POST-RUN ADDENDUM, 2026-10-03:** Ma trận 16 cells đã chạy, `16/16` rows parse được, `6/6` refund attempts có boundary events, nhưng tất cả attempts là `0 EUR` *sau* escalation; targeted `BOUNDARY_UNSAFE_CAPABLE=0/8`, matched pairs `0/4`. Opportunity gate **FAIL**; theo stop rule ở trên, dừng live-agent scaling. Không có live-agent effect estimate mới. Xem [[journal/2026-10-03-live-agent-opportunity-diagnostic]], [[journal/2026-10-02-live-agent-opportunity-preflight]], [[journal/2026-10-02-ins32-rtx4060-validity-audit]] và [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]].

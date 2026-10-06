@@ -1,0 +1,10 @@
+{
+  "http_status": 200,
+  "ok": true,
+  "json_schema": true,
+  "response_json_parse": true,
+  "tool": "reply",
+  "model": "qwen2.5:7b-instruct-q4_K_M",
+  "latency_seconds": 8.167619800020475,
+  "calls": 1
+}

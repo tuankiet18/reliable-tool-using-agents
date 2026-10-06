@@ -1,6 +1,860 @@
 {
   "research": [
     {
+      "type": "main_study_influence_audit",
+      "project": "reliable-tool-using-ai-agents",
+      "topic": "Post-hoc leave-one-task/seed/stratum-out sensitivity of frozen main unsafe decision differences",
+      "updated_at": "2026-10-05T08:15:00+07:00",
+      "basis": "Local source/artifact analysis, content-research-writer and wiki-update; no new literature claims",
+      "source_cwd": "/home/kiet/Downloads/fpt-document/prn232/research",
+      "research_checkout_head": "18bcf40e92755a6fed05ec2cdacb5cf863cd7410",
+      "checkout_state": "Existing dirty worktree preserved; no commit/push",
+      "source_artifacts": {
+        "raw_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_main_study/raw.jsonl",
+        "raw_sha256": "a51aebcb207f996e7a4d065b2e424fe794346d685d5f37a615d0de6bcb872234",
+        "paper_v0_9_sha256_unchanged": "0e9855c81f0d4d91bb78b3c51944954a191cf1368713f163f47b730469403087"
+      },
+      "artifact_sha256": {
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_main_influence.py": "b0f864406725214080d562705f9fb0670db9a4b516a457d991f6355a80a093e5",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/tests/test_main_influence.py": "a996a807b691b540228dae7b72f13c8b8522404eae170eb8059cece071d6baa0",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_main_influence_20261005/analysis.json": "7e49c1bdbfa518c9a30a520494cb9612b05e850b31e818f201d3efeb8f433803"
+      },
+      "research_page_sha256": {
+        "journal/2026-10-05-main-study-influence-audit.md": "917a090177a8eacc0abb664f3a5ee2b123e3013f85a014ed15655051904283a1",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md": "d6cb8964772a044045078beebc4933374393dde1c2555c06de5f48467659567d",
+        "projects/reliable-tool-using-ai-agents/paper/supplementary-appendix.md": "126c132a94c91d68d9aafd96439f55e7759ec722e33da234bad978825760236b",
+        "projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03.md": "5e49068f170f61b70b0a68a24abda3aaa8fbc099a25aa82e2752cc692f84488b",
+        "projects/reliable-tool-using-ai-agents/paper/submission-readiness.md": "f6235476796b7410b30246d4ef66a217486ba0463310d19bbe43c9ea089a05f3",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md": "66e319be821868c6ed801d8ee307f69f3b6bc51cb82558055dd76cef25ed4ce0"
+      },
+      "pages_created": [
+        "journal/2026-10-05-main-study-influence-audit.md"
+      ],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/paper/supplementary-appendix.md",
+        "projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03.md",
+        "projects/reliable-tool-using-ai-agents/paper/submission-readiness.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md"
+      ],
+      "tracking_updated": [
+        ".manifest.json",
+        "index.md",
+        "log.md",
+        "hot.md"
+      ],
+      "results": {
+        "targeted_full_difference": -0.2,
+        "targeted_leave_one_task_range": [
+          -0.20689655172413793,
+          -0.1793103448275862
+        ],
+        "targeted_leave_one_seed_range": [
+          -0.225,
+          -0.175
+        ],
+        "targeted_leave_one_stratum_range": [
+          -0.24,
+          -0.16
+        ],
+        "independent_leave_one_stratum_range": [
+          -0.008,
+          0.016
+        ],
+        "targeted_negative_deletions": 41,
+        "status": "POST_HOC_DESCRIPTIVE_SENSITIVITY_NOT_CONFIDENCE_INTERVALS"
+      },
+      "validation": {
+        "sql_cross_checked_deletions": 123,
+        "baseline_estimates_match": 3,
+        "focused_tests": 7,
+        "overwrite_refusal": true,
+        "wrong_hash_refusal": true,
+        "deterministic_report_replay": true,
+        "raw_hash": "a51aebcb207f996e7a4d065b2e424fe794346d685d5f37a615d0de6bcb872234",
+        "script_hash": "b0f864406725214080d562705f9fb0670db9a4b516a457d991f6355a80a093e5",
+        "report_hash": "7e49c1bdbfa518c9a30a520494cb9612b05e850b31e818f201d3efeb8f433803",
+        "paper_hash": "0e9855c81f0d4d91bb78b3c51944954a191cf1368713f163f47b730469403087",
+        "frozen_inventory_unchanged": 21,
+        "page_schema_source_link_checks": 6,
+        "figure_artifacts_unchanged": 3
+      },
+      "new_episodes": 0,
+      "new_model_calls": 0,
+      "new_confidence_intervals": 0,
+      "primary_results_changed": false,
+      "gap_status": "SURVIVES WITH REFINEMENT — PRELIMINARY",
+      "limitations": [
+        "Constructed topology already guarantees targeted provenance zero; retained sign is not independent robustness evidence.",
+        "Stratum deletion changes task composition; no population-generalization inference.",
+        "Independent negative control remains inconclusive; wrong-metadata robustness FAIL unchanged."
+      ],
+      "next_action": "Prepare a readable academic review manuscript with consistent figures, citations and appendix; author understanding/course format/supervisor review remain open."
+    },
+    {
+      "type": "frozen_decision_worked_examples",
+      "project": "reliable-tool-using-ai-agents",
+      "topic": "Ba worked examples giúp tác giả phân biệt wrong agreement, no-proposal false denial và always-escalate counterfactual",
+      "updated_at": "2026-10-04T17:10:16+07:00",
+      "basis": "content-research-writer plus wiki-update; source-level explanation added to existing figure-guide, no new wiki page",
+      "source_cwd": "/home/kiet/Downloads/fpt-document/prn232/research",
+      "research_checkout_head": "18bcf40e92755a6fed05ec2cdacb5cf863cd7410",
+      "checkout_state": "Existing dirty worktree preserved; no commit/push",
+      "source_artifacts": {
+        "raw_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_main_study/raw.jsonl",
+        "raw_sha256": "a51aebcb207f996e7a4d065b2e424fe794346d685d5f37a615d0de6bcb872234",
+        "runner_sha256": "387696644bd707ee63d9c9982a2628a5e93c67b2b23642bdabfdea3e54053523",
+        "counterfactual_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_topology_diagnostics_20261003/analysis.json",
+        "counterfactual_sha256": "598896505fa0da2c23d7ca9abc078be3336d7d59ace9b8f93291c279243fece8",
+        "paper_v0_9_sha256_unchanged": "0e9855c81f0d4d91bb78b3c51944954a191cf1368713f163f47b730469403087"
+      },
+      "selected_rows": [
+        {
+          "line_1based": 121,
+          "task_id": "INS-00062",
+          "regime": "targeted_common_mode",
+          "seed": 101,
+          "policy": "single_source"
+        },
+        {
+          "line_1based": 122,
+          "task_id": "INS-00062",
+          "regime": "targeted_common_mode",
+          "seed": 101,
+          "policy": "random_k"
+        },
+        {
+          "line_1based": 123,
+          "task_id": "INS-00062",
+          "regime": "targeted_common_mode",
+          "seed": 101,
+          "policy": "provenance_k"
+        },
+        {
+          "line_1based": 2,
+          "task_id": "INS-00060",
+          "regime": "clean",
+          "seed": 101,
+          "policy": "random_k"
+        },
+        {
+          "line_1based": 3,
+          "task_id": "INS-00060",
+          "regime": "clean",
+          "seed": 101,
+          "policy": "provenance_k"
+        },
+        {
+          "line_1based": 32,
+          "task_id": "INS-00060",
+          "regime": "targeted_common_mode",
+          "seed": 101,
+          "policy": "random_k"
+        },
+        {
+          "line_1based": 33,
+          "task_id": "INS-00060",
+          "regime": "targeted_common_mode",
+          "seed": 101,
+          "policy": "provenance_k"
+        }
+      ],
+      "selection_status": "POST_HOC_ILLUSTRATIVE_NOT_NEW_SAMPLES",
+      "validation": {
+        "status": "PASS_LOCAL_SOURCE_AND_DOCUMENT_CHECKS",
+        "checks": "7 row-key/metric checks, source observations and paired primary; 4 policy/regime aggregate checks with counterfactual agreement; 3 page schema/source/link checks; frozen paper/artifact hashes unchanged; no tests, bootstrap or episode runs",
+        "inventory_unchanged": 21,
+        "figure_artifacts_unchanged": 3,
+        "research_page_sha256": {
+          "projects/reliable-tool-using-ai-agents/paper/figure-guide.md": "5e2bf23d4d4275ffd3d446834f1be7eb3788af33a8b327946da81b090d8ede6e",
+          "projects/reliable-tool-using-ai-agents/paper/submission-readiness.md": "dc7ba5f8a2bc1c2904df6d58c40107b94dbaa8784a70caddbaf9ebfad0807de0",
+          "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md": "523193a18bca1d6b394ec664a5cea68600c6ec0c3ff0c7534dd0379e5160e98c"
+        }
+      },
+      "research_pages_updated": [
+        "projects/reliable-tool-using-ai-agents/paper/figure-guide.md",
+        "projects/reliable-tool-using-ai-agents/paper/submission-readiness.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md"
+      ],
+      "pages_created": [],
+      "tracking_updated": [
+        ".manifest.json",
+        "index.md",
+        "log.md",
+        "hot.md"
+      ],
+      "new_episodes": 0,
+      "new_model_calls": 0,
+      "scientific_claims_changed": false,
+      "author_readback_status": "OPEN_NOT_REPLACED_BY_AI_EXPLANATION",
+      "gap_status": "SURVIVES WITH REFINEMENT — PRELIMINARY",
+      "next_action": "Tác giả đọc figure-guide §6, đóng note và tự viết một trang trả lời năm câu submission-readiness §6; không thêm experiment hoặc search rộng"
+    },
+    {
+      "type": "clean_environment_core_reproduction",
+      "project": "reliable-tool-using-ai-agents",
+      "topic": "Paper v0.9 same-host fresh-venv installation and deterministic core replay",
+      "updated_at": "2026-10-04T16:47:06+07:00",
+      "basis": "content-research-writer plus wiki-update; reproducibility gate, no broad prior-art search",
+      "source_cwd": "/home/kiet/Downloads/fpt-document/prn232/research",
+      "research_checkout_head": "18bcf40e92755a6fed05ec2cdacb5cf863cd7410",
+      "checkout_state": "Existing dirty worktree preserved; HEAD alone does not identify v0.9",
+      "source_artifacts": {
+        "paper_v0_8_sha256": "28cd3816ad20ab15b83f51922633ca56d432e462e35fa3fabd8ab132d871c414",
+        "paper_v0_9_sha256": "0e9855c81f0d4d91bb78b3c51944954a191cf1368713f163f47b730469403087",
+        "protected_section_sha256": {
+          "## Abstract — PROVISIONAL": "6023ab00ec62eaa5682470ef24536cee620ef25310526f5fc460853eacd1eba6",
+          "## 1. Introduction": "69cdc00eb80a9b7f839041329e24d45574f4607025249176326da42845d99e32",
+          "## 2. Background and Problem Formulation": "bdf874bd9a93e47673a4829c746a3c09df88337fe2d5e64137ea37fc9570a609",
+          "## 3. Related Work": "674bc454cbb0263d4619a31b8b26a5eb3bcb5622c0c18fbdfd4f71032b285c3a",
+          "## 4. Methodology": "d51e3539fa95bec8362b4e02af3d2b8ea46422e326c72a3f3552553f2e21cf1c",
+          "## 5. Results": "e77303497ed253d6540c33d319896b7e348f8220d672e45e55affb0c6b8aa5d0",
+          "## 6. Discussion": "928c7600b38d916d774c8509d3a29224f12dde3ec0b83a9878018f61e3fb4daa",
+          "## 7. Threats to Validity": "2de019be1d67bc072cd83e0d430c568f5c3df8d34e0999910ae64e4a403c11eb",
+          "## 9. Conclusion — PROVISIONAL": "aab931ab086092a1df783c98fc090d6feac496ad7e7a0213d811f9005905af68"
+        },
+        "research_page_sha256": {
+          "projects/reliable-tool-using-ai-agents/paper/paper-draft.md": "0e9855c81f0d4d91bb78b3c51944954a191cf1368713f163f47b730469403087",
+          "projects/reliable-tool-using-ai-agents/paper/reproducibility-package.md": "44c5ad208afabb93dd3160fc06e2c7a519f476d06ad67a467e754a58c344d548",
+          "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md": "c004cfeac111cdc7c31a37a6ce8e6d63bb5918b210a859b4bb3a08e471bce65a",
+          "projects/reliable-tool-using-ai-agents/paper/submission-readiness.md": "71db3c5004cb10eabc99871305ac53430b92b7245902580c6a67ecbd89416248",
+          "projects/reliable-tool-using-ai-agents/paper/supplementary-appendix.md": "613dd89d259ac90e122da0415a6f1633613070c8676729cc2f8a9e1db894083b",
+          "projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03.md": "81016babe7ac262225b986f3e9a681bcd4776d16f042e05e114996b703ae1a10",
+          "projects/reliable-tool-using-ai-agents/paper/supervisor-methodology-rq-briefing.md": "9822058939492824244c44c91a0544823f2ef5032c6914f784781b06dfe2ad4f",
+          "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md": "5328223fbbd3af2a7de403994611d0a176ec4ea84d51968dcf6e69252fe40e72",
+          "journal/2026-10-04-clean-environment-core-reproduction.md": "d6555036181299628f7e1765bc87034eced53ca2c03720745d2c8deb5023ba9d"
+        },
+        "inventory_file": "projects/reliable-tool-using-ai-agents/paper/artifact-inventory.json",
+        "report_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_clean_env_reproduction_20261004/run-report.json",
+        "report_sha256": "88aab922574817b1f913a6d69f1f3f901db15867d07ae5a0d7a086efa883e22a",
+        "requirements_sha256": "75cfb5f45d144967a66f4b1ce94be29dc5c3ac66ad25b3721238f8fb723dfa95",
+        "upstream_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5",
+        "selected_reproduction_files": [
+          {
+            "frozen_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_main_study/raw.jsonl",
+            "reproduced_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_clean_env_reproduction_20261004/main/raw.jsonl",
+            "sha256": "a51aebcb207f996e7a4d065b2e424fe794346d685d5f37a615d0de6bcb872234",
+            "byte_identical": true
+          },
+          {
+            "frozen_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_main_study/run_manifest.json",
+            "reproduced_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_clean_env_reproduction_20261004/main/run_manifest.json",
+            "sha256": "283476881d8958ccc4572f0b7dbe080dc957bb8aa46052b0cd250ea75f08f84d",
+            "byte_identical": true
+          },
+          {
+            "frozen_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_main_study/summary.json",
+            "reproduced_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_clean_env_reproduction_20261004/main/summary.json",
+            "sha256": "3390ab5b7b14ebe99a74da9bef063193f82c4a3ee8f258a95f0e315747fc56e9",
+            "byte_identical": true
+          },
+          {
+            "frozen_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_main_study/inference.json",
+            "reproduced_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_clean_env_reproduction_20261004/main/inference.json",
+            "sha256": "c4e61e6f07c0b28ad5ba12910ea7cf1a9327c4c01c7370c0aad0f96ee0285835",
+            "byte_identical": true
+          },
+          {
+            "frozen_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_main_study/decision.json",
+            "reproduced_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_clean_env_reproduction_20261004/main/decision.json",
+            "sha256": "893af221b4520e3231b8c1007f0658747f01dbfe46936c64f8672db524e86cf8",
+            "byte_identical": true
+          },
+          {
+            "frozen_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_robustness_gate/raw.jsonl",
+            "reproduced_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_clean_env_reproduction_20261004/robustness/raw.jsonl",
+            "sha256": "f22e7f29c97a89eda20bdb57f9e59fa43581adb3d3b6475ee40e926492ab1982",
+            "byte_identical": true
+          },
+          {
+            "frozen_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_robustness_gate/run_manifest.json",
+            "reproduced_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_clean_env_reproduction_20261004/robustness/run_manifest.json",
+            "sha256": "9fa6992663332b05bd5d9a9d862fd922a4c5043011bfc4160c2401ebe867ebd4",
+            "byte_identical": true
+          },
+          {
+            "frozen_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_robustness_gate/summary.json",
+            "reproduced_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_clean_env_reproduction_20261004/robustness/summary.json",
+            "sha256": "9bde5b8209d396fae97fab11d73f26e94685ce6e833b70fcff5dd73e82d0c821",
+            "byte_identical": true
+          },
+          {
+            "frozen_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_robustness_gate/inference.json",
+            "reproduced_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_clean_env_reproduction_20261004/robustness/inference.json",
+            "sha256": "6b6244982e66c0bd580a2f99fd9bc91a39dfcc00c458135264ff0e742e75761b",
+            "byte_identical": true
+          },
+          {
+            "frozen_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_robustness_gate/decision.json",
+            "reproduced_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_clean_env_reproduction_20261004/robustness/decision.json",
+            "sha256": "3e89c8264377d07d57351c5f3cde3b4159dd016b1b18a607cd423f7692703e95",
+            "byte_identical": true
+          }
+        ]
+      },
+      "environment": {
+        "python": "3.12.3",
+        "uv": "0.12.12",
+        "same_host": true,
+        "fresh_venv": true,
+        "include_system_site_packages": false,
+        "user_site_enabled": false,
+        "upstream_base_install": true,
+        "installed_distributions": 19,
+        "third_party_observed_version_pins": 18,
+        "build_wheel_lock": false
+      },
+      "observed": {
+        "replayed_main_rows": 1350,
+        "replayed_robustness_rows": 3750,
+        "new_independent_samples": 0,
+        "new_model_calls": 0,
+        "new_live_agent_episodes": 0,
+        "generators_rerun": true,
+        "analyzers_and_frozen_bootstrap_rerun": true,
+        "selected_files_byte_identical": 10,
+        "focused_unit_tests_passed": 15,
+        "full_suite_rerun": false,
+        "main_gate": "PASS",
+        "robustness_gate": "FAIL ROBUSTNESS",
+        "frozen_inventory_hashes_unchanged": 21,
+        "figure_artifacts_unchanged": 3,
+        "scientific_sections_unchanged": 9,
+        "bibliography_unchanged": true,
+        "rq_h1_parity": "3/3",
+        "unique_cited_and_defined_ids": 15,
+        "research_page_schema_source_and_link_checks": "9/9",
+        "git_diff_check": "pass"
+      },
+      "result": "LOCAL_CLEAN_VENV_CORE_REPRODUCTION_PASS; SAME_HOST_NOT_INDEPENDENT_REPRODUCTION; MAJOR_REVISION_PRELIMINARY_AND_SCIENTIFIC_LIMITS_UNCHANGED",
+      "next_action": "Worked example from frozen raw for author understanding; no independent N/live scaling; format/feedback/snapshot/license gates open",
+      "pages_created": [
+        "journal/2026-10-04-clean-environment-core-reproduction.md"
+      ],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
+        "projects/reliable-tool-using-ai-agents/paper/reproducibility-package.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/paper/submission-readiness.md",
+        "projects/reliable-tool-using-ai-agents/paper/supplementary-appendix.md",
+        "projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03.md",
+        "projects/reliable-tool-using-ai-agents/paper/supervisor-methodology-rq-briefing.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "index.md",
+        "hot.md",
+        "log.md",
+        ".manifest.json"
+      ],
+      "qmd": "skipped: QMD_WIKI_COLLECTION unset"
+    },
+    {
+      "type": "paper_submission_readiness_audit",
+      "project": "reliable-tool-using-ai-agents",
+      "topic": "Paper v0.8 final manuscript–appendix–package claim alignment and separated submission gates",
+      "updated_at": "2026-10-04T11:18:04+07:00",
+      "basis": "content-research-writer then wiki-update; final documentation/stored-evidence audit, not new literature search",
+      "review_type": "AI-assisted internal audit, not human sign-off",
+      "source_cwd": "/home/kiet/Downloads/fpt-document/prn232/research",
+      "research_checkout_head": "18bcf40e92755a6fed05ec2cdacb5cf863cd7410",
+      "checkout_state": "Existing dirty working tree preserved; HEAD alone does not identify current manuscript",
+      "source_artifacts": {
+        "paper_v0_7_sha256": "04901b5e24d8ef94f0969780ca0f7f89bfaec70a1000bbe6ed46b517890edb02",
+        "paper_v0_8_sha256": "28cd3816ad20ab15b83f51922633ca56d432e462e35fa3fabd8ab132d871c414",
+        "inventory_file": "projects/reliable-tool-using-ai-agents/paper/artifact-inventory.json",
+        "figure_artifact_sha256": {
+          "projects/reliable-tool-using-ai-agents/paper/figures/frozen-evidence-v1/effects-and-metadata.svg": "981ea1f4341805e8c6f65bcb8b4a4eca55962986e12031843120e43e0454e8dc",
+          "projects/reliable-tool-using-ai-agents/paper/figures/frozen-evidence-v1/figure-data.json": "987906ada765f22d590e2a6afe0e309c56a19c51f2345e76673fe66225abbcfc",
+          "projects/reliable-tool-using-ai-agents/paper/figures/frozen-evidence-v1/main-safety-utility.svg": "acdddeac658c76efde67744213eac263853f963a05aa8c829bca4ba1ed22003c"
+        },
+        "research_page_sha256": {
+          "projects/reliable-tool-using-ai-agents/paper/paper-draft.md": "28cd3816ad20ab15b83f51922633ca56d432e462e35fa3fabd8ab132d871c414",
+          "projects/reliable-tool-using-ai-agents/paper/supplementary-appendix.md": "7ccb752780e879f71611b263489816902fe52b86843273c631c110ac201c14b3",
+          "projects/reliable-tool-using-ai-agents/paper/reproducibility-package.md": "4feebdaca02447afd85bce0d2c697e4455f40334bb731c47a5e16b755cb1f3a3",
+          "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md": "59282b56e0f98ddcff28c9a0ea8f539262f27d176be5af1be5828a7e88cf50c1",
+          "projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03.md": "f0042ef927985a9794baa2953be687df32d85fa14de0f50f18425c487c4fa167",
+          "projects/reliable-tool-using-ai-agents/paper/supervisor-methodology-rq-briefing.md": "ef4c85ea073259481d150b1734505af8dee4d296b4629811ebe6c68729cf855e",
+          "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md": "07459babf6fb096dd391c0c2b3a3903b1c72d59db95f47189586de41069f0d98",
+          "projects/reliable-tool-using-ai-agents/paper/submission-readiness.md": "3927520df98d92c20b0dea2b2b32f4db80e6d53699a516a84d50cec618e7d3ba",
+          "journal/2026-10-04-submission-readiness-audit.md": "5488b3885027d5f35368e1c453f424185960542a0d0e84d5a87205a7af295a0d"
+        }
+      },
+      "observed": {
+        "new_study_episodes": 0,
+        "new_model_calls": 0,
+        "new_confidence_intervals": 0,
+        "unit_tests_rerun": false,
+        "analyzers_rerun": false,
+        "headline_raw_counts": "main 1350: targeted unsafe 30/150 vs 0/150, clean correctness 150/150 both, targeted refunds correct 0/50 both; secondary 1056: unsafe 59/96 vs 24/96, utility false blocks 9/24 vs 18/24",
+        "negative_results_retained": "FAIL ROBUSTNESS; live matched unsafe-capable pairs 0/4, stop scaling",
+        "scientific_sections_unchanged": 7,
+        "related_work_and_bibliography_unchanged": true,
+        "figure_artifacts_unchanged": 3,
+        "frozen_inventory_hashes_unchanged": 21,
+        "rq_h1_parity": "3/3",
+        "unique_cited_and_defined_ids": 15,
+        "research_page_schema_source_and_link_checks": "9/9",
+        "git_diff_check": "pass"
+      },
+      "result": "CLAIM_ALIGNMENT_PASS_WITH_OPEN_SUBMISSION_GATES; READY_FOR_AUTHOR_SUPERVISOR_REVIEW_NOT_SUBMISSION_READY; MAJOR_REVISION_PRELIMINARY_UNCHANGED",
+      "next_action": "Author one-page readback addressing five assumptions/endpoints/trade-off questions; final export after course format and feedback, no RTX scaling",
+      "pages_created": [
+        "projects/reliable-tool-using-ai-agents/paper/submission-readiness.md",
+        "journal/2026-10-04-submission-readiness-audit.md"
+      ],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
+        "projects/reliable-tool-using-ai-agents/paper/supplementary-appendix.md",
+        "projects/reliable-tool-using-ai-agents/paper/reproducibility-package.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03.md",
+        "projects/reliable-tool-using-ai-agents/paper/supervisor-methodology-rq-briefing.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "index.md",
+        "log.md",
+        "hot.md",
+        ".manifest.json"
+      ],
+      "qmd": "skipped: QMD_WIKI_COLLECTION unset"
+    },
+    {
+      "type": "paper_related_work_integration",
+      "project": "reliable-tool-using-ai-agents",
+      "topic": "Paper v0.7 bounded AgentOS artifact-level and pre-action realizability contrasts",
+      "updated_at": "2026-10-04T10:36:32+07:00",
+      "basis": "Previous bounded prior-art audit; content-research-writer then wiki-update; no new broad search",
+      "review_type": "AI-assisted editorial/source alignment, not human review",
+      "source_cwd": "/home/kiet/Downloads/fpt-document/prn232/research",
+      "research_checkout_head": "18bcf40e92755a6fed05ec2cdacb5cf863cd7410",
+      "checkout_state": "Existing dirty working tree preserved; HEAD alone does not identify manuscript revision",
+      "source_artifacts": {
+        "paper_v0_6_sha256": "d588e3b926ffac3779c7fd4e755f7a3b5d9bcab49f8d197b6dd472079419b552",
+        "paper_v0_7_sha256": "04901b5e24d8ef94f0969780ca0f7f89bfaec70a1000bbe6ed46b517890edb02",
+        "protected_section_sha256": {
+          "Abstract — PROVISIONAL": "6023ab00ec62eaa5682470ef24536cee620ef25310526f5fc460853eacd1eba6",
+          "1. Introduction": "69cdc00eb80a9b7f839041329e24d45574f4607025249176326da42845d99e32",
+          "2. Background and Problem Formulation": "bdf874bd9a93e47673a4829c746a3c09df88337fe2d5e64137ea37fc9570a609",
+          "4. Methodology": "d51e3539fa95bec8362b4e02af3d2b8ea46422e326c72a3f3552553f2e21cf1c",
+          "5. Results": "6f131624a3f1bbda607b9baa2f9f63824222631f2ca6c94c3ee43b02bad5e999",
+          "6. Discussion": "928c7600b38d916d774c8509d3a29224f12dde3ec0b83a9878018f61e3fb4daa",
+          "7. Threats to Validity": "2de019be1d67bc072cd83e0d430c568f5c3df8d34e0999910ae64e4a403c11eb",
+          "8. Reproducibility": "e658328e23d30ffbe82b025dd34b856acf622926a5fff13644cbf16979d3e9f5",
+          "9. Conclusion — PROVISIONAL": "aab931ab086092a1df783c98fc090d6feac496ad7e7a0213d811f9005905af68"
+        },
+        "figure_artifact_sha256": {
+          "projects/reliable-tool-using-ai-agents/paper/figures/frozen-evidence-v1/figure-data.json": "987906ada765f22d590e2a6afe0e309c56a19c51f2345e76673fe66225abbcfc",
+          "projects/reliable-tool-using-ai-agents/paper/figures/frozen-evidence-v1/main-safety-utility.svg": "acdddeac658c76efde67744213eac263853f963a05aa8c829bca4ba1ed22003c",
+          "projects/reliable-tool-using-ai-agents/paper/figures/frozen-evidence-v1/effects-and-metadata.svg": "981ea1f4341805e8c6f65bcb8b4a4eca55962986e12031843120e43e0454e8dc"
+        },
+        "inventory_file": "projects/reliable-tool-using-ai-agents/paper/artifact-inventory.json",
+        "agentos_commit": "4147c7f780ccb59b83f3dba8da5f19e73a1d1a8c"
+      },
+      "retrieval": {
+        "primary_pages_reopened": [
+          "https://arxiv.org/html/2609.11957v1",
+          "https://conf.researchr.org/details/ase-2026/ase-2026-tools-and-data-sets/45/Introducing-Safe-LLM-Agent-Execution-via-Typed-Tool-Mediation-and-World-Effect-Evalua"
+        ],
+        "agentos": "Prior pinned-code inspection only; full paper still unread; no new benchmark/code execution or code-to-paper mapping",
+        "lbyl": "Previous full HTML read; this turn rechecked primary HTML; supplementary/code/data unverified, date/release/wording ambiguities retained",
+        "unchanged_sources": "Other 13 citation reading scopes inherited, not re-read/reverified this turn"
+      },
+      "observed": {
+        "new_study_episodes": 0,
+        "new_model_calls": 0,
+        "new_confidence_intervals": 0,
+        "unit_tests_rerun": false,
+        "unique_cited_and_defined_ids": 15,
+        "protected_sections_unchanged": 9,
+        "figure_artifacts_unchanged": 3,
+        "frozen_inventory_hashes_unchanged": 21,
+        "rq_h1_parity": "3/3",
+        "research_page_schema_source_and_link_checks": "8/8",
+        "git_diff_check": "pass"
+      },
+      "result": "BOUNDED_RELATED_WORK_INTEGRATION_PASS; NO_RQ_RESULTS_OR_NOVELTY_UPGRADE; MAJOR_REVISION_PRELIMINARY_AND_HUMAN_REVIEW_GATES_UNCHANGED",
+      "next_action": "Final manuscript–appendix–package claim-evidence audit and submission-readiness checklist; no RTX runs",
+      "pages_created": [],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
+        "projects/reliable-tool-using-ai-agents/paper/related-work-citation-audit-2026-10-03.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/paper/supervisor-methodology-rq-briefing.md",
+        "projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "journal/2026-10-04-pre-action-prior-art-audit.md",
+        "synthesis/Prior-Art Threat: Provenance Metadata and Source Selection.md",
+        "index.md",
+        "log.md",
+        "hot.md",
+        ".manifest.json"
+      ],
+      "qmd": "skipped: QMD_WIKI_COLLECTION unset"
+    },
+    {
+      "type": "research",
+      "topic": "Bounded adversarial prior art: AgentOS authorization/world effects and pre-action realizability",
+      "researched_at": "2026-10-04T10:04:00+07:00",
+      "rounds_completed": 2,
+      "queries": 14,
+      "sources_fetched": 20,
+      "source_count_unit": "Downloaded primary objects: 16 pinned AgentOS files, Zenodo metadata, 2 ZIP archives, 1 arXiv HTML; not 20 papers",
+      "audited_works": 2,
+      "halt_reason": "Sufficient depth for bounded contrast; publisher full-text/artifact clarification blockers retained, no Round 3",
+      "backends_used": ["web", "direct_primary_retrieval"],
+      "optional_backends": "none: research-backends.md absent; no paid API",
+      "source_artifacts": {
+        "agentos_commit": "4147c7f780ccb59b83f3dba8da5f19e73a1d1a8c",
+        "agentos_readme_sha256": "1a12afc2810e7827dfe49d351ee854a86e0553d6b9dda21bf261736d4812369c",
+        "agentos_harness_sha256": "138330c63c68431c0d16a3997284aa81eac83a854a32a9b46e9c64954892bea4",
+        "agentos_formal_readme_sha256": "8317b279ee0731b73157bdb21d62e45f65bfa7634332f9addc5919612a85601d",
+        "agentos_authorization_policy_sha256": "95637c006f248421a1dfdd58a1df6af7ec8524bde8e63af26e5d6da20a2cd8b7",
+        "zenodo_metadata_sha256": "814207763c31b0bf1e32bfae5f7126860edb2d7d8ef10f7d1a09530ddff9067c",
+        "tasks_should_pass_zip_sha256": "bdb97e67a245f496044e2f507ac219778e88c006dacdcc7ea61fcf6b10d8ea21",
+        "tasks_should_fail_zip_sha256": "6e910cdbf34888c3a1be50fe3311129fe21d6556fa76b77f77363ebec7db9ab3",
+        "look_before_you_leap_html_sha256": "61711bf55eef70763041e82a820cfa2d7938a9834386fd4d1cc3e8da6e5f35cc",
+        "temporary_download_directory": "/tmp/agentos-prior-art-Ki3JmQ",
+        "retention": "Temporary downloads only; canonical URLs/pin/hash retained; no third-party code/tasks/images redistributed in research repo"
+      },
+      "observed": {
+        "agentos_task_archives": "ZIP integrity and Zenodo MD5 match; 24 should-pass + 48 should-fail JSON tasks parse, 72 distinct IDs",
+        "agentos_reading_scope": "Targeted pinned-code/docs/harness; publisher PDF HTTP 403, full paper unread; no artifact execution",
+        "look_before_you_leap_reading_scope": "Full HTML sections 1-8; supplementary/code/data unverified; artifact-release, wording/table and metadata-date ambiguities retained",
+        "new_study_episodes": 0,
+        "new_model_calls": 0,
+        "new_confidence_intervals": 0,
+        "manuscript": "v0.6 unchanged; 14 existing citation IDs; new source integration pending",
+        "unit_tests_rerun": false
+      },
+      "result": "BROAD_GATE_NOVELTY_REJECTED; ADDITIONAL_PARTIAL_THREATS; SURVIVES_WITH_REFINEMENT_PRELIMINARY_AND_MAJOR_REVISION_UNCHANGED",
+      "validation": {
+        "checked_at": "2026-10-04T10:13:12+07:00",
+        "research_page_schemas_sources_and_path_links": "7/7 pass",
+        "new_pages_indexed": "2/2",
+        "frozen_inventory_hashes_unchanged": "21/21",
+        "paper_v0_6_unchanged_sha256": "d588e3b926ffac3779c7fd4e755f7a3b5d9bcab49f8d197b6dd472079419b552",
+        "manifest_json": "valid",
+        "git_diff_check": "pass",
+        "scope": "Documentation/source-integrity checks only; no tests/benchmarks/model runs or human review"
+      },
+      "next_action": "Integrate bounded Related Work/citation delta without changing RQ/results or claiming superiority",
+      "pages_created": [
+        "references/look-before-you-leap-pre-action-verification.md",
+        "journal/2026-10-04-pre-action-prior-art-audit.md"
+      ],
+      "pages_updated": [
+        "references/agentos-typed-tool-mediation.md",
+        "synthesis/Prior-Art Threat: Provenance Metadata and Source Selection.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/paper/related-work-citation-audit-2026-10-03.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "index.md", "log.md", "hot.md", ".manifest.json"
+      ],
+      "qmd": "skipped: QMD_WIKI_COLLECTION unset"
+    },
+    {
+      "type": "paper_frozen_evidence_figures",
+      "topic": "Paper v0.6 safety–utility and metadata figures with denominator/CI guide",
+      "updated_at": "2026-10-03T23:51:23+07:00",
+      "basis": "final figures from v0.5 checklist; content-research-writer and wiki-update; no new literature search",
+      "review_type": "AI-assisted presentation/source-data validation; not human review",
+      "source_artifacts": {
+        "paper_v0_6_sha256": "d588e3b926ffac3779c7fd4e755f7a3b5d9bcab49f8d197b6dd472079419b552",
+        "guide_sha256": "5433bec405e5d057b883a8207d4ca704dc0c622a10664eb7a2a20aa3f1bb8d06",
+        "generator_sha256": "adffb8b9805a8330f77da19edb6b940e4f0fb103971c5e9b3b6711f7fdd56951",
+        "tests_sha256": "8b8450f84f01fdc8536a12e486b3a5cce6630c498f4335f8c13006b9aaf0daef",
+        "safety_utility_svg_sha256": "acdddeac658c76efde67744213eac263853f963a05aa8c829bca4ba1ed22003c",
+        "effects_metadata_svg_sha256": "981ea1f4341805e8c6f65bcb8b4a4eca55962986e12031843120e43e0454e8dc",
+        "figure_data_sha256": "987906ada765f22d590e2a6afe0e309c56a19c51f2345e76673fe66225abbcfc"
+      },
+      "observed": {
+        "new_study_episodes": 0,
+        "new_model_calls": 0,
+        "new_confidence_intervals": 0,
+        "figures": 2,
+        "derived_data_json": 1,
+        "verified_generator_input_hashes": 5,
+        "unchanged_inventory_hashes": 21,
+        "focused_unit_tests": "24/24 (figures 9, main 7, robustness 8); not full suite",
+        "rerender_byte_identical_outputs": 3,
+        "rerender_directory": "/tmp/research-figure-rerender-4obxv53m",
+        "preview_directory": "/tmp/research-figure-preview-xeGIaU"
+      },
+      "validation": {
+        "scope": "7 research-page schemas/local sources/wikilinks/images; 14 citation IDs; 3-page RQ parity; no new inference",
+        "visual": "two SVGs rendered with local Chrome headless and visually inspected",
+        "scientific": "MAJOR REVISION/PRELIMINARY unchanged; tests/figures do not close constructed-topology or external-validity limitations"
+      },
+      "result": "DERIVED_PRESENTATION_PASS; NO_NEW_ESTIMATES_OR_NOVELTY_UPGRADE; HUMAN_METHOD_REVIEW_AND_COURSE_FORMAT_OPEN",
+      "pages_created": [
+        "projects/reliable-tool-using-ai-agents/paper/figure-guide.md"
+      ],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03.md",
+        "projects/reliable-tool-using-ai-agents/paper/reproducibility-package.md",
+        "projects/reliable-tool-using-ai-agents/paper/supervisor-methodology-rq-briefing.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "index.md",
+        "log.md",
+        "hot.md",
+        ".manifest.json"
+      ],
+      "artifacts_created": [
+        "projects/reliable-tool-using-ai-agents/paper/figures/frozen-evidence-v1/main-safety-utility.svg",
+        "projects/reliable-tool-using-ai-agents/paper/figures/frozen-evidence-v1/effects-and-metadata.svg",
+        "projects/reliable-tool-using-ai-agents/paper/figures/frozen-evidence-v1/figure-data.json",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/generate_paper_figures.py",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/tests/test_paper_figures.py"
+      ]
+    },
+    {
+      "type": "paper_structure_reproducibility_revision",
+      "topic": "Paper v0.5 whole-manuscript scope, supplementary chronology and safe reproduction package",
+      "updated_at": "2026-10-03T22:38:23+07:00",
+      "basis": "reviewer R11/R12 structure/chronology and full-manuscript consistency; content-research-writer and wiki-update",
+      "review_type": "AI-assisted editorial/local reanalysis; no independent human sign-off",
+      "source_artifacts": {
+        "paper_v0_5_sha256": "f8356ee9792910e083b46682b084de8cc5c9bdbf9547b64c30689bdb290416c9",
+        "appendix_sha256": "51a993f24a4edc3d9649129a30939962e00b298f7a6f7307194dd34147acbe62",
+        "package_note_sha256": "9664d882611eb6f865a06096b5ff30f7594b8fd692bd81dcc0fa167828d5d838",
+        "inventory_sha256": "6c96482a4eae5f2884a1967166e6eb0c3c8c6763052899f42b841369bf26b6fa",
+        "inventory_file": "projects/reliable-tool-using-ai-agents/paper/artifact-inventory.json"
+      },
+      "observed": {
+        "new_episodes": 0,
+        "new_model_calls": 0,
+        "new_confidence_intervals": 0,
+        "selected_artifact_hashes": 21,
+        "byte_identical_reanalysis_outputs": 8,
+        "reanalysis_environment": "Linux/Python 3.12.3 standard library",
+        "temporary_reanalysis_directory": "/tmp/research-paper-reanalysis-fnLuny",
+        "generation_rerun": "NOT_RUN_THIS_TURN",
+        "source_license_check": "trajectory-judge MIT and ProvenanceGuard README attribution checked at pinned commits; historical WorkBench has no root LICENSE in tree; indirect MIT attribution not independent release clearance"
+      },
+      "result": "EDITORIAL_REANALYSIS_PASS; CANDIDATE_PACKAGE; PUBLIC_SNAPSHOT_LICENSE_GATE_AND_HUMAN_METHOD_REVIEW_OPEN; NO_NOVELTY_OR_EXTERNAL_VALIDITY_UPGRADE",
+      "validation": {
+        "checked_at": "2026-10-03T22:41:45+07:00",
+        "inventory": "21/21 selected hashes match; inventory and manuscript/package/appendix hashes recorded",
+        "reanalysis": "8/8 selected outputs byte-identical: main/robustness summary-inference-decision, secondary summary, topology analysis",
+        "wiki": "7 research-page frontmatters/local sources/path-qualified wikilinks valid; manifest/inventory JSON valid; 14 unique cited/defined IDs; RQ parity paper/candidate/briefing; git diff --check pass",
+        "tests": "No experiment/unit-test suite rerun; no source code modified during this editorial/package task",
+        "remaining": "author/human methodology review, final figures/template, committed snapshot and license gate before public release; generation rerun not performed"
+      },
+      "pages_created": [
+        "projects/reliable-tool-using-ai-agents/paper/supplementary-appendix.md",
+        "projects/reliable-tool-using-ai-agents/paper/reproducibility-package.md"
+      ],
+      "artifacts_created": ["projects/reliable-tool-using-ai-agents/paper/artifact-inventory.json"],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03.md",
+        "projects/reliable-tool-using-ai-agents/paper/supervisor-methodology-rq-briefing.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/README.md",
+        "index.md", "hot.md", "log.md", ".manifest.json"
+      ]
+    },
+    {
+      "type": "paper_related_work_citation_revision",
+      "topic": "Paper v0.4 controlled contributions, prior-art contrast and citation audit",
+      "updated_at": "2026-10-03T22:04:00+07:00",
+      "review_type": "AI-assisted editorial/source audit; not independent human sign-off",
+      "basis": "reviewer R10 and citation/scope aspects of R12; content-research-writer and wiki-update",
+      "source_artifacts": {
+        "paper_v0_4_sha256": "3e501fbf33355b554d99969b01584eca04680a6cecff5c94e09b1528e6fc2591",
+        "main_raw_sha256": "a51aebcb207f996e7a4d065b2e424fe794346d685d5f37a615d0de6bcb872234",
+        "main_runner_sha256": "387696644bd707ee63d9c9982a2628a5e93c67b2b23642bdabfdea3e54053523",
+        "robustness_raw_sha256": "f22e7f29c97a89eda20bdb57f9e59fa43581adb3d3b6475ee40e926492ab1982",
+        "secondary_raw_sha256": "40a419491011308dcce04db477c4a98dbda2e543d2db531b0a4fb07c08b43c35"
+      },
+      "source_coverage": {
+        "citation_ids": ["RIVA26", "RLVM26", "VTC26", "ROB26", "TEA26", "PC24", "PGF26", "PGA26", "GRADE26", "AF26", "ENV26", "AGOS26", "CE25", "KL86"],
+        "audit_note": "projects/reliable-tool-using-ai-agents/paper/related-work-citation-audit-2026-10-03.md",
+        "reading_limits": "not 14 full-paper deep reads; AGOS26 metadata/README only; CE25 and PC24 metadata/abstract; KL86 metadata with publisher full-text unavailable; detailed levels in audit note",
+        "additional_primary_metadata_pages": [
+          "https://www.epfl.ch/labs/sacs/publications/",
+          "https://conf.researchr.org/track/ase-2026/ase-2026-research-track",
+          "https://conf.researchr.org/details/ase-2026/ase-2026-tools-and-data-sets/45/Introducing-Safe-LLM-Agent-Execution-via-Typed-Tool-Mediation-and-World-Effect-Evalua",
+          "https://proceedings.mlr.press/v267/kim25e.html",
+          "https://aclanthology.org/2024.findings-emnlp.978/"
+        ],
+        "public_release_pages_rechecked": [
+          "https://github.com/EnvTrustBench/EnvTrustBench",
+          "https://github.com/cmu-soda/ProvenanceGuard",
+          "https://github.com/aalvsz/provenanceguard",
+          "https://github.com/zhoujune/AgentOS"
+        ]
+      },
+      "observed": {"new_episodes": 0, "new_model_calls": 0, "new_confidence_intervals": 0, "citation_ids": 14, "provisional_contributions": 3},
+      "result": "EDITORIAL_SOURCE_AUDIT_ONLY; NO_HEAD_TO_HEAD_OR_ALGORITHM_NOVELTY_CLAIM; MAJOR_REVISION_AND_PRELIMINARY_NOVELTY_REMAIN",
+      "validation": {
+        "checked_at": "2026-10-03T22:06:56+07:00",
+        "citation_ids": "14 unique; all cited in body and defined in bibliography",
+        "rq_parity": "paper, candidate note and supervisor briefing agree",
+        "integrity": "current v0.4 paper hash and four frozen raw/runner hashes match; historical v0.3 record preserved",
+        "wiki_checks": "10 research pages checked: required frontmatter, local source paths and path-qualified wikilinks valid; manifest JSON valid; git diff --check pass",
+        "experiment_tests": "not rerun; no experimental code or raw outputs changed in this editorial task"
+      },
+      "pages_created": [
+        "projects/reliable-tool-using-ai-agents/paper/related-work-citation-audit-2026-10-03.md",
+        "references/agentos-typed-tool-mediation.md"
+      ],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03.md",
+        "projects/reliable-tool-using-ai-agents/paper/supervisor-methodology-rq-briefing.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Prior-Art Threat: Provenance Metadata and Source Selection.md",
+        "index.md", "hot.md", "log.md", ".manifest.json"
+      ]
+    },
+    {
+      "type": "paper_analytic_counterfactual_diagnostics",
+      "topic": "Paper v0.3 topology expectation, schedule reconstruction and abstention diagnostics",
+      "updated_at": "2026-10-03T16:37:11+07:00",
+      "basis": "reviewer R5/R6 and mechanism/cost aspects of R8/R9; frozen main and secondary artifacts",
+      "source_artifacts": {
+        "main_raw_sha256": "a51aebcb207f996e7a4d065b2e424fe794346d685d5f37a615d0de6bcb872234",
+        "main_runner_sha256": "387696644bd707ee63d9c9982a2628a5e93c67b2b23642bdabfdea3e54053523",
+        "secondary_raw_sha256": "40a419491011308dcce04db477c4a98dbda2e543d2db531b0a4fb07c08b43c35",
+        "secondary_summary_sha256": "ba8bda32d76c79e0aaf6cb5fe0195899d871f4ad4449ddc71c7f38a50600dd4b",
+        "secondary_contract_sha256": "552ef2c689cae93494d68c9114482d1550f5bcfa4653e9bff8902d3b19cfed1a",
+        "secondary_schedule_sha256": "f630cb0a34276c23462d838eb23113ea2e4d6c4270958b292db25d26ce725469",
+        "analysis_script_sha256": "b855c4ea6962ecbac80b3438983325e546ebe0d73cabf9ba18464a7fcec48110",
+        "analysis_json_sha256": "598896505fa0da2c23d7ca9abc078be3336d7d59ace9b8f93291c279243fece8",
+        "paper_v0_3_sha256": "f69d2090185166c90e775d488f6c70c9facebd35c3dbb289656a0ef97269ad67"
+      },
+      "observed": {
+        "new_episodes": 0,
+        "new_model_calls": 0,
+        "new_confidence_intervals": 0,
+        "verified_frozen_inputs": 6,
+        "main_uniform_selector_unsafe_expectation": "2/9; observed fixed-seed random 30/150 unchanged",
+        "main_targeted_always_escalate": "same unsafe 0/150 and action correctness 100/150 as provenance; clean refund correctness 0/50 vs provenance 50/50",
+        "secondary_safety_cases_exactly_reconstructed": 8,
+        "secondary_targeted_25_formula": "random=9-r; provenance=3 per 12 seeds; overlap sum=13; totals 59/96 vs 24/96",
+        "secondary_always_block": "deduplicated scenario counterfactual; unsafe 0/96 and utility false blocks 24/24; WB-295 excluded from both denominators"
+      },
+      "result": "POST_HOC_ANALYTICAL_COUNTERFACTUAL_DIAGNOSTIC_ONLY; RAW_UNCHANGED; NO_GENERALIZATION_OR_NEW_ALGORITHM_CLAIM; MAJOR_REVISION_REMAINS",
+      "validation": {
+        "checked_at": "2026-10-03T16:41:22+07:00",
+        "reanalysis": "byte-identical in separate temporary output directory",
+        "integrity": "six frozen input hashes, robustness raw hash, script/output/paper manifest hashes match",
+        "secondary_reconstruction": "8/8 safety-case counts independently checked against schedule",
+        "negative_checks": "4/4: duplicate row, paired oracle mismatch, paired primary mismatch, existing-output overwrite rejection",
+        "wiki_checks": "five research page frontmatters and path-qualified wikilinks valid; manifest JSON valid; git diff --check pass"
+      },
+      "artifacts_created": [
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_topology_diagnostics.py",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_topology_diagnostics_20261003/analysis.json"
+      ],
+      "pages_created": [],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/README.md",
+        "index.md", "hot.md", "log.md", ".manifest.json"
+      ]
+    },
+    {
+      "type": "paper_construct_revision",
+      "topic": "Paper v0.2 decision-level endpoint and missed-refund decomposition",
+      "updated_at": "2026-10-03T15:59:56+07:00",
+      "basis": "reviewer-audit-2026-10-03 R1/R2; frozen main raw and runner",
+      "source_artifacts": {
+        "main_raw_sha256": "a51aebcb207f996e7a4d065b2e424fe794346d685d5f37a615d0de6bcb872234",
+        "main_runner_sha256": "387696644bd707ee63d9c9982a2628a5e93c67b2b23642bdabfdea3e54053523",
+        "paper_v0_2_sha256": "04535f8d6c8b47d01dd64e7abe832a042d78e8ea563ef1891654ea9b83486fc8"
+      },
+      "observed": {
+        "targeted_unsafe_decisions": {"random_k": "30/150", "provenance_k": "0/150"},
+        "targeted_correct_expected_refund_decisions": {"random_k": "0/50", "provenance_k": "0/50"},
+        "targeted_missed_refund_without_proposal": {"random_k": "50/50", "provenance_k": "50/50"}
+      },
+      "result": "PAPER_V0_2_R1_R2_EDITORIAL_REVISION; RAW_AND_PROTOCOL_UNCHANGED; REMAINING_MAJOR_REVISION_FINDINGS_OPEN",
+      "pages_created": [],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
+        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03.md",
+        "index.md", "hot.md", "log.md", ".manifest.json"
+      ]
+    },
+    {
+      "type": "paper_reviewer_audit",
+      "topic": "Construct validity and claim-measurement alignment of controlled verification paper",
+      "audited_at": "2026-10-03T15:36:10+07:00",
+      "review_type": "AI-assisted reviewer-style audit; not independent human review",
+      "source_artifacts": {
+        "working_tree_head": "18bcf40e92755a6fed05ec2cdacb5cf863cd7410",
+        "paper_snapshot_sha256": "ff0c330b5c71f7b2844cb32509c0d901386ba1c6928155bf75fd42eec2bc4b33",
+        "main_runner_sha256": "387696644bd707ee63d9c9982a2628a5e93c67b2b23642bdabfdea3e54053523",
+        "main_analyzer_sha256": "3f2a8e3f472309913df0f27fa6c954e867aded828bfad2ec5fb36b45a54052a6",
+        "main_raw_sha256": "a51aebcb207f996e7a4d065b2e424fe794346d685d5f37a615d0de6bcb872234",
+        "robustness_raw_sha256": "f22e7f29c97a89eda20bdb57f9e59fa43581adb3d3b6475ee40e926492ab1982",
+        "secondary_varied_raw_sha256": "40a419491011308dcce04db477c4a98dbda2e543d2db531b0a4fb07c08b43c35"
+      },
+      "observed": {
+        "findings": 12,
+        "main_endpoint": "action-oracle correctness; not executed post-state correctness",
+        "targeted_unsafe_decisions": {"random_k": "30/150", "provenance_k": "0/150"},
+        "targeted_correct_expected_refund_outcomes": {"random_k": "0/50", "provenance_k": "0/50"},
+        "targeted_missed_refund_rows_without_proposal": {"random_k": "50/50", "provenance_k": "50/50"},
+        "existing_always_block": "secondary counterfactual pooled diagnostic; not new matched-budget baseline"
+      },
+      "result": "MAJOR_REVISION; CONTROLLED_COURSE_SCOPE_ACCEPTED; RAW_PRESERVED; NO_NEW_EXPERIMENTS",
+      "pages_created": ["projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03.md"],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "index.md", "hot.md", "log.md", ".manifest.json"
+      ]
+    },
+    {
+      "type": "live_agent_opportunity_diagnostic_ingest",
+      "topic": "RTX 4060 Qwen2.5 7B 16-cell opportunity-gate audit",
+      "audited_at": "2026-10-03T12:56:05+07:00",
+      "source_artifacts": {
+        "archive_sha256": "0364d5f791d829b7e5f7d7a62e40b6d5fca313d0174378caeb311718335320e2",
+        "raw_sha256": "ee27a087584a9fd4225c18d04fd9d1c1fcdaa710720105036b56b046538e14a2",
+        "matched_pair_audit_sha256": "276d9a30cf56100b7d9a840202a5edf6b5ad52741cdea8d4d29375c14b073a46"
+      },
+      "observed": {
+        "episodes": 16,
+        "parse_failures": 0,
+        "targeted_boundary_unsafe_capable": "0/8",
+        "targeted_matched_unsafe_capable_pairs": "0/4",
+        "unsafe_accepted_refunds": "0/16",
+        "refund_attempts_with_boundary_events": "6/6",
+        "reply_completion": "8/16",
+        "local_unit_tests": "62/62 pass"
+      },
+      "result": "TECHNICAL_PASS; OPPORTUNITY_GATE_FAIL; STOP_LIVE_AGENT_SCALING; NO_POLICY_EFFECT_ESTIMATE",
+      "pages_created": [
+        "journal/2026-10-03-live-agent-opportunity-diagnostic.md"
+      ],
+      "pages_updated": [
+        "synthesis/protocol-prospective-live-agent-opportunity-gate.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
+        "projects/reliable-tool-using-ai-agents/paper/supervisor-methodology-rq-briefing.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/README.md",
+        "index.md",
+        "hot.md",
+        "log.md"
+      ]
+    },
+    {
       "type": "prospective_live_agent_opportunity_preflight",
       "topic": "Strict boundary opportunity criterion and 16-cell exploratory RTX 4060 preflight",
       "audited_at": "2026-10-02T01:59:00+07:00",
@@ -19,10 +873,21 @@
         }
       },
       "planned_design": {
-        "task_ids": ["INS-00032", "INS-00033", "INS-00034", "INS-00035"],
+        "task_ids": [
+          "INS-00032",
+          "INS-00033",
+          "INS-00034",
+          "INS-00035"
+        ],
         "seed": 1111,
-        "regimes": ["clean", "targeted_common_mode"],
-        "policies": ["random_k_enforced", "provenance_enforced"],
+        "regimes": [
+          "clean",
+          "targeted_common_mode"
+        ],
+        "policies": [
+          "random_k_enforced",
+          "provenance_enforced"
+        ],
         "cells": 16,
         "verification_trigger": "action_boundary",
         "status": "PROSPECTIVE EXPLORATORY; NOT RUN"
@@ -1535,13 +2400,78 @@
         "log.md",
         ".manifest.json"
       ]
+    },
+    {
+      "type": "paper_review_pdf_export",
+      "project": "reliable-tool-using-ai-agents",
+      "topic": "A4 Vietnamese-first review rendering of living paper v0.9",
+      "executed_at": "2026-10-05T09:14:46+07:00",
+      "paper_source": "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
+      "paper_sha256": "0e9855c81f0d4d91bb78b3c51944954a191cf1368713f163f47b730469403087",
+      "builder": "projects/reliable-tool-using-ai-agents/paper/build_review_pdf.py",
+      "builder_sha256": "4b92822e3a004f5bcca000bb88a4c3a892e79b0b77c8d82ca57ce66180186a04",
+      "artifact": "projects/reliable-tool-using-ai-agents/paper/review/paper-review-v0.9-2026-10-05.pdf",
+      "artifact_sha256": "a19c39ae50a7c85396319cf3b288ba32fba48d1e270f62092c716abd18af3a1a",
+      "scope": "Layout-only export: manuscript through References, supplementary appendix, and internal vault-reference index; no scientific prose or results changed.",
+      "validation": {
+        "pages": 24,
+        "page_size": "A4",
+        "checks": [
+          "pdfinfo metadata and page count",
+          "pdftotext expected claims, references, figures and appendix; no raw wikilinks/callout tokens",
+          "PDF retains 51 active citation/internal-reference hyperlinks",
+          "visual review of first page, both figure pages, appendix start and representative appendix pages/contact sheet"
+        ]
+      },
+      "status": "AUTHOR_SUPERVISOR_REVIEW_COPY_NOT_SUBMISSION_READY",
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/paper/submission-readiness.md",
+        "projects/reliable-tool-using-ai-agents/paper/reproducibility-package.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "index.md",
+        "hot.md",
+        "log.md",
+        ".manifest.json"
+      ]
     }
   ],
   "stats": {
-    "total_sources_ingested": 8,
-    "total_pages": 110
+    "total_sources_ingested": 9,
+    "total_pages": 123
   },
   "sources": {
+    "https://arxiv.org/html/2609.11957v1": {
+      "content_hash": "61711bf55eef70763041e82a820cfa2d7938a9834386fd4d1cc3e8da6e5f35cc",
+      "last_ingested": "2026-10-04T10:04:00+07:00",
+      "source_type": "paper_html",
+      "reading_scope": "HTML sections 1-8; not supplementary or executed artifact",
+      "pages_produced": ["references/look-before-you-leap-pre-action-verification.md", "journal/2026-10-04-pre-action-prior-art-audit.md", "synthesis/Prior-Art Threat: Provenance Metadata and Source Selection.md"]
+    },
+    "https://github.com/zhoujune/AgentOS/tree/4147c7f780ccb59b83f3dba8da5f19e73a1d1a8c": {
+      "last_ingested": "2026-10-04T10:04:00+07:00",
+      "source_type": "pinned_repository",
+      "commit": "4147c7f780ccb59b83f3dba8da5f19e73a1d1a8c",
+      "reading_scope": "Targeted docs/policy/harness/snapshot; not full tree audit or benchmark execution",
+      "pages_produced": ["references/agentos-typed-tool-mediation.md", "journal/2026-10-04-pre-action-prior-art-audit.md", "synthesis/Prior-Art Threat: Provenance Metadata and Source Selection.md"]
+    },
+    "https://zenodo.org/api/records/20046861": {
+      "content_hash": "814207763c31b0bf1e32bfae5f7126860edb2d7d8ef10f7d1a09530ddff9067c",
+      "last_ingested": "2026-10-04T10:04:00+07:00",
+      "source_type": "artifact_metadata",
+      "reading_scope": "Metadata plus two task ZIPs downloaded/integrity/parse checked; no images or model run",
+      "pages_produced": ["references/agentos-typed-tool-mediation.md", "journal/2026-10-04-pre-action-prior-art-audit.md"]
+    },
+    "/home/kiet/Downloads/fpt-document/prn232/research/projects/reliable-tool-using-ai-agents/paper/figures/frozen-evidence-v1/figure-data.json": {
+      "content_hash": "987906ada765f22d590e2a6afe0e309c56a19c51f2345e76673fe66225abbcfc",
+      "last_ingested": "2026-10-03T23:51:23+07:00",
+      "source_type": "derived_data",
+      "project": "reliable-tool-using-ai-agents",
+      "pages_produced": [
+        "projects/reliable-tool-using-ai-agents/paper/figure-guide.md",
+        "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md"
+      ]
+    },
     "/home/kiet/Downloads/fpt-document/prn232/research/projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_ins30_rtx4060_20260930/raw.jsonl": {
       "content_hash": "59921cc274a2c27e91d7aed43dbdf6d9903a4d94ecc409006b2e72df1b2155d7",
       "last_ingested": "2026-10-02T01:44:04+07:00",
@@ -1623,6 +2553,30 @@
         "journal/2026-10-02-ins32-rtx4060-validity-audit.md",
         "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
         "synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic.md"
+      ]
+    },
+    "/home/kiet/Downloads/fpt-document/prn232/research/projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_opportunity_16cells_rtx4060_20261003/source_archive.zip": {
+      "content_hash": "0364d5f791d829b7e5f7d7a62e40b6d5fca313d0174378caeb311718335320e2",
+      "last_ingested": "2026-10-03T06:05:29.631847+00:00",
+      "pages_produced": [
+        "journal/2026-10-03-live-agent-opportunity-diagnostic.md",
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
+        "projects/reliable-tool-using-ai-agents/paper/supervisor-methodology-rq-briefing.md",
+        "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
+        "synthesis/protocol-prospective-live-agent-opportunity-gate.md",
+        "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/README.md"
+      ]
+    },
+    "/home/kiet/Downloads/fpt-document/prn232/research/projects/reliable-tool-using-ai-agents/paper/review/paper-review-v0.9-2026-10-05.pdf": {
+      "content_hash": "a19c39ae50a7c85396319cf3b288ba32fba48d1e270f62092c716abd18af3a1a",
+      "last_ingested": "2026-10-05T09:14:46+07:00",
+      "source_type": "derived_review_artifact",
+      "project": "reliable-tool-using-ai-agents",
+      "reading_scope": "A4 reader-review export of frozen living paper v0.9; not course-template submission",
+      "pages_produced": [
+        "projects/reliable-tool-using-ai-agents/paper/submission-readiness.md",
+        "projects/reliable-tool-using-ai-agents/paper/reproducibility-package.md"
       ]
     }
   }

@@ -1,0 +1,139 @@
+{
+  "schema_version": "1.0",
+  "status": "LOCAL_CLEAN_VENV_CORE_REPRODUCTION_PASS",
+  "completed_at": "2026-10-04T16:37:34+07:00",
+  "scope": "Same-host fresh-venv replay of frozen main/robustness; not fresh-machine or independent reproduction",
+  "research_head": "18bcf40e92755a6fed05ec2cdacb5cf863cd7410",
+  "research_checkout": "dirty working tree; current runner/analyzer hashes tracked separately",
+  "upstream": {
+    "repository": "https://github.com/mohammadi-hadi/trajectory-judge",
+    "commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5",
+    "clone_path": "/tmp/reliable-core-repro-w7jCJR/upstream",
+    "tracked_worktree_clean": true,
+    "pyproject_sha256": "6c3469f96c681dbd45662cadf48a5417a7d1e0931f5b9b1bfd69e1614a98b52e",
+    "world_sha256": "9734521398fedc8e1bfa272a2f68d420121b999af47e637404e4324dbc0def6c",
+    "trace_sha256": "f1f30cdfe6d1f7f7ea9fc730a9ef8cf6eb24654e8d6c34adfeedbba21c3f0f25",
+    "installed_wheel_selected_source_files_byte_identical": 3
+  },
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39",
+    "uv": "0.12.12",
+    "venv": "/tmp/reliable-core-repro-w7jCJR/venv",
+    "cache": "/tmp/reliable-core-repro-w7jCJR/uv-cache",
+    "include_system_site_packages": false,
+    "user_site_enabled": false,
+    "pydantic_absent_before_install": true,
+    "runner_environment": "PYTHONPATH and PYTHONHOME unset; python -s; PYTHONDONTWRITEBYTECODE=1",
+    "installed_upstream": "non-editable install from inspected pinned local source; declared base dependencies, no dev/serve/report extras",
+    "packages": {
+      "Pygments": "2.21.0",
+      "annotated-doc": "0.0.5",
+      "annotated-types": "0.8.0",
+      "anyio": "4.15.1",
+      "certifi": "2026.7.22",
+      "h11": "0.16.0",
+      "httpcore": "1.0.9",
+      "httpx": "0.28.1",
+      "idna": "3.20",
+      "markdown-it-py": "4.2.0",
+      "mdurl": "0.1.2",
+      "pydantic": "2.13.5",
+      "pydantic_core": "2.46.5",
+      "rich": "15.0.0",
+      "shellingham": "1.5.4",
+      "trajectory-judge": "0.1.0",
+      "typer": "0.27.2",
+      "typing-inspection": "0.4.4",
+      "typing_extensions": "4.16.0"
+    },
+    "limitations": "Observed runtime version pins only; no wheel hashes or build-environment lock. Installation used network/package registry; experiment did not call model APIs."
+  },
+  "replayed_rows": {
+    "main": 1350,
+    "robustness": 3750,
+    "new_independent_observations": 0
+  },
+  "model_calls": 0,
+  "live_agent_episodes": 0,
+  "tests": {
+    "test_main_study": 7,
+    "test_robustness_gate": 8,
+    "passed": 15,
+    "failed": 0,
+    "full_suite": false
+  },
+  "analysis": "Frozen bootstrap algorithms/seeds rerun; inference files identical, not new estimates/samples",
+  "main_gate": "PASS",
+  "robustness_gate": "FAIL ROBUSTNESS",
+  "comparisons": [
+    {
+      "frozen_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_main_study/raw.jsonl",
+      "reproduced_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_clean_env_reproduction_20261004/main/raw.jsonl",
+      "sha256": "a51aebcb207f996e7a4d065b2e424fe794346d685d5f37a615d0de6bcb872234",
+      "byte_identical": true
+    },
+    {
+      "frozen_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_main_study/run_manifest.json",
+      "reproduced_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_clean_env_reproduction_20261004/main/run_manifest.json",
+      "sha256": "283476881d8958ccc4572f0b7dbe080dc957bb8aa46052b0cd250ea75f08f84d",
+      "byte_identical": true
+    },
+    {
+      "frozen_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_main_study/summary.json",
+      "reproduced_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_clean_env_reproduction_20261004/main/summary.json",
+      "sha256": "3390ab5b7b14ebe99a74da9bef063193f82c4a3ee8f258a95f0e315747fc56e9",
+      "byte_identical": true
+    },
+    {
+      "frozen_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_main_study/inference.json",
+      "reproduced_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_clean_env_reproduction_20261004/main/inference.json",
+      "sha256": "c4e61e6f07c0b28ad5ba12910ea7cf1a9327c4c01c7370c0aad0f96ee0285835",
+      "byte_identical": true
+    },
+    {
+      "frozen_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_main_study/decision.json",
+      "reproduced_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_clean_env_reproduction_20261004/main/decision.json",
+      "sha256": "893af221b4520e3231b8c1007f0658747f01dbfe46936c64f8672db524e86cf8",
+      "byte_identical": true
+    },
+    {
+      "frozen_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_robustness_gate/raw.jsonl",
+      "reproduced_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_clean_env_reproduction_20261004/robustness/raw.jsonl",
+      "sha256": "f22e7f29c97a89eda20bdb57f9e59fa43581adb3d3b6475ee40e926492ab1982",
+      "byte_identical": true
+    },
+    {
+      "frozen_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_robustness_gate/run_manifest.json",
+      "reproduced_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_clean_env_reproduction_20261004/robustness/run_manifest.json",
+      "sha256": "9fa6992663332b05bd5d9a9d862fd922a4c5043011bfc4160c2401ebe867ebd4",
+      "byte_identical": true
+    },
+    {
+      "frozen_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_robustness_gate/summary.json",
+      "reproduced_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_clean_env_reproduction_20261004/robustness/summary.json",
+      "sha256": "9bde5b8209d396fae97fab11d73f26e94685ce6e833b70fcff5dd73e82d0c821",
+      "byte_identical": true
+    },
+    {
+      "frozen_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_robustness_gate/inference.json",
+      "reproduced_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_clean_env_reproduction_20261004/robustness/inference.json",
+      "sha256": "6b6244982e66c0bd580a2f99fd9bc91a39dfcc00c458135264ff0e742e75761b",
+      "byte_identical": true
+    },
+    {
+      "frozen_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_robustness_gate/decision.json",
+      "reproduced_file": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_clean_env_reproduction_20261004/robustness/decision.json",
+      "sha256": "3e89c8264377d07d57351c5f3cde3b4159dd016b1b18a607cd423f7692703e95",
+      "byte_identical": true
+    }
+  ],
+  "frozen_inventory_hashes_unchanged": 21,
+  "unchanged_limits": [
+    "constructed topology and accurate metadata assumptions",
+    "no live-agent effect estimate",
+    "no independent human review",
+    "secondary generator/dependencies not replayed",
+    "public release/license and committed snapshot gates open"
+  ]
+}

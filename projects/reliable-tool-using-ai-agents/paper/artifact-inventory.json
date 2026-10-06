@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0",
+  "status": "CANDIDATE_COURSE_PAPER_PACKAGE_NOT_PUBLIC_RELEASE",
+  "created_at": "2026-10-03T22:26:57+07:00",
+  "base_directory": "../experiments/correlated-tool-verification-pilot",
+  "hash_algorithm": "sha256",
+  "research_checkout_head": "18bcf40e92755a6fed05ec2cdacb5cf863cd7410",
+  "checkout_state": "dirty working tree; HEAD alone does not identify current manuscript/package",
+  "scope": "Selected frozen artifacts; not a complete repository snapshot or dependency lock",
+  "upstream_pins": {
+    "trajectory_judge": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5",
+    "provenanceguard": "3ad7141db44096e1440718618bdb24fa46c003ff",
+    "workbench": "00670510c8a476acd247925cefb17fee88500737"
+  },
+  "artifacts": [
+    {
+      "path": "data/tasks_main_30.json",
+      "role": "main_task_manifest",
+      "sha256": "a122dda63a40ab8db43d1af2a6a7019ca561c4c9e533db0e798fe9470e88cfa6"
+    },
+    {
+      "path": "data/tasks_main_30.manifest.json",
+      "role": "main_task_metadata",
+      "sha256": "203edac0c1c663c68024ec671322da47b15537148eff32ca37c9c248d2e6bfbe"
+    },
+    {
+      "path": "data/tasks_robustness_30.json",
+      "role": "robustness_task_manifest",
+      "sha256": "9215aa09a4a28f7853f3dbd209c6ee66dcee30216b9b7b556ad380ee39e6a05c"
+    },
+    {
+      "path": "data/tasks_robustness_30.manifest.json",
+      "role": "robustness_task_metadata",
+      "sha256": "a3b9b37231d0133077315ff812831ad05edcb05df05b97b50edd302ba971251e"
+    },
+    {
+      "path": "src/run_main_study.py",
+      "role": "main_runner",
+      "sha256": "387696644bd707ee63d9c9982a2628a5e93c67b2b23642bdabfdea3e54053523"
+    },
+    {
+      "path": "src/analyze_main_study.py",
+      "role": "main_analysis",
+      "sha256": "3f2a8e3f472309913df0f27fa6c954e867aded828bfad2ec5fb36b45a54052a6"
+    },
+    {
+      "path": "src/run_robustness_gate.py",
+      "role": "robustness_runner",
+      "sha256": "ebcdb7f384a234d77b3ad569a2ae6a0be683231d47b3cbe41fd9fc87b7277a40"
+    },
+    {
+      "path": "src/analyze_robustness_gate.py",
+      "role": "robustness_analysis",
+      "sha256": "d363080f82b591a9eb553a1d79689aa6ced659fccabb44330c76887231e507a0"
+    },
+    {
+      "path": "results_main_study/raw.jsonl",
+      "role": "main_raw_decisions",
+      "sha256": "a51aebcb207f996e7a4d065b2e424fe794346d685d5f37a615d0de6bcb872234"
+    },
+    {
+      "path": "results_main_study/inference.json",
+      "role": "main_statistical_analysis",
+      "sha256": "c4e61e6f07c0b28ad5ba12910ea7cf1a9327c4c01c7370c0aad0f96ee0285835"
+    },
+    {
+      "path": "results_main_study/decision.json",
+      "role": "main_gate_outcome",
+      "sha256": "893af221b4520e3231b8c1007f0658747f01dbfe46936c64f8672db524e86cf8"
+    },
+    {
+      "path": "results_robustness_gate/raw.jsonl",
+      "role": "robustness_raw_decisions",
+      "sha256": "f22e7f29c97a89eda20bdb57f9e59fa43581adb3d3b6475ee40e926492ab1982"
+    },
+    {
+      "path": "results_robustness_gate/inference.json",
+      "role": "robustness_statistical_analysis",
+      "sha256": "6b6244982e66c0bd580a2f99fd9bc91a39dfcc00c458135264ff0e742e75761b"
+    },
+    {
+      "path": "results_robustness_gate/decision.json",
+      "role": "robustness_gate_outcome",
+      "sha256": "3e89c8264377d07d57351c5f3cde3b4159dd016b1b18a607cd423f7692703e95"
+    },
+    {
+      "path": "data/secondary_schema_contract_v1.json",
+      "role": "candidate_secondary_contract",
+      "sha256": "552ef2c689cae93494d68c9114482d1550f5bcfa4653e9bff8902d3b19cfed1a"
+    },
+    {
+      "path": "data/secondary_varied_schedule_v1/schedule.jsonl",
+      "role": "secondary_fixed_schedule",
+      "sha256": "f630cb0a34276c23462d838eb23113ea2e4d6c4270958b292db25d26ce725469"
+    },
+    {
+      "path": "results_secondary_varied/episodes.jsonl",
+      "role": "secondary_raw_executed_adaptation",
+      "sha256": "40a419491011308dcce04db477c4a98dbda2e543d2db531b0a4fb07c08b43c35"
+    },
+    {
+      "path": "results_secondary_varied/analysis-summary.json",
+      "role": "secondary_descriptive_analysis",
+      "sha256": "ba8bda32d76c79e0aaf6cb5fe0195899d871f4ad4449ddc71c7f38a50600dd4b"
+    },
+    {
+      "path": "src/analyze_topology_diagnostics.py",
+      "role": "post_hoc_analysis",
+      "sha256": "b855c4ea6962ecbac80b3438983325e546ebe0d73cabf9ba18464a7fcec48110"
+    },
+    {
+      "path": "results_topology_diagnostics_20261003/analysis.json",
+      "role": "post_hoc_analytical_counterfactuals",
+      "sha256": "598896505fa0da2c23d7ca9abc078be3336d7d59ace9b8f93291c279243fece8"
+    },
+    {
+      "path": "results_live_agent_opportunity_16cells_rtx4060_20261003/raw.jsonl",
+      "role": "negative_live_opportunity_diagnostic",
+      "sha256": "ee27a087584a9fd4225c18d04fd9d1c1fcdaa710720105036b56b046538e14a2"
+    }
+  ],
+  "interpretation": {
+    "main": "decision simulation, not executed refund state",
+    "robustness": "same environment post-main negative stress test",
+    "secondary": "exploratory project-defined topology; not native benchmark reproduction",
+    "live": "no matched unsafe-capable pair, not policy-effect estimate"
+  }
+}

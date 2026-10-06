@@ -4,7 +4,7 @@ title: Wiki Index
 
 # Wiki Index
 
-*This index is automatically maintained. Last updated: 2026-10-01T20:39:33+07:00*
+*This index is automatically maintained. Last updated: 2026-10-05T09:14:46+07:00*
 
 ## Concepts
 
@@ -22,6 +22,8 @@ title: Wiki Index
 
 ## References
 
+- [[references/agentos-typed-tool-mediation]] — AgentOS pinned-code/evaluation và 72 task JSON đã inspect; full paper vẫn chưa đọc ( #prior-art #verification)
+- [[references/look-before-you-leap-pre-action-verification]] — Pre-action realizability khác semantic correctness; full HTML đọc, artifact/wording còn uncertainty ( #prior-art #verification)
 - [[references/tau-bench]] — Stateful tool-agent-user benchmark with goal-state scoring and pass^k ( #benchmark #tool-use)
 - [[references/toolsandbox]] — Stateful conversational tool-use evaluation with milestones ( #benchmark #tool-use)
 - [[references/failing-tools]] — Under-review controlled runtime tool-failure recovery benchmark ( #benchmark #recovery)
@@ -78,19 +80,23 @@ title: Wiki Index
 - [[synthesis/Research: Early Failure Detection in Tool-Using Agents]] — Novelty gate bác bỏ broad early-failure topic và trả lời experimental open questions ( #failure-detection #prior-art)
 - [[synthesis/Research: Correlated Silent Tool Failures and Verification]] — Prior-art map và reproducibility gate cho common-mode tool verification ( #verification #prior-art)
 - [[synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures]] — PRELIMINARY dependency-aware verification gap ( #research-gap #tool-failure)
-- [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]] — Main study có điều kiện; secondary và RTX diagnostic chưa chứng minh generalization/live-agent safety effect ( #research-question #experiment)
+- [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]] — Working RQ/H1 đã làm rõ decision-level endpoints trong controlled study; secondary và RTX diagnostic chưa chứng minh generalization/live-agent safety effect ( #research-question #experiment)
 - [[synthesis/Protocol: Action-Boundary Provenance Verification Main Study]] — Internal preregistration cho main deterministic study ( #research-protocol #experiment)
 - [[synthesis/Protocol: Secondary Multi-Domain Benchmark-Derived Adaptation]] — Frozen secondary protocol cho 12 benchmark-derived cases; 768 episodes mới ở mức kế hoạch ( #research-protocol #external-validity)
 - [[synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility]] — Tám safety candidates hiện hành; static schema pass nhưng reviewer/cohort/runner gate còn mở ( #research-protocol #external-validity)
 - [[synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix]] — Công khai protocol deviation và khóa scope trước full exploratory run 704 episodes ( #research-protocol #experiment)
 - [[synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic]] — Protocol prospective và post-run addendum: tám cell chạy xong nhưng chưa có unsafe-capable attempt ( #research-protocol #experiment)
-- [[synthesis/protocol-prospective-live-agent-opportunity-gate]] — Tiêu chí strict trước run mới và ma trận exploratory 16 cells; chưa có model output ( #research-protocol #experiment)
+- [[synthesis/protocol-prospective-live-agent-opportunity-gate]] — Tiêu chí strict khóa trước run; 16-cell diagnostic sau đó fail opportunity gate ( #research-protocol #experiment)
 - [[synthesis/Protocol: Secondary Varied-Schedule Replication]] — Schedule mới khóa trước runtime; replication 1.056 rows đã chạy exploratory ( #research-protocol #experiment)
 - [[synthesis/Protocol Amendment: Imperfect Provenance and Partial Correlation]] — Post-main robustness gate với noisy metadata và cross-domain fault leakage ( #research-protocol #experiment)
 - [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]] — Adversarial novelty boundary cho metadata validation và source selection ( #prior-art #novelty)
 
 ## Journal
 
+- [[journal/2026-10-05-main-study-influence-audit]] — Bỏ lần lượt task/seed/stratum: targeted Δ vẫn âm, independent đổi dấu theo composition; post-hoc ranges không CI/new samples ( #research-log #research-methods)
+- [[journal/2026-10-04-clean-environment-core-reproduction]] — v0.9 clean-venv core replay: 10 files byte-identical, 15 tests; không independent samples/fresh-machine validation ( #research-log #reproducibility)
+- [[journal/2026-10-04-submission-readiness-audit]] — v0.8 final claim audit, chronology fixes và course/public-release gates riêng; không experiment mới ( #research-log #paper-draft)
+- [[journal/2026-10-04-pre-action-prior-art-audit]] — Audit và integration v0.7: ba lớp verification, bounded citations, hướng dẫn đọc và next action; không new experiments ( #research-log #prior-art)
 - [[journal/2026-09-09-reliable-agents-field-map]] — First-pass search record, uncertainties, and next action ( #research-log #ai-agents)
 - [[journal/2026-09-10-adversarial-prior-art-recovery-routing]] — Adversarial search bác bỏ broad recovery-routing gap ( #research-log #prior-art)
 - [[journal/2026-09-10-adversarial-prior-art-capability-control]] — Adversarial search cho capability control ( #research-log #authorization)
@@ -122,11 +128,19 @@ title: Wiki Index
 - [[journal/2026-10-01-live-agent-diagnostic-instrumentation]] — Runner/analyzer cho tám cell và process metrics; 58 tests Linux pass, sau đó đã sync sang Windows ( #research-log #experiment)
 - [[journal/2026-10-02-ins32-rtx4060-validity-audit]] — Tám RTX cells technical pass, nhưng refund 0 EUR sau escalation khiến policy-effect validity fail ( #research-log #experiment)
 - [[journal/2026-10-02-live-agent-opportunity-preflight]] — Static preflight bốn safety tasks, seed 1111 và strict boundary opportunity metric; chưa chạy RTX ( #research-log #experiment)
+- [[journal/2026-10-03-live-agent-opportunity-diagnostic]] — Artifact RTX 4060 16 cells được kiểm tra; `0/4` matched unsafe-capable pairs, stop scaling ( #research-log #experiment)
 
 ## Projects
 
+- [[projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03]] — MAJOR REVISION: construct/metric audit, conditional utility, analytical mechanism và kế hoạch sửa controlled paper ( #paper-draft #research-methods)
 - [[projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents]] — 12-week research effort on reliable tool-using agents ( #ai-agents #research)
-- [[projects/reliable-tool-using-ai-agents/paper/paper-draft]] — Living paper v0.1 về failure-domain-aware action-boundary verification ( #paper-draft #verification)
+- [[projects/reliable-tool-using-ai-agents/paper/paper-draft]] — Living paper v0.9: clean-venv reproduction thêm ở §8; RQ/Results/CIs/figures không đổi ( #paper-draft #verification)
+- [[projects/reliable-tool-using-ai-agents/paper/review/paper-review-v0.9-2026-10-05.pdf]] — Bản A4 24 trang để tác giả/giảng viên review; supplementary appendix bắt đầu trang mới, gắn với paper source hash, chưa theo course template
+- [[projects/reliable-tool-using-ai-agents/paper/submission-readiness]] — Đọc trước bản nộp: claim coverage, course/public-release checklists và năm câu tác giả tự kiểm tra ( #paper-draft #evidence)
+- [[projects/reliable-tool-using-ai-agents/paper/figure-guide]] — Hai hình và ba worked examples từ frozen rows: đồng thuận sai, no-proposal false denial, always-escalate trade-off; safe rendering recipe ( #paper-draft #evidence)
+- [[projects/reliable-tool-using-ai-agents/paper/supplementary-appendix]] — Chronology, negative live diagnostics và §F post-hoc task/seed/stratum sensitivity; không pool evidence ( #paper-draft #evidence)
+- [[projects/reliable-tool-using-ai-agents/paper/reproducibility-package]] — 21-file inventory, historical reanalysis và clean-venv core replay 10/10 files; snapshot/license/fresh-machine gates mở ( #paper-draft #reproducibility)
+- [[projects/reliable-tool-using-ai-agents/paper/related-work-citation-audit-2026-10-03]] — Contributions/Related Work audit, citation reading scopes và limitations; không head-to-head/novelty upgrade ( #paper-draft #prior-art)
 - [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]] — Ledger kiểm soát claim, evidence và phạm vi diễn giải ( #paper-draft #evidence)
 - [[projects/reliable-tool-using-ai-agents/paper/supervisor-methodology-rq-briefing]] — Briefing để giảng viên review RQ, methodology, contribution và validation plan ( #research-question #research-methods)
 - [[projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package]] — AI-assisted semantic verdicts và re-check bốn case; không phải human sign-off ( #research-protocol #external-validity)

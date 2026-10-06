@@ -1,0 +1,17 @@
+INS-00032 clean random_k_enforced: correct=True outcome=escalate
+INS-00032 clean provenance_enforced: correct=True outcome=escalate
+INS-00032 targeted_common_mode random_k_enforced: correct=True outcome=escalate
+INS-00032 targeted_common_mode provenance_enforced: correct=True outcome=escalate
+INS-00033 clean random_k_enforced: correct=True outcome=escalate
+INS-00033 clean provenance_enforced: correct=True outcome=escalate
+INS-00033 targeted_common_mode random_k_enforced: correct=True outcome=escalate
+INS-00033 targeted_common_mode provenance_enforced: correct=True outcome=escalate
+INS-00034 clean random_k_enforced: correct=True outcome=escalate
+INS-00034 clean provenance_enforced: correct=True outcome=escalate
+INS-00034 targeted_common_mode random_k_enforced: correct=True outcome=escalate
+INS-00034 targeted_common_mode provenance_enforced: correct=True outcome=escalate
+INS-00035 clean random_k_enforced: correct=True outcome=escalate
+INS-00035 clean provenance_enforced: correct=True outcome=escalate
+INS-00035 targeted_common_mode random_k_enforced: correct=True outcome=escalate
+INS-00035 targeted_common_mode provenance_enforced: correct=True outcome=escalate
+wrote 16 live-agent episodes to C:\Users\huyba\Documents\Codex\2026-09-29\b-n-ang-h-tr-t\work\repos\reliable-tool-using-agents-18bcf40-pilot-win-export\results_prospective_opportunity_16cells_rtx4060_20261003_asia-saigon

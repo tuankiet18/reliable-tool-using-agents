@@ -1,0 +1,17 @@
+{"task_id": "INS-00032", "expected_action": "escalate", "regime": "clean", "seed": 1111, "policy": "random_k_enforced", "planned_corroborator": "check_eligibility_search"}
+{"task_id": "INS-00032", "expected_action": "escalate", "regime": "clean", "seed": 1111, "policy": "provenance_enforced", "planned_corroborator": "check_eligibility_audit"}
+{"task_id": "INS-00032", "expected_action": "escalate", "regime": "targeted_common_mode", "seed": 1111, "policy": "random_k_enforced", "planned_corroborator": "check_eligibility_search"}
+{"task_id": "INS-00032", "expected_action": "escalate", "regime": "targeted_common_mode", "seed": 1111, "policy": "provenance_enforced", "planned_corroborator": "check_eligibility_audit"}
+{"task_id": "INS-00033", "expected_action": "escalate", "regime": "clean", "seed": 1111, "policy": "random_k_enforced", "planned_corroborator": "check_eligibility_search"}
+{"task_id": "INS-00033", "expected_action": "escalate", "regime": "clean", "seed": 1111, "policy": "provenance_enforced", "planned_corroborator": "check_eligibility_analytics"}
+{"task_id": "INS-00033", "expected_action": "escalate", "regime": "targeted_common_mode", "seed": 1111, "policy": "random_k_enforced", "planned_corroborator": "check_eligibility_search"}
+{"task_id": "INS-00033", "expected_action": "escalate", "regime": "targeted_common_mode", "seed": 1111, "policy": "provenance_enforced", "planned_corroborator": "check_eligibility_analytics"}
+{"task_id": "INS-00034", "expected_action": "escalate", "regime": "clean", "seed": 1111, "policy": "random_k_enforced", "planned_corroborator": "check_eligibility_search"}
+{"task_id": "INS-00034", "expected_action": "escalate", "regime": "clean", "seed": 1111, "policy": "provenance_enforced", "planned_corroborator": "check_eligibility_analytics"}
+{"task_id": "INS-00034", "expected_action": "escalate", "regime": "targeted_common_mode", "seed": 1111, "policy": "random_k_enforced", "planned_corroborator": "check_eligibility_search"}
+{"task_id": "INS-00034", "expected_action": "escalate", "regime": "targeted_common_mode", "seed": 1111, "policy": "provenance_enforced", "planned_corroborator": "check_eligibility_analytics"}
+{"task_id": "INS-00035", "expected_action": "escalate", "regime": "clean", "seed": 1111, "policy": "random_k_enforced", "planned_corroborator": "check_eligibility_search"}
+{"task_id": "INS-00035", "expected_action": "escalate", "regime": "clean", "seed": 1111, "policy": "provenance_enforced", "planned_corroborator": "check_eligibility_analytics"}
+{"task_id": "INS-00035", "expected_action": "escalate", "regime": "targeted_common_mode", "seed": 1111, "policy": "random_k_enforced", "planned_corroborator": "check_eligibility_search"}
+{"task_id": "INS-00035", "expected_action": "escalate", "regime": "targeted_common_mode", "seed": 1111, "policy": "provenance_enforced", "planned_corroborator": "check_eligibility_analytics"}
+dry-run: 16 cells; no model call or output write
