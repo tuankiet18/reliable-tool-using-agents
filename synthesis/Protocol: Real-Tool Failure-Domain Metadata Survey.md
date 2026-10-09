@@ -11,7 +11,7 @@ sources:
   - "https://arxiv.org/abs/2507.16044"
   - "https://arxiv.org/abs/2509.25292"
 created: 2026-10-06T15:00:00+07:00
-updated: 2026-10-09T10:00:00+07:00
+updated: 2026-10-09T11:00:00+07:00
 summary: >-
   Protocol khảo sát ~42 MCP server mã nguồn mở để ước lượng tỷ lệ cặp tool dùng chung upstream (ρ) và chất lượng metadata agent nhìn thấy (r, φ, m, J = r − φ).
 provenance:
@@ -138,6 +138,7 @@ Chỉ đọc repo công khai. Lưu URL, commit SHA, đường dẫn file và tr�
 |---|---|---|
 | 2026-10-06 | Protocol v1.0 được viết | Chờ tác giả xác nhận trước khi tạo sampling frame |
 | 2026-10-09 | Tác giả xác nhận protocol v1.0; có coder B | Hướng dẫn coder B: `data/tool_survey/CODER_B_GUIDE.md`. Sampling frame chưa tạo; SHA-256 sẽ ghi tại đây trước khi gán nhãn. |
+| 2026-10-09 | Sampling frame tạo bằng `src/build_tool_survey_frame.py`, trước khi đọc code | `data/tool_survey/sampling_frame.json`, SHA-256 `287d5f468f31a49c5a054184f82f31a95ff1bd75ea58c6799b758502e46c5177`. Số kết quả: weather 30, currency_exchange **3**, stock_quotes 30, crypto_prices 30, geocoding **5**, web_search 30, news 30. Theo §3, nhóm dưới 4 server đạt tiêu chí bị loại khỏi ước lượng gộp. Chưa đọc code repo nào. |
 
 ## Liên quan
 
