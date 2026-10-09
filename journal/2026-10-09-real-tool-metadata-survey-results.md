@@ -59,6 +59,27 @@ lifecycle_changed: 2026-10-09
 - Mẫu thiên về repo phổ biến trên GitHub; MCP không đại diện cho mọi hệ sinh thái tool.
 - Chưa có kiểm tra bởi con người (coder B).
 
+## POST-HOC — Độ nhạy theo mức nguồn dữ liệu gốc
+
+**Không có trong protocol; làm sau khi thấy `r = 1`.** Script `src/analyze_tool_survey_origin.py`, output `results_tool_survey_origin_posthoc_20261009/`. Chỉ thêm các liên kết bên vận hành → nguồn gốc có **bằng chứng ngay trong các repo đã khảo sát**: Nominatim và Photon → OpenStreetMap; Frankfurter → ECB; cbr-xml-daily.ru → Bank of Russia; Algolia HN Search → Hacker News; SearXNG tự host → tập engine mặc định {Google, DuckDuckGo, Brave Search, Startpage, Wikipedia, Wiby} (lấy từ `settings.yml` của slinusc; với Pascalrjt là **suy luận** vì repo dùng mặc định của SearXNG). Phụ thuộc chỉ được ghi ngoài repo (ví dụ một engine dùng lại index của engine khác) **không** được thêm, nên đây vẫn là cận dưới.
+
+**FACT — kết quả gộp:**
+
+| Biến thể | Mức | ρ | m | r | φ | P(chọn nhầm) provenance vs random |
+|---|---|---:|---:|---|---|---|
+| Mức bên vận hành (chính) | L1 | 0.16 | 0.70 | 1.00 (8/8) | 0.00 (0/24) | 0.176 vs 0.340 |
+| Mức bên vận hành (chính) | L2 | 0.16 | 0.05 | 1.00 (17/17) | 0.00 (0/83) | 0.008 vs 0.340 |
+| Nguồn gốc, đọc tên theo chữ | L1 | 0.27 | 0.70 | 0.57 (8/14) | 0.00 (0/18) | 0.473 vs 0.533 |
+| Nguồn gốc, đọc tên theo chữ | L2 | 0.27 | 0.05 | 0.61 (17/28) | 0.00 (0/72) | 0.406 vs 0.533 |
+| Nguồn gốc, biết ánh xạ | L2 | 0.27 | 0.05 | 1.00 (28/28) | 0.00 (0/72) | 0.292 vs 0.533 |
+
+Theo nhóm (đọc tên theo chữ, L2): web_search `ρ = 1.00` (cả 15 cặp chung ít nhất một engine), `r = 7/15`; geocoding `ρ = 0.40`, `r = 3/6`.
+
+**INFERENCE:**
+1. **`r = 1` không bền.** Khi xét nguồn gốc dữ liệu, gần **40%** cặp thật sự chung không được tên provider tiết lộ (`r ≈ 0.6`). `J` vẫn dương vì `φ = 0`, nên theo quy tắc `J > 0` metadata vẫn không làm hại, nhưng lợi ích giảm mạnh: 0.406 so với 0.533, thay vì 0.008 so với 0.340.
+2. **Giới hạn thứ hai là thiếu nguồn độc lập (availability), không phải metadata.** Ngay cả khi selector biết đầy đủ ánh xạ, xác suất chọn nhầm vẫn là 0.292, vì trong web_search **không có cặp server nào độc lập về nguồn gốc**: mọi server đều dùng chung ít nhất một trong Google, DuckDuckGo hoặc Brave. Không metadata nào giúp được khi không tồn tại nguồn độc lập. Điều này khớp với điều kiện "có independent corroborator khả dụng" mà paper đã nêu ở §6.2, và với hiện tượng sụp ở `K=3` của RIVA.
+3. **Cảnh báo về cách đo:** quy tắc "giao tập khác rỗng thì là chung" coi chung một engine trong số nhiều engine (aggregator) là chung hoàn toàn, nên phóng đại mức phụ thuộc ở web_search. Kết quả này nên được trình bày như cận trên ở chiều đó và cận dưới ở chiều phụ thuộc ngoài repo.
+
 ## Tiếp theo
 
 - Chạy lại `analyze_tool_survey.py` sau khi coder B nộp để có agreement/kappa.
