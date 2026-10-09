@@ -11,7 +11,7 @@ sources:
   - "https://arxiv.org/abs/2507.16044"
   - "https://arxiv.org/abs/2509.25292"
 created: 2026-10-06T15:00:00+07:00
-updated: 2026-10-06T15:00:00+07:00
+updated: 2026-10-09T10:00:00+07:00
 summary: >-
   Protocol khảo sát ~42 MCP server mã nguồn mở để ước lượng tỷ lệ cặp tool dùng chung upstream (ρ) và chất lượng metadata agent nhìn thấy (r, φ, m, J = r − φ).
 provenance:
@@ -23,7 +23,7 @@ lifecycle: draft
 lifecycle_changed: 2026-10-06
 tier: core
 protocol_version: "1.0"
-protocol_status: written-awaiting-author-confirmation
+protocol_status: confirmed-by-author
 ---
 
 # Protocol: Khảo sát failure-domain metadata trên tool thật
@@ -137,6 +137,7 @@ Chỉ đọc repo công khai. Lưu URL, commit SHA, đường dẫn file và tr�
 | Ngày | Sự kiện | Ghi chú |
 |---|---|---|
 | 2026-10-06 | Protocol v1.0 được viết | Chờ tác giả xác nhận trước khi tạo sampling frame |
+| 2026-10-09 | Tác giả xác nhận protocol v1.0; có coder B | Hướng dẫn coder B: `data/tool_survey/CODER_B_GUIDE.md`. Sampling frame chưa tạo; SHA-256 sẽ ghi tại đây trước khi gán nhãn. |
 
 ## Liên quan
 
