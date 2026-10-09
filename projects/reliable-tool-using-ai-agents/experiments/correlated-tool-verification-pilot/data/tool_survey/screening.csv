@@ -1,0 +1,53 @@
+category,rank,server_id,repo_url,commit_sha,decision,reason
+crypto_prices,1,crypto_prices/badkk/awesome-crypto-mcp-servers,https://github.com/badkk/awesome-crypto-mcp-servers,6f3db72a6f5e8cfe79e660868b4f9e6eaa67d5eb,exclude,not an MCP server: curated list
+crypto_prices,2,crypto_prices/kukapay/cryptopanic-mcp-server,https://github.com/kukapay/cryptopanic-mcp-server,922f2e07d83e2d009b4d20518d2acec2e9e2642a,exclude,"not the information type: only tool returns crypto news, not prices"
+crypto_prices,3,crypto_prices/Nielsen642/Crypto_MCP_Server,https://github.com/Nielsen642/Crypto_MCP_Server,5d28d583c42f49849443577c23a7e7989b1cc5f6,exclude,"not a Model Context Protocol server: custom stdin JSON protocol (method call_tool), no MCP SDK"
+crypto_prices,4,crypto_prices/hive-intel/awesome-crypto-mcp-servers,https://github.com/hive-intel/awesome-crypto-mcp-servers,fbe5b7602d8cca6fb5b3d52d3cdfd3f217a01916,exclude,not an MCP server: curated list
+crypto_prices,5,crypto_prices/PelleNybe/Crypto-MCP-Server---by-Corax-CoLAB,https://github.com/PelleNybe/Crypto-MCP-Server---by-Corax-CoLAB,9dba34dc9cb064cd83fa2efb331e0d310ff9601d,include,MCP server suite; price tool in coingecko_mcp.py
+crypto_prices,6,crypto_prices/Ibook000/crypto_mcp_server,https://github.com/Ibook000/crypto_mcp_server,69aa613b0d329724b773a907d1c01a36b25a6a71,include,MCP server; price tools call external API
+crypto_prices,7,crypto_prices/desk3/cryptocurrency-mcp-server,https://github.com/desk3/cryptocurrency-mcp-server,d374c49f04baa73f1ce41d6272e6ad9a84ce5838,include,MCP server; price tools call vendor API
+crypto_prices,8,crypto_prices/Frostbite22/cryptogecko-mcp-server,https://github.com/Frostbite22/cryptogecko-mcp-server,9caa3d7c8db19b40d7e771bc405a4180bdb9d77a,include,MCP server; external API
+crypto_prices,9,crypto_prices/aryan200601/crypto-mcp-server,https://github.com/aryan200601/crypto-mcp-server,24599b99ab324e958c5a86c0cc0cdb0d1c088714,exclude,"not a Model Context Protocol server: FastAPI REST service, no MCP SDK"
+crypto_prices,10,crypto_prices/ShreyashPatil530/crypto-mcp-server,https://github.com/ShreyashPatil530/crypto-mcp-server,faeb9c49d6ca221626edba28b50c015f37ce71db,exclude,"not a Model Context Protocol server: REST service (fastapi/ccxt deps), no MCP SDK"
+crypto_prices,11,crypto_prices/aanubhavv/crypto-mcp-server,https://github.com/aanubhavv/crypto-mcp-server,8b80f8f4b68ba194396b9cfc64fa42af93b8b55a,include,MCP server; external API
+crypto_prices,12,crypto_prices/cryptomcp/crypto-mcp-server,https://github.com/cryptomcp/crypto-mcp-server,1653775752407bb13a80d82da02a856b3ec07b08,include,MCP server; get_price via exchange library
+currency_exchange,1,currency_exchange/DipanBartaula/Currency-Exchange-MCP-Server,https://github.com/DipanBartaula/Currency-Exchange-MCP-Server,f96d531cf2bbe0872ad6689bdf15406eb3be5b22,include,MCP server; external API
+currency_exchange,2,currency_exchange/adem1409/Currency-Exchange-MCP-Server,https://github.com/adem1409/Currency-Exchange-MCP-Server,93e65c61c4338fed3b63678c6f51fcbf55e482f8,include,MCP server (FastMCP); external API via CDN-hosted dataset
+currency_exchange,3,currency_exchange/cloud-ru/evo-container-apps-currency-exchange-mcp-server-lab,https://github.com/cloud-ru/evo-container-apps-currency-exchange-mcp-server-lab,6d827d24a2a5a7031a529973c6c299e3ba28c60b,include,MCP server (demo/lab repo but implemented); external API
+currency_exchange,4,currency_exchange/dan1d/dolar-mcp,https://github.com/dan1d/dolar-mcp,670a32a3626a03e5ed9e3c52a228f0f7ee5861be,include,MCP server; external API
+currency_exchange,5,currency_exchange/karashiiro/exchange-rate-mcp,https://github.com/karashiiro/exchange-rate-mcp,ab3267bfd0499bc8b7360e9b0fc0776dfe712e34,include,MCP server; external API
+currency_exchange,6,currency_exchange/cyanheads/exchange-rates-mcp-server,https://github.com/cyanheads/exchange-rates-mcp-server,ca68b7fb738651efa88ac286c2130dc39ca73be2,include,MCP server; external API via service module
+geocoding,1,geocoding/webcoderz/MCP-Geo,https://github.com/webcoderz/MCP-Geo,971996bd681aeed3c63a56694647f996cc6d1697,include,MCP server (FastMCP); geocoder library with default provider
+geocoding,2,geocoding/danishashko/geocode-mcp,https://github.com/danishashko/geocode-mcp,8b7d1e5537b140c1ee925a789ab6dd909f230dcf,include,MCP server; external API
+geocoding,3,geocoding/govex/geocoding-mcp-server,https://github.com/govex/geocoding-mcp-server,86f6ea131ba243d2c22dd200ed03e8cf870b857a,include,MCP server; external API
+geocoding,4,geocoding/mapdevsaikat/quantaroute-geocoder,https://github.com/mapdevsaikat/quantaroute-geocoder,ee84a81797fd336fdafc19eff4bda50ce6e59e02,include,MCP server; external API
+geocoding,5,geocoding/adelie-ai/geocode-mcp,https://github.com/adelie-ai/geocode-mcp,d5db0434f9c28215f463e23c63d2a7f97e7a11a1,include,"MCP server (Rust, mcp-core); external API"
+geocoding,6,geocoding/X-McKay/geocode-mcp,https://github.com/X-McKay/geocode-mcp,d0962dcf4ac82273721546ed34362af6ffecf8fb,include,MCP server; external API
+news,1,news/pskill9/hn-server,https://github.com/pskill9/hn-server,ed1a4b951e9a7cdd7de0575a16d53bbe53330a9d,include,MCP server; external API
+news,2,news/ourongxing/newsnow-mcp-server,https://github.com/ourongxing/newsnow-mcp-server,674a297879cfa52aad68fb11815a8360d120401f,exclude,"no default upstream: BASE_URL environment variable required, no default value"
+news,3,news/theagenttimes/agent-news,https://github.com/theagenttimes/agent-news,53d1f32b33417b19f9ca4d2112e3ded003e9bff7,exclude,no server implementation: plugin config pointing to a remote hosted MCP endpoint
+news,4,news/devabdultech/hn-mcp,https://github.com/devabdultech/hn-mcp,8efc20a45283bdd52bda496b04d302a7e6e1aea2,include,MCP server; external APIs
+news,5,news/the0807/GeekNews-MCP-Server,https://github.com/the0807/GeekNews-MCP-Server,7766c3910021e3180cfdc7514ffc7f264be75d73,include,MCP server; external site
+news,6,news/nishantpardamwar/kotlin-news-mcp-server,https://github.com/nishantpardamwar/kotlin-news-mcp-server,d2d793a3981d247400d60d8bdf7e8902d46485fb,include,MCP server (Kotlin); external API
+news,7,news/karanb192/hn-mcp,https://github.com/karanb192/hn-mcp,40ff10d3cae83848e71c442de188815f36241928,include,MCP server; external APIs
+news,8,news/handaas/news-mcp-server,https://github.com/handaas/news-mcp-server,f2c5524d3464ab1b6e5f8e4d255da53eb6b40a94,include,MCP server; vendor API
+stock_quotes,1,stock_quotes/shuizhengqi1/futu-stock-mcp-server,https://github.com/shuizhengqi1/futu-stock-mcp-server,e30ca5476cb89fb25ada3f58db58ce3832317e89,include,MCP server; quotes via vendor SDK (requires local gateway)
+stock_quotes,2,stock_quotes/peikuo/china-stock-mcp-server,https://github.com/peikuo/china-stock-mcp-server,3e0b6328949e978c2807cf498f597f9876c7e77b,include,MCP server; quotes via data library
+stock_quotes,3,stock_quotes/archiephan78/ssi-stock-mcp-server,https://github.com/archiephan78/ssi-stock-mcp-server,b93442adac835ff55048bba484b402b720bc79e1,include,MCP server; external API
+stock_quotes,4,stock_quotes/ingpoc/stock_mcp_server,https://github.com/ingpoc/stock_mcp_server,650b546a67d192090b840a592f7a7905a739b4d1,include,MCP server; external API
+stock_quotes,5,stock_quotes/Llldmiao/a-stock-mcp-server,https://github.com/Llldmiao/a-stock-mcp-server,5f01a6a36a90aaa4fccf48182f2104116d4f8d05,include,MCP server; quotes via data library
+stock_quotes,6,stock_quotes/CharlesCreativeContent/python-stock-mcp-server,https://github.com/CharlesCreativeContent/python-stock-mcp-server,2d2cf65cdb426f6e887d4943845f24a6a4d5f4e5,exclude,"placeholder: repository contains only README, no implementation"
+stock_quotes,7,stock_quotes/niuheilong/stock-mcp-server,https://github.com/niuheilong/stock-mcp-server,a6c9976e44e226a66478243d82ff8f95e1d56abb,include,MCP server (mcp_server.py); multiple external quote APIs
+weather,1,weather/ezh0v/weather-mcp-server,https://github.com/ezh0v/weather-mcp-server,e0f212a7d3ef45eef62f162b03fc659bbbb9e48e,include,MCP server (mcp-go); weather tool calls external API
+weather,2,weather/glaucia86/weather-mcp-server,https://github.com/glaucia86/weather-mcp-server,25d68abac2b1433090b8d28e40e25a5bb8ab234a,include,MCP server; weather tools call external API
+weather,3,weather/sjanaX01/weather-mcp-server,https://github.com/sjanaX01/weather-mcp-server,70eb46605f4d23c39110fbbebea063e772a8fc86,include,MCP server (FastMCP); external API
+weather,4,weather/Cooosin/WeatherMcpServer,https://github.com/Cooosin/WeatherMcpServer,6c72257d792950b83ab5e904b7a38228aabb977c,include,Spring AI MCP server; host set in application.properties
+weather,5,weather/ACAne0320/amap-weather-mcp-server,https://github.com/ACAne0320/amap-weather-mcp-server,44143e43e48a5d1a1efd62876672fbd35d7faef3,include,MCP server (FastMCP); external API
+weather,6,weather/hideya/mcp-server-weather-js,https://github.com/hideya/mcp-server-weather-js,39ae8ac2dd5c53640035538bf507be6bc4b18c72,include,MCP server (TS SDK); external API
+web_search,1,web_search/mrkrsl/web-search-mcp,https://github.com/mrkrsl/web-search-mcp,eeb03f88525cbf74c4019e59a3fea45a537a760b,include,MCP server; scrapes several search engines
+web_search,2,web_search/Shelpuk-AI-Technology-Consulting/kindly-web-search-mcp-server,https://github.com/Shelpuk-AI-Technology-Consulting/kindly-web-search-mcp-server,0ebc065d84e3b461fc651b0f01a19a1c0f9c1b39,exclude,no default upstream: provider chosen entirely by which API token the user configures
+web_search,3,web_search/dirmacs/daedra,https://github.com/dirmacs/daedra,c6156b4cba6cb58a6f090e1ebbdc788d898e4ece,include,"MCP server (Rust, server.rs); several search endpoints"
+web_search,4,web_search/Sunwood-ai-labs/duckduckgo-web-search,https://github.com/Sunwood-ai-labs/duckduckgo-web-search,d4fb277fa38aa9255c562ae0a2e52be8f8924428,include,MCP server; external API
+web_search,5,web_search/Pascalrjt/SearXNG-Websearch-MCP,https://github.com/Pascalrjt/SearXNG-Websearch-MCP,e1e4645bae0a6e89a0ddfe38388301a8a08baa1e,include,MCP server; default upstream is a local SearXNG instance (http://localhost:8080)
+web_search,6,web_search/slinusc/web-search-mcp-server,https://github.com/slinusc/web-search-mcp-server,ab2e1428c92589f7b6b1c0ac8a525cfd338fb62a,include,MCP server; bundled SearXNG configuration
+web_search,7,web_search/Nipurn123/duckduckgo-mcp,https://github.com/Nipurn123/duckduckgo-mcp,f819d2d2435f257ddb4b58ff9182c2ce6c89b4a8,include,MCP server; external API

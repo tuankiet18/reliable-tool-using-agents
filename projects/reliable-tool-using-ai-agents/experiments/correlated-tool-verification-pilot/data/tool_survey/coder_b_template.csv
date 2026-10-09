@@ -1,1 +1,11 @@
 server_id,category,repo_url,commit_sha,upstream_providers,upstream_evidence,l1_declared_provider,l1_evidence,l2_declared_provider,l2_evidence,coder,notes
+crypto_prices/aanubhavv/crypto-mcp-server,crypto_prices,https://github.com/aanubhavv/crypto-mcp-server,8b80f8f4b68ba194396b9cfc64fa42af93b8b55a,,,,,,,,
+currency_exchange/adem1409/Currency-Exchange-MCP-Server,currency_exchange,https://github.com/adem1409/Currency-Exchange-MCP-Server,93e65c61c4338fed3b63678c6f51fcbf55e482f8,,,,,,,,
+currency_exchange/dan1d/dolar-mcp,currency_exchange,https://github.com/dan1d/dolar-mcp,670a32a3626a03e5ed9e3c52a228f0f7ee5861be,,,,,,,,
+geocoding/X-McKay/geocode-mcp,geocoding,https://github.com/X-McKay/geocode-mcp,d0962dcf4ac82273721546ed34362af6ffecf8fb,,,,,,,,
+news/handaas/news-mcp-server,news,https://github.com/handaas/news-mcp-server,f2c5524d3464ab1b6e5f8e4d255da53eb6b40a94,,,,,,,,
+stock_quotes/ingpoc/stock_mcp_server,stock_quotes,https://github.com/ingpoc/stock_mcp_server,650b546a67d192090b840a592f7a7905a739b4d1,,,,,,,,
+stock_quotes/niuheilong/stock-mcp-server,stock_quotes,https://github.com/niuheilong/stock-mcp-server,a6c9976e44e226a66478243d82ff8f95e1d56abb,,,,,,,,
+web_search/Pascalrjt/SearXNG-Websearch-MCP,web_search,https://github.com/Pascalrjt/SearXNG-Websearch-MCP,e1e4645bae0a6e89a0ddfe38388301a8a08baa1e,,,,,,,,
+web_search/Sunwood-ai-labs/duckduckgo-web-search,web_search,https://github.com/Sunwood-ai-labs/duckduckgo-web-search,d4fb277fa38aa9255c562ae0a2e52be8f8924428,,,,,,,,
+web_search/mrkrsl/web-search-mcp,web_search,https://github.com/mrkrsl/web-search-mcp,eeb03f88525cbf74c4019e59a3fea45a537a760b,,,,,,,,

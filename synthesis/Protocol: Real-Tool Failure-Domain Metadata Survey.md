@@ -11,7 +11,7 @@ sources:
   - "https://arxiv.org/abs/2507.16044"
   - "https://arxiv.org/abs/2509.25292"
 created: 2026-10-06T15:00:00+07:00
-updated: 2026-10-09T11:30:00+07:00
+updated: 2026-10-09T13:00:00+07:00
 summary: >-
   Protocol khảo sát ~42 MCP server mã nguồn mở để ước lượng tỷ lệ cặp tool dùng chung upstream (ρ) và chất lượng metadata agent nhìn thấy (r, φ, m, J = r − φ).
 provenance:
@@ -140,6 +140,7 @@ Chỉ đọc repo công khai. Lưu URL, commit SHA, đường dẫn file và tr�
 | 2026-10-09 | Tác giả xác nhận protocol v1.0; có coder B | Hướng dẫn coder B: `data/tool_survey/CODER_B_GUIDE.md`. Sampling frame chưa tạo; SHA-256 sẽ ghi tại đây trước khi gán nhãn. |
 | 2026-10-09 | Sampling frame tạo bằng `src/build_tool_survey_frame.py`, trước khi đọc code | `data/tool_survey/sampling_frame.json`, SHA-256 `287d5f468f31a49c5a054184f82f31a95ff1bd75ea58c6799b758502e46c5177`. Số kết quả: weather 30, currency_exchange **3**, stock_quotes 30, crypto_prices 30, geocoding **5**, web_search 30, news 30. Theo §3, nhóm dưới 4 server đạt tiêu chí bị loại khỏi ước lượng gộp. Chưa đọc code repo nào. |
 | 2026-10-09 | **Amendment A1** (tác giả chấp thuận), trước khi đọc code | Lý do: truy vấn gốc cho currency_exchange (3) và geocoding (5) quá hẹp. Luật: nhóm có dưới 30 kết quả gốc chạy **đúng một** truy vấn thay thế định trước (`exchange rate mcp`, `geocode mcp`), nối kết quả sau danh sách gốc, bỏ trùng; file frame gốc không sửa. Output `data/tool_survey/sampling_frame_amendment_A1.json`, SHA-256 `987dc120b0c739612928c5bdd5aef58a652848003bd251bb29ee9104a5474aba`; currency_exchange thêm 22, geocoding thêm 4 (bỏ 4 trùng). Script `src/build_tool_survey_frame_a1.py`. |
+| 2026-10-09 | Sàng lọc xong (AI-assisted, chỉ đọc tĩnh bằng clone `--depth 1` và grep, không chạy code) | `data/tool_survey/screening.csv`, SHA-256 `09e75a72e26f01d4915edd643e129cb33088721376affde5be5a34366830be08`: 52 repo được xét theo thứ tự hạng, 42 include (6/nhóm), 10 exclude có lý do; commit SHA được ghim. Hai cách diễn giải tiêu chí §3 được áp dụng nhất quán và ghi lại tại đây: (1) "MCP server" nghĩa là triển khai Model Context Protocol (MCP SDK hoặc JSON-RPC `tools/list`/`tools/call`); service REST đặt tên "MCP" bị loại; (2) server không có upstream mặc định (provider phụ thuộc hoàn toàn vào biến môi trường người dùng đặt) bị loại theo tiêu chí "không xác định được upstream"; server có giá trị mặc định (kể cả `localhost`) được giữ. Tập coder B (10 server có `sha256(server_id)` nhỏ nhất) đã điền vào `coder_b_template.csv`. |
 
 ## Liên quan
 
