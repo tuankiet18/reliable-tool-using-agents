@@ -48,12 +48,12 @@ sources:
   - "https://www.epfl.ch/labs/sacs/publications/"
   - "https://conf.researchr.org/details/ase-2026/ase-2026-tools-and-data-sets/45/Introducing-Safe-LLM-Agent-Execution-via-Typed-Tool-Mediation-and-World-Effect-Evalua"
 created: 2026-09-15T17:15:00+07:00
-updated: 2026-10-10T10:00:00+07:00
+updated: 2026-10-12T15:00:00+07:00
 summary: >-
   Living paper v1.0: controlled replication (RQ1), điều kiện J = r − φ > 0 cho metadata failure-domain (RQ2), và survey 42 MCP server cho thấy metadata thực tế chủ yếu thiếu, ở mức bên vận hành, và có nhóm không có nguồn độc lập (RQ3).
 lifecycle: draft
 paper_status: living-draft
-version: "1.0"
+version: "1.1"
 ---
 
 # When Does Failure-Domain Metadata Help Tool-Using AI Agents? A Controlled Replication, a Label-Quality Condition, and a Survey of 42 MCP Servers
@@ -64,7 +64,7 @@ version: "1.0"
 
 ## Abstract — PROVISIONAL
 
-AI agent dùng tool có thể nhận output sai nhưng vẫn đúng schema. Khi hai tool khác tên cùng đọc một nguồn dữ liệu, kiểm tra chéo giữa chúng có thể đồng thuận trên cùng một giá trị sai. Nghiên cứu gần đây (VP-Control) đã cho thấy chọn nguồn đối chứng khác lineage giảm mạnh phê duyệt sai, nhưng giả định rằng nhãn lineage có sẵn và đúng. Bài này hỏi metadata failure-domain cần chất lượng đến đâu để có ích, và metadata của tool thật có chất lượng ra sao. **(1) Controlled replication:** trong mô phỏng quyết định refund với actor deterministic và metadata chính xác, unsafe refund decisions là `30/150` khi chọn nguồn ngẫu nhiên và `0/150` khi chọn khác failure domain (paired task-cluster bootstrap `−0.200`, 95% CI `[−0.273, −0.127]`); kết quả này phần lớn được suy ra từ topology. Với nhãn sai, robustness gate không giữ chắc lợi thế; phân tích post-hoc cho thấy tiêu chí đó chỉ có khoảng 56% power. **(2) Điều kiện giải tích (post-hoc):** dưới lỗi nhãn có hệ thống, chọn theo failure domain tốt hơn chọn ngẫu nhiên khi và chỉ khi `J = r − φ > 0` (recall phụ thuộc chung trừ tỷ lệ gán nhầm), và tệ hơn khi `J < 0`; quy tắc này được kiểm tra số trên 2.205 điểm lưới, chưa được chứng minh. **(3) Survey:** trong 42 MCP server mã nguồn mở thuộc 7 nhóm thông tin, `17/105` cặp cùng nhóm (16%, bootstrap 95% `[7.5%, 28%]`) dùng chung API provider mặc định. Metadata agent thấy lúc chạy không nêu provider ở 70% cặp, nhưng khi có thì khớp với code (`8/8`, `0/24`). Ở mức nguồn dữ liệu gốc (post-hoc), recall giảm còn khoảng 0.6 và nhóm web search không có cặp nào độc lập. Ở mẫu này, nút thắt thực tế là metadata **thiếu**, chỉ ở mức bên vận hành, và **thiếu nguồn độc lập**, hơn là metadata sai. Survey do AI gán nhãn và đang chờ kiểm tra của con người; không có kết quả nào đo hiệu quả trên live agent.
+AI agent dùng tool có thể nhận output sai nhưng vẫn đúng schema. Khi hai tool khác tên cùng đọc một nguồn dữ liệu, kiểm tra chéo giữa chúng có thể đồng thuận trên cùng một giá trị sai. Nghiên cứu gần đây (VP-Control) đã cho thấy chọn nguồn đối chứng khác lineage giảm mạnh phê duyệt sai, nhưng giả định rằng nhãn lineage có sẵn và đúng. Bài này hỏi metadata failure-domain cần chất lượng đến đâu để có ích, và metadata của tool thật có chất lượng ra sao. **(1) Controlled replication:** trong mô phỏng quyết định refund với actor deterministic và metadata chính xác, unsafe refund decisions là `30/150` khi chọn nguồn ngẫu nhiên và `0/150` khi chọn khác failure domain (paired task-cluster bootstrap `−0.200`, 95% CI `[−0.273, −0.127]`); kết quả này phần lớn được suy ra từ topology. Với nhãn sai, robustness gate không giữ chắc lợi thế; phân tích post-hoc cho thấy tiêu chí đó chỉ có khoảng 56% power. **(2) Điều kiện giải tích (post-hoc):** dưới lỗi nhãn có hệ thống, chọn theo failure domain tốt hơn chọn ngẫu nhiên khi và chỉ khi `J = r − φ > 0` (recall phụ thuộc chung trừ tỷ lệ gán nhầm), và tệ hơn khi `J < 0`; quy tắc này được kiểm tra số trên 2.205 điểm lưới (chưa có chứng minh) và sau đó được kiểm định có đăng ký trước trên 60 task mới: với `J = −0.5`, chọn theo failure domain cho tỷ lệ quyết định sai **cao hơn** chọn ngẫu nhiên `+0.133` (95% CI `[+0.070, +0.200]`); với `J = +0.8`, thấp hơn `−0.177`; tương đương tại `J = 0` không được xác nhận. **(3) Survey:** trong 42 MCP server mã nguồn mở thuộc 7 nhóm thông tin, `17/105` cặp cùng nhóm (16%, bootstrap 95% `[7.5%, 28%]`) dùng chung API provider mặc định. Metadata agent thấy lúc chạy không nêu provider ở 70% cặp, nhưng khi có thì khớp với code (`8/8`, `0/24`). Ở mức nguồn dữ liệu gốc (post-hoc), recall giảm còn khoảng 0.6 và nhóm web search không có cặp nào độc lập. Ở mẫu này, nút thắt thực tế là metadata **thiếu**, chỉ ở mức bên vận hành, và **thiếu nguồn độc lập**, hơn là metadata sai. Survey do AI gán nhãn và đang chờ kiểm tra của con người; không có kết quả nào đo hiệu quả trên live agent.
 
 **Keywords:** tool-using AI agents; runtime verification; correlated failures; common-mode failures; failure-domain metadata; provenance; Model Context Protocol; empirical survey.
 
@@ -321,6 +321,10 @@ Protocol [[synthesis/Protocol: Real-Tool Failure-Domain Metadata Survey]] đư�
 - **Người gán nhãn:** coder A là AI (Claude), gán nhãn toàn bộ; coder B (thành viên nhóm) gán nhãn độc lập 10 server chọn bằng hash để tính agreement. **Nhãn của coder B chưa nộp ở v1.0.**
 - **Độ nhạy theo nguồn gốc dữ liệu (post-hoc, ngoài protocol):** ánh xạ bên vận hành sang nguồn gốc khi có bằng chứng trong chính các repo (Nominatim và Photon sang OpenStreetMap; Frankfurter sang ECB; SearXNG sang tập engine mặc định) [`src/analyze_tool_survey_origin.py`].
 
+### 4.9 Kiểm định có đăng ký trước cho điều kiện `J`
+
+Protocol [[synthesis/Protocol: Confirmatory Test of the Label-Quality Condition]] được tác giả xác nhận trước khi viết code. 60 task mới `INS-00120`–`INS-00179` (40 escalation), 5 seed mới, regime clean và targeted common-mode (leakage 0.10), 4 điều kiện nhãn (`J_plus`, `J_zero`, `J_minus`, `survey_calibrated`), 2 policy: 4.800 decision rows. Nhãn primary luôn đúng; mỗi corroborator có nhãn với xác suất `k` và gắn "chung" với xác suất `r` (tool chung) hoặc `φ` (tool độc lập). Phân tích task-cluster bootstrap 10.000 lần; H-J1 (harm ở `J_minus`) và H-J2 (benefit ở `J_plus`) là hypothesis chính. Amendment A1, trước khi chạy, sửa dự đoán của H-J4 sau khi test đơn vị phát hiện dự đoán dùng sai giả định về nhãn primary.
+
 ## 5. Results
 
 ### 5.1 Evidence scope
@@ -525,13 +529,24 @@ Mean effect mô phỏng khớp dự đoán giải tích độc lập. Xấp xỉ
 
 **Inter-rater agreement:** chưa có ở v1.0; sẽ tính khi coder B nộp nhãn.
 
+### 5.11 Kiểm định có đăng ký trước cho điều kiện `J`
+
+| Điều kiện | Provenance | Random | Chênh lệch | Dự đoán | 95% CI | Hypothesis |
+|---|---:|---:|---:|---:|---|---|
+| `J_plus` (J = +0.8) | 0.087 | 0.263 | −0.177 | −0.176 | [−0.233, −0.120] | H-J2 hỗ trợ |
+| `J_zero` (J = 0) | 0.320 | 0.257 | +0.063 | 0.000 | [+0.003, +0.127] | H-J3 không hỗ trợ |
+| `J_minus` (J = −0.5) | 0.423 | 0.290 | +0.133 | +0.160 | [+0.070, +0.200] | H-J1 hỗ trợ |
+| `survey_calibrated` | 0.173 | 0.267 | −0.093 | −0.091 | [−0.157, −0.033] | H-J4 hỗ trợ |
+
+Hai lần chạy byte-identical; regime clean có 0 unsafe. Ở `J_zero`, 90% CI `[+0.013, +0.117]` vượt biên ±0.08 nên tương đương không được xác nhận. Phân tích thăm dò cho thấy provenance chọn tool chung 79/200 lần so với kỳ vọng 1/3 (p = 0.064), phù hợp với biến thiên ngẫu nhiên; power của H-J3 (khoảng 59%) không được tính khi lập kế hoạch. Chúng tôi không diễn giải kết quả này là `J = 0` gây hại. Kết quả xác nhận dự đoán của RQ2 trong pipeline mô phỏng đầy đủ, trên task mới; nó không chứng minh điều gì về agent hay tool thật.
+
 ## 6. Discussion
 
 ### 6.1 Trả lời các RQ
 
 **RQ1 (replication).** Với accurate failure-domain metadata và targeted common-mode silent failures, chọn corroborator khác failure domain giảm **unsafe refund authorization decisions** từ `30/150` xuống `0/150` so với chọn ngẫu nhiên, tại cùng hai modeled observations trên mỗi refund proposal; clean action-oracle correctness đều `150/150`. Đây là **containment** của quyết định sai: cả hai policy đều đúng `0/50` expected-refund decisions dưới targeted faults. Kết quả phần lớn được suy ra từ topology (§5.3.1) và nhất quán với VP-Control trong một miền khác; nó không phải bằng chứng độc lập mạnh hơn VP-Control.
 
-**RQ2 (điều kiện).** Trong mô hình đã phân tích, metadata failure-domain có ích khi và chỉ khi nó phát hiện phụ thuộc chung tốt hơn mức gán nhầm (`J > 0`), và có thể **gây hại** khi `J < 0`. Nhiễu độc lập kiểu robustness gate không bao giờ đưa `J` xuống 0, nên robustness FAIL không phải dấu hiệu metadata sai gây hại; nó phù hợp hơn với thiếu power (§5.9).
+**RQ2 (điều kiện).** Trong mô hình đã phân tích, metadata failure-domain có ích khi và chỉ khi nó phát hiện phụ thuộc chung tốt hơn mức gán nhầm (`J > 0`), và có thể **gây hại** khi `J < 0`. Kiểm định đăng ký trước (§5.11) xác nhận cả hai chiều trong mô phỏng: `J = −0.5` tăng tỷ lệ quyết định sai `+0.133` so với chọn ngẫu nhiên. Nhiễu độc lập kiểu robustness gate không bao giờ đưa `J` xuống 0, nên robustness FAIL không phải dấu hiệu metadata sai gây hại; nó phù hợp hơn với thiếu power (§5.9).
 
 **RQ3 (thực tế).** Ở mẫu 42 MCP server, dùng chung upstream có thật nhưng không phổ biến (16% cặp ở mức bên vận hành, 27% ở mức nguồn gốc theo phân tích post-hoc). Metadata agent thấy chủ yếu **thiếu** (70% cặp) chứ không **sai** (`φ = 0`). Tên provider ở mức bên vận hành bỏ sót khoảng 40% phụ thuộc ở mức nguồn gốc (`r ≈ 0.6`), nhưng vẫn giữ `J > 0`. Ở nhóm web search, không có cặp nào độc lập về nguồn gốc.
 
@@ -644,6 +659,8 @@ Title/authors/year/identifier được đối chiếu theo phạm vi từng ngu�
 - [KL86] John C. Knight and Nancy G. Leveson. 1986. *An Experimental Evaluation of the Assumption of Independence in Multiversion Programming*. IEEE Transactions on Software Engineering, 12(1), pp. 96–109. [DOI: 10.1109/TSE.1986.6312924](https://doi.org/10.1109/TSE.1986.6312924). DOI resolves to IEEE; full-text re-read unavailable in this audit; metadata corroborated by DBLP, no new quantitative claim added.
 
 ## Writing status
+
+**v1.1 (2026-10-12):** thêm §4.9 và §5.11 (kiểm định đăng ký trước cho `J`).
 
 **v1.0 (2026-10-10):** định vị lại; thêm RQ2/RQ3, §3.8, §4.7–4.8, §5.8–5.10, §6.5, §7.7. Còn mở: inter-rater của coder B, figure cho survey, tác giả đọc toàn văn VPC26/EFD26, phản hồi giảng viên.
 

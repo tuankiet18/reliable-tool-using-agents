@@ -48,7 +48,7 @@ sources:
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_topology_diagnostics.py"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_topology_diagnostics_20261003/analysis.json"
 created: 2026-09-15T17:15:00+07:00
-updated: 2026-10-10T09:00:00+07:00
+updated: 2026-10-12T15:00:00+07:00
 summary: >-
   Ledger nối từng claim của living paper với evidence, epistemic status, phạm vi được phép viết và evidence còn thiếu.
 lifecycle: draft
@@ -130,6 +130,7 @@ Phạm vi tác giả đã chọn: controlled empirical course paper; live-agent 
 | C38 | Metadata agent thấy (L1) thiếu nhãn chia sẻ ở 70% cặp; khi có nhãn thì đúng ở mức bên vận hành (`r = 8/8`, `φ = 0/24`). Thêm README (L2): thiếu 5%, `r = 17/17`, `φ = 0/83`. | như C37 | `FACT — DESCRIPTIVE SURVEY; AI-CODED; HUMAN CHECK PENDING` | Nói "ở mẫu này, vấn đề chủ yếu là thiếu nhãn hơn là sai nhãn ở mức bên vận hành"; mẫu số `r` ở L1 nhỏ (8) | coder B; origin-level (C40) |
 | C39 | Chiếu (r, φ, tỷ lệ có nhãn) quan sát được lên mô hình selector: xác suất chọn nhầm nguồn chung 0.176 (L1 hiện tại) và 0.008 (nếu L2 có trong description) so với 0.340 random. | `analyze_tool_survey.py` `projection_with_missing`, khớp hàm C35 khi đủ nhãn | `INFERENCE — MODEL PROJECTION, NOT AGENT MEASUREMENT` | Gọi là projection; không nói agent thật sẽ đạt các số này | đo hành vi agent với metadata thật |
 | C40 | Ở mức nguồn dữ liệu gốc (liên kết có bằng chứng trong repo), `r` giảm còn 0.61 (L2, 17/28), ρ tăng lên 0.27, và web_search không có cặp nào độc lập về nguồn gốc; ngay cả khi selector biết đủ ánh xạ, xác suất chọn nhầm vẫn 0.292 so với 0.533. | `src/analyze_tool_survey_origin.py`; `results_tool_survey_origin_posthoc_20261009/` | `FACT — POST_HOC SENSITIVITY` | Nêu rõ post-hoc; quy tắc giao tập phóng đại phụ thuộc của aggregator; phụ thuộc chỉ ghi ngoài repo không được thêm; SearXNG mặc định của Pascalrjt là suy luận | protocol cho mức nguồn gốc; xác minh ngoài repo |
+| C41 | Trong kiểm định có đăng ký trước trên 60 task mới (pipeline mô phỏng đầy đủ), lỗi nhãn có hệ thống với `J < 0` làm provenance **tệ hơn** random, `J > 0` làm tốt hơn, và nhãn theo thông số survey vẫn tốt hơn; tương đương tại `J = 0` **không** được xác nhận. | [[synthesis/Protocol: Confirmatory Test of the Label-Quality Condition]]; `results_label_quality_20261012/` (raw SHA `fb69bcf2…`, analysis.json); [[journal/2026-10-12-label-quality-test-results]] | `FACT — PREREGISTERED (INTERNAL) CONTROLLED SIMULATION` | J_minus +0.133 [+0.070, +0.200]; J_plus −0.177 [−0.233, −0.120]; survey −0.093 [−0.157, −0.033]; J_zero +0.063 (90% CI [+0.013, +0.117]) không đạt biên ±0.08. Nêu rõ: mô phỏng do project thiết kế, kết quả gần như suy ra được từ mô hình; giá trị là kỷ luật (đăng ký trước, task mới), không phải tính mới; Amendment A1 sửa dự đoán H-J4 trước khi chạy; power H-J3 không được lập kế hoạch | agent thật; registry độc lập |
 
 **Ghi chú C25 (2026-10-10):** contribution framing đổi thành: (1) controlled replication của RQ1; (2) điều kiện `J > 0` (C35) và giải thích power của robustness FAIL (C36); (3) survey metadata thật (C37–C40). Vẫn không claim thuật toán mới, superiority hay generalization.
 
@@ -160,7 +161,9 @@ Phạm vi tác giả đã chọn: controlled empirical course paper; live-agent 
 | “We are the first to show that independent sources beat shared sources under common-mode failure.” | VP-Control (2609.10969) đo trước, với thiết kế mạnh hơn. |
 | “Real-world failure-domain metadata is accurate.” | Chỉ đúng ở mức bên vận hành trong mẫu AI-coded; ở mức nguồn gốc `r ≈ 0.6` (C40); chưa có kiểm tra con người. |
 | “The robustness gate actually passes” hoặc “FAIL shows the advantage disappears.” | FAIL giữ nguyên theo tiêu chí đã khóa; power analysis (C36) chỉ cho thấy FAIL là bằng chứng yếu, không đảo kết luận. |
-| “The J > 0 rule is a theorem.” | Mới kiểm tra số trên lưới (C35), chưa có chứng minh. |
+| “The J > 0 rule is a theorem.” | Mới kiểm tra số trên lưới (C35) và kiểm định trong mô phỏng (C41), chưa có chứng minh. |
+| “Failure-domain selection is equivalent to random when J = 0.” | H-J3 không đạt (C41); chỉ có thể nói không có bằng chứng về tương đương. |
+| “The preregistered test validates the rule on real agents or tools.” | C41 là mô phỏng do project thiết kế. |
 | “The survey projection measures agent behaviour.” | C39 là phép chiếu lên mô hình selector. |
 | “16% of all tool pairs share a backend.” | Mẫu 42 MCP server phổ biến trên GitHub, 7 nhóm; không đại diện mọi tool. |
 | “EnvTrustBench reproduced the external result.” | Chỉ aggregate CSV được tái tính; cases/runners không public. |

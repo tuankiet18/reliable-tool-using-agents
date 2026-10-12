@@ -10,7 +10,7 @@ sources:
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/run_robustness_gate.py"
   - "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md"
 created: 2026-10-11T10:00:00+07:00
-updated: 2026-10-12T09:00:00+07:00
+updated: 2026-10-12T15:00:00+07:00
 summary: >-
   Protocol đăng ký trước để kiểm định trong pipeline mô phỏng đầy đủ dự đoán của RQ2: lỗi nhãn có hệ thống với J < 0 làm provenance tệ hơn chọn ngẫu nhiên, J > 0 làm tốt hơn.
 provenance:
@@ -141,6 +141,7 @@ Mô phỏng 150 study bằng **mô hình đơn giản hóa** (không phải code
 | 2026-10-12 | Tác giả xác nhận protocol v1.0 | Khóa hypothesis, điều kiện, cỡ mẫu, dự đoán và quy tắc quyết định; chưa có code, task hay episode nào |
 | 2026-10-12 | Task split đóng băng trước khi viết runner | `data/tasks_label_quality_60.json`, SHA-256 `9a68d765657f068aacf70635e0a7a9584b7aa4194eea9e5fc42ea83eb4543eb8`; manifest `data/tasks_label_quality_60.manifest.json`. Kiểm tra trước khi chạy (§3.1) đều đạt: 120 instance cũ không đổi; escalate 40, refund 20 (đúng 2/3); 10 task mỗi difficulty; 0 task trùng các file task cũ; sinh lại cho hash giống hệt. Upstream clone mới ở commit `d0ee54aa`, Python 3.12.3 venv mới. |
 | 2026-10-12 | **Amendment A1 — sửa dự đoán H-J4 trước khi chạy** | Test đơn vị (§7) phát hiện dự đoán §4 cho `survey_calibrated` được tính bằng hàm cho phép **nhãn của primary cũng thiếu** (xác suất 1 − k), trái với thiết kế §3.3 (nhãn primary luôn đúng). Giữ nguyên thiết kế §3.3 (nhất quán với ba điều kiện kia) và sửa dự đoán: P(chọn tool chung) 0.250 → 0.182; unsafe provenance 0.217 → 0.176; chênh lệch −0.050 → −0.091. Hướng của H-J4 và quy tắc quyết định không đổi; ba điều kiện còn lại không bị ảnh hưởng. Quyết định trước khi có bất kỳ decision row nào; số cũ được giữ (gạch ngang) trong bảng §4. |
+| 2026-10-12 | Chạy và phân tích theo §5 | 4.800 rows, raw SHA-256 `fb69bcf222634968b886608b35d36319ade16518655e58934daf0640dc1ebf00`, hai lần chạy byte-identical; 84/84 test đạt trước khi chạy. Kết quả: H-J1 **hỗ trợ** (+0.133, 95% CI [+0.070, +0.200]); H-J2 **hỗ trợ** (−0.177, [−0.233, −0.120]); H-J4 **hỗ trợ** (−0.093, [−0.157, −0.033]); H-J3 **không hỗ trợ** (+0.063, 90% CI [+0.013, +0.117] vượt ±0.08). Sanity clean: 0 unsafe. J_zero lệch dự đoán 0.063 > 0.05 nên được đánh dấu theo §5; phân tích thăm dò cho thấy lệch phù hợp với biến thiên chọn ngẫu nhiên (79/200 lần chọn tool chung so với kỳ vọng 1/3, p = 0.064) và H-J3 chỉ có khoảng 59% power — **power cho H-J3 không được tính khi lập kế hoạch**, đây là thiếu sót của protocol. Không chạy thêm seed hay task. |
 
 ## Liên quan
 

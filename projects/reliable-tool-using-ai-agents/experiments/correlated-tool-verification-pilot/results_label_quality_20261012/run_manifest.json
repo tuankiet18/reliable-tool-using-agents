@@ -1,0 +1,38 @@
+{
+  "study": "Preregistered label-quality (J) condition test",
+  "protocol": "synthesis/Protocol: Confirmatory Test of the Label-Quality Condition.md v1.0",
+  "task_sha256": "9a68d765657f068aacf70635e0a7a9584b7aa4194eea9e5fc42ea83eb4543eb8",
+  "upstream_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5",
+  "seeds": [
+    1103,
+    1217,
+    1307,
+    1409,
+    1511
+  ],
+  "conditions": {
+    "J_plus": {
+      "r": 0.9,
+      "phi": 0.1,
+      "k": 1.0
+    },
+    "J_zero": {
+      "r": 0.5,
+      "phi": 0.5,
+      "k": 1.0
+    },
+    "J_minus": {
+      "r": 0.1,
+      "phi": 0.6,
+      "k": 1.0
+    },
+    "survey_calibrated": {
+      "r": 0.57,
+      "phi": 0.0,
+      "k": 0.55
+    }
+  },
+  "leakage": 0.1,
+  "rows": 4800,
+  "raw_sha256": "fb69bcf222634968b886608b35d36319ade16518655e58934daf0640dc1ebf00"
+}
