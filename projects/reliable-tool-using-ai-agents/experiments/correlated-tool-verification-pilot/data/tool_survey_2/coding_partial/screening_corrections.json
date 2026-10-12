@@ -15,5 +15,31 @@
       "reason": "Kotlin MCP SDK (io.modelcontextprotocol.kotlin.sdk); get_exchange_rate calls api.frankfurter.dev by default; next eligible by rank (ranks 1-16 already screened)"
     },
     "human_subset_affected": false
+  },
+  {
+    "found_during": "coder A labelling, 2026-10-13",
+    "category": "crypto_prices",
+    "server_id": "crypto_prices/Aditya-AP02/crypto-mcp-server",
+    "rank": 22,
+    "old_decision": "include",
+    "new_decision": "exclude",
+    "reason": "criterion 4 (tool must call an external API): the only exposed MCP tool get_price returns the literal text 'Implementation in progress' (src/mcp_server/server.py:29-34); the ccxt/CoinMarketCap modules under exchanges/ and handlers/ are never wired into the server",
+    "newly_screened": [
+      {
+        "rank": 30,
+        "server_id": "crypto_prices/pras529/crypto_mcp_server",
+        "commit_sha": "d1f685f72d583795691ccbbb89133d81cc1fc905",
+        "decision": "exclude",
+        "reason": "no source code (README.md only, empty)"
+      }
+    ],
+    "replacement": {
+      "server_id": "crypto_prices/akshaygp18/crypto-mcp-server",
+      "rank": 31,
+      "repo_url": "https://github.com/akshaygp18/crypto-mcp-server",
+      "commit_sha": "0accbc2ecc44d64af0f6e9b06be1d4ccbf28152e",
+      "reason": "MCP SDK (mcp.server.mcpserver); get_coin_price calls api.coingecko.com public tier by default"
+    },
+    "human_subset_affected": false
   }
 ]
