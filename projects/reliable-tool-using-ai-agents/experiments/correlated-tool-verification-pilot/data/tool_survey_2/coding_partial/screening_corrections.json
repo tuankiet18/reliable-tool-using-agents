@@ -1,0 +1,19 @@
+[
+  {
+    "found_during": "coder A labelling, 2026-10-13",
+    "category": "currency_exchange",
+    "server_id": "currency_exchange/raktim-shrestha/exchangeRate-mcp",
+    "rank": 8,
+    "old_decision": "include",
+    "new_decision": "exclude",
+    "reason": "criterion 5 (no default upstream): the only active exchange-rate tool get_forex_rates reads FOREX_URL from env with no default (main.py:369; env.example FOREX_URL=xxxx); the ExchangeRate-API tool is commented out (main.py:130-195)",
+    "replacement": {
+      "server_id": "currency_exchange/vivart/exchange-rate-mcp",
+      "rank": 17,
+      "repo_url": "https://github.com/vivart/exchange-rate-mcp",
+      "commit_sha": "2d0b672e92752b255c48c362d69ad8a08a54a308",
+      "reason": "Kotlin MCP SDK (io.modelcontextprotocol.kotlin.sdk); get_exchange_rate calls api.frankfurter.dev by default; next eligible by rank (ranks 1-16 already screened)"
+    },
+    "human_subset_affected": false
+  }
+]
