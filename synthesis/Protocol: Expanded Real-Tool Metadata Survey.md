@@ -151,6 +151,7 @@ Dùng lại `analyze_tool_survey.py` và `analyze_tool_survey_origin.py` (đổi
 |---|---|---|
 | 2026-10-12 | Protocol v1.0 được viết | Chờ tác giả xác nhận; chưa tạo sampling frame, chưa đọc code repo mới nào |
 | 2026-10-13 | Tác giả xác nhận protocol v1.0 | Khóa 12 nhóm, truy vấn chính và dự phòng, tiêu chí, codebook, dự đoán P1–P6; chưa tạo sampling frame |
+| 2026-10-13 | Sampling frame tạo bằng `src/build_tool_survey2_frame.py`, trước khi đọc code repo mới | `data/tool_survey_2/sampling_frame.json`, SHA-256 `c1f87bbcded5391f79cb0bcd14051eb76168518d46ae3ed6fbafd2d5c0073146`. Số kết quả (trong ngoặc: số repo đã có ở survey 1, bị loại): weather 50 (6), currency_exchange 25 (6), stock_quotes 50 (7), crypto_prices 50 (14), geocoding 9 (6), web_search 50 (7), news 50 (8), translation 49 (0), ip_geolocation 1 (0), movies 43 (0), books 23 (0), air_quality 7 (0). Truy vấn dự phòng chạy cho currency_exchange, geocoding, translation, ip_geolocation, movies, books, air_quality theo §3. Theo §4: ip_geolocation (1 ứng viên) và geocoding (3 ứng viên mới) chắc chắn dưới 4 nên chỉ báo cáo riêng; air_quality tối đa 7. Không amendment. |
 
 ## Liên quan
 
