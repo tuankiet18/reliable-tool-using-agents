@@ -82,6 +82,8 @@ lifecycle_changed: 2026-10-06
 
 **INFERENCE:** mô hình nhiễu độc lập của robustness gate tương ứng `J > 0` với mọi `w < 1`, nên provenance không thể tệ hơn random ở đó. Rủi ro thật nằm ở lỗi nhãn có hệ thống khiến `J ≤ 0`: phụ thuộc ẩn kết hợp gán nhầm "chung" cho nguồn độc lập. Câu hỏi thực nghiệm then chốt chuyển thành: **metadata thực tế có J bao nhiêu?** Đây là cầu nối sang khảo sát prevalence (hướng B).
 
+> [!warning] **Đính chính 2026-10-12.** Câu "mô hình nhiễu độc lập tương ứng `J > 0`" ở trên là suy luận chưa được chứng minh và không được định lý trong [[projects/reliable-tool-using-ai-agents/paper/proof-j-condition]] bao phủ, vì trong mô hình đó nhãn của primary cũng có thể sai. Kết quả "không tệ hơn random" của mô hình đó chỉ đúng trên lưới đã liệt kê.
+
 ## Power của tiêu chí robustness — post-hoc, exploratory
 
 **Việc làm:** `src/analyze_robustness_power.py`, output `results_robustness_power_20261006/`. Mô phỏng 300 study tổng hợp cho mỗi cỡ mẫu bằng chính `run_episode` thật (π=2/3, 5 seeds, `wrong_25`, leakage 0.10), áp tiêu chí gate gốc (task-cluster percentile bootstrap, upper 95% CI < 0).
