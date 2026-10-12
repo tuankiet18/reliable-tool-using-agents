@@ -139,6 +139,7 @@ Mô phỏng 150 study bằng **mô hình đơn giản hóa** (không phải code
 |---|---|---|
 | 2026-10-11 | Protocol v1.0 được viết | Chờ tác giả xác nhận; chưa có code, task hay episode nào |
 | 2026-10-12 | Tác giả xác nhận protocol v1.0 | Khóa hypothesis, điều kiện, cỡ mẫu, dự đoán và quy tắc quyết định; chưa có code, task hay episode nào |
+| 2026-10-12 | Task split đóng băng trước khi viết runner | `data/tasks_label_quality_60.json`, SHA-256 `9a68d765657f068aacf70635e0a7a9584b7aa4194eea9e5fc42ea83eb4543eb8`; manifest `data/tasks_label_quality_60.manifest.json`. Kiểm tra trước khi chạy (§3.1) đều đạt: 120 instance cũ không đổi; escalate 40, refund 20 (đúng 2/3); 10 task mỗi difficulty; 0 task trùng các file task cũ; sinh lại cho hash giống hệt. Upstream clone mới ở commit `d0ee54aa`, Python 3.12.3 venv mới. |
 
 ## Liên quan
 
