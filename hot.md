@@ -1,11 +1,13 @@
 ---
 title: Hot Cache
-updated: 2026-10-05T08:15:00+07:00
+updated: 2026-10-13T14:00:00+07:00
 ---
 
 # Hot Cache
 
 ## Recent Activity
+
+- [2026-10-13] HANDOFF — đọc [[projects/reliable-tool-using-ai-agents/HANDOFF-2026-10-13]] trước tiên. Paper v1.3 định vị lại sau prior art VP-Control/EFD: RQ1 replication, RQ2 điều kiện `J = r − φ > 0` (đã chứng minh + kiểm định đăng ký trước), RQ3 survey 42 MCP server (16% cặp chung upstream; L1 thiếu nhãn 70%; coder B κ 0.78/1.00). Survey 2 (78 server) đã sàng lọc, **đang chờ coder A gán nhãn**.
 
 - [2026-10-05] INFLUENCE AUDIT — [[journal/2026-10-05-main-study-influence-audit]]: targeted Δ giữ âm sau 30 task/5 seed/6 stratum deletions; stratum range −24 đến −16 pp. Independent stratum range −0.8 đến +1.6 pp. Post-hoc descriptive ranges, không CI; zero treatment by construction vẫn là limitation. 7 tests/123 SQL cross-checks đạt; appendix §F/ledger C32 cập nhật, manuscript v0.9/21 frozen/3 figure hashes giữ nguyên. Không study episodes/model calls mới.
 - [2026-10-04] WORKED EXAMPLES — bổ sung §6 vào [[projects/reliable-tool-using-ai-agents/paper/figure-guide]], không tạo note mới. INS-00062/seed101: shared-domain wrong agreement về refund 142.12 EUR; INS-00060/seed101: false denial bỏ lỡ refund 91.12 EUR trước gate; always-escalate là counterfactual, không measured K=2 baseline. Đối chiếu 7 raw rows/4 policy-regime aggregates, 3 page schemas/links. Paper v0.9, 21 frozen hashes và 3 figure artifacts unchanged; không episodes/model/tests/bootstrap hoặc author/human sign-off mới.
@@ -33,4 +35,4 @@ Paper vẫn MAJOR REVISION, novelty SURVIVES WITH REFINEMENT — PRELIMINARY; ch
 
 ## Next Action
 
-Đã xuất PDF A4 24 trang cho paper v0.9 để tác giả/giảng viên review, gồm manuscript, References, supplementary appendix (bắt đầu trang mới) và internal-note index; PDF SHA-256 `a19c39ae50a7c85396319cf3b288ba32fba48d1e270f62092c716abd18af3a1a`, nguồn paper SHA-256 `0e9855c81f0d4d91bb78b3c51944954a191cf1368713f163f47b730469403087`. Bản PDF là layout-only preview, chưa theo template môn học. Bước kế tiếp là tác giả proofread, đọc lại RQ/method/results và gửi bản cùng briefing để giảng viên góp ý RQ/methodology/contribution. Author readback, course format và feedback vẫn mở. Không scale RTX. Public snapshot/license gate riêng; chưa commit/push.
+Theo [[projects/reliable-tool-using-ai-agents/HANDOFF-2026-10-13]] §4: (1) hỏi tác giả trước khi push `4d2b1dd`; (2) coder A gán nhãn 78 server survey 2 theo §5 của [[synthesis/Protocol: Expanded Real-Tool Metadata Survey]], lưu tiến độ vào repo sau mỗi nhóm; (3) phân tích P1–P6; (4) ledger rồi paper. Các mục Active Thread/Guardrails phía trên là lịch sử đến v0.9; nơi có hiệu lực là ledger và handoff.
