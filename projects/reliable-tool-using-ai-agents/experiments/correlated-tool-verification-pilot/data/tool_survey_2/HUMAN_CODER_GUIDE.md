@@ -8,7 +8,7 @@ Giống hệt hướng dẫn survey 1 bên dưới, với hai điểm khác:
 ---
 
 
-**Thời gian dự kiến:** 10–15 phút mỗi server, 10 server, tổng khoảng 2–2,5 giờ. Có thể chia làm nhiều buổi.
+**Thời gian dự kiến:** 10–15 phút mỗi server, 20 server, tổng khoảng 4–5 giờ. Có thể chia làm nhiều buổi.
 **Cần biết:** đọc được code Python hoặc TypeScript ở mức cơ bản. **Không cần** biết gì về project nghiên cứu.
 
 ## Bạn đang giúp đo điều gì?
