@@ -41,5 +41,40 @@
       "reason": "MCP SDK (mcp.server.mcpserver); get_coin_price calls api.coingecko.com public tier by default"
     },
     "human_subset_affected": false
+  },
+  {
+    "found_during": "coder A labelling, 2026-10-13",
+    "category": "translation",
+    "server_id": "translation/guvno/transdex-mcp",
+    "rank": 4,
+    "old_decision": "include",
+    "new_decision": "exclude",
+    "reason": "criterion 5 (no default upstream): MCP default translateProvider is 'prototype' (src/mcp/server.js:253), a placeholder returning '[Korean] text' (src/providers/index.js:167); OpenAI only when explicitly selected; host-model path makes the calling agent translate",
+    "replacement": {
+      "server_id": "translation/iamnotagentleman/localizable-xcstrings-mcp",
+      "rank": 17,
+      "repo_url": "https://github.com/iamnotagentleman/localizable-xcstrings-mcp",
+      "commit_sha": "989abc9afe467e10389d47140bdcd1649e23415d",
+      "reason": "FastMCP; translate_tool calls OpenAI chat completions with default base URL"
+    },
+    "human_subset_affected": false
+  },
+  {
+    "found_during": "coder A labelling, 2026-10-13",
+    "category": "translation",
+    "server_id": "translation/xdfzx711/translation-mcp-server",
+    "rank": 8,
+    "old_decision": "include",
+    "new_decision": "exclude",
+    "reason": "criterion 5 (no default upstream): BAIDU_TRANSLATE_ENABLED defaults to 'false' (mcp_translation_service.py:147), so translate_text uses a local dictionary (:519-537); Baidu Translate needs an explicit enable switch, not only credentials",
+    "replacement": {
+      "server_id": "translation/waxberry-dev/live-translate-mcp",
+      "rank": 18,
+      "repo_url": "https://github.com/waxberry-dev/live-translate-mcp",
+      "commit_sha": "8d4a4afd2e6996fdebd3774494558116f5502e53",
+      "reason": "MCP SDK; translate_file/translate_speech call the Anthropic API by default"
+    },
+    "human_subset_affected": true,
+    "human_subset_handling": "PROPOSED (needs author confirmation): keep the frozen 20-server human subset unchanged; coder A also codes this server so agreement is computed on all 20, but it is excluded from all estimates"
   }
 ]
