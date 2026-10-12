@@ -107,7 +107,7 @@ Tính từ mô hình chính xác (`analyze_hidden_dependency.p_select_shared_exa
 | `J_plus` | 0.040 | 0.091 | 0.267 | −0.176 |
 | `J_zero` | 0.333 | 0.267 | 0.267 | 0.000 |
 | `J_minus` | 0.600 | 0.427 | 0.267 | **+0.160** |
-| `survey_calibrated` | 0.250 | 0.217 | 0.267 | −0.050 |
+| `survey_calibrated` | ~~0.250~~ **0.182** | ~~0.217~~ **0.176** | 0.267 | ~~−0.050~~ **−0.091** (Amendment A1) |
 
 Ở regime `clean`, dự đoán unsafe bằng 0 cho cả hai policy.
 
@@ -140,6 +140,7 @@ Mô phỏng 150 study bằng **mô hình đơn giản hóa** (không phải code
 | 2026-10-11 | Protocol v1.0 được viết | Chờ tác giả xác nhận; chưa có code, task hay episode nào |
 | 2026-10-12 | Tác giả xác nhận protocol v1.0 | Khóa hypothesis, điều kiện, cỡ mẫu, dự đoán và quy tắc quyết định; chưa có code, task hay episode nào |
 | 2026-10-12 | Task split đóng băng trước khi viết runner | `data/tasks_label_quality_60.json`, SHA-256 `9a68d765657f068aacf70635e0a7a9584b7aa4194eea9e5fc42ea83eb4543eb8`; manifest `data/tasks_label_quality_60.manifest.json`. Kiểm tra trước khi chạy (§3.1) đều đạt: 120 instance cũ không đổi; escalate 40, refund 20 (đúng 2/3); 10 task mỗi difficulty; 0 task trùng các file task cũ; sinh lại cho hash giống hệt. Upstream clone mới ở commit `d0ee54aa`, Python 3.12.3 venv mới. |
+| 2026-10-12 | **Amendment A1 — sửa dự đoán H-J4 trước khi chạy** | Test đơn vị (§7) phát hiện dự đoán §4 cho `survey_calibrated` được tính bằng hàm cho phép **nhãn của primary cũng thiếu** (xác suất 1 − k), trái với thiết kế §3.3 (nhãn primary luôn đúng). Giữ nguyên thiết kế §3.3 (nhất quán với ba điều kiện kia) và sửa dự đoán: P(chọn tool chung) 0.250 → 0.182; unsafe provenance 0.217 → 0.176; chênh lệch −0.050 → −0.091. Hướng của H-J4 và quy tắc quyết định không đổi; ba điều kiện còn lại không bị ảnh hưởng. Quyết định trước khi có bất kỳ decision row nào; số cũ được giữ (gạch ngang) trong bảng §4. |
 
 ## Liên quan
 
