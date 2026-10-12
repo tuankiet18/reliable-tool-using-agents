@@ -1,0 +1,41 @@
+[
+  {
+    "server_id": "geocoding/Kanahiro/aws-geocode-mcp",
+    "upstream_providers": "Amazon Location Service",
+    "upstream_evidence": "src/amazonlocation/geocoder.ts:23 https://places.geo.${region}.amazonaws.com/v2/geocode (region default ap-northeast-1, :4)",
+    "configurable_upstream": "False",
+    "l1_declared_provider": "Amazon Location Service",
+    "l1_evidence": "server name 'Amazon Location Service Geocoder'",
+    "l2_declared_provider": "Amazon Location Service",
+    "l2_evidence": "README.md:1 'MCP Server for Amazon Location Service Geocoder'",
+    "origin_a": "",
+    "origin_a_evidence": "",
+    "notes": "AWS_REGION env only changes the region of the same operator; L1 via server name only"
+  },
+  {
+    "server_id": "geocoding/Gaurav1998-dev/geocoder-mcp",
+    "upstream_providers": "Open-Meteo",
+    "upstream_evidence": "app/mcp/route.ts:42 https://customer-geocoding-api.open-meteo.com/v1/search",
+    "configurable_upstream": "False",
+    "l1_declared_provider": "unknown",
+    "l1_evidence": "",
+    "l2_declared_provider": "unknown",
+    "l2_evidence": "",
+    "origin_a": "",
+    "origin_a_evidence": "",
+    "notes": "Vercel mcp-handler template; README is the template README and names no provider; second tool get_weather_forecast also Open-Meteo (other information type)"
+  },
+  {
+    "server_id": "geocoding/wowzoo/korea-geocoder-mcp",
+    "upstream_providers": "Google Maps Platform",
+    "upstream_evidence": "korea_geocoder_mcp/geocoder.py:29 googlemaps.Client(key=API_KEY)",
+    "configurable_upstream": "False",
+    "l1_declared_provider": "unknown",
+    "l1_evidence": "",
+    "l2_declared_provider": "Google Maps Platform",
+    "l2_evidence": "README.md:7 '한국 주소를 Google Maps API를 통해 위도/경도로 변환'",
+    "origin_a": "",
+    "origin_a_evidence": "",
+    "notes": "library googlemaps (Geocoding API); tool docstring in Korean names no provider"
+  }
+]

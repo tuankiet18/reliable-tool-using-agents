@@ -1,0 +1,15 @@
+[
+  {
+    "server_id": "ip_geolocation/ip2location/mcp-ip2location-io",
+    "upstream_providers": "IP2Location.io",
+    "upstream_evidence": "src/ip2locationio/server.py:20 IPLIO_API_BASE = https://api.ip2location.io",
+    "configurable_upstream": "False",
+    "l1_declared_provider": "IP2Location.io",
+    "l1_evidence": "server name 'ip2locationio'; get_geolocation docstring 'https://www.ip2location.io/pricing'",
+    "l2_declared_provider": "IP2Location.io",
+    "l2_evidence": "README.md:3 'using the IP2Location.io API'",
+    "origin_a": "",
+    "origin_a_evidence": "",
+    "notes": "vendor-operated server for its own API; category has 1 server, reported separately (no pairs)"
+  }
+]
