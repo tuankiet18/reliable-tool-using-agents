@@ -81,26 +81,26 @@
     "server_id": "web_search/zydins/web-search-mcp-server",
     "upstream_providers": "SearXNG (self-hosted)",
     "upstream_evidence": "web_search_mcp_server/search_service.py:9 SEARXNG_URL default http://localhost:8080; docker-compose.yml:3-8 searxng/searxng image with ./searxng-settings.yml",
-    "configurable_upstream": "False",
+    "configurable_upstream": "True",
     "l1_declared_provider": "SearXNG (self-hosted)",
     "l1_evidence": "web_search docstring: 'Searches the web via SearXNG'",
     "l2_declared_provider": "SearXNG (self-hosted)",
     "l2_evidence": "README.md:3 'MCP server with **SearXNG** (privacy-focused search aggregator)'",
     "origin_a": "Google;DuckDuckGo;Brave Search;Startpage;Wikipedia;Wikidata",
     "origin_a_evidence": "searxng-settings.yml:1051 google, duckduckgo, brave (categories general,web), startpage (general,web), wikipedia (general), wikidata (general) enabled; bing/mojeek/qwant/yahoo/wiby/yandex disabled; Google and DuckDuckGo belong to 'general' by SearXNG engine defaults (INFERRED, as survey 1 slinusc)",
-    "notes": "AMBIGUOUS shared-domain status (Amendment A1: self-hosted metasearch); engines are pinned in the repo's full searxng-settings.yml (no use_default_settings), see origin_a"
+    "notes": "AMBIGUOUS shared-domain status (Amendment A1: self-hosted metasearch); engines are pinned in the repo's full searxng-settings.yml (no use_default_settings), see origin_a; configurable: SEARXNG_URL env var (search_service.py:9)"
   },
   {
     "server_id": "web_search/PROJECT-B-26/groundroute-mcp",
     "upstream_providers": "GroundRoute",
     "upstream_evidence": "server.py:27 API_BASE default https://api.groundroute.ai",
-    "configurable_upstream": "False",
+    "configurable_upstream": "True",
     "l1_declared_provider": "GroundRoute;Serper;Brave Search;Exa;Tavily;Firecrawl;Perplexity",
     "l1_evidence": "search docstring: 'Search the live web via GroundRoute. Routes the query to … Serper, Brave, Exa, Tavily, Firecrawl, and Perplexity'",
     "l2_declared_provider": "GroundRoute;Serper;Brave Search;Exa;Tavily;Firecrawl;Perplexity",
     "l2_evidence": "README.md:19 'One tool, six engines. Serper, Brave, Exa, Tavily, Firecrawl, Perplexity'",
     "origin_a": "Serper;Brave Search;Exa;Tavily;Firecrawl;Perplexity",
     "origin_a_evidence": "server.py:184 docstring and README.md:19 list the six engines behind GroundRoute",
-    "notes": "vendor-operated server for its own routing API; L1 names both the operator and the engines it routes to"
+    "notes": "vendor-operated server for its own routing API; L1 names both the operator and the engines it routes to; configurable: GROUNDROUTE_API_BASE env var overrides the API base (server.py:27)"
   }
 ]
