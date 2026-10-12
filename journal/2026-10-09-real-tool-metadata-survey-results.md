@@ -8,7 +8,7 @@ sources:
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_tool_survey_20261009/summary.json"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_tool_survey.py"
 created: 2026-10-09T18:00:00+07:00
-updated: 2026-10-09T18:00:00+07:00
+updated: 2026-10-13T12:00:00+07:00
 summary: >-
   16% cặp MCP server cùng loại dùng chung upstream; metadata agent thấy (L1) thiếu nhãn ở 70% cặp nhưng khi có thì đúng (8/8, 0/24). Vấn đề thực tế là thiếu nhãn hơn là sai nhãn.
 provenance:
@@ -58,6 +58,27 @@ lifecycle_changed: 2026-10-09
 - 105 cặp không độc lập (mỗi server nằm trong 5 cặp); mẫu số của `r` nhỏ.
 - Mẫu thiên về repo phổ biến trên GitHub; MCP không đại diện cho mọi hệ sinh thái tool.
 - Chưa có kiểm tra bởi con người (coder B).
+
+## Inter-rater agreement — cập nhật 2026-10-13
+
+Coder B (con người, thành viên nhóm) nộp nhãn cho 10 server được giao: đủ 10 dòng, không trống cột bắt buộc, commit và URL khớp, mỗi nhãn có bằng chứng file:dòng. `src/analyze_coder_agreement.py`, output `results_coder_agreement_20261013/`.
+
+| Trường | Khớp nguyên chữ | Sau chuẩn hóa tên |
+|---|---|---|
+| Upstream provider | 0.40 (κ = 0.38) | **0.80 (κ = 0.78)** |
+| L1 declared provider | 0.80 (κ = 0.68) | **1.00 (κ = 1.00)** |
+| L2 declared provider | 0.40 (κ = 0.38) | **1.00 (κ = 1.00)** |
+| L1 có/không có nhãn | 1.00 | 1.00 |
+
+Bảng chuẩn hóa chỉ gộp các cách viết của **cùng một** tổ chức (ví dụ "Sina" và "Sina Finance", "Microsoft" là bên vận hành "Bing"). Nó được viết **sau** khi thấy cả hai file, vì protocol survey 1 không định trước, nên kết quả khớp nguyên chữ được báo cáo song song.
+
+**Hai bất đồng thật, đều do codebook chưa rõ:**
+1. `adem1409/Currency-Exchange-MCP-Server`: coder B ghi bên vận hành host (jsDelivr; Cloudflare), **đúng theo chữ của hướng dẫn**; coder A ghi chủ bộ dữ liệu (fawazahmed0 exchange-api), theo một làm rõ được đưa ra trong lúc gán nhãn nhưng không có trong hướng dẫn gửi coder B.
+2. `Pascalrjt/SearXNG-Websearch-MCP`: coder B ghi `ambiguous`; coder A ghi `SearXNG (self-hosted)` kèm cờ AMBIGUOUS. Cả hai đều thấy là mơ hồ.
+
+**Tác động lên kết quả:** không đổi nhãn cặp nào ở mức chính. Không server tỷ giá nào khác dùng jsDelivr hay fawazahmed0, nên cặp của `adem1409` không đổi. Cặp SearXNG đã được xét ở phân tích độ nhạy (c) (ρ 0.15).
+
+Coder B còn phát hiện điều coder A bỏ sót ở `niuheilong/stock-mcp-server`: Dockerfile chạy `server.py` (trả giá 0.0) thay vì `mcp_server.py`, và README trỏ tới `main.py` không tồn tại. Đây là bằng chứng rằng việc kiểm tra của con người có giá trị thật.
 
 ## POST-HOC — Độ nhạy theo mức nguồn dữ liệu gốc
 

@@ -53,7 +53,7 @@ summary: >-
   Living paper v1.0: controlled replication (RQ1), điều kiện J = r − φ > 0 cho metadata failure-domain (RQ2), và survey 42 MCP server cho thấy metadata thực tế chủ yếu thiếu, ở mức bên vận hành, và có nhóm không có nguồn độc lập (RQ3).
 lifecycle: draft
 paper_status: living-draft
-version: "1.2"
+version: "1.3"
 ---
 
 # When Does Failure-Domain Metadata Help Tool-Using AI Agents? A Controlled Replication, a Label-Quality Condition, and a Survey of 42 MCP Servers
@@ -527,7 +527,7 @@ Mean effect mô phỏng khớp dự đoán giải tích độc lập. Xấp xỉ
 
 Ở mức nguồn gốc, cả 15 cặp web_search đều chung ít nhất một engine (Google, DuckDuckGo hoặc Brave), nên ngay cả selector biết đủ ánh xạ cũng không tìm được nguồn độc lập. Quy tắc "giao tập khác rỗng thì là chung" phóng đại phụ thuộc của các aggregator nhiều engine; phụ thuộc chỉ được ghi ngoài repo không được thêm. Hai sai lệch này ngược chiều nhau.
 
-**Inter-rater agreement:** chưa có ở v1.0; sẽ tính khi coder B nộp nhãn.
+**Inter-rater agreement (cập nhật v1.3).** Coder B (con người) gán độc lập 10/42 server chọn bằng hash. Sau chuẩn hóa tên của cùng một tổ chức, đồng thuận về upstream là 0.80 (Cohen's κ 0.78), về L1 và L2 là 1.00; khớp nguyên chữ thấp hơn (0.40, 0.80, 0.40). Bảng chuẩn hóa được viết sau khi thấy dữ liệu, nên cả hai con số được báo cáo. Hai bất đồng về upstream đều do codebook chưa rõ (bên vận hành CDN so với chủ bộ dữ liệu; SearXNG tự host) và không làm đổi nhãn cặp nào ở phân tích chính.
 
 ### 5.11 Kiểm định có đăng ký trước cho điều kiện `J`
 
@@ -611,7 +611,7 @@ Hai vòng secondary case review do một AI khác hỗ trợ theo yêu cầu c�
 
 - **Post-hoc và thứ tự thời gian.** RQ2 và RQ3 được đặt sau khi biết kết quả RQ1; phân tích RQ2 và độ nhạy theo nguồn gốc là post-hoc. Protocol RQ3 viết trước khi thu thập nhưng sau khi biết quy tắc `J`; không phải preregistration độc lập.
 - **Phạm vi của chứng minh.** Quy tắc `J` được chứng minh dưới giả định nhãn primary đúng, nhãn corroborator độc lập và chỉ phụ thuộc lớp, chọn đều một corroborator. Nhãn tương quan giữa các tool, nhãn primary sai và chọn nhiều corroborator chưa được bao phủ; chứng minh chưa được người độc lập kiểm tra.
-- **Gán nhãn bởi AI.** Toàn bộ 42 server do AI gán nhãn; agreement với con người (coder B, 10 server) chưa có. Hai lỗi đã được phát hiện và sửa công khai trong quá trình (một lỗi sàng lọc, một lỗi trong phép chiếu); có thể còn lỗi khác.
+- **Gán nhãn bởi AI.** Toàn bộ 42 server do AI gán nhãn; con người kiểm tra 10 server (§5.10), với đồng thuận cao sau chuẩn hóa tên nhưng thấp hơn khi khớp nguyên chữ. Hai lỗi đã được phát hiện và sửa công khai trong quá trình (một lỗi sàng lọc, một lỗi trong phép chiếu); có thể còn lỗi khác.
 - **Construct của "dùng chung".** Ground truth ở mức bên vận hành là cận dưới cho phụ thuộc thật; mức nguồn gốc chỉ dùng bằng chứng trong repo. Quy tắc giao tập phóng đại phụ thuộc của aggregator. Hai server SearXNG tự host được gắn nhãn cùng provider dù có thể là hai instance khác nhau.
 - **Mẫu.** 42 repo GitHub phổ biến, 7 nhóm thông tin, chỉ hệ sinh thái MCP; 105 cặp không độc lập vì mỗi server nằm trong 5 cặp; mẫu số của `r` ở L1 chỉ có 8 cặp.
 - **Phép chiếu không phải đo agent.** Các xác suất chọn nhầm ở §5.10 đến từ mô hình selector, không từ hành vi agent thật.
@@ -659,6 +659,8 @@ Title/authors/year/identifier được đối chiếu theo phạm vi từng ngu�
 - [KL86] John C. Knight and Nancy G. Leveson. 1986. *An Experimental Evaluation of the Assumption of Independence in Multiversion Programming*. IEEE Transactions on Software Engineering, 12(1), pp. 96–109. [DOI: 10.1109/TSE.1986.6312924](https://doi.org/10.1109/TSE.1986.6312924). DOI resolves to IEEE; full-text re-read unavailable in this audit; metadata corroborated by DBLP, no new quantitative claim added.
 
 ## Writing status
+
+**v1.3 (2026-10-13):** thêm inter-rater agreement của coder B cho survey 1.
 
 **v1.2 (2026-10-12):** chứng minh quy tắc `J` ([[projects/reliable-tool-using-ai-agents/paper/proof-j-condition]]); đính chính giải thích về mô hình nhiễu độc lập.
 
