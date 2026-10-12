@@ -10,7 +10,7 @@ sources:
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/run_robustness_gate.py"
   - "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md"
 created: 2026-10-11T10:00:00+07:00
-updated: 2026-10-11T10:00:00+07:00
+updated: 2026-10-12T09:00:00+07:00
 summary: >-
   Protocol đăng ký trước để kiểm định trong pipeline mô phỏng đầy đủ dự đoán của RQ2: lỗi nhãn có hệ thống với J < 0 làm provenance tệ hơn chọn ngẫu nhiên, J > 0 làm tốt hơn.
 provenance:
@@ -22,7 +22,7 @@ lifecycle: draft
 lifecycle_changed: 2026-10-11
 tier: core
 protocol_version: "1.0"
-protocol_status: written-awaiting-author-confirmation
+protocol_status: confirmed-by-author
 ---
 
 # Protocol: Kiểm định có đăng ký trước cho điều kiện chất lượng nhãn
@@ -138,6 +138,7 @@ Mô phỏng 150 study bằng **mô hình đơn giản hóa** (không phải code
 | Ngày | Sự kiện | Ghi chú |
 |---|---|---|
 | 2026-10-11 | Protocol v1.0 được viết | Chờ tác giả xác nhận; chưa có code, task hay episode nào |
+| 2026-10-12 | Tác giả xác nhận protocol v1.0 | Khóa hypothesis, điều kiện, cỡ mẫu, dự đoán và quy tắc quyết định; chưa có code, task hay episode nào |
 
 ## Liên quan
 
