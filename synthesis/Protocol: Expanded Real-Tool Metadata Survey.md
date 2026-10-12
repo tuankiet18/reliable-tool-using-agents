@@ -10,7 +10,7 @@ sources:
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_tool_survey.py"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_tool_survey_origin.py"
 created: 2026-10-12T20:00:00+07:00
-updated: 2026-10-12T20:00:00+07:00
+updated: 2026-10-13T09:00:00+07:00
 summary: >-
   Protocol cho survey 2: khoảng 96 MCP server mới thuộc 12 nhóm, đăng ký trước dự đoán rút từ survey 1, phân tích mức nguồn gốc và kiểm tra của con người trên ít nhất 20 server.
 provenance:
@@ -22,7 +22,7 @@ lifecycle: draft
 lifecycle_changed: 2026-10-12
 tier: core
 protocol_version: "1.0"
-protocol_status: written-awaiting-author-confirmation
+protocol_status: confirmed-by-author
 ---
 
 # Protocol: Survey mở rộng về metadata của tool thật (survey 2)
@@ -150,6 +150,7 @@ Dùng lại `analyze_tool_survey.py` và `analyze_tool_survey_origin.py` (đổi
 | Ngày | Sự kiện | Ghi chú |
 |---|---|---|
 | 2026-10-12 | Protocol v1.0 được viết | Chờ tác giả xác nhận; chưa tạo sampling frame, chưa đọc code repo mới nào |
+| 2026-10-13 | Tác giả xác nhận protocol v1.0 | Khóa 12 nhóm, truy vấn chính và dự phòng, tiêu chí, codebook, dự đoán P1–P6; chưa tạo sampling frame |
 
 ## Liên quan
 
