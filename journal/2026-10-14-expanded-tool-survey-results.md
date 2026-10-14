@@ -46,7 +46,7 @@ lifecycle_changed: 2026-10-14
 - **L2 (L1 cộng README):** m = 0.22; r = 52/55 = 0.95; φ = 7/135 = 0.05; J = 0.89.
 - **Hai nhóm hoàn toàn không có nhãn ở L1:** weather và stock_quotes đều có m_L1 = 1.00. Tức là không server nào trong hai nhóm này nêu tên provider ở metadata mà agent thấy.
 - **Độ nhạy:**
-  - Bỏ các server đổi được provider (còn 59 server): ρ 0.29; L1 m 0.75, r 0.79, φ 0.11.
+  - Bỏ 16 server đổi được provider (còn 58 server): ρ 0.29; L1 m 0.75, r 0.79, φ 0.11.
   - Coi cặp AMBIGUOUS là không chung: kết quả không đổi.
 - **Phép chiếu lên mô hình selector:** đây là phép chiếu, không phải phép đo. Lấy trung bình trên 45 primary có ít nhất một peer chung:
   - L1 với tỷ lệ thiếu nhãn quan sát được (k = 0.53): xác suất chọn nhầm peer chung là 0.289 với provenance, so với 0.436 khi chọn ngẫu nhiên.
