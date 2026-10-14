@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Failure-Domain Metadata — Tổng quan dự án</title>
+<style>
+@page { size: A4; margin: 16mm 17mm; }
+body { font-family: "Noto Sans", "DejaVu Sans", sans-serif; font-size: 10.5pt; line-height: 1.5; color: #1b1b1b; }
+h1 { font-size: 17pt; color: #1f4e79; margin: 0 0 2px; line-height: 1.25; }
+.sub { color: #555; font-size: 9.5pt; margin-bottom: 14px; border-bottom: 2px solid #1f4e79; padding-bottom: 8px; }
+h2 { font-size: 12.5pt; color: #1f4e79; margin: 16px 0 6px; page-break-after: avoid; }
+p { margin: 5px 0; }
+table { border-collapse: collapse; width: 100%; font-size: 9.3pt; margin: 6px 0 8px; page-break-inside: avoid; }
+th, td { border: 1px solid #bcc3cc; padding: 4px 7px; vertical-align: top; }
+th { background: #e6edf5; text-align: left; }
+td.n { text-align: right; white-space: nowrap; }
+.box { background: #f3f7fb; border-left: 4px solid #1f4e79; padding: 7px 12px; margin: 8px 0; page-break-inside: avoid; }
+.rq { margin: 6px 0; }
+.rq b { color: #1f4e79; }
+.en { font-style: italic; color: #333; }
+.formula { text-align: center; font-family: "DejaVu Serif", serif; font-size: 11.5pt; margin: 6px 0; }
+ul { margin: 4px 0; padding-left: 20px; } li { margin: 2px 0; }
+.fig { text-align: center; margin: 6px 0 2px; page-break-inside: avoid; }
+.cap { text-align: center; font-size: 8.8pt; color: #555; margin-bottom: 6px; }
+.ok { color: #1d6b2f; font-weight: 600; } .no { color: #a33; font-weight: 600; }
+.foot { font-size: 8.5pt; color: #777; margin-top: 14px; border-top: 1px solid #ddd; padding-top: 5px; }
+</style>
+</head>
+<body>
+
+<h1>When Does Failure-Domain Metadata Help Tool-Using AI Agents?</h1>
+<div class="sub">Tổng quan dự án và tiến độ · Lương Tuấn Kiệt · 14/10/2026</div>
+
+<h2>1. Vấn đề</h2>
+<p>Tool-using AI agent có thể nhận <b>output sai nhưng vẫn đúng schema</b> (silent failure). Một cách phòng phổ biến là <b>cross-verification</b>: trước khi hành động, agent hỏi thêm một tool thứ hai (<b>corroborator</b>) và chỉ tin khi hai kết quả khớp nhau.</p>
+<p>Cách này thất bại khi hai tool khác tên nhưng <b>dùng chung một upstream provider</b>, tức là cùng <b>failure domain</b>. Khi provider trả dữ liệu sai, cả hai tool cùng sai giống nhau. Agent khi đó thấy chúng "đồng ý" và tin vào một kết quả sai (<b>common-mode failure</b>).</p>
+
+<div class="fig">
+<svg width="620" height="150" viewBox="0 0 620 150" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans, sans-serif" font-size="11">
+  <rect x="10" y="55" width="90" height="40" rx="6" fill="#e6edf5" stroke="#1f4e79"/><text x="55" y="79" text-anchor="middle">Agent</text>
+  <rect x="160" y="10" width="120" height="34" rx="6" fill="#fff" stroke="#555"/><text x="220" y="31" text-anchor="middle">weather_A (primary)</text>
+  <rect x="160" y="58" width="120" height="34" rx="6" fill="#fff" stroke="#555"/><text x="220" y="79" text-anchor="middle">weather_pro</text>
+  <rect x="160" y="106" width="120" height="34" rx="6" fill="#fff" stroke="#555"/><text x="220" y="127" text-anchor="middle">forecast_x</text>
+  <rect x="360" y="30" width="130" height="40" rx="6" fill="#fbe9e9" stroke="#a33"/><text x="425" y="49" text-anchor="middle">Provider P</text><text x="425" y="63" text-anchor="middle" fill="#a33">trả dữ liệu sai</text>
+  <rect x="360" y="100" width="130" height="40" rx="6" fill="#e8f4ea" stroke="#1d6b2f"/><text x="425" y="124" text-anchor="middle">Provider Q</text>
+  <line x1="100" y1="70" x2="160" y2="27" stroke="#555"/><line x1="100" y1="75" x2="160" y2="75" stroke="#555"/><line x1="100" y1="80" x2="160" y2="123" stroke="#555"/>
+  <line x1="280" y1="27" x2="360" y2="45" stroke="#a33" stroke-width="1.6"/><line x1="280" y1="75" x2="360" y2="55" stroke="#a33" stroke-width="1.6"/>
+  <line x1="280" y1="123" x2="360" y2="120" stroke="#1d6b2f" stroke-width="1.6"/>
+  <text x="500" y="45" font-size="10" fill="#a33">cùng failure domain</text>
+  <text x="500" y="58" font-size="10" fill="#a33">→ đồng ý sai</text>
+  <text x="500" y="118" font-size="10" fill="#1d6b2f">độc lập</text>
+  <text x="500" y="131" font-size="10" fill="#1d6b2f">→ phát hiện được</text>
+</svg>
+</div>
+<div class="cap">Hình 1. Chọn <i>weather_pro</i> làm corroborator là vô ích vì nó dùng chung Provider P với primary; <i>forecast_x</i> mới là nguồn kiểm tra độc lập.</div>
+
+<p>Nếu agent biết tool nào thuộc failure domain nào, nó sẽ chọn corroborator độc lập. Nhưng thông tin này đến từ <b>failure-domain metadata</b> (tên, description, tài liệu của tool), và metadata đó có thể <b>thiếu</b> hoặc <b>sai</b>.</p>
+
+<h2>2. Định vị so với nghiên cứu liên quan</h2>
+<p>Trong quá trình làm, em tìm thấy hai công trình mới (arXiv, 9/2026):</p>
+<ul>
+<li><b>VP-Control</b> (arXiv:2609.10969) đã chứng minh, với thiết kế mạnh hơn, rằng chọn nguồn khác lineage giảm mạnh việc chấp nhận kết quả sai.</li>
+<li><b>EFD</b> (arXiv:2609.02925) chứng minh về mặt cấu trúc rằng thêm reviewer không khắc phục được khi các reviewer dùng chung upstream.</li>
+</ul>
+<p>Cả hai đều <b>giả định lineage label có sẵn và đúng</b>. Vì vậy em giữ thí nghiệm ban đầu dưới dạng <b>replication</b>, và chuyển contribution chính sang câu hỏi mà hai công trình trên chưa trả lời: <b>metadata cần chính xác đến đâu, và metadata thực tế chính xác đến đâu?</b></p>
+
+<h2>3. Research Questions</h2>
+<div class="rq"><b>RQ1 — Controlled replication.</b> <span class="en">Given accurate failure-domain metadata, does independent-domain corroboration reduce unsafe decisions relative to random corroboration, at the same verification budget?</span><br>Khi metadata chính xác, chọn corroborator khác failure domain có giảm quyết định sai so với chọn random không?</div>
+<div class="rq"><b>RQ2 — Label-quality condition.</b> <span class="en">Under failure-domain label errors with recall r and false-sharing rate φ, when does failure-domain-aware selection beat, match, or lose to random selection?</span><br>Khi metadata bỏ sót shared dependency hoặc gán nhầm, lúc nào chọn theo metadata còn tốt hơn chọn random?</div>
+<div class="rq"><b>RQ3 — Real-world metadata.</b> <span class="en">Among open-source MCP servers providing the same information type, how often do two servers share an upstream provider, and how well does agent-visible metadata reveal it?</span><br>Trong các MCP server thật cùng loại, bao nhiêu cặp dùng chung provider, và metadata mà agent đọc được có cho biết điều đó không?</div>
+
+<h2>4. Phương pháp</h2>
+<table>
+<tr><th style="width:13%">RQ</th><th>Thiết kế</th></tr>
+<tr><td>RQ1</td><td>Decision simulation một quy trình refund: 30 task × 3 policy × 3 failure regime × 5 seed (1.350 decision rows). So sánh random với failure-domain-aware selection ở cùng budget 2 observation. Paired task-cluster bootstrap. Kèm robustness check khi 25% label sai.</td></tr>
+<tr><td>RQ2</td><td>Mô hình hóa label error bằng recall <i>r</i> và false-sharing rate <i>φ</i>. Chứng minh closed-form, kiểm tra bằng exact enumeration và Monte Carlo. Sau đó chạy một <b>preregistered test</b> trên 60 task mới (4.800 rows), với prediction và quy tắc pass/fail ghi trước.</td></tr>
+<tr><td>RQ3</td><td>Hai survey MCP server open-source trên GitHub. Sampling frame được lock trước khi đọc code; screening theo thứ tự rank. Đọc tĩnh code tại pinned commit để xác định <b>ground truth upstream provider</b>, rồi so sánh với metadata agent thấy được (L1: tên và description của tool) và L1 cộng README (L2). Đo ở operator level và data-origin level. <b>Survey 2</b> là mẫu mới, dùng để kiểm định 6 prediction rút ra từ survey 1.</td></tr>
+</table>
+<p>Mọi bước sau khi định vị lại đều theo quy trình <b>protocol viết trước, data thu sau</b>; mọi thay đổi được ghi thành amendment có ngày. Toàn bộ chạy offline, không tốn API cost.</p>
+
+<h2>5. Kết quả chính</h2>
+<p><b>RQ1.</b> Khi metadata chính xác, failure-domain-aware selection cho <b>0/150</b> unsafe decision, so với <b>30/150</b> khi chọn random (Δ −0.200, 95% CI [−0.273, −0.127]). Clean correctness của hai policy bằng nhau (150/150). Khi 25% label sai, lợi thế không còn chắc chắn (robustness <span class="no">FAIL</span>). Phân tích sau đó cho thấy tiêu chí này chỉ có khoảng 56% power ở 30 task. Kết quả nhất quán với VP-Control.</p>
+
+<div class="box">
+<b>RQ2: điều kiện J.</b> Failure-domain-aware selection tốt hơn random <b>khi và chỉ khi</b>
+<div class="formula">J = r − φ &gt; 0</div>
+tức là metadata phát hiện đúng shared dependency nhiều hơn số lần gán nhầm. Khi <b>J &lt; 0</b>, metadata <b>gây hại</b>: chọn theo metadata còn tệ hơn chọn random. Missing label không đổi chiều kết luận, chỉ làm effect nhỏ đi. Điều kiện này có proof dưới các assumption nêu rõ.
+</div>
+
+<table>
+<tr><th>Preregistered test (60 task mới)</th><th class="n">Δ unsafe so với random</th><th class="n">95% CI</th><th>Kết quả</th></tr>
+<tr><td>J = −0.5 (metadata tệ)</td><td class="n">+0.133</td><td class="n">[+0.070, +0.200]</td><td><span class="ok">Đạt</span>: tệ hơn random</td></tr>
+<tr><td>J = +0.8 (metadata tốt)</td><td class="n">−0.177</td><td class="n">[−0.233, −0.120]</td><td><span class="ok">Đạt</span>: tốt hơn random</td></tr>
+<tr><td>Theo thông số survey</td><td class="n">−0.093</td><td class="n">[−0.157, −0.033]</td><td><span class="ok">Đạt</span></td></tr>
+<tr><td>J = 0 (tương đương random)</td><td class="n">+0.063</td><td class="n">90% CI [+0.013, +0.117]</td><td><span class="no">Không đạt</span> biên ±0.08</td></tr>
+</table>
+
+<p style="page-break-after:avoid"><b>RQ3.</b> Kết quả hai survey:</p>
+<table>
+<tr><th></th><th class="n">Survey 1</th><th class="n">Survey 2</th></tr>
+<tr><td>Số server (category)</td><td class="n">42 (7)</td><td class="n">78 (12); 74 dùng để ước lượng</td></tr>
+<tr><td>Cặp cùng category dùng chung upstream provider (ρ)</td><td class="n">16% [8%, 28%]</td><td class="n">27% [18%, 37%]</td></tr>
+<tr><td>Cặp có <b>missing label</b> ở metadata agent thấy (L1)</td><td class="n">70%</td><td class="n">71%</td></tr>
+<tr><td>Khi có label: recall r / false-sharing φ (L1)</td><td class="n">8/8 · 0/24</td><td class="n">23/27 · 3/45</td></tr>
+<tr><td>J khi thêm README (L2)</td><td class="n">1.00</td><td class="n">0.89</td></tr>
+<tr><td>Recall ở data-origin level so với operator level (L2)</td><td class="n">0.61 (post-hoc)</td><td class="n">0.83 so với 0.95</td></tr>
+</table>
+<p>Survey 2 đạt <b>4/6 prediction</b> ghi trước. Hai prediction không đạt, và em đã bỏ hai kết luận tương ứng của survey 1:</p>
+<ul>
+<li>"Khi có label thì không sai": thực tế false-sharing là 0.067, vượt ngưỡng 0.05.</li>
+<li>"Có category hoàn toàn không có nguồn độc lập": category cao nhất (web search) chỉ ở mức 0.71.</li>
+</ul>
+
+<div class="box"><b>Thông điệp chính.</b> Trong thực tế, bottleneck là metadata <b>missing</b>: khoảng 70% cặp không có thông tin provider, và finding này lặp lại ở cả hai mẫu. Khi có thông tin thì phần lớn đúng (J &gt; 0), nhưng thường chỉ ở operator level và bỏ sót dependency ở data-origin level. Hàm ý thực hành: tool nên ghi rõ provider và data origin trong description.</div>
+
+<h2>6. Contribution và giới hạn</h2>
+<p><b>Contribution:</b></p>
+<ul>
+<li>Một replication độc lập của RQ1.</li>
+<li>Một điều kiện đơn giản, có proof (J &gt; 0), cho biết khi nào failure-domain metadata giúp hay hại.</li>
+<li>Evidence thực nghiệm, lặp lại trên hai mẫu, về chất lượng metadata của MCP server thật.</li>
+</ul>
+<p><b>Giới hạn chính:</b></p>
+<ul>
+<li>RQ2 và RQ3 được thêm sau khi đã có kết quả RQ1. Các bước sau đó có protocol viết trước, nhưng là protocol nội bộ.</li>
+<li>Survey chủ yếu do AI hỗ trợ gán nhãn. Một human coder đã kiểm tra 10 server của survey 1: agreement 0.80 về provider (Cohen's κ 0.78), 1.00 về metadata. Phần kiểm tra cho survey 2 đang chờ.</li>
+<li>RQ1 là simulation, chưa có kết quả trên live agent.</li>
+<li>Proof của điều kiện J dựa trên các assumption đơn giản hóa và chưa được kiểm tra độc lập.</li>
+</ul>
+
+<div class="foot">Toàn bộ code, dữ liệu, protocol và paper draft được lưu trữ và có thể cung cấp khi thầy/cô cần.</div>
+</body>
+</html>

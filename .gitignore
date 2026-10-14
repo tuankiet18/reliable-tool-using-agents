@@ -44,3 +44,7 @@ ENV/
 Thumbs.db
 *.swp
 *~
+
+# generated supervisor overview exports (rebuild from supervisor-overview.html)
+projects/reliable-tool-using-ai-agents/paper/supervisor-overview.pdf
+projects/reliable-tool-using-ai-agents/paper/supervisor-overview.docx
