@@ -1,0 +1,230 @@
+{
+  "servers": 20,
+  "name_map": {
+    "openstreetmap": "openstreetmap nominatim",
+    "sina": "sina finance",
+    "tencent": "tencent finance",
+    "searxng": "searxng (self-hosted)",
+    "microsoft": "bing",
+    "brave": "brave search",
+    "fawazahmed0/exchange-api": "fawazahmed0 exchange-api"
+  },
+  "fields": {
+    "upstream": {
+      "exact": {
+        "agreement": 0.4,
+        "kappa": 0.38461538461538464
+      },
+      "normalised": {
+        "agreement": 0.45,
+        "kappa": 0.4344473007712082
+      }
+    },
+    "l1": {
+      "exact": {
+        "agreement": 0.65,
+        "kappa": 0.574468085106383
+      },
+      "normalised": {
+        "agreement": 0.65,
+        "kappa": 0.574468085106383
+      }
+    },
+    "l2": {
+      "exact": {
+        "agreement": 0.4,
+        "kappa": 0.38303341902313626
+      },
+      "normalised": {
+        "agreement": 0.4,
+        "kappa": 0.38303341902313626
+      }
+    },
+    "l1_presence": {
+      "agreement": 1.0,
+      "kappa": 1.0
+    }
+  },
+  "disagreements": [
+    {
+      "server_id": "air_quality/sr5434/aqi-mcp",
+      "field": "upstream",
+      "A": "google maps platform",
+      "B": "google"
+    },
+    {
+      "server_id": "books/VmLia/books-mcp-server",
+      "field": "upstream",
+      "A": "shuchacha.net",
+      "B": "ambiguous"
+    },
+    {
+      "server_id": "books/ejam4040/Books-MCP-Server",
+      "field": "upstream",
+      "A": "google books",
+      "B": "google"
+    },
+    {
+      "server_id": "currency_exchange/NotNull92/exchange-rate-mcp",
+      "field": "upstream",
+      "A": "fawazahmed0 exchange-api|frankfurter",
+      "B": "fawazahmed0|frankfurter"
+    },
+    {
+      "server_id": "geocoding/Kanahiro/aws-geocode-mcp",
+      "field": "upstream",
+      "A": "amazon location service",
+      "B": "amazon web services"
+    },
+    {
+      "server_id": "news/corey-coders/mcp-finance-news",
+      "field": "upstream",
+      "A": "bloomberg|cnbc|financial times|marketwatch|seeking alpha|wall street journal (dow jones)",
+      "B": "bloomberg|cnbc|dow jones|financial times|seeking alpha"
+    },
+    {
+      "server_id": "news/davidvgilmore/hn-mcp-server",
+      "field": "upstream",
+      "A": "hacker news (y combinator)",
+      "B": "hacker news"
+    },
+    {
+      "server_id": "stock_quotes/1018053166/stock-mcp-server",
+      "field": "upstream",
+      "A": "eastmoney",
+      "B": "east money"
+    },
+    {
+      "server_id": "translation/xdfzx711/translation-mcp-server",
+      "field": "upstream",
+      "A": "none (local dictionary)",
+      "B": "ambiguous"
+    },
+    {
+      "server_id": "web_search/MemoryClear/claude-web-search-mcp",
+      "field": "upstream",
+      "A": "360 search|baidu|duckduckgo|sogou",
+      "B": "baidu|duckduckgo|qihoo 360|sogou"
+    },
+    {
+      "server_id": "web_search/bennmann/local-websearch",
+      "field": "upstream",
+      "A": "brave search|duckduckgo|google|grokipedia (xai)|mojeek|wikipedia|yahoo|yandex",
+      "B": "brave search|duckduckgo|google|mojeek|spacexai|wikimedia foundation|yahoo|yandex"
+    },
+    {
+      "server_id": "books/ejam4040/Books-MCP-Server",
+      "field": "l1",
+      "A": "google books",
+      "B": "google"
+    },
+    {
+      "server_id": "crypto_prices/blockchainacademics/bca-mcp",
+      "field": "l1",
+      "A": "blockchain academics|coingecko",
+      "B": "blockchain academics"
+    },
+    {
+      "server_id": "geocoding/Kanahiro/aws-geocode-mcp",
+      "field": "l1",
+      "A": "amazon location service",
+      "B": "amazon web services"
+    },
+    {
+      "server_id": "movies/Grinv/tmdb-mcp",
+      "field": "l1",
+      "A": "imdb|metacritic|omdb|rotten tomatoes|tmdb",
+      "B": "omdb|tmdb"
+    },
+    {
+      "server_id": "news/corey-coders/mcp-finance-news",
+      "field": "l1",
+      "A": "bloomberg|cnbc|financial times|marketwatch|seeking alpha|wall street journal (dow jones)",
+      "B": "bloomberg|cnbc|financial times|seeking alpha"
+    },
+    {
+      "server_id": "news/davidvgilmore/hn-mcp-server",
+      "field": "l1",
+      "A": "hacker news (y combinator)",
+      "B": "hacker news"
+    },
+    {
+      "server_id": "news/wudalu/mcp-hot-news-server",
+      "field": "l1",
+      "A": "baidu|google trends|newsapi|reddit|twitter/x|weibo|zhihu",
+      "B": "reddit"
+    },
+    {
+      "server_id": "air_quality/sr5434/aqi-mcp",
+      "field": "l2",
+      "A": "google maps platform",
+      "B": "google"
+    },
+    {
+      "server_id": "books/ejam4040/Books-MCP-Server",
+      "field": "l2",
+      "A": "google books",
+      "B": "google"
+    },
+    {
+      "server_id": "crypto_prices/blockchainacademics/bca-mcp",
+      "field": "l2",
+      "A": "blockchain academics|coingecko",
+      "B": "blockchain academics"
+    },
+    {
+      "server_id": "currency_exchange/NotNull92/exchange-rate-mcp",
+      "field": "l2",
+      "A": "ecb|fawazahmed0 exchange-api|frankfurter",
+      "B": "frankfurter"
+    },
+    {
+      "server_id": "geocoding/Kanahiro/aws-geocode-mcp",
+      "field": "l2",
+      "A": "amazon location service",
+      "B": "amazon web services"
+    },
+    {
+      "server_id": "movies/Grinv/tmdb-mcp",
+      "field": "l2",
+      "A": "imdb|metacritic|omdb|rotten tomatoes|tmdb",
+      "B": "omdb|tmdb"
+    },
+    {
+      "server_id": "news/corey-coders/mcp-finance-news",
+      "field": "l2",
+      "A": "bloomberg|cnbc|financial times|marketwatch|seeking alpha|wall street journal (dow jones)",
+      "B": "bloomberg|cnbc|financial times|seeking alpha"
+    },
+    {
+      "server_id": "news/davidvgilmore/hn-mcp-server",
+      "field": "l2",
+      "A": "hacker news (y combinator)",
+      "B": "hacker news"
+    },
+    {
+      "server_id": "news/wudalu/mcp-hot-news-server",
+      "field": "l2",
+      "A": "baidu|bilibili|douban|douyin|google trends|hupu|ithome|kuaishou|newsapi|reddit|toutiao|twitter/x|vvhan|weibo|zhihu",
+      "B": "reddit|vvhan"
+    },
+    {
+      "server_id": "stock_quotes/1018053166/stock-mcp-server",
+      "field": "l2",
+      "A": "eastmoney",
+      "B": "east money"
+    },
+    {
+      "server_id": "translation/xdfzx711/translation-mcp-server",
+      "field": "l2",
+      "A": "baidu translate",
+      "B": "baidu"
+    },
+    {
+      "server_id": "web_search/MemoryClear/claude-web-search-mcp",
+      "field": "l2",
+      "A": "360 search|baidu|bing|duckduckgo|serpapi|sogou",
+      "B": "baidu|duckduckgo|qihoo 360|sogou"
+    }
+  ]
+}

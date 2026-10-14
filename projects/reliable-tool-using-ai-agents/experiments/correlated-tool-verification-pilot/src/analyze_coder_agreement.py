@@ -49,8 +49,8 @@ def main() -> None:
     parser.add_argument("--b", type=Path, default=ROOT / "data" / "tool_survey" / "coder_b_labels.csv")
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
-    a = {r["server_id"]: r for r in csv.DictReader(args.a.open(encoding="utf-8"))}
-    b = [r for r in csv.DictReader(args.b.open(encoding="utf-8")) if r["upstream_providers"].strip()]
+    a = {r["server_id"]: r for r in csv.DictReader(args.a.open(encoding="utf-8-sig"))}
+    b = [r for r in csv.DictReader(args.b.open(encoding="utf-8-sig")) if r["upstream_providers"].strip()]
     out = {"servers": len(b), "name_map": NAME_MAP, "fields": {}, "disagreements": []}
     for field, key in (("upstream", "upstream_providers"), ("l1", "l1_declared_provider"), ("l2", "l2_declared_provider")):
         res = {}
