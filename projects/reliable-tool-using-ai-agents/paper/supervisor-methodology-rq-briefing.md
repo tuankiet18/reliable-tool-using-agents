@@ -41,7 +41,7 @@ updated: 2026-10-14T16:00:00+07:00
 | Mục | v1.0 | v2.1 |
 |---|---|---|
 | Điều kiện `J` (RQ2) | Mới kiểm tra numerically | Có **proof** với closed-form formula (dưới các assumption nêu rõ) và **preregistered test** trên 60 task mới |
-| Survey (RQ3) | 1 survey, 42 server, AI-coded | Thêm **survey 2**: sample mới 78 server, 12 category, 6 prediction ghi trước; human coder đã kiểm tra 10 server của survey 1 |
+| Survey (RQ3) | 1 survey, 42 server, AI-coded | Thêm **survey 2**: sample mới 78 server, 12 category, 6 prediction ghi trước; coder thứ hai (cũng dùng AI) đã code 10 server của survey 1 |
 | Kết luận survey | "Label hiếm khi sai"; "web search không có independent source" | Survey 2 **không replicate** hai kết luận này; paper đã sửa |
 
 Bối cảnh repositioning không đổi. Ngày 2026-10-06 em tìm thấy **VP-Control** ([arXiv:2609.10969](https://arxiv.org/abs/2609.10969)), đã đo đúng phần controlled comparison trong RQ ban đầu với thiết kế mạnh hơn, và **EFD** ([arXiv:2609.02925](https://arxiv.org/abs/2609.02925)), chứng minh về mặt cấu trúc rằng thêm reviewer không khắc phục được shared upstream. Cả hai đều **giả định lineage label có sẵn và đúng**. Vì vậy RQ ban đầu được giữ lại dưới dạng replication, còn contribution chính chuyển sang **chất lượng của failure-domain metadata**.
@@ -115,7 +115,7 @@ Sơ đồ là phần tổng hợp thiết kế. ^[inferred]
 - *Metadata:* L1 = server name, tool name và description (agent-visible); L2 = L1 + README.
 - *Metric:* shared-pair rate (ρ), missing-label rate (m), `r`, `φ`, `J`, ở operator level và data-origin level; server-level bootstrap; projection lên selector model của RQ2.
 - *Survey 2 là confirmatory test cho survey 1:* 6 prediction P1–P6 có quy tắc đánh giá ghi trước; data-origin analysis được **preregistered** (ở survey 1 là post-hoc).
-- *Coding:* coder A là AI. Survey 1: một human coder độc lập code 10 server. Survey 2: 20 server được chọn bằng hash để human coder code (**đang chờ label**).
+- *Coding:* coder A là AI. Coder thứ hai (một thành viên nhóm) code độc lập 10 server của survey 1 và 20 server của survey 2, nhưng **dùng AI (Claude hoặc Codex)**, nên đây là agreement giữa AI coders, không phải human validation.
 
 ## 4. Evidence hiện có
 
@@ -125,8 +125,8 @@ Sơ đồ là phần tổng hợp thiết kế. ^[inferred]
 | Robustness | 3.750 rows | Label sai 25%: CI chạm 0, **FAIL** | Không claim robust; power chỉ khoảng 56% ở 30 task |
 | RQ2 proof | Analytical + numerical check | `J > 0` ⇔ tốt hơn random | Theorem **trong phạm vi assumption**; chưa có người kiểm tra độc lập |
 | RQ2 preregistered test | 60 task mới, 4.800 rows | `J = −0.5`: `+0.133` [+0.070, +0.200]; `J = +0.8`: `−0.177`; survey-calibrated: `−0.093`; equivalence tại `J = 0`: **không xác nhận** | Simulation do project thiết kế; giá trị là discipline, không phải novelty |
-| Survey 1 | 42 server, 105 cặp | ρ 0.16 `[0.075, 0.281]`; m_L1 0.70; `r = 8/8`, `φ = 0/24` | Descriptive; inter-rater agreement trên 10 server: upstream 0.80 (κ 0.78), L1 1.00 sau name normalisation |
-| Survey 2 | 74 server, 245 cặp | ρ 0.27 `[0.18, 0.37]`; m_L1 0.71; L1 `r = 23/27`, `φ = 3/45`; L2 `J = 0.89`; data-origin recall 0.83 vs 0.95 | **4/6 prediction đạt**; AI-coded, chưa human-validated |
+| Survey 1 | 42 server, 105 cặp | ρ 0.16 `[0.075, 0.281]`; m_L1 0.70; `r = 8/8`, `φ = 0/24` | Descriptive; agreement với AI coder thứ hai trên 10 server: upstream 0.80 (κ 0.78), L1 1.00 sau name normalisation |
+| Survey 2 | 74 server, 245 cặp | ρ 0.27 `[0.18, 0.37]`; m_L1 0.71; L1 `r = 23/27`, `φ = 3/45`; L2 `J = 0.89`; data-origin recall 0.83 vs 0.95 | **4/6 prediction đạt**; AI-coded; agreement với Codex: có/thiếu nhãn L1 20/20, upstream 0.45 (bảng chuẩn hóa cố định trước) |
 | Secondary, live agent | 1.056 rows; 16 live cell | Live `0/4` matched pair | Exploratory; không có live effect estimate |
 
 **Hai prediction không đạt ở survey 2:**
@@ -170,7 +170,7 @@ Danh sách đầy đủ: [[projects/reliable-tool-using-ai-agents/paper/claim-ev
 
 - RQ2 và RQ3 được thêm sau khi biết kết quả RQ1; protocol là nội bộ, không phải independent preregistration.
 - Proof của `J` có AI hỗ trợ và chưa được kiểm tra độc lập. Proof chưa bao phủ correlated label, primary label sai, và chọn nhiều corroborator.
-- Survey là AI-coded. Human coder mới kiểm tra 10/42 server của survey 1; label của survey 2 đang chờ.
+- Survey là AI-coded và **không có human validation**: coder thứ hai cũng dùng AI (Claude hoặc Codex).
 - Sample là các repo MCP phổ biến trên GitHub. ρ theo category khác xa giữa hai sample (ví dụ currency: 0.00 và 0.64).
 - RQ1 là decision simulation, kết quả gần như by-construction, không có live effect estimate.
 
@@ -178,7 +178,7 @@ Danh sách đầy đủ: [[projects/reliable-tool-using-ai-agents/paper/claim-ev
 
 | Thời gian | Việc |
 |---|---|
-| Khi human coder gửi label | Tính inter-rater agreement cho survey 2, cập nhật paper §5.12 và ledger |
+| Tùy chọn | Tác giả tự phân xử các bất đồng giữa hai AI coder (author adjudication, khoảng 1 giờ) |
 | Sau phản hồi của giảng viên | Chỉnh RQ, focus và contribution theo góp ý; thêm figure cho survey |
 | Tuần cuối | Format, proofread, lock snapshot để nộp môn |
 | Sau môn học (nếu được đồng ý) | Bản tiếng Anh rút gọn khoảng 4–8 trang cho một workshop |
@@ -207,10 +207,10 @@ RQ2 và RQ3 được thêm sau RQ1. Các bước sau đó có protocol viết tr
 
 ### Q3 — Độ tin cậy của survey
 
-Hai survey (120 server) là AI-coded; human coder kiểm tra 10 server của survey 1 và sẽ kiểm tra 20 server của survey 2. Như vậy đã đủ chưa?
+Hai survey (120 server) là AI-coded; coder thứ hai (10 và 20 server) cũng dùng AI. Có cần thêm kiểm tra của con người không, và ở mức nào?
 
 - [ ] Đủ nếu limitations được nêu đúng
-- [ ] Cần thêm human coder
+- [ ] Cần human coder thật
 - [ ] Cần thêm hình thức kiểm tra khác:
 - Lý do/đề xuất:
 
@@ -243,4 +243,4 @@ Nếu chất lượng đủ, em muốn nộp một workshop làm paper đầu ta
 
 ## Trạng thái
 
-**PRELIMINARY.** Paper v1.4. Chưa có phản hồi của giảng viên, chưa có inter-rater agreement cho survey 2, chưa có human sign-off cho proof. Mọi review trong hồ sơ là AI-assisted.
+**PRELIMINARY.** Paper v1.4. Chưa có phản hồi của giảng viên, chưa có human validation cho survey, chưa có human sign-off cho proof. Mọi review trong hồ sơ là AI-assisted.

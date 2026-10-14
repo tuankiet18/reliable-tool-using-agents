@@ -114,9 +114,28 @@ geocoding không so sánh được, vì survey 2 chỉ có 3 server.
 - **Tỷ lệ thiếu nhãn ở L1 ổn định (0.70 → 0.71).** Đây là phát hiện lặp lại vững nhất.
 - **ρ theo nhóm biến động mạnh giữa hai mẫu.** Ví dụ, currency đổi từ 0 sang 6 server dùng Frankfurter. Nghĩa là mức dùng chung phụ thuộc nhiều vào việc mẫu rơi vào những repo nào, nên **không nên báo cáo ρ của một nhóm như một hằng số**.
 
+## Inter-coder agreement — cập nhật 2026-10-14
+
+Coder thứ hai nộp đủ 20/20 server (`data/tool_survey_2/coder_2_labels.csv`), nhưng cột `coder` ghi **Codex (AI)**; tác giả xác nhận người này dùng Claude hoặc Codex cho cả survey 1 và survey 2. Đây là agreement giữa hai AI (Claude và Codex), **không phải human validation**.
+
+| Trường | Khớp nguyên chữ | Bảng chuẩn hóa survey 1 (cố định trước) |
+|---|---|---|
+| Upstream | 0.40 (κ 0.38) | 0.45 (κ 0.43) |
+| L1 | 0.65 | 0.65 (κ 0.57) |
+| L2 | 0.40 | 0.40 (κ 0.38) |
+| Có/thiếu nhãn L1 | | **1.00 (κ 1.00)** |
+
+**INFERENCE.**
+- Phần lớn bất đồng về upstream là cùng một tổ chức nhưng khác mức đặt tên: `Google Maps Platform` và `Google`; `Amazon Location Service` và `Amazon Web Services`; `Eastmoney` và `East Money`; `360 Search` và `Qihoo 360`.
+- Có/thiếu nhãn L1 khớp tuyệt đối, nên ước lượng m (P2) tái lập được giữa hai AI coder.
+- Bất đồng thật ở L1/L2 tập trung vào một luật chưa rõ: tên nguồn dữ liệu phía sau API trung gian có tính là provider khai báo không. Ví dụ `bca-mcp` nêu CoinGecko, `Grinv` nêu IMDb/Rotten Tomatoes/Metacritic, `wudalu` nêu các platform.
+  - Coder A tính, theo câu "ghi đúng tên được nêu" của codebook.
+  - Codex không tính.
+- Trường hợp `bca-mcp` tạo ra 2/3 cặp gán nhầm của P3, nên **P3 phụ thuộc vào cách hiểu codebook**. Không dùng điều này để đổi kết quả P3 (vẫn là không đạt).
+
 ## Giới hạn
 
-- Chưa có nhãn của người gán nhãn (20 server). Agreement sẽ tính bằng `src/analyze_coder_agreement.py` khi có file.
+- Không có human validation: coder thứ hai của cả hai survey dùng AI.
 - Không thực hiện phân tích phụ (a)+(b), vì không thu thập bằng chứng từ tài liệu provider. Đây là sai lệch so với §5 và đã ghi ở A2.
 - Bốn lỗi sàng lọc được sửa theo thứ tự hạng. Một server nằm trong tập của người gán nhãn được giữ lại chỉ để tính agreement.
 - Các cặp không độc lập với nhau. Bootstrap theo server đã xử lý một phần vấn đề này.
@@ -126,7 +145,7 @@ geocoding không so sánh được, vì survey 2 chỉ có 3 server.
 
 1. Cập nhật ledger: C36–C38 về survey 1 và các claim mới về survey 2.
 2. Cập nhật paper: abstract, §4.8, §5.10, §6.4, §7.7. Tiêu đề nên đổi, vì "42 MCP servers" không còn đúng phạm vi.
-3. Tính agreement khi có nhãn của người gán nhãn.
+3. ~~Tính agreement khi có nhãn của người gán nhãn.~~ Đã tính (AI và AI). Còn mở: tác giả tự phân xử các bất đồng thật (author adjudication) nếu muốn có yếu tố con người.
 
 ## Liên quan
 

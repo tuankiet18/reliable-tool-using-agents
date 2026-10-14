@@ -61,7 +61,9 @@ lifecycle_changed: 2026-10-09
 
 ## Inter-rater agreement — cập nhật 2026-10-13
 
-Coder B (con người, thành viên nhóm) nộp nhãn cho 10 server được giao: đủ 10 dòng, không trống cột bắt buộc, commit và URL khớp, mỗi nhãn có bằng chứng file:dòng. `src/analyze_coder_agreement.py`, output `results_coder_agreement_20261013/`.
+> [!warning] **Đính chính 2026-10-14.** Tác giả xác nhận coder B (thành viên nhóm) đã dùng AI (Claude hoặc Codex) để gán nhãn. Các số dưới đây là **agreement giữa AI coders**, không phải kiểm tra của con người. Nếu coder B dùng Claude, hai coder cùng họ model và agreement có thể bị thổi phồng.
+
+Coder B (thành viên nhóm, gán nhãn bằng AI) nộp nhãn cho 10 server được giao: đủ 10 dòng, không trống cột bắt buộc, commit và URL khớp, mỗi nhãn có bằng chứng file:dòng. `src/analyze_coder_agreement.py`, output `results_coder_agreement_20261013/`.
 
 | Trường | Khớp nguyên chữ | Sau chuẩn hóa tên |
 |---|---|---|
