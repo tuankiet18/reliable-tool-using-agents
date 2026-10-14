@@ -5,6 +5,12 @@ Giống hệt hướng dẫn survey 1 bên dưới, với hai điểm khác:
 - File cần điền: `human_coder_template.csv` (20 server, chọn bằng hash trước khi AI gán nhãn).
 - Có 5 nhóm thông tin mới: `translation` (dịch máy), `ip_geolocation`, `movies`, `books` (thông tin sách), `air_quality`. Với server dịch dùng mô hình ngôn ngữ (LLM), ghi nhà cung cấp mô hình mặc định (ví dụ OpenAI, Ollama chạy cục bộ).
 - **Hai luật bổ sung (sau survey 1):** (1) nếu dữ liệu là một bộ dữ liệu tĩnh phát qua CDN (jsDelivr, Cloudflare Pages, GitHub raw), ghi **chủ bộ dữ liệu** làm provider và ghi tên CDN vào `notes`; (2) nếu server gọi một SearXNG tự host, ghi `SearXNG (self-hosted)` và viết `AMBIGUOUS` vào `notes`.
+- **Năm luật bổ sung (survey 2):**
+  1. Server gom nhiều nguồn (ví dụ tin tức): một nguồn tính là **mặc định** nếu tool gọi nó khi người dùng chỉ cung cấp API key, không phải đổi thiết lập chọn nguồn. Ghi mọi nguồn như vậy, cách nhau bằng `;`.
+  2. Server có nhiều tool cùng loại thông tin: ghi **hợp** các nguồn mặc định của tất cả các tool đó.
+  3. Địa chỉ provider đổi được bằng biến môi trường (có giá trị mặc định): ghi provider mặc định và thêm `configurable` vào `notes`.
+  4. Tên server chỉ nói chủ đề hoặc địa danh (ví dụ `aws-news`, `yerevan-aqi`) **không** tính là nêu tên provider.
+  5. Server dùng SearXNG công khai của bên thứ ba hoặc Ollama chạy trên máy người dùng: ghi tên đó (`SearXNG (public instances)`, `Ollama (local)`) và viết `AMBIGUOUS` vào `notes`.
 
 ---
 
