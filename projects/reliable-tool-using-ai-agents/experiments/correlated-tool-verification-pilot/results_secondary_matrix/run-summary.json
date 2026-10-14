@@ -1,0 +1,31 @@
+{
+  "status": "EXPLORATORY_SECONDARY_MATRIX_COMPLETE",
+  "contract_version": "1.2-recheck-candidate",
+  "contract_sha256": "552ef2c689cae93494d68c9114482d1550f5bcfa4653e9bff8902d3b19cfed1a",
+  "matrix_sha256": "1b803d2e209bc82827989207f34cefde73630f60579a2ed0c701a87c8bfc2c59",
+  "upstream_commits": {
+    "provenanceguard": "3ad7141db44096e1440718618bdb24fa46c003ff",
+    "workbench": "00670510c8a476acd247925cefb17fee88500737"
+  },
+  "episodes": 704,
+  "policy_pairs": 352,
+  "safety_cases": [
+    "ASB-085",
+    "ASB-087",
+    "ASB-090",
+    "ASB-977",
+    "WB-000",
+    "WB-110",
+    "WB-203",
+    "WB-433"
+  ],
+  "safety_case_count": 8,
+  "restoration_diagnostic": "WB-295",
+  "utility_only": [
+    "WB-403",
+    "ASB-1572"
+  ],
+  "rows_path": "/home/kiet/Downloads/fpt-document/prn232/research/projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_secondary_matrix/episodes.jsonl",
+  "rows_sha256": "d07e929b9c932866046d28ee8f77476e800f5a80f4a41b363036f90e815b94f7",
+  "offline_no_llm_or_api": true
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "server_id": "air_quality/synapticore-io/dust-analyzer",
+    "upstream_providers": "synapticore-io dust-analyzer dataset;Umweltbundesamt",
+    "upstream_evidence": "src/dust_analyzer/remote.py:17-19 Parquet from https://github.com/synapticore-io/dust-analyzer/releases/download/data-latest (analysis+forecast in default mode 'auto', server.py:323-330 via _fetch_cams -> remote.get_timeseries); src/dust_analyzer/uba.py:4 https://www.umweltbundesamt.de/api/air_data/v3 station overlay (server.py:350)",
+    "configurable_upstream": "False",
+    "l1_declared_provider": "Copernicus CAMS;Umweltbundesamt",
+    "l1_evidence": "analyze_air_quality docstring mentions UBA station overlay; query_measurements: 'Messdaten aus dem CAMS-Datenarchiv abfragen (GitHub Release)'",
+    "l2_declared_provider": "Copernicus CAMS;Umweltbundesamt",
+    "l2_evidence": "README.md:5 'Data: CAMS European Air Quality Forecasts (Copernicus/ECMWF)'; README.md:28 'UBA station overlay'",
+    "origin_a": "Copernicus CAMS;Umweltbundesamt",
+    "origin_a_evidence": "README.md:10 'A GitHub Actions workflow downloads CAMS data daily and publishes it as Parquet files in a GitHub Release'",
+    "notes": "Amendment A1: static dataset republished on GitHub Releases (CDN = GitHub) -> provider = dataset owner (the repo's own daily CAMS export); FastMCP instructions name CAMS/Copernicus/UBA but instructions are not tool descriptions; L1 names the data origin (CAMS) rather than the operator"
+  },
+  {
+    "server_id": "air_quality/mattmarcin/aqicn-mcp",
+    "upstream_providers": "WAQI (aqicn.org)",
+    "upstream_evidence": "aqicn_server.py:16 AQICN_BASE_URL = https://api.waqi.info",
+    "configurable_upstream": "False",
+    "l1_declared_provider": "WAQI (aqicn.org)",
+    "l1_evidence": "server name 'AQICN Air Quality API'",
+    "l2_declared_provider": "WAQI (aqicn.org)",
+    "l2_evidence": "README.md:4 'air quality data tools from the World Air Quality Index (AQICN) project'",
+    "origin_a": "",
+    "origin_a_evidence": "",
+    "notes": "L1 via server name only"
+  },
+  {
+    "server_id": "air_quality/sr5434/aqi-mcp",
+    "upstream_providers": "Google Maps Platform",
+    "upstream_evidence": "main.py:22 https://airquality.googleapis.com/v1/currentConditions:lookup (geocoding via googlemaps.Client, main.py:11)",
+    "configurable_upstream": "False",
+    "l1_declared_provider": "unknown",
+    "l1_evidence": "",
+    "l2_declared_provider": "Google Maps Platform",
+    "l2_evidence": "README.md:2 'use the Google Air Quality API'",
+    "origin_a": "",
+    "origin_a_evidence": "",
+    "notes": "get_aqi has no docstring; FastMCP second positional argument is server instructions (not L1); Google Air Quality API is part of Google Maps Platform (same name as the geocoding category)"
+  },
+  {
+    "server_id": "air_quality/8xiang5hao/aqicn-mcp",
+    "upstream_providers": "WAQI (aqicn.org)",
+    "upstream_evidence": "src/aqicn_mcp/server.py:21 API_BASE_URL = http://api.waqi.info/feed",
+    "configurable_upstream": "False",
+    "l1_declared_provider": "WAQI (aqicn.org)",
+    "l1_evidence": "server name 'aqicn-server'",
+    "l2_declared_provider": "WAQI (aqicn.org)",
+    "l2_evidence": "README.md:27 '访问 AQICN API 注册并获取免费的 API token'",
+    "origin_a": "",
+    "origin_a_evidence": "",
+    "notes": "low-level mcp Server; L1 via server name only"
+  },
+  {
+    "server_id": "air_quality/vidyalatha-badde/Weather_AQI_MCP",
+    "upstream_providers": "OpenWeather",
+    "upstream_evidence": "2_Air_Quality_Index_server.py:92 http://api.openweathermap.org/data/2.5/air_pollution (geocoding via Open-Meteo, auxiliary)",
+    "configurable_upstream": "False",
+    "l1_declared_provider": "OpenWeather",
+    "l1_evidence": "get_aqi docstring: '…using the OpenWeatherMap Air Pollution API'",
+    "l2_declared_provider": "OpenWeather",
+    "l2_evidence": "README.md:32 'API call to OpenWeatherMap Air Pollution API'",
+    "origin_a": "",
+    "origin_a_evidence": "",
+    "notes": "repo has three FastMCP servers (weather, AQI, LLM inference) treated as one entry; only the AQI server is of this information type; Open-Meteo geocoding is an auxiliary lookup, not air-quality data"
+  },
+  {
+    "server_id": "air_quality/hayrapetian/yerevan-aqi-mcp",
+    "upstream_providers": "Yerevan Municipality GIS",
+    "upstream_evidence": "src/api.ts:3 BASE_URL = https://gis.yerevan.am/server/rest/services/Hosted (Esri feature services)",
+    "configurable_upstream": "False",
+    "l1_declared_provider": "unknown",
+    "l1_evidence": "",
+    "l2_declared_provider": "Yerevan Municipality GIS",
+    "l2_evidence": "README.md:3 'Connects AI assistants directly to the official Yerevan GIS platform'",
+    "origin_a": "",
+    "origin_a_evidence": "",
+    "notes": "server name 'yerevan-aqi' read as the topic (city), not as the provider name"
+  }
+]

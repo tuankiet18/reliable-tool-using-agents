@@ -1,0 +1,62 @@
+{
+  "scope": "post-hoc power analysis of the wrong_25 / leakage .10 robustness criterion",
+  "pi": 0.6666666666666666,
+  "seeds": [
+    607,
+    719,
+    823,
+    929,
+    1031
+  ],
+  "analytic_normal_approx": [
+    {
+      "effect": "predicted_exact_model",
+      "delta": -0.088,
+      "power_at_30_tasks": 0.6788775722487199,
+      "tasks_for_80pct_power": 40.05668662037574
+    },
+    {
+      "effect": "observed_frozen",
+      "delta": -0.0667,
+      "power_at_30_tasks": 0.4513373739089205,
+      "tasks_for_80pct_power": 69.72502830777783
+    }
+  ],
+  "simulation_real_episode_code": [
+    {
+      "tasks": 30,
+      "studies": 300,
+      "power_upper_ci_below_zero": 0.5633333333333334,
+      "mean_effect": -0.08928888888888889,
+      "mean_task_sd": 0.2319257774685748
+    },
+    {
+      "tasks": 45,
+      "studies": 300,
+      "power_upper_ci_below_zero": 0.7266666666666667,
+      "mean_effect": -0.08746666666666666,
+      "mean_task_sd": 0.23552577221413912
+    },
+    {
+      "tasks": 60,
+      "studies": 300,
+      "power_upper_ci_below_zero": 0.83,
+      "mean_effect": -0.08714444444444444,
+      "mean_task_sd": 0.23415011403424055
+    },
+    {
+      "tasks": 90,
+      "studies": 300,
+      "power_upper_ci_below_zero": 0.95,
+      "mean_effect": -0.08991111111111111,
+      "mean_task_sd": 0.23509410754652288
+    },
+    {
+      "tasks": 120,
+      "studies": 300,
+      "power_upper_ci_below_zero": 0.98,
+      "mean_effect": -0.08650000000000001,
+      "mean_task_sd": 0.23457545339253352
+    }
+  ]
+}

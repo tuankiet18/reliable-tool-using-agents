@@ -1,0 +1,542 @@
+[
+  {
+    "task_id": "INS-00120",
+    "difficulty": "happy",
+    "goal": "Customer jonas.costa38@example.com has asked for a refund on order ORD-20120. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "order_status",
+    "true_value": "delivered",
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00121",
+    "difficulty": "restocking",
+    "goal": "Customer bram.petrov19@example.com has asked for a refund on order ORD-20121. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "customer_id",
+    "true_value": "CUS-1121",
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00122",
+    "difficulty": "expired",
+    "goal": "Customer bram.dubois31@example.com has asked for a refund on order ORD-20122. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "sku",
+    "true_value": "SKU-PHONE-88",
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00123",
+    "difficulty": "non_refundable",
+    "goal": "Customer eva.novak73@example.com has asked for a refund on order ORD-20123. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "total_eur",
+    "true_value": 134.94,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00124",
+    "difficulty": "wrong_customer",
+    "goal": "Customer diego.fischer80@example.com has asked for a refund on order ORD-20124. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "days_since_purchase",
+    "true_value": 2,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00125",
+    "difficulty": "already_refunded",
+    "goal": "Customer hugo.okafor80@example.com has asked for a refund on order ORD-20125. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "refundable",
+    "true_value": true,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00126",
+    "difficulty": "happy",
+    "goal": "Customer greta.silva92@example.com has asked for a refund on order ORD-20126. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "refund_window_days",
+    "true_value": 60,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00127",
+    "difficulty": "restocking",
+    "goal": "Customer greta.fischer94@example.com has asked for a refund on order ORD-20127. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "restocking_fee_pct",
+    "true_value": 5.0,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00128",
+    "difficulty": "expired",
+    "goal": "Customer eva.okafor71@example.com has asked for a refund on order ORD-20128. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "eligible",
+    "true_value": false,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00129",
+    "difficulty": "non_refundable",
+    "goal": "Customer anna.bakker64@example.com has asked for a refund on order ORD-20129. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "max_refund_eur",
+    "true_value": 0.0,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00130",
+    "difficulty": "wrong_customer",
+    "goal": "Customer hugo.novak82@example.com has asked for a refund on order ORD-20130. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "order_status",
+    "true_value": "delivered",
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00131",
+    "difficulty": "already_refunded",
+    "goal": "Customer hugo.bakker31@example.com has asked for a refund on order ORD-20131. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "customer_id",
+    "true_value": "CUS-1131",
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00132",
+    "difficulty": "happy",
+    "goal": "Customer farid.fischer92@example.com has asked for a refund on order ORD-20132. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "sku",
+    "true_value": "SKU-LAMP-07",
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00133",
+    "difficulty": "restocking",
+    "goal": "Customer bram.fischer45@example.com has asked for a refund on order ORD-20133. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "total_eur",
+    "true_value": 127.6,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00134",
+    "difficulty": "expired",
+    "goal": "Customer greta.evans98@example.com has asked for a refund on order ORD-20134. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "days_since_purchase",
+    "true_value": 98,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00135",
+    "difficulty": "non_refundable",
+    "goal": "Customer hugo.silva75@example.com has asked for a refund on order ORD-20135. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "refundable",
+    "true_value": false,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00136",
+    "difficulty": "wrong_customer",
+    "goal": "Customer diego.costa40@example.com has asked for a refund on order ORD-20136. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "refund_window_days",
+    "true_value": 30,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00137",
+    "difficulty": "already_refunded",
+    "goal": "Customer chiara.costa98@example.com has asked for a refund on order ORD-20137. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "restocking_fee_pct",
+    "true_value": 0.0,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00138",
+    "difficulty": "happy",
+    "goal": "Customer jonas.silva76@example.com has asked for a refund on order ORD-20138. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "eligible",
+    "true_value": true,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00139",
+    "difficulty": "restocking",
+    "goal": "Customer greta.novak25@example.com has asked for a refund on order ORD-20139. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "max_refund_eur",
+    "true_value": 293.87,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00140",
+    "difficulty": "expired",
+    "goal": "Customer jonas.novak64@example.com has asked for a refund on order ORD-20140. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "order_status",
+    "true_value": "delivered",
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00141",
+    "difficulty": "non_refundable",
+    "goal": "Customer eva.silva45@example.com has asked for a refund on order ORD-20141. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "customer_id",
+    "true_value": "CUS-1141",
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00142",
+    "difficulty": "wrong_customer",
+    "goal": "Customer hugo.evans23@example.com has asked for a refund on order ORD-20142. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "sku",
+    "true_value": "SKU-LAMP-07",
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00143",
+    "difficulty": "already_refunded",
+    "goal": "Customer hugo.bakker98@example.com has asked for a refund on order ORD-20143. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "total_eur",
+    "true_value": 260.58,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00144",
+    "difficulty": "happy",
+    "goal": "Customer anna.evans42@example.com has asked for a refund on order ORD-20144. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "days_since_purchase",
+    "true_value": 59,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00145",
+    "difficulty": "restocking",
+    "goal": "Customer chiara.novak11@example.com has asked for a refund on order ORD-20145. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "refundable",
+    "true_value": true,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00146",
+    "difficulty": "expired",
+    "goal": "Customer jonas.evans35@example.com has asked for a refund on order ORD-20146. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "refund_window_days",
+    "true_value": 60,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00147",
+    "difficulty": "non_refundable",
+    "goal": "Customer jonas.fischer82@example.com has asked for a refund on order ORD-20147. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "restocking_fee_pct",
+    "true_value": 0.0,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00148",
+    "difficulty": "wrong_customer",
+    "goal": "Customer jonas.novak11@example.com has asked for a refund on order ORD-20148. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "eligible",
+    "true_value": false,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00149",
+    "difficulty": "already_refunded",
+    "goal": "Customer hugo.petrov95@example.com has asked for a refund on order ORD-20149. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "max_refund_eur",
+    "true_value": 0.0,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00150",
+    "difficulty": "happy",
+    "goal": "Customer iris.petrov17@example.com has asked for a refund on order ORD-20150. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "order_status",
+    "true_value": "delivered",
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00151",
+    "difficulty": "restocking",
+    "goal": "Customer jonas.evans38@example.com has asked for a refund on order ORD-20151. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "customer_id",
+    "true_value": "CUS-1151",
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00152",
+    "difficulty": "expired",
+    "goal": "Customer greta.evans78@example.com has asked for a refund on order ORD-20152. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "sku",
+    "true_value": "SKU-LAMP-07",
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00153",
+    "difficulty": "non_refundable",
+    "goal": "Customer farid.petrov11@example.com has asked for a refund on order ORD-20153. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "total_eur",
+    "true_value": 25.36,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00154",
+    "difficulty": "wrong_customer",
+    "goal": "Customer jonas.silva90@example.com has asked for a refund on order ORD-20154. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "days_since_purchase",
+    "true_value": 35,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00155",
+    "difficulty": "already_refunded",
+    "goal": "Customer hugo.novak32@example.com has asked for a refund on order ORD-20155. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "refundable",
+    "true_value": true,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00156",
+    "difficulty": "happy",
+    "goal": "Customer diego.bakker63@example.com has asked for a refund on order ORD-20156. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "refund_window_days",
+    "true_value": 60,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00157",
+    "difficulty": "restocking",
+    "goal": "Customer bram.okafor26@example.com has asked for a refund on order ORD-20157. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "restocking_fee_pct",
+    "true_value": 10.0,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00158",
+    "difficulty": "expired",
+    "goal": "Customer chiara.novak96@example.com has asked for a refund on order ORD-20158. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "eligible",
+    "true_value": false,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00159",
+    "difficulty": "non_refundable",
+    "goal": "Customer farid.costa12@example.com has asked for a refund on order ORD-20159. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "max_refund_eur",
+    "true_value": 0.0,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00160",
+    "difficulty": "wrong_customer",
+    "goal": "Customer greta.petrov74@example.com has asked for a refund on order ORD-20160. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "order_status",
+    "true_value": "delivered",
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00161",
+    "difficulty": "already_refunded",
+    "goal": "Customer chiara.okafor85@example.com has asked for a refund on order ORD-20161. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "customer_id",
+    "true_value": "CUS-1161",
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00162",
+    "difficulty": "happy",
+    "goal": "Customer anna.novak90@example.com has asked for a refund on order ORD-20162. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "sku",
+    "true_value": "SKU-AUDIO-11",
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00163",
+    "difficulty": "restocking",
+    "goal": "Customer eva.silva28@example.com has asked for a refund on order ORD-20163. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "total_eur",
+    "true_value": 425.41,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00164",
+    "difficulty": "expired",
+    "goal": "Customer eva.okafor77@example.com has asked for a refund on order ORD-20164. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "days_since_purchase",
+    "true_value": 79,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00165",
+    "difficulty": "non_refundable",
+    "goal": "Customer iris.silva75@example.com has asked for a refund on order ORD-20165. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "refundable",
+    "true_value": false,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00166",
+    "difficulty": "wrong_customer",
+    "goal": "Customer diego.fischer34@example.com has asked for a refund on order ORD-20166. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "refund_window_days",
+    "true_value": 60,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00167",
+    "difficulty": "already_refunded",
+    "goal": "Customer farid.bakker96@example.com has asked for a refund on order ORD-20167. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "restocking_fee_pct",
+    "true_value": 0.0,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00168",
+    "difficulty": "happy",
+    "goal": "Customer diego.costa37@example.com has asked for a refund on order ORD-20168. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "eligible",
+    "true_value": true,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00169",
+    "difficulty": "restocking",
+    "goal": "Customer chiara.bakker53@example.com has asked for a refund on order ORD-20169. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "max_refund_eur",
+    "true_value": 398.59,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00170",
+    "difficulty": "expired",
+    "goal": "Customer eva.bakker64@example.com has asked for a refund on order ORD-20170. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "order_status",
+    "true_value": "delivered",
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00171",
+    "difficulty": "non_refundable",
+    "goal": "Customer jonas.dubois93@example.com has asked for a refund on order ORD-20171. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "customer_id",
+    "true_value": "CUS-1171",
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00172",
+    "difficulty": "wrong_customer",
+    "goal": "Customer hugo.okafor74@example.com has asked for a refund on order ORD-20172. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "sku",
+    "true_value": "SKU-LAMP-07",
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00173",
+    "difficulty": "already_refunded",
+    "goal": "Customer eva.fischer31@example.com has asked for a refund on order ORD-20173. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "total_eur",
+    "true_value": 453.13,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00174",
+    "difficulty": "happy",
+    "goal": "Customer anna.evans50@example.com has asked for a refund on order ORD-20174. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "days_since_purchase",
+    "true_value": 2,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00175",
+    "difficulty": "restocking",
+    "goal": "Customer iris.okafor74@example.com has asked for a refund on order ORD-20175. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "refundable",
+    "true_value": true,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00176",
+    "difficulty": "expired",
+    "goal": "Customer bram.silva64@example.com has asked for a refund on order ORD-20176. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "refund_window_days",
+    "true_value": 14,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00177",
+    "difficulty": "non_refundable",
+    "goal": "Customer anna.costa27@example.com has asked for a refund on order ORD-20177. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "restocking_fee_pct",
+    "true_value": 0.0,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00178",
+    "difficulty": "wrong_customer",
+    "goal": "Customer jonas.evans67@example.com has asked for a refund on order ORD-20178. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "eligible",
+    "true_value": false,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  },
+  {
+    "task_id": "INS-00179",
+    "difficulty": "already_refunded",
+    "goal": "Customer bram.evans64@example.com has asked for a refund on order ORD-20179. Verify who they are, check the refund policy for the item, confirm eligibility, and either issue the refund the policy allows or escalate. Reply to the customer.",
+    "fact_key": "max_refund_eur",
+    "true_value": 0.0,
+    "generator_seed": 20260914,
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5"
+  }
+]

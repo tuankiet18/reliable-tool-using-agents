@@ -1,0 +1,98 @@
+{
+  "raw_sha256": "fb69bcf222634968b886608b35d36319ade16518655e58934daf0640dc1ebf00",
+  "rows": 4800,
+  "bootstrap": {
+    "seed": 20261011,
+    "resamples": 10000,
+    "unit": "task"
+  },
+  "conditions": {
+    "J_plus": {
+      "tasks": 60,
+      "unsafe_provenance": 0.08666666666666667,
+      "unsafe_random": 0.2633333333333333,
+      "rows_per_policy": 300,
+      "difference": -0.17666666666666667,
+      "predicted_difference": -0.176,
+      "deviation_from_prediction": -0.0006666666666666765,
+      "ci95": [
+        -0.23333333333333334,
+        -0.12000000000000001
+      ],
+      "ci90": [
+        -0.22666666666666666,
+        -0.13
+      ],
+      "provenance_selected_shared_among_proposals": 0.02,
+      "provenance_fallback_rate_among_proposals": 0.005
+    },
+    "J_zero": {
+      "tasks": 60,
+      "unsafe_provenance": 0.32,
+      "unsafe_random": 0.25666666666666665,
+      "rows_per_policy": 300,
+      "difference": 0.06333333333333332,
+      "predicted_difference": 0.0,
+      "deviation_from_prediction": 0.06333333333333332,
+      "ci95": [
+        0.003333333333333332,
+        0.12666666666666668
+      ],
+      "ci90": [
+        0.013333333333333327,
+        0.11666666666666667
+      ],
+      "provenance_selected_shared_among_proposals": 0.395,
+      "provenance_fallback_rate_among_proposals": 0.155
+    },
+    "J_minus": {
+      "tasks": 60,
+      "unsafe_provenance": 0.42333333333333334,
+      "unsafe_random": 0.29,
+      "rows_per_policy": 300,
+      "difference": 0.13333333333333333,
+      "predicted_difference": 0.16,
+      "deviation_from_prediction": -0.026666666666666672,
+      "ci95": [
+        0.07,
+        0.2
+      ],
+      "ci90": [
+        0.08,
+        0.19
+      ],
+      "provenance_selected_shared_among_proposals": 0.6,
+      "provenance_fallback_rate_among_proposals": 0.06
+    },
+    "survey_calibrated": {
+      "tasks": 60,
+      "unsafe_provenance": 0.17333333333333334,
+      "unsafe_random": 0.26666666666666666,
+      "rows_per_policy": 300,
+      "difference": -0.09333333333333334,
+      "predicted_difference": -0.091,
+      "deviation_from_prediction": -0.00233333333333334,
+      "ci95": [
+        -0.15666666666666668,
+        -0.03333333333333333
+      ],
+      "ci90": [
+        -0.14666666666666667,
+        -0.043333333333333335
+      ],
+      "provenance_selected_shared_among_proposals": 0.18,
+      "provenance_fallback_rate_among_proposals": 0.165
+    }
+  },
+  "sanity_clean_unsafe_rows": 0,
+  "decisions": {
+    "sanity_clean_zero_unsafe": true,
+    "H_J1_harm_supported": true,
+    "H_J2_benefit_supported": true,
+    "H_J3_equivalence_supported": false,
+    "H_J4_survey_benefit_supported": true,
+    "flag_deviation_over_0.05": [
+      "J_zero"
+    ]
+  }
+}

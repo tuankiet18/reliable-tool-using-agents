@@ -3,6 +3,8 @@ title: "Preliminary Gap: Provenance-Aware Verification under Correlated Tool Fai
 category: synthesis
 tags: [research-gap, ai-agents, verification, tool-failure, reliability]
 sources:
+  - "projects/reliable-tool-using-ai-agents/paper/related-work-citation-audit-2026-10-03.md"
+  - "projects/reliable-tool-using-ai-agents/paper/paper-draft.md"
   - "https://arxiv.org/abs/2603.02345"
   - "https://proceedings.mlr.press/v267/kim25e.html"
   - "https://doi.org/10.1109/TSE.1986.6312924"
@@ -18,10 +20,13 @@ lifecycle: draft
 lifecycle_changed: 2026-09-13
 tier: core
 created: 2026-09-13T00:00:00Z
-updated: 2026-09-15T15:34:48+07:00
+updated: 2026-10-03T21:46:13+07:00
 ---
 
 # PRELIMINARY Gap — Provenance-aware verification dưới correlated tool failures
+
+> [!important] Trạng thái hiện hành — 2026-10-03
+> `SURVIVES WITH REFINEMENT — PRELIMINARY`, không confirmed novelty. Paper v0.4 là controlled characterization của **refund authorization decisions**, không new algorithm hoặc executed-transaction safety. Hypothesis/variables/baselines phía dưới giữ hồ sơ discovery ban đầu, **không** current measured endpoints. Working RQ/H1 ở [[projects/reliable-tool-using-ai-agents/paper/paper-draft]]; citation limits ở [[projects/reliable-tool-using-ai-agents/paper/related-work-citation-audit-2026-10-03]]. Không reproduce RIVA hoặc chạy head-to-head: “RIVA-style” dưới đây chỉ historical inspiration, không implementation-equivalent baseline. Main benefit gần by-construction với accurate metadata; targeted valid-refund correctness vẫn `0/50` ở hai policies; live-agent effect chưa đo được và đã dừng scaling.
 
 ## Gap statement
 

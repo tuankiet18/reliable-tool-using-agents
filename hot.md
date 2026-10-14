@@ -1,41 +1,39 @@
 ---
 title: Hot Cache
-updated: 2026-09-15T17:15:00+07:00
+updated: 2026-10-14T13:00:00+07:00
 ---
 
 # Hot Cache
 
-*A ~500-word semantic snapshot of recent activity. Updated after every major write operation.*
-
 ## Recent Activity
 
-- [2026-09-15] LIVING PAPER v0.1 — [[projects/reliable-tool-using-ai-agents/paper/paper-draft]] đã có full argument skeleton và current results. [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]] ngăn strength/novelty drift; Abstract và Conclusion vẫn provisional.
-- [2026-09-15] EXTERNAL-VALIDITY ARTIFACT GATE — EnvTrustBench public release chỉ có aggregate data: tái tính được `3,206/3,850`, nhưng không có cases/oracles/runners nên gate fail. ProvenanceGuard artifact setup pass, load 182 ASB + 388 WorkBench traces và execute ba notebooks offline; exact-RQ fit chỉ partial.
-- [2026-09-15] ADVERSARIAL PRIOR-ART GATE — TEA-CXA, two ProvenanceGuard papers, GRADE, AgentFlow, EnvTrustBench, ProbeCal và EDGE đã được đối chiếu. Broad novelty claims về tool trust selection, provenance-aware action gating và dependency validation bị bác bỏ.
-- [2026-09-15] ROBUSTNESS GATE FAIL — 3.750 episodes; accurate and missing-label conditions pass, nhưng `wrong_25 + leakage .10` CI chạm zero. RQ narrowed to accurate failure-domain metadata.
-- [2026-09-15] ROBUSTNESS PROTOCOL FROZEN — 30 new tasks, 3.750 planned episodes, four provenance-noise conditions và cross-domain leakage `0–0.50`; thresholds ghi trước code/result.
-- [2026-09-15] MAIN DETERMINISTIC GATE — 1.350 episodes, all preregistered conditions pass; targeted unsafe refund provenance `0.000` vs random `0.200`, CI `[-0.273,-0.127]`; clean success both `1.000`.
-- [2026-09-15] MAIN STUDY MANIFEST — Fresh split `INS-00060`–`INS-00089` đã được tạo trước main harness, SHA-256 `a122dda63a40ab8db43d1af2a6a7019ca561c4c9e533db0e798fe9470e88cfa6`; rerun identical, không giao với pilot.
-- [2026-09-15] MAIN STUDY PROTOCOL — RQ1 và H1 được đóng băng trước code main harness: 30 fresh tasks, 1,350 deterministic episodes, matched K=2, task-cluster bootstrap.
-- [2026-09-14] ACTION-BOUNDARY GATE — 108 episodes, `69/69` refund attempts verified; common-mode unsafe refund provenance `0/18` vs random `2/18`.
-- [2026-09-14] FULL LIVE-AGENT GATE — 36 episodes trên sáu tasks, 331 model calls, 19 tests pass. Technical execution pass nhưng experimental validity fail.
+- [2026-10-14] SURVEY 2 — [[journal/2026-10-14-expanded-tool-survey-results]]: 78 MCP server (74 trong ước lượng, 245 cặp). ρ 0.27 [0.18, 0.37]; m_L1 0.71; J_L2 0.89. Đạt P1, P2, P4, P6; không đạt P3 (φ_L1 3/45) và P5 (web_search ρ_origin 0.71). Amendment A2 commit trước khi tính chỉ số (`fb41192`). Ledger C42–C46; paper v1.4 (§5.12, tiêu đề mới). Nhãn người cho 20 server chưa có.
+- [2026-10-13] HANDOFF — đọc [[projects/reliable-tool-using-ai-agents/HANDOFF-2026-10-13]] trước tiên. Paper v1.3 định vị lại sau prior art VP-Control/EFD: RQ1 replication, RQ2 điều kiện `J = r − φ > 0` (đã chứng minh + kiểm định đăng ký trước), RQ3 survey 42 MCP server (16% cặp chung upstream; L1 thiếu nhãn 70%; coder B κ 0.78/1.00). Survey 2 (78 server) đã sàng lọc, **đang chờ coder A gán nhãn**.
+
+- [2026-10-05] INFLUENCE AUDIT — [[journal/2026-10-05-main-study-influence-audit]]: targeted Δ giữ âm sau 30 task/5 seed/6 stratum deletions; stratum range −24 đến −16 pp. Independent stratum range −0.8 đến +1.6 pp. Post-hoc descriptive ranges, không CI; zero treatment by construction vẫn là limitation. 7 tests/123 SQL cross-checks đạt; appendix §F/ledger C32 cập nhật, manuscript v0.9/21 frozen/3 figure hashes giữ nguyên. Không study episodes/model calls mới.
+- [2026-10-04] WORKED EXAMPLES — bổ sung §6 vào [[projects/reliable-tool-using-ai-agents/paper/figure-guide]], không tạo note mới. INS-00062/seed101: shared-domain wrong agreement về refund 142.12 EUR; INS-00060/seed101: false denial bỏ lỡ refund 91.12 EUR trước gate; always-escalate là counterfactual, không measured K=2 baseline. Đối chiếu 7 raw rows/4 policy-regime aggregates, 3 page schemas/links. Paper v0.9, 21 frozen hashes và 3 figure artifacts unchanged; không episodes/model/tests/bootstrap hoặc author/human sign-off mới.
+- [2026-10-04] PAPER v0.9 — [[journal/2026-10-04-clean-environment-core-reproduction]]: mới clone/cài pinned trajectory-judge base package trong Python 3.12.3 venv không system/user packages. Main/robustness replay 1,350/3,750 rows và bootstrap analyses; 10 selected files byte-identical, 15 focused tests đạt. Không tăng independent N, model calls hoặc live scaling; main PASS/wrong-metadata FAIL giữ nguyên. §8/package/ledger cập nhật, scientific Results không đổi. Same-host fresh venv không fresh-machine/independent reproduction.
 
 ## Active Thread
 
-Research hiện tập trung vào [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]. RQ1 pass controlled main gate nhưng fail broad imperfect-provenance robustness; canonical scope hiện là **given accurate failure-domain metadata**. Exact combination chưa có direct match, nhưng external executable benchmark cũng chưa có. Gap vẫn `SURVIVES WITH REFINEMENT — PRELIMINARY`, novelty confidence trung bình và external validity yếu.
+Hoàn thiện controlled empirical course paper; không bắt buộc live-agent effect. Main/robustness là decision simulation, không executed refund state. Targeted unsafe decisions random 30/150 vs provenance 0/150; clean correctness 150/150, nhưng targeted correct refunds đều 0/50. Main expectation 2/9 và provenance zero suy từ topology. Always-escalate bằng provenance dưới targeted faults, mất clean refund utility. Secondary 59/96 vs 24/96 tái dựng hoàn toàn từ schedule; utility false blocks 9/24 vs 18/24. Wrong-label robustness fail.
+
+Paper vẫn MAJOR REVISION, novelty SURVIVES WITH REFINEMENT — PRELIMINARY; chưa human sign-off. Editorial/figures/local reanalysis pass không đóng substantive limitations. Giảng viên chỉ cần review RQ/methodology/contribution, không giả định audit từng case/oracle. Live diagnostic 16 cells có 0/4 matched unsafe-capable pairs: stop scaling, zero unsafe không effect evidence.
 
 ## Guardrails
 
-- Gap vẫn `SURVIVES WITH REFINEMENT — PRELIMINARY`, không confirmed novel.
-- Không quay lại Selective Recovery Routing, broad Early Failure Detection hoặc generic Completion Verification.
-- Không dùng ToolBench-X làm primary benchmark.
-- Core experiment phải offline/deterministic; Groq/Gemini free tier chỉ optional validation.
-- Không giao safety enforcement cuối cùng cho LLM self-assessment nếu deterministic runtime monitor có thể kiểm tra disagreement.
-- Không claim “first tool trust selector”, “first provenance-aware action gate” hoặc “first dependency validation”.
-- Không mở rộng RQ sang học/validate failure-domain metadata; đó là một research problem riêng vượt scope 12 tuần.
-- Mọi experiment/literature result mới phải cập nhật claim–evidence ledger trước khi sửa Abstract, contributions hoặc Conclusion.
-- Vault lint vẫn báo các vấn đề cũ ở `AGENTS.md`, root daily note, generated experiment READMEs và missing trust ledger; không có broken link hay frontmatter issue mới từ main-study journal.
+- Không quay lại rejected recovery routing/early failure detection hoặc generic verification. Không dùng ToolBench-X primary.
+- Không first/new-algorithm/generalization/production claims; exact feature conjunction không proof of novelty. Không superiority khi chưa head-to-head.
+- Không gọi AI cross-review là human/teammate/peer review. Secondary contract vẫn candidate, P/S/I do project thêm, exploratory/internal.
+- Main raw final_state_correct = action-oracle correctness; false_block gồm no-proposal abstention. Không đổi raw keys để sửa wording.
+- K=2 là modeled observations tại refund proposals; không actual latency/token/API cost. Counterfactuals hậu nghiệm, không measured baseline episodes.
+- Internal pre-specified notes/hashes không independent preregistration registry.
+- Live unsafe-capable criterion cần positive amount khớp primary sai trước successful escalation và matched proposal. Current gate failed; không scale RTX hoặc tune seeds để cứu effect.
+- INS-00030 đã recovered theo run ID; không dùng generic Downloads filenames tái sử dụng để audit.
+- Inventory khóa selected files, không toàn dependency closure. v0.9 core generation đã replay trong clean venv cùng host; secondary/fresh-machine chưa kiểm, observed runtime pins không wheel/build lock. Defaults có overwrite risk: chỉ output mới.
+- Historical WorkBench thiếu root license; indirect MIT attribution cần verify trước public redistribution. Vault chưa project-wide license, chưa tự cấp license mới.
+- Không commit/push hoặc gọi package public release khi chưa được yêu cầu.
 
 ## Next Action
 
-Manual-audit và freeze 12 read-before-write cases từ Agent-SafetyBench/WorkBench trên ít nhất sáu domains. Mỗi case cần decisive claim, irreversible action, canonical truth, primary evidence, same-domain replica, independent corroborator và programmatic oracle; nếu không đủ 12 cases mà không bóp méo semantics, bỏ secondary adaptation.
+(1) Hỏi tác giả trước khi push các commit từ `fb41192`. (2) Khi có nhãn người gán nhãn survey 2: chạy `src/analyze_coder_agreement.py` (đổi đầu vào; gồm `coding_agreement_only.csv`), cập nhật journal → ledger O5 → paper §5.12. (3) Cập nhật supervisor briefing và gửi mail giảng viên. (4) Bản tiếng Anh. Bối cảnh chung: [[projects/reliable-tool-using-ai-agents/HANDOFF-2026-10-13]].

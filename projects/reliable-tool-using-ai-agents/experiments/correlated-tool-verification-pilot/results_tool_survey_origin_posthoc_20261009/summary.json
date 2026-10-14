@@ -1,0 +1,847 @@
+{
+  "status": "POST-HOC sensitivity, not pre-specified in the survey protocol",
+  "coding_sha256": "3bdc39a1f0eefad56b292af1e8bcb7ba77d3cd0936650f12dc2f538aa8a375da",
+  "origin_map": {
+    "OpenStreetMap Nominatim": {
+      "origins": [
+        "OpenStreetMap"
+      ],
+      "evidence": "Nominatim is OpenStreetMap's geocoder (nominatim.openstreetmap.org)"
+    },
+    "Photon (Komoot)": {
+      "origins": [
+        "OpenStreetMap"
+      ],
+      "evidence": "adelie-ai/geocode-mcp src/service.rs:69 'Photon geocoding API (powered by OpenStreetMap)'"
+    },
+    "Frankfurter": {
+      "origins": [
+        "ECB"
+      ],
+      "evidence": "cyanheads/exchange-rates-mcp-server README.md:32 'ECB reference exchange rates via Frankfurter'"
+    },
+    "ECB": {
+      "origins": [
+        "ECB"
+      ],
+      "evidence": "declared data origin"
+    },
+    "cbr-xml-daily.ru": {
+      "origins": [
+        "Bank of Russia"
+      ],
+      "evidence": "cloud-ru lab README.md:7 'курсы валют от ЦБР (cbr-xml-daily.ru)'"
+    },
+    "Bank of Russia": {
+      "origins": [
+        "Bank of Russia"
+      ],
+      "evidence": "declared data origin"
+    },
+    "Algolia HN Search": {
+      "origins": [
+        "Hacker News (Y Combinator)"
+      ],
+      "evidence": "hn.algolia.com indexes Hacker News items (devabdultech/hn-mcp, karanb192/hn-mcp)"
+    },
+    "SearXNG (self-hosted)": {
+      "origins": [
+        "Brave Search",
+        "DuckDuckGo",
+        "Google",
+        "Startpage",
+        "Wiby",
+        "Wikipedia"
+      ],
+      "evidence": "slinusc/web-search-mcp-server config/settings.yml enabled general engines; Pascalrjt uses SearXNG defaults (use_default_settings: true) — INFERRED to be the same set"
+    }
+  },
+  "results": {
+    "operator_level_main": {
+      "table": {
+        "l1": {
+          "crypto_prices": {
+            "pairs": 15,
+            "truly_shared": 2,
+            "rho": 0.13333333333333333,
+            "missing": 12,
+            "m": 0.8,
+            "labelled": 3,
+            "labelled_truly_shared": 1,
+            "declared_shared_among_truly_shared": 1,
+            "labelled_truly_independent": 2,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          },
+          "currency_exchange": {
+            "pairs": 15,
+            "truly_shared": 0,
+            "rho": 0.0,
+            "missing": 14,
+            "m": 0.9333333333333333,
+            "labelled": 1,
+            "labelled_truly_shared": 0,
+            "declared_shared_among_truly_shared": 0,
+            "labelled_truly_independent": 1,
+            "declared_shared_among_truly_independent": 0,
+            "r": null,
+            "phi": 0.0,
+            "J": null
+          },
+          "geocoding": {
+            "pairs": 15,
+            "truly_shared": 3,
+            "rho": 0.2,
+            "missing": 14,
+            "m": 0.9333333333333333,
+            "labelled": 1,
+            "labelled_truly_shared": 0,
+            "declared_shared_among_truly_shared": 0,
+            "labelled_truly_independent": 1,
+            "declared_shared_among_truly_independent": 0,
+            "r": null,
+            "phi": 0.0,
+            "J": null
+          },
+          "news": {
+            "pairs": 15,
+            "truly_shared": 3,
+            "rho": 0.2,
+            "missing": 9,
+            "m": 0.6,
+            "labelled": 6,
+            "labelled_truly_shared": 3,
+            "declared_shared_among_truly_shared": 3,
+            "labelled_truly_independent": 3,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          },
+          "stock_quotes": {
+            "pairs": 15,
+            "truly_shared": 1,
+            "rho": 0.06666666666666667,
+            "missing": 5,
+            "m": 0.3333333333333333,
+            "labelled": 10,
+            "labelled_truly_shared": 0,
+            "declared_shared_among_truly_shared": 0,
+            "labelled_truly_independent": 10,
+            "declared_shared_among_truly_independent": 0,
+            "r": null,
+            "phi": 0.0,
+            "J": null
+          },
+          "weather": {
+            "pairs": 15,
+            "truly_shared": 1,
+            "rho": 0.06666666666666667,
+            "missing": 14,
+            "m": 0.9333333333333333,
+            "labelled": 1,
+            "labelled_truly_shared": 0,
+            "declared_shared_among_truly_shared": 0,
+            "labelled_truly_independent": 1,
+            "declared_shared_among_truly_independent": 0,
+            "r": null,
+            "phi": 0.0,
+            "J": null
+          },
+          "web_search": {
+            "pairs": 15,
+            "truly_shared": 7,
+            "rho": 0.4666666666666667,
+            "missing": 5,
+            "m": 0.3333333333333333,
+            "labelled": 10,
+            "labelled_truly_shared": 4,
+            "declared_shared_among_truly_shared": 4,
+            "labelled_truly_independent": 6,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          },
+          "POOLED": {
+            "pairs": 105,
+            "truly_shared": 17,
+            "rho": 0.1619047619047619,
+            "missing": 73,
+            "m": 0.6952380952380952,
+            "labelled": 32,
+            "labelled_truly_shared": 8,
+            "declared_shared_among_truly_shared": 8,
+            "labelled_truly_independent": 24,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          }
+        },
+        "l2": {
+          "crypto_prices": {
+            "pairs": 15,
+            "truly_shared": 2,
+            "rho": 0.13333333333333333,
+            "missing": 0,
+            "m": 0.0,
+            "labelled": 15,
+            "labelled_truly_shared": 2,
+            "declared_shared_among_truly_shared": 2,
+            "labelled_truly_independent": 13,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          },
+          "currency_exchange": {
+            "pairs": 15,
+            "truly_shared": 0,
+            "rho": 0.0,
+            "missing": 0,
+            "m": 0.0,
+            "labelled": 15,
+            "labelled_truly_shared": 0,
+            "declared_shared_among_truly_shared": 0,
+            "labelled_truly_independent": 15,
+            "declared_shared_among_truly_independent": 0,
+            "r": null,
+            "phi": 0.0,
+            "J": null
+          },
+          "geocoding": {
+            "pairs": 15,
+            "truly_shared": 3,
+            "rho": 0.2,
+            "missing": 0,
+            "m": 0.0,
+            "labelled": 15,
+            "labelled_truly_shared": 3,
+            "declared_shared_among_truly_shared": 3,
+            "labelled_truly_independent": 12,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          },
+          "news": {
+            "pairs": 15,
+            "truly_shared": 3,
+            "rho": 0.2,
+            "missing": 0,
+            "m": 0.0,
+            "labelled": 15,
+            "labelled_truly_shared": 3,
+            "declared_shared_among_truly_shared": 3,
+            "labelled_truly_independent": 12,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          },
+          "stock_quotes": {
+            "pairs": 15,
+            "truly_shared": 1,
+            "rho": 0.06666666666666667,
+            "missing": 0,
+            "m": 0.0,
+            "labelled": 15,
+            "labelled_truly_shared": 1,
+            "declared_shared_among_truly_shared": 1,
+            "labelled_truly_independent": 14,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          },
+          "weather": {
+            "pairs": 15,
+            "truly_shared": 1,
+            "rho": 0.06666666666666667,
+            "missing": 5,
+            "m": 0.3333333333333333,
+            "labelled": 10,
+            "labelled_truly_shared": 1,
+            "declared_shared_among_truly_shared": 1,
+            "labelled_truly_independent": 9,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          },
+          "web_search": {
+            "pairs": 15,
+            "truly_shared": 7,
+            "rho": 0.4666666666666667,
+            "missing": 0,
+            "m": 0.0,
+            "labelled": 15,
+            "labelled_truly_shared": 7,
+            "declared_shared_among_truly_shared": 7,
+            "labelled_truly_independent": 8,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          },
+          "POOLED": {
+            "pairs": 105,
+            "truly_shared": 17,
+            "rho": 0.1619047619047619,
+            "missing": 5,
+            "m": 0.047619047619047616,
+            "labelled": 100,
+            "labelled_truly_shared": 17,
+            "declared_shared_among_truly_shared": 17,
+            "labelled_truly_independent": 83,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          }
+        }
+      },
+      "projection_with_missing": {
+        "l1": {
+          "server_label_known_share_k": 0.5476190476190477,
+          "primaries_with_shared_peer": 20,
+          "mean_p_select_shared_provenance": 0.175635109017872,
+          "mean_p_select_shared_random": 0.33999999999999997
+        },
+        "l2": {
+          "server_label_known_share_k": 0.9761904761904762,
+          "primaries_with_shared_peer": 20,
+          "mean_p_select_shared_provenance": 0.008163258113597102,
+          "mean_p_select_shared_random": 0.33999999999999997
+        }
+      }
+    },
+    "origin_naive": {
+      "table": {
+        "l1": {
+          "crypto_prices": {
+            "pairs": 15,
+            "truly_shared": 2,
+            "rho": 0.13333333333333333,
+            "missing": 12,
+            "m": 0.8,
+            "labelled": 3,
+            "labelled_truly_shared": 1,
+            "declared_shared_among_truly_shared": 1,
+            "labelled_truly_independent": 2,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          },
+          "currency_exchange": {
+            "pairs": 15,
+            "truly_shared": 0,
+            "rho": 0.0,
+            "missing": 14,
+            "m": 0.9333333333333333,
+            "labelled": 1,
+            "labelled_truly_shared": 0,
+            "declared_shared_among_truly_shared": 0,
+            "labelled_truly_independent": 1,
+            "declared_shared_among_truly_independent": 0,
+            "r": null,
+            "phi": 0.0,
+            "J": null
+          },
+          "geocoding": {
+            "pairs": 15,
+            "truly_shared": 6,
+            "rho": 0.4,
+            "missing": 14,
+            "m": 0.9333333333333333,
+            "labelled": 1,
+            "labelled_truly_shared": 0,
+            "declared_shared_among_truly_shared": 0,
+            "labelled_truly_independent": 1,
+            "declared_shared_among_truly_independent": 0,
+            "r": null,
+            "phi": 0.0,
+            "J": null
+          },
+          "news": {
+            "pairs": 15,
+            "truly_shared": 3,
+            "rho": 0.2,
+            "missing": 9,
+            "m": 0.6,
+            "labelled": 6,
+            "labelled_truly_shared": 3,
+            "declared_shared_among_truly_shared": 3,
+            "labelled_truly_independent": 3,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          },
+          "stock_quotes": {
+            "pairs": 15,
+            "truly_shared": 1,
+            "rho": 0.06666666666666667,
+            "missing": 5,
+            "m": 0.3333333333333333,
+            "labelled": 10,
+            "labelled_truly_shared": 0,
+            "declared_shared_among_truly_shared": 0,
+            "labelled_truly_independent": 10,
+            "declared_shared_among_truly_independent": 0,
+            "r": null,
+            "phi": 0.0,
+            "J": null
+          },
+          "weather": {
+            "pairs": 15,
+            "truly_shared": 1,
+            "rho": 0.06666666666666667,
+            "missing": 14,
+            "m": 0.9333333333333333,
+            "labelled": 1,
+            "labelled_truly_shared": 0,
+            "declared_shared_among_truly_shared": 0,
+            "labelled_truly_independent": 1,
+            "declared_shared_among_truly_independent": 0,
+            "r": null,
+            "phi": 0.0,
+            "J": null
+          },
+          "web_search": {
+            "pairs": 15,
+            "truly_shared": 15,
+            "rho": 1.0,
+            "missing": 5,
+            "m": 0.3333333333333333,
+            "labelled": 10,
+            "labelled_truly_shared": 10,
+            "declared_shared_among_truly_shared": 4,
+            "labelled_truly_independent": 0,
+            "declared_shared_among_truly_independent": 0,
+            "r": 0.4,
+            "phi": null,
+            "J": null
+          },
+          "POOLED": {
+            "pairs": 105,
+            "truly_shared": 28,
+            "rho": 0.26666666666666666,
+            "missing": 73,
+            "m": 0.6952380952380952,
+            "labelled": 32,
+            "labelled_truly_shared": 14,
+            "declared_shared_among_truly_shared": 8,
+            "labelled_truly_independent": 18,
+            "declared_shared_among_truly_independent": 0,
+            "r": 0.5714285714285714,
+            "phi": 0.0,
+            "J": 0.5714285714285714
+          }
+        },
+        "l2": {
+          "crypto_prices": {
+            "pairs": 15,
+            "truly_shared": 2,
+            "rho": 0.13333333333333333,
+            "missing": 0,
+            "m": 0.0,
+            "labelled": 15,
+            "labelled_truly_shared": 2,
+            "declared_shared_among_truly_shared": 2,
+            "labelled_truly_independent": 13,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          },
+          "currency_exchange": {
+            "pairs": 15,
+            "truly_shared": 0,
+            "rho": 0.0,
+            "missing": 0,
+            "m": 0.0,
+            "labelled": 15,
+            "labelled_truly_shared": 0,
+            "declared_shared_among_truly_shared": 0,
+            "labelled_truly_independent": 15,
+            "declared_shared_among_truly_independent": 0,
+            "r": null,
+            "phi": 0.0,
+            "J": null
+          },
+          "geocoding": {
+            "pairs": 15,
+            "truly_shared": 6,
+            "rho": 0.4,
+            "missing": 0,
+            "m": 0.0,
+            "labelled": 15,
+            "labelled_truly_shared": 6,
+            "declared_shared_among_truly_shared": 3,
+            "labelled_truly_independent": 9,
+            "declared_shared_among_truly_independent": 0,
+            "r": 0.5,
+            "phi": 0.0,
+            "J": 0.5
+          },
+          "news": {
+            "pairs": 15,
+            "truly_shared": 3,
+            "rho": 0.2,
+            "missing": 0,
+            "m": 0.0,
+            "labelled": 15,
+            "labelled_truly_shared": 3,
+            "declared_shared_among_truly_shared": 3,
+            "labelled_truly_independent": 12,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          },
+          "stock_quotes": {
+            "pairs": 15,
+            "truly_shared": 1,
+            "rho": 0.06666666666666667,
+            "missing": 0,
+            "m": 0.0,
+            "labelled": 15,
+            "labelled_truly_shared": 1,
+            "declared_shared_among_truly_shared": 1,
+            "labelled_truly_independent": 14,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          },
+          "weather": {
+            "pairs": 15,
+            "truly_shared": 1,
+            "rho": 0.06666666666666667,
+            "missing": 5,
+            "m": 0.3333333333333333,
+            "labelled": 10,
+            "labelled_truly_shared": 1,
+            "declared_shared_among_truly_shared": 1,
+            "labelled_truly_independent": 9,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          },
+          "web_search": {
+            "pairs": 15,
+            "truly_shared": 15,
+            "rho": 1.0,
+            "missing": 0,
+            "m": 0.0,
+            "labelled": 15,
+            "labelled_truly_shared": 15,
+            "declared_shared_among_truly_shared": 7,
+            "labelled_truly_independent": 0,
+            "declared_shared_among_truly_independent": 0,
+            "r": 0.4666666666666667,
+            "phi": null,
+            "J": null
+          },
+          "POOLED": {
+            "pairs": 105,
+            "truly_shared": 28,
+            "rho": 0.26666666666666666,
+            "missing": 5,
+            "m": 0.047619047619047616,
+            "labelled": 100,
+            "labelled_truly_shared": 28,
+            "declared_shared_among_truly_shared": 17,
+            "labelled_truly_independent": 72,
+            "declared_shared_among_truly_independent": 0,
+            "r": 0.6071428571428571,
+            "phi": 0.0,
+            "J": 0.6071428571428571
+          }
+        }
+      },
+      "projection_with_missing": {
+        "l1": {
+          "server_label_known_share_k": 0.5476190476190477,
+          "primaries_with_shared_peer": 21,
+          "mean_p_select_shared_provenance": 0.47267984024999105,
+          "mean_p_select_shared_random": 0.5333333333333333
+        },
+        "l2": {
+          "server_label_known_share_k": 0.9761904761904762,
+          "primaries_with_shared_peer": 21,
+          "mean_p_select_shared_provenance": 0.40591171489074784,
+          "mean_p_select_shared_random": 0.5333333333333333
+        }
+      }
+    },
+    "origin_informed": {
+      "table": {
+        "l1": {
+          "crypto_prices": {
+            "pairs": 15,
+            "truly_shared": 2,
+            "rho": 0.13333333333333333,
+            "missing": 12,
+            "m": 0.8,
+            "labelled": 3,
+            "labelled_truly_shared": 1,
+            "declared_shared_among_truly_shared": 1,
+            "labelled_truly_independent": 2,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          },
+          "currency_exchange": {
+            "pairs": 15,
+            "truly_shared": 0,
+            "rho": 0.0,
+            "missing": 14,
+            "m": 0.9333333333333333,
+            "labelled": 1,
+            "labelled_truly_shared": 0,
+            "declared_shared_among_truly_shared": 0,
+            "labelled_truly_independent": 1,
+            "declared_shared_among_truly_independent": 0,
+            "r": null,
+            "phi": 0.0,
+            "J": null
+          },
+          "geocoding": {
+            "pairs": 15,
+            "truly_shared": 6,
+            "rho": 0.4,
+            "missing": 14,
+            "m": 0.9333333333333333,
+            "labelled": 1,
+            "labelled_truly_shared": 0,
+            "declared_shared_among_truly_shared": 0,
+            "labelled_truly_independent": 1,
+            "declared_shared_among_truly_independent": 0,
+            "r": null,
+            "phi": 0.0,
+            "J": null
+          },
+          "news": {
+            "pairs": 15,
+            "truly_shared": 3,
+            "rho": 0.2,
+            "missing": 9,
+            "m": 0.6,
+            "labelled": 6,
+            "labelled_truly_shared": 3,
+            "declared_shared_among_truly_shared": 3,
+            "labelled_truly_independent": 3,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          },
+          "stock_quotes": {
+            "pairs": 15,
+            "truly_shared": 1,
+            "rho": 0.06666666666666667,
+            "missing": 5,
+            "m": 0.3333333333333333,
+            "labelled": 10,
+            "labelled_truly_shared": 0,
+            "declared_shared_among_truly_shared": 0,
+            "labelled_truly_independent": 10,
+            "declared_shared_among_truly_independent": 0,
+            "r": null,
+            "phi": 0.0,
+            "J": null
+          },
+          "weather": {
+            "pairs": 15,
+            "truly_shared": 1,
+            "rho": 0.06666666666666667,
+            "missing": 14,
+            "m": 0.9333333333333333,
+            "labelled": 1,
+            "labelled_truly_shared": 0,
+            "declared_shared_among_truly_shared": 0,
+            "labelled_truly_independent": 1,
+            "declared_shared_among_truly_independent": 0,
+            "r": null,
+            "phi": 0.0,
+            "J": null
+          },
+          "web_search": {
+            "pairs": 15,
+            "truly_shared": 15,
+            "rho": 1.0,
+            "missing": 5,
+            "m": 0.3333333333333333,
+            "labelled": 10,
+            "labelled_truly_shared": 10,
+            "declared_shared_among_truly_shared": 10,
+            "labelled_truly_independent": 0,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": null,
+            "J": null
+          },
+          "POOLED": {
+            "pairs": 105,
+            "truly_shared": 28,
+            "rho": 0.26666666666666666,
+            "missing": 73,
+            "m": 0.6952380952380952,
+            "labelled": 32,
+            "labelled_truly_shared": 14,
+            "declared_shared_among_truly_shared": 14,
+            "labelled_truly_independent": 18,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          }
+        },
+        "l2": {
+          "crypto_prices": {
+            "pairs": 15,
+            "truly_shared": 2,
+            "rho": 0.13333333333333333,
+            "missing": 0,
+            "m": 0.0,
+            "labelled": 15,
+            "labelled_truly_shared": 2,
+            "declared_shared_among_truly_shared": 2,
+            "labelled_truly_independent": 13,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          },
+          "currency_exchange": {
+            "pairs": 15,
+            "truly_shared": 0,
+            "rho": 0.0,
+            "missing": 0,
+            "m": 0.0,
+            "labelled": 15,
+            "labelled_truly_shared": 0,
+            "declared_shared_among_truly_shared": 0,
+            "labelled_truly_independent": 15,
+            "declared_shared_among_truly_independent": 0,
+            "r": null,
+            "phi": 0.0,
+            "J": null
+          },
+          "geocoding": {
+            "pairs": 15,
+            "truly_shared": 6,
+            "rho": 0.4,
+            "missing": 0,
+            "m": 0.0,
+            "labelled": 15,
+            "labelled_truly_shared": 6,
+            "declared_shared_among_truly_shared": 6,
+            "labelled_truly_independent": 9,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          },
+          "news": {
+            "pairs": 15,
+            "truly_shared": 3,
+            "rho": 0.2,
+            "missing": 0,
+            "m": 0.0,
+            "labelled": 15,
+            "labelled_truly_shared": 3,
+            "declared_shared_among_truly_shared": 3,
+            "labelled_truly_independent": 12,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          },
+          "stock_quotes": {
+            "pairs": 15,
+            "truly_shared": 1,
+            "rho": 0.06666666666666667,
+            "missing": 0,
+            "m": 0.0,
+            "labelled": 15,
+            "labelled_truly_shared": 1,
+            "declared_shared_among_truly_shared": 1,
+            "labelled_truly_independent": 14,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          },
+          "weather": {
+            "pairs": 15,
+            "truly_shared": 1,
+            "rho": 0.06666666666666667,
+            "missing": 5,
+            "m": 0.3333333333333333,
+            "labelled": 10,
+            "labelled_truly_shared": 1,
+            "declared_shared_among_truly_shared": 1,
+            "labelled_truly_independent": 9,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          },
+          "web_search": {
+            "pairs": 15,
+            "truly_shared": 15,
+            "rho": 1.0,
+            "missing": 0,
+            "m": 0.0,
+            "labelled": 15,
+            "labelled_truly_shared": 15,
+            "declared_shared_among_truly_shared": 15,
+            "labelled_truly_independent": 0,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": null,
+            "J": null
+          },
+          "POOLED": {
+            "pairs": 105,
+            "truly_shared": 28,
+            "rho": 0.26666666666666666,
+            "missing": 5,
+            "m": 0.047619047619047616,
+            "labelled": 100,
+            "labelled_truly_shared": 28,
+            "declared_shared_among_truly_shared": 28,
+            "labelled_truly_independent": 72,
+            "declared_shared_among_truly_independent": 0,
+            "r": 1.0,
+            "phi": 0.0,
+            "J": 1.0
+          }
+        }
+      },
+      "projection_with_missing": {
+        "l1": {
+          "server_label_known_share_k": 0.5476190476190477,
+          "primaries_with_shared_peer": 21,
+          "mean_p_select_shared_provenance": 0.41518481085322717,
+          "mean_p_select_shared_random": 0.5333333333333333
+        },
+        "l2": {
+          "server_label_known_share_k": 0.9761904761904762,
+          "primaries_with_shared_peer": 21,
+          "mean_p_select_shared_provenance": 0.2916739993989002,
+          "mean_p_select_shared_random": 0.5333333333333333
+        }
+      }
+    }
+  }
+}

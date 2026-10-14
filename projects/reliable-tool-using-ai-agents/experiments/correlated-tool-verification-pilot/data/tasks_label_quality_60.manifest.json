@@ -1,0 +1,22 @@
+{
+  "artifact": "data/tasks_label_quality_60.json",
+  "sha256": "9a68d765657f068aacf70635e0a7a9584b7aa4194eea9e5fc42ea83eb4543eb8",
+  "status": "frozen_before_label_quality_harness",
+  "purpose": "Fresh split for the preregistered label-quality (J) condition test.",
+  "protocol": "synthesis/Protocol: Confirmatory Test of the Label-Quality Condition.md v1.0",
+  "generator": {
+    "upstream_repository": "https://github.com/mohammadi-hadi/trajectory-judge",
+    "source_commit": "d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5",
+    "seed": 20260914,
+    "offset": 120,
+    "count": 60
+  },
+  "task_id_range": "INS-00120..INS-00179",
+  "pre_run_checks": {
+    "first_120_instances_unchanged": true,
+    "expected_action_counts": {"escalate": 40, "refund": 20},
+    "difficulty_counts": {"happy": 10, "restocking": 10, "expired": 10, "non_refundable": 10, "wrong_customer": 10, "already_refunded": 10},
+    "overlap_with_previous_task_files": 0,
+    "rerun_sha256_matches": true
+  }
+}

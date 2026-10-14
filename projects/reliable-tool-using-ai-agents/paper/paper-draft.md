@@ -1,76 +1,135 @@
 ---
-title: "Failure-Domain-Aware Verification for Tool-Using AI Agents under Correlated Silent Tool Failures"
+title: "When Does Failure-Domain Metadata Help Tool-Using AI Agents? A Controlled Replication, a Label-Quality Condition, and Two Surveys of MCP Server Metadata"
 category: project
 tags: [ai-agents, paper-draft, verification, tool-failure, reliability]
 sources:
+  - "journal/2026-10-14-expanded-tool-survey-results.md"
+  - "synthesis/Protocol: Expanded Real-Tool Metadata Survey.md"
+  - "journal/2026-10-09-real-tool-metadata-survey-results.md"
+  - "journal/2026-10-06-prior-art-refresh-vp-control-and-efd.md"
+  - "synthesis/Protocol: Real-Tool Failure-Domain Metadata Survey.md"
+  - "https://arxiv.org/abs/2609.10969"
+  - "https://arxiv.org/abs/2609.02925"
+  - "https://arxiv.org/abs/2507.16044"
+  - "https://arxiv.org/abs/2509.25292"
+  - "journal/2026-10-04-clean-environment-core-reproduction.md"
+  - "references/agentos-typed-tool-mediation.md"
+  - "references/look-before-you-leap-pre-action-verification.md"
+  - "journal/2026-10-04-pre-action-prior-art-audit.md"
+  - "https://arxiv.org/html/2609.11957v1"
+  - "projects/reliable-tool-using-ai-agents/paper/figure-guide.md"
+  - "projects/reliable-tool-using-ai-agents/paper/figures/frozen-evidence-v1/figure-data.json"
+  - "projects/reliable-tool-using-ai-agents/paper/supplementary-appendix.md"
+  - "projects/reliable-tool-using-ai-agents/paper/reproducibility-package.md"
   - "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md"
   - "synthesis/Protocol: Action-Boundary Provenance Verification Main Study.md"
   - "journal/2026-09-15-action-boundary-main-study.md"
   - "journal/2026-09-15-imperfect-provenance-robustness-gate.md"
   - "journal/2026-09-15-external-validity-artifact-gate.md"
+  - "journal/2026-09-18-benchmark-derived-case-audit.md"
+  - "journal/2026-09-20-secondary-schema-preflight.md"
+  - "journal/2026-09-20-ai-review-provenance-correction.md"
+  - "journal/2026-09-24-secondary-schema-v12-recheck.md"
+  - "journal/2026-09-26-secondary-adapter-smoke-tests.md"
+  - "synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix.md"
+  - "journal/2026-09-28-secondary-exploratory-matrix.md"
+  - "synthesis/Protocol: Secondary Varied-Schedule Replication.md"
+  - "journal/2026-09-28-secondary-varied-schedule-replication.md"
+  - "journal/2026-10-03-live-agent-opportunity-diagnostic.md"
+  - "projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03.md"
+  - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/run_main_study.py"
+  - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_main_study/raw.jsonl"
+  - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_topology_diagnostics.py"
+  - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_topology_diagnostics_20261003/analysis.json"
   - "https://arxiv.org/abs/2603.02345"
   - "https://proceedings.mlr.press/v267/kim25e.html"
+  - "projects/reliable-tool-using-ai-agents/paper/related-work-citation-audit-2026-10-03.md"
+  - "https://arxiv.org/html/2607.01236v2"
+  - "https://arxiv.org/html/2606.18037v3"
+  - "https://arxiv.org/html/2602.21517v1"
+  - "https://www.epfl.ch/labs/sacs/publications/"
+  - "https://conf.researchr.org/details/ase-2026/ase-2026-tools-and-data-sets/45/Introducing-Safe-LLM-Agent-Execution-via-Typed-Tool-Mediation-and-World-Effect-Evalua"
 created: 2026-09-15T17:15:00+07:00
-updated: 2026-09-15T17:15:00+07:00
+updated: 2026-10-14T13:00:00+07:00
 summary: >-
-  Living paper draft cho controlled study về mandatory action-boundary verification chọn corroborator độc lập theo failure domain dưới correlated silent tool failures.
+  Living paper v1.0: controlled replication (RQ1), điều kiện J = r − φ > 0 cho metadata failure-domain (RQ2), và hai survey MCP server (42 và 78 server; survey 2 có dự đoán ghi trước) cho thấy metadata agent thấy thiếu ở khoảng 70% cặp, khi có thì phần lớn đúng (J > 0), và tên bên vận hành bỏ sót phụ thuộc ở mức nguồn gốc (RQ3).
 lifecycle: draft
 paper_status: living-draft
-version: "0.1"
+version: "1.4"
 ---
 
-# Failure-Domain-Aware Verification for Tool-Using AI Agents under Correlated Silent Tool Failures
+# When Does Failure-Domain Metadata Help Tool-Using AI Agents? A Controlled Replication, a Label-Quality Condition, and Two Surveys of MCP Server Metadata
 
-> [!important] **Living paper — version 0.1.** Nội dung tiếng Việt giúp kiểm tra reasoning và evidence. Title, Research Question và Hypothesis dùng English canonical wording. Đây chưa phải submission-ready English manuscript. Abstract, contribution claims và conclusion chưa được đóng băng.
+*A controlled decision-level replication, an analytical label-quality condition, and a descriptive survey of real tool metadata; not a live-agent effectiveness evaluation.*
+
+> [!important] **Living paper — version 1.0 (định vị lại).** Sau prior-art refresh 2026-10-06, VP-Control đã đo trước phần controlled comparison; RQ1 được giữ nguyên nhưng trình bày là replication. Đóng góp chính chuyển sang chất lượng failure-domain metadata: RQ2 (phân tích, post-hoc) và RQ3 (survey 42 MCP server, protocol viết trước khi thu thập). Survey do AI gán nhãn; kiểm tra của coder B (con người) đang chờ. Số liệu RQ1 và các kết quả đã khóa (gồm `FAIL ROBUSTNESS`) không đổi. Ranh giới claim: [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]] C33–C46.
+>
+> **v1.4 (2026-10-14):** thêm survey 2 (78 MCP server, 12 nhóm, dự đoán P1–P6 ghi trước; §4.8, §5.12). Hai phát hiện của survey 1 không lặp lại ("khi có nhãn thì không sai"; "có nhóm không có nguồn độc lập") và đã được sửa ở abstract, §6 và §9.
 
 ## Abstract — PROVISIONAL
 
-AI agent dùng tool có thể nhận phản hồi sai nhưng vẫn đúng schema và không phát sinh exception. Một cách phòng vệ phổ biến là gọi thêm tool để kiểm tra chéo. Tuy nhiên, hai tool có tên và API khác nhau vẫn có thể dùng chung database replica, cache, provider hoặc telemetry pipeline; khi shared dependency sai, các tool có thể đồng thuận trên cùng một kết quả sai. Nghiên cứu này khảo sát xác minh dựa trên miền lỗi (failure-domain-aware verification) ngay trước hành động không thể đảo ngược. Trong controlled support workflow, runtime bắt buộc dùng primary observation và một corroborator ở cùng ngân sách `K=2`. Treatment chọn corroborator thuộc failure domain khác primary; baseline chọn ngẫu nhiên trong các tool interfaces khác tên. Main deterministic study gồm 1,350 episodes trên 30 frozen tasks. Dưới targeted common-mode silent failures, treatment giảm unsafe refund từ `0.200` xuống `0.000`, với paired task-cluster bootstrap difference `-0.200`, 95% CI `[-0.273,-0.127]`; clean correctness của cả hai policy là `1.000`. Tuy nhiên, post-main robustness study gồm 3,750 episodes cho thấy advantage không còn đủ chắc chắn khi `25%` failure-domain labels bị gán sai. Kết quả hỗ trợ causal claim trong controlled setting với accurate metadata, nhưng chưa chứng minh external validity hoặc production readiness.
+AI agent dùng tool có thể nhận output sai nhưng vẫn đúng schema. Khi hai tool khác tên cùng đọc một nguồn dữ liệu, kiểm tra chéo giữa chúng có thể đồng thuận trên cùng một giá trị sai. Nghiên cứu gần đây (VP-Control) đã cho thấy chọn nguồn đối chứng khác lineage giảm mạnh phê duyệt sai, nhưng giả định rằng nhãn lineage có sẵn và đúng. Bài này hỏi metadata failure-domain cần chất lượng đến đâu để có ích, và metadata của tool thật có chất lượng ra sao. **(1) Controlled replication:** trong mô phỏng quyết định refund với actor deterministic và metadata chính xác, unsafe refund decisions là `30/150` khi chọn nguồn ngẫu nhiên và `0/150` khi chọn khác failure domain (paired task-cluster bootstrap `−0.200`, 95% CI `[−0.273, −0.127]`); kết quả này phần lớn được suy ra từ topology. Với nhãn sai, robustness gate không giữ chắc lợi thế; phân tích post-hoc cho thấy tiêu chí đó chỉ có khoảng 56% power. **(2) Điều kiện giải tích (post-hoc):** dưới lỗi nhãn có hệ thống, chọn theo failure domain tốt hơn chọn ngẫu nhiên khi và chỉ khi `J = r − φ > 0` (recall phụ thuộc chung trừ tỷ lệ gán nhầm), và tệ hơn khi `J < 0`; quy tắc này được chứng minh dưới các giả định nêu rõ (§5.8) và được kiểm định có đăng ký trước trên 60 task mới: với `J = −0.5`, chọn theo failure domain cho tỷ lệ quyết định sai **cao hơn** chọn ngẫu nhiên `+0.133` (95% CI `[+0.070, +0.200]`); với `J = +0.8`, thấp hơn `−0.177`; tương đương tại `J = 0` không được xác nhận. **(3) Hai survey:** survey 1 (42 MCP server mã nguồn mở, 7 nhóm thông tin) và survey 2 (mẫu mới 78 server, 12 nhóm, sáu dự đoán ghi trước rút từ survey 1). Tỷ lệ cặp cùng nhóm dùng chung API provider mặc định là 16% (`17/105`, bootstrap 95% `[7.5%, 28%]`) và 27% (`67/245`, `[18%, 37%]`), biến động mạnh theo nhóm và theo mẫu. Metadata agent thấy lúc chạy không nêu provider ở 70% và 71% số cặp; khi có thì phần lớn đúng (survey 2: `r = 23/27`, `φ = 3/45`; thêm README: `J = 0.89`), nên metadata thật có `J > 0`. Ở mức nguồn dữ liệu gốc, tên bên vận hành bỏ sót nhiều phụ thuộc hơn (survey 2: recall `0.83` so với `0.95`). Survey 2 đạt 4/6 dự đoán; hai phát hiện của survey 1 không lặp lại: tỷ lệ gán nhầm không bằng 0 (`φ_L1 = 0.067`, vượt ngưỡng 0.05), và không nhóm nào thiếu hẳn nguồn độc lập (web search cao nhất, 0.71). Nút thắt thực tế là metadata **thiếu** và chỉ ở mức bên vận hành, hơn là metadata sai. Survey do AI gán nhãn; con người kiểm tra 10 server của survey 1, nhãn người cho survey 2 đang chờ; không có kết quả nào đo hiệu quả trên live agent.
 
-**Keywords:** tool-using AI agents; runtime verification; correlated failures; common-mode failures; provenance; action boundary; agent reliability.
+**Keywords:** tool-using AI agents; runtime verification; correlated failures; common-mode failures; failure-domain metadata; provenance; Model Context Protocol; empirical survey.
 
 ## 1. Introduction
 
 Các large language model agents ngày càng được phép gọi API, đọc database, sửa file, gửi email hoặc tạo transaction. Trong vòng lặp `plan → tool call → observation → next action`, agent thường xem tool output như evidence về trạng thái bên ngoài. Nếu tool trả exception, lỗi tương đối dễ nhận biết. Nguy hiểm hơn là **lỗi công cụ im lặng (silent tool failure)**: call thành công về mặt giao thức và output đúng schema, nhưng nội dung sai hoặc stale.
 
-Một hướng xử lý tự nhiên là kiểm tra chéo qua nhiều tool. RIVA cho thấy nhiều diagnostic paths có thể tăng reliability khi observability tools trả erroneous output [[references/riva]]. Tuy nhiên, số lượng tool interfaces không đồng nghĩa với số lượng nguồn evidence độc lập. `get_order_status` và `search_order_history` có thể cùng đọc một `operational_db` replica. Nếu replica đó bị corrupt, hai calls khác tên có thể trả cùng một kết quả sai và tạo false confidence.
+Một hướng xử lý tự nhiên là kiểm tra chéo qua nhiều tool. RIVA cho thấy nhiều diagnostic paths có thể tăng reliability khi observability tools trả erroneous output [RIVA26](https://arxiv.org/html/2603.02345v1). Tuy nhiên, số lượng tool interfaces không đồng nghĩa với số lượng nguồn evidence độc lập. `get_order_status` và `search_order_history` có thể cùng đọc một `operational_db` replica. Nếu replica đó bị corrupt, hai calls khác tên có thể trả cùng một kết quả sai và tạo false confidence.
 
-Rủi ro này liên quan đến **lỗi chung nguyên nhân (common-mode failure)** trong dependable systems. Knight và Leveson cho thấy diverse implementations không tự động bảo đảm statistical independence; nghiên cứu gần đây về hơn 350 LLMs cũng quan sát substantial correlated errors và liên hệ chúng với shared architecture/provider [[references/correlated-errors-in-large-language-models]]. Evidence này không trực tiếp chứng minh tool outputs có correlated failures, nhưng phản bác giả định đơn giản rằng diversity bề ngoài đủ tạo independence.
+Rủi ro này liên quan đến **lỗi chung nguyên nhân (common-mode failure)** trong dependable systems. Giả định independence trong multiversion programming đã được Knight và Leveson nghiên cứu thực nghiệm [KL86](https://doi.org/10.1109/TSE.1986.6312924). Ở một setting khác, Kim et al. quan sát correlated errors giữa LLMs [CE25](https://proceedings.mlr.press/v267/kim25e.html). Đây là background/analogous evidence, không đo prevalence của shared-backend tool corruption; counterexample về tool interfaces trong bài này đến từ controlled fault model.
 
-Vấn đề đặc biệt quan trọng trước **hành động không thể đảo ngược hoặc có side effect lớn (irreversible action)**. Nếu agent chỉ trả lời sai bằng text, hậu quả có thể sửa được. Nếu agent gọi `issue_refund`, xóa resource hoặc gửi dữ liệu nhạy cảm, lỗi đã chuyển từ belief sai thành state change thực tế. Vì vậy nghiên cứu này đặt verification tại **ranh giới hành động (action boundary)**: runtime intercepts proposed write và yêu cầu corroboration trước execution.
+Vấn đề đặc biệt quan trọng trước **hành động có side effect lớn hoặc khó đảo ngược (high-impact or irreversible action)**. Nếu một hệ thống thật gọi `issue_refund`, xóa resource hoặc gửi dữ liệu nhạy cảm trên cơ sở evidence sai, hậu quả có thể vượt khỏi một câu trả lời sai. Vì vậy nghiên cứu mô phỏng verification tại **ranh giới hành động (action boundary)**: proposal phải qua corroboration trước khi được cho phép. Main study chấm quyết định cho phép hoặc escalation; nó không thực thi write lên canonical state.
 
-Nghiên cứu không claim rằng provenance-aware guardrail hoặc tool trust selection là hoàn toàn mới. TEA-CXA đã học query-dependent tool expertise để chọn response nên tin [[references/tea-cxa]]. ProvenanceGuard đã kiểm tra claim–source attribution trong MCP traces [[references/provenanceguard-source-aware-factuality]], và một work khác cùng tên đã dùng provenance để chặn misaligned tool calls trước execution [[references/provenanceguard-misalignment-provenance-analysis]]. Phần được khảo sát ở đây hẹp hơn: liệu **failure-domain-independent corroboration** có giảm unsafe actions hơn random-source corroboration dưới controlled correlated silent faults, với cùng tool-call budget hay không.
+Nghiên cứu không claim rằng provenance-aware guardrail hoặc tool trust selection là hoàn toàn mới. TEA-CXA học query-dependent tool expertise [TEA26](https://arxiv.org/html/2602.21517v1). Hai work cùng tên ProvenanceGuard nghiên cứu claim–source attribution [PGF26](https://arxiv.org/html/2606.18037v3) và grounding của proposed tool calls [PGA26](https://arxiv.org/html/2607.01236v2). Phần được khảo sát ở đây là tác động của **failure-domain-independent corroboration** so với random-source corroboration trong controlled decision model. Không suy từ setting khác biệt rằng các methods trước thất bại, và không xem kết quả zero unsafe được bảo đảm bởi topology là bằng chứng thuật toán mới.
 
-### 1.1 Research Question
+**Định vị so với prior art gần nhất (cập nhật v1.0).** VP-Control [VPC26] đã đo trong thiết kế 2×2 có matched budget rằng nguồn đối chứng độc lập về lineage giảm phê duyệt sai mạnh hơn nhiều so với đa dạng model dưới common-mode stale data, với preregistration, live study và artifact công khai. EFD [EFD26] chứng minh về mặt cấu trúc rằng thêm reviewer không sửa được một upstream chung. Vì vậy so sánh có kiểm soát ở RQ1 của bài này là **replication độc lập trong miền refund**, không phải phát hiện mới. Cả hai công trình đều giả định nhãn lineage **có sẵn và đúng**, và cùng nêu việc phát hiện hoặc kiểm chứng lineage là giới hạn. Bài này tập trung vào khoảng trống đó: metadata cần chất lượng đến đâu (RQ2), và metadata của tool thật trông như thế nào (RQ3).
 
-#### English canonical RQ
+### 1.1 Research Questions
 
-**RQ1. Given accurate failure-domain metadata, under targeted common-mode silent tool-output failures, does mandatory action-boundary verification that selects a provenance-independent corroborator reduce unsafe irreversible actions while maintaining clean-task correctness, compared with random-source verification at a matched K=2 tool-call budget?**
+#### RQ1 — controlled replication
+
+**RQ1. Given accurate failure-domain metadata, under targeted common-mode silent tool-output failures, does independent-domain corroboration reduce unsafe refund authorization decisions relative to random corroboration at a matched two-observation boundary budget, while preserving clean action-oracle correctness in a deterministic controlled workflow?**
 
 #### Giải thích tiếng Việt
 
-Khi runtime biết chính xác tool nào dùng chung failure domain, việc chọn một nguồn kiểm chứng thật sự độc lập có giảm hành động nguy hiểm hơn chọn ngẫu nhiên một tool khác tên hay không? Hai policy phải dùng đúng cùng hai evidence calls để lợi ích không đến từ việc treatment tốn nhiều tài nguyên hơn.
+Khi biết chính xác tool nào dùng chung failure domain, việc chọn nguồn đối chứng khác domain có giảm **quyết định cho phép refund sai** hơn chọn ngẫu nhiên một tool khác tên hay không? Hai policy dùng cùng hai modeled observations **khi có refund proposal**. Điều kiện clean được đánh giá bằng final action/amount so với oracle, không bằng state sau giao dịch.
+
+#### RQ2 — điều kiện về chất lượng nhãn (post-hoc, analytical)
+
+**RQ2. Under class-conditional failure-domain label errors, for which combinations of shared-dependency recall `r` and false-sharing rate `φ` does failure-domain-aware corroborator selection reduce, match, or increase the chance of selecting a shared-domain corroborator relative to random selection?**
+
+Khi metadata có thể bỏ sót phụ thuộc chung (recall `r` thấp) hoặc gán nhầm nguồn độc lập là chung (`φ` cao), chọn theo failure domain khi nào tốt hơn, bằng, hay tệ hơn chọn ngẫu nhiên? RQ2 được đặt **sau** khi có kết quả RQ1 và robustness gate; phân tích là post-hoc, không có episode mới.
+
+#### RQ3 — metadata thực tế (survey, protocol viết trước khi thu thập)
+
+**RQ3. Among open-source MCP servers that provide the same information type, how often do two servers share an upstream data provider, and how well does agent-visible metadata reveal that sharing?**
+
+Trong các MCP server cùng cung cấp một loại thông tin, bao nhiêu cặp thật sự lấy dữ liệu từ cùng một nhà cung cấp, và agent chỉ đọc tên cùng mô tả của tool có nhận ra điều đó không? Survey 1: protocol, kỳ vọng E1–E3 và amendment nằm tại [[synthesis/Protocol: Real-Tool Failure-Domain Metadata Survey]]. Survey 2 là bước kiểm định trên mẫu mới, với sáu dự đoán P1–P6 có quy tắc đánh giá ghi trước: [[synthesis/Protocol: Expanded Real-Tool Metadata Survey]].
 
 ### 1.2 Hypothesis
 
 #### H1 — English
 
-**Given accurate failure-domain metadata and a matched K=2 verification budget, provenance-independent corroboration reduces unsafe refunds relative to random-source corroboration under targeted common-mode silent failures, without a material reduction in clean final-state correctness.**
+**Given accurate failure-domain metadata and a matched two-observation boundary budget, independent-domain corroboration reduces unsafe refund authorization decisions relative to random corroboration under targeted common-mode silent failures, without a material reduction in clean action-oracle correctness.**
 
 #### Diễn giải
 
-Treatment được kỳ vọng tốt hơn đúng trong trường hợp shared-source corruption. Không dự đoán treatment tốt hơn dưới independent faults. Hypothesis cũng không áp dụng khi failure-domain metadata bị gán sai.
+H1 chỉ áp dụng cho RQ1. RQ2 không có hypothesis viết trước vì là phân tích post-hoc; RQ3 có ba kỳ vọng exploratory (E1–E3) cho survey 1, ghi trong protocol trước khi thu thập, và sáu dự đoán P1–P6 cho survey 2, mỗi dự đoán có quy tắc đạt/không đạt ghi trước khi tạo sampling frame.
+
+Treatment được kỳ vọng giảm số quyết định refund sai khi có shared-source corruption, đồng thời giữ quyết định đúng ở condition clean. Không dự đoán treatment tốt hơn dưới independent faults hoặc khi failure-domain metadata bị gán sai. Hypothesis không nói rằng gate phục hồi các task cần refund khi primary trả false denial.
 
 ### 1.3 Provisional contributions
 
-Các contribution sau chỉ được giữ nếu final audit và external-validity decision không làm thay đổi evidence:
+**INFERENCE — PROVISIONAL CONTRIBUTIONS (v1.0):** Bài là controlled characterization và descriptive survey cho môn học, không giới thiệu thuật toán agent mới.
 
-1. Một controlled fault model phân biệt independent và targeted common-mode schema-valid tool corruptions.
-2. Một matched-budget comparison giữa random tool-interface diversity và failure-domain-independent corroboration tại action boundary.
-3. Empirical characterization cho thấy safety gain với accurate metadata, cùng negative result rằng wrong metadata có thể phá gain.
-4. Một reproducible deterministic artifact với frozen tasks, raw episode logs, invariants và task-cluster bootstrap analysis.
+1. **Controlled replication (RQ1).** Đặc tả actor, topology, oracle và fault map để so sánh chọn ngẫu nhiên với chọn khác failure domain tại cùng hai modeled observations trên mỗi refund proposal. Kết quả nhất quán với VP-Control trong một miền khác, kèm conditional utility, negative control, wrong-metadata FAIL và counterfactual always-escalate. Đây là replication, không phải phát hiện đầu tiên.
+2. **Điều kiện chất lượng nhãn (RQ2).** Quy tắc `J = r − φ > 0` cho biết khi nào metadata failure-domain giúp, không giúp, hay gây hại, kèm chứng minh với công thức đóng dưới các giả định nêu rõ, và kiểm định có đăng ký trước trong mô phỏng (§5.11). Kèm theo là giải thích power cho robustness FAIL: tiêu chí đã khóa chỉ có khoảng 56% power ở 30 task.
+3. **Survey metadata thực tế (RQ3).** Hai survey MCP server mã nguồn mở (42 và 78 server) với sampling frame khóa trước, bằng chứng file kèm số dòng và commit được ghim; survey 2 kiểm định các phát hiện của survey 1 bằng dự đoán ghi trước, kể cả các dự đoán không đạt. Survey đo tỷ lệ dùng chung upstream, mức thiếu nhãn và độ chính xác của nhãn ở hai mức (bên vận hành và nguồn gốc dữ liệu), rồi chiếu lên mô hình selector. Theo hiểu biết của chúng tôi, VP-Control và EFD không đo các đại lượng này; đây là khác biệt về câu hỏi được đo, không phải claim rằng chưa ai làm.
+4. **Artifact tái lập được.** Frozen manifests, raw decision rows, các script phân tích chính xác được kiểm chứng với code, dữ liệu survey và nhật ký protocol kèm amendment.
 
-Không claim “first provenance-aware verifier”, “first agent guardrail” hoặc “first learned tool trust method”.
+Không claim "first provenance-aware verifier", thuật toán mới, superiority so với VP-Control, RIVA, ProvenanceGuard hay TEA-CXA, hay generalization sang mọi tool. Mức đóng góp có đủ cho môn học hay không cần giảng viên đánh giá.
 
 ## 2. Background and Problem Formulation
 
@@ -92,21 +151,21 @@ Fault injector chỉ thay đổi eligibility evidence. Canonical world state và
 
 ### 2.3 Action-boundary verification
 
-Ngay trước `issue_refund`, runtime thực hiện:
+Luồng quyết định được mô phỏng tại boundary trước `issue_refund`:
 
 ```text
-proposed irreversible action
+proposed refund decision
         ↓
 primary eligibility evidence
         +
 one corroborating evidence source
         ↓
 agree and authorize exact amount?
-   yes → allow action
-   no  → block and escalate
+   yes → authorize refund decision
+   no  → reject proposal and escalate
 ```
 
-Verification là mandatory runtime enforcement, không phụ thuộc agent tự nhớ phải kiểm tra. Quyết định cuối dùng deterministic rule; LLM không tự chấm độ đúng của evidence.
+Verification được áp dụng bắt buộc cho mỗi refund proposal trong simulation; không phụ thuộc actor tự nhớ phải kiểm tra. Quyết định cuối dùng deterministic rule; main runner không gọi LLM và không thực thi `issue_refund`.
 
 ### 2.4 Policies
 
@@ -114,45 +173,94 @@ Verification là mandatory runtime enforcement, không phụ thuộc agent tự 
 - `random_k`: primary cộng một random corroborator trong các interfaces còn lại.
 - `provenance_k`: primary cộng một corroborator thuộc failure domain khác theo metadata.
 
-Main comparison là `random_k` với `provenance_k`. Cả hai có `K=2`, cùng primary source và đúng một corroborator tại mỗi refund attempt.
+Main comparison là `random_k` với `provenance_k`. Cả hai có `K=2` modeled evidence observations, cùng primary và đúng một corroborator **khi actor đề xuất refund**. Khi primary báo ineligible, actor chọn escalation ngay và không gọi corroborator.
 
 ### 2.5 Outcomes
 
-Primary safety outcome là **unsafe refund**: refund được thực hiện khi expected action không phải refund hoặc amount khác canonical authorised amount. Clean-task utility được đo bằng final-state correctness. Secondary outcomes gồm false block, escalation, conflict, extra tool calls và expected decision loss.
+Main/robustness outcomes đo ở mức **quyết định (decision-level)**. Primary safety outcome là **unsafe refund decision**: final decision cho phép refund khi expected action không phải refund hoặc amount khác canonical authorised amount. **Action-oracle correctness** nghĩa là final action và amount khớp oracle; không có refund execution hoặc post-state check. Clean utility dùng metric này trên clean rows. Under faults, cần báo thêm tỷ lệ action đúng riêng cho những lượt expected-refund.
+
+Raw artifacts giữ nguyên field names lịch sử để có thể kiểm tra lại. Khi viết paper, chúng có nghĩa như sau:
+
+| Raw key | Tên/ý nghĩa dùng trong main và robustness | Giới hạn |
+|---|---|---|
+| `final_state_correct` | action-oracle correctness | So final action/amount với oracle; không đo state sau refund. |
+| `unsafe_refund` | unsafe refund decision | Chỉ là quyết định mô phỏng cho phép refund sai, không phải giao dịch đã thực thi. |
+| `false_block` | missed authorized refund / false escalation | Expected refund nhưng final decision không refund; gồm cả actor không tạo proposal và gate từ chối. |
+| `blocked` | gate rejection | Chỉ phát sinh khi có refund proposal; không đồng nghĩa mọi rejection là chặn nhầm. |
+| `evidence_call_count` | số modeled evidence observations | Không đo network requests, latency, token hay API cost. |
+
+Để phân biệt nguyên nhân của `false_block`, dùng `refund_attempted=false` cho **no-proposal abstention**; dùng `refund_attempted=true` cùng `blocked=true` cho **gate-induced missed refund**. Secondary adaptation và live-agent diagnostics có executors/oracles riêng; không tự động áp dụng mapping này cho mọi artifact có field tên tương tự. Other reported outcomes gồm escalation, conflict và sensitivity analysis của expected decision loss; chúng không chứng minh overhead thực tế.
 
 ## 3. Related Work
 
 ### 3.1 Tool failure detection và recovery
 
-Research về unreliable tools đã phân biệt transient/persistent failures, controlled fault injection, failure forecasting và recovery. Tuy nhiên, recovery-action routing nói chung đã có direct prior art và không phải contribution của paper này. [[references/robustness-inconsistent-incomplete-tool-responses]] cho thấy incomplete responses dễ nhận biết hơn schema-valid inconsistent responses, nhưng không chạy recovery policy hay correlated-failure experiment.
+Phát hiện lỗi và quyết định cho phép action là hai endpoints khác nhau. Xu et al. dùng likelihood và next-action distributions để phân tích incomplete/inconsistent returns khi chúng đi vào agent context [ROB26](https://arxiv.org/html/2608.22676v2). Evaluation đã đọc tập trung vào return-boundary signals, không comparison của failure-domain corroborator policies. Bài hiện tại không học predictor, diagnosis hoặc recovery router; các lane đó không được dùng làm novelty framing.
 
-### 3.2 Runtime verification và postconditions
+### 3.2 Runtime verification, authorization và realizability
 
-`Verified Tool Calls Improve LLM Agent Reliability Under Non-Atomic Failures` dùng postcondition verification, verify-before-retry và idempotency để giảm duplicate side effects [[references/verified-tool-calls-non-atomic-failures]]. `Reason Less, Verify More` dùng deterministic pre-write gates để ngăn silent policy violations [[references/reason-less-verify-more]]. Hai work xác lập giá trị của runtime verification, nhưng không giải quyết trường hợp verifier và agent cùng tin một corrupted read source.
+Mansoor et al. kết hợp postcondition verification, verify-before-retry và idempotency cho non-atomic failures; verifier accuracy/domain knowledge là giới hạn được thảo luận [VTC26](https://arxiv.org/html/2608.02645v1). Reddy et al. dùng deterministic pre-execution gates đọc operational state trong `tau2-bench` airline và đánh giá final-state outcomes [RLVM26](https://arxiv.org/html/2607.07405v2). Vì vậy runtime gates và verification trước retry đã có prior art. Các evaluations này không báo một matched source-selection comparison với injected shared-backend corruption. Đây là khác biệt về câu hỏi được đo, không chứng minh các gates đó không thể phát hiện lỗi hoặc sẽ thất bại khi được triển khai khác.
+
+AgentOS là adjacent prior art về typed pre-execution mediation và host-side world-effect evaluation [AGOS26](https://conf.researchr.org/details/ase-2026/ase-2026-tools-and-data-sets/45/Introducing-Safe-LLM-Agent-Execution-via-Typed-Tool-Mediation-and-World-Effect-Evalua). **Artifact-level contrast:** tại commit `4147c7f780ccb59b83f3dba8da5f19e73a1d1a8c`, [authorization policy](https://github.com/zhoujune/AgentOS/blob/4147c7f780ccb59b83f3dba8da5f19e73a1d1a8c/br2-external/board/agentos/x86_64/overlay/home/agent/vtrm/authorization_policy.py) phân quyền `auto`/`approval_required`/`deny`; [evaluation harness](https://github.com/zhoujune/AgentOS/blob/4147c7f780ccb59b83f3dba8da5f19e73a1d1a8c/judge/run_vtrm_eval.py) tách task predicates và world-integrity checks. Full paper chưa đọc được, artifact chưa chạy; code snapshot chưa được map với published experiments. Không suy absence của correlated-failure evaluation từ coverage này. Main simulation của chúng tôi không thực thi refund, nên không được gọi là world-effect evaluation.
+
+Althoubi nghiên cứu deterministic pre-action verification cho shell commands và code edits, nhắm tới khả năng thực hiện đúng cách (realizability), không tính đúng của ý định (semantic correctness) [LBYL26](https://arxiv.org/html/2609.11957v1), §2/§5. **INFERENCE:** một request có cấu trúc hợp lệ và được phép thực thi vẫn có thể biểu diễn refund sai nếu eligibility evidence sai. Study này chỉ characterize việc chọn corroborator cho decision đó trong controlled model; đổi modality không tự tạo novelty. Chúng tôi không dùng quantitative claims từ nguồn này để củng cố effect estimate; artifact availability và wording/results ambiguities vẫn được ghi trong [[references/look-before-you-leap-pre-action-verification]].
 
 ### 3.3 Cross-tool verification
 
-RIVA là prior art gần nhất. RIVA tạo ít nhất `K` diagnostic paths và cross-validate kết quả để phát hiện configuration drift khi observability tools có thể sai [[references/riva]]. Paper báo accuracy tăng từ `27.3%` với ReAct lên `50.0%` dưới erroneous tool responses. Tuy nhiên, RIVA dựa trên trực giác rằng independent tools khó cùng sai, không mô hình hóa shared failure domains. Kết quả `K=3` có thể collapse khi không đủ diagnostic paths cũng cho thấy thêm verification không tự động cải thiện reliability.
+RIVA là overlap gần nhất về cross-tool corroboration: Tool Call History yêu cầu distinct diagnostic paths trước kết luận, còn tool generator tìm góc kiểm tra khác [RIVA26](https://arxiv.org/html/2603.02345v1), §3. RIVA đã bàn independence và ví dụ alternate access paths; không nên mô tả nó như hệ thống chỉ đổi tên tool. Tuy nhiên §4.3–4.4 operationalize tool errors chủ yếu bằng empty telemetry returns, không explicit equivalence labels cho shared backends hoặc targeted identical wrong-value injection. `K=3` collapse trong môi trường thiếu paths (§5.3) là một giới hạn về diagnostic availability. Study hiện tại tách source-selection mechanism trong deterministic refund decision model; nó không reproduce RIVA hay so sánh performance với multi-agent system này.
 
 ### 3.4 Tool trust và uncertainty-aware selection
 
-TEA-CXA dùng reinforcement learning để học practical trustworthiness của medical tools theo query type; khi outputs conflict, agent học response nào nên tin [[references/tea-cxa]]. ProbeCal hiệu chỉnh expected effectiveness của tool-use prompts và execution traces. Do đó broad claim về dynamic/uncertainty-aware tool selection đã bị prior art phủ. Khác biệt của nghiên cứu hiện tại là explicit common-mode fault topology, no-training selector và matched action-safety comparison.
+TEA-CXA dùng GRPO và answer reward để học query-dependent expertise khi medical tool outputs conflict [TEA26](https://arxiv.org/html/2602.21517v1), §2. ProbeCal hiệu chỉnh tool-use prompt/trace selection [PC24](https://aclanthology.org/2024.findings-emnlp.978/). Chúng bác bỏ claim rộng rằng chưa có trust-aware hoặc uncertainty-aware selection. Query-dependent reliability không đồng nhất với failure-domain independence: biết tool thường đúng không bảo đảm hai tool ít cùng sai. Đây là phân biệt khái niệm; bài này chưa so sánh learned-trust selector với metadata selector và không claim no-training luôn hiệu quả hơn.
 
 ### 3.5 Provenance-aware agent verification
 
-`ProvenanceGuard: Source-Aware Factuality Verification for MCP-Based LLM Agents` kiểm tra claim có được đúng source hỗ trợ hay không, nhưng không chứng minh source đúng ngoài đời hoặc độc lập về failure mechanism [[references/provenanceguard-source-aware-factuality]]. `Safeguarding LLM Agents from Misalignment through Provenance Analysis` intercepts proposed tool calls và kiểm tra justification provenance từ query, tool documentation, history và plan [[references/provenanceguard-misalignment-provenance-analysis]]. Nó bảo vệ user-intent alignment, không bảo vệ truthfulness khi context/tool observation bị common-mode corruption.
+Hai ProvenanceGuard papers dùng những nghĩa khác nhau của provenance. Alvarez et al. kiểm tra answer claims và source attribution trên captured MCP traces [PGF26](https://arxiv.org/html/2606.18037v3), §III/§IV/§VIII. She et al. kiểm tra tool/parameter/interpretation grounding trước execution, dựa trên query, documentation, history và plan [PGA26](https://arxiv.org/html/2607.01236v2), §4/§5/§8. Cả hai là prior art trực tiếp chống claim “provenance verification/action gating là mới”. Attribution support hoặc contextual justification không phải chứng nhận external truth/failure independence. **INFERENCE:** nếu context cùng sai, một action có justification vẫn có thể sai so với canonical state; các experiments đã đọc không đo targeted failure-domain corroboration. Không viết thành theorem rằng hai systems chắc chắn thất bại.
 
-GRADE và AgentFlow cho thấy dependency structure có thể được biểu diễn, derive hoặc grade [[references/grade-agent-dependency-execution]] [[references/agentflow-agent-dependency-graphs]]. Vì vậy paper này giả định accurate failure-domain metadata thay vì claim giải quyết metadata discovery.
+GRADE grade dependency edges và kiểm tra predictive signal bằng attachment controls [GRADE26](https://arxiv.org/html/2606.22741v2). AgentFlow derive structural Agent Dependency Graphs bằng static analysis và over-approximate possible behavior [AF26](https://arxiv.org/html/2607.01640v1). Đây không phải ground truth cho runtime backend failure equivalence. Paper hiện tại giả định accurate domain labels và công khai sensitivity; không tự động discover/validate metadata.
 
 ### 3.6 Environmental evidence benchmarks
 
-EnvTrustBench báo agents thường đi theo false path khi files, logs, APIs hoặc command outputs bị stale, wrong hoặc malicious [[references/envtrustbench]]. Public aggregate data cho phép tái tính `3,206/3,850 = 83.27%`, nhưng release hiện không có executable cases/oracles/runners. Agent-SafetyBench và WorkBench artifacts trong ProvenanceGuard có traces và action labels, nhưng không có redundant evidence sources hay correlated-fault model [[journal/2026-09-15-external-validity-artifact-gate]].
+EnvTrustBench nghiên cứu environmental evidence-grounding defects và chấm false paths bằng task oracles [ENV26](https://arxiv.org/html/2605.08828v2). Tỷ lệ aggregate `3,206/3,850` là kết quả của release được tác giả công bố, không prevalence trong production hoặc effect estimate của policy này. [Official release](https://github.com/EnvTrustBench/EnvTrustBench) được kiểm tra lại ngày 2026-10-03 vẫn giới hạn ở public project/aggregate artifacts; không đủ để reproduce full cases/runners. Secondary của chúng tôi lấy task semantics từ ProvenanceGuard artifact, nhưng tự bổ sung P/S/I và fault maps; không native reproduction của Agent-SafetyBench/WorkBench [[journal/2026-09-15-external-validity-artifact-gate]].
+
+### 3.7 So sánh theo endpoint và evidence dependency
+
+Bảng này là literature comparison, **không head-to-head experiment**. “Không báo” chỉ có nghĩa không tìm thấy evaluation đó trong full text/version đã đọc; riêng AgentOS chỉ dùng inspected artifact, không đại diện toàn paper. `?` nghĩa coverage còn thiếu. Authorization, realizability và decision evidence là các lớp kiểm tra có thể bổ sung nhau, không bảng xếp hạng methods.
+
+| Work | Failure/problem model | Intervention và dependency evidence | Endpoint evaluation | Ranh giới so với study này |
+|---|---|---|---|---|
+| [RIVA26](https://arxiv.org/html/2603.02345v1) | Erroneous observability returns | Distinct diagnostic paths; independence intuition | Configuration-task success; steps/tokens | Không báo shared-backend labels/matched random-domain selector; chưa reproduce RIVA |
+| [RLVM26](https://arxiv.org/html/2607.07405v2) | Policy-permissive writes | Deterministic pre-write predicates trên operational state | Final-state task success; gate firing | Gating đã tồn tại; không báo correlated read-source selector evaluation |
+| [VTC26](https://arxiv.org/html/2608.02645v1) | Non-atomic execution/visibility | Postcondition checks, verify-before-retry, idempotency | Duplicate effects; task success | Postcondition verification đã tồn tại; không báo failure-domain corroboration |
+| [TEA26](https://arxiv.org/html/2602.21517v1) | Conflicting medical-model outputs | Learned query-dependent expertise | Answer/response-selection accuracy | Trust selection đã tồn tại; khác failure-domain equivalence, không superiority claim |
+| [PGF26](https://arxiv.org/html/2606.18037v3) | Claim–source conflation | Source routing, support/attribution verification | Claim/source labels; answer block/repair | Source identity không đồng nhất independence; khác decision oracle |
+| [PGA26](https://arxiv.org/html/2607.01236v2) | Misaligned tool/argument/interpretation | Context justification; pre-execution interception | Trace alignment/interventions; cost/latency | Action gating đã tồn tại; không báo correlated-backend fault experiment |
+| [AGOS26](https://conf.researchr.org/details/ase-2026/ase-2026-tools-and-data-sets/45/Introducing-Safe-LLM-Agent-Execution-via-Typed-Tool-Mediation-and-World-Effect-Evalua) | Secure tool execution | Typed mediation; auto/approval/deny trong pinned code | Task predicates và world-integrity checks trong harness | Artifact-level inspection only; `?` published correlated-fault coverage, không absence claim |
+| [LBYL26](https://arxiv.org/html/2609.11957v1) | Shell validity và edit misapplication | Deterministic pre-action checks; local content grounding | Realizability/silent misapplication, applicability | Không báo matched failure-domain selector comparison trong HTML đã đọc; khác semantic decision endpoint |
+| [VPC26](https://arxiv.org/abs/2609.10969) | Common-mode stale data trước commit | Nguồn đối chứng khác lineage; 2×2 model × nguồn; controller chọn plan | Unsafe commit, safe coverage; live HTTP/SQLite | **Đã đo trước phần so sánh của RQ1**, thiết kế mạnh hơn; lineage được cung cấp sẵn |
+| [EFD26](https://arxiv.org/abs/2609.02925) | Reviewer quorum chung upstream | Epistemic fault domains, structural cut; controller DAQC | Phân tích, mô phỏng, benchmark 120 task | Nêu rủi ro lineage thiếu hoặc bị làm giả; không đo metadata thật |
+| Study này | Constructed common-mode corruptions; nhãn failure-domain thiếu, sai, có hệ thống; metadata thật | Selector theo failure domain; phân tích chính xác; survey 42 MCP server | Action-oracle decisions; điều kiện `J`; ρ, m, r, φ | RQ1 là replication; RQ2 post-hoc chưa chứng minh; RQ3 AI-coded, mô tả |
+
+**INFERENCE — CONTRIBUTION BOUNDARY:** Independent corroboration, action gates và trust-aware selection đều có nền tảng rõ. Khác biệt thực nghiệm được đặc tả ở đây là fault/source-selection comparison và sensitivity trong một artifact hẹp. Không cộng nhiều “features chưa có” để suy ra novelty; external value/đóng góp môn học còn cần đánh giá độc lập.
+
+### 3.8 Lineage-aware verification và chất lượng metadata
+
+VP-Control [VPC26](https://arxiv.org/abs/2609.10969) là prior art trực tiếp nhất. Thiết kế 2×2 với hai call mỗi ô tách đa dạng model khỏi đa dạng nguồn bằng chứng; ở regime `common stale`, tỷ lệ phê duyệt sai là 91,5% khi cùng model và cùng nguồn, so với 9,8% khi cùng model nhưng khác nguồn. Công trình có preregistration, live study với HTTP/SQLite và artifact công khai. Như vậy so sánh của RQ1 đã có prior art với thiết kế mạnh hơn. EFD [EFD26](https://arxiv.org/abs/2609.02925) chứng minh rằng tăng số reviewer không cải thiện structural cut khi các reviewer chung upstream, và nêu rủi ro "false separation" khi lineage bị thiếu hoặc làm giả. **FACT — đọc văn bản PDF:** VP-Control ghi rõ "Lineage is supplied", và việc phát hiện lineage nằm ngoài phạm vi; chúng tôi không tìm thấy thí nghiệm nào làm nhiễu nhãn lineage. Bài này vì vậy đặt câu hỏi về chất lượng nhãn (RQ2) và nhãn trong tool thật (RQ3).
+
+Về hệ sinh thái tool thật, các measurement study về MCP cho thấy phần lớn MCP server chính thức bọc REST API sẵn có [MCPREST25](https://arxiv.org/abs/2507.16044) và marketplace có hiện tượng dependency monoculture [MCPMEAS25](https://arxiv.org/abs/2509.25292). Chúng tôi mới đọc phần tóm tắt của hai nghiên cứu này; chúng đo cấu trúc mã nguồn và phân phối, không đo việc các server cùng loại thông tin dùng chung nhà cung cấp dữ liệu hay việc metadata có tiết lộ điều đó không.
 
 ## 4. Methodology
 
 ### 4.1 Experimental environment
 
-Controlled experiment mở rộng deterministic support-desk environment từ `trajectory-judge` [[references/trajectory-judge]]. Environment có canonical customer, order, refund-policy và eligibility state. Redundant eligibility interfaces được ánh xạ vào `operational_db`, `analytics_replica` và `audit_ledger` failure domains.
+Controlled experiment lấy task instances và canonical eligibility/expected action từ deterministic support-desk environment `trajectory-judge` [[references/trajectory-judge]]. Environment có customer, order, refund-policy và eligibility state. Runner xây một modeled evidence map cho bốn interfaces: primary `check_eligibility` và `check_eligibility_search` cùng `operational_db`, còn `check_eligibility_analytics` và `check_eligibility_audit` thuộc hai failure domains khác. World được dùng để lấy canonical eligibility lúc load cases; main episode không gọi refund executor hoặc cập nhật World state.
+
+| Main interface | Failure domain | Output dưới main targeted fault |
+|---|---|---|
+| `check_eligibility` — primary | `operational_db` | Corrupted eligibility/amount |
+| `check_eligibility_search` | `operational_db` | Cùng corrupted value với primary |
+| `check_eligibility_analytics` | `analytics_replica` | Canonical truth theo fault model |
+| `check_eligibility_audit` | `audit_ledger` | Canonical truth theo fault model |
 
 Upstream `trajectory-judge` commit được ghi là `d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5`. Project artifact nằm tại `projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/`.
 
@@ -163,52 +271,78 @@ Upstream `trajectory-judge` commit được ghi là `d0ee54aadcaa69ea7368c2dcae7
 - Five seeds: `101`, `211`, `307`, `401`, `503`.
 - Three regimes: `clean`, `independent`, `targeted_common_mode`.
 - Three policies: `single_source`, `random_k`, `provenance_k`.
-- Total: `1,350` deterministic episodes.
+- Total: `1,350` deterministic decision rows, không phải 1.350 LLM trajectories hay independent tasks.
 
 Task manifest được tạo trước main harness, không trùng task IDs đã dùng ở pilots, với SHA-256 `a122dda63a40ab8db43d1af2a6a7019ca561c4c9e533db0e798fe9470e88cfa6`.
 
 ### 4.3 Ground truth
 
-Canonical environment state quyết định expected action và authorised refund amount. Fault map ghi corruption regime và affected failure domain. Evaluator chấm programmatically; không dùng LLM-as-a-judge hoặc agent self-report.
+Canonical environment state quyết định expected action và authorised refund amount. Fault map ghi corruption regime và affected failure domain. Một actor deterministic đọc **chỉ primary output**: nếu `eligible=true`, nó đề xuất refund với `amount=max_refund_eur` trong primary; nếu `eligible=false`, nó chọn escalation ngay. Với refund proposal, `random_k` hoặc `provenance_k` chọn một corroborator rồi deterministic gate so `eligible` và amount. Nếu hai observations khớp và cho phép exact amount, final decision là refund; ngược lại escalation. Evaluator so final action/amount với canonical oracle bằng code; không dùng LLM-as-a-judge hoặc agent self-report, và không kiểm tra trạng thái sau refund.
+
+Vì no-proposal rows chỉ đọc primary, matched `K=2` áp dụng tại refund boundary. Cùng một task × seed × regime chia sẻ primary observation và fault map giữa policies; selector quyết định corroborator nào được quan sát. Mỗi row là một quyết định mô phỏng; đơn vị task-cluster trong inference vẫn là 30 task instances.
 
 ### 4.4 Analysis
 
 Primary unit of inference là task. Năm seed episodes được cluster theo task. Paired difference giữa `provenance_k` và `random_k` được ước lượng bằng task-cluster bootstrap với 10,000 resamples; report point estimate và two-sided 95% confidence interval.
 
-Confirmatory gate yêu cầu:
+Internal pre-specified main-study gate yêu cầu:
 
 1. boundary coverage `1.000` và matched `K=2` invariants;
 2. common-mode unsafe-refund difference âm với upper 95% CI dưới zero;
-3. clean unsafe refund không tăng quá `0.02`;
-4. clean correctness không giảm quá margin `0.05`;
+3. clean unsafe refund **decision rate** không tăng quá `0.02`;
+4. clean action-oracle correctness difference theo **point estimate** không thấp hơn margin `−0.05`; đây là operational criterion, không phải formal non-inferiority test;
 5. safety benefit xuất hiện ở ít nhất hai difficulty strata.
 
 ### 4.5 Evidence chronology
 
-| Stage | Vai trò | Episodes | Có preregistered không? |
-|---|---|---:|---|
-| Exploratory pilot | kiểm tra mechanics và tìm baseline mạnh | 600 | Không |
-| 30-task next gate | characterization/noisy-metadata exploration | 3,600 | Một phần |
-| Full live-agent gate | kiểm tra agent compliance | 36 | Gate phụ |
-| Action-boundary mechanism gate | sửa vị trí enforcement | 108 | Exploratory |
-| Main deterministic study | primary confirmatory test | 1,350 | Có |
-| Imperfect-provenance robustness | post-main stress test | 3,750 | Protocol amendment trước run |
+Primary evidence là main study với internal protocol/task-manifest chronology ghi trước main run; robustness là post-main stress test theo amendment. Historical pilots dùng để chọn baseline và enforcement point, không gộp vào primary sample. Các internal journal/hash records **không** tương đương independent preregistration registry: initial Git snapshot chứa cả study lẫn results. Analytical/counterfactual diagnostics bổ sung sau reviewer audit là hậu nghiệm. Chronology đầy đủ và provenance của các revisions nằm ở [[projects/reliable-tool-using-ai-agents/paper/supplementary-appendix]].
 
-Không dùng exploratory thresholds như universal conclusions. Không trình bày post-main robustness analysis như primary confirmatory evidence.
+### 4.6 Post-hoc analytical và counterfactual diagnostics
+
+Sau reviewer audit 2026-10-03, chúng tôi dùng frozen raw, source topology, secondary contract và schedule để kiểm tra hai vấn đề: effect có thể suy ra đến mức nào từ mô hình, và zero unsafe có đạt được bằng một policy luôn escalation/block hay không. Analysis này là **hậu nghiệm (post-hoc)**, không thuộc primary confirmatory gate và không tạo thêm episode hoặc CI. `analyze_topology_diagnostics.py` kiểm tra sáu input hashes, matched primary/proposals và khớp kết quả tái tính với raw.
+
+Main always-escalate counterfactual chọn đúng một row cho mỗi `task_id × seed × regime` từ reference policy và chấm quyết định escalation với oracle sẵn có. Secondary always-block diagnostic ban đầu pooled cả hai policies; chúng tôi gộp theo `case_id × seed × regime` sau khi kiểm tra cùng proposal/fault map, rồi tính lại denominators. Các counterfactual này dùng để phân tích safety–utility, không thuộc matched `K=2` experiment; call/latency/human costs của chúng chưa được đo.
+
+### 4.7 Phân tích chính xác selector dưới nhãn không hoàn hảo (RQ2, post-hoc)
+
+**Nhiễu độc lập.** Với topology main (primary và một tool cùng `operational_db`, hai tool khác domain), mỗi tool có nhãn quan sát bị thiếu với xác suất `m` và sai với xác suất `w`, đúng như cơ chế của robustness gate. Liệt kê toàn bộ `4^4` trạng thái nhãn cho xác suất chính xác `provenance_k` chọn từng corroborator. Kết quả được kiểm tra với selector thật trong `run_robustness_gate.py` bằng Monte Carlo (40.000 lần rút mỗi cặp `(m, w)`) [`src/analyze_metadata_sweep.py`].
+
+**Lỗi nhãn có hệ thống.** Primary có `n` corroborator, `s` cái thật sự chung failure domain. Metadata là bộ phân loại "chung với primary": recall `r` (xác suất một tool chung được gắn đúng là chung; `1 − r` là phụ thuộc ẩn) và false-sharing `φ` (xác suất một tool độc lập bị gắn là chung). Selector chọn đều trong các tool gắn nhãn độc lập và fallback chọn đều trong cả `n` tool nếu không có. Xác suất chọn tool chung được tính chính xác theo phân phối nhị thức, kiểm tra với Monte Carlo độc lập, và quét `r, φ ∈ {0, 0.05, …, 1}` trên 5 topology `(n, s)` [`src/analyze_hidden_dependency.py`]. Dưới targeted fault, unsafe = P(chọn chung) + leakage × (1 − P(chọn chung)).
+
+**Power của robustness criterion.** Mô phỏng 300 study tổng hợp cho mỗi cỡ mẫu (30–120 task) bằng chính `run_episode` thật, với `π = 2/3` task escalation (đúng tỷ lệ `20/30` của tập robustness), 5 seed, điều kiện `wrong_25` và leakage 0.10; áp dụng tiêu chí gốc (task-cluster percentile bootstrap, upper 95% CI < 0) [`src/analyze_robustness_power.py`].
+
+Ba phân tích này được viết **sau** khi có kết quả; chúng không thêm episode, không gọi model, không đổi kết quả đã khóa.
+
+### 4.8 Survey metadata của MCP server thật (RQ3)
+
+Protocol [[synthesis/Protocol: Real-Tool Failure-Domain Metadata Survey]] được viết và tác giả xác nhận **trước** khi tạo sampling frame (nhưng sau khi đã biết kết quả của §4.7).
+
+- **Sampling frame:** với 7 nhóm thông tin (weather, currency exchange, stock quotes, crypto prices, geocoding, web search, news), truy vấn GitHub search cố định `"<từ khóa> mcp server"`, sắp theo số sao, lưu nguyên 30 kết quả đầu trước khi đọc code (SHA-256 `287d5f46…`). **Amendment A1**, quyết định trước khi đọc code: hai nhóm có dưới 30 kết quả (currency 3, geocoding 5) chạy đúng một truy vấn thay thế định trước.
+- **Sàng lọc:** xét theo thứ tự hạng, lấy 6 server đầu tiên đạt tiêu chí mỗi nhóm (repo công khai, triển khai Model Context Protocol thật, có tool trả loại thông tin đó, gọi API ngoài, có upstream mặc định). 54 repo được xét, 42 được chọn, 12 bị loại có lý do; một lỗi sàng lọc phát hiện khi gán nhãn đã được sửa công khai theo luật thứ tự hạng.
+- **Ground truth:** tổ chức vận hành hostname API mà tool gọi theo cấu hình mặc định, đọc từ code tại commit được ghim, kèm bằng chứng file và số dòng. Hai server "chung" nếu tập provider mặc định giao nhau.
+- **Metadata khai báo:** L1 là thứ agent thấy lúc chạy (tên server, tên và description của mọi tool, docstring khi dùng FastMCP); L2 là L1 cộng README. Chỉ tính provider được nêu **đích danh**. Nhãn cặp: cả hai có provider thì "chung" nếu trùng, "độc lập" nếu khác; một bên thiếu thì "missing".
+- **Đại lượng:** với 105 cặp cùng nhóm, ρ (tỷ lệ chung thật), m (tỷ lệ missing), `r`, `φ`, `J` trên các cặp có nhãn, báo số đếm thô; bootstrap theo server trong từng nhóm cho ρ gộp. Độ nhạy: bỏ server có provider đổi được; coi cặp SearXNG tự host là không chung. Phép chiếu lên mô hình §4.7 có tính cả tỷ lệ server có nhãn `k` [`src/analyze_tool_survey.py`].
+- **Người gán nhãn:** coder A là AI (Claude), gán nhãn toàn bộ; coder B (thành viên nhóm) gán nhãn độc lập 10 server chọn bằng hash để tính agreement. **Nhãn của coder B chưa nộp ở v1.0.**
+- **Độ nhạy theo nguồn gốc dữ liệu (post-hoc, ngoài protocol):** ánh xạ bên vận hành sang nguồn gốc khi có bằng chứng trong chính các repo (Nominatim và Photon sang OpenStreetMap; Frankfurter sang ECB; SearXNG sang tập engine mặc định) [`src/analyze_tool_survey_origin.py`].
+- **Survey 2 (kiểm định trên mẫu mới).** Protocol [[synthesis/Protocol: Expanded Real-Tool Metadata Survey]] được tác giả xác nhận trước khi tạo sampling frame. 12 nhóm (7 nhóm cũ cộng translation, ip_geolocation, movies, books, air_quality); truy vấn `"<từ khóa> mcp server"` lấy 50 kết quả, truy vấn dự phòng định trước khi dưới 30; loại mọi repo đã xét ở survey 1; 8 server đầu tiên đạt tiêu chí mỗi nhóm. 144 repo được xét (139 ban đầu và 5 khi sửa lỗi sàng lọc), 78 được chọn; nhóm dưới 4 server (geocoding 3, ip_geolocation 1) chỉ báo cáo riêng, nên ước lượng gộp dùng 74 server, 245 cặp. Phân tích mức nguồn gốc được **đăng ký trước** (chỉ bằng chứng trong repo). Sáu dự đoán P1–P6 có quy tắc đạt/không đạt (§5.12). Hai amendment, đều trước khi tính chỉ số: A1 làm rõ codebook từ bất đồng của survey 1; A2 ghi năm luật diễn giải phát sinh khi gán nhãn và chi tiết cài đặt phân tích. Bốn lỗi sàng lọc phát hiện khi đọc đường đi mặc định của code được sửa theo thứ tự hạng. Phân tích dùng lại nguyên các hàm của survey 1 [`src/analyze_tool_survey2.py`]. Coder A là AI; 20 server chọn bằng hash được giao cho người gán nhãn.
+
+### 4.9 Kiểm định có đăng ký trước cho điều kiện `J`
+
+Protocol [[synthesis/Protocol: Confirmatory Test of the Label-Quality Condition]] được tác giả xác nhận trước khi viết code. 60 task mới `INS-00120`–`INS-00179` (40 escalation), 5 seed mới, regime clean và targeted common-mode (leakage 0.10), 4 điều kiện nhãn (`J_plus`, `J_zero`, `J_minus`, `survey_calibrated`), 2 policy: 4.800 decision rows. Nhãn primary luôn đúng; mỗi corroborator có nhãn với xác suất `k` và gắn "chung" với xác suất `r` (tool chung) hoặc `φ` (tool độc lập). Phân tích task-cluster bootstrap 10.000 lần; H-J1 (harm ở `J_minus`) và H-J2 (benefit ở `J_plus`) là hypothesis chính. Amendment A1, trước khi chạy, sửa dự đoán của H-J4 sau khi test đơn vị phát hiện dự đoán dùng sai giả định về nhãn primary.
 
 ## 5. Results
 
-### 5.1 Exploratory findings
+### 5.1 Evidence scope
 
-Trong 600-episode pilot, `provenance_aware` giảm common-mode unsafe acceptance từ `0.34` của fixed-K xuống `0.00`, nhưng abstention tăng từ `0.00` lên `0.64`. So với random-K, difference chỉ `-0.06` với CI `[-0.12,0.00]`. Kết quả này làm random-K trở thành primary baseline và cho thấy phải đo safety–abstention trade-off.
-
-Full live-agent gate gồm 36 episodes không tạo valid comparative evidence: prompt-only self-verification compliance bằng zero, enforced verification coverage chỉ `50–67%`, và reply completion thấp. Negative result này dẫn tới mandatory action-boundary enforcement thay vì yêu cầu agent tự kiểm tra.
+Sections 5.2–5.4 báo main decision simulation và post-main metadata stress test. Section 5.6 là exploratory secondary executor adaptation, không native benchmark reproduction; §5.7 giữ negative live-agent validity result. Discovery pilots/debugging nằm trong supplementary appendix, không thêm independent observations cho main comparison. Sections 5.8–5.9 là phân tích giải tích post-hoc cho RQ2 và power, không thêm episode. Section 5.10 là survey mô tả cho RQ3 (42 MCP server, AI-coded), cộng một phân tích độ nhạy post-hoc.
 
 ### 5.2 Main deterministic study
 
-Tất cả 29 tests, static checks và experiment invariants pass. Reproduction rerun tạo cùng raw-data SHA-256 `a51aebcb207f996e7a4d065b2e424fe794346d685d5f37a615d0de6bcb872234`.
+Historical main-run record báo 29 tests, static checks và invariants pass; raw rerun khớp SHA-256 `a51aebcb207f996e7a4d065b2e424fe794346d685d5f37a615d0de6bcb872234`. Local reanalysis ở revision v0.5 ngày 2026-10-03 không chạy lại policy episodes. Audit v0.8 chỉ đối chiếu frozen counts/hashes và prose; không xem test count lịch sử như validation mới.
 
-| Regime | Policy | Final-state correctness | Unsafe refund | False block | Conflict |
+Mỗi row dưới đây là một quyết định mô phỏng; mỗi regime/policy có `n=150` rows. Các cột thứ ba đến thứ năm dùng **denominator 150**. `Missed authorized refund` giữ nguyên phép tính raw `false_block`, không có nghĩa tất cả đều do gate chặn.
+
+| Regime | Policy | Action-oracle correctness | Unsafe refund decision | Missed authorized refund | Conflict |
 |---|---|---:|---:|---:|---:|
 | `clean` | `random_k` | 1.000 | 0.000 | 0.000 | 0.000 |
 | `clean` | `provenance_k` | 1.000 | 0.000 | 0.000 | 0.000 |
@@ -217,25 +351,70 @@ Tất cả 29 tests, static checks và experiment invariants pass. Reproduction 
 | `targeted_common_mode` | `random_k` | 0.467 | 0.200 | 0.333 | 0.467 |
 | `targeted_common_mode` | `provenance_k` | 0.667 | 0.000 | 0.333 | 0.667 |
 
+Tách nguyên nhân của các missed authorized refunds bằng `refund_attempted` và `blocked` từ cùng frozen raw; cột cuối dùng **denominator 50 expected-refund rows**:
+
+| Regime | Policy | Refund proposals /150 | Correct expected-refund decisions /50 | Missed refunds: no proposal / gate rejection |
+|---|---|---:|---:|---:|
+| `clean` | `random_k` | 50 | 50 | 0 / 0 |
+| `clean` | `provenance_k` | 50 | 50 | 0 / 0 |
+| `independent` | `random_k` | 62 | 27 | 13 / 10 |
+| `independent` | `provenance_k` | 62 | 26 | 13 / 11 |
+| `targeted_common_mode` | `random_k` | 100 | 0 | 50 / 0 |
+| `targeted_common_mode` | `provenance_k` | 100 | 0 | 50 / 0 |
+
+`single_source` baseline cũng có trong raw: clean `150/150` correct và `0/150` unsafe; independent `112/150` correct và `25/150` unsafe; targeted `0/150` correct và `100/150` unsafe. Baseline này cho thấy tác dụng của verification nói chung; matched `random_k`–`provenance_k` comparison mới tách vai trò của lựa chọn failure domain.
+
 Trong targeted common-mode regime:
 
-- unsafe-refund difference `provenance_k − random_k = -0.200`;
+- unsafe refund decision-rate difference `provenance_k − random_k = -0.200` (`0/150` so với `30/150`);
 - 95% CI `[-0.273,-0.127]`;
 - safety benefit xuất hiện ở `4/6` difficulty strata.
 
-Clean correctness difference là `0.000`, CI `[0.000,0.000]`. Independent-fault negative control không cho thấy advantage: unsafe-refund difference `+0.0067`, CI `[-0.020,0.033]`.
+Clean action-oracle correctness difference là `0.000`, CI `[0.000,0.000]` trong frozen task set. Independent-fault negative control không cho thấy advantage: unsafe refund decision-rate difference `+0.0067`, CI `[-0.020,0.033]`. Các CI dùng task-cluster bootstrap, không phải CI cho mọi production agent. Dưới targeted faults, cả hai policies chỉ đúng `0/50` expected-refund decisions; `50/50` missed-refund rows ở mỗi policy xuất phát từ actor không đề xuất refund sau false denial của primary, **không phải gate chặn một proposal hợp lệ**.
 
-Main deterministic gate do đó `PASS` theo toàn bộ criteria đã ghi trước.
+Main deterministic gate do đó `PASS` theo internal pre-specified criteria. Gate pass không xác nhận novelty, population generalization hoặc successful transaction execution.
+
+![Main safety và conditional refund utility](figures/frozen-evidence-v1/main-safety-utility.svg)
+
+*Figure 1. Main decision-level safety phải đọc cùng conditional refund utility. Panel A dùng n=150 decisions; panel B dùng n=50 expected-refund rows mỗi policy/regime. Cột xám là always-escalate counterfactual hậu nghiệm, không measured baseline cùng K=2. Targeted zero unsafe của treatment đi cùng 0/50 correct expected-refund decisions; missed refunds do actor không tạo proposal. Bars là descriptive counts, không CI hoặc live-agent outcomes.*
 
 ### 5.3 Mechanism analysis
 
-Trong 100 targeted-common-mode refund attempts của random-K, policy chọn corroborator cùng `operational_db` 30 lần; cả `30/30` dẫn tới unsafe refund. Provenance-K chọn independent domain trong `100/100` attempts và phát conflict trong `100/100`.
+Trong 100 targeted-common-mode refund proposals của random-K, policy chọn corroborator cùng `operational_db` 30 lần; cả `30/30` dẫn tới unsafe refund **decisions**. Provenance-K chọn independent domain trong `100/100` proposals và phát conflict trong `100/100`. Đây là measurement trên simulated decision trace, không phải giao dịch refund được thực thi.
 
 Đây là evidence mạnh cho internal causal mechanism, nhưng cũng cho thấy effect được tạo trực tiếp bởi controlled topology. Task semantics đóng vai trò nhỏ hơn source-selection structure trong primary result.
 
+#### 5.3.1 Analytical expectation từ main topology
+
+**INFERENCE — POST-HOC ANALYTICAL CHECK:** Main task set có 20/30 tasks canonical escalation và 10/30 canonical refund; gọi tỷ phần escalation là `π=2/3`. Random-K chọn đều trong ba corroborators, trong đó một tool cùng `operational_db`, nên xác suất chọn same-domain là `q=1/3`. Targeted fault làm primary của canonical-escalation tasks báo eligible sai; corroborator cùng domain đồng ý sai, còn hai corroborators khác domain giữ truth. Do đó:
+
+$$
+\mathbb{E}[U_{random}]=\pi q=2/9\approx 0.2222,\qquad
+\mathbb{E}[U_{provenance}]=0.
+$$
+
+`U` dùng denominator là tất cả decision rows. Expected action correctness tương ứng là `π(1−q)=4/9` và `π=2/3`. Các expected-refund tasks bị primary báo ineligible nên actor escalation ngay; conditional correctness trên nhóm này bằng zero ở cả hai policies.
+
+Đây là expectation theo uniform selector model. Fixed-seed run quan sát same-domain selection `30/100=0.30` trên refund proposals, nên observed unsafe rate là `(100/150)×0.30=0.20`, và observed random correctness là `(100/150)×0.70=0.4667`. Chênh lệch với expectation `2/9` phản ánh finite selector realization. Kết quả provenance bằng zero trong main targeted condition được bảo đảm bởi assumption rằng independent corroborators giữ truth; experiment đặc tả mechanism và các giới hạn của assumption này.
+
+#### 5.3.2 Always-escalate counterfactual
+
+**INFERENCE — POST-HOC COUNTERFACTUAL:** Luôn chọn escalation cho cùng main scenarios cho các endpoints dưới đây. Hai policies đầu là observed rows; hàng always-escalate là phép chấm counterfactual với existing oracle, không phải baseline episode mới.
+
+| Regime | Policy / diagnostic | Unsafe decisions /150 | Action-oracle correctness /150 | Correct expected-refund decisions /50 |
+|---|---|---:|---:|---:|
+| clean | random_k — observed | 0 | 150 | 50 |
+| clean | provenance_k — observed | 0 | 150 | 50 |
+| clean | always-escalate — counterfactual | 0 | 100 | 0 |
+| targeted_common_mode | random_k — observed | 30 | 70 | 0 |
+| targeted_common_mode | provenance_k — observed | 0 | 100 | 0 |
+| targeted_common_mode | always-escalate — counterfactual | 0 | 100 | 0 |
+
+Dưới targeted faults, provenance và always-escalate có cùng safety/action-correctness endpoints. Lợi ích của provenance so với luôn escalation nằm ở việc vẫn cho phép clean refunds: `50/50` so với `0/50`. Đây là điểm cần nêu khi giải thích contribution; zero unsafe đơn lẻ chưa đủ chứng minh một policy hữu ích.
+
 ### 5.4 Imperfect-provenance robustness
 
-Post-main study dùng 30 tasks mới, năm seeds, four metadata conditions và cross-domain leakage `0–0.50`, tổng `3,750` episodes.
+Post-main study dùng 30 tasks mới, năm seeds, four metadata conditions và cross-domain leakage `0–0.50`, tổng `3,750` decision rows; không live-agent episodes.
 
 | Condition | Provenance unsafe | Random unsafe | Difference | 95% CI | Gate |
 |---|---:|---:|---:|---:|---|
@@ -243,33 +422,200 @@ Post-main study dùng 30 tasks mới, năm seeds, four metadata conditions và c
 | missing `.25`, leakage `.10` | .100 | .253 | -.153 | [-.227,-.087] | PASS |
 | wrong `.25`, leakage `.10` | .187 | .253 | -.067 | [-.133,.000] | **FAIL** |
 
-Overall robustness gate `FAIL` vì cả ba required conditions phải pass. Missing labels tạo uncertainty nhìn thấy được và cho phép fallback; wrong labels tạo false confidence. Vì vậy canonical RQ được thu hẹp thành `Given accurate failure-domain metadata`.
+Overall robustness gate `FAIL` vì cả ba required conditions phải pass. Trong condition tên `wrong .25`, `.25` là xác suất danh nghĩa gán sai label khi tạo fault map, không phải khẳng định đúng 25% labels quan sát được bị sai. Missing labels tạo uncertainty nhìn thấy được và cho phép fallback; wrong labels có thể tạo false confidence. CI chạm zero cho thấy advantage không được giữ chắc theo criterion đã đặt, không chứng minh effect bằng zero. Vì vậy RQ được thu hẹp thành `Given accurate failure-domain metadata`. **Cập nhật v1.0 (post-hoc, §5.9):** mô hình chính xác dự đoán chênh lệch khoảng `−0.088` cho điều kiện này, nằm trong CI quan sát, và tiêu chí đã khóa chỉ có khoảng 56% power ở 30 task. FAIL vẫn giữ nguyên; nó là bằng chứng yếu về việc lợi thế biến mất, không phải bằng chứng rằng lợi thế còn.
+
+![Main effects và imperfect-metadata stress conditions](figures/frozen-evidence-v1/effects-and-metadata.svg)
+
+*Figure 2. Chênh lệch unsafe decision rate (provenance − random) và stored 95% paired task-cluster bootstrap CIs, chuyển sang percentage points. Main và robustness dùng hai tập 30 tasks riêng; không pooled inference hoặc bootstrap mới. Chỉ ba protocol-required robustness conditions được vẽ, không toàn sensitivity grid. PASS/FAIL lấy từ stored criteria trước làm tròn. Clean [0,0] không population equivalence; wrong .25 là nominal label-noise probability, không realized fraction.*
 
 ### 5.5 External-validity artifact gate
 
-EnvTrustBench không public executable cases. ProvenanceGuard replication artifact setup thành công, load được 182 Agent-SafetyBench và 388 WorkBench traces, đồng thời chạy được ba analysis notebooks offline. Tuy nhiên các datasets không có failure-domain topology hoặc redundant corroborators. Hiện chưa có direct external validation.
+Artifact gate không tìm được direct-fit external benchmark: EnvTrustBench chưa public executable cases/runners; ProvenanceGuard cung cấp task semantics/traces nhưng không native failure-domain topology hoặc redundant corroborators. Vì vậy secondary là **benchmark-derived adaptation** với P/S/I và fault maps do project thêm, không external validation.
+
+Current analysis cohort gồm tám safety cases trên sáu domains và hai utility-only cases. `WB-295` là restoration diagnostic ngoài cả hai denominators; `ASB-267` không chạy (`INVALID_NOT_RUN`). Contract giữ status `1.2-recheck-candidate`, không human-reviewed freeze. Typed schema/oracle và smoke checks xác nhận adapter consistency, không semantic truth độc lập. AI-assisted revisions và lịch 704-row cũ giữ trong [[projects/reliable-tool-using-ai-agents/paper/supplementary-appendix]]; §5.6 dùng varied 1,056-row artifact, không gộp schedules thành mẫu độc lập.
+
+### 5.6 Secondary exploratory runtime matrix — không confirmatory
+
+Một replication exploratory mới giữ nguyên cohort/contract nhưng thay lịch chọn source và fault theo `case_id × seed × purpose`. Lịch 11 case × 12 seed × 4 regime × 2 policy có 1.056 rows/528 matched pairs và được khóa trước runtime (schedule SHA-256 `f630cb0a34276c23462d838eb23113ea2e4d6c4270958b292db25d26ce725469`). Ở `targeted_common_mode_25`, unsafe accepted actions là `59/96` (`random_k`) so với `24/96` (`provenance_k`). Mean paired rate difference trên tám safety cases là `−0.3646`, median `−0.375`, advantage mô tả ở `8/8` cases; từng case nằm trong khoảng `−0.250` đến `−0.417`. Case-cluster bootstrap percentile 95% CI là `[-0.396,-0.323]`, nhưng chỉ resample tám cases được chọn có chủ đích; hai domains có case lặp nên bootstrap theo case chưa mô hình hóa hết phụ thuộc trong domain. Đây không phải population-level inference. Utility-only false blocks là `9/24` (`random_k`) và `18/24` (`provenance_k`), trong khi utility task success là `15/24` và `6/24`. Clean safety/utility success là 100% cho cả hai. Ở targeted common-mode regimes, safety task success là `0/96` cho cả hai: gate block/allow nhưng không sửa proposal. Raw output được chạy hai lần byte-identical; ma trận cũ vẫn không đổi. Kết quả cho thấy schedule overlap từng phần giải thích khác biệt giữa cases, nhưng task cohort, fault topology, policy và oracle vẫn do project định nghĩa; contract còn candidate và không có human review. Vì vậy đây là sensitivity result nội bộ, không phải native benchmark reproduction, confirmatory result hay external validation [[journal/2026-09-28-secondary-varied-schedule-replication]].
+
+#### 5.6.1 Tái dựng effect từ quota và schedule overlap
+
+**INFERENCE — POST-HOC EXACT RECONSTRUCTION:** Trong secondary `targeted_common_mode_25`, P/S luôn nhận wrong evidence. Với mỗi safety case có 12 seeds, random policy chọn S đúng 6 seeds và I ở 6 seeds còn lại; I bị leakage đúng 3 seeds. Provenance luôn chọn I. Đây là quota schedule được hash theo case, không phải 12 independent random fault draws. Main random baseline chọn giữa ba corroborators (`q=1/3`), còn secondary chọn giữa S/I với tần suất `6/12`; hai designs không có cùng random-source exposure.
+
+Gọi `r_i` là số seeds vừa chọn S vừa có I leakage. Random unsafe count là `6+(3−r_i)=9−r_i`; provenance unsafe count là `3`. Per-case difference vì vậy là `(r_i−6)/12`:
+
+| Overlap r_i | Số safety cases | Random unsafe /12 | Provenance unsafe /12 | Difference |
+|---|---:|---:|---:|---:|
+| 1 | 4 | 8 | 3 | −5/12 |
+| 2 | 3 | 7 | 3 | −4/12 |
+| 3 | 1 | 6 | 3 | −3/12 |
+
+`Σr_i=13` tái dựng chính xác `59/96` và `24/96`, cùng difference `−35/96=−0.3646`. Cả tám case khớp raw. Như vậy variation của safety effect trong adaptation này được giải thích đầy đủ bởi schedule overlap và acceptance semantics đã định nghĩa; nó không cung cấp independent evidence rằng task semantics khác nhau tạo generalization. Artifact vẫn hữu ích cho semantic/executor consistency và utility diagnostics.
+
+#### 5.6.2 Always-block diagnostic với denominator đã chuẩn hóa
+
+**FACT — RECOMPUTED EXISTING DIAGNOSTIC:** Summary cũ đếm mỗi shared proposal hai lần, một lần cho mỗi policy: clean `264/264` và targeted clean proposals `48/48`. Sau khi gộp scenario keys, chúng là `132/132` và `24/24`. Tổng 132 gồm cả `WB-295` restoration diagnostic; comparison dưới đây chỉ dùng tám safety cases (`n=96`) và hai utility cases (`n=24`), giữ WB-295 ngoài hai denominators.
+
+| Regime | Policy / diagnostic | Safety unsafe accepted /96 | Utility false blocks /24 | Utility task success /24 |
+|---|---|---:|---:|---:|
+| clean | random_k — observed | 0 | 0 | 24 |
+| clean | provenance_k — observed | 0 | 0 | 24 |
+| clean | always-block — counterfactual | 0 | 24 | 0 |
+| targeted_common_mode_25 | random_k — observed | 59 | 9 | 15 |
+| targeted_common_mode_25 | provenance_k — observed | 24 | 18 | 6 |
+| targeted_common_mode_25 | always-block — counterfactual | 0 | 24 | 0 |
+
+Always-block tránh toàn bộ unsafe acceptance nhưng chặn cả 24/24 utility proposals đúng. Hai observed policies giữ clean safety task success `96/96`; always-block cho `0/96`. Under targeted faults, safety task success là `0/96` ở cả ba vì không có recovery. Provenance giảm unsafe acceptance so với random nhưng mất 9/24 utility completions; so với always-block, nó giữ thêm 6/24 utility completions đồng thời còn 24/96 unsafe acceptances. Các trade-offs này không cho phép kết luận policy nào tốt nhất nếu chưa định nghĩa severity, fault prevalence và human/call costs.
+
+### 5.7 Live-agent opportunity diagnostic — không có policy-effect estimate
+
+Prospective exploratory diagnostic Qwen2.5 7B/RTX 4060 gồm bốn tasks × hai regimes × hai enforced policies (`16` episodes). Strict stop rule ghi trước run yêu cầu matched targeted pair có cùng unsafe-capable refund proposal với amount dương trước successful escalation.
+
+Run kỹ thuật hoàn tất, nhưng targeted unsafe-capable cells là `0/8` và matched pairs `0/4`: **opportunity gate fail, dừng scaling**. Cả 16 final states đúng và zero accepted unsafe refunds không tạo treatment-effect estimate vì mọi refund attempts là `0 EUR` sau escalation. Boundary checks `6/6`, reply completion `8/16` và 99 escalation calls còn cho thấy state/process endpoints khác nhau. Negative result này giữ trong main paper; task/seed/config/Windows debugging và trace details nằm ở supplementary appendix và [[journal/2026-10-03-live-agent-opportunity-diagnostic]].
+
+### 5.8 RQ2 — Điều kiện chất lượng nhãn (post-hoc, analytical)
+
+**Nhiễu độc lập.** Công thức chính xác khớp selector thật với sai lệch tối đa `0.0036`. Trên toàn lưới (`m ≤ 0.5`, `w` đến `1 − m`, leakage 0–0.5), provenance **không bao giờ tệ hơn random**. Xác suất chọn nhầm tool cùng domain không đơn điệu theo `w`: ở leakage 0.10 và `m = 0`, nó là 0, 0.187, 0.307 và 0.208 tại `w` = 0, 0.25, 0.5 và 1.
+
+**Lỗi nhãn có hệ thống.** Trên 2.205 điểm lưới thuộc 5 topology, provenance chọn nhầm tool chung **ít hơn random khi và chỉ khi `r > φ`**, bằng random khi `r = φ`, và nhiều hơn khi `r < φ`; không có vi phạm (công thức khớp Monte Carlo độc lập, sai lệch ≤ 0.0018). Ví dụ với topology main và leakage 0.10, unsafe khi task cần escalation:
+
+| r | φ | J = r − φ | Provenance | Random |
+|---:|---:|---:|---:|---:|
+| 1.00 | 0.00 | 1.00 | 0.100 | 0.400 |
+| 0.50 | 0.00 | 0.50 | 0.250 | 0.400 |
+| 0.00 | 0.00 | 0.00 | 0.400 | 0.400 |
+| 0.25 | 0.50 | −0.25 | 0.512 | 0.400 |
+| 0.00 | 0.50 | −0.50 | 0.625 | 0.400 |
+
+**Chứng minh (v1.2).** Dưới các giả định nhãn primary đúng, nhãn corroborator độc lập và chỉ phụ thuộc lớp, và chọn đều có fallback đều, ta có công thức đóng $P(\text{chọn tool chung}) - s/n = -\tfrac{s(n-s)}{n}\,J\,\mathbb{E}[1/(1+K)]$, nên dấu của chênh lệch đúng bằng dấu của $-J$; nhãn thiếu chỉ thu nhỏ độ lớn, không đổi dấu. Chứng minh và các giới hạn nằm ở [[projects/reliable-tool-using-ai-agents/paper/proof-j-condition]]; công thức khớp phép liệt kê đến sai số $10^{-16}$. **Đính chính:** bản v1.0–v1.1 viết rằng mô hình nhiễu độc lập của robustness gate "luôn có `J > 0`". Định lý không áp dụng cho mô hình đó vì nhãn primary trong mô hình đó có thể sai; kết quả "không tệ hơn random" của mô hình đó chỉ được xác lập trên lưới đã liệt kê.
+
+### 5.9 Power của robustness criterion (post-hoc)
+
+| Số task | Power (upper 95% CI < 0) | Mean effect mô phỏng |
+|---:|---:|---:|
+| 30 | 0.56 | −0.089 |
+| 45 | 0.73 | −0.088 |
+| 60 | 0.83 | −0.087 |
+| 90 | 0.95 | −0.090 |
+| 120 | 0.98 | −0.087 |
+
+Mean effect mô phỏng khớp dự đoán giải tích độc lập. Xấp xỉ chuẩn với SD quan sát cho power 0.68 ở 30 task; nếu hiệu ứng thật chỉ bằng mức quan sát `−0.067`, power khoảng 0.45 và cần khoảng 70 task. **Kết luận `FAIL ROBUSTNESS` giữ nguyên.** Muốn kết luận, cần một robustness study mới khoảng 60 task với protocol khóa trước.
+
+### 5.10 RQ3 — Survey 1: metadata của 42 MCP server
+
+**Tỷ lệ dùng chung upstream (mức bên vận hành).** `17/105` cặp cùng nhóm dùng chung provider mặc định: ρ = 0.16, bootstrap theo server 95% `[0.075, 0.281]`.
+
+| Nhóm | Cặp chung /15 | ρ | Thiếu nhãn L1 (m) |
+|---|---:|---:|---:|
+| web_search | 7 | 0.47 | 0.33 |
+| news | 3 | 0.20 | 0.60 |
+| geocoding | 3 | 0.20 | 0.93 |
+| crypto_prices | 2 | 0.13 | 0.80 |
+| stock_quotes | 1 | 0.07 | 0.33 |
+| weather | 1 | 0.07 | 0.93 |
+| currency_exchange | 0 | 0.00 | 0.93 |
+| **Gộp** | **17/105** | **0.16** | **0.70** |
+
+**Chất lượng metadata (mức bên vận hành).** Ở L1, 70% cặp thiếu nhãn; trong các cặp có nhãn, `r = 8/8` và `φ = 0/24`. Ở L2, chỉ 5% thiếu; `r = 17/17`, `φ = 0/83`. Độ nhạy: bỏ server có provider đổi được cho ρ 0.16 và m 0.68; coi cặp SearXNG tự host là không chung cho ρ 0.15 và `φ = 0.04`.
+
+**Đối chiếu kỳ vọng ghi trước.** E1 (ít nhất hai nhóm có trên 20% cặp chung) **không đạt**: chỉ web_search vượt; news và geocoding đúng bằng 20%. E2 (L1 thiếu nhãn ở hơn nửa số cặp) đạt. E3 (`J > 0` ở các cặp có nhãn) đạt, nhưng mẫu số nhỏ.
+
+**Phép chiếu lên mô hình selector** (không phải đo agent; 20 primary có ít nhất một peer chung): xác suất chọn nhầm nguồn chung là 0.340 khi chọn ngẫu nhiên, 0.176 với metadata L1 hiện có (tỷ lệ server có nhãn `k = 0.55`), và 0.008 nếu thông tin mức README nằm trong description (`k = 0.98`).
+
+**Độ nhạy theo nguồn gốc dữ liệu (post-hoc).**
+
+| Mức đo | ρ | r (L2) | φ (L2) | Chọn nhầm L2: provenance vs random |
+|---|---:|---|---|---|
+| Bên vận hành (chính) | 0.16 | 1.00 (17/17) | 0.00 (0/83) | 0.008 vs 0.340 |
+| Nguồn gốc, đọc tên theo chữ | 0.27 | 0.61 (17/28) | 0.00 (0/72) | 0.406 vs 0.533 |
+| Nguồn gốc, biết ánh xạ | 0.27 | 1.00 (28/28) | 0.00 (0/72) | 0.292 vs 0.533 |
+
+Ở mức nguồn gốc, cả 15 cặp web_search đều chung ít nhất một engine (Google, DuckDuckGo hoặc Brave), nên ngay cả selector biết đủ ánh xạ cũng không tìm được nguồn độc lập. Quy tắc "giao tập khác rỗng thì là chung" phóng đại phụ thuộc của các aggregator nhiều engine; phụ thuộc chỉ được ghi ngoài repo không được thêm. Hai sai lệch này ngược chiều nhau.
+
+**Inter-rater agreement (cập nhật v1.3).** Coder B (con người) gán độc lập 10/42 server chọn bằng hash. Sau chuẩn hóa tên của cùng một tổ chức, đồng thuận về upstream là 0.80 (Cohen's κ 0.78), về L1 và L2 là 1.00; khớp nguyên chữ thấp hơn (0.40, 0.80, 0.40). Bảng chuẩn hóa được viết sau khi thấy dữ liệu, nên cả hai con số được báo cáo. Hai bất đồng về upstream đều do codebook chưa rõ (bên vận hành CDN so với chủ bộ dữ liệu; SearXNG tự host) và không làm đổi nhãn cặp nào ở phân tích chính.
+
+### 5.11 Kiểm định có đăng ký trước cho điều kiện `J`
+
+| Điều kiện | Provenance | Random | Chênh lệch | Dự đoán | 95% CI | Hypothesis |
+|---|---:|---:|---:|---:|---|---|
+| `J_plus` (J = +0.8) | 0.087 | 0.263 | −0.177 | −0.176 | [−0.233, −0.120] | H-J2 hỗ trợ |
+| `J_zero` (J = 0) | 0.320 | 0.257 | +0.063 | 0.000 | [+0.003, +0.127] | H-J3 không hỗ trợ |
+| `J_minus` (J = −0.5) | 0.423 | 0.290 | +0.133 | +0.160 | [+0.070, +0.200] | H-J1 hỗ trợ |
+| `survey_calibrated` | 0.173 | 0.267 | −0.093 | −0.091 | [−0.157, −0.033] | H-J4 hỗ trợ |
+
+Hai lần chạy byte-identical; regime clean có 0 unsafe. Ở `J_zero`, 90% CI `[+0.013, +0.117]` vượt biên ±0.08 nên tương đương không được xác nhận. Phân tích thăm dò cho thấy provenance chọn tool chung 79/200 lần so với kỳ vọng 1/3 (p = 0.064), phù hợp với biến thiên ngẫu nhiên; power của H-J3 (khoảng 59%) không được tính khi lập kế hoạch. Chúng tôi không diễn giải kết quả này là `J = 0` gây hại. Kết quả xác nhận dự đoán của RQ2 trong pipeline mô phỏng đầy đủ, trên task mới; nó không chứng minh điều gì về agent hay tool thật.
+
+### 5.12 RQ3 — Survey 2: kiểm định dự đoán trên 78 MCP server
+
+**Mức bên vận hành** (74 server, 10 nhóm, 245 cặp). `67/245` cặp dùng chung provider mặc định: ρ = 0.27, bootstrap theo server 95% `[0.179, 0.374]`. Theo nhóm: currency_exchange 0.64 (sáu server dùng Frankfurter), web_search 0.39, weather 0.36, movies 0.32, stock_quotes 0.25, crypto_prices 0.21, books 0.17, news 0.11, air_quality 0.07, translation 0.04. Hai nhóm báo cáo riêng không có cặp chung (geocoding 0/3; ip_geolocation không có cặp).
+
+**Chất lượng metadata.** L1: thiếu nhãn ở 71% cặp; weather và stock_quotes thiếu ở mọi cặp; trong các cặp có nhãn `r = 23/27 = 0.85`, `φ = 3/45 = 0.067`, `J = 0.79`. L2: `m = 0.22`, `r = 52/55`, `φ = 7/135`, `J = 0.89`. Độ nhạy: bỏ 16 server có provider đổi được (còn 58) cho ρ 0.29 và L1 `φ = 0.11`; coi cặp AMBIGUOUS là không chung không đổi kết quả. Phép chiếu (45 primary có peer chung): chọn nhầm 0.436 khi ngẫu nhiên, 0.289 với L1 (`k = 0.53`), 0.109 với L2 (`k = 0.88`).
+
+**Mức nguồn gốc (đăng ký trước).**
+
+| Mức đo | ρ | r (L2) | φ (L2) | J (L2) |
+|---|---:|---|---|---:|
+| Bên vận hành | 0.27 | 0.95 (52/55) | 0.05 (7/135) | 0.89 |
+| Nguồn gốc, đọc tên theo chữ | 0.31 | 0.83 (55/66) | 0.03 (4/124) | 0.80 |
+| Nguồn gốc, biết ánh xạ | 0.31 | 0.97 (64/66) | 0.02 (2/124) | 0.95 |
+
+Mức tăng tập trung ở web_search (0.39 lên 0.71), nơi các engine đứng sau thư viện `ddgs`, SearXNG và các router trùng nhau trong khi tên khai báo chỉ là lớp bọc ngoài (recall đọc tên theo chữ 11/20).
+
+**Đối chiếu dự đoán ghi trước.**
+
+| Dự đoán | Quy tắc | Kết quả |
+|---|---|---|
+| P1 | ρ gộp trong `[0.05, 0.30]` | 0.27, **đạt** (cận trên CI 0.37) |
+| P2 | `m_L1 > 0.50` | 0.71, **đạt** |
+| P3 | `φ_L1 ≤ 0.05` | 0.067 (3/45), **không đạt** |
+| P4 | `r_origin,L2 < r_operator,L2` | 0.83 < 0.95, **đạt** |
+| P5 | Ít nhất một nhóm có `ρ_origin ≥ 0.80` | cao nhất 0.71, **không đạt** |
+| P6 | `J_operator,L2 > 0` | 0.89, **đạt** |
+
+Ba cặp gán nhầm ở L1 đều do metadata nêu tầng khác bên vận hành: hai cặp là server của một nhà cung cấp dữ liệu crypto nêu CoinGecko làm nguồn giá; một cặp là hai server web search cùng nêu Brave Search, một bên chỉ là engine tùy chọn, bên kia là engine được định tuyến. Diễn giải này là post-hoc; P3 vẫn là không đạt. Với P5, mọi server web search đều chung engine với ít nhất một server khác, nhưng 8/28 cặp độc lập, nên phát hiện "không có nguồn độc lập" của survey 1 (6 server) không lặp lại.
+
+**Lỗi cài đặt phát hiện sau khi chạy.** Luật A2 dùng nguồn gốc khai báo của server **thay cho** provider vận hành, nên một server phim mất liên kết OMDb với hai server OMDb khác (movies giảm từ 0.32 xuống 0.25 ở mức nguồn gốc). Độ nhạy post-hoc dùng phép hợp cho ρ 0.32 và recall đọc tên theo chữ 0.84 (56/67); P4 và P5 không đổi.
+
+**So sánh với survey 1 (mô tả).** m_L1 gộp gần như bằng nhau (0.70 và 0.71). ρ theo nhóm biến động mạnh: currency 0.00 → 0.64, weather 0.07 → 0.36, web_search 0.47 → 0.39. Tỷ lệ dùng chung của một nhóm vì vậy phụ thuộc vào việc mẫu rơi vào những repo nào, và không nên được hiểu như một hằng số của nhóm.
+
+**Kiểm tra của con người.** Nhãn của người gán nhãn cho 20 server survey 2 chưa có; mọi số liệu §5.12 là AI-coded và chưa được con người kiểm chứng.
 
 ## 6. Discussion
 
-### 6.1 Trả lời RQ trong phạm vi controlled study
+### 6.1 Trả lời các RQ
 
-Với accurate failure-domain metadata và targeted common-mode silent failures, mandatory provenance-independent `K=2` verification giảm unsafe irreversible actions so với random-source `K=2` verification mà không làm giảm clean correctness trong benchmark hiện tại. Kết quả không cho thấy advantage dưới independent faults, phù hợp hypothesis đã scoped.
+**RQ1 (replication).** Với accurate failure-domain metadata và targeted common-mode silent failures, chọn corroborator khác failure domain giảm **unsafe refund authorization decisions** từ `30/150` xuống `0/150` so với chọn ngẫu nhiên, tại cùng hai modeled observations trên mỗi refund proposal; clean action-oracle correctness đều `150/150`. Đây là **containment** của quyết định sai: cả hai policy đều đúng `0/50` expected-refund decisions dưới targeted faults. Kết quả phần lớn được suy ra từ topology (§5.3.1) và nhất quán với VP-Control trong một miền khác; nó không phải bằng chứng độc lập mạnh hơn VP-Control.
+
+**RQ2 (điều kiện).** Trong mô hình đã phân tích, metadata failure-domain có ích khi và chỉ khi nó phát hiện phụ thuộc chung tốt hơn mức gán nhầm (`J > 0`), và có thể **gây hại** khi `J < 0`. Kiểm định đăng ký trước (§5.11) xác nhận cả hai chiều trong mô phỏng: `J = −0.5` tăng tỷ lệ quyết định sai `+0.133` so với chọn ngẫu nhiên. Trên lưới đã liệt kê, nhiễu độc lập kiểu robustness gate không làm provenance tệ hơn random (định lý không bao phủ mô hình này vì nhãn primary có thể sai), nên robustness FAIL phù hợp với thiếu power (§5.9) hơn là với tác hại của metadata sai.
+
+**RQ3 (thực tế).** Qua hai mẫu MCP server (42 và 78), dùng chung upstream có thật ở mức đáng kể (16% và 27% cặp ở mức bên vận hành) và thay đổi mạnh theo nhóm. Phát hiện lặp lại vững nhất là metadata agent thấy **thiếu** ở khoảng 70% cặp. Khi có nhãn, metadata phần lớn đúng (`J` từ 0.79 đến 1.00 tùy mức và survey), nhưng không hoàn hảo: survey 2 có `φ_L1 = 3/45`, chủ yếu vì metadata nêu nguồn dữ liệu thay vì bên vận hành. Tên bên vận hành bỏ sót phụ thuộc ở mức nguồn gốc (survey 1 post-hoc `r ≈ 0.6`; survey 2 đăng ký trước `0.83` so với `0.95`). Web search có mức chung nguồn gốc cao nhất (1.00 ở survey 1, 0.71 ở survey 2) nhưng survey 2 cho thấy vẫn có nguồn độc lập.
 
 ### 6.2 Tại sao kết quả không có nghĩa “provenance luôn tốt hơn”?
 
-Provenance chỉ giúp khi:
+Main safety advantage phụ thuộc vào:
 
 - tools có shared failure domains;
 - metadata mô tả đúng topology;
 - có independent corroborator khả dụng;
-- unsafe acceptance đắt hơn abstention/escalation;
 - runtime thật sự enforce verification trước side effect.
 
-Nếu metadata sai, selector có thể tự tin chọn same-domain source. Nếu independent source cũng bị leakage, conflict signal suy yếu. Nếu escalation rất đắt, conservative blocking có thể làm expected utility xấu hơn.
+Nếu metadata sai, selector có thể tự tin chọn same-domain source. Nếu independent source cũng bị leakage, conflict signal suy yếu. Utility còn phụ thuộc cách đánh đổi unsafe acceptance với missed completion, như always-block diagnostic ở §5.6.2.
+
+**INFERENCE — POST-HOC LOSS SENSITIVITY:** Với proxy loss đã dùng trong main analyzer `L=U+λM`, `U` là unsafe decision rate và `M` là missed authorized refund rate trên tất cả rows. Clean: random/provenance có `L=0`, always-escalate có `L=λ/3`. Targeted: provenance và always-escalate đều có `L=λ/3`; random có `L=0.20+λ/3`. Vì vậy lợi ích targeted của provenance so với random không có nghĩa nó vượt policy luôn escalation trên proxy loss này.
+
+Dưới independent faults, random có `L=(6+23λ)/150`, provenance có `L=(7+24λ)/150`, always-escalate có `L=50λ/150`. Point-estimate break-even thresholds lần lượt là `λ=6/27≈0.2222` và `λ=7/26≈0.2692`; observed policy chỉ có proxy loss thấp hơn always-escalate khi λ vượt threshold tương ứng. Đây là phép tính trên frozen counts, không threshold đã đăng ký trước, CI hay economic estimate. Proxy không tính chi phí của correct escalation, human workload, latency, hoặc calls; số λ không có domain-grounded cost justification. Không dùng nó để claim overall optimality hoặc cost effectiveness.
 
 ### 6.3 Ý nghĩa Software Engineering
 
 Kết quả gợi ý tool registry không chỉ nên chứa name, description và JSON schema. Một reliability-aware registry có thể cần backend identity, caching layer, replica group, update path hoặc evidence lineage. Tuy nhiên nghiên cứu này chưa giải quyết cách derive hoặc maintain metadata đó. GRADE và AgentFlow cho thấy dependency recovery là một research area riêng, không phải chi tiết triển khai nhỏ.
+
+### 6.4 Hàm ý: metadata thiếu và nguồn độc lập không sẵn có
+
+**INFERENCE.** Ghép RQ2 và RQ3 cho ba hàm ý, đều cần kiểm chứng thêm:
+
+1. **Nút thắt thực tế là metadata thiếu, nhiều hơn là metadata sai.** Ở cả hai survey, khi tên provider xuất hiện thì nó phần lớn đúng (`J > 0`), nên metadata không gây hại theo quy tắc `J`; nhưng khoảng 70% cặp thiếu nhãn khiến selector phải fallback ngẫu nhiên. Phép chiếu cho thấy đưa tên provider từ README vào description của tool giảm xác suất chọn nhầm từ 0.176 xuống 0.008 (survey 1) và từ 0.289 xuống 0.109 (survey 2) trong mô hình. Đây là đề xuất thực hành rẻ và kiểm chứng được cho người viết MCP server và tool registry.
+2. **Tên bên vận hành không đủ.** Ở mức nguồn dữ liệu gốc, tên provider bỏ sót khoảng 40% phụ thuộc (Photon và Nominatim cùng dữ liệu OpenStreetMap; Frankfurter phân phối dữ liệu ECB). Một registry đáng tin cậy cần công bố cả nguồn gốc dữ liệu, không chỉ tên API.
+3. **Nguồn độc lập có thể khan hiếm.** Ở web search, survey 1 không có cặp nào độc lập về nguồn gốc; survey 2 có 8/28 cặp độc lập, nhưng mọi server đều chung engine với ít nhất một server khác. Khi nguồn độc lập hiếm, metadata tốt cũng chỉ giúp được một phần. Agent cần nhận ra khi không tồn tại nguồn độc lập và chuyển sang escalation hoặc kiểm chứng kiểu khác, thay vì coi sự đồng thuận của hai tool là bằng chứng mạnh. Điều này khớp với giới hạn về diagnostic availability của RIVA ở `K = 3`.
 
 ## 7. Threats to Validity
 
@@ -277,74 +623,126 @@ Kết quả gợi ý tool registry không chỉ nên chứa name, description v�
 
 `failure_domain_id` là abstraction do benchmark định nghĩa. Nó không biểu diễn đầy đủ partial dependence, time-varying dependencies, probabilistic correlation hoặc cascading failures ngoài thực tế.
 
-Unsafe refund và final-state correctness là metrics rõ nhưng domain-specific. Chúng không tự động đại diện cho harm severity ở email, infrastructure, healthcare hoặc coding agents.
+Trong main/robustness, raw `final_state_correct` chỉ so action/amount với oracle, còn `unsafe_refund` đánh dấu quyết định refund sai; runner không thực thi refund hoặc đo state change/harm. Raw `false_block` gộp actor không tạo proposal với gate rejection. Diễn giải gate-induced false blocking đòi hỏi phân tách `refund_attempted` và `blocked` như §5.2. Các decision-level metrics này cũng không tự động đại diện cho harm severity ở email, infrastructure, healthcare hoặc coding agents.
 
 ### 7.2 Internal validity
 
-Matched `K=2`, paired fault maps và deterministic oracle giảm confounding. Tuy nhiên random-K thất bại chính xác khi chọn same-domain source, nên effect có thể được coi là direct consequence của constructed topology. Đây là intended mechanism test, không phải natural prevalence estimate.
+Matched `K=2` trên refund proposals, paired fault maps và deterministic oracle giảm confounding. Tuy nhiên random-K thất bại chính xác khi chọn same-domain source, còn provenance-K luôn có true independent corroborator trong main targeted model; effect phần lớn là direct consequence của constructed topology. Actor cũng luôn abstain khi primary báo ineligible, nên cả hai policies bỏ lỡ những valid refunds bị false denial. Đây là intended mechanism test, không phải natural prevalence estimate.
+
+Secondary unsafe counts cũng được tái dựng chính xác từ `6/12` same-domain selections, `3/12` leakage và overlap (§5.6.1). Nhiều domain hoặc bootstrap CI của adaptation không loại bỏ sự phụ thuộc này. Always-escalate/block comparisons là counterfactual diagnostics bổ sung sau results, ngoài matched-budget experiment; chúng chỉ phân tích existing oracle/proposals và không tạo thêm independent observations.
 
 ### 7.3 External validity
 
-Main tasks cùng xuất phát từ một synthetic support workflow. Full live-agent gate fail experimental validity. EnvTrustBench chưa executable, còn Agent-SafetyBench/WorkBench không có native correlated-failure design. Kết quả chưa generalize sang production agents, models hoặc tools.
+Main tasks cùng xuất phát từ một synthetic support workflow. Full live-agent gate fail experimental validity; diagnostic 16 cells trên Qwen2.5 7B cũng không đạt pre-specified opportunity gate (`0/4` matched unsafe-capable pairs), nên **không có live-agent policy-effect estimate**. Runner chỉ inject faulty eligibility tại action boundary, còn agent có thể đọc canonical order/policy facts trước đó; do vậy study không kiểm tra lỗi tool làm agent đổi quyết định. EnvTrustBench chưa executable, còn Agent-SafetyBench/WorkBench không có native correlated-failure design. Secondary audit/adaptation đã bổ sung task semantics ngoài refund workflow, nhưng source topology vẫn synthetic và safety-count variation được tái dựng từ schedule; đây không independent topology evidence. Kết quả chưa generalize sang production agents, models hoặc tools.
 
 ### 7.4 Metadata validity
 
-Main claim giả định accurate failure-domain metadata. Robustness experiment bác bỏ broad claim với arbitrary imperfect metadata. Nghiên cứu không cung cấp metadata discovery/calibration method.
+Main claim giả định accurate failure-domain metadata. Robustness experiment không hỗ trợ broad claim rằng advantage được giữ với arbitrary imperfect metadata; CI chạm zero ở một required wrong-label condition. Nghiên cứu không cung cấp metadata discovery/calibration method. **Cập nhật v1.0:** §5.8–5.10 bổ sung điều kiện `J` và bằng chứng mô tả về metadata thật; chúng không thay thế một phương pháp discovery hay calibration metadata.
 
 ### 7.5 Statistical conclusion validity
 
-Bootstrap cluster theo 30 tasks, không theo 150 episodes độc lập, để tránh pseudo-replication từ five seeds. Tuy vậy 30 tasks và six strata vẫn nhỏ; CI không phải proof of practical generalization hoặc novelty.
+Bootstrap cluster theo 30 tasks, không theo 150 rows độc lập, để tránh pseudo-replication từ five seeds. Tuy vậy 30 tasks và six strata vẫn nhỏ; CI mô tả uncertainty trên fixed task-generating setup, không phải proof of practical generalization hoặc novelty. Clean CI `[0,0]` cũng không chứng minh equality trên population khác. Clean-margin gate kiểm tra point estimate, không phải formal non-inferiority test.
+
+### 7.6 Secondary case-review provenance and protocol deviation
+
+Hai vòng secondary case review do một AI khác hỗ trợ theo yêu cầu của một researcher duy nhất; **không có independent human reviewer hoặc peer review**. Các verdict có trích dẫn code/trace giúp phát hiện lỗi thiết kế, nhưng không thể tự xác nhận semantic correctness. Amendment [[synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix]] công khai deviation và hạ run xuống exploratory/internal; amendment không thay thế human review. Không dùng kết quả này như confirmatory hoặc external-validation evidence. Cần human audit độc lập trước khi đưa claim mạnh hơn. [[journal/2026-09-20-ai-review-provenance-correction]]
+
+### 7.7 Threats riêng cho RQ2 và RQ3
+
+- **Post-hoc và thứ tự thời gian.** RQ2 và RQ3 được đặt sau khi biết kết quả RQ1; phân tích RQ2 và độ nhạy theo nguồn gốc là post-hoc. Protocol RQ3 viết trước khi thu thập nhưng sau khi biết quy tắc `J`; không phải preregistration độc lập.
+- **Phạm vi của chứng minh.** Quy tắc `J` được chứng minh dưới giả định nhãn primary đúng, nhãn corroborator độc lập và chỉ phụ thuộc lớp, chọn đều một corroborator. Nhãn tương quan giữa các tool, nhãn primary sai và chọn nhiều corroborator chưa được bao phủ; chứng minh chưa được người độc lập kiểm tra.
+- **Gán nhãn bởi AI.** Toàn bộ hai survey do AI gán nhãn; con người kiểm tra 10 server của survey 1 (§5.10), với đồng thuận cao sau chuẩn hóa tên nhưng thấp hơn khi khớp nguyên chữ; nhãn người cho 20 server của survey 2 chưa có. Các lỗi đã được phát hiện và sửa công khai (năm lỗi sàng lọc qua hai survey, một lỗi trong phép chiếu, một lỗi cài đặt mức nguồn gốc ở survey 2); có thể còn lỗi khác. Năm luật diễn giải của survey 2 do coder A đặt khi gán nhãn, ghi trước khi tính chỉ số nhưng sau khi đọc code.
+- **Construct của "dùng chung".** Ground truth ở mức bên vận hành là cận dưới cho phụ thuộc thật; mức nguồn gốc chỉ dùng bằng chứng trong repo. Quy tắc giao tập phóng đại phụ thuộc của aggregator. Hai server SearXNG tự host được gắn nhãn cùng provider dù có thể là hai instance khác nhau.
+- **Mẫu.** Repo GitHub phổ biến (sắp theo sao), chỉ hệ sinh thái MCP; survey 1 có 42 server, 7 nhóm, 105 cặp; survey 2 có 74 server trong ước lượng, 10 nhóm, 245 cặp. Các cặp không độc lập vì mỗi server nằm trong nhiều cặp; mẫu số của `r` ở L1 nhỏ (8 và 27). ρ theo nhóm khác xa giữa hai mẫu, nên ước lượng theo nhóm có độ bất định lớn hơn khoảng tin cậy gợi ý. Survey 2 không thực hiện phân tích phụ dùng tài liệu chính thức của provider.
+- **Phép chiếu không phải đo agent.** Các xác suất chọn nhầm ở §5.10 đến từ mô hình selector, không từ hành vi agent thật.
 
 ## 8. Reproducibility
 
-Core experiment không cần model training, GPU hoặc paid API. Main và robustness runs chạy deterministic trên CPU. Artifact lưu:
+Core main/robustness decision studies chạy CPU/offline, không model training hoặc API. [[projects/reliable-tool-using-ai-agents/paper/reproducibility-package]] mô tả upstream pins, dependency/read scope, safe CLI commands và expected outputs; `paper/artifact-inventory.json` khóa SHA-256 của 21 selected artifacts. Inventory không là complete dependency lock hoặc public release freeze.
 
-- frozen task manifests và hashes;
-- raw per-episode JSONL;
-- run manifests;
-- policy/fault metadata;
-- automated invariant tests;
-- analysis scripts và bootstrap outputs.
+Hai hình Results là derived artifacts, tách khỏi inventory 21 frozen experimental inputs. `src/generate_paper_figures.py` kiểm năm input hashes, đối chiếu raw point estimates với stored inference, rồi tạo SVG và figure-data.json vào directory mới; không recompute bootstrap. [[projects/reliable-tool-using-ai-agents/paper/figure-guide]] giải thích mẫu số, counterfactual và scientific limits. Lượt dựng hình đạt 9 figure tests, 7 main và 8 robustness focused tests (24/24); đây không phải full-suite rerun hoặc thêm study episodes.
 
-Các artifact paths và current status được theo dõi tại [[synthesis/Protocol: Action-Boundary Provenance Verification Main Study]], [[journal/2026-09-15-action-boundary-main-study]] và [[journal/2026-09-15-imperfect-provenance-robustness-gate]].
+Revision v0.5 ngày 2026-10-03 tái phân tích frozen main, robustness, secondary và topology artifacts bằng Python 3.12.3 trong thư mục tạm mới. Tám selected output files khớp byte-for-byte với stored summaries/inferences/decisions; không chạy policy episodes hoặc model calls mới. Audit v0.8 kiểm counts/hashes và sự nhất quán tài liệu, không chạy lại các analyzers/bootstrap hoặc fresh-machine generation. Historical generation reruns được giữ với chronology riêng. CLI dùng explicit output mới vì một số runners/analyzers có thể overwrite defaults.
+
+**FACT — SAME-HOST CLEAN-VENV REPRODUCTION, 2026-10-04 / v0.9:** Clone mới `trajectory-judge` ở pinned commit, tạo Python 3.12.3 venv không system/user site-packages và cài inspected upstream base package. Chạy lại main/robustness generators với frozen tasks/seeds vào output mới, rồi chạy analyzers: 10/10 selected files (mỗi study: raw, run manifest, summary, inference, decision) byte-identical. Main vẫn PASS và robustness vẫn FAIL ROBUSTNESS; 15 focused tests đạt (7 main + 8 robustness), không full suite. Đây là replay 1,350/3,750 decisions, không thêm samples hoặc CI estimates độc lập. Runtime package versions được ghi, nhưng không wheel/build-environment lock. [[journal/2026-10-04-clean-environment-core-reproduction]] lưu setup, hashes và interpretation.
+
+Package còn **CANDIDATE**: current working tree chưa commit, secondary/full dependency closure và licensing notices còn cần kiểm trước public redistribution. Core base installation/generation đã chạy trong venv mới trên cùng host; chưa fresh-machine/independent reproduction hoặc Windows check. ProvenanceGuard attribution và historical WorkBench license evidence được phân biệt trong package; không tự gán license chung. Các giới hạn release này không thay measured outcomes hoặc làm replay thành external validation.
 
 ## 9. Conclusion — PROVISIONAL
 
-Controlled evidence cho thấy gọi hai tool khác tên không bảo đảm hai pieces of evidence độc lập. Khi common-mode silent corruption tác động các interfaces cùng failure domain, random cross-check có thể củng cố một kết luận sai. Chọn corroborator từ independent failure domain tại mandatory action boundary loại bỏ unsafe refunds trong main controlled setting, với cùng `K=2` và không giảm clean correctness. Tuy nhiên advantage phụ thuộc mạnh vào metadata correctness và chưa được xác nhận trên external executable benchmark. Kết luận phù hợp hiện tại là một scoped empirical result, không phải một production-ready solution hoặc confirmed novelty claim.
+Hai tool khác tên có thể đồng thuận trên cùng một output sai khi chúng chung failure domain. Trong mô phỏng quyết định refund có kiểm soát, chọn corroborator khác failure domain giảm unsafe decisions từ `30/150` xuống `0/150` khi metadata chính xác. Kết quả này nhất quán với VP-Control và được trình bày như một replication, không phải phát hiện mới; nó cũng chỉ là containment, không phục hồi các refund bị từ chối sai.
 
-## References — working list
+Đóng góp chính nằm ở chất lượng metadata. Về mặt giải tích, metadata failure-domain có ích khi và chỉ khi recall phụ thuộc chung vượt tỷ lệ gán nhầm (`J > 0`), và có thể gây hại khi ngược lại; điều này được chứng minh dưới các giả định nêu rõ và được kiểm định có đăng ký trước trong mô phỏng. Về mặt thực tế, hai survey MCP server (42 và 78 server) cho thấy dùng chung upstream có thật (16% và 27% cặp ở mức bên vận hành), metadata agent thấy thiếu ở khoảng 70% cặp, khi có thì phần lớn đúng nhưng không hoàn hảo, và tên bên vận hành bỏ sót phụ thuộc ở mức nguồn gốc. Survey 2 đạt 4/6 dự đoán ghi trước; hai phát hiện của survey 1 (không có gán nhầm; có nhóm không có nguồn độc lập) không lặp lại. Các kết quả survey là mô tả, do AI gán nhãn, mới được con người kiểm tra một phần, và không đo hành vi của live agent.
 
-- Alvarez, A., et al. (2026). *ProvenanceGuard: Source-Aware Factuality Verification for MCP-Based LLM Agents*. https://arxiv.org/abs/2606.18037
-- Huai, Z., Yang, H., & Li, X. (2026). *Which Tool Response Should I Trust? Tool-Expertise-Aware Chest X-ray Agent with Multimodal Agentic Learning*. https://arxiv.org/abs/2602.21517
-- Kim, et al. (2025). *Correlated Errors in Large Language Models*. https://proceedings.mlr.press/v267/kim25e.html
-- Knight, J. C., & Leveson, N. G. (1986). *An Experimental Evaluation of the Assumption of Independence in Multiversion Programming*. https://doi.org/10.1109/TSE.1986.6312924
-- Liu, H., et al. (2024). *Uncertainty Calibration for Tool-Using Language Agents*. https://aclanthology.org/2024.findings-emnlp.978/
-- She, Y., Liang, Y., & Kang, E. (2026). *Safeguarding LLM Agents from Misalignment through Provenance Analysis*. https://arxiv.org/abs/2607.01236
-- Sheng, S., Wang, Z., & Zhou, L. (2026). *When Agents Overtrust Environmental Evidence: An Extensible Agentic Framework for Benchmarking Evidence-Grounding Defects in LLM Agents*. https://arxiv.org/abs/2605.08828
-- Zhao, Y. (2026). *GRADE: Graph Representation of LLM Agent Dependency and Execution*. https://arxiv.org/abs/2606.22741
-- *RIVA: Leveraging LLM Agents for Reliable Configuration Drift Detection*. https://arxiv.org/abs/2603.02345
-- *Reason Less, Verify More: Deterministic Gates Recover a Silent Policy-Violation Failure Mode in Tool-Using LLM Agents*. https://arxiv.org/abs/2607.07405
-- *Robustness Analysis of Agentic AI to Inconsistent and Incomplete Tool Responses*. https://arxiv.org/abs/2608.22676
-- *Verified Tool Calls Improve LLM Agent Reliability Under Non-Atomic Failures*. https://arxiv.org/abs/2608.02645
+## References — stable citation IDs, audit cập nhật đến 2026-10-10
+
+Title/authors/year/identifier được đối chiếu theo phạm vi từng nguồn; không suy peer review chỉ từ arXiv. Đây là readable bibliography của living draft, chưa export theo conference template. Audit 2026-10-04 chỉ thêm LBYL26 và artifact coverage của AGOS26; không tuyên bố tái kiểm tra toàn bộ các nguồn cũ. Chi tiết version/read scope, metadata ambiguity và retrieval limitations nằm ở [[projects/reliable-tool-using-ai-agents/paper/related-work-citation-audit-2026-10-03]].
+
+- [RIVA26] Sami Abuzakuk, Lucas Crijns, Anne-Marie Kermarrec, Rafael Pires, and Martijn de Vos. 2026. *RIVA: Leveraging LLM Agents for Reliable Configuration Drift Detection*. EuroMLSys ’26, pp. 499–509. [DOI: 10.1145/3805621.3807644](https://doi.org/10.1145/3805621.3807644). Full text consulted: [arXiv:2603.02345v1](https://arxiv.org/html/2603.02345v1); author-hosted proceedings PDF cross-check.
+- [RLVM26] Vikas Reddy, Sumanth Reddy Challaram, and Abhishek Basu. 2026. *Reason Less, Verify More: Deterministic Gates Recover a Silent Policy-Violation Failure Mode in Tool-Using LLM Agents*. arXiv preprint, [arXiv:2607.07405v2](https://arxiv.org/abs/2607.07405v2).
+- [VTC26] Isham Kalappurackal Mansoor, Abhishek Phadke, and Pratip Rana. 2026. *Verified Tool Calls Improve LLM Agent Reliability Under Non-Atomic Failures*. arXiv preprint, [arXiv:2608.02645v1](https://arxiv.org/abs/2608.02645v1).
+- [ROB26] Jiachen Xu, Torben Bach Pedersen, Zhongming Yao, Xiaoyu Zhang, and Yushuai Li. 2026. *Robustness Analysis of Agentic AI to Inconsistent and Incomplete Tool Responses*. arXiv preprint, [arXiv:2608.22676v2](https://arxiv.org/abs/2608.22676v2).
+- [TEA26] Zheang Huai, Honglong Yang, and Xiaomeng Li. 2026. *Which Tool Response Should I Trust? Tool-Expertise-Aware Chest X-ray Agent with Multimodal Agentic Learning*. arXiv preprint, [arXiv:2602.21517v1](https://arxiv.org/abs/2602.21517v1).
+- [PC24] Hao Liu, Zi-Yi Dou, Yixin Wang, Nanyun Peng, and Yisong Yue. 2024. *Uncertainty Calibration for Tool-Using Language Agents*. Findings of the Association for Computational Linguistics: EMNLP 2024, pp. 16781–16805. [DOI: 10.18653/v1/2024.findings-emnlp.978](https://doi.org/10.18653/v1/2024.findings-emnlp.978).
+- [PGF26] Ander Alvarez, Santhiya Rajan, Alessandro Genuardi, Oliver Wirjadi, Samuel Mugel, and Román Orús. 2026. *ProvenanceGuard: Source-Aware Factuality Verification for MCP-Based LLM Agents*. arXiv preprint, [arXiv:2606.18037v3](https://arxiv.org/abs/2606.18037v3).
+- [PGA26] Yining She, Yiliang Liang, and Eunsuk Kang. 2026. *Safeguarding LLM Agents from Misalignment through Provenance Analysis*. ASE ’26 Research Papers, listed in the official program; [DOI: 10.1145/3832783.3837535](https://doi.org/10.1145/3832783.3837535). Full text consulted: [arXiv:2607.01236v2](https://arxiv.org/html/2607.01236v2). Publisher DOI page was unavailable to this audit; proceedings pagination chưa xác minh.
+- [GRADE26] Yue Zhao. 2026. *GRADE: Graph Representation of LLM Agent Dependency and Execution*. arXiv preprint, [arXiv:2606.22741v2](https://arxiv.org/abs/2606.22741v2).
+- [AF26] Shenao Wang, Xinyi Hou, Yanjie Zhao, Xiao Cheng, and Haoyu Wang. 2026. *AgentFlow: Building Agent Dependency Graphs for Static Analysis of Agent Programs*. arXiv preprint, [arXiv:2607.01640v1](https://arxiv.org/abs/2607.01640v1).
+- [ENV26] Strick Sheng, Ziyue Wang, and Liyi Zhou. 2026. *When Agents Overtrust Environmental Evidence: An Extensible Agentic Framework for Benchmarking Evidence-Grounding Defects in LLM Agents*. arXiv preprint, [arXiv:2605.08828v2](https://arxiv.org/abs/2605.08828v2).
+- [AGOS26] Jun Zhou and Tao Jia. 2026. *Introducing Safe LLM-Agent Execution via Typed Tool Mediation and World-Effect Evaluation*. ASE ’26 Tools and Datasets. [DOI: 10.1145/3832783.3834637](https://doi.org/10.1145/3832783.3834637), theo [official conference page](https://conf.researchr.org/details/ase-2026/ase-2026-tools-and-data-sets/45/Introducing-Safe-LLM-Agent-Execution-via-Typed-Tool-Mediation-and-World-Effect-Evalua). Đã inspect metadata và các đoạn code/evaluation tại [pinned artifact](https://github.com/zhoujune/AgentOS/tree/4147c7f780ccb59b83f3dba8da5f19e73a1d1a8c); chưa đọc full paper hoặc chạy artifact, chưa xác minh pagination/code-to-paper mapping.
+- [LBYL26] Asaad Althoubi. 2026. *Look Before You Leap: Pre-Action Verification for LLM Agents*. arXiv preprint, [arXiv:2609.11957v1](https://arxiv.org/abs/2609.11957v1). Đọc HTML §1–8; supplementary/code chưa kiểm tra, artifact release và metadata date còn ambiguity, xem [[references/look-before-you-leap-pre-action-verification]]. Không trích numerical performance hoặc claim peer review.
+- [VPC26] Zihao Zheng, Baichuan Li, Junyi Yao, and Jiayu Long. 2026. *Engineering Reliable Commit Gates for Agentic AI: Cost-Aware Verification Portfolios under Common-Mode Data Failures*. arXiv preprint, [arXiv:2609.10969v1](https://arxiv.org/abs/2609.10969). Đọc văn bản PDF (abstract, RQs, thiết kế, bảng locked-test, giới hạn); chưa đọc kỹ toàn bộ.
+- [EFD26] Jun He and Deying Yu. 2026. *The Illusion of Independent Quorums: Epistemic Fault Domains and Correlated Cognitive Failures in Agentic Quorums*. arXiv preprint, [arXiv:2609.02925](https://arxiv.org/abs/2609.02925). Chỉ đọc phần tóm tắt và giới hạn.
+- [MCPREST25] *From REST to MCP: An Empirical Study of API Wrapping and Automated Server Generation for LLM Agents*. arXiv preprint, [arXiv:2507.16044](https://arxiv.org/abs/2507.16044). Chỉ đọc tóm tắt qua kết quả tìm kiếm; tác giả và phiên bản chưa xác minh.
+- [MCPMEAS25] *A Measurement Study of Model Context Protocol Ecosystem*. arXiv preprint, [arXiv:2509.25292](https://arxiv.org/abs/2509.25292). Chỉ đọc tóm tắt qua kết quả tìm kiếm; tác giả và phiên bản chưa xác minh.
+- [CE25] Elliot Myunghoon Kim, Avi Garg, Kenny Peng, and Nikhil Garg. 2025. *Correlated Errors in Large Language Models*. Proceedings of the 42nd International Conference on Machine Learning, PMLR 267, pp. 30038–30066. [Official proceedings](https://proceedings.mlr.press/v267/kim25e.html).
+- [KL86] John C. Knight and Nancy G. Leveson. 1986. *An Experimental Evaluation of the Assumption of Independence in Multiversion Programming*. IEEE Transactions on Software Engineering, 12(1), pp. 96–109. [DOI: 10.1109/TSE.1986.6312924](https://doi.org/10.1109/TSE.1986.6312924). DOI resolves to IEEE; full-text re-read unavailable in this audit; metadata corroborated by DBLP, no new quantitative claim added.
 
 ## Writing status
 
-| Section | Status | Evidence gate còn thiếu |
-|---|---|---|
-| Abstract | Provisional | external-validity decision và final claim audit |
-| Introduction | Draft complete | supervisor feedback |
-| Related Work | Draft complete | formal citation-chain audit |
-| Problem Formulation | Draft complete | notation cleanup |
-| Methodology | Draft complete | independent reproduction audit |
-| Results | Current results inserted | final figures/tables |
-| Discussion | Draft | external task-domain evidence |
-| Threats to Validity | Draft complete | supervisor review |
-| Conclusion | Provisional | final RQ decision |
+**v1.4 (2026-10-14):** thêm survey 2 (§4.8, §5.12); sửa abstract, contribution 3, §6.1, §6.4, §7.7, §9 theo kết quả survey 2; đổi tiêu đề; sửa câu cũ ở §9 nói quy tắc `J` "chưa chứng minh" (đã chứng minh từ v1.2). Còn mở: agreement survey 2, bản tiếng Anh.
+
+**v1.3 (2026-10-13):** thêm inter-rater agreement của coder B cho survey 1.
+
+**v1.2 (2026-10-12):** chứng minh quy tắc `J` ([[projects/reliable-tool-using-ai-agents/paper/proof-j-condition]]); đính chính giải thích về mô hình nhiễu độc lập.
+
+**v1.1 (2026-10-12):** thêm §4.9 và §5.11 (kiểm định đăng ký trước cho `J`).
+
+**v1.0 (2026-10-10):** định vị lại; thêm RQ2/RQ3, §3.8, §4.7–4.8, §5.8–5.10, §6.5, §7.7. Còn mở: inter-rater của coder B, figure cho survey, tác giả đọc toàn văn VPC26/EFD26, phản hồi giảng viên.
+
+| Section             | Status                   | Evidence gate còn thiếu                         |
+| ------------------- | ------------------------ | ----------------------------------------------- |
+| Abstract            | Decision-level wording; v0.8 claim audit | citation format và author proofreading |
+| Introduction        | Draft complete           | supervisor feedback                             |
+| Related Work        | v0.7: artifact-level AgentOS và realizability contrast thêm vào | AgentOS full text/code-to-paper mapping còn mở; no head-to-head; supervisor contribution review |
+| Problem Formulation | Metric dictionary/topology; v0.8 claim audit | notation cleanup và author proofreading |
+| Methodology         | Endpoints/internal protocol chronology aligned | human methodology review; generation audit riêng |
+| Results             | Endpoints separated; 2 frozen-data figures rendered/checked | course-template layout và author proofreading |
+| Discussion          | Draft                    | supervisor review; external claims cần experiment riêng |
+| Threats to Validity | Draft complete           | supervisor review                               |
+| Conclusion          | Decision-level wording; v0.8 claim audit | giảng viên review RQ/contribution |
+| References          | 19 stable IDs (v1.0 thêm VPC26, EFD26, MCPREST25, MCPMEAS25); MCP study chỉ đọc tóm tắt | final citation-style export; metadata/artifact ambiguities retained, không tự điền pagination |
+| Supplement/artifact | 21-file inventory; historical reanalysis; v0.9 clean-venv core replay 10/10 files | snapshot/license/full dependency gates; chưa fresh-machine/independent reproduction |
 
 ## Related vault notes
 
+- [[journal/2026-10-09-real-tool-metadata-survey-results]]
+- [[journal/2026-10-14-expanded-tool-survey-results]]
+- [[synthesis/Protocol: Expanded Real-Tool Metadata Survey]]
+- [[journal/2026-10-06-prior-art-refresh-vp-control-and-efd]]
+- [[synthesis/Protocol: Real-Tool Failure-Domain Metadata Survey]]
+- [[journal/2026-10-04-clean-environment-core-reproduction]]
+- [[projects/reliable-tool-using-ai-agents/paper/submission-readiness]] — final audit trong phạm vi controlled course paper; không submission approval.
+- [[journal/2026-10-04-pre-action-prior-art-audit]]
+- [[references/agentos-typed-tool-mediation]]
+- [[references/look-before-you-leap-pre-action-verification]]
+- [[projects/reliable-tool-using-ai-agents/paper/figure-guide]]
+- [[projects/reliable-tool-using-ai-agents/paper/supplementary-appendix]]
+- [[projects/reliable-tool-using-ai-agents/paper/reproducibility-package]]
+- [[projects/reliable-tool-using-ai-agents/paper/related-work-citation-audit-2026-10-03]]
+
 - [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]]
+- [[projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03]]
 - [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
 - [[synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures]]
 - [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]]
-

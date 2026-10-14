@@ -1,0 +1,54 @@
+[
+  {
+    "server_id": "books/VmLia/books-mcp-server",
+    "upstream_providers": "shuchacha.net",
+    "upstream_evidence": "main.py:24 http://www.shuchacha.net/s?wd={query} (HTML scraping)",
+    "configurable_upstream": "False",
+    "l1_declared_provider": "unknown",
+    "l1_evidence": "",
+    "l2_declared_provider": "unknown",
+    "l2_evidence": "",
+    "origin_a": "",
+    "origin_a_evidence": "",
+    "notes": "书查查 site scraped; READMEs (en/zh) name no provider"
+  },
+  {
+    "server_id": "books/ejam4040/Books-MCP-Server",
+    "upstream_providers": "Google Books",
+    "upstream_evidence": "tools/commerce-api/google-books-api/search-volumes.js:11 https://www.googleapis.com/books/v1/volumes",
+    "configurable_upstream": "False",
+    "l1_declared_provider": "Google Books",
+    "l1_evidence": "search_volumes: 'Search for volumes in the Google Books API.'",
+    "l2_declared_provider": "Google Books",
+    "l2_evidence": "README.md adds no provider name (L2 = L1)",
+    "origin_a": "",
+    "origin_a_evidence": "",
+    "notes": "Postman-generated MCP server template; chatgpt-bridge.js points to the author's Replit deployment (not the tool upstream)"
+  },
+  {
+    "server_id": "books/Busra-ozer/book-search-mcp",
+    "upstream_providers": "Open Library",
+    "upstream_evidence": "app.py:8 https://openlibrary.org/search.json",
+    "configurable_upstream": "False",
+    "l1_declared_provider": "Open Library",
+    "l1_evidence": "search_books_tool docstring: 'Open Library API üzerinden kitap araması yapar.'; server name 'openlibrary-mcp'",
+    "l2_declared_provider": "Open Library",
+    "l2_evidence": "no README (L2 = L1)",
+    "origin_a": "",
+    "origin_a_evidence": "",
+    "notes": ""
+  },
+  {
+    "server_id": "books/zeyynepkaraduman/library-book-search-mcp",
+    "upstream_providers": "Google Books",
+    "upstream_evidence": "app.py:7 https://www.googleapis.com/books/v1/volumes",
+    "configurable_upstream": "False",
+    "l1_declared_provider": "Google Books",
+    "l1_evidence": "search_library_books: 'Google Books API kullanarak kitap, yazar veya konu arayın.'",
+    "l2_declared_provider": "Google Books",
+    "l2_evidence": "README.md:4 'Google Books API kullanarak kitap arama işlevselliği sağlar'",
+    "origin_a": "",
+    "origin_a_evidence": "",
+    "notes": ""
+  }
+]

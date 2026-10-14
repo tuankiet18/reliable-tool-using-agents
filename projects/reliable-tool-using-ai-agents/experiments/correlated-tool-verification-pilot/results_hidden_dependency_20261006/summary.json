@@ -1,0 +1,137 @@
+{
+  "scope": "post-hoc exact analysis; systematic (class-conditional) label errors",
+  "validation_max_abs_gap": 0.0018376421333333726,
+  "validation": [
+    {
+      "n": 3,
+      "s": 1,
+      "r": 1.0,
+      "phi": 0.0,
+      "exact": 0.0,
+      "mc": 0.0,
+      "abs_gap": 0.0
+    },
+    {
+      "n": 3,
+      "s": 1,
+      "r": 0.0,
+      "phi": 0.0,
+      "exact": 0.3333333333333333,
+      "mc": 0.33371666666666666,
+      "abs_gap": 0.0003833333333333466
+    },
+    {
+      "n": 3,
+      "s": 1,
+      "r": 0.0,
+      "phi": 0.5,
+      "exact": 0.5833333333333333,
+      "mc": 0.5835666666666667,
+      "abs_gap": 0.00023333333333341866
+    },
+    {
+      "n": 4,
+      "s": 2,
+      "r": 0.6,
+      "phi": 0.3,
+      "exact": 0.33699999999999997,
+      "mc": 0.33786666666666665,
+      "abs_gap": 0.0008666666666666822
+    },
+    {
+      "n": 10,
+      "s": 3,
+      "r": 0.5,
+      "phi": 0.5,
+      "exact": 0.30000000000000004,
+      "mc": 0.29986666666666667,
+      "abs_gap": 0.00013333333333337416
+    },
+    {
+      "n": 10,
+      "s": 7,
+      "r": 0.9,
+      "phi": 0.2,
+      "exact": 0.1916209754666667,
+      "mc": 0.18978333333333333,
+      "abs_gap": 0.0018376421333333726
+    },
+    {
+      "n": 6,
+      "s": 2,
+      "r": 0.2,
+      "phi": 0.7,
+      "exact": 0.6157133333333334,
+      "mc": 0.6152666666666666,
+      "abs_gap": 0.0004466666666668173
+    }
+  ],
+  "sign_rule": "provenance better than random iff r > phi (J > 0); equal iff J = 0; worse iff J < 0",
+  "sign_rule_violations_on_grid": 0,
+  "grid_points": 2205,
+  "main_topology_slices": [
+    {
+      "r": 1.0,
+      "phi": 0.0,
+      "J": 1.0,
+      "unsafe_provenance_leak_0.10": 0.1,
+      "unsafe_random_leak_0.10": 0.4
+    },
+    {
+      "r": 0.75,
+      "phi": 0.0,
+      "J": 0.75,
+      "unsafe_provenance_leak_0.10": 0.175,
+      "unsafe_random_leak_0.10": 0.4
+    },
+    {
+      "r": 0.5,
+      "phi": 0.0,
+      "J": 0.5,
+      "unsafe_provenance_leak_0.10": 0.25,
+      "unsafe_random_leak_0.10": 0.4
+    },
+    {
+      "r": 0.0,
+      "phi": 0.0,
+      "J": 0.0,
+      "unsafe_provenance_leak_0.10": 0.4,
+      "unsafe_random_leak_0.10": 0.4
+    },
+    {
+      "r": 0.75,
+      "phi": 0.25,
+      "J": 0.5,
+      "unsafe_provenance_leak_0.10": 0.21250000000000002,
+      "unsafe_random_leak_0.10": 0.4
+    },
+    {
+      "r": 0.5,
+      "phi": 0.5,
+      "J": 0.0,
+      "unsafe_provenance_leak_0.10": 0.4,
+      "unsafe_random_leak_0.10": 0.4
+    },
+    {
+      "r": 0.25,
+      "phi": 0.5,
+      "J": -0.25,
+      "unsafe_provenance_leak_0.10": 0.5125,
+      "unsafe_random_leak_0.10": 0.4
+    },
+    {
+      "r": 0.0,
+      "phi": 0.5,
+      "J": -0.5,
+      "unsafe_provenance_leak_0.10": 0.6249999999999999,
+      "unsafe_random_leak_0.10": 0.4
+    },
+    {
+      "r": 0.0,
+      "phi": 1.0,
+      "J": -1.0,
+      "unsafe_provenance_leak_0.10": 1.0,
+      "unsafe_random_leak_0.10": 0.4
+    }
+  ]
+}

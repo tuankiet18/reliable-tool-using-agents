@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img">
+<title>Chênh lệch unsafe decisions và metadata sensitivity</title><desc>Forest plot của CIs đã lưu; main và robustness dùng hai tập 30 tasks khác nhau, không pooled inference.</desc>
+<style>text{font-family:Arial,"DejaVu Sans",sans-serif;fill:#172332}</style>
+<rect width="1200" height="660" fill="white"/>
+<text x="30" y="40" font-size="25" text-anchor="start" font-weight="bold">Advantage có điều kiện; wrong metadata không qua gate</text>
+<text x="30" y="72" font-size="16" text-anchor="start" font-weight="normal">Δ = provenance_k − random_k; đơn vị điểm phần trăm (percentage points). Âm: ít unsafe hơn.</text>
+<line x1="440.0" y1="125" x2="440.0" y2="490" stroke="#dce2e8" stroke-width="1"/>
+<text x="440.0" y="522" font-size="14" text-anchor="middle" font-weight="normal">-30</text>
+<line x1="542.5" y1="125" x2="542.5" y2="490" stroke="#dce2e8" stroke-width="1"/>
+<text x="542.5" y="522" font-size="14" text-anchor="middle" font-weight="normal">-20</text>
+<line x1="645.0" y1="125" x2="645.0" y2="490" stroke="#dce2e8" stroke-width="1"/>
+<text x="645.0" y="522" font-size="14" text-anchor="middle" font-weight="normal">-10</text>
+<line x1="747.5" y1="125" x2="747.5" y2="490" stroke="#697789" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="747.5" y="522" font-size="14" text-anchor="middle" font-weight="normal">0</text>
+<line x1="850.0" y1="125" x2="850.0" y2="490" stroke="#dce2e8" stroke-width="1"/>
+<text x="850.0" y="522" font-size="14" text-anchor="middle" font-weight="normal">10</text>
+<text x="30" y="119" font-size="17" text-anchor="start" font-weight="bold">MAIN — 30 frozen tasks</text>
+<text x="890" y="119" font-size="16" text-anchor="start" font-weight="bold">Δ [95% CI], pp</text>
+<text x="30" y="317" font-size="17" text-anchor="start" font-weight="bold">ROBUSTNESS — 30 tasks mới (không pool)</text>
+<line x1="30" y1="284" x2="1160" y2="284" stroke="#dce2e8" stroke-width="1"/>
+<text x="30" y="170" font-size="16" text-anchor="start" font-weight="normal">clean</text>
+<line x1="747.5" y1="165" x2="747.5" y2="165" stroke="#16806a" stroke-width="3"/>
+<line x1="747.5" y1="159" x2="747.5" y2="171" stroke="#16806a" stroke-width="2"/>
+<line x1="747.5" y1="159" x2="747.5" y2="171" stroke="#16806a" stroke-width="2"/>
+<circle cx="747.5" cy="165" r="6" fill="#16806a"/>
+<text x="890" y="170" font-size="15" text-anchor="start" font-weight="normal">+0.0 [0.0, 0.0]</text>
+<text x="30" y="215" font-size="16" text-anchor="start" font-weight="normal">independent</text>
+<line x1="727.0" y1="210" x2="781.6666666666667" y2="210" stroke="#16806a" stroke-width="3"/>
+<line x1="727.0" y1="204" x2="727.0" y2="216" stroke="#16806a" stroke-width="2"/>
+<line x1="781.6666666666667" y1="204" x2="781.6666666666667" y2="216" stroke="#16806a" stroke-width="2"/>
+<circle cx="754.3333333333334" cy="210" r="6" fill="#16806a"/>
+<text x="890" y="215" font-size="15" text-anchor="start" font-weight="normal">+0.7 [-2.0, 3.3]</text>
+<text x="30" y="260" font-size="16" text-anchor="start" font-weight="normal">targeted_common_mode</text>
+<line x1="467.3333333333333" y1="255" x2="617.6666666666666" y2="255" stroke="#16806a" stroke-width="3"/>
+<line x1="467.3333333333333" y1="249" x2="467.3333333333333" y2="261" stroke="#16806a" stroke-width="2"/>
+<line x1="617.6666666666666" y1="249" x2="617.6666666666666" y2="261" stroke="#16806a" stroke-width="2"/>
+<circle cx="542.5" cy="255" r="6" fill="#16806a"/>
+<text x="890" y="260" font-size="15" text-anchor="start" font-weight="normal">-20.0 [-27.3, -12.7]</text>
+<text x="30" y="365" font-size="16" text-anchor="start" font-weight="normal">accurate; leakage .25</text>
+<line x1="522.0" y1="360" x2="692.8333333333333" y2="360" stroke="#16806a" stroke-width="3"/>
+<line x1="522.0" y1="354" x2="522.0" y2="366" stroke="#16806a" stroke-width="2"/>
+<line x1="692.8333333333333" y1="354" x2="692.8333333333333" y2="366" stroke="#16806a" stroke-width="2"/>
+<circle cx="610.8333333333333" cy="360" r="6" fill="#16806a"/>
+<text x="890" y="365" font-size="15" text-anchor="start" font-weight="normal">-13.3 [-22.0, -5.3] — PASS</text>
+<text x="30" y="410" font-size="16" text-anchor="start" font-weight="normal">missing .25; leakage .10</text>
+<line x1="515.1666666666667" y1="405" x2="658.6666666666666" y2="405" stroke="#16806a" stroke-width="3"/>
+<line x1="515.1666666666667" y1="399" x2="515.1666666666667" y2="411" stroke="#16806a" stroke-width="2"/>
+<line x1="658.6666666666666" y1="399" x2="658.6666666666666" y2="411" stroke="#16806a" stroke-width="2"/>
+<circle cx="590.3333333333334" cy="405" r="6" fill="#16806a"/>
+<text x="890" y="410" font-size="15" text-anchor="start" font-weight="normal">-15.3 [-22.7, -8.7] — PASS</text>
+<text x="30" y="455" font-size="16" text-anchor="start" font-weight="normal">wrong .25; leakage .10</text>
+<line x1="610.8333333333333" y1="450" x2="747.5" y2="450" stroke="#a04b19" stroke-width="3"/>
+<line x1="610.8333333333333" y1="444" x2="610.8333333333333" y2="456" stroke="#a04b19" stroke-width="2"/>
+<line x1="747.5" y1="444" x2="747.5" y2="456" stroke="#a04b19" stroke-width="2"/>
+<circle cx="679.1666666666666" cy="450" r="6" fill="#a04b19"/>
+<text x="890" y="455" font-size="15" text-anchor="start" font-weight="normal">-6.7 [-13.3, 0.0] — FAIL</text>
+<text x="30" y="559" font-size="15" text-anchor="start" font-weight="normal">CI đã lưu: paired task-cluster bootstrap, 10.000 resamples; không bootstrap mới hoặc population CI.</text>
+<text x="30" y="588" font-size="15" text-anchor="start" font-weight="normal">Wrong .25 là xác suất label noise danh nghĩa. FAIL lấy từ stored gate trên số chưa làm tròn.</text>
+<text x="30" y="617" font-size="15" text-anchor="start" font-weight="normal">Clean [0,0] chỉ mô tả frozen set, không equivalence proof. Overall robustness: FAIL ROBUSTNESS.</text>
+</svg>

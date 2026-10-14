@@ -3,13 +3,25 @@ title: "Candidate RQ: Provenance-Aware Verification under Correlated Tool Failur
 category: synthesis
 tags: [research-question, ai-agents, verification, tool-failure, experiment]
 sources:
+  - "projects/reliable-tool-using-ai-agents/paper/related-work-citation-audit-2026-10-03.md"
   - "https://arxiv.org/abs/2603.02345"
   - "https://github.com/mohammadi-hadi/trajectory-judge"
   - "https://github.com/sierra-research/tau2-bench"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_main_study"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_robustness_gate"
+  - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate.md"
+  - "journal/2026-09-20-ai-review-provenance-correction.md"
+  - "journal/2026-09-24-secondary-schema-v12-recheck.md"
+  - "journal/2026-09-26-secondary-adapter-smoke-tests.md"
+  - "synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix.md"
+  - "journal/2026-09-28-secondary-exploratory-matrix.md"
+  - "journal/2026-09-28-secondary-varied-schedule-replication.md"
+  - "journal/2026-10-02-ins32-rtx4060-validity-audit.md"
+  - "projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03.md"
+  - "projects/reliable-tool-using-ai-agents/paper/paper-draft.md"
+  - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_topology_diagnostics_20261003/analysis.json"
 summary: >-
-  Candidate RQ pass controlled main study nhưng fail robustness khi 25% provenance labels sai; claim hiện phải giới hạn ở accurate hoặc conservatively incomplete metadata.
+  Main RQ ở mức quyết định được hỗ trợ trong controlled study với metadata đúng; secondary và RTX 4060 diagnostic vẫn exploratory, chưa chứng minh external hoặc live-agent safety effect.
 provenance:
   extracted: 0.25
   inferred: 0.71
@@ -19,30 +31,32 @@ lifecycle: draft
 lifecycle_changed: 2026-09-13
 tier: core
 created: 2026-09-13T00:00:00Z
-updated: 2026-09-15T16:27:33+07:00
+updated: 2026-10-03T21:46:13+07:00
 ---
 
 # Candidate Research Question
 
-> [!important] Đây là **RQ tốt nhất hiện tại**, nhưng vẫn thuộc một `PRELIMINARY` gap. Không gọi là confirmed novel trước khi citation-chaining và pilot tuần 1–2 hoàn tất.
+> [!important] Đây là **working RQ hiện tại** cho controlled course paper; gap vẫn `PRELIMINARY`. Wording lịch sử của RQ/H1 trong các đoạn dated 2026-09-14/15 phía dưới được giữ để truy vết protocol. Reviewer audit 2026-10-03 đã làm rõ endpoint ở mức quyết định; chưa phải đổi thiết kế hoặc nâng novelty.
+
+**Cập nhật paper v0.4:** Canonical RQ/H1 không đổi so với construct clarification v0.2. Contribution chỉ là controlled characterization/artifact, không new algorithm; exact-setting negative search không tự chứng minh novelty. [[projects/reliable-tool-using-ai-agents/paper/related-work-citation-audit-2026-10-03]] ghi prior-art contrast và reading limits; [[projects/reliable-tool-using-ai-agents/paper/supervisor-methodology-rq-briefing]] đã đồng bộ. Bước hiện hành là full-manuscript/appendix consistency, không thêm experiments hoặc live-agent scaling.
 
 ## English canonical RQ
 
-**RQ1. Given accurate failure-domain metadata, under targeted common-mode silent tool-output failures, does mandatory action-boundary verification that selects a provenance-independent corroborator reduce unsafe irreversible actions while maintaining clean-task correctness, compared with random-source verification at a matched K=2 tool-call budget?**
+**RQ1. Given accurate failure-domain metadata, under targeted common-mode silent tool-output failures, does independent-domain corroboration reduce unsafe refund authorization decisions relative to random corroboration at a matched two-observation boundary budget, while preserving clean action-oracle correctness in a deterministic controlled workflow?**
 
 ## Giải thích tiếng Việt
 
-Khi hệ thống có metadata đúng về các tool dùng chung backend nào, runtime bắt buộc kiểm tra primary source và đúng một corroborator trước hành động không thể đảo ngược như `issue_refund`. RQ hỏi liệu chọn nguồn thật sự độc lập có giảm refund sai hơn chọn ngẫu nhiên, với cùng `K=2`, mà không làm giảm correctness trên task sạch hay không.
+Khi metadata xác định đúng các tool dùng chung backend, actor mô phỏng đề xuất refund nếu primary báo đủ điều kiện. RQ hỏi chọn nguồn đối chứng khác failure domain có giảm **quyết định cho phép refund sai** hơn chọn ngẫu nhiên hay không, khi hai policies cùng dùng hai modeled observations trên mỗi refund proposal. Clean correctness là final action/amount khớp oracle, không phải post-state sau giao dịch.
 
 ## Hypothesis
 
 ### H1 — English
 
-Given accurate failure-domain metadata and a matched K=2 verification budget, provenance-independent corroboration reduces unsafe refunds relative to random-source corroboration under targeted common-mode silent failures, without a material reduction in clean final-state correctness.
+Given accurate failure-domain metadata and a matched two-observation boundary budget, independent-domain corroboration reduces unsafe refund authorization decisions relative to random corroboration under targeted common-mode silent failures, without a material reduction in clean action-oracle correctness.
 
 ### Diễn giải
 
-Lợi ích phải đến từ việc chọn evidence độc lập, không phải gọi thêm tool hoặc bỏ qua refund attempt. Prediction không yêu cầu provenance tốt hơn dưới independent faults.
+Hypothesis dự đoán lợi ích từ lựa chọn evidence khác failure domain, với cùng ngân sách tại refund boundary. Nó không yêu cầu provenance tốt hơn dưới independent faults và không dự đoán phục hồi những valid refunds mà primary đã báo ineligible.
 
 ## Independent variables
 
@@ -53,9 +67,9 @@ Lợi ích phải đến từ việc chọn evidence độc lập, không phải
 
 ## Dependent variables
 
-- Primary safety: unsafe-refund rate trong `targeted_common_mode`.
-- Guardrails: action-boundary coverage, matched evidence-call budget, clean unsafe refund và clean final-state correctness.
-- Secondary: final-state correctness, false-block rate, conflict rate và expected loss với `λ ∈ {0.10, 0.25, 0.50}`.
+- Primary safety: tỷ lệ unsafe refund **decisions** trong `targeted_common_mode`; raw key `unsafe_refund` không có nghĩa refund đã được thực thi.
+- Guardrails: action-boundary coverage cho refund proposals, matched modeled-observation budget, clean unsafe decision rate và clean action-oracle correctness (raw `final_state_correct`).
+- Secondary: action-oracle correctness, missed authorized refund / false escalation (raw `false_block`), conflict rate và expected decision loss với `λ ∈ {0.10, 0.25, 0.50}`. Tách no-proposal abstention khỏi gate rejection.
 - Negative control: difference dưới independent faults.
 
 ## Baselines
@@ -73,7 +87,7 @@ Lợi ích phải đến từ việc chọn evidence độc lập, không phải
 
 ## Ground truth
 
-Canonical world state là truth. Mỗi tool adapter có `source_id` và `failure_domain_id`. Injector quyết định corruption trước execution và ghi lại affected group. Detection được chấm programmatically, không dùng agent self-report hay LLM judge.
+Canonical world state cung cấp expected action/amount. Mỗi modeled tool interface có failure-domain metadata; injector quyết định output corruption trước quyết định. Main evaluator so final action/amount với oracle bằng code, không chạy refund executor hoặc post-state check và không dùng agent self-report hay LLM judge.
 
 ## Required implementation
 
@@ -92,7 +106,7 @@ Canonical world state là truth. Mỗi tool adapter có `source_id` và `failure
 
 ## Expected runs
 
-- Main confirmatory study đã chạy: `30 tasks × 3 policies × 3 regimes × 5 seeds = 1,350` deterministic episodes.
+- Main controlled study đã chạy: `30 tasks × 3 policies × 3 regimes × 5 seeds = 1,350` deterministic decision rows.
 - Optional live-agent validation: tối đa `6 tasks × 2 matched policies × 2 regimes × 3 seeds = 72` episodes.
 
 ## Compute / API cost
@@ -112,7 +126,7 @@ RIVA là threat trực tiếp cho cross-tool verification. Novelty chỉ còn n�
 ## What result would falsify the hypothesis?
 
 - `provenance_k − random_k` cho targeted unsafe refund không âm với upper 95% CI dưới zero.
-- Provenance làm clean unsafe refund tăng quá `0.02` hoặc clean correctness giảm quá non-inferiority margin `0.05`.
+- Provenance làm clean unsafe refund **decision rate** tăng quá `0.02` hoặc clean action-oracle correctness difference theo **point estimate** thấp hơn margin `−0.05`; đây là decision criterion, không phải formal non-inferiority test.
 - Safety benefit không xuất hiện ở ít nhất hai difficulty strata.
 - Ở mức broader claim: effect biến mất khi metadata không hoàn hảo hoặc trong second environment; điều này không bác bỏ controlled RQ nhưng bác bỏ khả năng generalize.
 
@@ -190,7 +204,7 @@ Xem [[journal/2026-09-14-full-live-agent-verification-gate]].
 
 **INFERENCE:** Evidence đủ để giữ RQ hẹp làm RQ chính hiện tại, vì effect không chỉ là một task/seed và treatment coverage đã được cưỡng chế. Tuy nhiên n=6 task strata, fault topology synthetic, và chưa có external benchmark; status vẫn `PRELIMINARY`.
 
-### Canonical RQ hiện tại
+### Canonical RQ tại thời điểm 2026-09-14 — historical wording
 
 **RQ1. Given accurate failure-domain metadata, under targeted common-mode silent tool-output failures, does mandatory action-boundary verification that selects a provenance-independent corroborator reduce unsafe irreversible actions while maintaining clean-task correctness, compared with random-source verification at a matched K=2 tool-call budget?**
 
@@ -245,10 +259,42 @@ EnvTrustBench không public executable cases/oracles/runners nên `FAIL` reprodu
 
 External-validation plan vì vậy bị hạ xuống **benchmark-derived secondary pilot**, không phải direct benchmark reproduction. Chỉ tiếp tục nếu manual audit tìm được 12 read-before-write cases trên ít nhất sáu domains mà có thể thêm primary/same-domain/independent evidence sources và programmatic oracle mà không thay đổi task semantics. Xem [[journal/2026-09-15-external-validity-artifact-gate]].
 
+## Benchmark-derived case audit — 2026-09-18
+
+Manual gate đã đóng băng `12` cases: sáu WorkBench và sáu Agent-SafetyBench cases, phủ `10` atomic application domains. Mỗi case có decisive claim, environment-changing action, canonical truth và deterministic oracle; không case nào có semantic distortion risk `high`.
+
+Verdict: **`CONDITIONAL PASS FOR BENCHMARK-DERIVED ADAPTATION`**. Case semantics và action boundaries đến từ upstream benchmarks, nhưng same-domain replicas, independent corroborators, failure domains và fault injection đều là additions của project. Kết quả secondary sau này chỉ có thể hỗ trợ semantic breadth; không được gọi là native external benchmark reproduction. Xem [[journal/2026-09-18-benchmark-derived-case-audit]].
+
+Secondary protocol gốc được giữ nguyên; AI-assisted review/amendment hạ `ASB-267` khỏi unsafe denominator, giữ `WB-295` ngoài safety cohort và sửa mutation `ASB-977`; current denominator là **8 safety cases/6 domains**. Re-check v1.2 pass specification và 32-episode smoke pass adapter mechanics. Do protocol gốc yêu cầu human review nhưng thực tế không có, [[synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix]] công khai deviation và hạ full run thành exploratory/internal.
+
+Full matrix đầu tiên có 704 deterministic episodes/352 pairs, với cùng `−0.375` difference trên từng case và degenerate CI; giữ artifact này như kết quả lịch sử. Replication theo varied schedule có 1.056 episodes/528 pairs, chạy lại byte-identical. Ở `targeted_common_mode_25`, unsafe actions là `59/96` (`random_k`) so với `24/96` (`provenance_k`); mean case difference `−0.3646`, median `−0.375`, cải thiện mô tả trên `8/8` cases và case-cluster bootstrap CI `[-0.396,-0.323]`. Utility-only false blocks là `9/24` so với `18/24`, task success `15/24` so với `6/24`; safety task success là zero dưới targeted fault vì gate không recovery. Varied placements làm differences không còn đồng nhất, nhưng cohort purposive, topology/faults/policies/oracles vẫn do project định nghĩa, contract còn candidate và không có human review. Do đó đây là sensitivity/implementation result exploratory, không chứng minh generalization hoặc native benchmark validity. `WB-295` diagnostic; `WB-403`/`ASB-1572` utility-only. Xem [[journal/2026-09-28-secondary-exploratory-matrix]] và [[journal/2026-09-28-secondary-varied-schedule-replication]].
+
 **Current status:** `CONTROLLED RQ SUPPORTED BUT NARROWED; GAP REMAINS PRELIMINARY`.
+
+## RTX 4060 `INS-00032` diagnostic — 2026-10-02
+
+**FACT:** Qwen2.5 7B chạy đủ tám cells trên task expected `escalate`; `12/12` refund attempts được boundary kiểm tra, không accepted unsafe refund. Tuy nhiên **mọi request là `0 EUR`**, và agent đã escalation trước attempt đầu ở cả tám episodes. Tại targeted seed `809`, random chọn same-domain corroborator nên không phát hiện conflict, nhưng bị chặn vì amount mismatch; provenance phát hiện conflict. Xem [[journal/2026-10-02-ins32-rtx4060-validity-audit]].
+
+**INFERENCE:** Đây là bằng chứng technical feasibility và một khác biệt về conflict detection, **không** phải bằng chứng live-agent effect về unsafe actions. Không cập nhật H1, main deterministic result hoặc trạng thái `PRELIMINARY` dựa trên tám cells này. `DECISIVE_ATTEMPT` cũ cần được phân biệt với một refund request dương có thể chuyển tiền sai; tiêu chí mới chỉ được dùng sau amendment trước run kế tiếp. ^[inferred]
+
+## Construct clarification cho course paper — 2026-10-03
+
+**FACT — CODE/RAW AUDIT:** [[projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03]] đối chiếu main runner với raw: `final_state_correct` là action-oracle correctness, `unsafe_refund` là unsafe refund decision. Runner không thực thi refund hoặc đo post-state. Trong targeted condition, `provenance_k` có `0/150` unsafe decisions so với `30/150` của `random_k`; cả hai đúng `0/50` expected-refund decisions. Cả `50/50` missed-refund rows ở mỗi policy đều không có refund proposal, nên không phải gate-induced false blocks.
+
+**INFERENCE:** Top-of-note working RQ/H1 đã được làm rõ theo đúng endpoint main study và đồng bộ với [[projects/reliable-tool-using-ai-agents/paper/paper-draft]] version `0.2`. Original protocol và historical RQ wording vẫn còn ở các mục có ngày phía trên; thay đổi diễn giải không tạo experiment mới hoặc evidence live-agent. Gap vẫn `PRELIMINARY`; controlled paper còn cần hoàn thiện các reviewer findings khác.
+
+## Analytical/counterfactual clarification — 2026-10-03
+
+**INFERENCE — POST-HOC MODEL CHECK:** Paper `0.3` tính main random unsafe expectation `pi*q=2/9`, với `pi=2/3` canonical-escalation scenarios và `q=1/3` same-domain corroborators. Observed fixed-seed rate vẫn `30/150=0.20`. Provenance zero unsafe được bảo đảm khi metadata đúng và independent sources giữ truth; kết quả không chứng minh phát minh nguyên lý mới.
+
+**FACT — COUNTERFACTUAL DIAGNOSTIC:** Main targeted provenance và always-escalate cùng unsafe `0/150`, action correctness `100/150`, expected-refund correctness `0/50`. Clean provenance giữ `50/50` refunds đúng, còn always-escalate bỏ toàn bộ. Secondary always-block cũng đạt zero unsafe nhưng mất mọi clean utility completion; unsafe counts của hai observed policies trong targeted-25 được tái dựng chính xác từ quota/schedule overlap (`59/96` vs `24/96`). Không thêm episodes, CI hoặc measured matched-budget baseline.
+
+**RESEARCH IMPLICATION — PRELIMINARY:** RQ được trả lời có điều kiện bằng controlled artifact; contribution phù hợp hiện tại là characterization của dependence assumptions và safety–utility trade-offs. Không nâng novelty nhờ tổng số rows, zero unsafe hoặc differences giữa secondary cases. Cần rà direct prior-art contrast và references trước khi chốt contribution với giảng viên.
 
 ## Related
 
+- [[projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03]]
+- [[projects/reliable-tool-using-ai-agents/paper/paper-draft]]
 - [[synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures]]
 - [[synthesis/Research: Correlated Silent Tool Failures and Verification]]
 - [[journal/2026-09-14-correlated-tool-verification-next-gate]]
@@ -256,3 +302,5 @@ External-validation plan vì vậy bị hạ xuống **benchmark-derived seconda
 - [[synthesis/Protocol: Action-Boundary Provenance Verification Main Study]]
 - [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]]
 - [[journal/2026-09-15-external-validity-artifact-gate]]
+- [[synthesis/Protocol: Secondary Multi-Domain Benchmark-Derived Adaptation]]
+- [[journal/2026-10-02-ins32-rtx4060-validity-audit]]

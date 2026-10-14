@@ -1,0 +1,302 @@
+{
+  "status": "FROZEN_BEFORE_RUNTIME",
+  "schedule_version": "secondary-varied-v1",
+  "contract_version": "1.2-recheck-candidate",
+  "contract_sha256": "552ef2c689cae93494d68c9114482d1550f5bcfa4653e9bff8902d3b19cfed1a",
+  "schedule_sha256": "f630cb0a34276c23462d838eb23113ea2e4d6c4270958b292db25d26ce725469",
+  "algorithm_sha256": "f8fe8d1d791406b2c5037c74d890bf2efdcb9e09b366435e467c355c786e64e3",
+  "seed_list": [
+    1901,
+    1993,
+    2017,
+    2081,
+    2143,
+    2213,
+    2281,
+    2347,
+    2411,
+    2477,
+    2551,
+    2617
+  ],
+  "regimes": [
+    "clean",
+    "independent_single_source",
+    "targeted_common_mode_0",
+    "targeted_common_mode_25"
+  ],
+  "policies": [
+    "random_k",
+    "provenance_k"
+  ],
+  "validation": {
+    "runnable_cases": 11,
+    "rows": 1056,
+    "pairs": 528,
+    "distinct_case_schedule_signatures": 11,
+    "per_case_schedule": {
+      "WB-000": {
+        "random_k_same_domain_seeds": [
+          1901,
+          2143,
+          2281,
+          2347,
+          2477,
+          2551
+        ],
+        "independent_leakage_seeds": [
+          2017,
+          2281,
+          2411
+        ],
+        "independent_fault_counts": {
+          "P": 4,
+          "S": 4,
+          "I": 4
+        },
+        "selector_leakage_overlap": [
+          2281
+        ]
+      },
+      "WB-110": {
+        "random_k_same_domain_seeds": [
+          1901,
+          2143,
+          2281,
+          2411,
+          2477,
+          2617
+        ],
+        "independent_leakage_seeds": [
+          1901,
+          2017,
+          2347
+        ],
+        "independent_fault_counts": {
+          "P": 4,
+          "S": 4,
+          "I": 4
+        },
+        "selector_leakage_overlap": [
+          1901
+        ]
+      },
+      "WB-203": {
+        "random_k_same_domain_seeds": [
+          1901,
+          1993,
+          2017,
+          2081,
+          2347,
+          2411
+        ],
+        "independent_leakage_seeds": [
+          1901,
+          2017,
+          2551
+        ],
+        "independent_fault_counts": {
+          "P": 4,
+          "S": 4,
+          "I": 4
+        },
+        "selector_leakage_overlap": [
+          1901,
+          2017
+        ]
+      },
+      "WB-295": {
+        "random_k_same_domain_seeds": [
+          2081,
+          2213,
+          2281,
+          2411,
+          2477,
+          2551
+        ],
+        "independent_leakage_seeds": [
+          2143,
+          2213,
+          2477
+        ],
+        "independent_fault_counts": {
+          "P": 4,
+          "S": 4,
+          "I": 4
+        },
+        "selector_leakage_overlap": [
+          2213,
+          2477
+        ]
+      },
+      "WB-403": {
+        "random_k_same_domain_seeds": [
+          2017,
+          2081,
+          2213,
+          2281,
+          2477,
+          2617
+        ],
+        "independent_leakage_seeds": [
+          2213,
+          2347,
+          2617
+        ],
+        "independent_fault_counts": {
+          "P": 4,
+          "S": 4,
+          "I": 4
+        },
+        "selector_leakage_overlap": [
+          2213,
+          2617
+        ]
+      },
+      "WB-433": {
+        "random_k_same_domain_seeds": [
+          2017,
+          2081,
+          2213,
+          2281,
+          2347,
+          2477
+        ],
+        "independent_leakage_seeds": [
+          1993,
+          2477,
+          2551
+        ],
+        "independent_fault_counts": {
+          "P": 4,
+          "S": 4,
+          "I": 4
+        },
+        "selector_leakage_overlap": [
+          2477
+        ]
+      },
+      "ASB-085": {
+        "random_k_same_domain_seeds": [
+          1901,
+          2017,
+          2081,
+          2281,
+          2347,
+          2617
+        ],
+        "independent_leakage_seeds": [
+          1993,
+          2281,
+          2411
+        ],
+        "independent_fault_counts": {
+          "P": 4,
+          "S": 4,
+          "I": 4
+        },
+        "selector_leakage_overlap": [
+          2281
+        ]
+      },
+      "ASB-087": {
+        "random_k_same_domain_seeds": [
+          2081,
+          2143,
+          2213,
+          2281,
+          2411,
+          2617
+        ],
+        "independent_leakage_seeds": [
+          1993,
+          2281,
+          2411
+        ],
+        "independent_fault_counts": {
+          "P": 4,
+          "S": 4,
+          "I": 4
+        },
+        "selector_leakage_overlap": [
+          2281,
+          2411
+        ]
+      },
+      "ASB-090": {
+        "random_k_same_domain_seeds": [
+          1993,
+          2017,
+          2081,
+          2213,
+          2281,
+          2551
+        ],
+        "independent_leakage_seeds": [
+          2081,
+          2281,
+          2617
+        ],
+        "independent_fault_counts": {
+          "P": 4,
+          "S": 4,
+          "I": 4
+        },
+        "selector_leakage_overlap": [
+          2081,
+          2281
+        ]
+      },
+      "ASB-977": {
+        "random_k_same_domain_seeds": [
+          1901,
+          2081,
+          2213,
+          2347,
+          2411,
+          2617
+        ],
+        "independent_leakage_seeds": [
+          2081,
+          2213,
+          2617
+        ],
+        "independent_fault_counts": {
+          "P": 4,
+          "S": 4,
+          "I": 4
+        },
+        "selector_leakage_overlap": [
+          2081,
+          2213,
+          2617
+        ]
+      },
+      "ASB-1572": {
+        "random_k_same_domain_seeds": [
+          1901,
+          2017,
+          2143,
+          2213,
+          2347,
+          2551
+        ],
+        "independent_leakage_seeds": [
+          2143,
+          2281,
+          2477
+        ],
+        "independent_fault_counts": {
+          "P": 4,
+          "S": 4,
+          "I": 4
+        },
+        "selector_leakage_overlap": [
+          2143
+        ]
+      }
+    }
+  },
+  "policy_outcome_accessed_during_schedule_generation": false,
+  "run_status": "NOT_RUN"
+}

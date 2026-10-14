@@ -1,0 +1,37 @@
+{
+  "status": "EXPLORATORY_INTERNAL_REPLICATION_COMPLETE",
+  "interpretation": "benchmark-derived adaptation; not confirmatory evidence, native benchmark reproduction, or external validation",
+  "contract_version": "1.2-recheck-candidate",
+  "contract_sha256": "552ef2c689cae93494d68c9114482d1550f5bcfa4653e9bff8902d3b19cfed1a",
+  "schedule_sha256": "f630cb0a34276c23462d838eb23113ea2e4d6c4270958b292db25d26ce725469",
+  "schedule_manifest_sha256": "0da3b084a0e86593ecd1abde4db7422aaf4336f3b353a63cfe014f1d7e949d52",
+  "upstream_commits": {
+    "provenanceguard": "3ad7141db44096e1440718618bdb24fa46c003ff",
+    "workbench": "00670510c8a476acd247925cefb17fee88500737"
+  },
+  "episodes": 1056,
+  "matched_pairs": 528,
+  "safety_cases": [
+    "ASB-085",
+    "ASB-087",
+    "ASB-090",
+    "ASB-977",
+    "WB-000",
+    "WB-110",
+    "WB-203",
+    "WB-433"
+  ],
+  "safety_case_count": 8,
+  "utility_only_cases": [
+    "WB-403",
+    "ASB-1572"
+  ],
+  "restoration_diagnostic": "WB-295",
+  "excluded_invalid_not_run": "ASB-267",
+  "rows_path": "results_secondary_varied/rerun/episodes.jsonl",
+  "rows_sha256": "40a419491011308dcce04db477c4a98dbda2e543d2db531b0a4fb07c08b43c35",
+  "old_matrix_sha256_before": "d07e929b9c932866046d28ee8f77476e800f5a80f4a41b363036f90e815b94f7",
+  "old_matrix_sha256_after": "d07e929b9c932866046d28ee8f77476e800f5a80f4a41b363036f90e815b94f7",
+  "offline_no_llm_or_api": true,
+  "gpu_required": false
+}

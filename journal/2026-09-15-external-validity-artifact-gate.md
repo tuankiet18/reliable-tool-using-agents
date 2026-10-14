@@ -8,7 +8,7 @@ sources:
   - "https://github.com/cmu-soda/ProvenanceGuard"
   - "https://arxiv.org/abs/2607.01236"
 created: 2026-09-15T16:27:33+07:00
-updated: 2026-09-15T16:27:33+07:00
+updated: 2026-09-18T23:44:48+07:00
 summary: >-
   EnvTrustBench fail executable-artifact gate vì chỉ public aggregate data; ProvenanceGuard artifact chạy offline được nhưng chỉ PARTIAL fit cho correlated-failure RQ.
 ---
@@ -106,13 +106,18 @@ Artifact phù hợp làm nguồn external task semantics, action boundaries và 
 
 `RISK:` Nếu adaptation tạo source topology quá thủ công, external-validity gain sẽ nhỏ và reviewer vẫn có thể xem toàn bộ effect là by construction.
 
+## Follow-up case audit — 2026-09-18
+
+Gate tiếp theo đã hoàn tất tại [[journal/2026-09-18-benchmark-derived-case-audit]]. Đã đóng băng `12` cases trên `10` atomic application domains cùng decisive claim, action boundary, canonical truth, adapted same-domain replica, adapted independent corroborator và programmatic oracle.
+
+Verdict là `CONDITIONAL PASS FOR BENCHMARK-DERIVED ADAPTATION`, không phải external reproduction. Original artifacts vẫn không có native redundant evidence hoặc failure-domain topology; project phải bổ sung chúng và ghi rõ đây là synthetic source-topology adaptation.
+
 ## Bước tiếp theo duy nhất
 
-Trước khi viết code, manual-audit và freeze một subset `12` read-before-write cases từ Agent-SafetyBench/WorkBench, trải trên ít nhất `6` domains. Với mỗi case phải ghi: decisive claim, irreversible action, canonical truth, primary evidence, same-domain replica khả dĩ, independent corroborator khả dĩ và programmatic oracle. Nếu không tìm đủ 12 cases mà không bóp méo task semantics, bỏ secondary adaptation.
+Viết và đóng băng `Secondary Multi-Domain Adaptation Protocol` trước khi tạo tool adapters hoặc chạy episode đầu tiên.
 
 ## Related
 
 - [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
 - [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]]
 - [[references/envtrustbench]]
-

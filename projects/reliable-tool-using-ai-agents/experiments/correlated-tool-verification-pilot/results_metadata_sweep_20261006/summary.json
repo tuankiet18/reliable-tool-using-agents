@@ -1,0 +1,199 @@
+{
+  "scope": "post-hoc exact analysis; escalation-canonical tasks under targeted common-mode fault",
+  "pi_main_escalation_share": 0.6666666666666666,
+  "validation_max_gap": 0.003574999999999995,
+  "validation": [
+    {
+      "m": 0.0,
+      "w": 0.0,
+      "max_abs_gap": 0.003574999999999995,
+      "exact": {
+        "check_eligibility_search": 0.0,
+        "check_eligibility_analytics": 0.5,
+        "check_eligibility_audit": 0.5
+      },
+      "empirical": {
+        "check_eligibility_search": 0.0,
+        "check_eligibility_analytics": 0.503575,
+        "check_eligibility_audit": 0.496425
+      }
+    },
+    {
+      "m": 0.25,
+      "w": 0.0,
+      "max_abs_gap": 0.0019458333333333133,
+      "exact": {
+        "check_eligibility_search": 0.09895833333333333,
+        "check_eligibility_analytics": 0.4505208333333333,
+        "check_eligibility_audit": 0.4505208333333333
+      },
+      "empirical": {
+        "check_eligibility_search": 0.100575,
+        "check_eligibility_analytics": 0.448575,
+        "check_eligibility_audit": 0.45085
+      }
+    },
+    {
+      "m": 0.0,
+      "w": 0.25,
+      "max_abs_gap": 0.002500520833333242,
+      "exact": {
+        "check_eligibility_search": 0.18684895833333337,
+        "check_eligibility_analytics": 0.40657552083333326,
+        "check_eligibility_audit": 0.40657552083333326
+      },
+      "empirical": {
+        "check_eligibility_search": 0.18905,
+        "check_eligibility_analytics": 0.404075,
+        "check_eligibility_audit": 0.406875
+      }
+    },
+    {
+      "m": 0.25,
+      "w": 0.25,
+      "max_abs_gap": 0.002859895833332904,
+      "exact": {
+        "check_eligibility_search": 0.26888020833333337,
+        "check_eligibility_analytics": 0.3655598958333329,
+        "check_eligibility_audit": 0.3655598958333329
+      },
+      "empirical": {
+        "check_eligibility_search": 0.269375,
+        "check_eligibility_analytics": 0.3627,
+        "check_eligibility_audit": 0.367925
+      }
+    },
+    {
+      "m": 0.0,
+      "w": 0.5,
+      "max_abs_gap": 0.0013041666666666618,
+      "exact": {
+        "check_eligibility_search": 0.3072916666666667,
+        "check_eligibility_analytics": 0.3463541666666667,
+        "check_eligibility_audit": 0.34635416666666674
+      },
+      "empirical": {
+        "check_eligibility_search": 0.307825,
+        "check_eligibility_analytics": 0.34505,
+        "check_eligibility_audit": 0.347125
+      }
+    },
+    {
+      "m": 0.0,
+      "w": 1.0,
+      "max_abs_gap": 0.0011166666666666825,
+      "exact": {
+        "check_eligibility_search": 0.20833333333333331,
+        "check_eligibility_analytics": 0.3958333333333333,
+        "check_eligibility_audit": 0.3958333333333333
+      },
+      "empirical": {
+        "check_eligibility_search": 0.20945,
+        "check_eligibility_analytics": 0.394925,
+        "check_eligibility_audit": 0.395625
+      }
+    },
+    {
+      "m": 0.5,
+      "w": 0.25,
+      "max_abs_gap": 0.0015197916666667144,
+      "exact": {
+        "check_eligibility_search": 0.32486979166666674,
+        "check_eligibility_analytics": 0.33756510416666674,
+        "check_eligibility_audit": 0.33756510416666674
+      },
+      "empirical": {
+        "check_eligibility_search": 0.32335,
+        "check_eligibility_analytics": 0.33815,
+        "check_eligibility_audit": 0.3385
+      }
+    }
+  ],
+  "thresholds": [
+    {
+      "leakage": 0.0,
+      "missing": 0.0,
+      "first_wrong_rate_with_no_advantage": null,
+      "difference_at_w0": -0.3333333333333333,
+      "difference_at_max_w": -0.125
+    },
+    {
+      "leakage": 0.0,
+      "missing": 0.25,
+      "first_wrong_rate_with_no_advantage": null,
+      "difference_at_w0": -0.234375,
+      "difference_at_max_w": -0.076171875
+    },
+    {
+      "leakage": 0.0,
+      "missing": 0.5,
+      "first_wrong_rate_with_no_advantage": null,
+      "difference_at_w0": -0.12499999999999997,
+      "difference_at_max_w": -0.036458333333333315
+    },
+    {
+      "leakage": 0.1,
+      "missing": 0.0,
+      "first_wrong_rate_with_no_advantage": null,
+      "difference_at_w0": -0.29999999999999993,
+      "difference_at_max_w": -0.11249999999999999
+    },
+    {
+      "leakage": 0.1,
+      "missing": 0.25,
+      "first_wrong_rate_with_no_advantage": null,
+      "difference_at_w0": -0.21093749999999997,
+      "difference_at_max_w": -0.06855468749999999
+    },
+    {
+      "leakage": 0.1,
+      "missing": 0.5,
+      "first_wrong_rate_with_no_advantage": null,
+      "difference_at_w0": -0.11249999999999999,
+      "difference_at_max_w": -0.03281249999999997
+    },
+    {
+      "leakage": 0.25,
+      "missing": 0.0,
+      "first_wrong_rate_with_no_advantage": null,
+      "difference_at_w0": -0.25,
+      "difference_at_max_w": -0.09375
+    },
+    {
+      "leakage": 0.25,
+      "missing": 0.25,
+      "first_wrong_rate_with_no_advantage": null,
+      "difference_at_w0": -0.17578125,
+      "difference_at_max_w": -0.05712890625
+    },
+    {
+      "leakage": 0.25,
+      "missing": 0.5,
+      "first_wrong_rate_with_no_advantage": null,
+      "difference_at_w0": -0.09375,
+      "difference_at_max_w": -0.027343750000000056
+    },
+    {
+      "leakage": 0.5,
+      "missing": 0.0,
+      "first_wrong_rate_with_no_advantage": null,
+      "difference_at_w0": -0.16666666666666663,
+      "difference_at_max_w": -0.0625
+    },
+    {
+      "leakage": 0.5,
+      "missing": 0.25,
+      "first_wrong_rate_with_no_advantage": null,
+      "difference_at_w0": -0.1171875,
+      "difference_at_max_w": -0.0380859375
+    },
+    {
+      "leakage": 0.5,
+      "missing": 0.5,
+      "first_wrong_rate_with_no_advantage": null,
+      "difference_at_w0": -0.0625,
+      "difference_at_max_w": -0.01822916666666674
+    }
+  ],
+  "note": "Whole-population unsafe rate = pi * values here; correct-expected-refund tasks are unaffected because the actor escalates after a false denial."
+}
