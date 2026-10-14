@@ -8,12 +8,14 @@ sources:
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/run_main_study.py"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_topology_diagnostics_20261003/analysis.json"
   - "projects/reliable-tool-using-ai-agents/paper/figures/frozen-evidence-v1/figure-data.json"
+  - "projects/reliable-tool-using-ai-agents/paper/figures/rq2-rq3-v1/figure-data.json"
+  - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/generate_rq_figures.py"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/generate_paper_figures.py"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/tests/test_paper_figures.py"
   - "projects/reliable-tool-using-ai-agents/paper/paper-draft.md"
   - "projects/reliable-tool-using-ai-agents/paper/artifact-inventory.json"
 created: 2026-10-03T23:43:29+07:00
-updated: 2026-10-04T17:10:00+07:00
+updated: 2026-10-14T14:00:00+07:00
 summary: >-
   Hai hình và ba worked examples từ frozen raw: đồng thuận sai, false denial trước gate và always-escalate trade-off; phân biệt quyết định, utility và counterfactual.
 provenance:
@@ -26,7 +28,7 @@ lifecycle_changed: 2026-10-03
 tier: supporting
 ---
 
-# Đọc kết quả nghiên cứu bằng hai hình
+# Đọc kết quả nghiên cứu bằng năm hình
 
 ## 1. Bài này thực sự kiểm tra điều gì?
 
@@ -36,7 +38,7 @@ tier: supporting
 
 Đọc [[projects/reliable-tool-using-ai-agents/paper/paper-draft]] §2/§4 để hiểu actor, oracle và fault map; [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]] kiểm soát phạm vi claim.
 
-## 2. Hình 1 — Safety phải đọc cùng utility
+## 2. Hình 2 — Safety phải đọc cùng utility (paper Figure 2)
 
 ![Safety và conditional refund utility](figures/frozen-evidence-v1/main-safety-utility.svg)
 
@@ -54,7 +56,7 @@ Cột xám là **counterfactual hậu nghiệm (post-hoc counterfactual)**: luô
 
 **INFERENCE:** Trong targeted condition, provenance bằng always-escalate về safety/action-correctness; điểm hơn counterfactual này là giữ clean refund utility (50/50 so với 0/50). Chỉ nói “unsafe về zero” sẽ che mất phần quan trọng của bài. ^[inferred]
 
-## 3. Hình 2 — Benefit có điều kiện
+## 3. Hình 3 — Benefit có điều kiện (paper Figure 3)
 
 ![Effect differences và metadata sensitivity](figures/frozen-evidence-v1/effects-and-metadata.svg)
 
@@ -170,7 +172,31 @@ Evidence: frozen raw và `results_topology_diagnostics_20261003/analysis.json`, 
 
 **BẠN TỰ KIỂM TRA:** Vì sao runtime không được dùng nhãn `corrupted` như oracle? Vì sao hai policies ở ví dụ B chỉ dùng một quan sát dù paper nói K=2? Hãy tự trả lời trước khi đọc lại bảng: K=2 áp dụng tại refund proposal, còn ví dụ B chưa tới proposal.
 
-## 7. Bạn nên tự giải thích được ba câu
+## 7. Hình 1, 4, 5 — vấn đề, điều kiện J và hai survey (thêm 2026-10-14)
+
+Do `src/generate_rq_figures.py` tạo vào `figures/rq2-rq3-v1/`; script kiểm SHA-256 của bốn file kết quả đã lưu (preregistered test và hai survey), không tính lại thống kê nào ngoài closed-form cho heatmap.
+
+![Common-mode failure](figures/rq2-rq3-v1/problem-common-mode.svg)
+
+**Hình 1 — vấn đề.** Ví dụ giả định. Điểm cần nhớ: "khác tên" không có nghĩa là "độc lập"; độc lập là chuyện upstream provider, không phải tên tool.
+
+![Điều kiện J](figures/rq2-rq3-v1/rq2-j-condition.svg)
+
+**Hình 4 — điều kiện J.**
+- **Panel A** là lý thuyết, không phải dữ liệu. Mỗi ô là chênh lệch xác suất chọn nhầm shared corroborator giữa provenance và random, tính bằng closed-form cho topology main (3 corroborator, 1 shared). Điều đáng nhìn: ranh giới xanh/đỏ là **đúng đường chéo** `r = φ`. Màu càng đậm thì chênh lệch càng lớn.
+- **Panel B** là dữ liệu của preregistered test. Mỗi điểm có 95% CI; ◆ là dự đoán ghi trước. Ba điều kiện có CI nằm hẳn một phía của 0 và đúng chiều dự đoán. Điều kiện `J = 0` có CI vượt khỏi dải ±0.08, nên **tương đương không được xác nhận**. Không được đọc là "J = 0 bằng random".
+- Điểm survey (rỗng) có thiếu nhãn (`k = 0.55`), nên vị trí của nó trên panel A chỉ để tham khảo.
+
+![Hai survey](figures/rq2-rq3-v1/rq3-surveys.svg)
+
+**Hình 5 — hai survey.**
+- **Panel A (ρ):** ρ của cùng một category đổi rất mạnh giữa hai mẫu (currency: 0 và 0.64). Không đọc ρ của một category như hằng số; chỉ hàng Pooled có khoảng tin cậy.
+- **Panel B (m_L1):** missing label cao ở gần như mọi category, và m gộp gần như bằng nhau (0.70 và 0.71). Đây là finding replicate vững nhất.
+- Category mới (translation, movies, books, air quality) chỉ có survey 2; geocoding của survey 2 có 3 server nên không vào ước lượng gộp.
+
+**BẠN TỰ KIỂM TRA:** Vì sao điểm `J = 0` trên panel B nằm trên 0 mà vẫn không được gọi là "tệ hơn random" trong claim chính? (Gợi ý: protocol chỉ đăng ký trước kiểm định **tương đương** cho `J = 0`, không đăng ký giả thuyết "tệ hơn"; kết luận theo chiều ngược lại từ cùng dữ liệu sẽ là post-hoc. Kết quả đúng phải nói: tương đương không được xác nhận, và chênh lệch quan sát được là +0.063, lệch so với dự đoán 0.)
+
+## 8. Bạn nên tự giải thích được ba câu
 
 1. Vì sao hai tool khác tên chưa chắc là hai nguồn evidence độc lập?
 2. Vì sao 0/150 unsafe và 0/50 correct refunds có thể cùng đúng?

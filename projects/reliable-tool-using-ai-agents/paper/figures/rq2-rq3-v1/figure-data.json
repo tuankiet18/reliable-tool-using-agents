@@ -1,0 +1,200 @@
+{
+  "inputs": {
+    "results_label_quality_20261012/analysis.json": "3496ed947d692b58d2f37a61256d0b5843c562b3047506787e2ae7bb6ad48587",
+    "results_label_quality_20261012/run_manifest.json": "2320b732faa353531b93ceeab137320d812bffd735d5c87d6f1aabc3e8b87f16",
+    "results_tool_survey_20261009/summary.json": "966f43b8aa7ec4c8dbe18cb6041303ceedb43bad72a28ad5a39c4c8e91f74e6c",
+    "results_tool_survey2_20261014/summary.json": "4fea2137faba40bdd85ddeabfa8bae61ecf03a269f53d19c023a148e5c64f2b7"
+  },
+  "figure_b": {
+    "heatmap": {
+      "n": 3,
+      "s": 1,
+      "steps": 40
+    },
+    "test": {
+      "J_minus": {
+        "r": 0.1,
+        "phi": 0.6,
+        "k": 1.0,
+        "difference": 0.13333333333333333,
+        "ci95": [
+          0.07,
+          0.2
+        ],
+        "predicted": 0.16
+      },
+      "J_zero": {
+        "r": 0.5,
+        "phi": 0.5,
+        "k": 1.0,
+        "difference": 0.06333333333333332,
+        "ci95": [
+          0.003333333333333332,
+          0.12666666666666668
+        ],
+        "predicted": 0.0
+      },
+      "survey_calibrated": {
+        "r": 0.57,
+        "phi": 0.0,
+        "k": 0.55,
+        "difference": -0.09333333333333334,
+        "ci95": [
+          -0.15666666666666668,
+          -0.03333333333333333
+        ],
+        "predicted": -0.091
+      },
+      "J_plus": {
+        "r": 0.9,
+        "phi": 0.1,
+        "k": 1.0,
+        "difference": -0.17666666666666667,
+        "ci95": [
+          -0.23333333333333334,
+          -0.12000000000000001
+        ],
+        "predicted": -0.176
+      }
+    }
+  },
+  "figure_c": {
+    "weather": {
+      "survey1": {
+        "pairs": 15,
+        "rho": 0.06666666666666667,
+        "m_L1": 0.9333333333333333
+      },
+      "survey2": {
+        "pairs": 28,
+        "rho": 0.35714285714285715,
+        "m_L1": 1.0
+      }
+    },
+    "currency_exchange": {
+      "survey1": {
+        "pairs": 15,
+        "rho": 0.0,
+        "m_L1": 0.9333333333333333
+      },
+      "survey2": {
+        "pairs": 28,
+        "rho": 0.6428571428571429,
+        "m_L1": 0.6428571428571429
+      }
+    },
+    "stock_quotes": {
+      "survey1": {
+        "pairs": 15,
+        "rho": 0.06666666666666667,
+        "m_L1": 0.3333333333333333
+      },
+      "survey2": {
+        "pairs": 28,
+        "rho": 0.25,
+        "m_L1": 1.0
+      }
+    },
+    "crypto_prices": {
+      "survey1": {
+        "pairs": 15,
+        "rho": 0.13333333333333333,
+        "m_L1": 0.8
+      },
+      "survey2": {
+        "pairs": 28,
+        "rho": 0.21428571428571427,
+        "m_L1": 0.6428571428571429
+      }
+    },
+    "geocoding": {
+      "survey1": {
+        "pairs": 15,
+        "rho": 0.2,
+        "m_L1": 0.9333333333333333
+      },
+      "survey2": {
+        "pairs": 3,
+        "rho": 0.0,
+        "m_L1": 1.0
+      },
+      "survey2_note": "reported separately (fewer than 4 servers), not in pooled estimate"
+    },
+    "web_search": {
+      "survey1": {
+        "pairs": 15,
+        "rho": 0.4666666666666667,
+        "m_L1": 0.3333333333333333
+      },
+      "survey2": {
+        "pairs": 28,
+        "rho": 0.39285714285714285,
+        "m_L1": 0.4642857142857143
+      }
+    },
+    "news": {
+      "survey1": {
+        "pairs": 15,
+        "rho": 0.2,
+        "m_L1": 0.6
+      },
+      "survey2": {
+        "pairs": 28,
+        "rho": 0.10714285714285714,
+        "m_L1": 0.4642857142857143
+      }
+    },
+    "translation": {
+      "survey1": null,
+      "survey2": {
+        "pairs": 28,
+        "rho": 0.03571428571428571,
+        "m_L1": 0.8928571428571429
+      }
+    },
+    "movies": {
+      "survey1": null,
+      "survey2": {
+        "pairs": 28,
+        "rho": 0.32142857142857145,
+        "m_L1": 0.6428571428571429
+      }
+    },
+    "books": {
+      "survey1": null,
+      "survey2": {
+        "pairs": 6,
+        "rho": 0.16666666666666666,
+        "m_L1": 0.5
+      }
+    },
+    "air_quality": {
+      "survey1": null,
+      "survey2": {
+        "pairs": 15,
+        "rho": 0.06666666666666667,
+        "m_L1": 0.6
+      }
+    },
+    "POOLED": {
+      "survey1": {
+        "pairs": 105,
+        "rho": 0.1619047619047619,
+        "m_L1": 0.6952380952380952,
+        "bootstrap95": [
+          0.075,
+          0.2808988764044944
+        ]
+      },
+      "survey2": {
+        "pairs": 245,
+        "rho": 0.27346938775510204,
+        "m_L1": 0.7061224489795919,
+        "bootstrap95": [
+          0.17889908256880735,
+          0.37383177570093457
+        ]
+      }
+    }
+  }
+}

@@ -19,6 +19,7 @@ sources:
   - "https://arxiv.org/html/2609.11957v1"
   - "projects/reliable-tool-using-ai-agents/paper/figure-guide.md"
   - "projects/reliable-tool-using-ai-agents/paper/figures/frozen-evidence-v1/figure-data.json"
+  - "projects/reliable-tool-using-ai-agents/paper/figures/rq2-rq3-v1/figure-data.json"
   - "projects/reliable-tool-using-ai-agents/paper/supplementary-appendix.md"
   - "projects/reliable-tool-using-ai-agents/paper/reproducibility-package.md"
   - "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md"
@@ -55,7 +56,7 @@ summary: >-
   Living paper v1.0: controlled replication (RQ1), điều kiện J = r − φ > 0 cho metadata failure-domain (RQ2), và hai survey MCP server (42 và 78 server; survey 2 có dự đoán ghi trước) cho thấy metadata agent thấy thiếu ở khoảng 70% cặp, khi có thì phần lớn đúng (J > 0), và tên bên vận hành bỏ sót phụ thuộc ở mức nguồn gốc (RQ3).
 lifecycle: draft
 paper_status: living-draft
-version: "1.4"
+version: "1.5"
 ---
 
 # When Does Failure-Domain Metadata Help Tool-Using AI Agents? A Controlled Replication, a Label-Quality Condition, and Two Surveys of MCP Server Metadata
@@ -79,6 +80,10 @@ Các large language model agents ngày càng được phép gọi API, đọc da
 Một hướng xử lý tự nhiên là kiểm tra chéo qua nhiều tool. RIVA cho thấy nhiều diagnostic paths có thể tăng reliability khi observability tools trả erroneous output [RIVA26](https://arxiv.org/html/2603.02345v1). Tuy nhiên, số lượng tool interfaces không đồng nghĩa với số lượng nguồn evidence độc lập. `get_order_status` và `search_order_history` có thể cùng đọc một `operational_db` replica. Nếu replica đó bị corrupt, hai calls khác tên có thể trả cùng một kết quả sai và tạo false confidence.
 
 Rủi ro này liên quan đến **lỗi chung nguyên nhân (common-mode failure)** trong dependable systems. Giả định independence trong multiversion programming đã được Knight và Leveson nghiên cứu thực nghiệm [KL86](https://doi.org/10.1109/TSE.1986.6312924). Ở một setting khác, Kim et al. quan sát correlated errors giữa LLMs [CE25](https://proceedings.mlr.press/v267/kim25e.html). Đây là background/analogous evidence, không đo prevalence của shared-backend tool corruption; counterexample về tool interfaces trong bài này đến từ controlled fault model.
+
+![Common-mode failure qua provider dùng chung](figures/rq2-rq3-v1/problem-common-mode.svg)
+
+*Figure 1. Minh họa vấn đề. Primary `weather_A` và `weather_pro` khác tên nhưng cùng gọi Provider P (cùng failure domain); khi P trả dữ liệu sai, chọn `weather_pro` làm corroborator cho ra đồng thuận sai. `forecast_x` gọi Provider Q độc lập nên phát hiện được bất đồng. Ví dụ giả định, không phải dữ liệu survey.*
 
 Vấn đề đặc biệt quan trọng trước **hành động có side effect lớn hoặc khó đảo ngược (high-impact or irreversible action)**. Nếu một hệ thống thật gọi `issue_refund`, xóa resource hoặc gửi dữ liệu nhạy cảm trên cơ sở evidence sai, hậu quả có thể vượt khỏi một câu trả lời sai. Vì vậy nghiên cứu mô phỏng verification tại **ranh giới hành động (action boundary)**: proposal phải qua corroboration trước khi được cho phép. Main study chấm quyết định cho phép hoặc escalation; nó không thực thi write lên canonical state.
 
@@ -376,7 +381,7 @@ Main deterministic gate do đó `PASS` theo internal pre-specified criteria. Gat
 
 ![Main safety và conditional refund utility](figures/frozen-evidence-v1/main-safety-utility.svg)
 
-*Figure 1. Main decision-level safety phải đọc cùng conditional refund utility. Panel A dùng n=150 decisions; panel B dùng n=50 expected-refund rows mỗi policy/regime. Cột xám là always-escalate counterfactual hậu nghiệm, không measured baseline cùng K=2. Targeted zero unsafe của treatment đi cùng 0/50 correct expected-refund decisions; missed refunds do actor không tạo proposal. Bars là descriptive counts, không CI hoặc live-agent outcomes.*
+*Figure 2. Main decision-level safety phải đọc cùng conditional refund utility. Panel A dùng n=150 decisions; panel B dùng n=50 expected-refund rows mỗi policy/regime. Cột xám là always-escalate counterfactual hậu nghiệm, không measured baseline cùng K=2. Targeted zero unsafe của treatment đi cùng 0/50 correct expected-refund decisions; missed refunds do actor không tạo proposal. Bars là descriptive counts, không CI hoặc live-agent outcomes.*
 
 ### 5.3 Mechanism analysis
 
@@ -426,7 +431,7 @@ Overall robustness gate `FAIL` vì cả ba required conditions phải pass. Tron
 
 ![Main effects và imperfect-metadata stress conditions](figures/frozen-evidence-v1/effects-and-metadata.svg)
 
-*Figure 2. Chênh lệch unsafe decision rate (provenance − random) và stored 95% paired task-cluster bootstrap CIs, chuyển sang percentage points. Main và robustness dùng hai tập 30 tasks riêng; không pooled inference hoặc bootstrap mới. Chỉ ba protocol-required robustness conditions được vẽ, không toàn sensitivity grid. PASS/FAIL lấy từ stored criteria trước làm tròn. Clean [0,0] không population equivalence; wrong .25 là nominal label-noise probability, không realized fraction.*
+*Figure 3. Chênh lệch unsafe decision rate (provenance − random) và stored 95% paired task-cluster bootstrap CIs, chuyển sang percentage points. Main và robustness dùng hai tập 30 tasks riêng; không pooled inference hoặc bootstrap mới. Chỉ ba protocol-required robustness conditions được vẽ, không toàn sensitivity grid. PASS/FAIL lấy từ stored criteria trước làm tròn. Clean [0,0] không population equivalence; wrong .25 là nominal label-noise probability, không realized fraction.*
 
 ### 5.5 External-validity artifact gate
 
@@ -545,6 +550,10 @@ Mean effect mô phỏng khớp dự đoán giải tích độc lập. Xấp xỉ
 
 Hai lần chạy byte-identical; regime clean có 0 unsafe. Ở `J_zero`, 90% CI `[+0.013, +0.117]` vượt biên ±0.08 nên tương đương không được xác nhận. Phân tích thăm dò cho thấy provenance chọn tool chung 79/200 lần so với kỳ vọng 1/3 (p = 0.064), phù hợp với biến thiên ngẫu nhiên; power của H-J3 (khoảng 59%) không được tính khi lập kế hoạch. Chúng tôi không diễn giải kết quả này là `J = 0` gây hại. Kết quả xác nhận dự đoán của RQ2 trong pipeline mô phỏng đầy đủ, trên task mới; nó không chứng minh điều gì về agent hay tool thật.
 
+![Điều kiện J: lý thuyết và preregistered test](figures/rq2-rq3-v1/rq2-j-condition.svg)
+
+*Figure 4. (A) Closed-form `P(select shared) − s/n` cho topology main (n = 3 corroborators, s = 1 shared) trên lưới `(r, φ)`: xanh là failure-domain-aware selection chọn nhầm ít hơn random, đỏ là nhiều hơn; ranh giới trùng đúng đường chéo `J = r − φ = 0`. Chấm đen là ba điều kiện có đủ nhãn; chấm rỗng là điều kiện survey-calibrated, có thiếu nhãn (`k = 0.55`) nên không nằm trên cùng mặt lý thuyết. (B) Chênh lệch unsafe decision rate (provenance − random) đã lưu của preregistered test, 60 task mới, 300 rows mỗi policy và điều kiện, với 95% task-cluster bootstrap CI; ◆ là dự đoán ghi trước (sau Amendment A1). Dải xám là biên tương đương ±0.08 của H-J3; CI của `J = 0` vượt dải nên tương đương không được xác nhận. Không có bootstrap mới.*
+
 ### 5.12 RQ3 — Survey 2: kiểm định dự đoán trên 78 MCP server
 
 **Mức bên vận hành** (74 server, 10 nhóm, 245 cặp). `67/245` cặp dùng chung provider mặc định: ρ = 0.27, bootstrap theo server 95% `[0.179, 0.374]`. Theo nhóm: currency_exchange 0.64 (sáu server dùng Frankfurter), web_search 0.39, weather 0.36, movies 0.32, stock_quotes 0.25, crypto_prices 0.21, books 0.17, news 0.11, air_quality 0.07, translation 0.04. Hai nhóm báo cáo riêng không có cặp chung (geocoding 0/3; ip_geolocation không có cặp).
@@ -577,6 +586,10 @@ Ba cặp gán nhầm ở L1 đều do metadata nêu tầng khác bên vận hàn
 **Lỗi cài đặt phát hiện sau khi chạy.** Luật A2 dùng nguồn gốc khai báo của server **thay cho** provider vận hành, nên một server phim mất liên kết OMDb với hai server OMDb khác (movies giảm từ 0.32 xuống 0.25 ở mức nguồn gốc). Độ nhạy post-hoc dùng phép hợp cho ρ 0.32 và recall đọc tên theo chữ 0.84 (56/67); P4 và P5 không đổi.
 
 **So sánh với survey 1 (mô tả).** m_L1 gộp gần như bằng nhau (0.70 và 0.71). ρ theo nhóm biến động mạnh: currency 0.00 → 0.64, weather 0.07 → 0.36, web_search 0.47 → 0.39. Tỷ lệ dùng chung của một nhóm vì vậy phụ thuộc vào việc mẫu rơi vào những repo nào, và không nên được hiểu như một hằng số của nhóm.
+
+![Hai survey: shared-provider rate và missing-label rate theo category](figures/rq2-rq3-v1/rq3-surveys.svg)
+
+*Figure 5. (A) Tỷ lệ cặp cùng category dùng chung upstream provider mặc định (ρ, operator level) và (B) tỷ lệ cặp có missing label ở agent-visible metadata (L1), theo category, cho survey 1 (tròn, 15 cặp mỗi category) và survey 2 (vuông, 6–28 cặp). Hàng Pooled có 95% server-level bootstrap interval đã lưu cho ρ. Geocoding của survey 2 (vuông rỗng, 3 server, 3 cặp) chỉ báo cáo riêng, không vào ước lượng gộp. ρ theo category đổi mạnh giữa hai mẫu, còn m gộp gần như không đổi (0.70 và 0.71). Nhãn do AI gán; survey 2 chưa có human validation.*
 
 **Kiểm tra của con người.** Nhãn của người gán nhãn cho 20 server survey 2 chưa có; mọi số liệu §5.12 là AI-coded và chưa được con người kiểm chứng.
 
@@ -660,7 +673,7 @@ Hai vòng secondary case review do một AI khác hỗ trợ theo yêu cầu c�
 
 Core main/robustness decision studies chạy CPU/offline, không model training hoặc API. [[projects/reliable-tool-using-ai-agents/paper/reproducibility-package]] mô tả upstream pins, dependency/read scope, safe CLI commands và expected outputs; `paper/artifact-inventory.json` khóa SHA-256 của 21 selected artifacts. Inventory không là complete dependency lock hoặc public release freeze.
 
-Hai hình Results là derived artifacts, tách khỏi inventory 21 frozen experimental inputs. `src/generate_paper_figures.py` kiểm năm input hashes, đối chiếu raw point estimates với stored inference, rồi tạo SVG và figure-data.json vào directory mới; không recompute bootstrap. [[projects/reliable-tool-using-ai-agents/paper/figure-guide]] giải thích mẫu số, counterfactual và scientific limits. Lượt dựng hình đạt 9 figure tests, 7 main và 8 robustness focused tests (24/24); đây không phải full-suite rerun hoặc thêm study episodes.
+Ba hình mới (Figure 1, 4, 5) do `src/generate_rq_figures.py` tạo vào `figures/rq2-rq3-v1/`: script kiểm SHA-256 của bốn file kết quả đã lưu, chỉ tính closed-form cho heatmap lý thuyết, không bootstrap mới. Hai hình Results còn lại là derived artifacts, tách khỏi inventory 21 frozen experimental inputs. `src/generate_paper_figures.py` kiểm năm input hashes, đối chiếu raw point estimates với stored inference, rồi tạo SVG và figure-data.json vào directory mới; không recompute bootstrap. [[projects/reliable-tool-using-ai-agents/paper/figure-guide]] giải thích mẫu số, counterfactual và scientific limits. Lượt dựng hình đạt 9 figure tests, 7 main và 8 robustness focused tests (24/24); đây không phải full-suite rerun hoặc thêm study episodes.
 
 Revision v0.5 ngày 2026-10-03 tái phân tích frozen main, robustness, secondary và topology artifacts bằng Python 3.12.3 trong thư mục tạm mới. Tám selected output files khớp byte-for-byte với stored summaries/inferences/decisions; không chạy policy episodes hoặc model calls mới. Audit v0.8 kiểm counts/hashes và sự nhất quán tài liệu, không chạy lại các analyzers/bootstrap hoặc fresh-machine generation. Historical generation reruns được giữ với chronology riêng. CLI dùng explicit output mới vì một số runners/analyzers có thể overwrite defaults.
 
@@ -699,6 +712,8 @@ Title/authors/year/identifier được đối chiếu theo phạm vi từng ngu�
 - [KL86] John C. Knight and Nancy G. Leveson. 1986. *An Experimental Evaluation of the Assumption of Independence in Multiversion Programming*. IEEE Transactions on Software Engineering, 12(1), pp. 96–109. [DOI: 10.1109/TSE.1986.6312924](https://doi.org/10.1109/TSE.1986.6312924). DOI resolves to IEEE; full-text re-read unavailable in this audit; metadata corroborated by DBLP, no new quantitative claim added.
 
 ## Writing status
+
+**v1.5 (2026-10-14):** thêm Figure 1 (minh họa vấn đề), Figure 4 (điều kiện J), Figure 5 (hai survey); hai hình cũ đánh số lại thành Figure 2 và 3.
 
 **v1.4 (2026-10-14):** thêm survey 2 (§4.8, §5.12); sửa abstract, contribution 3, §6.1, §6.4, §7.7, §9 theo kết quả survey 2; đổi tiêu đề; sửa câu cũ ở §9 nói quy tắc `J` "chưa chứng minh" (đã chứng minh từ v1.2). Còn mở: agreement survey 2, bản tiếng Anh.
 
