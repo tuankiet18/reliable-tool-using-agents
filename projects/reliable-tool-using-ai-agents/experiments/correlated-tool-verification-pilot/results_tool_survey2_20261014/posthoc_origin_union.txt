@@ -1,0 +1,13 @@
+POST-HOC origin=origin_a ∪ mapped operator; naive variant
+pooled rho=0.322  L2 r=0.836 (56/67)  L1 phi=0.027
+  air_quality          rho=0.07
+  books                rho=0.17
+  crypto_prices        rho=0.32
+  currency_exchange    rho=0.64
+  movies               rho=0.32
+  news                 rho=0.11
+  stock_quotes         rho=0.25
+  translation          rho=0.04
+  weather              rho=0.36
+  web_search           rho=0.71
+  POOLED               rho=0.32
