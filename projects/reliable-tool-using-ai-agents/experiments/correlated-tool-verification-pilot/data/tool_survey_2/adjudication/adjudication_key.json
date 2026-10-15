@@ -1,0 +1,97 @@
+{
+  "seed": 20261015,
+  "blinding": {
+    "C1": {
+      "X": "coder_A_claude",
+      "Y": "coder_2_codex",
+      "server": "books/VmLia/books-mcp-server",
+      "field": "upstream_providers"
+    },
+    "C2": {
+      "X": "coder_2_codex",
+      "Y": "coder_A_claude",
+      "server": "currency_exchange/NotNull92/exchange-rate-mcp",
+      "field": "l2_declared_provider"
+    },
+    "C3": {
+      "X": "coder_2_codex",
+      "Y": "coder_A_claude",
+      "server": "currency_exchange/NotNull92/exchange-rate-mcp",
+      "field": "l2_declared_provider"
+    },
+    "C4": {
+      "X": "coder_A_claude",
+      "Y": "coder_2_codex",
+      "server": "news/wudalu/mcp-hot-news-server",
+      "field": "l1_declared_provider"
+    }
+  },
+  "rules": [
+    "R1",
+    "R2",
+    "R3",
+    "R4"
+  ],
+  "spot_check": [
+    {
+      "server": "geocoding/Gaurav1998-dev/geocoder-mcp",
+      "claim": "Open-Meteo",
+      "file": "app/mcp/route.ts",
+      "line": 42
+    },
+    {
+      "server": "currency_exchange/vivart/exchange-rate-mcp",
+      "claim": "Frankfurter",
+      "file": "src/main/kotlin/com/vivart/FrankfurterClient.kt",
+      "line": 38
+    },
+    {
+      "server": "translation/mcp-tool-shop-org/polyglot-mcp",
+      "claim": "Ollama (local)",
+      "file": "src/ollama.ts",
+      "line": 63
+    },
+    {
+      "server": "translation/waxberry-dev/live-translate-mcp",
+      "claim": "Anthropic",
+      "file": "src/translate.ts",
+      "line": 3
+    },
+    {
+      "server": "air_quality/mattmarcin/aqicn-mcp",
+      "claim": "WAQI (aqicn.org)",
+      "file": "aqicn_server.py",
+      "line": 16
+    },
+    {
+      "server": "air_quality/hayrapetian/yerevan-aqi-mcp",
+      "claim": "Yerevan Municipality GIS",
+      "file": "src/api.ts",
+      "line": 3
+    },
+    {
+      "server": "air_quality/8xiang5hao/aqicn-mcp",
+      "claim": "WAQI (aqicn.org)",
+      "file": "src/aqicn_mcp/server.py",
+      "line": 21
+    },
+    {
+      "server": "currency_exchange/sin4ch/exchange-rate-mcp",
+      "claim": "ExchangeRate-API",
+      "file": "main.py",
+      "line": 21
+    },
+    {
+      "server": "weather/mohamed2020m/weather-mcp-server",
+      "claim": "OpenWeather",
+      "file": "main.py",
+      "line": 28
+    },
+    {
+      "server": "translation/Deep-Intelligent-Pharma/Translationx-mcp-server",
+      "claim": "X-DOC",
+      "file": "src/server.py",
+      "line": 6
+    }
+  ]
+}
