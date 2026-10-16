@@ -56,7 +56,7 @@ summary: >-
   Living paper v1.0: controlled replication (RQ1), điều kiện J = r − φ > 0 cho metadata failure-domain (RQ2), và hai survey MCP server (42 và 78 server; survey 2 có dự đoán ghi trước) cho thấy metadata agent thấy thiếu ở khoảng 70% cặp, khi có thì phần lớn đúng (J > 0), và tên bên vận hành bỏ sót phụ thuộc ở mức nguồn gốc (RQ3).
 lifecycle: draft
 paper_status: living-draft
-version: "1.6"
+version: "1.7"
 ---
 
 # When Does Failure-Domain Metadata Help Tool-Using AI Agents? A Controlled Replication, a Label-Quality Condition, and Two Surveys of MCP Server Metadata
@@ -591,7 +591,9 @@ Ba cặp gán nhầm ở L1 đều do metadata nêu tầng khác bên vận hàn
 
 *Figure 5. (A) Tỷ lệ cặp cùng category dùng chung upstream provider mặc định (ρ, operator level) và (B) tỷ lệ cặp có missing label ở agent-visible metadata (L1), theo category, cho survey 1 (tròn, 15 cặp mỗi category) và survey 2 (vuông, 6–28 cặp). Hàng Pooled có 95% server-level bootstrap interval đã lưu cho ρ. Geocoding của survey 2 (vuông rỗng, 3 server, 3 cặp) chỉ báo cáo riêng, không vào ước lượng gộp. ρ theo category đổi mạnh giữa hai mẫu, còn m gộp gần như không đổi (0.70 và 0.71). Nhãn do AI gán; survey 2 chưa có human validation.*
 
-**Inter-coder agreement (AI và AI).** Coder thứ hai gán độc lập 20 server chọn bằng hash trước khi coder A bắt đầu (gồm 1 server sau đó bị loại khỏi ước lượng), nhưng dùng Codex, không phải tự gán như protocol quy định. Theo bảng chuẩn hóa tên của survey 1 (cố định trước): upstream 0.45 (κ 0.43), L1 0.65 (κ 0.57), L2 0.40 (κ 0.38); khớp nguyên chữ upstream 0.40. Có nhãn hay thiếu nhãn ở L1, tức đại lượng dùng để tính m, khớp **20/20** (κ 1.00). Phần lớn bất đồng về upstream là khác mức đặt tên của cùng một tổ chức (`Google Maps Platform` và `Google`; `Amazon Location Service` và `Amazon Web Services`). Bất đồng thật ở L1/L2 tập trung vào một điểm codebook chưa rõ: metadata nêu nguồn dữ liệu phía sau một API trung gian (ví dụ CoinGecko sau Blockchain Academics) có được tính là provider khai báo không. Chính trường hợp này tạo ra 2/3 cặp gán nhầm của P3, nên kết quả P3 phụ thuộc vào cách hiểu codebook. Mọi số liệu §5.12 là AI-coded; chưa có human validation.
+**Inter-coder agreement (AI và AI).** Coder thứ hai gán độc lập 20 server chọn bằng hash trước khi coder A bắt đầu (gồm 1 server sau đó bị loại khỏi ước lượng), nhưng dùng Codex, không phải tự gán như protocol quy định. Theo bảng chuẩn hóa tên của survey 1 (cố định trước): upstream 0.45 (κ 0.43), L1 0.65 (κ 0.57), L2 0.40 (κ 0.38); khớp nguyên chữ upstream 0.40. Có nhãn hay thiếu nhãn ở L1, tức đại lượng dùng để tính m, khớp **20/20** (κ 1.00). Phần lớn bất đồng về upstream là khác mức đặt tên của cùng một tổ chức (`Google Maps Platform` và `Google`; `Amazon Location Service` và `Amazon Web Services`). Bất đồng thật ở L1/L2 tập trung vào một điểm codebook chưa rõ: metadata nêu nguồn dữ liệu phía sau một API trung gian (ví dụ CoinGecko sau Blockchain Academics) có được tính là provider khai báo không. Chính trường hợp này tạo ra 2/3 cặp gán nhầm của P3, nên kết quả P3 phụ thuộc vào cách hiểu codebook.
+
+**Author adjudication (Amendment A3, ghi trước khi tác giả xem các trường hợp).** Vì không có coder con người, tác giả phân xử các bất đồng: chọn 4 luật codebook (tính tên nguồn dữ liệu cuối cùng; không tính provider không bật mặc định; hai thương hiệu cùng công ty mẹ là hai provider; tên thương hiệu được tính) và 4 trường hợp có câu trả lời che tên. Tác giả chọn giống coder A 7/8 lần, nhưng điều này không chứng minh coder A đúng hơn: coder A (Claude) cũng là người giải thích các câu hỏi, và tác giả đã biết lập trường của các coder ở một luật. Tác giả cũng kiểm tra 10 bằng chứng `file:dòng` chọn ngẫu nhiên, đọc từ dòng code do Claude trích tại commit ghim: 10/10 đúng. Áp các luật này lên cả 78 server đổi 7 nhãn ở 5 server. Kết quả sensitivity: P1, P2, P4, P5, P6 không đổi; P3 từ 3/45 thành 2/45 = 0.044, tức là đạt ngưỡng, nhưng chỉ do một cặp. **Kết quả chính của P3 vẫn là không đạt**; điều đúng cần nói là false-sharing ở L1 nằm sát ngưỡng 5% và phụ thuộc vào định nghĩa. Mọi số liệu §5.12 là AI-coded; phần con người duy nhất là author adjudication, không phải coder độc lập.
 
 ## 6. Discussion
 
@@ -712,6 +714,8 @@ Title/authors/year/identifier được đối chiếu theo phạm vi từng ngu�
 - [KL86] John C. Knight and Nancy G. Leveson. 1986. *An Experimental Evaluation of the Assumption of Independence in Multiversion Programming*. IEEE Transactions on Software Engineering, 12(1), pp. 96–109. [DOI: 10.1109/TSE.1986.6312924](https://doi.org/10.1109/TSE.1986.6312924). DOI resolves to IEEE; full-text re-read unavailable in this audit; metadata corroborated by DBLP, no new quantitative claim added.
 
 ## Writing status
+
+**v1.7 (2026-10-16):** thêm author adjudication và sensitivity (§5.12): P3 sát ngưỡng (3/45 chính, 2/45 theo luật tác giả); 10/10 bằng chứng được tác giả xác nhận.
 
 **v1.6 (2026-10-14):** đính chính: coder thứ hai của cả hai survey dùng AI (Claude hoặc Codex), nên bỏ mọi claim "human check"; thêm agreement survey 2 (Claude và Codex) ở §5.12.
 

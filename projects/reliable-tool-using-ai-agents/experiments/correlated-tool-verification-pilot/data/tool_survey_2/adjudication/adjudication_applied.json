@@ -1,0 +1,80 @@
+{
+  "changed_labels": [
+    {
+      "server_id": "news/wudalu/mcp-hot-news-server",
+      "field": "l2_declared_provider",
+      "before": "vvhan;Zhihu;Weibo;Baidu;Bilibili;Douyin;Kuaishou;Toutiao;Hupu;Douban;ITHome;Google Trends;NewsAPI;Reddit;Twitter/X",
+      "after": "vvhan;Zhihu;Weibo;Baidu;Bilibili;Douyin;Toutiao;Hupu;Douban;ITHome;Google Trends;NewsAPI;Reddit;Twitter/X"
+    },
+    {
+      "server_id": "stock_quotes/yadinae/stock-mcp-server",
+      "field": "l1_declared_provider",
+      "before": "Tencent Finance;Sina Finance;Eastmoney;Yahoo Finance;TradingView;Tongdaxin (TDX)",
+      "after": "Tencent Finance;Sina Finance;Yahoo Finance;TradingView"
+    },
+    {
+      "server_id": "stock_quotes/yadinae/stock-mcp-server",
+      "field": "l2_declared_provider",
+      "before": "Tencent Finance;Sina Finance;Eastmoney;Yahoo Finance;TradingView;Tongdaxin (TDX)",
+      "after": "Tencent Finance;Sina Finance;Yahoo Finance;TradingView"
+    },
+    {
+      "server_id": "translation/kunalchhabra/translation-mcp-server",
+      "field": "l2_declared_provider",
+      "before": "OpenAI;Ollama (local)",
+      "after": "OpenAI"
+    },
+    {
+      "server_id": "web_search/MemoryClear/claude-web-search-mcp",
+      "field": "l2_declared_provider",
+      "before": "Baidu;Sogou;360 Search;Bing;DuckDuckGo;SerpAPI",
+      "after": "Baidu;Sogou;360 Search;DuckDuckGo"
+    },
+    {
+      "server_id": "web_search/hpuhsp/web-search-mcp-server",
+      "field": "l1_declared_provider",
+      "before": "DuckDuckGo;SearXNG (public instances);Bing;Brave Search",
+      "after": "DuckDuckGo;SearXNG (public instances)"
+    },
+    {
+      "server_id": "web_search/hpuhsp/web-search-mcp-server",
+      "field": "l2_declared_provider",
+      "before": "Wikipedia;DuckDuckGo;SearXNG (public instances);Bing;Brave Search",
+      "after": "Wikipedia;DuckDuckGo;SearXNG (public instances)"
+    }
+  ],
+  "post_hoc_org_level_agreement_A_vs_coder2": {
+    "upstream_providers": {
+      "agreement": 0.85,
+      "kappa": 0.841688654353562,
+      "disagreements": [
+        "books/VmLia/books-mcp-server",
+        "news/corey-coders/mcp-finance-news",
+        "translation/xdfzx711/translation-mcp-server"
+      ]
+    },
+    "l1_declared_provider": {
+      "agreement": 0.8,
+      "kappa": 0.7546012269938651,
+      "disagreements": [
+        "crypto_prices/blockchainacademics/bca-mcp",
+        "movies/Grinv/tmdb-mcp",
+        "news/corey-coders/mcp-finance-news",
+        "news/wudalu/mcp-hot-news-server"
+      ]
+    },
+    "l2_declared_provider": {
+      "agreement": 0.7,
+      "kappa": 0.6850393700787402,
+      "disagreements": [
+        "crypto_prices/blockchainacademics/bca-mcp",
+        "currency_exchange/NotNull92/exchange-rate-mcp",
+        "movies/Grinv/tmdb-mcp",
+        "news/corey-coders/mcp-finance-news",
+        "news/wudalu/mcp-hot-news-server",
+        "web_search/MemoryClear/claude-web-search-mcp"
+      ]
+    }
+  },
+  "note": "post-hoc: organisation-level merges were made by Claude (AI), not approved by the author"
+}

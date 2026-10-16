@@ -133,9 +133,30 @@ Coder thứ hai nộp đủ 20/20 server (`data/tool_survey_2/coder_2_labels.csv
   - Codex không tính.
 - Trường hợp `bca-mcp` tạo ra 2/3 cặp gán nhầm của P3, nên **P3 phụ thuộc vào cách hiểu codebook**. Không dùng điều này để đổi kết quả P3 (vẫn là không đạt).
 
+## Author adjudication — cập nhật 2026-10-16 (Amendment A3)
+
+Tác giả (con người duy nhất) phân xử bất đồng giữa Claude và Codex: 4 luật codebook, 4 trường hợp che tên X/Y, và kiểm tra 10 bằng chứng `file:dòng` chọn ngẫu nhiên.
+
+- **Luật của tác giả:**
+  - R1: tính tên nguồn dữ liệu cuối cùng ("nguồn là nguồn cuối cùng").
+  - R2: không tính provider không bật mặc định.
+  - R3: WSJ và MarketWatch là hai provider.
+  - R4: tên thương hiệu được tính.
+- **So với hai coder:** tác giả giống Claude 7/8 lần, giống Codex 1/8 lần (R2).
+- **Kiểm tra bằng chứng:** 10/10 đúng.
+- **Sensitivity với nhãn đã phân xử:**
+  - Luật R2 đổi 7 nhãn ở 5 server.
+  - P1, P2, P4, P6 và P5 không đổi.
+  - P3 từ 3/45 thành **2/45 = 0.044**, tức là đạt ngưỡng 0.05, nhưng chỉ chênh **một cặp**.
+- **Agreement giữa Claude và Codex sau gộp tên ở mức tổ chức** (bảng do AI lập, post-hoc): upstream 0.85, L1 0.80, L2 0.70.
+
+**INFERENCE.**
+- P3 nằm sát ngưỡng và phụ thuộc vào định nghĩa codebook, nên không nên kết luận mạnh theo chiều nào. Hai cặp còn lại đều do metadata nêu nguồn dữ liệu cuối (CoinGecko). Theo chính luật R1 của tác giả, nhãn đó "đúng" ở data-origin level.
+- Việc tác giả gần như luôn chọn giống Claude có thể do Claude đúng hơn. Nhưng cũng có thể vì Claude là người giải thích câu hỏi và vì tác giả đã biết lập trường của từng coder ở R1. Đây là giới hạn cần nêu.
+
 ## Giới hạn
 
-- Không có human validation: coder thứ hai của cả hai survey dùng AI.
+- Không có human validation độc lập: coder thứ hai của cả hai survey dùng AI. Phần con người duy nhất là tác giả phân xử bất đồng và kiểm tra 10 bằng chứng, với dòng code do Claude trích.
 - Không thực hiện phân tích phụ (a)+(b), vì không thu thập bằng chứng từ tài liệu provider. Đây là sai lệch so với §5 và đã ghi ở A2.
 - Bốn lỗi sàng lọc được sửa theo thứ tự hạng. Một server nằm trong tập của người gán nhãn được giữ lại chỉ để tính agreement.
 - Các cặp không độc lập với nhau. Bootstrap theo server đã xử lý một phần vấn đề này.

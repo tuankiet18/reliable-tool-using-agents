@@ -1,0 +1,14 @@
+# Verbatim lines fetched from raw.githubusercontent.com at the pinned commit (curl, 2026-10-16) and
+# shown to the author in chat. The author judged each against coder A's claimed provider.
+# Claude added short context in two questions: S3 "11434 is Ollama's default port";
+# S4 "Anthropic SDK defaults to api.anthropic.com".
+S1 Gaurav1998-dev/geocoder-mcp app/mcp/route.ts:42 | Open-Meteo | const url = `https://customer-geocoding-api.open-meteo.com/v1/search?apikey=&name=${encodedAddress}&count=1`;
+S2 vivart/exchange-rate-mcp src/main/kotlin/com/vivart/FrankfurterClient.kt:38 | Frankfurter | private const val BASE_URL = "https://api.frankfurter.dev/v2"
+S3 mcp-tool-shop-org/polyglot-mcp src/ollama.ts:63 | Ollama (local) | constructor(baseUrl: string = process.env.OLLAMA_HOST || "http://localhost:11434") {
+S4 waxberry-dev/live-translate-mcp src/translate.ts:3 | Anthropic | const client = new Anthropic();
+S5 mattmarcin/aqicn-mcp aqicn_server.py:16 | WAQI (aqicn.org) | AQICN_BASE_URL = "https://api.waqi.info"
+S6 hayrapetian/yerevan-aqi-mcp src/api.ts:3 | Yerevan Municipality GIS | const BASE_URL = 'https://gis.yerevan.am/server/rest/services/Hosted';
+S7 8xiang5hao/aqicn-mcp src/aqicn_mcp/server.py:21 | WAQI (aqicn.org) | API_BASE_URL = "http://api.waqi.info/feed"
+S8 sin4ch/exchange-rate-mcp main.py:21 | ExchangeRate-API | response = await client.get(f"https://v6.exchangerate-api.com/v6/{EXCHANGE_RATE_API_KEY}/pair/...")
+S9 mohamed2020m/weather-mcp-server main.py:28 | OpenWeather | base_url = "https://api.openweathermap.org/data/2.5/weather"
+S10 Deep-Intelligent-Pharma/Translationx-mcp-server src/server.py:6 | X-DOC | host = "https://translation.x-doc.ai"
