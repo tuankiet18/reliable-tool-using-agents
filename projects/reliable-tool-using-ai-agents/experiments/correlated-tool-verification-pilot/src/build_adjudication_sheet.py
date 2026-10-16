@@ -196,7 +196,7 @@ def main() -> None:
 
     ws = wb.create_sheet("1. Luật")
     heads = ["ID", "Câu hỏi", "Ví dụ (mở link)", "Link", "Gợi ý hai lựa chọn", "Quyết định", "Lý do (1 câu)"]
-    for c, w in zip("ABCDEFG", (5, 45, 45, 14, 40, 22, 35)):
+    for c, w in zip("ABCDEFG", (5, 40, 40, 50, 35, 22, 30)):
         ws.column_dimensions[c].width = w
     for c, h in enumerate(heads, 1):
         ws.cell(row=1, column=c, value=h)
@@ -206,7 +206,7 @@ def main() -> None:
         first = r
         for text, url in rule["examples"]:
             cell(ws, r, 3, text)
-            cell(ws, r, 4, "Mở link", link=url)
+            cell(ws, r, 4, url, link=url)
             r += 1
         for row in range(first, r):
             for col in (1, 2, 5, 6, 7):
@@ -221,7 +221,7 @@ def main() -> None:
 
     ws = wb.create_sheet("2. Trường hợp")
     heads = ["ID", "Server", "Câu hỏi", "Link", "Trả lời X", "Trả lời Y", "Anh chọn", "Lý do (1 câu)"]
-    for c, w in zip("ABCDEFGH", (6, 28, 45, 10, 28, 28, 14, 35)):
+    for c, w in zip("ABCDEFGH", (6, 26, 40, 50, 26, 26, 14, 30)):
         ws.column_dimensions[c].width = w
     for c, h in enumerate(heads, 1):
         ws.cell(row=1, column=c, value=h)
@@ -237,7 +237,7 @@ def main() -> None:
                            "server": case["server"], "field": case["field"]}
         for c, v in enumerate([case["id"], case["server"], case["question"]], 1):
             cell(ws, i, c, v)
-        cell(ws, i, 4, "Mở link", link=case["link"])
+        cell(ws, i, 4, case["link"], link=case["link"])
         cell(ws, i, 5, x)
         cell(ws, i, 6, y)
         cell(ws, i, 7, None, fill=INPUT_FILL)
@@ -260,7 +260,7 @@ def main() -> None:
 
     ws = wb.create_sheet("4. Kiểm tra bằng chứng")
     heads = ["#", "Server", "Coder A ghi provider là", "Bằng chứng coder A ghi", "Link", "Dòng code có gọi đúng provider đó?", "Ghi chú"]
-    for c, w in zip("ABCDEFG", (4, 34, 24, 45, 10, 18, 30)):
+    for c, w in zip("ABCDEFG", (4, 30, 22, 40, 50, 18, 26)):
         ws.column_dimensions[c].width = w
     for c, h in enumerate(heads, 1):
         ws.cell(row=1, column=c, value=h)
@@ -269,7 +269,7 @@ def main() -> None:
     for i, s in enumerate(sample, start=2):
         for c, v in enumerate([i - 1, s["server"], s["claim"], s["evidence"]], 1):
             cell(ws, i, c, v)
-        cell(ws, i, 5, "Mở link", link=s["link"])
+        cell(ws, i, 5, s["link"], link=s["link"])
         cell(ws, i, 6, None, fill=INPUT_FILL)
         cell(ws, i, 7, None, fill=INPUT_FILL)
     dropdown(ws, "Đúng,Sai,Không chắc", f"F2:F{1 + len(sample)}")
