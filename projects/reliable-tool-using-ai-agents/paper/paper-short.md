@@ -24,7 +24,7 @@ version: "short-1.0 (từ full v1.8)"
 
 ## Abstract
 
-Tool-using AI agent có thể nhận output sai nhưng vẫn đúng schema. Khi hai tool khác tên cùng lấy dữ liệu từ một nguồn, cross-verification giữa chúng chỉ tạo ra đồng thuận giả. Nghiên cứu gần đây cho thấy chọn corroborator khác lineage giảm mạnh quyết định sai, nhưng giả định rằng nhãn lineage có sẵn và đúng. Bài này hỏi failure-domain metadata cần chính xác đến đâu, và metadata của tool thật chính xác đến đâu. **(1)** Trong controlled refund simulation với metadata chính xác, chọn corroborator khác failure domain giảm unsafe decision từ `30/150` xuống `0/150` (Δ `−0.200`, 95% CI `[−0.273, −0.127]`); đây là replication, và lợi thế không giữ chắc khi 25% nhãn sai. **(2)** Chúng tôi chứng minh, dưới các assumption nêu rõ, rằng chọn theo metadata tốt hơn random **khi và chỉ khi** `J = r − φ > 0` (recall của shared dependency trừ false-sharing rate), và tệ hơn random khi `J < 0`. Một preregistered test trên 60 task mới xác nhận cả hai chiều: `J = −0.5` làm unsafe rate tăng `+0.133` `[+0.070, +0.200]`. **(3)** Hai survey MCP server (42 và 78 server) cho thấy 16% và 27% cặp cùng loại thông tin dùng chung upstream provider. Agent-visible metadata thiếu tên provider ở 70% và 71% cặp; khi có thì phần lớn đúng (`J = 0.89` ở L2). Survey 2 đạt 4/6 prediction ghi trước. Kết luận: bottleneck thực tế là metadata **missing** hơn là metadata sai. Survey do AI gán nhãn và không có human validation độc lập; không có kết quả nào đo hành vi của live agent.
+Tool-using AI agent có thể nhận output sai nhưng đúng schema. Khi hai tool khác tên cùng lấy dữ liệu từ một nguồn, cross-verification giữa chúng chỉ tạo ra đồng thuận giả. Công trình trước cho thấy chọn corroborator khác lineage giảm mạnh quyết định sai, nhưng giả định nhãn lineage có sẵn và đúng. Chúng tôi hỏi metadata cần chính xác đến đâu, và metadata thật chính xác đến đâu. **(1)** Trong controlled refund simulation với metadata chính xác, chọn corroborator khác failure domain giảm unsafe decision từ `30/150` xuống `0/150` (95% CI của chênh lệch `[−0.273, −0.127]`); lợi thế không giữ chắc khi 25% nhãn sai. **(2)** Chúng tôi chứng minh, dưới các assumption nêu rõ, rằng chọn theo metadata tốt hơn random khi và chỉ khi `J = r − φ > 0`, và tệ hơn khi `J < 0`; một preregistered test trên 60 task mới xác nhận cả hai chiều (`J = −0.5`: `+0.133` `[+0.070, +0.200]`). **(3)** Hai survey MCP server (42 và 78 server) cho thấy 16% và 27% cặp cùng loại thông tin dùng chung upstream provider. Agent-visible metadata thiếu tên provider ở khoảng 70% cặp, nhưng khi có thì phần lớn đúng (`J = 0.89` ở L2); survey 2 đạt 4/6 prediction ghi trước. Bottleneck thực tế là metadata **missing**, không phải metadata sai. Nhãn survey do AI gán, không có human validation độc lập; không có kết quả nào đo live agent.
 
 **Keywords:** tool-using AI agents; correlated failures; common-mode failures; failure-domain metadata; provenance; Model Context Protocol; empirical survey.
 
@@ -38,7 +38,7 @@ Một cách phòng tự nhiên là **cross-verification**: trước khi hành đ
 
 *Figure 1. Primary `weather_A` và `weather_pro` khác tên nhưng cùng gọi Provider P, tức cùng failure domain. Khi P trả dữ liệu sai, chọn `weather_pro` làm corroborator cho ra đồng thuận sai; `forecast_x` gọi Provider Q độc lập nên phát hiện được bất đồng. Ví dụ minh họa.*
 
-Nếu biết tool nào thuộc failure domain nào, agent có thể chọn corroborator độc lập. VP-Control [VPC26] đã đo điều này với thiết kế mạnh (preregistration, live study): ở regime common stale, tỷ lệ phê duyệt sai là 91,5% khi cùng nguồn, so với 9,8% khi khác nguồn. EFD [EFD26] chứng minh rằng thêm reviewer không khắc phục được upstream chung. Cả hai đều **giả định lineage label có sẵn và đúng**. Trong thực tế, thông tin này đến từ tên, description và tài liệu của tool, và có thể thiếu hoặc sai.
+Nếu biết tool nào thuộc failure domain nào, agent có thể chọn corroborator độc lập. VP-Control [VPC26] đã đo điều này với thiết kế mạnh (preregistration, live study): ở regime common stale, tỷ lệ phê duyệt sai là 91,5% khi cùng nguồn, so với 9,8% khi khác nguồn. EFD [EFD26] chứng minh rằng thêm reviewer không khắc phục được upstream chung. Cả hai đều **giả định lineage label có sẵn và đúng**. Bara [BARA26] chỉ ra vì sao giả định này quan trọng: chỉ nhìn vào nội dung báo cáo thì không phân biệt được hai báo cáo độc lập với hai bản sao từ cùng một nguồn bằng chứng, nên thông tin về nguồn phải được cung cấp từ bên ngoài. Trong thực tế, thông tin này đến từ tên, description và tài liệu của tool, và có thể thiếu hoặc sai.
 
 Bài này tập trung vào khoảng trống đó với ba Research Question:
 
@@ -78,11 +78,11 @@ Metadata được đo ở hai mức: **L1** là thứ agent thấy lúc chạy (
 
 **Lineage-aware verification.** VP-Control [VPC26] và EFD [EFD26] là prior art gần nhất, như đã nêu ở §1. Công trình về dependency graph của agent [GRADE26, AF26] phục hồi cấu trúc phụ thuộc từ code, nhưng không phải ground truth cho việc hai backend cùng lỗi lúc chạy.
 
-**Hệ sinh thái MCP.** Các measurement study cho thấy phần lớn MCP server bọc REST API sẵn có [MCPREST25] và có hiện tượng dependency monoculture [MCPMEAS25]. Chúng không đo việc các server cùng loại thông tin dùng chung provider, hay metadata có tiết lộ điều đó không.
+**Hệ sinh thái MCP.** Các measurement study cho thấy 88,6% trong 116 MCP server chính thức dựa một phần hoặc toàn bộ vào REST API sẵn có [MCPREST25] và có hiện tượng dependency monoculture [MCPMEAS25]. Chúng không đo việc các server cùng loại thông tin dùng chung provider, hay metadata có tiết lộ điều đó không.
 
 ## 4. RQ1: controlled replication
 
-**Thiết kế.** Môi trường support-desk deterministic `trajectory-judge` (commit `d0ee54aa`). Primary `check_eligibility` và `check_eligibility_search` cùng `operational_db`; hai corroborator còn lại thuộc hai domain khác. Một actor deterministic đọc primary: nếu eligible thì đề xuất refund, không thì escalation. Mỗi refund proposal bắt buộc qua một corroborator (`K = 2` observation); hai bên khớp thì cho phép, không thì escalation. 30 task × 5 seed × 3 regime (clean, independent fault, targeted common-mode) × 3 policy, tổng 1.350 decision row. Outcome là **unsafe refund decision**, chấm bằng oracle theo code, không dùng LLM-as-a-judge. Inference bằng paired task-cluster bootstrap (10.000 lần). Đây là decision simulation, không thực thi refund và không chạy LLM.
+**Thiết kế.** Môi trường support-desk deterministic `trajectory-judge` (commit `d0ee54aa`). Primary `check_eligibility` và `check_eligibility_se dùng nhiều diagnostic path để tăng relarch` cùng `operational_db`; hai corroborator còn lại thuộc hai domain khác. Một actor deterministic đọc primary: nếu eligible thì đề xuất refund, không thì escalation. Mỗi refund proposal bắt buộc qua một corroborator (`K = 2` observation); hai bên khớp thì cho phép, không thì escalation. 30 task × 5 seed × 3 regime (clean, independent fault, targeted common-mode) × 3 policy, tổng 1.350 decision row. Outcome là **unsafe refund decision**, chấm bằng oracle theo code, không dùng LLM-as-a-judge. Inference bằng paired task-cluster bootstrap (10.000 lần). Đây là decision simulation, không thực thi refund và không chạy LLM.
 
 **Kết quả.** Dưới targeted common-mode fault:
 - `random_k`: `30/150` unsafe decision;
@@ -93,11 +93,11 @@ Clean correctness của cả hai là `150/150`. Ở negative control (independen
 
 **Robustness với metadata không hoàn hảo** (30 task mới, 3.750 row):
 
-| Điều kiện | Δ unsafe | 95% CI | Gate |
-|---|---:|---|---|
-| Nhãn đúng, leakage 0.25 | −0.133 | [−0.220, −0.053] | PASS |
-| Thiếu 25% nhãn, leakage 0.10 | −0.153 | [−0.227, −0.087] | PASS |
-| **Sai 25% nhãn**, leakage 0.10 | −0.067 | [−0.133, 0.000] | **FAIL** |
+| Điều kiện                      | Δ unsafe | 95% CI           | Gate     |
+| ------------------------------ | -------: | ---------------- | -------- |
+| Nhãn đúng, leakage 0.25        |   −0.133 | [−0.220, −0.053] | PASS     |
+| Thiếu 25% nhãn, leakage 0.10   |   −0.153 | [−0.227, −0.087] | PASS     |
+| **Sai 25% nhãn**, leakage 0.10 |   −0.067 | [−0.133, 0.000]  | **FAIL** |
 
 Gate robustness tổng thể **FAIL**, nên RQ1 được giới hạn ở *accurate metadata*. Phân tích post-hoc cho thấy hiệu ứng kỳ vọng ở điều kiện nhãn sai là khoảng `−0.088`, và tiêu chí đã khóa chỉ có khoảng **56% power** ở 30 task (83% ở 60 task). FAIL được giữ nguyên; nó là bằng chứng yếu về việc lợi thế biến mất, không phải bằng chứng lợi thế còn. Câu hỏi "nhãn sai đến mức nào thì hết lợi" dẫn tới RQ2.
 
@@ -115,12 +115,12 @@ Hai thừa số `s(n−s)/n` và `E[1/(1+K)]` luôn dương, nên **dấu của 
 
 **Preregistered test.** Để kiểm tra điều kiện này đi qua cả pipeline (actor, gate, leakage, oracle) chứ không chỉ công thức chọn, chúng tôi viết protocol và hypothesis trước, rồi chạy trên **60 task mới**, 5 seed mới, 4 điều kiện nhãn, 2 policy (4.800 row, leakage 0.10). Một amendment sửa một prediction **trước khi chạy**, sau khi unit test phát hiện prediction dùng sai giả định.
 
-| Điều kiện | Provenance | Random | Δ | Prediction | 95% CI | Hypothesis |
-|---|---:|---:|---:|---:|---|---|
-| `J = +0.8` (r 0.9, φ 0.1) | 0.087 | 0.263 | −0.177 | −0.176 | [−0.233, −0.120] | H-J2 hỗ trợ |
-| `J = 0` (r 0.5, φ 0.5) | 0.320 | 0.257 | +0.063 | 0.000 | [+0.003, +0.127] | H-J3 không hỗ trợ |
-| `J = −0.5` (r 0.1, φ 0.6) | 0.423 | 0.290 | +0.133 | +0.160 | [+0.070, +0.200] | H-J1 hỗ trợ |
-| Theo survey (r 0.57, φ 0, k 0.55) | 0.173 | 0.267 | −0.093 | −0.091 | [−0.157, −0.033] | H-J4 hỗ trợ |
+| Điều kiện                         | Provenance | Random |      Δ | Prediction | 95% CI           | Hypothesis        |
+| --------------------------------- | ---------: | -----: | -----: | ---------: | ---------------- | ----------------- |
+| `J = +0.8` (r 0.9, φ 0.1)         |      0.087 |  0.263 | −0.177 |     −0.176 | [−0.233, −0.120] | H-J2 hỗ trợ       |
+| `J = 0` (r 0.5, φ 0.5)            |      0.320 |  0.257 | +0.063 |      0.000 | [+0.003, +0.127] | H-J3 không hỗ trợ |
+| `J = −0.5` (r 0.1, φ 0.6)         |      0.423 |  0.290 | +0.133 |     +0.160 | [+0.070, +0.200] | H-J1 hỗ trợ       |
+| Theo survey (r 0.57, φ 0, k 0.55) |      0.173 |  0.267 | −0.093 |     −0.091 | [−0.157, −0.033] | H-J4 hỗ trợ       |
 
 Hai hypothesis chính (harm khi `J < 0`, benefit khi `J > 0`) được hỗ trợ, và các chênh lệch nằm sát prediction. H-J3 (tương đương tại `J = 0`, biên ±0.08) **không** được xác nhận: 90% CI `[+0.013, +0.117]` vượt biên. Power của H-J3 (khoảng 59%) không được lập kế hoạch; chúng tôi không diễn giải kết quả này là `J = 0` gây hại, vì protocol không đăng ký giả thuyết đó.
 
@@ -207,6 +207,7 @@ Hai finding của survey 1 **không replicate**: "khi có nhãn thì không bao 
 
 - **Thứ tự thời gian.** RQ2 và RQ3 được đặt sau khi có kết quả RQ1; phân tích RQ2 ban đầu là post-hoc. Các protocol sau đó viết trước nhưng là nội bộ.
 - **Simulation.** RQ1 và preregistered test là decision simulation do project thiết kế; kết quả gần như by-construction và không có live-agent effect estimate. Một chẩn đoán nhỏ trên agent thật (Qwen2.5 7B) không đạt điều kiện để ước lượng hiệu ứng.
+- **Corroborator độc lập được coi là báo đúng** (chỉ có leakage). VP-Control cho thấy trên FinQA, verifier nhỏ không đọc đúng bằng chứng, và hiệu ứng nguồn đảo chiều; nguồn độc lập chỉ giúp khi bên kiểm tra đủ năng lực.
 - **Phạm vi của định lý.** Không bao phủ nhãn tương quan, primary label sai, hay chọn nhiều corroborator; proof chưa được người độc lập kiểm tra.
 - **Nhãn survey.** Do AI gán; coder thứ hai cũng dùng AI. Agreement giữa AI cho biết nhãn tái lập được, không cho biết nhãn đúng. Phần kiểm tra của con người chỉ gồm author adjudication và 10 bằng chứng. Năm luật diễn giải của survey 2 do coder A đặt sau khi đọc code nhưng trước khi tính chỉ số.
 - **Construct "dùng chung".** Operator level là cận dưới của phụ thuộc thật; quy tắc "giao tập khác rỗng" phóng đại phụ thuộc của aggregator nhiều nguồn; data-origin level chỉ dùng bằng chứng trong repo.
@@ -231,7 +232,8 @@ Hai tool khác tên có thể đồng thuận trên cùng một output sai khi c
 - [AF26] S. Wang, X. Hou, Y. Zhao, X. Cheng, H. Wang. *AgentFlow: Building Agent Dependency Graphs for Static Analysis of Agent Programs*. arXiv:2607.01640v1, 2026.
 - [VPC26] Z. Zheng, B. Li, J. Yao, J. Long. *Engineering Reliable Commit Gates for Agentic AI: Cost-Aware Verification Portfolios under Common-Mode Data Failures*. arXiv:2609.10969, 2026.
 - [EFD26] J. He, D. Yu. *The Illusion of Independent Quorums: Epistemic Fault Domains and Correlated Cognitive Failures in Agentic Quorums*. arXiv:2609.02925, 2026.
-- [MCPREST25] *From REST to MCP: An Empirical Study of API Wrapping and Automated Server Generation for LLM Agents*. arXiv:2507.16044, 2025. (Tác giả chưa xác minh.)
-- [MCPMEAS25] *A Measurement Study of Model Context Protocol Ecosystem*. arXiv:2509.25292, 2025. (Tác giả chưa xác minh.)
+- [MCPREST25] M. Mastouri, E. Ksontini, A. Barrak, W. Kessentini. *From REST to MCP: An Empirical Study of API Wrapping and Automated Server Generation for LLM Agents*. arXiv:2507.16044, 2025.
+- [MCPMEAS25] H. Guo, Y. Hao, Y. Zhang, M. Xu, P. Lv, J. Chen, X. Cheng. *A Measurement Study of Model Context Protocol Ecosystem*. arXiv:2509.25292, 2025.
+- [BARA26] M. Bara. *Epistemic Sybil Resistance: Multiplying AI Agents Without Multiplying Evidence*. arXiv:2609.01873, 2026.
 - [CE25] E. M. Kim, A. Garg, K. Peng, N. Garg. *Correlated Errors in Large Language Models*. ICML 2025, PMLR 267.
 - [KL86] J. C. Knight, N. G. Leveson. *An Experimental Evaluation of the Assumption of Independence in Multiversion Programming*. IEEE TSE 12(1), 1986. DOI: 10.1109/TSE.1986.6312924.
