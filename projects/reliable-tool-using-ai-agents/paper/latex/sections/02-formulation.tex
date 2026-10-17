@@ -1,0 +1,14 @@
+\section{Problem Formulation}
+
+\paragraph{Failure domain.} A set of components that can fail together because of a shared dependency, such as one API provider.
+
+\paragraph{Selectors.} An agent has a primary tool and $n$ candidate corroborators, of which $s$ truly share the primary's failure domain. Metadata labels each corroborator as \emph{shared} or \emph{independent}.
+\code{random\_k} chooses uniformly among the $n$ candidates, so it picks a shared tool with probability $s/n$.
+\code{provenance\_k} chooses uniformly among candidates labelled independent, and falls back to a uniform choice among all $n$ if there are none.
+
+\paragraph{Label quality.} We treat metadata as a classifier of ``shares the primary's domain'':
+the \emph{recall} $r$ is the probability that a truly shared tool is labelled shared;
+the \emph{false-sharing rate} $\varphi$ is the probability that a truly independent tool is labelled shared;
+and $J = r - \varphi$, analogous to Youden's index in diagnostics.
+
+\paragraph{Survey quantities.} Over pairs of servers that provide the same information type, $\rho$ is the share of pairs that truly share a provider, and $m$ is the share of pairs with a missing label (at least one side names no provider); $r$, $\varphi$ and $J$ are computed on labelled pairs. Metadata is measured at two levels: \textbf{L1} is what an agent sees at run time (server name, tool names and descriptions, input schema), and \textbf{L2} adds the README. Sharing is defined at two levels: the \emph{operator level} (the organisation operating the API host the tool calls by default) and the \emph{data-origin level} (the ultimate data source, when evidence exists).

@@ -1,0 +1,25 @@
+\section{Introduction}\label{sec:intro}
+
+LLM agents are increasingly allowed to call APIs, read databases and take actions with real consequences, such as issuing refunds or deleting resources. Agents treat tool outputs as evidence about the outside world. The most dangerous failure is a \emph{silent tool failure}: the call succeeds and the output is schema-valid, but its content is wrong or stale.
+
+A natural defence is \emph{cross-verification}: before acting, the agent consults a second tool (a \emph{corroborator}) and proceeds only if the two agree. The number of tools, however, is not the number of independent sources of evidence. Two differently named tools may call the same provider. When that provider is wrong, both tools are wrong in the same way, and the agent sees false agreement (\cref{fig:problem}). This is the familiar \emph{common-mode failure} of dependable systems~\cite{kl86}, and correlated errors have also been observed across LLMs~\cite{ce25}.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.85\linewidth]{figures/problem-common-mode.pdf}
+  \caption{The primary \code{weather\_A} and \code{weather\_pro} have different names but call the same Provider~P, so they share a failure domain. When P returns wrong data, choosing \code{weather\_pro} as corroborator yields false agreement; \code{forecast\_x} calls an independent Provider~Q and exposes the disagreement. Illustrative example.}
+  \label{fig:problem}
+\end{figure}
+
+If the agent knows which tool belongs to which failure domain, it can choose an independent corroborator. VP-Control~\cite{vpc26} measured this with a strong design (preregistration, a live study): under a common-stale regime, false approval is 91.5\% when both verifier calls share the source and 9.8\% when one uses an independent source. EFD~\cite{efd26} proves that adding reviewers cannot repair a shared upstream. Both \emph{assume that lineage labels are available and correct}. Bara~\cite{bara26} shows why this assumption matters: from report content alone one cannot distinguish independent reports from copies of the same evidence, so information about sources must come from outside. In practice that information comes from tool names, descriptions and documentation, and it can be missing or wrong.
+
+We study this gap through three research questions:
+\begin{itemize}
+  \item \textbf{RQ1 (replication).} \emph{Given accurate failure-domain metadata, under targeted common-mode silent tool-output failures, does independent-domain corroboration reduce unsafe refund authorization decisions relative to random corroboration at a matched two-observation budget?} This replicates VP-Control in another domain; it is not a new finding.
+  \item \textbf{RQ2 (label quality).} \emph{Under class-conditional failure-domain label errors, for which combinations of shared-dependency recall $r$ and false-sharing rate $\varphi$ does failure-domain-aware selection beat, match, or lose to random selection?}
+  \item \textbf{RQ3 (real metadata).} \emph{Among open-source MCP servers that provide the same information type, how often do two servers share an upstream data provider, and how well does agent-visible metadata reveal that sharing?}
+\end{itemize}
+
+\paragraph{Contributions.} (1) A simple condition, with a proof, that tells when failure-domain metadata helps, does nothing, or harms, together with a preregistered test. (2) Empirical evidence, replicated on two samples, on the quality of real MCP server metadata, including predictions that failed. (3) A controlled replication of RQ1 with a negative robustness result and a power analysis. We propose no new algorithm and claim no superiority over prior work.
+
+\paragraph{Chronology.} RQ2 and RQ3 were formulated \emph{after} the RQ1 results were known and after we found VP-Control. Every subsequent data collection and test followed a protocol written and confirmed in advance, and every later change was logged as a dated amendment. These protocols are internal, not registered with an independent registry.

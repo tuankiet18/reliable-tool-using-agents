@@ -1,0 +1,10 @@
+\section{Discussion}
+
+\paragraph{Answers.} \emph{RQ1:} with accurate metadata, choosing a corroborator from a different failure domain prevents unsafe decisions, consistent with VP-Control; the advantage is not robust to wrong labels, partly for lack of power. \emph{RQ2:} metadata helps if and only if $J>0$ and harms when $J<0$; this is proved within the model and confirmed in simulation on new tasks. \emph{RQ3:} among real MCP servers, provider sharing is real (16--27\% of pairs) and varies strongly across samples; metadata is missing in about 70\% of pairs; when present it is mostly right ($J>0$), but usually only at the operator level.
+
+\paragraph{Implications} (inferences that need further validation).
+\begin{enumerate}
+  \item \textbf{The bottleneck is missing metadata, not wrong metadata.} Because $J>0$, real metadata does not harm selection under the theorem; it is simply too sparse. Moving the provider name from the README into the tool description is a cheap change that, in the projection, lowers the chance of choosing a shared corroborator from 0.289 to 0.109. This is a concrete recommendation for MCP server authors and tool registries.
+  \item \textbf{Operator names are not enough.} At the data-origin level, provider names miss about 17\% (survey 2, preregistered) to 39\% (survey 1, post hoc) of dependencies; Frankfurter distributes ECB data, and differently named web-search servers call the same engines. Trustworthy registries should also publish data origins.
+  \item \textbf{Independent sources can be scarce.} In web search, every surveyed server shares an engine with at least one other server. Good metadata then helps only partially, and an agent should recognise when no independent source exists and escalate, rather than treating agreement between two tools as strong evidence.
+\end{enumerate}

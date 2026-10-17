@@ -1,0 +1,16 @@
+\title{When Does Failure-Domain Metadata Help Tool-Using AI Agents?\\[4pt]
+\large A Controlled Replication, a Label-Quality Condition,\\ and Two Surveys of MCP Server Metadata}
+\author{Luong Tuan Kiet}
+\date{Draft, October 2026}
+
+\maketitle
+
+\begin{abstract}
+Tool-using AI agents can receive outputs that are wrong yet schema-valid. When two differently named tools draw on the same upstream source, cross-verification between them only produces false agreement. Prior work shows that choosing a corroborator with a different lineage sharply reduces unsafe decisions, but it assumes that lineage labels are available and correct. We ask how accurate failure-domain metadata must be, and how accurate real metadata is.
+(1) In a controlled refund-decision simulation with accurate metadata, choosing a corroborator from a different failure domain reduces unsafe decisions from 30/150 to 0/150 (95\% CI of the difference $[-0.273,-0.127]$); the advantage is not robust when 25\% of labels are wrong.
+(2) We prove, under stated assumptions, that metadata-guided selection beats random selection if and only if $J = r - \varphi > 0$, and is worse when $J<0$; a preregistered test on 60 new tasks confirms both directions ($J=-0.5$: $+0.133$ $[+0.070,+0.200]$).
+(3) Two surveys of open-source MCP servers (42 and 78 servers) find that 16\% and 27\% of same-type server pairs share an upstream provider. Agent-visible metadata omits the provider in about 70\% of pairs, but is mostly correct when present ($J=0.89$ with READMEs); the second survey meets 4 of 6 preregistered predictions.
+The practical bottleneck is \emph{missing} metadata rather than wrong metadata. Survey labels are AI-coded without independent human validation, and no result measures live-agent behaviour.
+\end{abstract}
+
+\noindent\textbf{Keywords:} tool-using AI agents; correlated failures; common-mode failures; failure-domain metadata; provenance; Model Context Protocol; empirical survey.

@@ -1,0 +1,9 @@
+\section{Related Work}
+
+\paragraph{Cross-tool verification and action gating.} RIVA uses multiple diagnostic paths to improve reliability when observability tools return errors~\cite{riva26}. Deterministic pre-execution gates~\cite{rlvm26}, postcondition verification~\cite{vtc26} and pre-action verification~\cite{lbyl26} already exist. Two ProvenanceGuard systems check claim attribution~\cite{pgf26} and the grounding of tool calls~\cite{pga26}. These works do not report a controlled comparison of failure-domain-aware corroborator selection under shared-backend corruption; this is a difference in the question measured, not evidence that those methods fail.
+
+\paragraph{Tool trust.} TEA-CXA learns query-dependent tool expertise~\cite{tea26}, and other work calibrates uncertainty in tool use~\cite{pc24}. Knowing that a tool is usually right does not tell whether two tools rarely fail together.
+
+\paragraph{Lineage-aware verification.} VP-Control~\cite{vpc26} and EFD~\cite{efd26} are the closest prior art (\cref{sec:intro}). Work on agent dependency graphs~\cite{grade26,af26} recovers dependency structure from code, which is not ground truth for whether two backends fail together at run time.
+
+\paragraph{MCP ecosystem.} Measurement studies report that 88.6\% of 116 official MCP servers are fully or partially backed by existing REST APIs~\cite{mcprest25}, and that MCP servers show dependency monocultures~\cite{mcpmeas25}. They do not measure whether servers providing the same information share a provider, or whether metadata reveals it.
