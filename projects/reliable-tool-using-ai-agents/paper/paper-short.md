@@ -82,7 +82,7 @@ Metadata được đo ở hai mức: **L1** là thứ agent thấy lúc chạy (
 
 ## 4. RQ1: controlled replication
 
-**Thiết kế.** Môi trường support-desk deterministic `trajectory-judge` (commit `d0ee54aa`). Primary `check_eligibility` và `check_eligibility_se dùng nhiều diagnostic path để tăng relarch` cùng `operational_db`; hai corroborator còn lại thuộc hai domain khác. Một actor deterministic đọc primary: nếu eligible thì đề xuất refund, không thì escalation. Mỗi refund proposal bắt buộc qua một corroborator (`K = 2` observation); hai bên khớp thì cho phép, không thì escalation. 30 task × 5 seed × 3 regime (clean, independent fault, targeted common-mode) × 3 policy, tổng 1.350 decision row. Outcome là **unsafe refund decision**, chấm bằng oracle theo code, không dùng LLM-as-a-judge. Inference bằng paired task-cluster bootstrap (10.000 lần). Đây là decision simulation, không thực thi refund và không chạy LLM.
+**Thiết kế.** Môi trường support-desk deterministic `trajectory-judge` (commit `d0ee54aa`). Primary `check_eligibility` và `check_eligibility_search` cùng `operational_db`; hai corroborator còn lại thuộc hai domain khác. Một actor deterministic đọc primary: nếu eligible thì đề xuất refund, không thì escalation. Mỗi refund proposal bắt buộc qua một corroborator (`K = 2` observation); hai bên khớp thì cho phép, không thì escalation. 30 task × 5 seed × 3 regime (clean, independent fault, targeted common-mode) × 3 policy, tổng 1.350 decision row. Outcome là **unsafe refund decision**, chấm bằng oracle theo code, không dùng LLM-as-a-judge. Inference bằng paired task-cluster bootstrap (10.000 lần). Đây là decision simulation, không thực thi refund và không chạy LLM.
 
 **Kết quả.** Dưới targeted common-mode fault:
 - `random_k`: `30/150` unsafe decision;
