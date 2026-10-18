@@ -68,9 +68,12 @@ Mỗi bộ được trình bày theo **3 vòng xoay vị trí**, để candidate
 
 ## 6. Model và cách chạy
 
-**Tác giả chọn một phương án trước khi khóa:**
-- **(L) Local:** cài Ollama, chạy 2 model khoảng 3B, lượng tử hóa 4-bit, vừa GPU 4 GB (ví dụ Qwen2.5-3B-Instruct và Llama-3.2-3B-Instruct). Chi phí 0. Cần tải bộ cài Ollama và khoảng 2 × 2 GB model.
-- **(A) API:** 2 model qua API do tác giả cung cấp key (một model nhỏ, một model mạnh). Ngân sách tối đa **10 USD**. Tác giả tự đặt key vào biến môi trường; Claude không nhập hay đọc key.
+**Phương án đã chọn (tác giả, 2026-10-18): chạy local trên một máy mượn có RTX 4060 8 GB VRAM**, qua Ollama, chi phí 0. Hai model 7–8B, lượng tử hóa 4-bit (`q4_K_M`), thuộc hai họ khác nhau:
+
+- `qwen2.5:7b-instruct-q4_K_M` (Qwen2.5-7B-Instruct)
+- `llama3.1:8b-instruct-q4_K_M` (Llama-3.1-8B-Instruct)
+
+Máy chạy chỉ cần Python 3 và Ollama. Claude chuẩn bị một gói chạy độc lập gồm stimuli, prompt và script gọi API Ollama tại `localhost:11434`. Tác giả chạy gói đó trên máy mượn và mang file kết quả JSONL về. Script ghi lại digest của từng model (`ollama show`), phiên bản Ollama và thông tin GPU vào file kết quả.
 
 Tên và phiên bản model chính xác được ghi ở §9 khi khóa. Temperature 0, tối đa 200 token output. Mỗi model chạy 56 bộ × 3 vòng xoay × 3 điều kiện × 2 prompt = **1.008 lời gọi**.
 
@@ -89,14 +92,15 @@ Tên và phiên bản model chính xác được ghi ở §9 khi khóa. Temperat
 - Đây là **tác vụ chọn một lần**, không phải một vòng agent đầy đủ; không có lỗi thật được inject.
 - Model có thể đoán provider từ tên repo hoặc kiến thức có sẵn, nên C2 không xóa hết thông tin.
 - C1 dùng nhãn coder A (AI) làm sự thật; nếu nhãn sai thì thông tin "Upstream provider" cũng sai.
-- Model nhỏ (phương án L) có thể không đại diện cho agent thật dùng model lớn.
+- Model 7–8B chạy local có thể không đại diện cho agent thật dùng model lớn.
 - Thí nghiệm được đặt ra **sau** khi đã có kết quả survey; nó kiểm định một khuyến nghị của paper, không phải câu hỏi có từ đầu.
 
 ## 9. Nhật ký khóa và amendment
 
 | Ngày | Sự kiện | Ghi chú |
 |---|---|---|
-| 2026-10-18 | Protocol v1.0 được viết | Chờ tác giả xác nhận và chọn phương án L hoặc A; chưa trích mô tả tool, chưa gọi model nào |
+| 2026-10-18 | Protocol v1.0 được viết | Chưa trích mô tả tool, chưa gọi model nào |
+| 2026-10-18 | Tác giả chọn chạy local trên RTX 4060 8 GB | §6 cố định 2 model 7–8B; protocol vẫn chờ tác giả xác nhận |
 
 ## Liên quan
 
