@@ -1,0 +1,1002 @@
+[
+  {
+    "survey": "s2",
+    "server_id": "air_quality/8xiang5hao/aqicn-mcp",
+    "category": "air_quality",
+    "repo_url": "https://github.com/8xiang5hao/aqicn-mcp",
+    "commit_sha": "f961f7e638c2fe2bb09957e424a5a7154aa71fe7",
+    "providers": [
+      "WAQI (aqicn.org)"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "air_quality/hayrapetian/yerevan-aqi-mcp",
+    "category": "air_quality",
+    "repo_url": "https://github.com/hayrapetian/yerevan-aqi-mcp",
+    "commit_sha": "b7147ebebe364c3c1cf5ecf35c458da080a651e9",
+    "providers": [
+      "Yerevan Municipality GIS"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "air_quality/mattmarcin/aqicn-mcp",
+    "category": "air_quality",
+    "repo_url": "https://github.com/mattmarcin/aqicn-mcp",
+    "commit_sha": "44d7d9ffcff934fe722b201b350776855579af62",
+    "providers": [
+      "WAQI (aqicn.org)"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "air_quality/sr5434/aqi-mcp",
+    "category": "air_quality",
+    "repo_url": "https://github.com/sr5434/aqi-mcp",
+    "commit_sha": "77d84c54be961f7187096ae41177d8c03d4ffcf0",
+    "providers": [
+      "Google Maps Platform"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "air_quality/synapticore-io/dust-analyzer",
+    "category": "air_quality",
+    "repo_url": "https://github.com/synapticore-io/dust-analyzer",
+    "commit_sha": "288fc4abbcec361110ece623ed8aef284528504c",
+    "providers": [
+      "Umweltbundesamt",
+      "synapticore-io dust-analyzer dataset"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "air_quality/vidyalatha-badde/Weather_AQI_MCP",
+    "category": "air_quality",
+    "repo_url": "https://github.com/vidyalatha-badde/Weather_AQI_MCP",
+    "commit_sha": "b70ef5bd2fbf37d7aa7f09fe0e35172cf8d41df4",
+    "providers": [
+      "OpenWeather"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "books/Busra-ozer/book-search-mcp",
+    "category": "books",
+    "repo_url": "https://github.com/Busra-ozer/book-search-mcp",
+    "commit_sha": "1dbc2e38c6e4b2ce5347c8fcdd68dc7f343c860a",
+    "providers": [
+      "Open Library"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "books/VmLia/books-mcp-server",
+    "category": "books",
+    "repo_url": "https://github.com/VmLia/books-mcp-server",
+    "commit_sha": "e81a33ca2ad85b704d42bc4f075c313f36d96101",
+    "providers": [
+      "shuchacha.net"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "books/ejam4040/Books-MCP-Server",
+    "category": "books",
+    "repo_url": "https://github.com/ejam4040/Books-MCP-Server",
+    "commit_sha": "316fc80e3f20863496a7df936cf36a0600481f36",
+    "providers": [
+      "Google Books"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "books/zeyynepkaraduman/library-book-search-mcp",
+    "category": "books",
+    "repo_url": "https://github.com/zeyynepkaraduman/library-book-search-mcp",
+    "commit_sha": "cad7a08afc2814ae9f4f2ffe224886f863fb704a",
+    "providers": [
+      "Google Books"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "crypto_prices/Diya28-mehra/crypto_mcp_server",
+    "category": "crypto_prices",
+    "repo_url": "https://github.com/Diya28-mehra/crypto_mcp_server",
+    "commit_sha": "3e8dc9e2cd8ebedef6cdcf625e22a239d91517a3",
+    "providers": [
+      "Binance"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "crypto_prices/Frostbite22/cryptogecko-mcp-server",
+    "category": "crypto_prices",
+    "repo_url": "https://github.com/Frostbite22/cryptogecko-mcp-server",
+    "commit_sha": "9caa3d7c8db19b40d7e771bc405a4180bdb9d77a",
+    "providers": [
+      "CoinGecko"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "crypto_prices/Ibook000/crypto_mcp_server",
+    "category": "crypto_prices",
+    "repo_url": "https://github.com/Ibook000/crypto_mcp_server",
+    "commit_sha": "69aa613b0d329724b773a907d1c01a36b25a6a71",
+    "providers": [
+      "Binance"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "crypto_prices/NalinKaushik/crypto-mcp-server",
+    "category": "crypto_prices",
+    "repo_url": "https://github.com/NalinKaushik/crypto-mcp-server",
+    "commit_sha": "88af7f2cea1723e99a04347db2afacff47d070a8",
+    "providers": [
+      "Binance"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "crypto_prices/PelleNybe/Crypto-MCP-Server---by-Corax-CoLAB",
+    "category": "crypto_prices",
+    "repo_url": "https://github.com/PelleNybe/Crypto-MCP-Server---by-Corax-CoLAB",
+    "commit_sha": "9dba34dc9cb064cd83fa2efb331e0d310ff9601d",
+    "providers": [
+      "CoinGecko"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "crypto_prices/WilliamNing316/crypto-mcp-server",
+    "category": "crypto_prices",
+    "repo_url": "https://github.com/WilliamNing316/crypto-mcp-server",
+    "commit_sha": "12cc80d638646089708a20d9ac0941b32f33f618",
+    "providers": [
+      "Binance"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "crypto_prices/aanubhavv/crypto-mcp-server",
+    "category": "crypto_prices",
+    "repo_url": "https://github.com/aanubhavv/crypto-mcp-server",
+    "commit_sha": "8b80f8f4b68ba194396b9cfc64fa42af93b8b55a",
+    "providers": [
+      "CoinMarketCap"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "crypto_prices/akshaygp18/crypto-mcp-server",
+    "category": "crypto_prices",
+    "repo_url": "https://github.com/akshaygp18/crypto-mcp-server",
+    "commit_sha": "0accbc2ecc44d64af0f6e9b06be1d4ccbf28152e",
+    "providers": [
+      "CoinGecko"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "crypto_prices/blockchainacademics/bca-mcp",
+    "category": "crypto_prices",
+    "repo_url": "https://github.com/blockchainacademics/bca-mcp",
+    "commit_sha": "07e3f896c068acab102a820282dd57798d6c643d",
+    "providers": [
+      "Blockchain Academics"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "crypto_prices/desk3/cryptocurrency-mcp-server",
+    "category": "crypto_prices",
+    "repo_url": "https://github.com/desk3/cryptocurrency-mcp-server",
+    "commit_sha": "d374c49f04baa73f1ce41d6272e6ad9a84ce5838",
+    "providers": [
+      "Desk3"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "crypto_prices/dherik/crypto-mcp-server",
+    "category": "crypto_prices",
+    "repo_url": "https://github.com/dherik/crypto-mcp-server",
+    "commit_sha": "ace72c644b9869e29b1d482d7cf3761d13fdab91",
+    "providers": [
+      "CoinGecko"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "crypto_prices/drtamar/crypto-mcp-server",
+    "category": "crypto_prices",
+    "repo_url": "https://github.com/drtamar/crypto-mcp-server",
+    "commit_sha": "24205f36630abe6babbca14160bd1946b34c68cd",
+    "providers": [
+      "CoinGecko"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "crypto_prices/smhnkmr/realtime-crypto-mcp-server",
+    "category": "crypto_prices",
+    "repo_url": "https://github.com/smhnkmr/realtime-crypto-mcp-server",
+    "commit_sha": "719576b744258a97cf4c79f51c5550c6f9b4c0f7",
+    "providers": [
+      "CoinCap"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "crypto_prices/yogirajbshinde21/crypto-mcp-server",
+    "category": "crypto_prices",
+    "repo_url": "https://github.com/yogirajbshinde21/crypto-mcp-server",
+    "commit_sha": "399a5288571ad3cbaba8b33e208d37c2f210a1e4",
+    "providers": [
+      "Binance"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "currency_exchange/EyalMeschman/ExchangeRateMCP",
+    "category": "currency_exchange",
+    "repo_url": "https://github.com/EyalMeschman/ExchangeRateMCP",
+    "commit_sha": "06c3be85791d78d3847d37dfa74cbb07ec212ebd",
+    "providers": [
+      "Frankfurter"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "currency_exchange/NotNull92/exchange-rate-mcp",
+    "category": "currency_exchange",
+    "repo_url": "https://github.com/NotNull92/exchange-rate-mcp",
+    "commit_sha": "3e3afeffc59850b134550abbc7372b6782e79ede",
+    "providers": [
+      "Frankfurter",
+      "fawazahmed0 exchange-api"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "currency_exchange/RichGom84/exchange_rate_MCP",
+    "category": "currency_exchange",
+    "repo_url": "https://github.com/RichGom84/exchange_rate_MCP",
+    "commit_sha": "3ad1b93d1c2604a44dee1d8e54ade6ce2ad912ea",
+    "providers": [
+      "Frankfurter"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "currency_exchange/boy-373/exchange-rate-mcp",
+    "category": "currency_exchange",
+    "repo_url": "https://github.com/boy-373/exchange-rate-mcp",
+    "commit_sha": "eb6f007cefed3d0c57c7c98ac0cce90b12b51134",
+    "providers": [
+      "ExchangeRate-API",
+      "Frankfurter"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "currency_exchange/elvinws/exchange-rate-mcp",
+    "category": "currency_exchange",
+    "repo_url": "https://github.com/elvinws/exchange-rate-mcp",
+    "commit_sha": "c6103a0405e6b167879daca3e9fb96e9f026b620",
+    "providers": [
+      "ExchangeRate-API"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "currency_exchange/sin4ch/exchange-rate-mcp",
+    "category": "currency_exchange",
+    "repo_url": "https://github.com/sin4ch/exchange-rate-mcp",
+    "commit_sha": "11fa2a0e70ef78324bce58d924268ae14291802a",
+    "providers": [
+      "ExchangeRate-API"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "currency_exchange/stock-vibes/exchange-mcp",
+    "category": "currency_exchange",
+    "repo_url": "https://github.com/stock-vibes/exchange-mcp",
+    "commit_sha": "cfc459dee7bb47f0acebaab997a388ff297bec01",
+    "providers": [
+      "Frankfurter"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "currency_exchange/vivart/exchange-rate-mcp",
+    "category": "currency_exchange",
+    "repo_url": "https://github.com/vivart/exchange-rate-mcp",
+    "commit_sha": "2d0b672e92752b255c48c362d69ad8a08a54a308",
+    "providers": [
+      "Frankfurter"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "geocoding/X-McKay/geocode-mcp",
+    "category": "geocoding",
+    "repo_url": "https://github.com/X-McKay/geocode-mcp",
+    "commit_sha": "d0962dcf4ac82273721546ed34362af6ffecf8fb",
+    "providers": [
+      "OpenStreetMap Nominatim"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "geocoding/adelie-ai/geocode-mcp",
+    "category": "geocoding",
+    "repo_url": "https://github.com/adelie-ai/geocode-mcp",
+    "commit_sha": "d5db0434f9c28215f463e23c63d2a7f97e7a11a1",
+    "providers": [
+      "Photon (Komoot)"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "geocoding/danishashko/geocode-mcp",
+    "category": "geocoding",
+    "repo_url": "https://github.com/danishashko/geocode-mcp",
+    "commit_sha": "8b7d1e5537b140c1ee925a789ab6dd909f230dcf",
+    "providers": [
+      "OpenStreetMap Nominatim"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "geocoding/mapdevsaikat/quantaroute-geocoder",
+    "category": "geocoding",
+    "repo_url": "https://github.com/mapdevsaikat/quantaroute-geocoder",
+    "commit_sha": "ee84a81797fd336fdafc19eff4bda50ce6e59e02",
+    "providers": [
+      "QuantaRoute"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "geocoding/webcoderz/MCP-Geo",
+    "category": "geocoding",
+    "repo_url": "https://github.com/webcoderz/MCP-Geo",
+    "commit_sha": "971996bd681aeed3c63a56694647f996cc6d1697",
+    "providers": [
+      "OpenStreetMap Nominatim"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "movies/Grinv/tmdb-mcp",
+    "category": "movies",
+    "repo_url": "https://github.com/Grinv/tmdb-mcp",
+    "commit_sha": "d2636c6518f67fbcc665194d3dc02bfc979f3c26",
+    "providers": [
+      "OMDb",
+      "TMDB"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "movies/GuptaJiHardik/movie-mcp-server",
+    "category": "movies",
+    "repo_url": "https://github.com/GuptaJiHardik/movie-mcp-server",
+    "commit_sha": "e402c565500201ad596734e3fdc9a1e15fa2897f",
+    "providers": [
+      "Letterboxd"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "movies/SaiSoeSan/movie-mcp-server",
+    "category": "movies",
+    "repo_url": "https://github.com/SaiSoeSan/movie-mcp-server",
+    "commit_sha": "962b856f8ad94ff686a7c8c62d66ab97d9597bdc",
+    "providers": [
+      "TMDB"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "movies/Samarateja0118/movie-mcp-server",
+    "category": "movies",
+    "repo_url": "https://github.com/Samarateja0118/movie-mcp-server",
+    "commit_sha": "b15ebc41c446e5ba7f2b5c6081db453ab0309c62",
+    "providers": [
+      "TMDB"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "movies/Shaamam/movie-mcp-server",
+    "category": "movies",
+    "repo_url": "https://github.com/Shaamam/movie-mcp-server",
+    "commit_sha": "c6aa92cc167f9010b31d6d567549a23a8f7a1671",
+    "providers": [
+      "OMDb"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "movies/joshndala/movie-mcp-server",
+    "category": "movies",
+    "repo_url": "https://github.com/joshndala/movie-mcp-server",
+    "commit_sha": "fa4bf50521565381a92b934928d600a2631889d2",
+    "providers": [
+      "OMDb"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "movies/saravana87/Movie-MCP-Server",
+    "category": "movies",
+    "repo_url": "https://github.com/saravana87/Movie-MCP-Server",
+    "commit_sha": "72f8504ebd45be9694279589ca9d31912f8c965f",
+    "providers": [
+      "Serper"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "movies/simentob/movies-mcp-server",
+    "category": "movies",
+    "repo_url": "https://github.com/simentob/movies-mcp-server",
+    "commit_sha": "b2273f2136bda99fbe6fded4d5524845583e66e2",
+    "providers": [
+      "TMDB"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "news/Paras1Chauhan/ai-news-mcp-server",
+    "category": "news",
+    "repo_url": "https://github.com/Paras1Chauhan/ai-news-mcp-server",
+    "commit_sha": "24feffb3ffa5cd9e83cdbd3869983544d5bd5adc",
+    "providers": [
+      "DEV.to",
+      "Google",
+      "Hacker News (Y Combinator)",
+      "Hugging Face",
+      "MIT News",
+      "OpenAI"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "news/corey-coders/mcp-finance-news",
+    "category": "news",
+    "repo_url": "https://github.com/corey-coders/mcp-finance-news",
+    "commit_sha": "7c45d35a44725e0713764643fe61bbb35be3abda",
+    "providers": [
+      "Bloomberg",
+      "CNBC",
+      "Financial Times",
+      "MarketWatch",
+      "Seeking Alpha",
+      "Wall Street Journal (Dow Jones)"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "news/davidvgilmore/hn-mcp-server",
+    "category": "news",
+    "repo_url": "https://github.com/davidvgilmore/hn-mcp-server",
+    "commit_sha": "396c56875853853823e7a1563a5c2787cad59f26",
+    "providers": [
+      "Hacker News (Y Combinator)"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "news/deficlow/zipp-mcp",
+    "category": "news",
+    "repo_url": "https://github.com/deficlow/zipp-mcp",
+    "commit_sha": "b03eeefd5285aa85716e0aab58267e450427ca67",
+    "providers": [
+      "Zipp"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "news/denizumutdereli/news-mcp-server",
+    "category": "news",
+    "repo_url": "https://github.com/denizumutdereli/news-mcp-server",
+    "commit_sha": "3f43900f60adcc2e91b7649fcba88ed39fd25b6c",
+    "providers": [
+      "Tavily"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "news/devabdultech/hn-mcp",
+    "category": "news",
+    "repo_url": "https://github.com/devabdultech/hn-mcp",
+    "commit_sha": "8efc20a45283bdd52bda496b04d302a7e6e1aea2",
+    "providers": [
+      "Algolia HN Search",
+      "Hacker News (Y Combinator)"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "news/handaas/news-mcp-server",
+    "category": "news",
+    "repo_url": "https://github.com/handaas/news-mcp-server",
+    "commit_sha": "f2c5524d3464ab1b6e5f8e4d255da53eb6b40a94",
+    "providers": [
+      "Handaas"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "news/joeswann/hackernews-mcp",
+    "category": "news",
+    "repo_url": "https://github.com/joeswann/hackernews-mcp",
+    "commit_sha": "2026b9be47f8873332666323fbfcdd7e2d99af3d",
+    "providers": [
+      "Algolia HN Search",
+      "Hacker News (Y Combinator)"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "news/karanb192/hn-mcp",
+    "category": "news",
+    "repo_url": "https://github.com/karanb192/hn-mcp",
+    "commit_sha": "40ff10d3cae83848e71c442de188815f36241928",
+    "providers": [
+      "Algolia HN Search",
+      "Hacker News (Y Combinator)"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "news/nishantpardamwar/kotlin-news-mcp-server",
+    "category": "news",
+    "repo_url": "https://github.com/nishantpardamwar/kotlin-news-mcp-server",
+    "commit_sha": "d2d793a3981d247400d60d8bdf7e8902d46485fb",
+    "providers": [
+      "NewsAPI"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "news/pskill9/hn-server",
+    "category": "news",
+    "repo_url": "https://github.com/pskill9/hn-server",
+    "commit_sha": "ed1a4b951e9a7cdd7de0575a16d53bbe53330a9d",
+    "providers": [
+      "Hacker News (Y Combinator)"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "news/the0807/GeekNews-MCP-Server",
+    "category": "news",
+    "repo_url": "https://github.com/the0807/GeekNews-MCP-Server",
+    "commit_sha": "7766c3910021e3180cfdc7514ffc7f264be75d73",
+    "providers": [
+      "GeekNews (news.hada.io)"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "news/wudalu/mcp-hot-news-server",
+    "category": "news",
+    "repo_url": "https://github.com/wudalu/mcp-hot-news-server",
+    "commit_sha": "e2026a37f76d5e508eed83d3d2e2449d06d19959",
+    "providers": [
+      "NewsAPI",
+      "Reddit",
+      "SerpAPI",
+      "Zyla Labs",
+      "twitterapi.io",
+      "vvhan"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "stock_quotes/1018053166/stock-mcp-server",
+    "category": "stock_quotes",
+    "repo_url": "https://github.com/1018053166/stock-mcp-server",
+    "commit_sha": "9fe7ad6789f029ba8b203b15cce41c4a676d47a4",
+    "providers": [
+      "Eastmoney"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "stock_quotes/Llldmiao/a-stock-mcp-server",
+    "category": "stock_quotes",
+    "repo_url": "https://github.com/Llldmiao/a-stock-mcp-server",
+    "commit_sha": "5f01a6a36a90aaa4fccf48182f2104116d4f8d05",
+    "providers": [
+      "Eastmoney"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "stock_quotes/NinianX/tw-stock-mcp",
+    "category": "stock_quotes",
+    "repo_url": "https://github.com/NinianX/tw-stock-mcp",
+    "commit_sha": "ec99029d932e266a7d69c239d68e8f49c0c40946",
+    "providers": [
+      "Yahoo Finance"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "stock_quotes/YongYangLi/stock-mcp-server",
+    "category": "stock_quotes",
+    "repo_url": "https://github.com/YongYangLi/stock-mcp-server",
+    "commit_sha": "e12e443ece4c016bcbdf7f1031c394fee4be10a5",
+    "providers": [
+      "Sina Finance"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "stock_quotes/agent504330-ux/mcp-korean-stock",
+    "category": "stock_quotes",
+    "repo_url": "https://github.com/agent504330-ux/mcp-korean-stock",
+    "commit_sha": "d4f50774b0d9ab98c673305298b53469dbff3dd5",
+    "providers": [
+      "Naver Finance"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "stock_quotes/agilesolutions/stock-mcp-server",
+    "category": "stock_quotes",
+    "repo_url": "https://github.com/agilesolutions/stock-mcp-server",
+    "commit_sha": "458a74642b6657c3deff4bb3da8917a5df245767",
+    "providers": [
+      "Twelve Data"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "stock_quotes/archiephan78/ssi-stock-mcp-server",
+    "category": "stock_quotes",
+    "repo_url": "https://github.com/archiephan78/ssi-stock-mcp-server",
+    "commit_sha": "b93442adac835ff55048bba484b402b720bc79e1",
+    "providers": [
+      "SSI"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "stock_quotes/imdurgadas/cf-stock-mcp-server",
+    "category": "stock_quotes",
+    "repo_url": "https://github.com/imdurgadas/cf-stock-mcp-server",
+    "commit_sha": "f14e943da8e48d09ac17d1af837d2068eeb0e8f7",
+    "providers": [
+      "Yahoo Finance"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "stock_quotes/niuheilong/stock-mcp-server",
+    "category": "stock_quotes",
+    "repo_url": "https://github.com/niuheilong/stock-mcp-server",
+    "commit_sha": "a6c9976e44e226a66478243d82ff8f95e1d56abb",
+    "providers": [
+      "Sina Finance",
+      "Tencent Finance"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "stock_quotes/peikuo/china-stock-mcp-server",
+    "category": "stock_quotes",
+    "repo_url": "https://github.com/peikuo/china-stock-mcp-server",
+    "commit_sha": "3e0b6328949e978c2807cf498f597f9876c7e77b",
+    "providers": [
+      "Eastmoney"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "stock_quotes/sachinjhamb/stockMcpServerAQnpm",
+    "category": "stock_quotes",
+    "repo_url": "https://github.com/sachinjhamb/stockMcpServerAQnpm",
+    "commit_sha": "bf335aa2bd71a00620c87d747225734343814e55",
+    "providers": [
+      "Yahoo Finance"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "stock_quotes/shuizhengqi1/futu-stock-mcp-server",
+    "category": "stock_quotes",
+    "repo_url": "https://github.com/shuizhengqi1/futu-stock-mcp-server",
+    "commit_sha": "e30ca5476cb89fb25ada3f58db58ce3832317e89",
+    "providers": [
+      "Futu"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "stock_quotes/yadinae/stock-mcp-server",
+    "category": "stock_quotes",
+    "repo_url": "https://github.com/yadinae/stock-mcp-server",
+    "commit_sha": "6550e898312391b61794a7f9f78efe7f39dc1fc4",
+    "providers": [
+      "Sina Finance",
+      "Tencent Finance",
+      "TradingView",
+      "Yahoo Finance"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "translation/Deep-Intelligent-Pharma/Translationx-mcp-server",
+    "category": "translation",
+    "repo_url": "https://github.com/Deep-Intelligent-Pharma/Translationx-mcp-server",
+    "commit_sha": "a56c33798a3a6504c79d6ef59e9f953c4714f88f",
+    "providers": [
+      "X-DOC"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "translation/LibreTranslate/LibreTranslate-MCP",
+    "category": "translation",
+    "repo_url": "https://github.com/LibreTranslate/LibreTranslate-MCP",
+    "commit_sha": "6cf7ab55fc2a5ae29468a8208f7260f665931190",
+    "providers": [
+      "LibreTranslate"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "translation/brianshin22/youtube-translate-mcp",
+    "category": "translation",
+    "repo_url": "https://github.com/brianshin22/youtube-translate-mcp",
+    "commit_sha": "f7674a0204a59ca5b59cb82c7216ae775001ae98",
+    "providers": [
+      "YouTube Translate"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "translation/iamnotagentleman/localizable-xcstrings-mcp",
+    "category": "translation",
+    "repo_url": "https://github.com/iamnotagentleman/localizable-xcstrings-mcp",
+    "commit_sha": "989abc9afe467e10389d47140bdcd1649e23415d",
+    "providers": [
+      "OpenAI"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "translation/intento/mcp-intento-translate",
+    "category": "translation",
+    "repo_url": "https://github.com/intento/mcp-intento-translate",
+    "commit_sha": "bf20e7fa3a3d851aada6600ee58a7393ebcdba56",
+    "providers": [
+      "Intento"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "translation/kunalchhabra/translation-mcp-server",
+    "category": "translation",
+    "repo_url": "https://github.com/kunalchhabra/translation-mcp-server",
+    "commit_sha": "0cd2ac22beee31246d78452ee02841109e62f5b5",
+    "providers": [
+      "OpenAI"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "weather/ACAne0320/amap-weather-mcp-server",
+    "category": "weather",
+    "repo_url": "https://github.com/ACAne0320/amap-weather-mcp-server",
+    "commit_sha": "44143e43e48a5d1a1efd62876672fbd35d7faef3",
+    "providers": [
+      "AMap"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "weather/CodeByWaqas/weather-mcp-server",
+    "category": "weather",
+    "repo_url": "https://github.com/CodeByWaqas/weather-mcp-server",
+    "commit_sha": "3b10a72098bb941ee9645ddcd38db04d32647b62",
+    "providers": [
+      "OpenWeather"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "weather/Cooosin/WeatherMcpServer",
+    "category": "weather",
+    "repo_url": "https://github.com/Cooosin/WeatherMcpServer",
+    "commit_sha": "6c72257d792950b83ab5e904b7a38228aabb977c",
+    "providers": [
+      "QWeather"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "weather/Krytons/Weather-MCP-Server",
+    "category": "weather",
+    "repo_url": "https://github.com/Krytons/Weather-MCP-Server",
+    "commit_sha": "cccab6996f365cf06f6dbc99b6d41c0281082b4d",
+    "providers": [
+      "OpenWeather"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "weather/Yarflam/weather-mcp-server",
+    "category": "weather",
+    "repo_url": "https://github.com/Yarflam/weather-mcp-server",
+    "commit_sha": "01ecec36e8d7dfa4d6e1d7c7ea23ad959a035865",
+    "providers": [
+      "Open-Meteo"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "weather/ezh0v/weather-mcp-server",
+    "category": "weather",
+    "repo_url": "https://github.com/ezh0v/weather-mcp-server",
+    "commit_sha": "e0f212a7d3ef45eef62f162b03fc659bbbb9e48e",
+    "providers": [
+      "WeatherAPI.com"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "weather/glaucia86/weather-mcp-server",
+    "category": "weather",
+    "repo_url": "https://github.com/glaucia86/weather-mcp-server",
+    "commit_sha": "25d68abac2b1433090b8d28e40e25a5bb8ab234a",
+    "providers": [
+      "OpenWeather"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "weather/jjyaoao/weather-mcp-server",
+    "category": "weather",
+    "repo_url": "https://github.com/jjyaoao/weather-mcp-server",
+    "commit_sha": "6fa1785c87f0580aea3a80117dbc574668d0398e",
+    "providers": [
+      "wttr.in"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "weather/leash06/weather-mcp-server",
+    "category": "weather",
+    "repo_url": "https://github.com/leash06/weather-mcp-server",
+    "commit_sha": "f0816cfab38e0d63b2afaa31530b83c85ee02aea",
+    "providers": [
+      "OpenWeather"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "weather/mohamed2020m/weather-mcp-server",
+    "category": "weather",
+    "repo_url": "https://github.com/mohamed2020m/weather-mcp-server",
+    "commit_sha": "f6178db9073612bac14736163b7830f7ab378c0c",
+    "providers": [
+      "OpenWeather"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "weather/rivky9523/israeli-weather-mcp-agent",
+    "category": "weather",
+    "repo_url": "https://github.com/rivky9523/israeli-weather-mcp-agent",
+    "commit_sha": "3248e07aaa1318e3df09596f6f5ff16e41157faf",
+    "providers": [
+      "US National Weather Service",
+      "weather2day.co.il"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "weather/rossshannon/weekly-weather-mcp",
+    "category": "weather",
+    "repo_url": "https://github.com/rossshannon/weekly-weather-mcp",
+    "commit_sha": "44772db84d5cb7e07d0be661ecf93b1fcce5918b",
+    "providers": [
+      "OpenWeather"
+    ]
+  },
+  {
+    "survey": "s1",
+    "server_id": "weather/sjanaX01/weather-mcp-server",
+    "category": "weather",
+    "repo_url": "https://github.com/sjanaX01/weather-mcp-server",
+    "commit_sha": "70eb46605f4d23c39110fbbebea063e772a8fc86",
+    "providers": [
+      "WeatherAPI.com"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "web_search/MemoryClear/claude-web-search-mcp",
+    "category": "web_search",
+    "repo_url": "https://github.com/MemoryClear/claude-web-search-mcp",
+    "commit_sha": "010535a5be854b22b84c51829ac1db284e735509",
+    "providers": [
+      "360 Search",
+      "Baidu",
+      "DuckDuckGo",
+      "Sogou"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "web_search/PROJECT-B-26/groundroute-mcp",
+    "category": "web_search",
+    "repo_url": "https://github.com/PROJECT-B-26/groundroute-mcp",
+    "commit_sha": "0c4238915edd49ef1e0d920fc2c7f88d8417afd0",
+    "providers": [
+      "GroundRoute"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "web_search/SCP120/web-search-mcp-cloak",
+    "category": "web_search",
+    "repo_url": "https://github.com/SCP120/web-search-mcp-cloak",
+    "commit_sha": "2ae37799bdd78323d734e312874ef9fef6f8700f",
+    "providers": [
+      "Bing",
+      "Brave Search",
+      "DuckDuckGo",
+      "Mojeek"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "web_search/bennmann/local-websearch",
+    "category": "web_search",
+    "repo_url": "https://github.com/bennmann/local-websearch",
+    "commit_sha": "75abf9d38af0b40cc115806ef07c256768d4c7e0",
+    "providers": [
+      "Brave Search",
+      "DuckDuckGo",
+      "Google",
+      "Grokipedia (xAI)",
+      "Mojeek",
+      "Wikipedia",
+      "Yahoo",
+      "Yandex"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "web_search/menesekinci/search-mcp",
+    "category": "web_search",
+    "repo_url": "https://github.com/menesekinci/search-mcp",
+    "commit_sha": "b21687b8666a2c8b65a848b0adfb82f823c798c4",
+    "providers": [
+      "Google"
+    ]
+  },
+  {
+    "survey": "s2",
+    "server_id": "web_search/tenltrist/deepseek-web-search",
+    "category": "web_search",
+    "repo_url": "https://github.com/tenltrist/deepseek-web-search",
+    "commit_sha": "6f6f5d645117a878b34ffec4f9ad21387c8acf8a",
+    "providers": [
+      "DuckDuckGo"
+    ]
+  }
+]

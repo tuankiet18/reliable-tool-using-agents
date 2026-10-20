@@ -1,0 +1,621 @@
+{
+  "seed": 20261018,
+  "sets": [
+    {
+      "set_id": "s1-01",
+      "survey": "s1",
+      "category": "crypto_prices",
+      "primary": "crypto_prices/Diya28-mehra/crypto_mcp_server",
+      "shared": "crypto_prices/Ibook000/crypto_mcp_server",
+      "independent": [
+        "crypto_prices/aanubhavv/crypto-mcp-server",
+        "crypto_prices/Frostbite22/cryptogecko-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s1-02",
+      "survey": "s1",
+      "category": "crypto_prices",
+      "primary": "crypto_prices/Frostbite22/cryptogecko-mcp-server",
+      "shared": "crypto_prices/PelleNybe/Crypto-MCP-Server---by-Corax-CoLAB",
+      "independent": [
+        "crypto_prices/Diya28-mehra/crypto_mcp_server",
+        "crypto_prices/desk3/cryptocurrency-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s1-03",
+      "survey": "s1",
+      "category": "crypto_prices",
+      "primary": "crypto_prices/Ibook000/crypto_mcp_server",
+      "shared": "crypto_prices/Diya28-mehra/crypto_mcp_server",
+      "independent": [
+        "crypto_prices/aanubhavv/crypto-mcp-server",
+        "crypto_prices/PelleNybe/Crypto-MCP-Server---by-Corax-CoLAB"
+      ]
+    },
+    {
+      "set_id": "s1-04",
+      "survey": "s1",
+      "category": "crypto_prices",
+      "primary": "crypto_prices/PelleNybe/Crypto-MCP-Server---by-Corax-CoLAB",
+      "shared": "crypto_prices/Frostbite22/cryptogecko-mcp-server",
+      "independent": [
+        "crypto_prices/Diya28-mehra/crypto_mcp_server",
+        "crypto_prices/desk3/cryptocurrency-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s1-05",
+      "survey": "s1",
+      "category": "geocoding",
+      "primary": "geocoding/X-McKay/geocode-mcp",
+      "shared": "geocoding/danishashko/geocode-mcp",
+      "independent": [
+        "geocoding/mapdevsaikat/quantaroute-geocoder",
+        "geocoding/adelie-ai/geocode-mcp"
+      ]
+    },
+    {
+      "set_id": "s1-06",
+      "survey": "s1",
+      "category": "geocoding",
+      "primary": "geocoding/danishashko/geocode-mcp",
+      "shared": "geocoding/X-McKay/geocode-mcp",
+      "independent": [
+        "geocoding/mapdevsaikat/quantaroute-geocoder",
+        "geocoding/adelie-ai/geocode-mcp"
+      ]
+    },
+    {
+      "set_id": "s1-07",
+      "survey": "s1",
+      "category": "geocoding",
+      "primary": "geocoding/webcoderz/MCP-Geo",
+      "shared": "geocoding/X-McKay/geocode-mcp",
+      "independent": [
+        "geocoding/mapdevsaikat/quantaroute-geocoder",
+        "geocoding/adelie-ai/geocode-mcp"
+      ]
+    },
+    {
+      "set_id": "s1-08",
+      "survey": "s1",
+      "category": "news",
+      "primary": "news/devabdultech/hn-mcp",
+      "shared": "news/karanb192/hn-mcp",
+      "independent": [
+        "news/the0807/GeekNews-MCP-Server",
+        "news/nishantpardamwar/kotlin-news-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s1-09",
+      "survey": "s1",
+      "category": "news",
+      "primary": "news/karanb192/hn-mcp",
+      "shared": "news/devabdultech/hn-mcp",
+      "independent": [
+        "news/handaas/news-mcp-server",
+        "news/the0807/GeekNews-MCP-Server"
+      ]
+    },
+    {
+      "set_id": "s1-10",
+      "survey": "s1",
+      "category": "news",
+      "primary": "news/pskill9/hn-server",
+      "shared": "news/devabdultech/hn-mcp",
+      "independent": [
+        "news/handaas/news-mcp-server",
+        "news/the0807/GeekNews-MCP-Server"
+      ]
+    },
+    {
+      "set_id": "s1-11",
+      "survey": "s1",
+      "category": "stock_quotes",
+      "primary": "stock_quotes/Llldmiao/a-stock-mcp-server",
+      "shared": "stock_quotes/peikuo/china-stock-mcp-server",
+      "independent": [
+        "stock_quotes/niuheilong/stock-mcp-server",
+        "stock_quotes/shuizhengqi1/futu-stock-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s1-12",
+      "survey": "s1",
+      "category": "stock_quotes",
+      "primary": "stock_quotes/peikuo/china-stock-mcp-server",
+      "shared": "stock_quotes/Llldmiao/a-stock-mcp-server",
+      "independent": [
+        "stock_quotes/niuheilong/stock-mcp-server",
+        "stock_quotes/archiephan78/ssi-stock-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s1-13",
+      "survey": "s1",
+      "category": "weather",
+      "primary": "weather/ezh0v/weather-mcp-server",
+      "shared": "weather/sjanaX01/weather-mcp-server",
+      "independent": [
+        "weather/ACAne0320/amap-weather-mcp-server",
+        "weather/glaucia86/weather-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s1-14",
+      "survey": "s1",
+      "category": "weather",
+      "primary": "weather/sjanaX01/weather-mcp-server",
+      "shared": "weather/ezh0v/weather-mcp-server",
+      "independent": [
+        "weather/Cooosin/WeatherMcpServer",
+        "weather/glaucia86/weather-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s2-15",
+      "survey": "s2",
+      "category": "air_quality",
+      "primary": "air_quality/8xiang5hao/aqicn-mcp",
+      "shared": "air_quality/mattmarcin/aqicn-mcp",
+      "independent": [
+        "air_quality/vidyalatha-badde/Weather_AQI_MCP",
+        "air_quality/synapticore-io/dust-analyzer"
+      ]
+    },
+    {
+      "set_id": "s2-16",
+      "survey": "s2",
+      "category": "air_quality",
+      "primary": "air_quality/mattmarcin/aqicn-mcp",
+      "shared": "air_quality/8xiang5hao/aqicn-mcp",
+      "independent": [
+        "air_quality/sr5434/aqi-mcp",
+        "air_quality/hayrapetian/yerevan-aqi-mcp"
+      ]
+    },
+    {
+      "set_id": "s2-17",
+      "survey": "s2",
+      "category": "books",
+      "primary": "books/ejam4040/Books-MCP-Server",
+      "shared": "books/zeyynepkaraduman/library-book-search-mcp",
+      "independent": [
+        "books/Busra-ozer/book-search-mcp",
+        "books/VmLia/books-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s2-18",
+      "survey": "s2",
+      "category": "books",
+      "primary": "books/zeyynepkaraduman/library-book-search-mcp",
+      "shared": "books/ejam4040/Books-MCP-Server",
+      "independent": [
+        "books/Busra-ozer/book-search-mcp",
+        "books/VmLia/books-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s2-19",
+      "survey": "s2",
+      "category": "crypto_prices",
+      "primary": "crypto_prices/NalinKaushik/crypto-mcp-server",
+      "shared": "crypto_prices/yogirajbshinde21/crypto-mcp-server",
+      "independent": [
+        "crypto_prices/drtamar/crypto-mcp-server",
+        "crypto_prices/blockchainacademics/bca-mcp"
+      ]
+    },
+    {
+      "set_id": "s2-20",
+      "survey": "s2",
+      "category": "crypto_prices",
+      "primary": "crypto_prices/WilliamNing316/crypto-mcp-server",
+      "shared": "crypto_prices/NalinKaushik/crypto-mcp-server",
+      "independent": [
+        "crypto_prices/akshaygp18/crypto-mcp-server",
+        "crypto_prices/dherik/crypto-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s2-21",
+      "survey": "s2",
+      "category": "crypto_prices",
+      "primary": "crypto_prices/akshaygp18/crypto-mcp-server",
+      "shared": "crypto_prices/drtamar/crypto-mcp-server",
+      "independent": [
+        "crypto_prices/smhnkmr/realtime-crypto-mcp-server",
+        "crypto_prices/WilliamNing316/crypto-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s2-22",
+      "survey": "s2",
+      "category": "crypto_prices",
+      "primary": "crypto_prices/dherik/crypto-mcp-server",
+      "shared": "crypto_prices/akshaygp18/crypto-mcp-server",
+      "independent": [
+        "crypto_prices/yogirajbshinde21/crypto-mcp-server",
+        "crypto_prices/NalinKaushik/crypto-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s2-23",
+      "survey": "s2",
+      "category": "crypto_prices",
+      "primary": "crypto_prices/drtamar/crypto-mcp-server",
+      "shared": "crypto_prices/akshaygp18/crypto-mcp-server",
+      "independent": [
+        "crypto_prices/WilliamNing316/crypto-mcp-server",
+        "crypto_prices/yogirajbshinde21/crypto-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s2-24",
+      "survey": "s2",
+      "category": "crypto_prices",
+      "primary": "crypto_prices/yogirajbshinde21/crypto-mcp-server",
+      "shared": "crypto_prices/NalinKaushik/crypto-mcp-server",
+      "independent": [
+        "crypto_prices/smhnkmr/realtime-crypto-mcp-server",
+        "crypto_prices/dherik/crypto-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s2-25",
+      "survey": "s2",
+      "category": "currency_exchange",
+      "primary": "currency_exchange/EyalMeschman/ExchangeRateMCP",
+      "shared": "currency_exchange/vivart/exchange-rate-mcp",
+      "independent": [
+        "currency_exchange/elvinws/exchange-rate-mcp",
+        "currency_exchange/sin4ch/exchange-rate-mcp"
+      ]
+    },
+    {
+      "set_id": "s2-26",
+      "survey": "s2",
+      "category": "currency_exchange",
+      "primary": "currency_exchange/NotNull92/exchange-rate-mcp",
+      "shared": "currency_exchange/vivart/exchange-rate-mcp",
+      "independent": [
+        "currency_exchange/sin4ch/exchange-rate-mcp",
+        "currency_exchange/elvinws/exchange-rate-mcp"
+      ]
+    },
+    {
+      "set_id": "s2-27",
+      "survey": "s2",
+      "category": "currency_exchange",
+      "primary": "currency_exchange/RichGom84/exchange_rate_MCP",
+      "shared": "currency_exchange/vivart/exchange-rate-mcp",
+      "independent": [
+        "currency_exchange/sin4ch/exchange-rate-mcp",
+        "currency_exchange/elvinws/exchange-rate-mcp"
+      ]
+    },
+    {
+      "set_id": "s2-28",
+      "survey": "s2",
+      "category": "currency_exchange",
+      "primary": "currency_exchange/elvinws/exchange-rate-mcp",
+      "shared": "currency_exchange/boy-373/exchange-rate-mcp",
+      "independent": [
+        "currency_exchange/vivart/exchange-rate-mcp",
+        "currency_exchange/RichGom84/exchange_rate_MCP"
+      ]
+    },
+    {
+      "set_id": "s2-29",
+      "survey": "s2",
+      "category": "currency_exchange",
+      "primary": "currency_exchange/sin4ch/exchange-rate-mcp",
+      "shared": "currency_exchange/elvinws/exchange-rate-mcp",
+      "independent": [
+        "currency_exchange/stock-vibes/exchange-mcp",
+        "currency_exchange/RichGom84/exchange_rate_MCP"
+      ]
+    },
+    {
+      "set_id": "s2-30",
+      "survey": "s2",
+      "category": "currency_exchange",
+      "primary": "currency_exchange/stock-vibes/exchange-mcp",
+      "shared": "currency_exchange/EyalMeschman/ExchangeRateMCP",
+      "independent": [
+        "currency_exchange/elvinws/exchange-rate-mcp",
+        "currency_exchange/sin4ch/exchange-rate-mcp"
+      ]
+    },
+    {
+      "set_id": "s2-31",
+      "survey": "s2",
+      "category": "currency_exchange",
+      "primary": "currency_exchange/vivart/exchange-rate-mcp",
+      "shared": "currency_exchange/NotNull92/exchange-rate-mcp",
+      "independent": [
+        "currency_exchange/elvinws/exchange-rate-mcp",
+        "currency_exchange/sin4ch/exchange-rate-mcp"
+      ]
+    },
+    {
+      "set_id": "s2-32",
+      "survey": "s2",
+      "category": "movies",
+      "primary": "movies/Grinv/tmdb-mcp",
+      "shared": "movies/Samarateja0118/movie-mcp-server",
+      "independent": [
+        "movies/saravana87/Movie-MCP-Server",
+        "movies/GuptaJiHardik/movie-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s2-33",
+      "survey": "s2",
+      "category": "movies",
+      "primary": "movies/SaiSoeSan/movie-mcp-server",
+      "shared": "movies/Grinv/tmdb-mcp",
+      "independent": [
+        "movies/saravana87/Movie-MCP-Server",
+        "movies/joshndala/movie-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s2-34",
+      "survey": "s2",
+      "category": "movies",
+      "primary": "movies/Samarateja0118/movie-mcp-server",
+      "shared": "movies/SaiSoeSan/movie-mcp-server",
+      "independent": [
+        "movies/saravana87/Movie-MCP-Server",
+        "movies/Shaamam/movie-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s2-35",
+      "survey": "s2",
+      "category": "movies",
+      "primary": "movies/Shaamam/movie-mcp-server",
+      "shared": "movies/Grinv/tmdb-mcp",
+      "independent": [
+        "movies/Samarateja0118/movie-mcp-server",
+        "movies/GuptaJiHardik/movie-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s2-36",
+      "survey": "s2",
+      "category": "movies",
+      "primary": "movies/joshndala/movie-mcp-server",
+      "shared": "movies/Shaamam/movie-mcp-server",
+      "independent": [
+        "movies/SaiSoeSan/movie-mcp-server",
+        "movies/simentob/movies-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s2-37",
+      "survey": "s2",
+      "category": "movies",
+      "primary": "movies/simentob/movies-mcp-server",
+      "shared": "movies/Grinv/tmdb-mcp",
+      "independent": [
+        "movies/GuptaJiHardik/movie-mcp-server",
+        "movies/Shaamam/movie-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s2-38",
+      "survey": "s2",
+      "category": "news",
+      "primary": "news/Paras1Chauhan/ai-news-mcp-server",
+      "shared": "news/davidvgilmore/hn-mcp-server",
+      "independent": [
+        "news/deficlow/zipp-mcp",
+        "news/wudalu/mcp-hot-news-server"
+      ]
+    },
+    {
+      "set_id": "s2-39",
+      "survey": "s2",
+      "category": "news",
+      "primary": "news/davidvgilmore/hn-mcp-server",
+      "shared": "news/Paras1Chauhan/ai-news-mcp-server",
+      "independent": [
+        "news/wudalu/mcp-hot-news-server",
+        "news/corey-coders/mcp-finance-news"
+      ]
+    },
+    {
+      "set_id": "s2-40",
+      "survey": "s2",
+      "category": "news",
+      "primary": "news/joeswann/hackernews-mcp",
+      "shared": "news/davidvgilmore/hn-mcp-server",
+      "independent": [
+        "news/deficlow/zipp-mcp",
+        "news/denizumutdereli/news-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s2-41",
+      "survey": "s2",
+      "category": "stock_quotes",
+      "primary": "stock_quotes/NinianX/tw-stock-mcp",
+      "shared": "stock_quotes/yadinae/stock-mcp-server",
+      "independent": [
+        "stock_quotes/agent504330-ux/mcp-korean-stock",
+        "stock_quotes/agilesolutions/stock-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s2-42",
+      "survey": "s2",
+      "category": "stock_quotes",
+      "primary": "stock_quotes/YongYangLi/stock-mcp-server",
+      "shared": "stock_quotes/yadinae/stock-mcp-server",
+      "independent": [
+        "stock_quotes/agent504330-ux/mcp-korean-stock",
+        "stock_quotes/agilesolutions/stock-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s2-43",
+      "survey": "s2",
+      "category": "stock_quotes",
+      "primary": "stock_quotes/imdurgadas/cf-stock-mcp-server",
+      "shared": "stock_quotes/sachinjhamb/stockMcpServerAQnpm",
+      "independent": [
+        "stock_quotes/agilesolutions/stock-mcp-server",
+        "stock_quotes/agent504330-ux/mcp-korean-stock"
+      ]
+    },
+    {
+      "set_id": "s2-44",
+      "survey": "s2",
+      "category": "stock_quotes",
+      "primary": "stock_quotes/sachinjhamb/stockMcpServerAQnpm",
+      "shared": "stock_quotes/NinianX/tw-stock-mcp",
+      "independent": [
+        "stock_quotes/1018053166/stock-mcp-server",
+        "stock_quotes/agent504330-ux/mcp-korean-stock"
+      ]
+    },
+    {
+      "set_id": "s2-45",
+      "survey": "s2",
+      "category": "stock_quotes",
+      "primary": "stock_quotes/yadinae/stock-mcp-server",
+      "shared": "stock_quotes/YongYangLi/stock-mcp-server",
+      "independent": [
+        "stock_quotes/agilesolutions/stock-mcp-server",
+        "stock_quotes/agent504330-ux/mcp-korean-stock"
+      ]
+    },
+    {
+      "set_id": "s2-46",
+      "survey": "s2",
+      "category": "translation",
+      "primary": "translation/iamnotagentleman/localizable-xcstrings-mcp",
+      "shared": "translation/kunalchhabra/translation-mcp-server",
+      "independent": [
+        "translation/Deep-Intelligent-Pharma/Translationx-mcp-server",
+        "translation/brianshin22/youtube-translate-mcp"
+      ]
+    },
+    {
+      "set_id": "s2-47",
+      "survey": "s2",
+      "category": "translation",
+      "primary": "translation/kunalchhabra/translation-mcp-server",
+      "shared": "translation/iamnotagentleman/localizable-xcstrings-mcp",
+      "independent": [
+        "translation/intento/mcp-intento-translate",
+        "translation/LibreTranslate/LibreTranslate-MCP"
+      ]
+    },
+    {
+      "set_id": "s2-48",
+      "survey": "s2",
+      "category": "weather",
+      "primary": "weather/CodeByWaqas/weather-mcp-server",
+      "shared": "weather/leash06/weather-mcp-server",
+      "independent": [
+        "weather/Yarflam/weather-mcp-server",
+        "weather/rivky9523/israeli-weather-mcp-agent"
+      ]
+    },
+    {
+      "set_id": "s2-49",
+      "survey": "s2",
+      "category": "weather",
+      "primary": "weather/Krytons/Weather-MCP-Server",
+      "shared": "weather/mohamed2020m/weather-mcp-server",
+      "independent": [
+        "weather/rivky9523/israeli-weather-mcp-agent",
+        "weather/jjyaoao/weather-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s2-50",
+      "survey": "s2",
+      "category": "weather",
+      "primary": "weather/leash06/weather-mcp-server",
+      "shared": "weather/CodeByWaqas/weather-mcp-server",
+      "independent": [
+        "weather/Yarflam/weather-mcp-server",
+        "weather/jjyaoao/weather-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s2-51",
+      "survey": "s2",
+      "category": "weather",
+      "primary": "weather/mohamed2020m/weather-mcp-server",
+      "shared": "weather/leash06/weather-mcp-server",
+      "independent": [
+        "weather/jjyaoao/weather-mcp-server",
+        "weather/rivky9523/israeli-weather-mcp-agent"
+      ]
+    },
+    {
+      "set_id": "s2-52",
+      "survey": "s2",
+      "category": "weather",
+      "primary": "weather/rossshannon/weekly-weather-mcp",
+      "shared": "weather/mohamed2020m/weather-mcp-server",
+      "independent": [
+        "weather/Yarflam/weather-mcp-server",
+        "weather/jjyaoao/weather-mcp-server"
+      ]
+    },
+    {
+      "set_id": "s2-53",
+      "survey": "s2",
+      "category": "web_search",
+      "primary": "web_search/MemoryClear/claude-web-search-mcp",
+      "shared": "web_search/tenltrist/deepseek-web-search",
+      "independent": [
+        "web_search/PROJECT-B-26/groundroute-mcp",
+        "web_search/menesekinci/search-mcp"
+      ]
+    },
+    {
+      "set_id": "s2-54",
+      "survey": "s2",
+      "category": "web_search",
+      "primary": "web_search/SCP120/web-search-mcp-cloak",
+      "shared": "web_search/MemoryClear/claude-web-search-mcp",
+      "independent": [
+        "web_search/PROJECT-B-26/groundroute-mcp",
+        "web_search/menesekinci/search-mcp"
+      ]
+    },
+    {
+      "set_id": "s2-55",
+      "survey": "s2",
+      "category": "web_search",
+      "primary": "web_search/menesekinci/search-mcp",
+      "shared": "web_search/bennmann/local-websearch",
+      "independent": [
+        "web_search/MemoryClear/claude-web-search-mcp",
+        "web_search/SCP120/web-search-mcp-cloak"
+      ]
+    },
+    {
+      "set_id": "s2-56",
+      "survey": "s2",
+      "category": "web_search",
+      "primary": "web_search/tenltrist/deepseek-web-search",
+      "shared": "web_search/bennmann/local-websearch",
+      "independent": [
+        "web_search/menesekinci/search-mcp",
+        "web_search/PROJECT-B-26/groundroute-mcp"
+      ]
+    }
+  ]
+}

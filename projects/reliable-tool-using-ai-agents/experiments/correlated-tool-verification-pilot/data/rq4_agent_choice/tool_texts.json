@@ -1,0 +1,1443 @@
+{
+  "air_quality/8xiang5hao/aqicn-mcp": {
+    "server": "8xiang5hao/aqicn-mcp",
+    "tool": "get_air_quality",
+    "description": "根据城市拼音查询空气质量信息。例如: beijing, shanghai, guangzhou, shenzhen等",
+    "truncated": false,
+    "source": "https://github.com/8xiang5hao/aqicn-mcp/blob/f961f7e638c2fe2bb09957e424a5a7154aa71fe7/src/aqicn_mcp/server.py#L127",
+    "providers": [
+      "WAQI (aqicn.org)"
+    ],
+    "strip_names": [
+      "WAQI (aqicn.org)",
+      "WAQI"
+    ]
+  },
+  "air_quality/hayrapetian/yerevan-aqi-mcp": {
+    "server": "hayrapetian/yerevan-aqi-mcp",
+    "tool": "get_device_current",
+    "description": "Full current reading for a specific sensor: AQI, PM2.5, PM10, NO2, O3, temperature, humidity, wind.",
+    "truncated": false,
+    "source": "https://github.com/hayrapetian/yerevan-aqi-mcp/blob/b7147ebebe364c3c1cf5ecf35c458da080a651e9/src/index.ts#L26",
+    "providers": [
+      "Yerevan Municipality GIS"
+    ],
+    "strip_names": [
+      "Yerevan Municipality GIS",
+      "YerevanMunicipalityGIS"
+    ]
+  },
+  "air_quality/mattmarcin/aqicn-mcp": {
+    "server": "mattmarcin/aqicn-mcp",
+    "tool": "city_aqi",
+    "description": "Get air quality data for a specific city.",
+    "truncated": false,
+    "source": "https://github.com/mattmarcin/aqicn-mcp/blob/44d7d9ffcff934fe722b201b350776855579af62/aqicn_server.py#L34",
+    "providers": [
+      "WAQI (aqicn.org)"
+    ],
+    "strip_names": [
+      "WAQI (aqicn.org)",
+      "WAQI"
+    ]
+  },
+  "air_quality/sr5434/aqi-mcp": {
+    "server": "sr5434/aqi-mcp",
+    "tool": "get_aqi",
+    "description": "",
+    "truncated": false,
+    "source": "https://github.com/sr5434/aqi-mcp/blob/77d84c54be961f7187096ae41177d8c03d4ffcf0/main.py#L13",
+    "providers": [
+      "Google Maps Platform"
+    ],
+    "strip_names": [
+      "Google Maps Platform",
+      "GoogleMapsPlatform"
+    ]
+  },
+  "air_quality/synapticore-io/dust-analyzer": {
+    "server": "synapticore-io/dust-analyzer",
+    "tool": "analyze_air_quality",
+    "description": "Zeitreihe fur Saharastaub, SO2 und PM2.5 an einem europaischen Standort. Empfohlener Einstieg fur jede Luftqualitats-Frage. Zeigt alle drei Schadstoffe als interaktive Zeitreihe. Im Auto-Modus werden validierte Analysedaten mit aktuellen Prognosedaten kombiniert und UBA-Stationsmessungen uberlagert (Deutschland). Args: lat: Breitengrad (z.B. 52.37 fur Hannover) lon: Langengrad (z.B. 9.73 fur Hanno …",
+    "truncated": true,
+    "source": "https://github.com/synapticore-io/dust-analyzer/blob/288fc4abbcec361110ece623ed8aef284528504c/src/dust_analyzer/server.py#L295",
+    "providers": [
+      "Umweltbundesamt",
+      "synapticore-io dust-analyzer dataset"
+    ],
+    "strip_names": [
+      "synapticore-io dust-analyzer dataset",
+      "synapticore-iodust-analyzerdataset",
+      "Copernicus CAMS",
+      "Umweltbundesamt",
+      "CopernicusCAMS"
+    ]
+  },
+  "air_quality/vidyalatha-badde/Weather_AQI_MCP": {
+    "server": "vidyalatha-badde/Weather_AQI_MCP",
+    "tool": "get_aqi",
+    "description": "Retrieve the Air Quality Index (AQI) and pollutant concentrations for a given location using the OpenWeatherMap Air Pollution API. This tool first fetches the latitude and longitude for the location, then requests the AQI data from OpenWeatherMap. Args: location (str): The name of the location to get AQI data for. Returns: str: A formatted string containing: - Location and country - Coordinates (l …",
+    "truncated": true,
+    "source": "https://github.com/vidyalatha-badde/Weather_AQI_MCP/blob/b70ef5bd2fbf37d7aa7f09fe0e35172cf8d41df4/2_Air_Quality_Index_server.py#L55",
+    "providers": [
+      "OpenWeather"
+    ],
+    "strip_names": [
+      "OpenWeather"
+    ]
+  },
+  "books/Busra-ozer/book-search-mcp": {
+    "server": "Busra-ozer/book-search-mcp",
+    "tool": "search_books_tool",
+    "description": "MCP aracı: Open Library API üzerinden kitap araması yapar.",
+    "truncated": false,
+    "source": "https://github.com/Busra-ozer/book-search-mcp/blob/1dbc2e38c6e4b2ce5347c8fcdd68dc7f343c860a/server.py#L6",
+    "providers": [
+      "Open Library"
+    ],
+    "strip_names": [
+      "Open Library",
+      "OpenLibrary"
+    ]
+  },
+  "books/VmLia/books-mcp-server": {
+    "server": "VmLia/books-mcp-server",
+    "tool": "book_search",
+    "description": "搜索图书信息 Args: query: 要搜索的图书关键词 Returns: 搜索到的图书信息总结",
+    "truncated": false,
+    "source": "https://github.com/VmLia/books-mcp-server/blob/e81a33ca2ad85b704d42bc4f075c313f36d96101/main.py#L13",
+    "providers": [
+      "shuchacha.net"
+    ],
+    "strip_names": [
+      "shuchacha.net"
+    ]
+  },
+  "books/ejam4040/Books-MCP-Server": {
+    "server": "ejam4040/Books-MCP-Server",
+    "tool": "search_volumes",
+    "description": "Search for volumes in the Google Books API.",
+    "truncated": false,
+    "source": "https://github.com/ejam4040/Books-MCP-Server/blob/316fc80e3f20863496a7df936cf36a0600481f36/tools/commerce-api/google-books-api/search-volumes.js#L46",
+    "providers": [
+      "Google Books"
+    ],
+    "strip_names": [
+      "Google Books",
+      "GoogleBooks"
+    ]
+  },
+  "books/zeyynepkaraduman/library-book-search-mcp": {
+    "server": "zeyynepkaraduman/library-book-search-mcp",
+    "tool": "search_library_books",
+    "description": "Kütüphanede kitap arama - Google Books API kullanarak kitap, yazar veya konu arayın. Args: query: Aranacak kitap adı, yazar adı veya konu max_results: Döndürülecek maksimum sonuç sayısı (1-40 arası, varsayılan: 10) language: Aranacak dil kodu (tr, en, fr, de vb. - varsayılan: tr) Returns: Bulunan kitapların listesi ve detayları",
+    "truncated": false,
+    "source": "https://github.com/zeyynepkaraduman/library-book-search-mcp/blob/cad7a08afc2814ae9f4f2ffe224886f863fb704a/server.py#L13",
+    "providers": [
+      "Google Books"
+    ],
+    "strip_names": [
+      "Google Books",
+      "GoogleBooks"
+    ]
+  },
+  "crypto_prices/Diya28-mehra/crypto_mcp_server": {
+    "server": "Diya28-mehra/crypto_mcp_server",
+    "tool": "get_ticker",
+    "description": "Get real-time ticker data for a cryptocurrency symbol",
+    "truncated": false,
+    "source": "https://github.com/Diya28-mehra/crypto_mcp_server/blob/3e8dc9e2cd8ebedef6cdcf625e22a239d91517a3/crypto_mcp_server/server.py#L28",
+    "providers": [
+      "Binance"
+    ],
+    "strip_names": [
+      "Binance"
+    ]
+  },
+  "crypto_prices/Frostbite22/cryptogecko-mcp-server": {
+    "server": "Frostbite22/cryptogecko-mcp-server",
+    "tool": "get_price",
+    "description": "Get the price of selected coins Args: vs_currencies: Comma-separated list of currencies (e.g., \"usd,eur\") ids: Comma-separated list of coin IDs (e.g., \"bitcoin,ethereum\") symbols: Comma-separated list of coin symbols (e.g., \"btc,eth\")",
+    "truncated": false,
+    "source": "https://github.com/Frostbite22/cryptogecko-mcp-server/blob/9caa3d7c8db19b40d7e771bc405a4180bdb9d77a/server.py#L99",
+    "providers": [
+      "CoinGecko"
+    ],
+    "strip_names": [
+      "CoinGecko"
+    ]
+  },
+  "crypto_prices/Ibook000/crypto_mcp_server": {
+    "server": "Ibook000/crypto_mcp_server",
+    "tool": "query_crypto_price",
+    "description": "输入加密货币交易对（如 BTCUSDT），返回当前价格信息。 :param symbol: 交易对符号（需使用大写，如 BTCUSDT） :return: 格式化后的价格信息",
+    "truncated": false,
+    "source": "https://github.com/Ibook000/crypto_mcp_server/blob/69aa613b0d329724b773a907d1c01a36b25a6a71/crypto_mcp_server.py#L513",
+    "providers": [
+      "Binance"
+    ],
+    "strip_names": [
+      "Binance"
+    ]
+  },
+  "crypto_prices/NalinKaushik/crypto-mcp-server": {
+    "server": "NalinKaushik/crypto-mcp-server",
+    "tool": "get_price",
+    "description": "Get current cryptocurrency price.",
+    "truncated": false,
+    "source": "https://github.com/NalinKaushik/crypto-mcp-server/blob/88af7f2cea1723e99a04347db2afacff47d070a8/src/crypto_mcp/server.py#L51",
+    "providers": [
+      "Binance"
+    ],
+    "strip_names": [
+      "Binance"
+    ]
+  },
+  "crypto_prices/PelleNybe/Crypto-MCP-Server---by-Corax-CoLAB": {
+    "server": "PelleNybe/Crypto-MCP-Server---by-Corax-CoLAB",
+    "tool": "price",
+    "description": "",
+    "truncated": false,
+    "source": "https://github.com/PelleNybe/Crypto-MCP-Server---by-Corax-CoLAB/blob/9dba34dc9cb064cd83fa2efb331e0d310ff9601d/coingecko_mcp.py#L32",
+    "providers": [
+      "CoinGecko"
+    ],
+    "strip_names": [
+      "CoinGecko"
+    ]
+  },
+  "crypto_prices/WilliamNing316/crypto-mcp-server": {
+    "server": "WilliamNing316/crypto-mcp-server",
+    "tool": "get_price",
+    "description": "获取 Binance 实时价格",
+    "truncated": false,
+    "source": "https://github.com/WilliamNing316/crypto-mcp-server/blob/12cc80d638646089708a20d9ac0941b32f33f618/src/server.ts#L506",
+    "providers": [
+      "Binance"
+    ],
+    "strip_names": [
+      "Binance"
+    ]
+  },
+  "crypto_prices/aanubhavv/crypto-mcp-server": {
+    "server": "aanubhavv/crypto-mcp-server",
+    "tool": "get_cryptocurrency_price",
+    "description": "Get real-time price and market data for specific cryptocurrencies",
+    "truncated": false,
+    "source": "https://github.com/aanubhavv/crypto-mcp-server/blob/8b80f8f4b68ba194396b9cfc64fa42af93b8b55a/src/tools/realtime.py#L34",
+    "providers": [
+      "CoinMarketCap"
+    ],
+    "strip_names": [
+      "CoinMarketCap"
+    ]
+  },
+  "crypto_prices/akshaygp18/crypto-mcp-server": {
+    "server": "akshaygp18/crypto-mcp-server",
+    "tool": "get_coin_price",
+    "description": "Get current prices for one or more coins in one or more currencies, optionally with market cap, 24-hour volume, and 24-hour change. Batch coins into a single call rather than calling once per coin.",
+    "truncated": false,
+    "source": "https://github.com/akshaygp18/crypto-mcp-server/blob/0accbc2ecc44d64af0f6e9b06be1d4ccbf28152e/src/crypto_mcp_server/server.py#L393",
+    "providers": [
+      "CoinGecko"
+    ],
+    "strip_names": [
+      "CoinGecko"
+    ]
+  },
+  "crypto_prices/blockchainacademics/bca-mcp": {
+    "server": "blockchainacademics/bca-mcp",
+    "tool": "get_price",
+    "description": "Spot price + 24h/7d/30d change for one or more tokens, via CoinGecko. Use 'bitcoin', 'ethereum' CoinGecko IDs, not exchange tickers.",
+    "truncated": false,
+    "source": "https://github.com/blockchainacademics/bca-mcp/blob/07e3f896c068acab102a820282dd57798d6c643d/src/tools/market.ts#L29",
+    "providers": [
+      "Blockchain Academics"
+    ],
+    "strip_names": [
+      "Blockchain Academics",
+      "BlockchainAcademics",
+      "CoinGecko"
+    ]
+  },
+  "crypto_prices/desk3/cryptocurrency-mcp-server": {
+    "server": "desk3/cryptocurrency-mcp-server",
+    "tool": "get_token_price",
+    "description": "Get real-time token price info, supports symbol parameter",
+    "truncated": false,
+    "source": "https://github.com/desk3/cryptocurrency-mcp-server/blob/d374c49f04baa73f1ce41d6272e6ad9a84ce5838/src/desk3_service/server.py#L559",
+    "providers": [
+      "Desk3"
+    ],
+    "strip_names": [
+      "Desk3"
+    ]
+  },
+  "crypto_prices/dherik/crypto-mcp-server": {
+    "server": "dherik/crypto-mcp-server",
+    "tool": "get_crypto_price",
+    "description": "Get the current price, market cap, 24h volume, and 24h price change for a cryptocurrency. Use coin IDs like 'bitcoin', 'ethereum', 'solana', 'cardano'.",
+    "truncated": false,
+    "source": "https://github.com/dherik/crypto-mcp-server/blob/ace72c644b9869e29b1d482d7cf3761d13fdab91/src/tools/get-crypto-price.ts#L29",
+    "providers": [
+      "CoinGecko"
+    ],
+    "strip_names": [
+      "CoinGecko"
+    ]
+  },
+  "crypto_prices/drtamar/crypto-mcp-server": {
+    "server": "drtamar/crypto-mcp-server",
+    "tool": "crypto_price",
+    "description": "Get real-time price for any cryptocurrency. Supports 10,000+ tokens.",
+    "truncated": false,
+    "source": "https://github.com/drtamar/crypto-mcp-server/blob/24205f36630abe6babbca14160bd1946b34c68cd/src/server.py#L54",
+    "providers": [
+      "CoinGecko"
+    ],
+    "strip_names": [
+      "CoinGecko"
+    ]
+  },
+  "crypto_prices/smhnkmr/realtime-crypto-mcp-server": {
+    "server": "smhnkmr/realtime-crypto-mcp-server",
+    "tool": "get-rates",
+    "description": "Get exchange rates for a cryptocurrency",
+    "truncated": false,
+    "source": "https://github.com/smhnkmr/realtime-crypto-mcp-server/blob/719576b744258a97cf4c79f51c5550c6f9b4c0f7/src/tools/getRates.ts#L78",
+    "providers": [
+      "CoinCap"
+    ],
+    "strip_names": [
+      "CoinCap"
+    ]
+  },
+  "crypto_prices/yogirajbshinde21/crypto-mcp-server": {
+    "server": "yogirajbshinde21/crypto-mcp-server",
+    "tool": "get_current_price",
+    "description": "Get real-time price and 24h statistics for a cryptocurrency pair. Args: symbol: Trading pair (e.g., 'BTC/USDT', 'ETH/USDT') exchange: Exchange name (default: 'binance') Returns: Current price, bid/ask, volume, and 24h changes",
+    "truncated": false,
+    "source": "https://github.com/yogirajbshinde21/crypto-mcp-server/blob/399a5288571ad3cbaba8b33e208d37c2f210a1e4/src/server.py#L13",
+    "providers": [
+      "Binance"
+    ],
+    "strip_names": [
+      "Binance"
+    ]
+  },
+  "currency_exchange/EyalMeschman/ExchangeRateMCP": {
+    "server": "EyalMeschman/ExchangeRateMCP",
+    "tool": "get_exchange_rate",
+    "description": "Fetch the exchange rate between two currencies for a specific date. Args: date: Date in any common format (YYYY-MM-DD, MM/DD/YYYY, DD-MM-YYYY, etc.) from_currency: Source currency code (default: \"USD\") to_currency: Target currency code (default: \"ILS\") Returns: Dictionary containing exchange rate data: { \"amount\": 1, \"base\": \"<from_currency>\", \"date\": \"YYYY-MM-DD\", \"rates\": {\"<to_currency>\": <floa …",
+    "truncated": true,
+    "source": "https://github.com/EyalMeschman/ExchangeRateMCP/blob/06c3be85791d78d3847d37dfa74cbb07ec212ebd/src/exchange_rate_mcp/tools.py#L60",
+    "providers": [
+      "Frankfurter"
+    ],
+    "strip_names": [
+      "Frankfurter"
+    ]
+  },
+  "currency_exchange/NotNull92/exchange-rate-mcp": {
+    "server": "NotNull92/exchange-rate-mcp",
+    "tool": "get_exchange_rate",
+    "description": "Get current exchange rates between currencies (Uses Frankfurter + Fallback for 150+ currencies)",
+    "truncated": false,
+    "source": "https://github.com/NotNull92/exchange-rate-mcp/blob/3e3afeffc59850b134550abbc7372b6782e79ede/src/index.ts#L17",
+    "providers": [
+      "Frankfurter",
+      "fawazahmed0 exchange-api"
+    ],
+    "strip_names": [
+      "fawazahmed0 exchange-api",
+      "fawazahmed0exchange-api",
+      "Frankfurter",
+      "ECB"
+    ]
+  },
+  "currency_exchange/RichGom84/exchange_rate_MCP": {
+    "server": "RichGom84/exchange_rate_MCP",
+    "tool": "get_usd_krw_exchange_rate",
+    "description": "Get the latest USD/KRW exchange rate. Use this when the user asks in Korean or English about the dollar-won exchange rate, USD to KRW, or how much 1 US dollar is in Korean won.",
+    "truncated": false,
+    "source": "https://github.com/RichGom84/exchange_rate_MCP/blob/3ad1b93d1c2604a44dee1d8e54ade6ce2ad912ea/server.py#L35",
+    "providers": [
+      "Frankfurter"
+    ],
+    "strip_names": [
+      "Frankfurter"
+    ]
+  },
+  "currency_exchange/boy-373/exchange-rate-mcp": {
+    "server": "boy-373/exchange-rate-mcp",
+    "tool": "query_exchange_rate",
+    "description": "查询实时汇率并可做金额换算。 参数: base: 基准货币，代码或中文名均可，例如 \"USD\"、\"美元\"、\"欧元\"，默认美元 target: 目标货币，代码或中文名均可，例如 \"CNY\"、\"人民币\"、\"日元\"； 留空则返回常用货币（人民币/欧元/日元/英镑/港币/韩元）汇率 amount: 可选，要换算的金额，例如 100 表示 100 单位基准货币折合多少目标货币 返回: 汇率日期、基准货币、目标货币汇率；给了 amount 时同时返回换算结果。 数据源: Frankfurter（欧洲央行每日参考汇率，免费无需 Key）， 网络异常时自动切换 open.er-api.com。",
+    "truncated": false,
+    "source": "https://github.com/boy-373/exchange-rate-mcp/blob/eb6f007cefed3d0c57c7c98ac0cce90b12b51134/exchange_mcp_server.py#L146",
+    "providers": [
+      "ExchangeRate-API",
+      "Frankfurter"
+    ],
+    "strip_names": [
+      "ExchangeRate-API",
+      "Frankfurter",
+      "ECB"
+    ]
+  },
+  "currency_exchange/elvinws/exchange-rate-mcp": {
+    "server": "elvinws/exchange-rate-mcp",
+    "tool": "get_all_rate",
+    "description": "获取人民币兑主要货币（USD, EUR, HKD, JPY）的汇率",
+    "truncated": false,
+    "source": "https://github.com/elvinws/exchange-rate-mcp/blob/c6103a0405e6b167879daca3e9fb96e9f026b620/exchange_mcp.py#L33",
+    "providers": [
+      "ExchangeRate-API"
+    ],
+    "strip_names": [
+      "ExchangeRate-API"
+    ]
+  },
+  "currency_exchange/sin4ch/exchange-rate-mcp": {
+    "server": "sin4ch/exchange-rate-mcp",
+    "tool": "convert_currency",
+    "description": "Convert an amount from one currency to another using current exchange rates.",
+    "truncated": false,
+    "source": "https://github.com/sin4ch/exchange-rate-mcp/blob/11fa2a0e70ef78324bce58d924268ae14291802a/main.py#L16",
+    "providers": [
+      "ExchangeRate-API"
+    ],
+    "strip_names": [
+      "ExchangeRate-API"
+    ]
+  },
+  "currency_exchange/stock-vibes/exchange-mcp": {
+    "server": "stock-vibes/exchange-mcp",
+    "tool": "get_rate",
+    "description": "Get live exchange rates from the European Central Bank. Returns rates for all or specific currencies relative to a base currency.",
+    "truncated": false,
+    "source": "https://github.com/stock-vibes/exchange-mcp/blob/cfc459dee7bb47f0acebaab997a388ff297bec01/worker.js#L319",
+    "providers": [
+      "Frankfurter"
+    ],
+    "strip_names": [
+      "Frankfurter",
+      "ECB"
+    ]
+  },
+  "currency_exchange/vivart/exchange-rate-mcp": {
+    "server": "vivart/exchange-rate-mcp",
+    "tool": "convert_currency",
+    "description": "Convert a monetary amount from one currency to another using the live exchange rate.",
+    "truncated": false,
+    "source": "https://github.com/vivart/exchange-rate-mcp/blob/2d0b672e92752b255c48c362d69ad8a08a54a308/src/main/kotlin/com/vivart/ExchangeRateServer.kt#L46",
+    "providers": [
+      "Frankfurter"
+    ],
+    "strip_names": [
+      "Frankfurter",
+      "ECB"
+    ]
+  },
+  "geocoding/X-McKay/geocode-mcp": {
+    "server": "X-McKay/geocode-mcp",
+    "tool": "get_coordinates",
+    "description": "Get latitude and longitude coordinates for a city or location",
+    "truncated": false,
+    "source": "https://github.com/X-McKay/geocode-mcp/blob/d0962dcf4ac82273721546ed34362af6ffecf8fb/src/geocode_mcp/server.py#L109",
+    "providers": [
+      "OpenStreetMap Nominatim"
+    ],
+    "strip_names": [
+      "OpenStreetMap Nominatim",
+      "OpenStreetMapNominatim"
+    ]
+  },
+  "geocoding/adelie-ai/geocode-mcp": {
+    "server": "adelie-ai/geocode-mcp",
+    "tool": "geocode",
+    "description": "Resolve a location name to geographic coordinates (latitude and longitude) using the Photon geocoding API (powered by OpenStreetMap). Returns up to 'count' matching locations with their coordinates, country, country code, region, and place type. Supports cities, addresses, and points of interest.",
+    "truncated": false,
+    "source": "https://github.com/adelie-ai/geocode-mcp/blob/d5db0434f9c28215f463e23c63d2a7f97e7a11a1/src/service.rs#L67",
+    "providers": [
+      "Photon (Komoot)"
+    ],
+    "strip_names": [
+      "Photon (Komoot)",
+      "Photon"
+    ]
+  },
+  "geocoding/danishashko/geocode-mcp": {
+    "server": "danishashko/geocode-mcp",
+    "tool": "geocode",
+    "description": "Convert an address, place name, or landmark into geographic coordinates. Use this tool when: - The user gives a place/address and you need its latitude/longitude - You need to disambiguate a place name (returns ranked matches) - You need a place's coordinates before another geo operation Args: query: Address, place name, or landmark. limit: Max results. country_codes: Optional ISO country filter. …",
+    "truncated": true,
+    "source": "https://github.com/danishashko/geocode-mcp/blob/8b7d1e5537b140c1ee925a789ab6dd909f230dcf/geocode_mcp.py#L182",
+    "providers": [
+      "OpenStreetMap Nominatim"
+    ],
+    "strip_names": [
+      "OpenStreetMap Nominatim",
+      "OpenStreetMapNominatim"
+    ]
+  },
+  "geocoding/mapdevsaikat/quantaroute-geocoder": {
+    "server": "mapdevsaikat/quantaroute-geocoder",
+    "tool": "geocode",
+    "description": "Geocode an address to get DigiPin code and coordinates. Returns location information including latitude, longitude, and DigiPin.",
+    "truncated": false,
+    "source": "https://github.com/mapdevsaikat/quantaroute-geocoder/blob/ee84a81797fd336fdafc19eff4bda50ce6e59e02/src/index.ts#L88",
+    "providers": [
+      "QuantaRoute"
+    ],
+    "strip_names": [
+      "QuantaRoute"
+    ]
+  },
+  "geocoding/webcoderz/MCP-Geo": {
+    "server": "webcoderz/MCP-Geo",
+    "tool": "geocode_location",
+    "description": "Geocodes a single location string (an address or place name). Returns {'latitude', 'longitude', 'address'} or None if not found.",
+    "truncated": false,
+    "source": "https://github.com/webcoderz/MCP-Geo/blob/971996bd681aeed3c63a56694647f996cc6d1697/geo.py#L72",
+    "providers": [
+      "OpenStreetMap Nominatim"
+    ],
+    "strip_names": [
+      "OpenStreetMap Nominatim",
+      "OpenStreetMapNominatim"
+    ]
+  },
+  "movies/Grinv/tmdb-mcp": {
+    "server": "Grinv/tmdb-mcp",
+    "tool": "search_movies",
+    "description": "Search TMDB movies by title; returns compact summaries with the TMDB id that the other movie tools (get_movie, get_movie_credits, …) require, plus pagination info. Use this over search_multi when you already know the result is a movie. `region` here only picks which country's release_date is shown per result (e.g. a title's US vs. India theatrical date) — verified live, it does not filter which mo …",
+    "truncated": true,
+    "source": "https://github.com/Grinv/tmdb-mcp/blob/d2636c6518f67fbcc665194d3dc02bfc979f3c26/src/tools/tmdb/search.ts#L36",
+    "providers": [
+      "OMDb",
+      "TMDB"
+    ],
+    "strip_names": [
+      "Rotten Tomatoes",
+      "RottenTomatoes",
+      "Metacritic",
+      "TMDB",
+      "IMDb",
+      "OMDb"
+    ]
+  },
+  "movies/GuptaJiHardik/movie-mcp-server": {
+    "server": "GuptaJiHardik/movie-mcp-server",
+    "tool": "get_films",
+    "description": "Return enriched public films watched by a Letterboxd user.",
+    "truncated": false,
+    "source": "https://github.com/GuptaJiHardik/movie-mcp-server/blob/e402c565500201ad596734e3fdc9a1e15fa2897f/src/letterboxd_mcp/tools/film_tools.py#L22",
+    "providers": [
+      "Letterboxd"
+    ],
+    "strip_names": [
+      "Letterboxd"
+    ]
+  },
+  "movies/SaiSoeSan/movie-mcp-server": {
+    "server": "SaiSoeSan/movie-mcp-server",
+    "tool": "search-movies",
+    "description": "Search for movies by title or query",
+    "truncated": false,
+    "source": "https://github.com/SaiSoeSan/movie-mcp-server/blob/962b856f8ad94ff686a7c8c62d66ab97d9597bdc/tools.ts#L208",
+    "providers": [
+      "TMDB"
+    ],
+    "strip_names": [
+      "TMDB"
+    ]
+  },
+  "movies/Samarateja0118/movie-mcp-server": {
+    "server": "Samarateja0118/movie-mcp-server",
+    "tool": "search_movies",
+    "description": "Search for movies by title, genre, mood, or year.",
+    "truncated": false,
+    "source": "https://github.com/Samarateja0118/movie-mcp-server/blob/b15ebc41c446e5ba7f2b5c6081db453ab0309c62/server.py#L106",
+    "providers": [
+      "TMDB"
+    ],
+    "strip_names": [
+      "TMDB"
+    ]
+  },
+  "movies/Shaamam/movie-mcp-server": {
+    "server": "Shaamam/movie-mcp-server",
+    "tool": "getMovieInfo",
+    "description": "Gets the Information about the Movie",
+    "truncated": false,
+    "source": "https://github.com/Shaamam/movie-mcp-server/blob/c6aa92cc167f9010b31d6d567549a23a8f7a1671/src/main/java/io/shaama/movieserver/tools/MovieInformation.java#L28",
+    "providers": [
+      "OMDb"
+    ],
+    "strip_names": [
+      "OMDb"
+    ]
+  },
+  "movies/joshndala/movie-mcp-server": {
+    "server": "joshndala/movie-mcp-server",
+    "tool": "compare_movies",
+    "description": "Fetches data and returns a standalone HTML/CSS comparison card. IMPORTANT: The output of this tool is valid HTML. You MUST display this output to the user by generating a generic HTML Artifact containing the exact code returned by the tool.",
+    "truncated": false,
+    "source": "https://github.com/joshndala/movie-mcp-server/blob/fa4bf50521565381a92b934928d600a2631889d2/server.py#L59",
+    "providers": [
+      "OMDb"
+    ],
+    "strip_names": [
+      "OMDb"
+    ]
+  },
+  "movies/saravana87/Movie-MCP-Server": {
+    "server": "saravana87/Movie-MCP-Server",
+    "tool": "search_web",
+    "description": "",
+    "truncated": false,
+    "source": "https://github.com/saravana87/Movie-MCP-Server/blob/72f8504ebd45be9694279589ca9d31912f8c965f/mcp_moviedb_server.py#L37",
+    "providers": [
+      "Serper"
+    ],
+    "strip_names": [
+      "Serper"
+    ]
+  },
+  "movies/simentob/movies-mcp-server": {
+    "server": "simentob/movies-mcp-server",
+    "tool": "tmdb_search_movies",
+    "description": "Search for movies using the TMDB API. Args: query: The text query to search for (required). include_adult: Whether to include adult content (default: False). language: Language code (default: en-US). page: Page of results (default: 1). primary_release_year: Filter by release year (optional). region: Filter by region (optional). year: Filter by year (optional). Returns: Formatted string with movie …",
+    "truncated": true,
+    "source": "https://github.com/simentob/movies-mcp-server/blob/b2273f2136bda99fbe6fded4d5524845583e66e2/server.py#L60",
+    "providers": [
+      "TMDB"
+    ],
+    "strip_names": [
+      "TMDB"
+    ]
+  },
+  "news/Paras1Chauhan/ai-news-mcp-server": {
+    "server": "Paras1Chauhan/ai-news-mcp-server",
+    "tool": "ai_news_get_trending_summary",
+    "description": "Aggregates AI trends from multiple sources into a single dashboard snapshot. Combines ArXiv papers, RSS news feeds, and HackerNews stories concurrently. Args: - include_papers (boolean): Include latest ArXiv AI papers (default: true) - include_news (boolean): Include AI news from RSS feeds (default: true) - include_hn (boolean): Include HackerNews AI stories (default: true) - max_items_each (numbe …",
+    "truncated": true,
+    "source": "https://github.com/Paras1Chauhan/ai-news-mcp-server/blob/24feffb3ffa5cd9e83cdbd3869983544d5bd5adc/src/index.ts#L153",
+    "providers": [
+      "DEV.to",
+      "Google",
+      "Hacker News (Y Combinator)",
+      "Hugging Face",
+      "MIT News",
+      "OpenAI"
+    ],
+    "strip_names": [
+      "Hacker News (Y Combinator)",
+      "Hugging Face",
+      "Hacker News",
+      "HuggingFace",
+      "HackerNews",
+      "MIT News",
+      "MITNews",
+      "Google",
+      "DEV.to",
+      "OpenAI"
+    ]
+  },
+  "news/corey-coders/mcp-finance-news": {
+    "server": "corey-coders/mcp-finance-news",
+    "tool": "get_latest_finance_news",
+    "description": "Get the latest finance news from RSS feeds. Args: limit: Maximum number of articles to return (default: 10) source: News source to fetch from. Options: \"all\", \"bloomberg\", \"wsj\", \"cnbc\", \"seekingalpha\", \"marketwatch\", \"ft\" (default: \"all\") Returns: List of articles with title, link, published_date, description, and source_name",
+    "truncated": false,
+    "source": "https://github.com/corey-coders/mcp-finance-news/blob/7c45d35a44725e0713764643fe61bbb35be3abda/main.py#L93",
+    "providers": [
+      "Bloomberg",
+      "CNBC",
+      "Financial Times",
+      "MarketWatch",
+      "Seeking Alpha",
+      "Wall Street Journal (Dow Jones)"
+    ],
+    "strip_names": [
+      "Wall Street Journal (Dow Jones)",
+      "Wall Street Journal",
+      "WallStreetJournal",
+      "Financial Times",
+      "FinancialTimes",
+      "Seeking Alpha",
+      "SeekingAlpha",
+      "MarketWatch",
+      "Bloomberg",
+      "CNBC"
+    ]
+  },
+  "news/davidvgilmore/hn-mcp-server": {
+    "server": "davidvgilmore/hn-mcp-server",
+    "tool": "hn-get-top-stories",
+    "description": "Fetches top stories from Hacker News.",
+    "truncated": false,
+    "source": "https://github.com/davidvgilmore/hn-mcp-server/blob/396c56875853853823e7a1563a5c2787cad59f26/netlify/functions/simple-mcp.js#L86",
+    "providers": [
+      "Hacker News (Y Combinator)"
+    ],
+    "strip_names": [
+      "Hacker News (Y Combinator)",
+      "Hacker News",
+      "HackerNews"
+    ]
+  },
+  "news/deficlow/zipp-mcp": {
+    "server": "deficlow/zipp-mcp",
+    "tool": "search",
+    "description": "Full-text search across Zipp's news catalogue. Returns recent matching stories ordered by recency (with relevance as a tiebreaker). Use for questions like 'what's happening with Bitcoin ETFs?' or 'find news about Solana hacks'.",
+    "truncated": false,
+    "source": "https://github.com/deficlow/zipp-mcp/blob/b03eeefd5285aa85716e0aab58267e450427ca67/src/zipp_mcp/server.py#L66",
+    "providers": [
+      "Zipp"
+    ],
+    "strip_names": [
+      "Zipp"
+    ]
+  },
+  "news/denizumutdereli/news-mcp-server": {
+    "server": "denizumutdereli/news-mcp-server",
+    "tool": "get_latest_defi_news",
+    "description": "Get the latest DeFi news from the cache",
+    "truncated": false,
+    "source": "https://github.com/denizumutdereli/news-mcp-server/blob/3f43900f60adcc2e91b7649fcba88ed39fd25b6c/src/index.ts#L111",
+    "providers": [
+      "Tavily"
+    ],
+    "strip_names": [
+      "crypto-fundraising.info",
+      "The Crypto Times",
+      "Blocktelegraph",
+      "TheCryptoTimes",
+      "Cointelegraph",
+      "The Defiant",
+      "crypto.news",
+      "CryptoPanic",
+      "TheDefiant",
+      "99Bitcoins",
+      "Blockworks",
+      "The Block",
+      "Rekt News",
+      "RektNews",
+      "TheBlock",
+      "CoinDesk",
+      "DL News",
+      "DLNews",
+      "Tavily"
+    ]
+  },
+  "news/devabdultech/hn-mcp": {
+    "server": "devabdultech/hn-mcp",
+    "tool": "getStories",
+    "description": "Get multiple stories by type (top, new, best, ask, show, job)",
+    "truncated": false,
+    "source": "https://github.com/devabdultech/hn-mcp/blob/8efc20a45283bdd52bda496b04d302a7e6e1aea2/src/index.ts#L92",
+    "providers": [
+      "Algolia HN Search",
+      "Hacker News (Y Combinator)"
+    ],
+    "strip_names": [
+      "Hacker News (Y Combinator)",
+      "Algolia HN Search",
+      "AlgoliaHNSearch",
+      "Hacker News",
+      "HackerNews"
+    ]
+  },
+  "news/handaas/news-mcp-server": {
+    "server": "handaas/news-mcp-server",
+    "tool": "news_bigdata_news_list",
+    "description": "该接口的功能是通过企业的基本标识信息或企业ID及指定舆情类别，查询并返回与该企业相关的新闻舆情信息明细，包括新闻简介、链接、发布时间、来源、标题、相关企业等详细内容以及舆情的分类和总数量。此接口可广泛应用于企业风险管理、市场竞争分析、公关策略制定等场景，帮助企业或相关机构快速掌握企业动态、社会声誉及潜在风险，通过对舆情类别的筛选和分析来进行有效决策和战略调整。 请求参数: - matchKeyword: 匹配关键词 类型：string - 企业名称/注册号/统一社会信用代码/企业id，如果没有企业全称则先调取fuzzy_search接口获取企业全称。 - keywordType: 主体类型 类型：select - 主体类型枚举（name：企业名称，nameId：企业id，regNumber：注册号，socialCreditCode：统一社会信用代码) - pageIndex: 页码 类型： …",
+    "truncated": true,
+    "source": "https://github.com/handaas/news-mcp-server/blob/f2c5524d3464ab1b6e5f8e4d255da53eb6b40a94/server/mcp_server.py#L159",
+    "providers": [
+      "Handaas"
+    ],
+    "strip_names": [
+      "Handaas"
+    ]
+  },
+  "news/joeswann/hackernews-mcp": {
+    "server": "joeswann/hackernews-mcp",
+    "tool": "list_stories",
+    "description": "Browse Hacker News feeds (top, new, best, ask, show, job) with pagination. Returns titles, URLs, scores, and metadata.",
+    "truncated": false,
+    "source": "https://github.com/joeswann/hackernews-mcp/blob/2026b9be47f8873332666323fbfcdd7e2d99af3d/src/tools/stories.ts#L14",
+    "providers": [
+      "Algolia HN Search",
+      "Hacker News (Y Combinator)"
+    ],
+    "strip_names": [
+      "Hacker News (Y Combinator)",
+      "Algolia HN Search",
+      "AlgoliaHNSearch",
+      "Hacker News",
+      "HackerNews"
+    ]
+  },
+  "news/karanb192/hn-mcp": {
+    "server": "karanb192/hn-mcp",
+    "tool": "browse_stories",
+    "description": "Browse Hacker News stories by type. Returns story list with scores, comments, and metadata.",
+    "truncated": false,
+    "source": "https://github.com/karanb192/hn-mcp/blob/40ff10d3cae83848e71c442de188815f36241928/src/mcp-server.ts#L91",
+    "providers": [
+      "Algolia HN Search",
+      "Hacker News (Y Combinator)"
+    ],
+    "strip_names": [
+      "Hacker News (Y Combinator)",
+      "Algolia HN Search",
+      "AlgoliaHNSearch",
+      "Hacker News",
+      "HackerNews"
+    ]
+  },
+  "news/nishantpardamwar/kotlin-news-mcp-server": {
+    "server": "nishantpardamwar/kotlin-news-mcp-server",
+    "tool": "get-top-headline",
+    "description": "Get Top headlines by category",
+    "truncated": false,
+    "source": "https://github.com/nishantpardamwar/kotlin-news-mcp-server/blob/d2d793a3981d247400d60d8bdf7e8902d46485fb/src/main/kotlin/NewsTool.kt#L24",
+    "providers": [
+      "NewsAPI"
+    ],
+    "strip_names": [
+      "NewsAPI"
+    ]
+  },
+  "news/pskill9/hn-server": {
+    "server": "pskill9/hn-server",
+    "tool": "get_stories",
+    "description": "Get stories from Hacker News",
+    "truncated": false,
+    "source": "https://github.com/pskill9/hn-server/blob/ed1a4b951e9a7cdd7de0575a16d53bbe53330a9d/src/index.ts#L104",
+    "providers": [
+      "Hacker News (Y Combinator)"
+    ],
+    "strip_names": [
+      "Hacker News (Y Combinator)",
+      "Hacker News",
+      "HackerNews"
+    ]
+  },
+  "news/the0807/GeekNews-MCP-Server": {
+    "server": "the0807/GeekNews-MCP-Server",
+    "tool": "get_articles",
+    "description": "GeekNews에서 아티클을 가져오는 도구 Args: type: 아티클 유형 (top, new, ask, show) limit: 반환할 아티클 수 (최대 30) Returns: List[Dict[str, Any]]: 아티클 목록 Raises: ValueError: 유효하지 않은 아티클 유형이 지정된 경우",
+    "truncated": false,
+    "source": "https://github.com/the0807/GeekNews-MCP-Server/blob/7766c3910021e3180cfdc7514ffc7f264be75d73/src/server.py#L71",
+    "providers": [
+      "GeekNews (news.hada.io)"
+    ],
+    "strip_names": [
+      "GeekNews (news.hada.io)",
+      "GeekNews"
+    ]
+  },
+  "news/wudalu/mcp-hot-news-server": {
+    "server": "wudalu/mcp-hot-news-server",
+    "tool": "get_hot_news",
+    "description": "获取指定平台的热点新闻",
+    "truncated": false,
+    "source": "https://github.com/wudalu/mcp-hot-news-server/blob/e2026a37f76d5e508eed83d3d2e2449d06d19959/src/mcp_hot_news/server.py#L893",
+    "providers": [
+      "NewsAPI",
+      "Reddit",
+      "SerpAPI",
+      "Zyla Labs",
+      "twitterapi.io",
+      "vvhan"
+    ],
+    "strip_names": [
+      "Google Trends",
+      "twitterapi.io",
+      "GoogleTrends",
+      "Zyla Labs",
+      "Twitter/X",
+      "ZylaLabs",
+      "Kuaishou",
+      "Bilibili",
+      "Toutiao",
+      "SerpAPI",
+      "NewsAPI",
+      "ITHome",
+      "Reddit",
+      "Douban",
+      "Douyin",
+      "vvhan",
+      "Weibo",
+      "Baidu",
+      "Zhihu",
+      "Hupu"
+    ]
+  },
+  "stock_quotes/1018053166/stock-mcp-server": {
+    "server": "1018053166/stock-mcp-server",
+    "tool": "search_stock",
+    "description": "搜索股票(支持股票代码或名称关键词)",
+    "truncated": false,
+    "source": "https://github.com/1018053166/stock-mcp-server/blob/9fe7ad6789f029ba8b203b15cce41c4a676d47a4/src/index.js#L85",
+    "providers": [
+      "Eastmoney"
+    ],
+    "strip_names": [
+      "Eastmoney"
+    ]
+  },
+  "stock_quotes/Llldmiao/a-stock-mcp-server": {
+    "server": "Llldmiao/a-stock-mcp-server",
+    "tool": "get_realtime_price",
+    "description": "获取A股实时价格",
+    "truncated": false,
+    "source": "https://github.com/Llldmiao/a-stock-mcp-server/blob/5f01a6a36a90aaa4fccf48182f2104116d4f8d05/a_stock_mcp_server/tools/realtime_price.py#L16",
+    "providers": [
+      "Eastmoney"
+    ],
+    "strip_names": [
+      "Eastmoney",
+      "AKShare"
+    ]
+  },
+  "stock_quotes/NinianX/tw-stock-mcp": {
+    "server": "NinianX/tw-stock-mcp",
+    "tool": "stock_price",
+    "description": "查股票價格，例如 2330.TW",
+    "truncated": false,
+    "source": "https://github.com/NinianX/tw-stock-mcp/blob/ec99029d932e266a7d69c239d68e8f49c0c40946/server.py#L6",
+    "providers": [
+      "Yahoo Finance"
+    ],
+    "strip_names": [
+      "Yahoo Finance",
+      "YahooFinance"
+    ]
+  },
+  "stock_quotes/YongYangLi/stock-mcp-server": {
+    "server": "YongYangLi/stock-mcp-server",
+    "tool": "get-quote",
+    "description": "Get real-time stock quote",
+    "truncated": false,
+    "source": "https://github.com/YongYangLi/stock-mcp-server/blob/e12e443ece4c016bcbdf7f1031c394fee4be10a5/src/index.ts#L95",
+    "providers": [
+      "Sina Finance"
+    ],
+    "strip_names": [
+      "Sina Finance",
+      "SinaFinance"
+    ]
+  },
+  "stock_quotes/agent504330-ux/mcp-korean-stock": {
+    "server": "agent504330-ux/mcp-korean-stock",
+    "tool": "stock_price",
+    "description": "한국 주식 현재가를 조회합니다. 종목코드(예: 005930)를 입력하세요.",
+    "truncated": false,
+    "source": "https://github.com/agent504330-ux/mcp-korean-stock/blob/d4f50774b0d9ab98c673305298b53469dbff3dd5/server.py#L157",
+    "providers": [
+      "Naver Finance"
+    ],
+    "strip_names": [
+      "Naver Finance",
+      "NaverFinance"
+    ]
+  },
+  "stock_quotes/agilesolutions/stock-mcp-server": {
+    "server": "agilesolutions/stock-mcp-server",
+    "tool": "getLatestStockPrices",
+    "description": "get actual stock prices",
+    "truncated": false,
+    "source": "https://github.com/agilesolutions/stock-mcp-server/blob/458a74642b6657c3deff4bb3da8917a5df245767/src/main/java/com/agilesolutions/mcp/tools/StockTools.java#L31",
+    "providers": [
+      "Twelve Data"
+    ],
+    "strip_names": [
+      "Twelve Data",
+      "TwelveData"
+    ]
+  },
+  "stock_quotes/archiephan78/ssi-stock-mcp-server": {
+    "server": "archiephan78/ssi-stock-mcp-server",
+    "tool": "get_daily_ohlc",
+    "description": "Get daily Open-High-Low-Close (OHLC) data for a specific security symbol. Args: symbol (str): Security symbol/ticker from_date (str): Start date in format DD/MM/YYYY to_date (str): End date in format DD/MM/YYYY page (int, optional): Page number for pagination. Defaults to 1. size (int, optional): Number of records per page. Defaults to 100. ascending (bool, optional): Sort data in ascending order …",
+    "truncated": true,
+    "source": "https://github.com/archiephan78/ssi-stock-mcp-server/blob/b93442adac835ff55048bba484b402b720bc79e1/src/ssi_stock_mcp_server/server.py#L345",
+    "providers": [
+      "SSI"
+    ],
+    "strip_names": [
+      "SSI"
+    ]
+  },
+  "stock_quotes/imdurgadas/cf-stock-mcp-server": {
+    "server": "imdurgadas/cf-stock-mcp-server",
+    "tool": "analyze_stock",
+    "description": "",
+    "truncated": false,
+    "source": "https://github.com/imdurgadas/cf-stock-mcp-server/blob/f14e943da8e48d09ac17d1af837d2068eeb0e8f7/src/index.ts#L86",
+    "providers": [
+      "Yahoo Finance"
+    ],
+    "strip_names": [
+      "Yahoo Finance",
+      "YahooFinance"
+    ]
+  },
+  "stock_quotes/niuheilong/stock-mcp-server": {
+    "server": "niuheilong/stock-mcp-server",
+    "tool": "get_stock_quote",
+    "description": "获取单只 A 股股票的实时行情。 默认自动选源（新浪优先，失败后回退腾讯）；也可用 source 强制指定数据源。 Args: symbol: 股票代码，如 \"600519\"（贵州茅台）、\"000001\"（平安银行）。 source: 数据源，\"auto\"（默认，自动回退）| \"sina\" | \"tencent\"。",
+    "truncated": false,
+    "source": "https://github.com/niuheilong/stock-mcp-server/blob/a6c9976e44e226a66478243d82ff8f95e1d56abb/mcp_server.py#L100",
+    "providers": [
+      "Sina Finance",
+      "Tencent Finance"
+    ],
+    "strip_names": [
+      "Tencent Finance",
+      "TencentFinance",
+      "Sina Finance",
+      "SinaFinance",
+      "Eastmoney"
+    ]
+  },
+  "stock_quotes/peikuo/china-stock-mcp-server": {
+    "server": "peikuo/china-stock-mcp-server",
+    "tool": "stock_zh_a_spot",
+    "description": "Get real-time quote for a specific A-share stock. Args: symbol: Stock symbol (e.g., sh000001 for SSE, sz399001 for SZSE) Returns real-time data for the specified stock.",
+    "truncated": false,
+    "source": "https://github.com/peikuo/china-stock-mcp-server/blob/3e0b6328949e978c2807cf498f597f9876c7e77b/main.py#L156",
+    "providers": [
+      "Eastmoney"
+    ],
+    "strip_names": [
+      "Eastmoney",
+      "AKShare"
+    ]
+  },
+  "stock_quotes/sachinjhamb/stockMcpServerAQnpm": {
+    "server": "sachinjhamb/stockMcpServerAQnpm",
+    "tool": "get_stock_details",
+    "description": "Fetch key info on a stock symbol",
+    "truncated": false,
+    "source": "https://github.com/sachinjhamb/stockMcpServerAQnpm/blob/bf335aa2bd71a00620c87d747225734343814e55/index.js#L45",
+    "providers": [
+      "Yahoo Finance"
+    ],
+    "strip_names": [
+      "Yahoo Finance",
+      "YahooFinance"
+    ]
+  },
+  "stock_quotes/shuizhengqi1/futu-stock-mcp-server": {
+    "server": "shuizhengqi1/futu-stock-mcp-server",
+    "tool": "get_stock_quote",
+    "description": "Get stock quote data for given symbols Args: symbols: List of stock codes, e.g. [\"HK.00700\", \"US.AAPL\", \"SH.600519\"] Format: {market}.{code} - HK: Hong Kong stocks - US: US stocks - SH: Shanghai stocks - SZ: Shenzhen stocks Returns: Dict containing quote data including: - quote_list: List of quote data entries, each containing: - code: Stock code - update_time: Update time (YYYY-MM-DD HH:mm:ss) - …",
+    "truncated": true,
+    "source": "https://github.com/shuizhengqi1/futu-stock-mcp-server/blob/e30ca5476cb89fb25ada3f58db58ce3832317e89/src/futu_stock_mcp_server/server.py#L753",
+    "providers": [
+      "Futu"
+    ],
+    "strip_names": [
+      "Futu"
+    ]
+  },
+  "stock_quotes/yadinae/stock-mcp-server": {
+    "server": "yadinae/stock-mcp-server",
+    "tool": "get_global_quote",
+    "description": "获取美股/港股实时行情（增强版，多数据源） Args: code: 美股字母代码如 AAPL, TSLA / 港股5位数字如 00700, 09988 source: auto(自动选最优) / sina / tencent / eastmoney 字段含中文名、PE、PB、市值、52周高低等，比Yahoo基础版更丰富。",
+    "truncated": false,
+    "source": "https://github.com/yadinae/stock-mcp-server/blob/6550e898312391b61794a7f9f78efe7f39dc1fc4/tools/handlers/quote.py#L102",
+    "providers": [
+      "Sina Finance",
+      "Tencent Finance",
+      "TradingView",
+      "Yahoo Finance"
+    ],
+    "strip_names": [
+      "Tongdaxin (TDX)",
+      "Tencent Finance",
+      "TencentFinance",
+      "Yahoo Finance",
+      "YahooFinance",
+      "Sina Finance",
+      "SinaFinance",
+      "TradingView",
+      "Eastmoney",
+      "Tongdaxin"
+    ]
+  },
+  "translation/Deep-Intelligent-Pharma/Translationx-mcp-server": {
+    "server": "Deep-Intelligent-Pharma/Translationx-mcp-server",
+    "tool": "submit_translation",
+    "description": "根据输入的参数提交翻译请求 传入需要提交翻译的文件id列表，源文件的语种和目标语种 语种对应的语种code为 {'世界语': 'eo', '中文(简体)': 'zh-cn', '丹麦语': 'da', '乌克兰语': 'uk', '乌兹别克语（拉丁）': 'uz', '乌尔都语': 'ur', '亚美尼亚语': 'hy', '伊博语': 'ig', '俄语': 'ru', '保加利亚语': 'bg', '信德语': 'sd', '修纳语': 'sn', '僧伽罗语': 'si', '克罗地亚语': 'hr', '克里奥语': 'kri', '冰岛语': 'is', '加利西亚语': 'gl', '加泰罗尼亚语': 'ca', '匈牙利语': 'hu', '南非荷兰语': 'af', '卡纳达语': 'kn', '卢森堡语': 'lb', '印地语': 'hi', '印度尼西亚语': 'id …",
+    "truncated": true,
+    "source": "https://github.com/Deep-Intelligent-Pharma/Translationx-mcp-server/blob/a56c33798a3a6504c79d6ef59e9f953c4714f88f/src/tools/file_tools.py#L50",
+    "providers": [
+      "X-DOC"
+    ],
+    "strip_names": [
+      "X-DOC"
+    ]
+  },
+  "translation/LibreTranslate/LibreTranslate-MCP": {
+    "server": "LibreTranslate/LibreTranslate-MCP",
+    "tool": "translate",
+    "description": "Translate text from one language to another",
+    "truncated": false,
+    "source": "https://github.com/LibreTranslate/LibreTranslate-MCP/blob/6cf7ab55fc2a5ae29468a8208f7260f665931190/src/server.ts#L39",
+    "providers": [
+      "LibreTranslate"
+    ],
+    "strip_names": [
+      "LibreTranslate"
+    ]
+  },
+  "translation/brianshin22/youtube-translate-mcp": {
+    "server": "brianshin22/youtube-translate-mcp",
+    "tool": "get_translation",
+    "description": "Get a translated transcript of a YouTube video. This tool processes a video and translates its transcript to the specified language. It optimizes API calls by first checking if the translation already exists before processing the video. Args: url: The YouTube video URL language: Target language code (e.g., \"en\", \"fr\", \"es\") Returns: The translated transcript as text",
+    "truncated": false,
+    "source": "https://github.com/brianshin22/youtube-translate-mcp/blob/f7674a0204a59ca5b59cb82c7216ae775001ae98/src/youtube_translate_mcp/server.py#L262",
+    "providers": [
+      "YouTube Translate"
+    ],
+    "strip_names": [
+      "YouTube Translate",
+      "YouTubeTranslate"
+    ]
+  },
+  "translation/iamnotagentleman/localizable-xcstrings-mcp": {
+    "server": "iamnotagentleman/localizable-xcstrings-mcp",
+    "tool": "translate_key_tool",
+    "description": "MCP tool to translate a specific key to multiple target languages and apply translations. Args: file_path (str): Path to the .xcstrings file key (str): The specific key to translate target_languages (str): Comma-separated list of target language codes (e.g., \"es,fr,de\") app_description (str): Optional description of the app for better translation context Returns: str: Translation results or error …",
+    "truncated": true,
+    "source": "https://github.com/iamnotagentleman/localizable-xcstrings-mcp/blob/989abc9afe467e10389d47140bdcd1649e23415d/src/localizable_xstrings_mcp/server.py#L224",
+    "providers": [
+      "OpenAI"
+    ],
+    "strip_names": [
+      "OpenAI"
+    ]
+  },
+  "translation/intento/mcp-intento-translate": {
+    "server": "intento/mcp-intento-translate",
+    "tool": "translate",
+    "description": "Translate text between different languages. Use ISO codes for the languages. For autodetect, use empty 'from' language.",
+    "truncated": false,
+    "source": "https://github.com/intento/mcp-intento-translate/blob/bf20e7fa3a3d851aada6600ee58a7393ebcdba56/server.py#L89",
+    "providers": [
+      "Intento"
+    ],
+    "strip_names": [
+      "Intento"
+    ]
+  },
+  "translation/kunalchhabra/translation-mcp-server": {
+    "server": "kunalchhabra/translation-mcp-server",
+    "tool": "add_translation",
+    "description": "Create a translation entry and trigger AI generation. Returns a dict summary of created items or an error dict on failure.",
+    "truncated": false,
+    "source": "https://github.com/kunalchhabra/translation-mcp-server/blob/0cd2ac22beee31246d78452ee02841109e62f5b5/src/mcp/tools/translation_tools.py#L45",
+    "providers": [
+      "OpenAI"
+    ],
+    "strip_names": [
+      "Ollama (local)",
+      "OpenAI",
+      "Ollama"
+    ]
+  },
+  "weather/ACAne0320/amap-weather-mcp-server": {
+    "server": "ACAne0320/amap-weather-mcp-server",
+    "tool": "get_weather_forecast",
+    "description": "获取指定城市的天气预报（未来3-4天） Args: city: 中国城市名称，如\"北京市\"、\"上海市\"、\"广州市\"等",
+    "truncated": false,
+    "source": "https://github.com/ACAne0320/amap-weather-mcp-server/blob/44143e43e48a5d1a1efd62876672fbd35d7faef3/weather.py#L178",
+    "providers": [
+      "AMap"
+    ],
+    "strip_names": [
+      "AMap"
+    ]
+  },
+  "weather/CodeByWaqas/weather-mcp-server": {
+    "server": "CodeByWaqas/weather-mcp-server",
+    "tool": "weather",
+    "description": "It fetches the latest weather reports for the given city. Args: city (str): The city name for which weather reports are required. Returns: dict: The weather reports for the given city.",
+    "truncated": false,
+    "source": "https://github.com/CodeByWaqas/weather-mcp-server/blob/3b10a72098bb941ee9645ddcd38db04d32647b62/src/resources/server.py#L50",
+    "providers": [
+      "OpenWeather"
+    ],
+    "strip_names": [
+      "OpenWeather"
+    ]
+  },
+  "weather/Cooosin/WeatherMcpServer": {
+    "server": "Cooosin/WeatherMcpServer",
+    "tool": "getWeather",
+    "description": "获取某个城市的实时天气",
+    "truncated": false,
+    "source": "https://github.com/Cooosin/WeatherMcpServer/blob/6c72257d792950b83ab5e904b7a38228aabb977c/src/main/java/com/coosin/mcpserver/service/WeatherService.java#L38",
+    "providers": [
+      "QWeather"
+    ],
+    "strip_names": [
+      "QWeather"
+    ]
+  },
+  "weather/Krytons/Weather-MCP-Server": {
+    "server": "Krytons/Weather-MCP-Server",
+    "tool": "getCurrentWeather",
+    "description": "Get the current weather for a specified city",
+    "truncated": false,
+    "source": "https://github.com/Krytons/Weather-MCP-Server/blob/cccab6996f365cf06f6dbc99b6d41c0281082b4d/src/tools/WeatherTools.ts#L51",
+    "providers": [
+      "OpenWeather"
+    ],
+    "strip_names": [
+      "OpenWeather"
+    ]
+  },
+  "weather/Yarflam/weather-mcp-server": {
+    "server": "Yarflam/weather-mcp-server",
+    "tool": "get_weather_forecast",
+    "description": "Récupère les prévisions météo sur 7 jours (Sydney par défaut)",
+    "truncated": false,
+    "source": "https://github.com/Yarflam/weather-mcp-server/blob/01ecec36e8d7dfa4d6e1d7c7ea23ad959a035865/src/index.js#L71",
+    "providers": [
+      "Open-Meteo"
+    ],
+    "strip_names": [
+      "Open-Meteo"
+    ]
+  },
+  "weather/ezh0v/weather-mcp-server": {
+    "server": "ezh0v/weather-mcp-server",
+    "tool": "current_weather",
+    "description": "The service retrieves the current weather for a specified city and returns only HTML and CSS code designed for displaying weather information directly on a canvas. No additional comments should be included after the response. It processes the city's name, gathers weather data such as temperature, humidity, wind speed, and general weather conditions, and then generates a structured HTML layout alon …",
+    "truncated": true,
+    "source": "https://github.com/ezh0v/weather-mcp-server/blob/e0f212a7d3ef45eef62f162b03fc659bbbb9e48e/internal/server/tools/weather.go#L12",
+    "providers": [
+      "WeatherAPI.com"
+    ],
+    "strip_names": [
+      "WeatherAPI.com"
+    ]
+  },
+  "weather/glaucia86/weather-mcp-server": {
+    "server": "glaucia86/weather-mcp-server",
+    "tool": "get_weather_forecast",
+    "description": "Obtém a previsão do tempo para os próximos dias",
+    "truncated": false,
+    "source": "https://github.com/glaucia86/weather-mcp-server/blob/25d68abac2b1433090b8d28e40e25a5bb8ab234a/src/presentation/controllers/WeatherController.ts#L63",
+    "providers": [
+      "OpenWeather"
+    ],
+    "strip_names": [
+      "OpenWeather"
+    ]
+  },
+  "weather/jjyaoao/weather-mcp-server": {
+    "server": "jjyaoao/weather-mcp-server",
+    "tool": "get_weather",
+    "description": "获取指定城市的当前天气",
+    "truncated": false,
+    "source": "https://github.com/jjyaoao/weather-mcp-server/blob/6fa1785c87f0580aea3a80117dbc574668d0398e/server.py#L44",
+    "providers": [
+      "wttr.in"
+    ],
+    "strip_names": [
+      "wttr.in"
+    ]
+  },
+  "weather/leash06/weather-mcp-server": {
+    "server": "leash06/weather-mcp-server",
+    "tool": "get_forecast",
+    "description": "Get a 5-day weather forecast for a city",
+    "truncated": false,
+    "source": "https://github.com/leash06/weather-mcp-server/blob/f0816cfab38e0d63b2afaa31530b83c85ee02aea/index.js#L42",
+    "providers": [
+      "OpenWeather"
+    ],
+    "strip_names": [
+      "OpenWeather"
+    ]
+  },
+  "weather/mohamed2020m/weather-mcp-server": {
+    "server": "mohamed2020m/weather-mcp-server",
+    "tool": "get_forecast",
+    "description": "Fetch 5-day weather forecast by city name.",
+    "truncated": false,
+    "source": "https://github.com/mohamed2020m/weather-mcp-server/blob/f6178db9073612bac14736163b7830f7ab378c0c/main.py#L56",
+    "providers": [
+      "OpenWeather"
+    ],
+    "strip_names": [
+      "OpenWeather"
+    ]
+  },
+  "weather/rivky9523/israeli-weather-mcp-agent": {
+    "server": "rivky9523/israeli-weather-mcp-agent",
+    "tool": "enter_weather_forecast_city_israel",
+    "description": "מזין שם עיר בשדה החיפוש שבדף מזג האויר. יש לקרוא לפונקציה open_weather_forecast_israel לפני שימוש בפונקציה זו. Args: city: שם העיר לחיפוש (לדוגמה: 'תל אביב', 'ירושלים')",
+    "truncated": false,
+    "source": "https://github.com/rivky9523/israeli-weather-mcp-agent/blob/3248e07aaa1318e3df09596f6f5ff16e41157faf/weather_Israel.py#L72",
+    "providers": [
+      "US National Weather Service",
+      "weather2day.co.il"
+    ],
+    "strip_names": [
+      "US National Weather Service",
+      "USNationalWeatherService",
+      "weather2day.co.il"
+    ]
+  },
+  "weather/rossshannon/weekly-weather-mcp": {
+    "server": "rossshannon/weekly-weather-mcp",
+    "tool": "get_weather",
+    "description": "Get comprehensive weather data for a location including current weather and 8-day forecast with detailed information Parameters: location: Location name, e.g., \"Beijing\", \"New York\", \"Tokyo\" api_key: OpenWeatherMap API key (optional, will read from environment variable if not provided) timezone_offset: Timezone offset in hours, e.g., 8 for Beijing, -4 for New York. Default is 0 (UTC time) Returns: …",
+    "truncated": true,
+    "source": "https://github.com/rossshannon/weekly-weather-mcp/blob/44772db84d5cb7e07d0be661ecf93b1fcce5918b/weather_mcp_server.py#L305",
+    "providers": [
+      "OpenWeather"
+    ],
+    "strip_names": [
+      "OpenWeather"
+    ]
+  },
+  "weather/sjanaX01/weather-mcp-server": {
+    "server": "sjanaX01/weather-mcp-server",
+    "tool": "weather_forecast",
+    "description": "Get weather forecast (1–14 days) for a location. Args: q (str): Location query (city name, lat/lon, postal code, etc). days (int): Number of days (1–14). aqi (str): Include air quality ('yes' or 'no'). alerts (str): Include weather alerts ('yes' or 'no'). Returns: dict: WeatherAPI forecast JSON.",
+    "truncated": false,
+    "source": "https://github.com/sjanaX01/weather-mcp-server/blob/70eb46605f4d23c39110fbbebea063e772a8fc86/main.py#L82",
+    "providers": [
+      "WeatherAPI.com"
+    ],
+    "strip_names": [
+      "WeatherAPI.com"
+    ]
+  },
+  "web_search/MemoryClear/claude-web-search-mcp": {
+    "server": "MemoryClear/claude-web-search-mcp",
+    "tool": "web_search",
+    "description": "Search the web and optionally retrieve full page content from results. Similar to Firecrawl search API. Returns search results with titles, URLs, descriptions. When fetch_content is true, also scrapes and returns full markdown content from top results. Use this when you need current information, facts, or to read articles from the web.",
+    "truncated": false,
+    "source": "https://github.com/MemoryClear/claude-web-search-mcp/blob/010535a5be854b22b84c51829ac1db284e735509/src/tools/search.ts#L10",
+    "providers": [
+      "360 Search",
+      "Baidu",
+      "DuckDuckGo",
+      "Sogou"
+    ],
+    "strip_names": [
+      "DuckDuckGo",
+      "360 Search",
+      "360Search",
+      "SerpAPI",
+      "Baidu",
+      "Sogou",
+      "Bing"
+    ]
+  },
+  "web_search/PROJECT-B-26/groundroute-mcp": {
+    "server": "PROJECT-B-26/groundroute-mcp",
+    "tool": "search",
+    "description": "Search the live web via GroundRoute. Routes the query to the best-value engine across Serper, Brave, Exa, Tavily, Firecrawl, and Perplexity (price-led — the cheapest engine that clears a quality bar), serving cache hits when available and failing over automatically. Returns ranked results, an optional synthesized answer with citations (answer mode), and routing/cache/billing metadata. Use it for a …",
+    "truncated": true,
+    "source": "https://github.com/PROJECT-B-26/groundroute-mcp/blob/0c4238915edd49ef1e0d920fc2c7f88d8417afd0/server.py#L147",
+    "providers": [
+      "GroundRoute"
+    ],
+    "strip_names": [
+      "Brave Search",
+      "GroundRoute",
+      "BraveSearch",
+      "Perplexity",
+      "Firecrawl",
+      "Tavily",
+      "Serper",
+      "Exa"
+    ]
+  },
+  "web_search/SCP120/web-search-mcp-cloak": {
+    "server": "SCP120/web-search-mcp-cloak",
+    "tool": "get-web-search-summaries",
+    "description": "Search the web and return only the search result snippets/descriptions without following links to extract full page content. This is a lightweight alternative to full-web-search for when you only need brief search results. For comprehensive information, use full-web-search instead.",
+    "truncated": false,
+    "source": "https://github.com/SCP120/web-search-mcp-cloak/blob/2ae37799bdd78323d734e312874ef9fef6f8700f/src/index.ts#L151",
+    "providers": [
+      "Bing",
+      "Brave Search",
+      "DuckDuckGo",
+      "Mojeek"
+    ],
+    "strip_names": [
+      "Brave Search",
+      "BraveSearch",
+      "DuckDuckGo",
+      "Mojeek",
+      "Bing"
+    ]
+  },
+  "web_search/bennmann/local-websearch": {
+    "server": "bennmann/local-websearch",
+    "tool": "search",
+    "description": "Performs a web search using DuckDuckGo (via ddgs). Returns titles, URLs, and snippets. Rate-limited to ~30 requests per minute to be respectful to DuckDuckGo.",
+    "truncated": false,
+    "source": "https://github.com/bennmann/local-websearch/blob/75abf9d38af0b40cc115806ef07c256768d4c7e0/server.py#L16",
+    "providers": [
+      "Brave Search",
+      "DuckDuckGo",
+      "Google",
+      "Grokipedia (xAI)",
+      "Mojeek",
+      "Wikipedia",
+      "Yahoo",
+      "Yandex"
+    ],
+    "strip_names": [
+      "Grokipedia (xAI)",
+      "Brave Search",
+      "BraveSearch",
+      "DuckDuckGo",
+      "Grokipedia",
+      "Wikipedia",
+      "Yandex",
+      "Google",
+      "Mojeek",
+      "Yahoo"
+    ]
+  },
+  "web_search/menesekinci/search-mcp": {
+    "server": "menesekinci/search-mcp",
+    "tool": "web_search",
+    "description": "Search Google via real Chrome, then auto-fetch the top results as clean markdown. One call = search + fetch. Always live — every call hits Google fresh, nothing is cached. Full page content is returned untruncated. Single: {\"query\": \"...\", \"level\": \"high\", \"site\": \"github.com\"} Multi-query: {\"queries\": [{\"query\":\"...\",\"site\":\"...\"}, \"plain string\"], \"level\": \"medium\"} +Context7: {\"query\": \"...\", \" …",
+    "truncated": true,
+    "source": "https://github.com/menesekinci/search-mcp/blob/b21687b8666a2c8b65a848b0adfb82f823c798c4/main.go#L31",
+    "providers": [
+      "Google"
+    ],
+    "strip_names": [
+      "Google"
+    ]
+  },
+  "web_search/tenltrist/deepseek-web-search": {
+    "server": "tenltrist/deepseek-web-search",
+    "tool": "web_search",
+    "description": "Search the web using DuckDuckGo. Returns title, URL, and snippet for each result. Use this to find current information, documentation, news, or any web content.",
+    "truncated": false,
+    "source": "https://github.com/tenltrist/deepseek-web-search/blob/6f6f5d645117a878b34ffec4f9ad21387c8acf8a/scripts/mcp-server.js#L227",
+    "providers": [
+      "DuckDuckGo"
+    ],
+    "strip_names": [
+      "DuckDuckGo"
+    ]
+  }
+}
