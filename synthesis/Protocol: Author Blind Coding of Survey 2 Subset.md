@@ -13,7 +13,7 @@ summary: >-
 lifecycle: draft
 lifecycle_changed: 2026-10-18
 protocol_version: "1.0"
-protocol_status: confirmed-by-author
+protocol_status: terminated-not-completed
 ---
 
 # Protocol: Tác giả gán nhãn mù 15 server của survey 2
@@ -84,6 +84,7 @@ Ghi là *"independent blind coding of a 15-server subset by the author"*, kèm g
 | 2026-10-20 | **Tác giả xác nhận protocol v1.0** | Khóa toàn bộ thiết kế, giữ 15 server; chưa tạo template, tác giả chưa xem server nào trong mẫu |
 | 2026-10-20 | Tạo mẫu và template (`src/build_author_blind_sheet.py`) | 15 server, danh sách ở `data/tool_survey_2/author_blind/selection.json`; template không chứa nhãn AI (đã kiểm tra tự động). **Lộ thông tin:** trong chat ngày 2026-10-14, Claude đã nêu nhãn upstream của coder A cho `web_search/menesekinci/search-mcp` ("chỉ gọi Google"). Giữ nguyên mẫu đã khóa; agreement được báo cáo cả có và không có server này. Các tài liệu tác giả đã đọc (paper-short, bản LaTeX, overview, ghi chú VP-Control/EFD) không nhắc server nào trong mẫu. |
 | 2026-10-20 | **Sai lệch so với §3: tác giả dùng AI để tra cứu và tìm kiếm trong repo** (tác giả tự xác nhận khi được hỏi) | File nộp (`author_blind_template.xlsx`, lưu 14:17) có 6/15 server ghi "chưa truy xuất được mã nguồn tại commit ghim" (chưa gán nhãn), 5 server có L1 `unknown*` "chưa xác minh", upstream của nhiều server lấy từ README; cột thời gian để trống. Claude phát hiện qua văn phong và các dòng chưa hoàn thành rồi hỏi, **trước khi** so với nhãn coder A. Kết luận: file này **không phải** kiểm tra độc lập của con người; được lưu làm hồ sơ và không dùng làm human validation. Chưa tính agreement. |
+| 2026-10-20 | **Tác giả quyết định dừng phần gán nhãn mù** (chọn không làm lại một mẫu mới không dùng AI) | Protocol kết thúc mà không hoàn thành. Không tính agreement, không báo cáo như kiểm tra của con người. Paper ghi rõ: survey không có human validation độc lập; lần thử gán nhãn mù đã bị dừng vì có AI hỗ trợ tra cứu. |
 
 ## Liên quan
 

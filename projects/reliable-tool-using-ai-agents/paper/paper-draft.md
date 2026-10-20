@@ -669,6 +669,7 @@ Hai vòng secondary case review do một AI khác hỗ trợ theo yêu cầu c�
 - **Construct của "dùng chung".** Ground truth ở mức bên vận hành là cận dưới cho phụ thuộc thật; mức nguồn gốc chỉ dùng bằng chứng trong repo. Quy tắc giao tập phóng đại phụ thuộc của aggregator. Hai server SearXNG tự host được gắn nhãn cùng provider dù có thể là hai instance khác nhau.
 - **Mẫu.** Repo GitHub phổ biến (sắp theo sao), chỉ hệ sinh thái MCP; survey 1 có 42 server, 7 nhóm, 105 cặp; survey 2 có 74 server trong ước lượng, 10 nhóm, 245 cặp. Các cặp không độc lập vì mỗi server nằm trong nhiều cặp; mẫu số của `r` ở L1 nhỏ (8 và 27). ρ theo nhóm khác xa giữa hai mẫu, nên ước lượng theo nhóm có độ bất định lớn hơn khoảng tin cậy gợi ý. Survey 2 không thực hiện phân tích phụ dùng tài liệu chính thức của provider.
 - **Phép chiếu không phải đo agent.** Các xác suất chọn nhầm ở §5.10 và §5.12 đến từ mô hình selector, không từ hành vi agent thật.
+- **Lần thử gán nhãn mù của con người bị dừng.** Một protocol cho tác giả tự gán nhãn mù 15 server (2026-10-18) không hoàn thành: tác giả đã dùng AI để tra cứu trong repo, và 6/15 server chưa được gán nhãn. Kết quả không được tính agreement và không được báo cáo như human validation.
 - **Author adjudication không độc lập.** Tác giả phân xử với lời giải thích câu hỏi và dòng code do Claude (coder A) cung cấp, và đã biết lập trường của các coder ở một luật; tác giả chọn giống coder A 7/8 lần. Kết quả phân xử chỉ dùng cho sensitivity; P3 nằm sát ngưỡng ở cả hai cách tính.
 
 ## 8. Reproducibility
