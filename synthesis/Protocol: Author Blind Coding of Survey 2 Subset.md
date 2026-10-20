@@ -7,13 +7,13 @@ sources:
   - "synthesis/Protocol: Expanded Real-Tool Metadata Survey.md"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/tool_survey_2/HUMAN_CODER_GUIDE.md"
 created: 2026-10-18T10:00:00+07:00
-updated: 2026-10-18T10:00:00+07:00
+updated: 2026-10-20T09:00:00+07:00
 summary: >-
   Protocol cho lần kiểm tra của con người đầu tiên của survey: tác giả gán nhãn mù 15 server chọn bằng hash trong số server chưa từng xem, rồi so với nhãn coder A (AI).
 lifecycle: draft
 lifecycle_changed: 2026-10-18
 protocol_version: "1.0"
-protocol_status: awaiting-author-confirmation
+protocol_status: confirmed-by-author
 ---
 
 # Protocol: Tác giả gán nhãn mù 15 server của survey 2
@@ -81,6 +81,7 @@ Ghi là *"independent blind coding of a 15-server subset by the author"*, kèm g
 | Ngày | Sự kiện | Ghi chú |
 |---|---|---|
 | 2026-10-18 | Protocol v1.0 được viết | Chờ tác giả xác nhận; chưa tạo template |
+| 2026-10-20 | **Tác giả xác nhận protocol v1.0** | Khóa toàn bộ thiết kế, giữ 15 server; chưa tạo template, tác giả chưa xem server nào trong mẫu |
 
 ## Liên quan
 

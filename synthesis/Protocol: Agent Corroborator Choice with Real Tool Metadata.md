@@ -8,13 +8,13 @@ sources:
   - "projects/reliable-tool-using-ai-agents/paper/paper-short.md"
   - "projects/reliable-tool-using-ai-agents/paper/proof-j-condition.md"
 created: 2026-10-18T10:00:00+07:00
-updated: 2026-10-18T10:00:00+07:00
+updated: 2026-10-20T09:00:00+07:00
 summary: >-
   Protocol thí nghiệm agent thật (RQ4): LLM chọn một corroborator trong 3 tool MCP thật; so sánh mô tả gốc, mô tả có thêm tên provider, và mô tả đã xóa tên provider. Viết trước khi trích mô tả tool và trước mọi lời gọi model.
 lifecycle: draft
 lifecycle_changed: 2026-10-18
 protocol_version: "1.0"
-protocol_status: awaiting-author-confirmation
+protocol_status: confirmed-by-author
 ---
 
 # Protocol: Agent chọn corroborator với metadata tool thật (RQ4)
@@ -101,6 +101,7 @@ Tên và phiên bản model chính xác được ghi ở §9 khi khóa. Temperat
 |---|---|---|
 | 2026-10-18 | Protocol v1.0 được viết | Chưa trích mô tả tool, chưa gọi model nào |
 | 2026-10-18 | Tác giả chọn chạy local trên RTX 4060 8 GB | §6 cố định 2 model 7–8B; protocol vẫn chờ tác giả xác nhận |
+| 2026-10-20 | **Tác giả xác nhận protocol v1.0** | Khóa toàn bộ thiết kế, hypothesis H-A1/H-A2, 3 điều kiện, 2 model; chưa trích mô tả tool, chưa gọi model nào |
 
 ## Liên quan
 
