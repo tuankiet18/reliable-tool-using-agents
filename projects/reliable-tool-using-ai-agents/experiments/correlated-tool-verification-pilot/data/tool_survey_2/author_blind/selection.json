@@ -1,0 +1,22 @@
+{
+  "salt": "|author-blind-2026-10-18",
+  "n": 15,
+  "pool_size": 48,
+  "servers": [
+    "stock_quotes/agilesolutions/stock-mcp-server",
+    "web_search/menesekinci/search-mcp",
+    "stock_quotes/imdurgadas/cf-stock-mcp-server",
+    "news/denizumutdereli/news-mcp-server",
+    "news/jritsema/aws-news-mcp-server",
+    "crypto_prices/dherik/crypto-mcp-server",
+    "crypto_prices/WilliamNing316/crypto-mcp-server",
+    "news/joeswann/hackernews-mcp",
+    "news/Paras1Chauhan/ai-news-mcp-server",
+    "movies/Shaamam/movie-mcp-server",
+    "weather/rossshannon/weekly-weather-mcp",
+    "stock_quotes/sachinjhamb/stockMcpServerAQnpm",
+    "movies/SaiSoeSan/movie-mcp-server",
+    "web_search/zydins/web-search-mcp-server",
+    "books/zeyynepkaraduman/library-book-search-mcp"
+  ]
+}

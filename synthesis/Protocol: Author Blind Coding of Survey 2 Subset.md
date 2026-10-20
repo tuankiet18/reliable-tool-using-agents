@@ -82,6 +82,7 @@ Ghi là *"independent blind coding of a 15-server subset by the author"*, kèm g
 |---|---|---|
 | 2026-10-18 | Protocol v1.0 được viết | Chờ tác giả xác nhận; chưa tạo template |
 | 2026-10-20 | **Tác giả xác nhận protocol v1.0** | Khóa toàn bộ thiết kế, giữ 15 server; chưa tạo template, tác giả chưa xem server nào trong mẫu |
+| 2026-10-20 | Tạo mẫu và template (`src/build_author_blind_sheet.py`) | 15 server, danh sách ở `data/tool_survey_2/author_blind/selection.json`; template không chứa nhãn AI (đã kiểm tra tự động). **Lộ thông tin:** trong chat ngày 2026-10-14, Claude đã nêu nhãn upstream của coder A cho `web_search/menesekinci/search-mcp` ("chỉ gọi Google"). Giữ nguyên mẫu đã khóa; agreement được báo cáo cả có và không có server này. Các tài liệu tác giả đã đọc (paper-short, bản LaTeX, overview, ghi chú VP-Control/EFD) không nhắc server nào trong mẫu. |
 
 ## Liên quan
 
