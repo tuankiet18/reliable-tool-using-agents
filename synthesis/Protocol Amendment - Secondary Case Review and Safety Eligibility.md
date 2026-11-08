@@ -4,7 +4,7 @@ title: >-
 category: synthesis
 tags: [research-protocol, experiment, external-validity, verification, reproducibility]
 sources:
-  - "synthesis/Protocol: Secondary Multi-Domain Benchmark-Derived Adaptation.md"
+  - "synthesis/Protocol - Secondary Multi-Domain Benchmark-Derived Adaptation.md"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package.md"
   - "journal/2026-09-19-workbench-full-state-gate.md"
   - "journal/2026-09-20-ai-review-provenance-correction.md"
@@ -26,7 +26,7 @@ updated: 2026-09-24T11:52:03+07:00
 
 # Amendment cho secondary pilot sau semantic review
 
-> [!important] Ghi nhận **trước khi viết adapter hoặc quan sát secondary results**. Đây là amendment công khai cho [[synthesis/Protocol: Secondary Multi-Domain Benchmark-Derived Adaptation]], không sửa ngược protocol đã freeze. Biên bản gốc ở [[projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package]]. **Đính chính provenance:** chủ dự án làm research một mình và đã nhờ một AI khác review; không có teammate/human sign-off. Các quyết định `APPROVE/REVISE` là AI-assisted cross-review, chưa chứng minh final schema correctness. [[journal/2026-09-20-ai-review-provenance-correction]]
+> [!important] Ghi nhận **trước khi viết adapter hoặc quan sát secondary results**. Đây là amendment công khai cho [[synthesis/Protocol - Secondary Multi-Domain Benchmark-Derived Adaptation]], không sửa ngược protocol đã freeze. Biên bản gốc ở [[projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package]]. **Đính chính provenance:** chủ dự án làm research một mình và đã nhờ một AI khác review; không có teammate/human sign-off. Các quyết định `APPROVE/REVISE` là AI-assisted cross-review, chưa chứng minh final schema correctness. [[journal/2026-09-20-ai-review-provenance-correction]]
 
 ## Vì sao phải sửa?
 

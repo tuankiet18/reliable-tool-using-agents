@@ -144,7 +144,7 @@ Không xây benchmark lớn mới, không train model và không dùng AIOpsLab 
 
 ## 8. Quyết định
 
-**Tiếp tục nhưng chỉ với formulation hẹp.** Exploratory 10-task pilot đã xác nhận fault-model mechanics: provenance-aware giảm unsafe acceptance dưới common-mode faults nhưng tăng abstention mạnh; random-K là baseline khó hơn fixed-K. Vì vậy RQ đã được sửa thành expected-decision-loss trade-off tại [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]].
+**Tiếp tục nhưng chỉ với formulation hẹp.** Exploratory 10-task pilot đã xác nhận fault-model mechanics: provenance-aware giảm unsafe acceptance dưới common-mode faults nhưng tăng abstention mạnh; random-K là baseline khó hơn fixed-K. Vì vậy RQ đã được sửa thành expected-decision-loss trade-off tại [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]].
 
 ## Related
 

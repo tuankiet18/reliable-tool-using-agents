@@ -138,5 +138,5 @@ README/dataset README ghi dataset chỉ dùng academic research, cấm commercia
 
 ## Liên hệ
 
-- [[synthesis/Prior-Art Threat: Recovery-Action Selection]]
+- [[synthesis/Prior-Art Threat - Recovery-Action Selection]]
 - [[references/retry-switch-or-abstain]]

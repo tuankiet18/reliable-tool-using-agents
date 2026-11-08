@@ -4,8 +4,8 @@ title: >-
 category: synthesis
 tags: [research-protocol, experiment, external-validity, verification, reproducibility]
 sources:
-  - "synthesis/Protocol: Secondary Multi-Domain Benchmark-Derived Adaptation.md"
-  - "synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility.md"
+  - "synthesis/Protocol - Secondary Multi-Domain Benchmark-Derived Adaptation.md"
+  - "synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility.md"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/secondary_schema_contract_v1.json"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/validate_secondary_schema_contract.py"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/run_secondary_smoke_tests.py"
@@ -108,8 +108,8 @@ Ngay cả khi matrix hỗ trợ hypothesis, claim mạnh hơn cần independent 
 
 ## Liên kết
 
-- [[synthesis/Protocol: Secondary Multi-Domain Benchmark-Derived Adaptation]] — protocol gốc, giữ nguyên.
-- [[synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility]] — cohort eligibility và prior amendment.
+- [[synthesis/Protocol - Secondary Multi-Domain Benchmark-Derived Adaptation]] — protocol gốc, giữ nguyên.
+- [[synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility]] — cohort eligibility và prior amendment.
 - [[projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate]] — schema/adapter gate.
 - [[journal/2026-09-26-secondary-adapter-smoke-tests]] — smoke test đã quan sát trước amendment.
 - [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]] — claim control.

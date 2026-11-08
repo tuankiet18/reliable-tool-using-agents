@@ -77,8 +77,8 @@ Paper này trực tiếp bác bỏ novelty của broad external runtime monitori
 
 ## Related
 
-- [[synthesis/Research: Early Failure Detection in Tool-Using Agents]]
-- [[synthesis/Preliminary Gap: External Runtime Monitoring]]
+- [[synthesis/Research - Early Failure Detection in Tool-Using Agents]]
+- [[synthesis/Preliminary Gap - External Runtime Monitoring]]
 - [[references/adaptive-fault-injection-task-failure-forecasting]]
 - [[references/agentforesight]]
 

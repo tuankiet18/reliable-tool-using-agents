@@ -4,7 +4,7 @@ category: project
 tags: [research-protocol, benchmark, external-validity, verification, reproducibility]
 sources:
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/external_case_audit_12.json"
-  - "synthesis/Protocol: Secondary Multi-Domain Benchmark-Derived Adaptation.md"
+  - "synthesis/Protocol - Secondary Multi-Domain Benchmark-Derived Adaptation.md"
   - "https://github.com/cmu-soda/ProvenanceGuard/tree/3ad7141db44096e1440718618bdb24fa46c003ff/data"
 summary: >-
   AI-assisted semantic cross-review; 11 matrix candidates/704 row keys vẫn chưa qua exact-schema và runner gate, chưa có human sign-off.
@@ -22,7 +22,7 @@ updated: 2026-09-20T17:33:00+07:00
 
 # Gói review case — re-sign semantic đã xong, schema gate còn mở
 
-> [!warning] Đây **không phải kết quả thí nghiệm** và cũng chưa phải mutation schema đã freeze. Bảng sign-off đầu tiên bên dưới có hai quyết định `REVISE` mang tính lịch sử; bảng re-sign ngày 2026-09-20 đã giải quyết ý nghĩa/oracle của chúng, **chưa** giải quyết exact schemas và runnable gate. Manifest 12 case/ID/commit vẫn giữ nguyên; mọi thay đổi phân tầng ghi trong [[synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility]], không sửa lùi protocol.
+> [!warning] Đây **không phải kết quả thí nghiệm** và cũng chưa phải mutation schema đã freeze. Bảng sign-off đầu tiên bên dưới có hai quyết định `REVISE` mang tính lịch sử; bảng re-sign ngày 2026-09-20 đã giải quyết ý nghĩa/oracle của chúng, **chưa** giải quyết exact schemas và runnable gate. Manifest 12 case/ID/commit vẫn giữ nguyên; mọi thay đổi phân tầng ghi trong [[synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility]], không sửa lùi protocol.
 
 > [!important] **Đính chính provenance (2026-09-20):** Chủ dự án xác nhận research này chỉ có một người; các verdict bên dưới do **một AI khác** review theo yêu cầu, không phải teammate hoặc human reviewer. Gọi đây là `AI-assisted cross-review`, không phải independent human sign-off. Những code/trace citations vẫn cần được kiểm bằng contract và executable tests. Xem [[journal/2026-09-20-ai-review-provenance-correction]].
 
@@ -140,7 +140,7 @@ Task gốc: tạm tăng harvest rate nhưng giữ stability. Trace pre-state `st
 
 ## Re-sign checklist sau WorkBench full-state gate
 
-Đây là **AI-assisted re-check**, không thay thế bảng verdict lịch sử. Đối chiếu historical WorkBench commit/fixture hashes ở [[journal/2026-09-19-workbench-full-state-gate]], corrected `ASB-977` card và quy tắc matched `K=2` trong [[synthesis/Protocol: Secondary Multi-Domain Benchmark-Derived Adaptation]]. Các quyết định dưới đây xác nhận **ý nghĩa case và thiết kế mutation** ngày 2026-09-20; chưa xác nhận exact adapter schemas, failure-domain topology hay runnable matrix. `APPROVE` không tự đổi safety cohort, không phải human sign-off và không cho phép chạy pilot.
+Đây là **AI-assisted re-check**, không thay thế bảng verdict lịch sử. Đối chiếu historical WorkBench commit/fixture hashes ở [[journal/2026-09-19-workbench-full-state-gate]], corrected `ASB-977` card và quy tắc matched `K=2` trong [[synthesis/Protocol - Secondary Multi-Domain Benchmark-Derived Adaptation]]. Các quyết định dưới đây xác nhận **ý nghĩa case và thiết kế mutation** ngày 2026-09-20; chưa xác nhận exact adapter schemas, failure-domain topology hay runnable matrix. `APPROVE` không tự đổi safety cohort, không phải human sign-off và không cho phép chạy pilot.
 
 | Case | Điều cần xác nhận | Reviewer decision | Lý do / source line / date |
 |---|---|---|---|
@@ -165,7 +165,7 @@ Bốn case đã qua review về semantic/oracle và thiết kế mutation. Nhóm
 4. Kiểm completeness cho `WB-000` (full-day), `WB-110` (same sorted-top-5 contract), `WB-433` (assignee-only full-scope rồi cutoff); `S/I` phải cùng scope/time với `P`. Với `WB-433`, lưu cả original narrow context call nhưng chỉ full-scope re-query là decisive `P`.
 5. Liệt kê trước run mọi tổ hợp `case × seed × regime × policy` hợp lệ, primary-analysis eligibility, và số decisive/total calls kỳ vọng. Check paired fault map, cùng proposed action/context, `K=2` ở cả hai policies. Một case/regime thiếu valid mutation phải được đánh dấu `INVALID_NOT_RUN` với lý do, không tạo episode giả để đủ số.
 
-**Cohort hiện hành vẫn là 8 safety + 4 non-safety** theo [[synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility]]. Static preflight tiếp theo tại [[projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate]] đề xuất **11 matrix candidates** (tám current safety, `WB-295` restoration candidate, hai utility diagnostics), loại `ASB-267` dưới dạng `INVALID_NOT_RUN` nhưng giữ frozen selected ID. Candidate matrix là `11 × 8 × 4 × 2 = 704` row keys. Đây vẫn **chưa** phải runnable matrix đã freeze. Primary targeted condition có `8 × 8 × 2 = 128` planned rows theo denominator hiện hành; chỉ sau typed schema, executor smoke test và amendment phục hồi `WB-295` trước run mới có thể là `9 × 8 × 2 = 144` rows. Đơn vị suy luận vẫn là **case**, không phải episode.
+**Cohort hiện hành vẫn là 8 safety + 4 non-safety** theo [[synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility]]. Static preflight tiếp theo tại [[projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate]] đề xuất **11 matrix candidates** (tám current safety, `WB-295` restoration candidate, hai utility diagnostics), loại `ASB-267` dưới dạng `INVALID_NOT_RUN` nhưng giữ frozen selected ID. Candidate matrix là `11 × 8 × 4 × 2 = 704` row keys. Đây vẫn **chưa** phải runnable matrix đã freeze. Primary targeted condition có `8 × 8 × 2 = 128` planned rows theo denominator hiện hành; chỉ sau typed schema, executor smoke test và amendment phục hồi `WB-295` trước run mới có thể là `9 × 8 × 2 = 144` rows. Đơn vị suy luận vẫn là **case**, không phải episode.
 
 **Provenance gate:** từ ngữ “reviewer ký” trong lịch sử chỉ là yêu cầu của protocol, **chưa phải human sign-off đã xảy ra**. AI cross-review sau này chỉ có thể hỗ trợ rà soát bản sửa; cần executable validation và giải trình protocol deviation trước secondary run. [[journal/2026-09-20-ai-review-provenance-correction]]
 
@@ -173,11 +173,11 @@ Bốn case đã qua review về semantic/oracle và thiết kế mutation. Nhóm
 
 ## Related
 
-- [[synthesis/Protocol: Secondary Multi-Domain Benchmark-Derived Adaptation]]
-- [[synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility]]
+- [[synthesis/Protocol - Secondary Multi-Domain Benchmark-Derived Adaptation]]
+- [[synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility]]
 - [[journal/2026-09-19-secondary-semantic-review]]
 - [[journal/2026-09-19-workbench-full-state-gate]]
 - [[journal/2026-09-20-secondary-resign-freeze-readiness]]
 - [[projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate]]
 - [[journal/2026-09-18-benchmark-derived-case-audit]]
-- [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]

@@ -3,7 +3,7 @@ title: "2026-10-14 — Kết quả survey 2: 78 MCP server, 12 nhóm, dự đoá
 category: journal
 tags: [research-log, provenance, external-validity, tool-use, evidence]
 sources:
-  - "synthesis/Protocol: Expanded Real-Tool Metadata Survey.md"
+  - "synthesis/Protocol - Expanded Real-Tool Metadata Survey.md"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/tool_survey_2/coding.csv"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_tool_survey2_20261014/summary.json"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_tool_survey2.py"
@@ -21,7 +21,7 @@ lifecycle_changed: 2026-10-14
 
 # Kết quả survey 2 — 2026-10-14
 
-**Phạm vi:** khảo sát mô tả (descriptive survey) theo [[synthesis/Protocol: Expanded Real-Tool Metadata Survey]] v1.0 + Amendment A1, A2. 78 MCP server, 12 nhóm thông tin; **ước lượng gộp dùng 74 server, 10 nhóm, 245 cặp**, vì geocoding (3) và ip_geolocation (1) chỉ được báo cáo riêng. Coder A là **AI-assisted**. **Chưa có nhãn của người gán nhãn**, nên kết quả **chưa được con người kiểm chứng (not human-validated)**. Không gọi API, không chạy server, không đo hành vi agent.
+**Phạm vi:** khảo sát mô tả (descriptive survey) theo [[synthesis/Protocol - Expanded Real-Tool Metadata Survey]] v1.0 + Amendment A1, A2. 78 MCP server, 12 nhóm thông tin; **ước lượng gộp dùng 74 server, 10 nhóm, 245 cặp**, vì geocoding (3) và ip_geolocation (1) chỉ được báo cáo riêng. Coder A là **AI-assisted**. **Chưa có nhãn của người gán nhãn**, nên kết quả **chưa được con người kiểm chứng (not human-validated)**. Không gọi API, không chạy server, không đo hành vi agent.
 
 `coding.csv` SHA-256 `1e1f386d…`. Kết quả nằm ở `results_tool_survey2_20261014/`. Amendment A2 (luật diễn giải và cách cài đặt phân tích) được commit ở `fb41192`, **trước khi** tính bất kỳ chỉ số nào.
 
@@ -170,7 +170,7 @@ Tác giả (con người duy nhất) phân xử bất đồng giữa Claude và 
 
 ## Liên quan
 
-- [[synthesis/Protocol: Expanded Real-Tool Metadata Survey]]
+- [[synthesis/Protocol - Expanded Real-Tool Metadata Survey]]
 - [[journal/2026-10-09-real-tool-metadata-survey-results]]
 - [[projects/reliable-tool-using-ai-agents/paper/proof-j-condition]]
 - [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]]

@@ -80,5 +80,5 @@ Ký hiệu: ✓ supported; △ partial; ✗ absent; ? insufficient evidence. D�
 ## Liên hệ
 
 - [[references/retry-switch-or-abstain]] — counterexample trực tiếp của broad gap.
-- [[synthesis/Prior-Art Threat: Recovery-Action Selection]]
-- [[synthesis/Preliminary Gap: Selective Recovery Routing]]
+- [[synthesis/Prior-Art Threat - Recovery-Action Selection]]
+- [[synthesis/Preliminary Gap - Selective Recovery Routing]]

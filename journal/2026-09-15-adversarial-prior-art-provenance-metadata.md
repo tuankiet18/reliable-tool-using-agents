@@ -62,6 +62,6 @@ Chỉ làm một việc tiếp theo: [[references/envtrustbench|artifact gate ch
 
 ## Related
 
-- [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]]
-- [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Prior-Art Threat - Provenance Metadata and Source Selection]]
+- [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]
 

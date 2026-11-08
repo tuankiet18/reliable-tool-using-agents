@@ -47,6 +47,6 @@ Paper bác bỏ claim “schema-valid wrong output chưa từng được nghiên
 
 ## Related
 
-- [[synthesis/Research: Early Failure Detection in Tool-Using Agents]]
-- [[synthesis/Research: Correlated Silent Tool Failures and Verification]]
+- [[synthesis/Research - Early Failure Detection in Tool-Using Agents]]
+- [[synthesis/Research - Correlated Silent Tool Failures and Verification]]
 

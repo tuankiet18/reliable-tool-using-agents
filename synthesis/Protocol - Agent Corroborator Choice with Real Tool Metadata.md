@@ -4,7 +4,7 @@ title: >-
 category: synthesis
 tags: [research-protocol, provenance, tool-use, ai-agents, evidence]
 sources:
-  - "synthesis/Protocol: Expanded Real-Tool Metadata Survey.md"
+  - "synthesis/Protocol - Expanded Real-Tool Metadata Survey.md"
   - "projects/reliable-tool-using-ai-agents/paper/paper-short.md"
   - "projects/reliable-tool-using-ai-agents/paper/proof-j-condition.md"
 created: 2026-10-18T10:00:00+07:00
@@ -103,9 +103,10 @@ Tên và phiên bản model chính xác được ghi ở §9 khi khóa. Temperat
 | 2026-10-18 | Tác giả chọn chạy local trên RTX 4060 8 GB | §6 cố định 2 model 7–8B; protocol vẫn chờ tác giả xác nhận |
 | 2026-10-20 | **Tác giả xác nhận protocol v1.0** | Khóa toàn bộ thiết kế, hypothesis H-A1/H-A2, 3 điều kiện, 2 model; chưa trích mô tả tool, chưa gọi model nào |
 | 2026-10-20 | **Amendment A1: chi tiết dựng stimuli và phân tích, ghi trước lời gọi model đầu tiên** | (1) **Mỗi server dùng một tool**: tool thuộc loại thông tin gọi upstream mà coder A đã ghi, chọn bằng tay sau khi đọc code (96 server, clone tại commit ghim, chỉ đọc tĩnh). Mọi description được kiểm tra tự động là xuất hiện nguyên văn trong file nguồn và nằm trong khoảng 40 dòng quanh tên tool. Một description bị cắt do nối chuỗi trong TypeScript (Grinv) được ghép lại. Có 16 description dài hơn 400 ký tự nên bị cắt và đánh dấu "…"; 4 tool không có description, hiển thị "(no description)". (2) **Tên server dùng `owner/repo`** thay vì tên repo, vì có hai server khác nhau cùng tên `crypto_mcp_server`; nếu để vậy, model có thể né tool trùng tên với primary mà không cần đọc metadata. (3) **Luật xóa tên ở C2**: lấy mọi tên provider trong nhãn coder A (upstream, L1, L2, origin_a), thêm dạng bỏ phần trong ngoặc và dạng viết liền, chỉ giữ tên dài từ 3 ký tự. Thay không phân biệt hoa thường, nuốt cả các chữ cái theo sau (ví dụ "OpenWeatherMap"), áp cho tên server, tên tool và description. Gợi ý gián tiếp vẫn có thể còn (ví dụ "cryptogecko"). (4) **Luật quyết định**: p một phía bằng bootstrap (tỷ lệ resample nằm sai phía của ngưỡng), Holm trên 4 kiểm định ở α = 0,025 (tương đương tiêu chí CI 95% hai phía), đồng thời yêu cầu cận trên CI nhỏ hơn ngưỡng. Báo cáo thêm tỷ lệ chọn theo vị trí. (5) **Runner**: Ollama `/api/chat` với `format: json`, temperature 0, seed 0, `num_predict` 200. `items.jsonl` SHA-256 `e0b33c12039a86cc51d724084331aa22f336aa76bbf7c222bda9ef4acd1be086`; `tool_texts.json` SHA-256 `db2668bc5e553d5b708ae57ad41617d89c72a7b697bedf1bdabbcdf036ab8384`; runner từ chối chạy nếu `items.jsonl` bị đổi. (6) **Kiểm thử**: `rq4_analyze.py` chạy trên dữ liệu giả cho kết quả đúng kỳ vọng (model ngẫu nhiên: không hypothesis nào đạt; model lý tưởng ở C1: cả hai đạt). |
+| 2026-11-08 | **Amendment A2: đổi model từ Ollama local sang OpenAI API, ghi trước lời gọi model đầu tiên** | Lý do: máy duy nhất của tác giả là RTX 3050 4 GB, thấp hơn mức 8 GB mà §6 yêu cầu; ngân sách API 4,8 USD. (1) **Model:** `gpt-4o-mini-2024-07-18` và `gpt-4.1-mini-2025-04-14` thay cho Qwen2.5-7B và Llama-3.1-8B. (2) **Giữ nguyên:** stimuli, `items.jsonl` (SHA-256 `e0b33c12...be086`), 3 điều kiện, prompt, temperature 0, seed 0, tối đa 200 token output, retry 1 lần, ngưỡng 10% invalid, phân tích và Holm trên 4 kiểm định. (3) **Cách gọi:** Chat Completions API với `response_format: json_object` thay cho `format: json` của Ollama (`run_rq4.py --backend openai`); mỗi lời gọi ghi `system_fingerprint`, model trả về và số token. (4) **Giới hạn mới (§8):** OpenAI không bảo đảm seed cho kết quả xác định hoàn toàn; đây là model đóng, khó tái lập y hệt; hai model cùng hãng nên không còn là "hai họ khác nhau"; kết luận về model nhỏ thương mại, không phải 7–8B open-weight. (5) **Pilot chi phí:** chạy trước 20 item vào file riêng để đo token; kết quả pilot không dùng cho phân tích chính. Tác giả xác nhận 2026-11-08. |
 
 ## Liên quan
 
-- [[synthesis/Protocol: Expanded Real-Tool Metadata Survey]]
-- [[synthesis/Protocol: Author Blind Coding of Survey 2 Subset]]
+- [[synthesis/Protocol - Expanded Real-Tool Metadata Survey]]
+- [[synthesis/Protocol - Author Blind Coding of Survey 2 Subset]]
 - [[projects/reliable-tool-using-ai-agents/paper/proof-j-condition]]

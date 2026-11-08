@@ -62,7 +62,7 @@ Chọn một candidate RQ duy nhất về provenance-aware corroborating-tool se
 
 ## Related
 
-- [[synthesis/Research: Correlated Silent Tool Failures and Verification]]
-- [[synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures]]
-- [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Research - Correlated Silent Tool Failures and Verification]]
+- [[synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]
 

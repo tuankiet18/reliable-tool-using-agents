@@ -101,5 +101,5 @@ Trước full experiment, mở rộng pilot sang disjoint 30 tasks với noisy/i
 
 ## Related
 
-- [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
-- [[synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures]]

@@ -95,7 +95,7 @@ Upstream loop chỉ kết thúc ở `reply`; `escalate` mở ticket nhưng khôn
 
 ## Research implication
 
-Candidate RQ tại [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]] vẫn `PRELIMINARY`, nhưng **chưa sẵn sàng preregister**. Full-agent evidence hiện chỉ hỗ trợ câu hẹp: correlated fault có thể đánh lừa random/self paths trong một số task, còn provenance chỉ giúp khi runtime chắc chắn được kích hoạt.
+Candidate RQ tại [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]] vẫn `PRELIMINARY`, nhưng **chưa sẵn sàng preregister**. Full-agent evidence hiện chỉ hỗ trợ câu hẹp: correlated fault có thể đánh lừa random/self paths trong một số task, còn provenance chỉ giúp khi runtime chắc chắn được kích hoạt.
 
 Không được dùng bảng accuracy trên làm bằng chứng rằng provenance policy tốt hơn. Positive example `INS-00032` và negative example `INS-00033` phải được giữ cùng nhau.
 
@@ -132,6 +132,6 @@ RQ được phép chuyển sang candidate RQ chính cho main deterministic study
 
 ## Related
 
-- [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
-- [[synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures]]
 - [[journal/2026-09-14-correlated-tool-verification-next-gate]]

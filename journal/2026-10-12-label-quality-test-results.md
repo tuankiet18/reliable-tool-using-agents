@@ -3,7 +3,7 @@ title: "2026-10-12 — Kết quả kiểm định có đăng ký trước cho đ
 category: journal
 tags: [research-log, experiment, provenance, verification, reproducibility]
 sources:
-  - "synthesis/Protocol: Confirmatory Test of the Label-Quality Condition.md"
+  - "synthesis/Protocol - Confirmatory Test of the Label-Quality Condition.md"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_label_quality_20261012/analysis.json"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/run_label_quality_test.py"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_label_quality_test.py"
@@ -21,7 +21,7 @@ lifecycle_changed: 2026-10-12
 
 # Kiểm định có đăng ký trước cho điều kiện J — 2026-10-12
 
-**Phạm vi:** theo [[synthesis/Protocol: Confirmatory Test of the Label-Quality Condition]] v1.0, được tác giả xác nhận trước khi viết code. Mô phỏng quyết định do project thiết kế; không gọi model, không chạy agent thật, chi phí $0.
+**Phạm vi:** theo [[synthesis/Protocol - Confirmatory Test of the Label-Quality Condition]] v1.0, được tác giả xác nhận trước khi viết code. Mô phỏng quyết định do project thiết kế; không gọi model, không chạy agent thật, chi phí $0.
 
 ## Trình tự (có trong lịch sử git)
 
@@ -58,6 +58,6 @@ Regime clean: 0 unsafe ở mọi điều kiện (sanity đạt).
 
 ## Liên quan
 
-- [[synthesis/Protocol: Confirmatory Test of the Label-Quality Condition]]
+- [[synthesis/Protocol - Confirmatory Test of the Label-Quality Condition]]
 - [[journal/2026-10-06-prior-art-refresh-vp-control-and-efd]]
 - [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]]

@@ -40,5 +40,5 @@ Knight và Leveson (1986) đã thực nghiệm phản bác giả định indepen
 ## Related
 
 - [[references/riva]]
-- [[synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures]]
 

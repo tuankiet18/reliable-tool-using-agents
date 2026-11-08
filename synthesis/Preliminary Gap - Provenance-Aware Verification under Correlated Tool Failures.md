@@ -165,12 +165,12 @@ Do đó novelty không thể là “dynamic trust selection”, “provenance-aw
 
 **RESEARCH IMPLICATION:** Exact RQ sống sót ở phạm vi hẹp, nhưng metadata validation không nên được dùng để rescue gap: nó là một bài toán riêng, có prior art mạnh và ground truth khó cho project 12 tuần.
 
-**Status:** `SURVIVES WITH REFINEMENT — PRELIMINARY`; novelty confidence ở mức trung bình, external validity vẫn yếu. Xem [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]].
+**Status:** `SURVIVES WITH REFINEMENT — PRELIMINARY`; novelty confidence ở mức trung bình, external validity vẫn yếu. Xem [[synthesis/Prior-Art Threat - Provenance Metadata and Source Selection]].
 
 ## Related
 
-- [[synthesis/Research: Correlated Silent Tool Failures and Verification]]
-- [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Research - Correlated Silent Tool Failures and Verification]]
+- [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]
 - [[references/riva]]
 - [[journal/2026-09-14-correlated-tool-verification-next-gate]]
 - [[journal/2026-09-14-full-live-agent-verification-gate]]

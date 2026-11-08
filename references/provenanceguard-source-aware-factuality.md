@@ -35,6 +35,6 @@ ProvenanceGuard giữ stable tool/source IDs, tách answer thành atomic claims,
 
 ## Related
 
-- [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]]
+- [[synthesis/Prior-Art Threat - Provenance Metadata and Source Selection]]
 - [[references/provenanceguard-misalignment-provenance-analysis]]
 

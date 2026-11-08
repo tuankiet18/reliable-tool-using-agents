@@ -44,8 +44,8 @@ Paper giới thiệu synthetic dataset từ mười ứng dụng thực tế và
 ## Liên hệ với research này
 
 - [[concepts/least-privilege-tool-use]]
-- [[synthesis/Preliminary Gap: Failure-Aware Least Privilege]]
-- [[synthesis/Prior-Art Threat: Agent Capability Control]]
+- [[synthesis/Preliminary Gap - Failure-Aware Least Privilege]]
+- [[synthesis/Prior-Art Threat - Agent Capability Control]]
 
 ## Sources
 

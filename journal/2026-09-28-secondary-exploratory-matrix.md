@@ -4,8 +4,8 @@ title: >-
 category: journal
 tags: [research-log, experiment, external-validity, verification, reproducibility]
 sources:
-  - "synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix.md"
-  - "synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility.md"
+  - "synthesis/Protocol Amendment - Exploratory Secondary Runtime Matrix.md"
+  - "synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility.md"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/secondary_schema_contract_v1.json"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/run_secondary_matrix.py"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_secondary_matrix.py"
@@ -33,7 +33,7 @@ updated: 2026-09-28T10:20:00+07:00
 
 Thực thi secondary adaptation trên task semantics của WorkBench và Agent-SafetyBench để kiểm tra toàn bộ luồng materialize observation, so sánh P với corroborator, chặn hoặc cho phép action, chạy action trên state mới và chấm oracle. Đây **không phải** reproduction của benchmark gốc: P/S/I topology, failure-domain labels, fault schedule và policy runners đều do project bổ sung.
 
-Trước full run, [[synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix]] đã công khai deviation: nghiên cứu do một người thực hiện, review trước đó chỉ có AI hỗ trợ, không có human/peer review. Smoke test 32 episode đã xảy ra trước amendment và được ghi rõ; không có full-matrix outcome nào được xem trước khi khóa lựa chọn hiện tại. Do đó kết quả này là **exploratory internal adaptation**, không phải confirmatory study hoặc external validation.
+Trước full run, [[synthesis/Protocol Amendment - Exploratory Secondary Runtime Matrix]] đã công khai deviation: nghiên cứu do một người thực hiện, review trước đó chỉ có AI hỗ trợ, không có human/peer review. Smoke test 32 episode đã xảy ra trước amendment và được ghi rõ; không có full-matrix outcome nào được xem trước khi khóa lựa chọn hiện tại. Do đó kết quả này là **exploratory internal adaptation**, không phải confirmatory study hoặc external validation.
 
 ## Artifact và khả năng chạy lại
 

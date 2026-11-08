@@ -20,7 +20,7 @@ sources:
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/generate_secondary_varied_schedule.py"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_secondary_varied.py"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_secondary_varied/analysis-summary.json"
-  - "synthesis/Protocol: Action-Boundary Provenance Verification Main Study.md"
+  - "synthesis/Protocol - Action-Boundary Provenance Verification Main Study.md"
   - "journal/2026-09-28-secondary-varied-schedule-replication.md"
   - "journal/2026-10-03-live-agent-opportunity-diagnostic.md"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_topology_diagnostics.py"
@@ -228,7 +228,7 @@ Trong targeted common-mode condition, random corroboration cho 30 unsafe refund 
 
 ### Trạng thái xử lý — 2026-10-03, paper v0.2
 
-**FACT — EDITORIAL CHANGE:** R1/R2 đã được xử lý trong [[projects/reliable-tool-using-ai-agents/paper/paper-draft]] version `0.2`: Abstract, RQ/H1, Outcomes, Methods, bảng Results, Discussion, Threats và Conclusion dùng action-oracle correctness/unsafe refund decisions; bảng mới tách no-proposal abstention khỏi gate rejection. Raw keys và kết quả thực nghiệm giữ nguyên. [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]] đã đồng bộ working wording; dated historical RQ và protocol vẫn giữ nguyên.
+**FACT — EDITORIAL CHANGE:** R1/R2 đã được xử lý trong [[projects/reliable-tool-using-ai-agents/paper/paper-draft]] version `0.2`: Abstract, RQ/H1, Outcomes, Methods, bảng Results, Discussion, Threats và Conclusion dùng action-oracle correctness/unsafe refund decisions; bảng mới tách no-proposal abstention khỏi gate rejection. Raw keys và kết quả thực nghiệm giữ nguyên. [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]] đã đồng bộ working wording; dated historical RQ và protocol vẫn giữ nguyên.
 
 **OPEN QUESTION — tại thời điểm v0.2:** Chưa đóng R5–R12. Bước tiếp theo sau sửa construct là làm rõ analytical expectation từ source topology và safety–utility baseline có sẵn, rồi kiểm tra novelty/citations. MAJOR REVISION vẫn là verdict cho toàn draft; cập nhật này không phải reviewer sign-off.
 
@@ -310,8 +310,8 @@ Related:
 - [[projects/reliable-tool-using-ai-agents/paper/paper-draft]]
 - [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]]
 - [[projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents]]
-- [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
-- [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]]
-- [[synthesis/Protocol: Action-Boundary Provenance Verification Main Study]]
+- [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Prior-Art Threat - Provenance Metadata and Source Selection]]
+- [[synthesis/Protocol - Action-Boundary Provenance Verification Main Study]]
 - [[journal/2026-09-28-secondary-varied-schedule-replication]]
 - [[journal/2026-10-03-live-agent-opportunity-diagnostic]]

@@ -6,7 +6,7 @@ tags: [research-log, experiment, verification, tool-failure, robustness]
 sources:
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_robustness_gate"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/tasks_robustness_30.manifest.json"
-  - "synthesis/Protocol Amendment: Imperfect Provenance and Partial Correlation.md"
+  - "synthesis/Protocol Amendment - Imperfect Provenance and Partial Correlation.md"
 summary: >-
   Robustness gate 3.750 episodes fail vì 25% wrong provenance labels làm CI chạm zero; RQ phải giới hạn ở accurate failure-domain metadata.
 provenance:
@@ -79,7 +79,7 @@ Thực hiện adversarial prior-art search riêng cho provenance/dependency meta
 
 ## Related
 
-- [[synthesis/Protocol Amendment: Imperfect Provenance and Partial Correlation]]
-- [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
-- [[synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Protocol Amendment - Imperfect Provenance and Partial Correlation]]
+- [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures]]
 - [[journal/2026-09-15-action-boundary-main-study]]

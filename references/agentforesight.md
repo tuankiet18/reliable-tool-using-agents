@@ -53,6 +53,6 @@ AgentForesight-7B dùng coarse-to-fine RL để học cả loại lỗi, vị tr
 
 ## Related
 
-- [[synthesis/Research: Early Failure Detection in Tool-Using Agents]]
+- [[synthesis/Research - Early Failure Detection in Tool-Using Agents]]
 - [[references/real-time-detection-and-repair-agent-failures]]
 

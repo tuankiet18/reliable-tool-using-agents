@@ -67,6 +67,6 @@ Cập nhật ba case cards và exact `P/S/I` schema cho `WB-110`, `WB-433`, `WB-
 
 ## Related
 
-- [[synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility]]
-- [[synthesis/Protocol: Secondary Multi-Domain Benchmark-Derived Adaptation]]
-- [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility]]
+- [[synthesis/Protocol - Secondary Multi-Domain Benchmark-Derived Adaptation]]
+- [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]

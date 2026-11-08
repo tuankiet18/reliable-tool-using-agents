@@ -28,7 +28,7 @@ updated: 2026-09-30T10:15:04+07:00
 
 - Đọc task manifest, `run_live_agent_gate.py`, trace full-loop/action-boundary cũ và diagnostic RTX 4060 gần nhất. Kiểm tra SHA-256 của task manifest (`f587ec9afa9ce5ffe55d49e60379e1ed7f6602c9f956d889a8b82e056e985ec9`) và old action-boundary raw (`15c9788948ac9f94d43d9caadb5f70d406b362e76b04b09f447a8dd122be99f8`).
 - Chạy **chỉ hàm offline** `select_corroborator` và `source_observation` từ runner để tái tính mapping source/fault; không gọi model, không tạo episode mới, không sửa code hoặc main-study results.
-- Ghi [[synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic]] với scope, metric, denominator và stop rules trước mọi thay đổi runner kế tiếp.
+- Ghi [[synthesis/Protocol Amendment - Exploratory RTX 4060 Safety Diagnostic]] với scope, metric, denominator và stop rules trước mọi thay đổi runner kế tiếp.
 
 ## Phát hiện
 

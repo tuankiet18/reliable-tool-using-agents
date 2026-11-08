@@ -147,5 +147,5 @@ Mô phỏng 150 study bằng **mô hình đơn giản hóa** (không phải code
 
 - [[journal/2026-10-06-prior-art-refresh-vp-control-and-efd]]
 - [[journal/2026-10-09-real-tool-metadata-survey-results]]
-- [[synthesis/Protocol: Real-Tool Failure-Domain Metadata Survey]]
+- [[synthesis/Protocol - Real-Tool Failure-Domain Metadata Survey]]
 - [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]]

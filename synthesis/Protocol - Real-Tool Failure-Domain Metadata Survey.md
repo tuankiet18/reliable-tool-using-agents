@@ -149,6 +149,6 @@ Chỉ đọc repo công khai. Lưu URL, commit SHA, đường dẫn file và tr�
 ## Liên quan
 
 - [[journal/2026-10-06-prior-art-refresh-vp-control-and-efd]]
-- [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]]
-- [[synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Prior-Art Threat - Provenance Metadata and Source Selection]]
+- [[synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures]]
 - [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]]

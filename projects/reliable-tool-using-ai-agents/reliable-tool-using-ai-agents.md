@@ -16,13 +16,13 @@ sources:
   - "journal/2026-09-20-ai-review-provenance-correction.md"
   - "journal/2026-09-24-secondary-schema-v12-recheck.md"
   - "journal/2026-09-26-secondary-adapter-smoke-tests.md"
-  - "synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix.md"
+  - "synthesis/Protocol Amendment - Exploratory Secondary Runtime Matrix.md"
   - "journal/2026-09-28-secondary-exploratory-matrix.md"
-  - "synthesis/Protocol: Secondary Varied-Schedule Replication.md"
+  - "synthesis/Protocol - Secondary Varied-Schedule Replication.md"
   - "journal/2026-09-28-secondary-varied-schedule-replication.md"
   - "journal/2026-09-30-rtx4060-live-agent-diagnostic.md"
   - "journal/2026-09-30-live-agent-safety-preflight.md"
-  - "synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic.md"
+  - "synthesis/Protocol Amendment - Exploratory RTX 4060 Safety Diagnostic.md"
   - "journal/2026-10-01-live-agent-diagnostic-instrumentation.md"
   - "journal/2026-10-02-ins32-rtx4060-validity-audit.md"
   - "synthesis/protocol-prospective-live-agent-opportunity-gate.md"
@@ -49,7 +49,7 @@ updated: 2026-10-05T09:14:46+07:00
 
 `Reliable Tool-Using AI Agents — Undergraduate Research Project`
 
-Mục tiêu của dự án là tìm và kiểm chứng một can thiệp về độ tin cậy được xác định rõ cho AI agent dùng tool (tool-using AI agent). Đầu ra mong muốn là một đóng góp thực nghiệm có thể tái lập, không phải một ứng dụng agent chung chung. Bản đồ lĩnh vực ban đầu nằm tại [[synthesis/Research: Reliable Tool-Using AI Agents]].
+Mục tiêu của dự án là tìm và kiểm chứng một can thiệp về độ tin cậy được xác định rõ cho AI agent dùng tool (tool-using AI agent). Đầu ra mong muốn là một đóng góp thực nghiệm có thể tái lập, không phải một ứng dụng agent chung chung. Bản đồ lĩnh vực ban đầu nằm tại [[synthesis/Research - Reliable Tool-Using AI Agents]].
 
 ## Phạm vi và ràng buộc
 
@@ -76,7 +76,7 @@ Reviewer-style audit ngày 2026-10-03 cho verdict **MAJOR REVISION**: main/robus
 
 > Given accurate failure-domain metadata, under targeted common-mode silent tool-output failures, does independent-domain corroboration reduce unsafe refund authorization decisions relative to random corroboration at a matched two-observation boundary budget, while preserving clean action-oracle correctness in a deterministic controlled workflow?
 
-Giải thích và thiết kế thực nghiệm nằm tại [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]. Đây là RQ tốt nhất hiện tại sau novelty gate, chưa phải thesis topic được xác nhận.
+Giải thích và thiết kế thực nghiệm nằm tại [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]. Đây là RQ tốt nhất hiện tại sau novelty gate, chưa phải thesis topic được xác nhận.
 
 Exploratory pilot gồm `600` paired episodes đã hoàn tất. Kết quả cho thấy safety gain đi kèm abstention cost, vì vậy main study phải đo trade-off thay vì chỉ detection recall.
 
@@ -86,23 +86,23 @@ Full live-agent gate tiếp theo đã chạy đủ `36` episodes trên sáu task
 
 Action-boundary gate sau đó chạy `108` episodes và pass mechanism gate: `69/69` refund attempts được verified; dưới targeted common-mode fault, provenance đạt unsafe refund `0/18` so với random-K `2/18`, và accuracy `11/18` so với `6/18`. RQ hẹp hiện được giữ làm candidate RQ chính, vẫn `PRELIMINARY` do fault topology synthetic và chưa external validation.
 
-Main deterministic study hiện đã có fresh frozen split gồm `30` tasks (`INS-00060`–`INS-00089`), tách hoàn toàn khỏi mọi pilot trước đó và có SHA-256 ghi trước main harness. Xem [[synthesis/Protocol: Action-Boundary Provenance Verification Main Study]] và [[journal/2026-09-15-main-study-manifest]].
+Main deterministic study hiện đã có fresh frozen split gồm `30` tasks (`INS-00060`–`INS-00089`), tách hoàn toàn khỏi mọi pilot trước đó và có SHA-256 ghi trước main harness. Xem [[synthesis/Protocol - Action-Boundary Provenance Verification Main Study]] và [[journal/2026-09-15-main-study-manifest]].
 
 Main deterministic gate sau đó đã chạy đủ `1,350` episodes và `PASS` toàn bộ preregistered criteria. Targeted common-mode unsafe refund giảm từ `0.200` (`random_k`) xuống `0.000` (`provenance_k`), paired 95% CI `[-0.273, -0.127]`; clean correctness của cả hai là `1.000`. RQ được hỗ trợ trong controlled benchmark nhưng gap vẫn `PRELIMINARY`, vì effect phụ thuộc accurate synthetic failure-domain metadata. Xem [[journal/2026-09-15-action-boundary-main-study]].
 
 Post-main robustness gate chạy thêm `3,750` episodes trên task IDs `INS-00090`–`INS-00119`. Gate `FAIL ROBUSTNESS`: accurate và missing-label conditions giữ advantage, nhưng `wrong_25 + leakage 0.10` có CI chạm zero. Vì vậy RQ đã được thu hẹp rõ thành **given accurate failure-domain metadata**; không claim robustness với metadata sai. Xem [[journal/2026-09-15-imperfect-provenance-robustness-gate]].
 
-Adversarial prior-art gate cho metadata/source selection đã hoàn tất. TEA-CXA, hai work tên ProvenanceGuard, GRADE và AgentFlow bác bỏ novelty claims rộng về learned tool trust, provenance-based action gating và dependency derivation/validation. Exact RQ chỉ sống ở tổ hợp hẹp về failure-domain-independent corroboration dưới correlated silent failures; status vẫn `SURVIVES WITH REFINEMENT — PRELIMINARY`. Không mở thêm metadata-learning subproject. Xem [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]].
+Adversarial prior-art gate cho metadata/source selection đã hoàn tất. TEA-CXA, hai work tên ProvenanceGuard, GRADE và AgentFlow bác bỏ novelty claims rộng về learned tool trust, provenance-based action gating và dependency derivation/validation. Exact RQ chỉ sống ở tổ hợp hẹp về failure-domain-independent corroboration dưới correlated silent failures; status vẫn `SURVIVES WITH REFINEMENT — PRELIMINARY`. Không mở thêm metadata-learning subproject. Xem [[synthesis/Prior-Art Threat - Provenance Metadata and Source Selection]].
 
 External-validity artifact gate tiếp theo cho kết quả âm quan trọng. EnvTrustBench không public executable cases/oracles/runners nên không thể dùng để chạy external experiment hiện tại. ProvenanceGuard artifact setup và offline notebooks pass, cung cấp 182 Agent-SafetyBench cùng 388 WorkBench traces, nhưng không có failure domains hoặc redundant evidence. Nó chỉ phù hợp làm nguồn task semantics cho benchmark-derived secondary pilot. Xem [[journal/2026-09-15-external-validity-artifact-gate]].
 
 Case-audit gate sau đó đã `CONDITIONAL PASS`: đóng băng `12` cases từ Agent-SafetyBench/WorkBench trên `10` atomic domains, với decisive claim, action boundary, canonical truth và programmatic oracle. Vì independent corroborators và failure topology vẫn do project bổ sung, đây chỉ là benchmark-derived adaptation nhằm kiểm tra semantic breadth, chưa phải external validation. Xem [[journal/2026-09-18-benchmark-derived-case-audit]].
 
-Secondary protocol gốc được freeze trước adapter, nhưng quy trình review dự kiến đã không diễn ra như kế hoạch: project chỉ có một researcher và các verdict là AI-assisted, không có human sign-off. Case audit hạ `ASB-267` khỏi ma trận safety, giữ `WB-295` ngoài denominator, sửa mutation `ASB-977`, và khóa tám safety cases/sáu domains. Static v1.2 checks cùng smoke test 32 episodes pass; chi tiết chronology nằm tại [[synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility]], [[journal/2026-09-24-secondary-schema-v12-recheck]] và [[journal/2026-09-26-secondary-adapter-smoke-tests]].
+Secondary protocol gốc được freeze trước adapter, nhưng quy trình review dự kiến đã không diễn ra như kế hoạch: project chỉ có một researcher và các verdict là AI-assisted, không có human sign-off. Case audit hạ `ASB-267` khỏi ma trận safety, giữ `WB-295` ngoài denominator, sửa mutation `ASB-977`, và khóa tám safety cases/sáu domains. Static v1.2 checks cùng smoke test 32 episodes pass; chi tiết chronology nằm tại [[synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility]], [[journal/2026-09-24-secondary-schema-v12-recheck]] và [[journal/2026-09-26-secondary-adapter-smoke-tests]].
 
-Ngày 2026-09-28, varied-schedule replication tiếp tục trong cùng nhãn **exploratory internal adaptation**. 1.056 episodes/528 pairs chạy hai lần byte-identical, với schedule theo case được hash trước runtime. Tại `targeted_common_mode_25`, unsafe accepted actions là `59/96` (`random_k`) so với `24/96` (`provenance_k`); mean case difference `−0.3646`, advantage mô tả ở `8/8` safety cases và bootstrap CI theo case `[-0.396,-0.323]`. Các differences không còn đồng nhất như ở ma trận đầu, cho thấy overlap giữa lịch selector/leakage ảnh hưởng mức effect trong thiết kế này. Utility false blocks là `9/24` so với `18/24`; safety task success dưới targeted faults vẫn là 0 vì gate không tự sửa action. Đây không phải confirmatory evidence, native benchmark reproduction hay external validation: cohort purposive, source topology/fault model project-defined, schema còn candidate và chưa có human review. Xem [[journal/2026-09-28-secondary-varied-schedule-replication]] và [[synthesis/Protocol: Secondary Varied-Schedule Replication]].
+Ngày 2026-09-28, varied-schedule replication tiếp tục trong cùng nhãn **exploratory internal adaptation**. 1.056 episodes/528 pairs chạy hai lần byte-identical, với schedule theo case được hash trước runtime. Tại `targeted_common_mode_25`, unsafe accepted actions là `59/96` (`random_k`) so với `24/96` (`provenance_k`); mean case difference `−0.3646`, advantage mô tả ở `8/8` safety cases và bootstrap CI theo case `[-0.396,-0.323]`. Các differences không còn đồng nhất như ở ma trận đầu, cho thấy overlap giữa lịch selector/leakage ảnh hưởng mức effect trong thiết kế này. Utility false blocks là `9/24` so với `18/24`; safety task success dưới targeted faults vẫn là 0 vì gate không tự sửa action. Đây không phải confirmatory evidence, native benchmark reproduction hay external validation: cohort purposive, source topology/fault model project-defined, schema còn candidate và chưa có human review. Xem [[journal/2026-09-28-secondary-varied-schedule-replication]] và [[synthesis/Protocol - Secondary Varied-Schedule Replication]].
 
-RTX 4060/Qwen2.5 7B đã chạy được sáu episode diagnostic, nhưng case `INS-00030` chỉ thử false denial và trace lộ refund attempt lặp cùng escalation sau refund thành công; **chưa có live-agent safety validation**. Preflight offline tiếp theo xác nhận `INS-00032` là false-positive safety case: canonical phải escalation, còn targeted fault báo đủ điều kiện refund. Seed `809` tạo khác biệt về failure domain giữa selectors nhưng được chọn hậu nghiệm, nên diagnostic dự kiến vẫn `EXPLORATORY`; tại thời điểm preflight đó chưa có episode Qwen2.5 7B mới. Xem [[journal/2026-09-30-rtx4060-live-agent-diagnostic]], [[journal/2026-09-30-live-agent-safety-preflight]] và [[synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic]].
+RTX 4060/Qwen2.5 7B đã chạy được sáu episode diagnostic, nhưng case `INS-00030` chỉ thử false denial và trace lộ refund attempt lặp cùng escalation sau refund thành công; **chưa có live-agent safety validation**. Preflight offline tiếp theo xác nhận `INS-00032` là false-positive safety case: canonical phải escalation, còn targeted fault báo đủ điều kiện refund. Seed `809` tạo khác biệt về failure domain giữa selectors nhưng được chọn hậu nghiệm, nên diagnostic dự kiến vẫn `EXPLORATORY`; tại thời điểm preflight đó chưa có episode Qwen2.5 7B mới. Xem [[journal/2026-09-30-rtx4060-live-agent-diagnostic]], [[journal/2026-09-30-live-agent-safety-preflight]] và [[synthesis/Protocol Amendment - Exploratory RTX 4060 Safety Diagnostic]].
 
 Ngày 2026-10-01, runner/analyzer cho diagnostic tám cell đã được instrument: chọn exact task/policies, CLI dry-run không gọi model, và các process metrics đọc trực tiếp raw trajectory. Unit tests `58/58` pass; re-audit sáu RTX rows cũ khớp kiểm tra thủ công. Dry-run trên upstream `trajectory-judge` commit pinned tại Linux in đúng tám cells và expected action `escalate`; **tại thời điểm đó** code chưa sync sang Windows. Xem [[journal/2026-10-01-live-agent-diagnostic-instrumentation]].
 
@@ -127,19 +127,19 @@ Living paper version `0.9` nằm tại [[projects/reliable-tool-using-ai-agents/
 
 ## Bằng chứng và ứng viên hiện tại
 
-- [[synthesis/Research: Reliable Tool-Using AI Agents]] — bản đồ lĩnh vực đầu tiên và đánh giá tính khả thi.
-- [[synthesis/Preliminary Gap: Selective Recovery Routing]] — `REJECTED`.
-- [[synthesis/Preliminary Gap: External Runtime Monitoring]] — `REJECTED`.
-- [[synthesis/Preliminary Gap: Failure-Aware Least Privilege]]
-- [[synthesis/Preliminary Gap: Completion Verification Under Degraded Tools]]
-- [[synthesis/Research: Early Failure Detection in Tool-Using Agents]] — novelty gate `REJECTED` và câu hỏi hẹp còn mở.
-- [[synthesis/Research: Correlated Silent Tool Failures and Verification]] — adversarial search cho semantic verification và common-mode fault.
-- [[synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures]] — gap hẹp `SURVIVES WITH REFINEMENT — PRELIMINARY`.
-- [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]] — novelty boundary sau adversarial search.
-- [[synthesis/Protocol: Secondary Multi-Domain Benchmark-Derived Adaptation]] — protocol gốc, giữ nguyên lịch sử.
-- [[synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility]] — eligibility và giới hạn safety denominator.
-- [[synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix]] — deviation và scope đã khóa trước full run.
-- [[synthesis/Protocol: Secondary Varied-Schedule Replication]] — varied schedule prospective; kết quả exploratory đã chạy.
+- [[synthesis/Research - Reliable Tool-Using AI Agents]] — bản đồ lĩnh vực đầu tiên và đánh giá tính khả thi.
+- [[synthesis/Preliminary Gap - Selective Recovery Routing]] — `REJECTED`.
+- [[synthesis/Preliminary Gap - External Runtime Monitoring]] — `REJECTED`.
+- [[synthesis/Preliminary Gap - Failure-Aware Least Privilege]]
+- [[synthesis/Preliminary Gap - Completion Verification Under Degraded Tools]]
+- [[synthesis/Research - Early Failure Detection in Tool-Using Agents]] — novelty gate `REJECTED` và câu hỏi hẹp còn mở.
+- [[synthesis/Research - Correlated Silent Tool Failures and Verification]] — adversarial search cho semantic verification và common-mode fault.
+- [[synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures]] — gap hẹp `SURVIVES WITH REFINEMENT — PRELIMINARY`.
+- [[synthesis/Prior-Art Threat - Provenance Metadata and Source Selection]] — novelty boundary sau adversarial search.
+- [[synthesis/Protocol - Secondary Multi-Domain Benchmark-Derived Adaptation]] — protocol gốc, giữ nguyên lịch sử.
+- [[synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility]] — eligibility và giới hạn safety denominator.
+- [[synthesis/Protocol Amendment - Exploratory Secondary Runtime Matrix]] — deviation và scope đã khóa trước full run.
+- [[synthesis/Protocol - Secondary Varied-Schedule Replication]] — varied schedule prospective; kết quả exploratory đã chạy.
 - [[journal/2026-09-19-workbench-full-state-gate]] — original WorkBench fixture/code xác lập WB-110/433 truth và WB-295 distractor; adapter/schema còn mở.
 - [[journal/2026-09-20-secondary-resign-freeze-readiness]] — re-sign semantic pass; schema/matrix gate pending và WB-295 chưa vào cohort.
 - [[projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate]] — contract v1.2 và kết quả full exploratory matrix.

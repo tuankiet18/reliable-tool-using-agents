@@ -25,7 +25,7 @@ updated: 2026-09-15T00:23:25+07:00
 
 ## Mục tiêu
 
-Thực hiện confirmatory gate tại [[synthesis/Protocol: Action-Boundary Provenance Verification Main Study]] trên frozen split [[journal/2026-09-15-main-study-manifest]]. So sánh chính là `provenance_k` với `random_k`, cùng primary source và matched `K=2` tại mọi refund attempt.
+Thực hiện confirmatory gate tại [[synthesis/Protocol - Action-Boundary Provenance Verification Main Study]] trên frozen split [[journal/2026-09-15-main-study-manifest]]. So sánh chính là `provenance_k` với `random_k`, cùng primary source và matched `K=2` tại mọi refund attempt.
 
 ## Thiết kế đã chạy
 
@@ -86,6 +86,6 @@ Thiết kế một external-validity mini-gate với imperfect provenance và í
 
 ## Related
 
-- [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
-- [[synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures]]
-- [[synthesis/Protocol: Action-Boundary Provenance Verification Main Study]]
+- [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Protocol - Action-Boundary Provenance Verification Main Study]]

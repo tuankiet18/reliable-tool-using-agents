@@ -169,6 +169,6 @@ Manifest này không được sửa sau khi main harness bắt đầu. Nếu ph�
 
 ## Related
 
-- [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
-- [[synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures]]
 - [[journal/2026-09-14-full-live-agent-verification-gate]]

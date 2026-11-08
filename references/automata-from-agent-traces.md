@@ -42,6 +42,6 @@ Kết quả trực tiếp bác bỏ claim “dùng partial trajectory structure 
 
 ## Related
 
-- [[synthesis/Research: Early Failure Detection in Tool-Using Agents]]
+- [[synthesis/Research - Early Failure Detection in Tool-Using Agents]]
 - [[references/prefixguard]]
 

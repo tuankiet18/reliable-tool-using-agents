@@ -42,5 +42,5 @@ AuthBench là counterexample trực tiếp cho broad **GAP-A — Task-Aware Perm
 ## Liên hệ
 
 - [[synthesis/Agent Capability and Permission Control]]
-- [[synthesis/Preliminary Gap: Task-Aware Permission Inference]]
-- [[synthesis/Preliminary Gap: Software-Evidence-Grounded Capability Scoping]]
+- [[synthesis/Preliminary Gap - Task-Aware Permission Inference]]
+- [[synthesis/Preliminary Gap - Software-Evidence-Grounded Capability Scoping]]

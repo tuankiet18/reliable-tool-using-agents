@@ -40,4 +40,4 @@ updated: 2026-09-12T00:00:00Z
 
 ## Quyết định
 
-Không xây thêm external trajectory classifier hoặc local 20–30-task failure-prediction harness. Dùng [[references/agentforesight]] và [[references/real-time-detection-and-repair-agent-failures]] để học/reproduce; chuyển novelty search sang [[synthesis/Research: Early Failure Detection in Tool-Using Agents]].
+Không xây thêm external trajectory classifier hoặc local 20–30-task failure-prediction harness. Dùng [[references/agentforesight]] và [[references/real-time-detection-and-repair-agent-failures]] để học/reproduce; chuyển novelty search sang [[synthesis/Research - Early Failure Detection in Tool-Using Agents]].

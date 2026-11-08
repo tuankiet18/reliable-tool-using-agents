@@ -64,6 +64,6 @@ Khi đặt cạnh PrefixGuard, AgentForesight, weakly supervised early alerting,
 ## Liên hệ
 
 - [[concepts/agent-observability-and-runtime-monitoring]]
-- [[synthesis/Deep Comparison: Recovery Routing Anchor Works]]
-- [[synthesis/Prior-Art Threat: Recovery-Action Selection]]
-- [[synthesis/Research: Early Failure Detection in Tool-Using Agents]]
+- [[synthesis/Deep Comparison - Recovery Routing Anchor Works]]
+- [[synthesis/Prior-Art Threat - Recovery-Action Selection]]
+- [[synthesis/Research - Early Failure Detection in Tool-Using Agents]]

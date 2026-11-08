@@ -3,7 +3,7 @@ title: "2026-10-09 — Kết quả survey metadata failure-domain trên 42 MCP s
 category: journal
 tags: [research-log, provenance, external-validity, tool-use, evidence]
 sources:
-  - "synthesis/Protocol: Real-Tool Failure-Domain Metadata Survey.md"
+  - "synthesis/Protocol - Real-Tool Failure-Domain Metadata Survey.md"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/tool_survey/coding.csv"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_tool_survey_20261009/summary.json"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_tool_survey.py"
@@ -21,7 +21,7 @@ lifecycle_changed: 2026-10-09
 
 # Kết quả survey metadata failure-domain — 2026-10-09
 
-**Phạm vi:** descriptive survey theo [[synthesis/Protocol: Real-Tool Failure-Domain Metadata Survey]]. 42 MCP server mã nguồn mở, 7 nhóm thông tin, 105 cặp cùng nhóm. **Coder A là AI-assisted**; nhãn của coder B (10 server) chưa nộp nên chưa có inter-rater agreement. Không gọi API, không chạy server, không đo hành vi agent.
+**Phạm vi:** descriptive survey theo [[synthesis/Protocol - Real-Tool Failure-Domain Metadata Survey]]. 42 MCP server mã nguồn mở, 7 nhóm thông tin, 105 cặp cùng nhóm. **Coder A là AI-assisted**; nhãn của coder B (10 server) chưa nộp nên chưa có inter-rater agreement. Không gọi API, không chạy server, không đo hành vi agent.
 
 ## FACT — kết quả chính (L1 = metadata agent thấy lúc chạy)
 
@@ -111,6 +111,6 @@ Theo nhóm (đọc tên theo chữ, L2): web_search `ρ = 1.00` (cả 15 cặp c
 
 ## Liên quan
 
-- [[synthesis/Protocol: Real-Tool Failure-Domain Metadata Survey]]
+- [[synthesis/Protocol - Real-Tool Failure-Domain Metadata Survey]]
 - [[journal/2026-10-06-prior-art-refresh-vp-control-and-efd]]
 - [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]]

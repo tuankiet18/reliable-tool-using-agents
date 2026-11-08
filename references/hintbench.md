@@ -43,7 +43,7 @@ Tác giả báo cáo LLM mạnh phát hiện rủi ro tốt ở cấp trajectory
 ## Liên hệ với research này
 
 - [[concepts/agent-observability-and-runtime-monitoring]]
-- [[synthesis/Preliminary Gap: External Runtime Monitoring]]
+- [[synthesis/Preliminary Gap - External Runtime Monitoring]]
 
 ## Sources
 

@@ -68,7 +68,7 @@ RIVA là prior art trực tiếp chống lại mọi claim chung kiểu “dùng
 
 ## Related
 
-- [[synthesis/Research: Correlated Silent Tool Failures and Verification]]
-- [[synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Research - Correlated Silent Tool Failures and Verification]]
+- [[synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures]]
 - [[references/failing-tools]]
 

@@ -60,4 +60,4 @@ updated: 2026-09-29T12:38:00+07:00
 
 Liệu prompt làm rõ amount cùng ngân sách 10 bước có đủ để model hoàn tất clean task mà không làm mất khả năng phát hiện common-mode failure hay không? Chỉ thực hiện một rerun chẩn đoán sáu episodes sau khi đồng bộ đúng diff, dùng output directory mới, `max_steps=10`, cùng model/task/seed/policies/regimes. Không dùng run này làm confirmatory evidence; nếu vẫn không hoàn tất thì loại live-agent gate khỏi vai trò bằng chứng chính và giữ nó như negative feasibility result.
 
-Liên kết: [[journal/2026-09-14-full-live-agent-verification-gate]], [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]].
+Liên kết: [[journal/2026-09-14-full-live-agent-verification-gate]], [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]].

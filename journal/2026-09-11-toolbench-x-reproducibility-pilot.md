@@ -120,4 +120,4 @@ Kế hoạch thiết kế pilot harness 20–30 task đã bị hủy tại novel
 
 - [[references/toolbench-x]]
 - [[references/adaptive-fault-injection-task-failure-forecasting]]
-- [[synthesis/Preliminary Gap: External Runtime Monitoring]]
+- [[synthesis/Preliminary Gap - External Runtime Monitoring]]

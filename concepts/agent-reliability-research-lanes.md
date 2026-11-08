@@ -24,4 +24,4 @@ updated: 2026-09-10T00:00:00Z
 
 Bản đồ lĩnh vực tách các hướng: phát hiện/phục hồi lỗi (failure detection/recovery), least privilege, độ tin cậy dài hạn, lập kế hoạch khi tool lỗi, xác minh hoàn thành và runtime observability. Đây là cách hỗ trợ lập kế hoạch nghiên cứu; một hệ thống thực tế thường nằm trên nhiều hướng cùng lúc. ^[inferred]
 
-So sánh, bằng chứng và đánh giá tính khả thi trong ba tháng được duy trì tại [[synthesis/Research: Reliable Tool-Using AI Agents]].
+So sánh, bằng chứng và đánh giá tính khả thi trong ba tháng được duy trì tại [[synthesis/Research - Reliable Tool-Using AI Agents]].

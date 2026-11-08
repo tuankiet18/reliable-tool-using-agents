@@ -100,4 +100,4 @@ Viết **adapter smoke-test slice nhỏ nhất** cho một WorkBench safety case
 - [[projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate]]
 - [[journal/2026-09-20-secondary-schema-contract-revision]]
 - [[journal/2026-09-20-ai-review-provenance-correction]]
-- [[synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility]]
+- [[synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility]]

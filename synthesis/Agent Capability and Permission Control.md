@@ -73,7 +73,7 @@ ToolPrivBench là artifact khả thi nhất để reproduce evaluation, nhưng t
 
 ## Current status
 
-- [[synthesis/Preliminary Gap: Task-Aware Permission Inference]] — **REJECTED**.
-- [[synthesis/Preliminary Gap: Software-Evidence-Grounded Capability Scoping]] — **SURVIVES WITH REFINEMENT, PRELIMINARY**.
-- [[synthesis/Preliminary Gap: Progressive Capability Expansion]] — **REJECTED**.
-- [[synthesis/Preliminary Gap: Risk-Aware Human Escalation for Permissions]] — **WEAK, PRELIMINARY**.
+- [[synthesis/Preliminary Gap - Task-Aware Permission Inference]] — **REJECTED**.
+- [[synthesis/Preliminary Gap - Software-Evidence-Grounded Capability Scoping]] — **SURVIVES WITH REFINEMENT, PRELIMINARY**.
+- [[synthesis/Preliminary Gap - Progressive Capability Expansion]] — **REJECTED**.
+- [[synthesis/Preliminary Gap - Risk-Aware Human Escalation for Permissions]] — **WEAK, PRELIMINARY**.

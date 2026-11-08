@@ -47,6 +47,6 @@ Artifact này cung cấp pattern tốt cho ground truth: tách `fault present` k
 
 ## Related
 
-- [[synthesis/Research: Early Failure Detection in Tool-Using Agents]]
+- [[synthesis/Research - Early Failure Detection in Tool-Using Agents]]
 - [[references/from-confident-closing-to-silent-failure]]
 

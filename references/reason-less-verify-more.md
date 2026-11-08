@@ -42,5 +42,5 @@ Generic state-invariant gate không còn là novelty. Nhưng paper vô tình là
 ## Related
 
 - [[references/tau-bench]]
-- [[synthesis/Research: Correlated Silent Tool Failures and Verification]]
+- [[synthesis/Research - Correlated Silent Tool Failures and Verification]]
 

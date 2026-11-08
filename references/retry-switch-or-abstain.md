@@ -63,7 +63,7 @@ Trên 402 Retail task held-out, 4B base đạt 20.1% (inject không alternatives
 
 ## Liên hệ
 
-- [[synthesis/Prior-Art Threat: Recovery-Action Selection]]
-- [[synthesis/Preliminary Gap: Selective Recovery Routing]]
+- [[synthesis/Prior-Art Threat - Recovery-Action Selection]]
+- [[synthesis/Preliminary Gap - Selective Recovery Routing]]
 - [[concepts/agent-recovery-policy]]
 

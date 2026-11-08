@@ -7,7 +7,7 @@ sources:
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_ins32_rtx4060_20261002/raw.jsonl"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_ins32_rtx4060_20261002/summary.json"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_ins32_rtx4060_20261002/validity_audit.json"
-  - "synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic.md"
+  - "synthesis/Protocol Amendment - Exploratory RTX 4060 Safety Diagnostic.md"
 summary: >-
   Diagnostic INS-00032 chạy đủ tám cell và gate kiểm tra 12/12 refund attempts, nhưng mọi request đều là 0 EUR sau escalation; chưa đo được safety effect giữa selectors.
 provenance:
@@ -34,7 +34,7 @@ updated: 2026-10-02T01:44:04+07:00
 | `summary.json` | `2fa7b630c4439870e631e2d8ec632716587e2a13dd0473d2deaa1616aa1074c6` |
 | `validity_audit.json` | `ee17e08563db332588606c26785f814c816b4b67dd5852568685670f806b326a` |
 
-**FACT — cấu hình được người vận hành báo:** nhánh Windows-safe `codex/rtx4060-ins32-diagnostic@e265c358df3fd20a274f0ce3f6b53bc774694ed1`, upstream `trajectory-judge@d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5`, `qwen2.5:7b-instruct-q4_K_M`, `action_boundary`, `max_steps=10`, `max_tokens=180`, một worker; `21/21` tests và dry-run pass, 178.01 giây. Model/commit/thời gian là metadata từ báo cáo máy Windows, **không được chứng minh độc lập chỉ bằng ba JSON files**. Seed `809` đã được chọn hậu nghiệm theo [[synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic]].
+**FACT — cấu hình được người vận hành báo:** nhánh Windows-safe `codex/rtx4060-ins32-diagnostic@e265c358df3fd20a274f0ce3f6b53bc774694ed1`, upstream `trajectory-judge@d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5`, `qwen2.5:7b-instruct-q4_K_M`, `action_boundary`, `max_steps=10`, `max_tokens=180`, một worker; `21/21` tests và dry-run pass, 178.01 giây. Model/commit/thời gian là metadata từ báo cáo máy Windows, **không được chứng minh độc lập chỉ bằng ba JSON files**. Seed `809` đã được chọn hậu nghiệm theo [[synthesis/Protocol Amendment - Exploratory RTX 4060 Safety Diagnostic]].
 
 ## FACT — kết quả đối chiếu trực tiếp với trajectory
 
@@ -53,7 +53,7 @@ Agent đã nhìn thấy `lookup_order.days_since_purchase=56` và `get_policy.re
 
 Theo `verification_decision()`, nếu targeted seed `809`/random đưa **yêu cầu giả định** đúng `465.41 EUR`, hai nguồn cùng backend sẽ thống nhất ở số sai và bước kiểm tra này sẽ cho phép. Đây chỉ là **counterfactual code-level inference**, không phải hành vi đã quan sát hoặc live-agent policy effect. ^[inferred]
 
-**Không dùng:** `8/8` final state hoặc `0/8` unsafe refund để tuyên bố live-agent safety validation, giảm unsafe rate, hay model generalization. Kết quả không thay đổi evidence của main deterministic study và không nâng trạng thái `PRELIMINARY` của [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]].
+**Không dùng:** `8/8` final state hoặc `0/8` unsafe refund để tuyên bố live-agent safety validation, giảm unsafe rate, hay model generalization. Kết quả không thay đổi evidence của main deterministic study và không nâng trạng thái `PRELIMINARY` của [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]].
 
 ## Hướng sửa phép đo — chưa phải amendment cho run mới
 
@@ -65,4 +65,4 @@ Nếu sau này muốn đo safety effect bằng live agent, cần khóa **trướ
 
 [[journal/2026-09-30-rtx4060-live-agent-diagnostic]] từng ghi `/home/kiet/Downloads/raw.jsonl` SHA `59921cc...` và hai JSON cũ khác. Các path Downloads đã được tái sử dụng cho **lượt INS-00032**; không được xem nội dung mới ở đó là nguồn của `INS-00030`. Ngày 2026-10-02, ZIP do người vận hành chuyển lại đã được xác minh và cả năm artifact `INS-00030` khớp SHA-256 lịch sử; bản gốc nay nằm trong thư mục `results_live_agent_ins30_rtx4060_20260930/`. Khả năng re-audit lượt trước đã được khôi phục, nhưng đánh giá validity và kết luận nghiên cứu không đổi. ^[inferred]
 
-Liên kết: [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]], [[journal/2026-10-01-live-agent-diagnostic-instrumentation]], [[synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic]].
+Liên kết: [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]], [[journal/2026-10-01-live-agent-diagnostic-instrumentation]], [[synthesis/Protocol Amendment - Exploratory RTX 4060 Safety Diagnostic]].

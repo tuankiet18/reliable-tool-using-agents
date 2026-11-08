@@ -27,5 +27,5 @@ Artifact URL/license: **UNVERIFIED** trong full-text metadata đã kiểm tra.
 
 ## Liên hệ
 
-- [[synthesis/Prior-Art Threat: Agent Capability Control]]
-- [[synthesis/Preliminary Gap: Software-Evidence-Grounded Capability Scoping]]
+- [[synthesis/Prior-Art Threat - Agent Capability Control]]
+- [[synthesis/Preliminary Gap - Software-Evidence-Grounded Capability Scoping]]

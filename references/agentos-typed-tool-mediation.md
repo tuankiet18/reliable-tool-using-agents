@@ -84,7 +84,7 @@ README dùng API-compatible runtime, default `kimi-k2-0905-preview`; benchmark h
 ## Related
 
 - [[projects/reliable-tool-using-ai-agents/paper/related-work-citation-audit-2026-10-03]]
-- [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]]
+- [[synthesis/Prior-Art Threat - Provenance Metadata and Source Selection]]
 - [[references/look-before-you-leap-pre-action-verification]]
 - [[concepts/least-privilege-tool-use]]
 - [[concepts/agent-verification-and-premature-completion]]

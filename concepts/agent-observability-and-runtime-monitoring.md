@@ -26,4 +26,4 @@ updated: 2026-09-12T00:00:00Z
 
 **RESOLVED 2026-09-12:** External monitor có thể cảnh báo trước terminal failure với false-alarm/lead-time được hiệu chỉnh và chi phí thấp; PrefixGuard, AgentForesight, weakly supervised alerting và AgentTrajectorySentinel cung cấp direct evidence. Broad claim không còn là research gap. Phần còn chưa chắc là semantic verification cho schema-valid silent tool output khi telemetry không chứa anomaly đủ quan sát được.
 
-Xem [[synthesis/Research: Early Failure Detection in Tool-Using Agents]].
+Xem [[synthesis/Research - Early Failure Detection in Tool-Using Agents]].

@@ -13,7 +13,7 @@ sources:
   - "journal/2026-09-20-ai-review-provenance-correction.md"
   - "journal/2026-09-24-secondary-schema-v12-recheck.md"
   - "journal/2026-09-26-secondary-adapter-smoke-tests.md"
-  - "synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix.md"
+  - "synthesis/Protocol Amendment - Exploratory Secondary Runtime Matrix.md"
   - "journal/2026-09-28-secondary-exploratory-matrix.md"
   - "journal/2026-09-28-secondary-varied-schedule-replication.md"
   - "journal/2026-10-02-ins32-rtx4060-validity-audit.md"
@@ -212,7 +212,7 @@ Xem [[journal/2026-09-14-full-live-agent-verification-gate]].
 
 **H1:** Provenance policy giảm unsafe refund dưới common-mode fault, không tăng unsafe refund ở clean, và trade-off clean accuracy nhỏ hơn safety gain dưới fault.
 
-Thiết kế main study đã được đóng băng tại [[synthesis/Protocol: Action-Boundary Provenance Verification Main Study]]. Bất kỳ thay đổi nào sau đây phải được ghi là amendment.
+Thiết kế main study đã được đóng băng tại [[synthesis/Protocol - Action-Boundary Provenance Verification Main Study]]. Bất kỳ thay đổi nào sau đây phải được ghi là amendment.
 
 ## Main deterministic study — 2026-09-15
 
@@ -251,7 +251,7 @@ Search 2024–2026 đã bác bỏ ba novelty framings rộng: TEA-CXA đã làm 
 
 Chưa tìm thấy direct prior art có đủ exact combination của RQ1: known failure-domain metadata, correlated schema-valid silent tool corruption, mandatory boundary trước irreversible action, independent corroborator selection, và random-source baseline ở matched `K=2`.
 
-**Decision:** Giữ nguyên canonical RQ1 với điều kiện `Given accurate failure-domain metadata`. Không thêm metadata learning/calibration vào RQ vì sẽ tạo một research problem thứ hai và vượt scope 12 tuần. Xem [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]].
+**Decision:** Giữ nguyên canonical RQ1 với điều kiện `Given accurate failure-domain metadata`. Không thêm metadata learning/calibration vào RQ vì sẽ tạo một research problem thứ hai và vượt scope 12 tuần. Xem [[synthesis/Prior-Art Threat - Provenance Metadata and Source Selection]].
 
 ## External-validity artifact gate
 
@@ -265,7 +265,7 @@ Manual gate đã đóng băng `12` cases: sáu WorkBench và sáu Agent-SafetyBe
 
 Verdict: **`CONDITIONAL PASS FOR BENCHMARK-DERIVED ADAPTATION`**. Case semantics và action boundaries đến từ upstream benchmarks, nhưng same-domain replicas, independent corroborators, failure domains và fault injection đều là additions của project. Kết quả secondary sau này chỉ có thể hỗ trợ semantic breadth; không được gọi là native external benchmark reproduction. Xem [[journal/2026-09-18-benchmark-derived-case-audit]].
 
-Secondary protocol gốc được giữ nguyên; AI-assisted review/amendment hạ `ASB-267` khỏi unsafe denominator, giữ `WB-295` ngoài safety cohort và sửa mutation `ASB-977`; current denominator là **8 safety cases/6 domains**. Re-check v1.2 pass specification và 32-episode smoke pass adapter mechanics. Do protocol gốc yêu cầu human review nhưng thực tế không có, [[synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix]] công khai deviation và hạ full run thành exploratory/internal.
+Secondary protocol gốc được giữ nguyên; AI-assisted review/amendment hạ `ASB-267` khỏi unsafe denominator, giữ `WB-295` ngoài safety cohort và sửa mutation `ASB-977`; current denominator là **8 safety cases/6 domains**. Re-check v1.2 pass specification và 32-episode smoke pass adapter mechanics. Do protocol gốc yêu cầu human review nhưng thực tế không có, [[synthesis/Protocol Amendment - Exploratory Secondary Runtime Matrix]] công khai deviation và hạ full run thành exploratory/internal.
 
 Full matrix đầu tiên có 704 deterministic episodes/352 pairs, với cùng `−0.375` difference trên từng case và degenerate CI; giữ artifact này như kết quả lịch sử. Replication theo varied schedule có 1.056 episodes/528 pairs, chạy lại byte-identical. Ở `targeted_common_mode_25`, unsafe actions là `59/96` (`random_k`) so với `24/96` (`provenance_k`); mean case difference `−0.3646`, median `−0.375`, cải thiện mô tả trên `8/8` cases và case-cluster bootstrap CI `[-0.396,-0.323]`. Utility-only false blocks là `9/24` so với `18/24`, task success `15/24` so với `6/24`; safety task success là zero dưới targeted fault vì gate không recovery. Varied placements làm differences không còn đồng nhất, nhưng cohort purposive, topology/faults/policies/oracles vẫn do project định nghĩa, contract còn candidate và không có human review. Do đó đây là sensitivity/implementation result exploratory, không chứng minh generalization hoặc native benchmark validity. `WB-295` diagnostic; `WB-403`/`ASB-1572` utility-only. Xem [[journal/2026-09-28-secondary-exploratory-matrix]] và [[journal/2026-09-28-secondary-varied-schedule-replication]].
 
@@ -295,12 +295,12 @@ Full matrix đầu tiên có 704 deterministic episodes/352 pairs, với cùng `
 
 - [[projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03]]
 - [[projects/reliable-tool-using-ai-agents/paper/paper-draft]]
-- [[synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures]]
-- [[synthesis/Research: Correlated Silent Tool Failures and Verification]]
+- [[synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Research - Correlated Silent Tool Failures and Verification]]
 - [[journal/2026-09-14-correlated-tool-verification-next-gate]]
 - [[journal/2026-09-14-full-live-agent-verification-gate]]
-- [[synthesis/Protocol: Action-Boundary Provenance Verification Main Study]]
-- [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]]
+- [[synthesis/Protocol - Action-Boundary Provenance Verification Main Study]]
+- [[synthesis/Prior-Art Threat - Provenance Metadata and Source Selection]]
 - [[journal/2026-09-15-external-validity-artifact-gate]]
-- [[synthesis/Protocol: Secondary Multi-Domain Benchmark-Derived Adaptation]]
+- [[synthesis/Protocol - Secondary Multi-Domain Benchmark-Derived Adaptation]]
 - [[journal/2026-10-02-ins32-rtx4060-validity-audit]]

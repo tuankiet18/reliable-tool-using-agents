@@ -40,7 +40,7 @@ Tác giả báo cáo khoảng cách giữa proprietary/open-source model; task s
 
 - [[concepts/reliable-tool-using-agent-lifecycle]]
 - [[references/tau-bench]]
-- [[synthesis/Preliminary Gap: Selective Recovery Routing]]
+- [[synthesis/Preliminary Gap - Selective Recovery Routing]]
 
 ## Sources
 

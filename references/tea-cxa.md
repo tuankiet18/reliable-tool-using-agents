@@ -33,6 +33,6 @@ TEA-CXA dùng agentic reinforcement learning để học practical trustworthine
 
 ## Related
 
-- [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]]
-- [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Prior-Art Threat - Provenance Metadata and Source Selection]]
+- [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]
 

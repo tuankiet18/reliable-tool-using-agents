@@ -34,4 +34,4 @@ FAVA là prior art trực tiếp chống lại claim quá rộng về task-aware
 ## Liên hệ
 
 - [[synthesis/Agent Capability and Permission Control]]
-- [[synthesis/Prior-Art Threat: Agent Capability Control]]
+- [[synthesis/Prior-Art Threat - Agent Capability Control]]

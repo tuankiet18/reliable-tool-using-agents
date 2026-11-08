@@ -4,8 +4,8 @@ title: >-
 category: journal
 tags: [research-log, experiment, verification, reproducibility, external-validity]
 sources:
-  - "synthesis/Protocol: Secondary Varied-Schedule Replication.md"
-  - "synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix.md"
+  - "synthesis/Protocol - Secondary Varied-Schedule Replication.md"
+  - "synthesis/Protocol Amendment - Exploratory Secondary Runtime Matrix.md"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/secondary_schema_contract_v1.json"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/secondary_varied_schedule_v1/schedule.jsonl"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/generate_secondary_varied_schedule.py"
@@ -94,7 +94,7 @@ So với matrix 704-row trước (`40/64` vs `16/64`, mọi case `−0.375`), sc
 
 ## Artifact links
 
-- [[synthesis/Protocol: Secondary Varied-Schedule Replication]]
-- [[synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix]]
+- [[synthesis/Protocol - Secondary Varied-Schedule Replication]]
+- [[synthesis/Protocol Amendment - Exploratory Secondary Runtime Matrix]]
 - [[projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate]]
 - [[projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/README]]

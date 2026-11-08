@@ -39,5 +39,5 @@ EnvTrustBench vẫn là motivation tốt, nhưng bị loại khỏi vai trò exe
 
 ## Related
 
-- [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]]
-- [[synthesis/Research: Correlated Silent Tool Failures and Verification]]
+- [[synthesis/Prior-Art Threat - Provenance Metadata and Source Selection]]
+- [[synthesis/Research - Correlated Silent Tool Failures and Verification]]

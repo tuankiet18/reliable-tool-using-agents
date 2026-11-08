@@ -37,7 +37,7 @@ lifecycle_changed: 2026-10-06
 
 ## INFERENCE — Tác động lên novelty
 
-1. Claim "nguồn đối chứng độc lập về failure domain giảm quyết định sai dưới common-mode failure so với cùng nguồn/ngẫu nhiên" đã được VP-Control đo trước, với thiết kế mạnh hơn (preregistered, live study, artifact công khai). Nhãn "SURVIVES WITH REFINEMENT" trong [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]] cần được xem lại, vì audit [[journal/2026-10-04-pre-action-prior-art-audit]] không có hai paper này (cả hai xuất bản trước ngày audit).
+1. Claim "nguồn đối chứng độc lập về failure domain giảm quyết định sai dưới common-mode failure so với cùng nguồn/ngẫu nhiên" đã được VP-Control đo trước, với thiết kế mạnh hơn (preregistered, live study, artifact công khai). Nhãn "SURVIVES WITH REFINEMENT" trong [[synthesis/Prior-Art Threat - Provenance Metadata and Source Selection]] cần được xem lại, vì audit [[journal/2026-10-04-pre-action-prior-art-audit]] không có hai paper này (cả hai xuất bản trước ngày audit).
 2. Hiện tượng "thêm voter không sửa common-mode" (EFD) và "evidence lineage quan trọng hơn model diversity" (VP-Control) không còn là phát hiện mới. Bài của vault nên trình bày chúng như **replication độc lập trong miền refund**, không phải discovery.
 3. Khoảng trống còn lại (cả hai paper tự nêu là giới hạn): **độ chính xác của lineage metadata** và **lineage discovery**. Robustness gate hiện có của vault (wrong_25 + leakage 0.10 FAIL) chính là phần liên quan trực tiếp nhất tới khoảng trống này; cần làm nó mạnh và hệ thống hơn (nhiều mức noise, sweep có đường cong), thay vì chỉ một điều kiện.
 4. Prevalence thực tế của shared backend giữa các tool vẫn chưa được hai paper đo. Search snippet (chưa đọc sâu) cho thấy các measurement study MCP có số liệu liên quan: 88,6% official MCP server dựa trên REST API (arXiv:2507.16044), dependency monoculture trong marketplace (arXiv:2509.25292). Cần đọc trực tiếp trước khi trích.
@@ -108,4 +108,4 @@ Mean effect mô phỏng (`≈ −0.088`) khớp dự đoán giải tích độc 
 
 - [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]]
 - [[projects/reliable-tool-using-ai-agents/paper/related-work-citation-audit-2026-10-03]]
-- [[synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures]]

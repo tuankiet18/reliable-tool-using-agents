@@ -30,4 +30,4 @@ updated: 2026-09-13T00:00:00Z
 
 **Kiểm tra bác bỏ:** Chỉ ra evaluator benchmark có sẵn không thể dùng online, hoặc tìm công trình tương đương đo cùng đánh đổi false-completion/chi phí.
 
-**Phần được chuyển sang gap hẹp:** [[synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures]] hỏi liệu các verifier có cùng backend/failure domain nên cùng xác nhận sai hay không.
+**Phần được chuyển sang gap hẹp:** [[synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures]] hỏi liệu các verifier có cùng backend/failure domain nên cùng xác nhận sai hay không.

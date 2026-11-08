@@ -150,6 +150,6 @@ Không claim một method hoàn toàn mới. Claim có thể bảo vệ là:
 
 ## Related
 
-- [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
-- [[synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures]]
 - [[journal/2026-09-15-adversarial-prior-art-provenance-metadata]]

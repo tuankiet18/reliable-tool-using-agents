@@ -25,7 +25,7 @@ updated: 2026-09-15T00:12:18+07:00
 
 ## Mục tiêu
 
-Thực hiện bước đầu tiên sau internal preregistration trong [[synthesis/Protocol: Action-Boundary Provenance Verification Main Study]]: tạo bộ task chính độc lập với toàn bộ exploratory và pilot. Việc này diễn ra trước khi có main harness hoặc main result, để tránh chọn task sau khi đã thấy outcome.
+Thực hiện bước đầu tiên sau internal preregistration trong [[synthesis/Protocol - Action-Boundary Provenance Verification Main Study]]: tạo bộ task chính độc lập với toàn bộ exploratory và pilot. Việc này diễn ra trước khi có main harness hoặc main result, để tránh chọn task sau khi đã thấy outcome.
 
 ## FACT — Split được tạo
 
@@ -64,6 +64,6 @@ Implement deterministic action-boundary harness tách biệt với exploratory a
 
 ## Related
 
-- [[synthesis/Protocol: Action-Boundary Provenance Verification Main Study]]
-- [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Protocol - Action-Boundary Provenance Verification Main Study]]
+- [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]
 - [[journal/2026-09-14-full-live-agent-verification-gate]]

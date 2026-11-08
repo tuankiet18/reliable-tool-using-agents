@@ -41,5 +41,5 @@ Paper báo false success chiếm `45–48%` failures trong single-control `tau2-
 ## Related
 
 - [[concepts/agent-verification-and-premature-completion]]
-- [[synthesis/Research: Early Failure Detection in Tool-Using Agents]]
+- [[synthesis/Research - Early Failure Detection in Tool-Using Agents]]
 

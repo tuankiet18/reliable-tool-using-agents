@@ -44,5 +44,5 @@ Paper là prior art trực tiếp cho state/postcondition verification. Vì vậ
 ## Related
 
 - [[concepts/agent-verification-and-premature-completion]]
-- [[synthesis/Research: Correlated Silent Tool Failures and Verification]]
+- [[synthesis/Research - Correlated Silent Tool Failures and Verification]]
 

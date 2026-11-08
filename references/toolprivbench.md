@@ -40,6 +40,6 @@ Public GitHub cung cấp evaluation scripts; Hugging Face công bố data JSONL 
 
 ## Liên hệ
 
-- [[synthesis/Preliminary Gap: Progressive Capability Expansion]]
-- [[synthesis/Prior-Art Threat: Agent Capability Control]]
+- [[synthesis/Preliminary Gap - Progressive Capability Expansion]]
+- [[synthesis/Prior-Art Threat - Agent Capability Control]]
 - [[concepts/least-privilege-tool-use]]

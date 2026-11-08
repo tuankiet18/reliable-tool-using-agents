@@ -48,7 +48,7 @@ Hai tools khác tên có thể cùng đọc một backend sai. Study so sánh vi
 
 **INFERENCE — GIÁ TRỊ CÓ THỂ BẢO VỆ:** Đặc tả rõ assumptions, kiểm tra mechanism, phân tích safety–utility và cung cấp artifact kiểm tra lại được. Không giới thiệu nguyên lý independence mới, thuật toán agent mới hoặc guarantee production safety. Kết quả chính phần lớn suy được từ constructed topology; số rows lớn không khắc phục điều này.
 
-RQ/H1 canonical nằm ở paper §1 và [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]. Không đổi RQ để làm kết quả trông mạnh hơn.
+RQ/H1 canonical nằm ở paper §1 và [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]. Không đổi RQ để làm kết quả trông mạnh hơn.
 
 ## 2. Claim–evidence coverage
 

@@ -96,6 +96,6 @@ Tên đầy đủ, authors, URLs và DOI nằm ở References của [[projects/r
 
 - [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]]
 - [[projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03]]
-- [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]]
-- [[synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Prior-Art Threat - Provenance Metadata and Source Selection]]
+- [[synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures]]
 - [[projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents]]

@@ -51,10 +51,10 @@ Tổng cộng `final_state_correct=3/6`, `unsafe_refund=0/6`, `reply=4/6`; hai e
 
 ## INFERENCE — validity decision
 
-Local inference, UTF-8 persistence, parseable trajectory và mandatory boundary mechanics đã qua feasibility gate. `3/3` clean final states cho thấy prompt/step cap mới tránh tình trạng `0/6` của smoke trước. Nhưng experimental-validity gate cho RQ **chưa qua**: sample chỉ là một task false-negative, hai policy đều tránh refund sai ở targeted regime, baseline self-verification không tuân thủ hai source domains, và final-state metric bỏ sót post-success side effects. Kết quả này không nâng claim của [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]] hay paper thành live-agent validation. ^[inferred]
+Local inference, UTF-8 persistence, parseable trajectory và mandatory boundary mechanics đã qua feasibility gate. `3/3` clean final states cho thấy prompt/step cap mới tránh tình trạng `0/6` của smoke trước. Nhưng experimental-validity gate cho RQ **chưa qua**: sample chỉ là một task false-negative, hai policy đều tránh refund sai ở targeted regime, baseline self-verification không tuân thủ hai source domains, và final-state metric bỏ sót post-success side effects. Kết quả này không nâng claim của [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]] hay paper thành live-agent validation. ^[inferred]
 
 ## OPEN QUESTION và bước tiếp theo
 
 Trước khi chạy thêm model, cần một preflight offline cho live-agent gate: (1) chọn ít nhất một task có expected action `escalate` mà targeted fault tạo false-positive eligibility; `INS-00032` là ứng viên đã xuất hiện trong 36-episode gate cũ, (2) định nghĩa riêng final-state correctness, actual escalation-tool use, duplicate refund attempts, và reply correctness, (3) xác nhận liệu agent nên dừng sau successful irreversible action hay được phép tiếp tục tới `reply`, rồi ghi protocol amendment trước khi sửa runner. Chỉ sau đó cân nhắc một diagnostic nhỏ; không scale lên ma trận 72 episodes từ run này. ^[inferred]
 
-Liên kết: [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]], [[journal/2026-09-14-full-live-agent-verification-gate]], [[synthesis/Protocol: Action-Boundary Provenance Verification Main Study]].
+Liên kết: [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]], [[journal/2026-09-14-full-live-agent-verification-gate]], [[synthesis/Protocol - Action-Boundary Provenance Verification Main Study]].

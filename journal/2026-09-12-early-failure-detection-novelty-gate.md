@@ -75,7 +75,7 @@ Adversarial prior-art search cho `task-grounded runtime verification of schema-v
 
 ## Related
 
-- [[synthesis/Research: Early Failure Detection in Tool-Using Agents]]
-- [[synthesis/Preliminary Gap: External Runtime Monitoring]]
+- [[synthesis/Research - Early Failure Detection in Tool-Using Agents]]
+- [[synthesis/Preliminary Gap - External Runtime Monitoring]]
 - [[references/real-time-detection-and-repair-agent-failures]]
 

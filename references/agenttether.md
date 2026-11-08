@@ -48,8 +48,8 @@ Paper chưa xác lập recovery router tối thiểu, model-agnostic cho tool fa
 
 - [[concepts/agent-observability-and-runtime-monitoring]]
 - [[concepts/agent-recovery-policy]]
-- [[synthesis/Preliminary Gap: Selective Recovery Routing]]
-- [[synthesis/Deep Comparison: Recovery Routing Anchor Works]]
+- [[synthesis/Preliminary Gap - Selective Recovery Routing]]
+- [[synthesis/Deep Comparison - Recovery Routing Anchor Works]]
 
 ## Sources
 

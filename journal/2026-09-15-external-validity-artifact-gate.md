@@ -118,6 +118,6 @@ Viết và đóng băng `Secondary Multi-Domain Adaptation Protocol` trước kh
 
 ## Related
 
-- [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
-- [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]]
+- [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Prior-Art Threat - Provenance Metadata and Source Selection]]
 - [[references/envtrustbench]]

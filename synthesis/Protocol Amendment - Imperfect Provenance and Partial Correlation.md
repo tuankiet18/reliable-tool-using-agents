@@ -4,7 +4,7 @@ title: >-
 category: synthesis
 tags: [research-protocol, ai-agents, verification, tool-failure, experiment]
 sources:
-  - "synthesis/Protocol: Action-Boundary Provenance Verification Main Study.md"
+  - "synthesis/Protocol - Action-Boundary Provenance Verification Main Study.md"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/tasks_robustness_30.manifest.json"
   - "https://github.com/mohammadi-hadi/trajectory-judge"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_robustness_gate"
@@ -123,6 +123,6 @@ Nếu chỉ condition `accurate, ℓ=0` có lợi thế, kết luận là `FRAGI
 
 ## Related
 
-- [[synthesis/Protocol: Action-Boundary Provenance Verification Main Study]]
-- [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Protocol - Action-Boundary Provenance Verification Main Study]]
+- [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]
 - [[journal/2026-09-15-action-boundary-main-study]]

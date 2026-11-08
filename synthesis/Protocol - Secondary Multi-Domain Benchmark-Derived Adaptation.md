@@ -6,7 +6,7 @@ tags: [research-protocol, verification, tool-failure, experiment, external-valid
 sources:
   - "journal/2026-09-18-benchmark-derived-case-audit.md"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/external_case_audit_12.json"
-  - "synthesis/Protocol: Action-Boundary Provenance Verification Main Study.md"
+  - "synthesis/Protocol - Action-Boundary Provenance Verification Main Study.md"
   - "https://github.com/cmu-soda/ProvenanceGuard"
 summary: >-
   Protocol đóng băng secondary pilot 12 case đa domain: matched K=2, fault regimes, oracle, phân tầng safety/utility và decision gates trước khi viết adapter.
@@ -28,7 +28,7 @@ updated: 2026-09-19T10:32:56+07:00
 
 ## Vì sao cần experiment này?
 
-Main study cho thấy phương pháp có lợi trong một synthetic refund workflow [[synthesis/Protocol: Action-Boundary Provenance Verification Main Study]]. Secondary pilot hỏi một câu hẹp hơn external validation: **mechanism có còn quan sát được khi giữ nguyên user goal và action boundary của nhiều task gốc khác nhau hay không?** Chúng ta không kiểm tra prevalence của common-mode faults trong production.
+Main study cho thấy phương pháp có lợi trong một synthetic refund workflow [[synthesis/Protocol - Action-Boundary Provenance Verification Main Study]]. Secondary pilot hỏi một câu hẹp hơn external validation: **mechanism có còn quan sát được khi giữ nguyên user goal và action boundary của nhiều task gốc khác nhau hay không?** Chúng ta không kiểm tra prevalence của common-mode faults trong production.
 
 ### English canonical secondary question
 
@@ -36,7 +36,7 @@ Main study cho thấy phương pháp có lợi trong một synthetic refund work
 
 ### Giải thích tiếng Việt
 
-Giữ nguyên hành động cần làm trong 12 task upstream, rồi thêm các nguồn bằng chứng để kiểm tra. Nếu primary và một tool khác dùng chung backend đều trả lời sai mà không báo lỗi, chọn nguồn đối chứng độc lập có giảm quyết định sai ở nhiều loại task hay chỉ ở refund? Đây là câu hỏi **secondary/exploratory**; RQ chính vẫn nằm tại [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]].
+Giữ nguyên hành động cần làm trong 12 task upstream, rồi thêm các nguồn bằng chứng để kiểm tra. Nếu primary và một tool khác dùng chung backend đều trả lời sai mà không báo lỗi, chọn nguồn đối chứng độc lập có giảm quyết định sai ở nhiều loại task hay chỉ ở refund? Đây là câu hỏi **secondary/exploratory**; RQ chính vẫn nằm tại [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]].
 
 ### Secondary hypothesis — English
 
@@ -147,4 +147,4 @@ Thực hiện reviewer sign-off và freeze 12 case cards/mutation schemas. Chỉ
 - [[journal/2026-09-18-benchmark-derived-case-audit]]
 - [[journal/2026-09-15-external-validity-artifact-gate]]
 - [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]]
-- [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]

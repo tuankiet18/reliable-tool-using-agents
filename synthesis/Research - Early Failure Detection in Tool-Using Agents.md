@@ -165,4 +165,4 @@ Thực hiện một adversarial prior-art search có phạm vi hẹp cho: **task
 - [[references/from-confident-closing-to-silent-failure]]
 - [[references/trajectory-judge]]
 - [[references/toolbench-x]]
-- [[synthesis/Preliminary Gap: External Runtime Monitoring]]
+- [[synthesis/Preliminary Gap - External Runtime Monitoring]]

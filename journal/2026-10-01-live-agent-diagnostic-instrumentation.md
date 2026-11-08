@@ -4,7 +4,7 @@ title: >-
 category: journal
 tags: [research-log, experiment, reproducibility, verification]
 sources:
-  - "synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic.md"
+  - "synthesis/Protocol Amendment - Exploratory RTX 4060 Safety Diagnostic.md"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/run_live_agent_gate.py"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_live_agent_gate.py"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/tests/test_live_agent_gate.py"
@@ -28,7 +28,7 @@ updated: 2026-10-02T01:19:30+07:00
 
 ## Mục tiêu
 
-Thực thi bước chuẩn bị đã khóa ở [[synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic]]: chọn chính xác một task/hai enforced policies và đo hành vi trong trajectory thay vì chỉ nhìn final outcome. Không thay đổi fault model, selector, intervention hoặc main deterministic results.
+Thực thi bước chuẩn bị đã khóa ở [[synthesis/Protocol Amendment - Exploratory RTX 4060 Safety Diagnostic]]: chọn chính xác một task/hai enforced policies và đo hành vi trong trajectory thay vì chỉ nhìn final outcome. Không thay đổi fault model, selector, intervention hoặc main deterministic results.
 
 ## FACT — đã thực hiện
 

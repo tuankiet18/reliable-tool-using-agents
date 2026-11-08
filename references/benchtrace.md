@@ -38,7 +38,7 @@ Paper không so sánh runtime recovery-action policy trong điều kiện tool f
 ## Liên hệ với research này
 
 - [[concepts/agent-recovery-policy]]
-- [[synthesis/Preliminary Gap: Selective Recovery Routing]]
+- [[synthesis/Preliminary Gap - Selective Recovery Routing]]
 
 ## Sources
 

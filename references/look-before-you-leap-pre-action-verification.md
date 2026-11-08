@@ -73,5 +73,5 @@ Trong phạm vi đọc, chưa có comparison failure-domain selector dưới sha
 - [[references/agentos-typed-tool-mediation]]
 - [[references/reason-less-verify-more]]
 - [[concepts/agent-verification-and-premature-completion]]
-- [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]]
+- [[synthesis/Prior-Art Threat - Provenance Metadata and Source Selection]]
 - [[journal/2026-10-04-pre-action-prior-art-audit]]

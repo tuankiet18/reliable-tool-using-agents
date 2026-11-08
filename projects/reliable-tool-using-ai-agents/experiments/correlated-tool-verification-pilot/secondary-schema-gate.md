@@ -38,7 +38,7 @@ updated: 2026-09-28T14:27:00+07:00
 
 > [!warning] Các phần specification/preflight bên dưới là **kiểm tra static**; chúng không tự chứng minh hiệu quả. Full runtime result mới nhất được ghi ở cuối trang. Mọi `S/I` và `failure_domain_id` là topology **do project thêm**; original WorkBench/Agent-SafetyBench không cung cấp các backend độc lập này. Run vẫn không chứng minh live agent sẽ tự chọn `fault_action` hoặc generalize ra ngoài simulator.
 
-> [!important] **Trạng thái mới — 2026-09-28:** Full 704-row runtime matrix đã chạy và rerun byte-identical theo [[journal/2026-09-28-secondary-exploratory-matrix]]. Vì protocol gốc yêu cầu human reviewer nhưng thực tế chỉ có AI cross-review, run được hạ cấp thành exploratory/internal bằng [[synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix]]. Không gọi đây là external validation, benchmark reproduction hoặc confirmatory result; contract JSON vẫn giữ trạng thái machine-readable `SCHEMA_CANDIDATE_NOT_FROZEN`.
+> [!important] **Trạng thái mới — 2026-09-28:** Full 704-row runtime matrix đã chạy và rerun byte-identical theo [[journal/2026-09-28-secondary-exploratory-matrix]]. Vì protocol gốc yêu cầu human reviewer nhưng thực tế chỉ có AI cross-review, run được hạ cấp thành exploratory/internal bằng [[synthesis/Protocol Amendment - Exploratory Secondary Runtime Matrix]]. Không gọi đây là external validation, benchmark reproduction hoặc confirmatory result; contract JSON vẫn giữ trạng thái machine-readable `SCHEMA_CANDIDATE_NOT_FROZEN`.
 
 > [!important] **Provenance correction:** Bảng verdict bên dưới là **AI-assisted cross-review** do chủ dự án một mình yêu cầu một AI khác thực hiện; không có teammate/human reviewer hay independent human sign-off. Trích dẫn code/trace là đối tượng cần kiểm tiếp, không phải bảo chứng từ con người. [[journal/2026-09-20-ai-review-provenance-correction]]
 
@@ -192,7 +192,7 @@ Theo báo cáo của AI cross-review, nó đã đối chiếu ProvenanceGuard `3
 
 ## Full exploratory runtime matrix — 2026-09-28
 
-Sau [[synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix]], runner `src/run_secondary_matrix.py` đã chạy đủ 704 rows/352 pairs và lặp lại cùng SHA-256. Analyzer `src/analyze_secondary_matrix.py` ghi kết quả descriptive vào `results_secondary_matrix/analysis-summary.json`.
+Sau [[synthesis/Protocol Amendment - Exploratory Secondary Runtime Matrix]], runner `src/run_secondary_matrix.py` đã chạy đủ 704 rows/352 pairs và lặp lại cùng SHA-256. Analyzer `src/analyze_secondary_matrix.py` ghi kết quả descriptive vào `results_secondary_matrix/analysis-summary.json`.
 
 | Regime | `random_k` unsafe / safety rows | `provenance_k` unsafe / safety rows | Diễn giải ngắn |
 |---|---:|---:|---|
@@ -207,7 +207,7 @@ Sau [[synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix]], runn
 
 ## Varied-schedule replication — 2026-09-28
 
-[[synthesis/Protocol: Secondary Varied-Schedule Replication]] tạo schedule theo case/seed/purpose và hash trước khi chạy. Runner mới `src/run_secondary_varied.py` tái sử dụng typed executor/oracle hiện có mà không sửa kết quả cũ; analyzer mới `src/analyze_secondary_varied.py` resample case chứ không coi seed là task độc lập. 1.056 rows/528 pairs chạy hai lần byte-identical.
+[[synthesis/Protocol - Secondary Varied-Schedule Replication]] tạo schedule theo case/seed/purpose và hash trước khi chạy. Runner mới `src/run_secondary_varied.py` tái sử dụng typed executor/oracle hiện có mà không sửa kết quả cũ; analyzer mới `src/analyze_secondary_varied.py` resample case chứ không coi seed là task độc lập. 1.056 rows/528 pairs chạy hai lần byte-identical.
 
 Ở `targeted_common_mode_25`, unsafe accepted actions là `59/96` (`random_k`) và `24/96` (`provenance_k`). Per-case differences thay đổi trong khoảng `−0.250` đến `−0.417`, cả tám case đều âm; mean `−0.3646`, case-cluster bootstrap percentile CI `[-0.396,-0.323]` (chỉ mô tả cohort purposive). Utility false blocks là `9/24` so với `18/24`; utility task success `15/24` so với `6/24`; clean success hai policy 100%. Safety task success tại targeted 25% là zero cho cả hai vì verifier không có recovery action.
 
@@ -216,13 +216,13 @@ Sau [[synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix]], runn
 ## Related
 
 - [[projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package]]
-- [[synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility]]
-- [[synthesis/Protocol: Secondary Multi-Domain Benchmark-Derived Adaptation]]
+- [[synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility]]
+- [[synthesis/Protocol - Secondary Multi-Domain Benchmark-Derived Adaptation]]
 - [[journal/2026-09-20-secondary-schema-preflight]]
 - [[journal/2026-09-20-secondary-schema-contract-revision]]
 - [[journal/2026-09-20-ai-review-provenance-correction]]
 - [[journal/2026-09-24-secondary-schema-v12-recheck]]
-- [[synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix]]
+- [[synthesis/Protocol Amendment - Exploratory Secondary Runtime Matrix]]
 - [[journal/2026-09-28-secondary-exploratory-matrix]]
-- [[synthesis/Protocol: Secondary Varied-Schedule Replication]]
+- [[synthesis/Protocol - Secondary Varied-Schedule Replication]]
 - [[journal/2026-09-28-secondary-varied-schedule-replication]]

@@ -30,4 +30,4 @@ updated: 2026-09-10T00:00:00Z
 
 ## Điều không biến nó thành gap mới
 
-AuthBench chưa có dynamic execution, nhưng chuyển sang dynamic permission nói chung cũng overlap Progent/FAVA; xem [[synthesis/Preliminary Gap: Progressive Capability Expansion]].
+AuthBench chưa có dynamic execution, nhưng chuyển sang dynamic permission nói chung cũng overlap Progent/FAVA; xem [[synthesis/Preliminary Gap - Progressive Capability Expansion]].

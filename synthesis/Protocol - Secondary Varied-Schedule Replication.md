@@ -4,7 +4,7 @@ title: >-
 category: synthesis
 tags: [research-protocol, experiment, verification, reproducibility, external-validity]
 sources:
-  - "synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix.md"
+  - "synthesis/Protocol Amendment - Exploratory Secondary Runtime Matrix.md"
   - "journal/2026-09-28-secondary-exploratory-matrix.md"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/secondary_schema_contract_v1.json"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/validate_secondary_schema_contract.py"
@@ -98,7 +98,7 @@ Trước khi chạy action executor, xuất toàn bộ row keys, selector/fault 
 
 Artifacts, schedule hash, per-case counts, negative controls và limitations nằm tại [[journal/2026-09-28-secondary-varied-schedule-replication]]. Contract còn trạng thái `1.2-recheck-candidate`; chưa có human review. Ma trận cũ vẫn giữ nguyên ở `results_secondary_matrix/`. Supervisor feedback về RQ/methodology có thể tiếp tục làm rõ framing; không được nâng exploratory result thành confirmatory evidence.
 
-- [[synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix]] — protocol và kết quả tiền nhiệm.
+- [[synthesis/Protocol Amendment - Exploratory Secondary Runtime Matrix]] — protocol và kết quả tiền nhiệm.
 - [[journal/2026-09-28-secondary-exploratory-matrix]] — lý do phải thay schedule.
 - [[journal/2026-09-28-secondary-varied-schedule-replication]] — varied-schedule result, pair-level outputs và giới hạn diễn giải.
 - [[projects/reliable-tool-using-ai-agents/paper/paper-draft]] — living manuscript.

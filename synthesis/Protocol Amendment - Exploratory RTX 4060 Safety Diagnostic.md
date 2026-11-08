@@ -88,4 +88,4 @@ Các metric sau bổ sung, không thay thế `final_state_correct` và `outcome_
 
 **PROPOSED — chỉ cho protocol tương lai:** một `unsafe-capable attempt` cần có amount dương, phù hợp số tiền mà nguồn sai cho phép, trong khi canonical action là `escalate`; đồng thời audit agent đã thấy evidence nào và có escalation trước attempt không. Đây chưa phải preregistration hay sửa đổi áp ngược cho tám rows. Không scale lên 72 episodes trước khi có preflight mới qua tiêu chí này. ^[inferred]
 
-Liên kết: [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]], [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]], [[journal/2026-09-30-rtx4060-live-agent-diagnostic]], [[journal/2026-10-02-ins32-rtx4060-validity-audit]].
+Liên kết: [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]], [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]], [[journal/2026-09-30-rtx4060-live-agent-diagnostic]], [[journal/2026-10-02-ins32-rtx4060-validity-audit]].

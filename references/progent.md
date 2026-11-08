@@ -47,5 +47,5 @@ Code và reproduction scripts được paper công bố tại https://github.com
 ## Liên hệ
 
 - [[synthesis/Agent Capability and Permission Control]]
-- [[synthesis/Prior-Art Threat: Agent Capability Control]]
-- [[synthesis/Preliminary Gap: Progressive Capability Expansion]]
+- [[synthesis/Prior-Art Threat - Agent Capability Control]]
+- [[synthesis/Preliminary Gap - Progressive Capability Expansion]]

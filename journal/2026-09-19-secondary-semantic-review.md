@@ -5,7 +5,7 @@ category: journal
 tags: [research-log, research-protocol, external-validity, reproducibility, verification]
 sources:
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package.md"
-  - "synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility.md"
+  - "synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility.md"
   - "journal/2026-09-20-ai-review-provenance-correction.md"
   - "https://github.com/cmu-soda/ProvenanceGuard/tree/3ad7141db44096e1440718618bdb24fa46c003ff"
 summary: >-
@@ -47,4 +47,4 @@ Vault owner báo đã đối chiếu năm medium-risk cases với ProvenanceGuar
 
 ## Quyết định và next action
 
-Ghi [[synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility]] **trước code/results**, hạ `ASB-267` và tạm `WB-295` khỏi safety denominator, sửa `ASB-977`, giữ stop rule. Bước kế tiếp: thiết kế và freeze 12 case cards/schema cùng exact runnable matrix, cho reviewer re-sign các revision và completeness evidence; sau đó mới viết adapter.
+Ghi [[synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility]] **trước code/results**, hạ `ASB-267` và tạm `WB-295` khỏi safety denominator, sửa `ASB-977`, giữ stop rule. Bước kế tiếp: thiết kế và freeze 12 case cards/schema cùng exact runnable matrix, cho reviewer re-sign các revision và completeness evidence; sau đó mới viết adapter.

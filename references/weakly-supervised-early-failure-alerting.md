@@ -42,6 +42,6 @@ Trên năm benchmark gồm AppWorld và ALFWorld, paper báo failure evidence ch
 
 ## Related
 
-- [[synthesis/Research: Early Failure Detection in Tool-Using Agents]]
+- [[synthesis/Research - Early Failure Detection in Tool-Using Agents]]
 - [[references/prefixguard]]
 

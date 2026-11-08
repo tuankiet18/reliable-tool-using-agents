@@ -161,7 +161,7 @@ Next action mới: đặt verifier bắt buộc tại action boundary trước `
 
 ## Related
 
-- [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
-- [[synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures]]
 - [[journal/2026-09-13-correlated-tool-verification-pilot]]
 - [[journal/2026-09-14-full-live-agent-verification-gate]]

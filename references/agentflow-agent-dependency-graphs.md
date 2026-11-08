@@ -33,5 +33,5 @@ Paper triển khai cho năm agent frameworks và đánh giá trên `AgentZoo` g�
 ## Related
 
 - [[references/grade-agent-dependency-execution]]
-- [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]]
+- [[synthesis/Prior-Art Threat - Provenance Metadata and Source Selection]]
 

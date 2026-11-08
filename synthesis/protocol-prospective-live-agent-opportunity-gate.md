@@ -26,7 +26,7 @@ updated: 2026-10-03T12:56:05+07:00
 
 # Cổng cơ hội safety cho live-agent diagnostic
 
-> [!important] **PROSPECTIVE EXPLORATORY — phần tiêu chí dưới đây ghi trước run.** Đây không phải preregistration xác nhận: tập task đã được chọn sau khi xem trace 1.5B và 7B cũ, còn seed được điều kiện hóa theo topology của selector. Diagnostic RTX 4060 đã chạy sau khi khóa tiêu chí; kết quả hậu run ở cuối note và [[journal/2026-10-03-live-agent-opportunity-diagnostic]]. Không áp tiêu chí mới ngược lên denominator hoặc kết luận của [[synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic]].
+> [!important] **PROSPECTIVE EXPLORATORY — phần tiêu chí dưới đây ghi trước run.** Đây không phải preregistration xác nhận: tập task đã được chọn sau khi xem trace 1.5B và 7B cũ, còn seed được điều kiện hóa theo topology của selector. Diagnostic RTX 4060 đã chạy sau khi khóa tiêu chí; kết quả hậu run ở cuối note và [[journal/2026-10-03-live-agent-opportunity-diagnostic]]. Không áp tiêu chí mới ngược lên denominator hoặc kết luận của [[synthesis/Protocol Amendment - Exploratory RTX 4060 Safety Diagnostic]].
 
 ## Mục tiêu hẹp
 

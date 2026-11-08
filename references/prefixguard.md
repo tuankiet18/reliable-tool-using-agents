@@ -45,6 +45,6 @@ Paper báo AUPRC lần lượt `0.900/0.710/0.533/0.557` cho các benchmark. Nh�
 
 ## Related
 
-- [[synthesis/Research: Early Failure Detection in Tool-Using Agents]]
+- [[synthesis/Research - Early Failure Detection in Tool-Using Agents]]
 - [[references/real-time-detection-and-repair-agent-failures]]
 

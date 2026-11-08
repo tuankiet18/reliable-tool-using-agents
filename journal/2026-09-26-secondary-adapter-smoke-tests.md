@@ -94,7 +94,7 @@ accepted action` với `BLOCK` ở sáu application domains trong current safety
 - Không có secondary effect estimate; 704 candidate rows chưa được chạy.
 - [[projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate]]
   là nguồn trạng thái contract/runnable matrix.
-- [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]
   giữ RQ hiện hành và giới hạn claim.
 
 ## Next action

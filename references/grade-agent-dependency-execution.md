@@ -37,6 +37,6 @@ Code công khai tại `yzhao062/grade`, license MIT; core stack tương đối n
 
 ## Related
 
-- [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]]
+- [[synthesis/Prior-Art Threat - Provenance Metadata and Source Selection]]
 - [[references/agentflow-agent-dependency-graphs]]
 

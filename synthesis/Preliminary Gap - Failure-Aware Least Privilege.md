@@ -26,4 +26,4 @@ updated: 2026-09-10T00:00:00Z
 
 **Điều còn hạn chế của ToolPrivBench:** simulation, tool độc lập đủ dùng, 5 turns và không có real side effects. Đây là limitation evaluation, **không tự tạo gap** cho 12-week project.
 
-Xem [[synthesis/Prior-Art Threat: Agent Capability Control]] và [[synthesis/Preliminary Gap: Progressive Capability Expansion]].
+Xem [[synthesis/Prior-Art Threat - Agent Capability Control]] và [[synthesis/Preliminary Gap - Progressive Capability Expansion]].

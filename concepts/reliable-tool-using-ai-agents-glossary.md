@@ -188,7 +188,7 @@ updated: 2026-09-13T00:00:00Z
 
 **Trong research này:** Ứng viên để giảm thiên lệch tự đánh giá của agent.
 
-**Related:** [[synthesis/Preliminary Gap: External Runtime Monitoring]]
+**Related:** [[synthesis/Preliminary Gap - External Runtime Monitoring]]
 
 ## Selective Recovery Routing
 
@@ -198,7 +198,7 @@ updated: 2026-09-13T00:00:00Z
 
 **Trong research này:** Hướng rộng này đã bị `REJECTED` vì direct prior art; giữ thuật ngữ để đọc các note lịch sử.
 
-**Related:** [[synthesis/Preliminary Gap: Selective Recovery Routing]]
+**Related:** [[synthesis/Preliminary Gap - Selective Recovery Routing]]
 
 ## Fault Persistence
 
@@ -218,7 +218,7 @@ updated: 2026-09-13T00:00:00Z
 
 **Trong research này:** Can thiệp tối thiểu có thể triển khai như wrapper độc lập với agent framework.
 
-**Related:** [[concepts/agent-recovery-policy]], [[synthesis/Preliminary Gap: Selective Recovery Routing]]
+**Related:** [[concepts/agent-recovery-policy]], [[synthesis/Preliminary Gap - Selective Recovery Routing]]
 
 ## Common-Mode Failure
 
@@ -228,7 +228,7 @@ updated: 2026-09-13T00:00:00Z
 
 **Trong research này:** Đây là fault regime chính để kiểm tra liệu cross-tool agreement có tạo false confidence hay không.
 
-**Related:** [[synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures]], [[references/riva]]
+**Related:** [[synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures]], [[references/riva]]
 
 ## Failure Domain
 
@@ -238,7 +238,7 @@ updated: 2026-09-13T00:00:00Z
 
 **Trong research này:** Selector phải ưu tiên evidence từ các failure domain khác nhau, không chỉ tool name khác nhau.
 
-**Related:** [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
+**Related:** [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]
 
 ## Provenance-Aware Verification
 
@@ -248,7 +248,7 @@ updated: 2026-09-13T00:00:00Z
 
 **Trong research này:** Đây là biến can thiệp của candidate RQ, không đồng nghĩa với generic citation tracking.
 
-**Related:** [[synthesis/Research: Correlated Silent Tool Failures and Verification]]
+**Related:** [[synthesis/Research - Correlated Silent Tool Failures and Verification]]
 
 ## Fixed-K Cross-Validation
 
@@ -258,4 +258,4 @@ updated: 2026-09-13T00:00:00Z
 
 **Trong research này:** Đây là baseline gần với RIVA; hạn chế là `K` distinct calls không bảo đảm evidence độc lập.
 
-**Related:** [[references/riva]], [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
+**Related:** [[references/riva]], [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]

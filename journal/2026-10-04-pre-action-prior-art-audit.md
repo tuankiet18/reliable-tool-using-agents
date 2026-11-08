@@ -7,7 +7,7 @@ sources:
   - "projects/reliable-tool-using-ai-agents/paper/related-work-citation-audit-2026-10-03.md"
   - "references/agentos-typed-tool-mediation.md"
   - "references/look-before-you-leap-pre-action-verification.md"
-  - "synthesis/Prior-Art Threat: Provenance Metadata and Source Selection.md"
+  - "synthesis/Prior-Art Threat - Provenance Metadata and Source Selection.md"
   - "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md"
   - "projects/reliable-tool-using-ai-agents/paper/artifact-inventory.json"
 created: 2026-10-04T10:04:00+07:00
@@ -86,7 +86,7 @@ Temporary downloads nằm tại `/tmp/agentos-prior-art-Ki3JmQ`; không xem đâ
 ## Bạn nên đọc theo thứ tự nào?
 
 1. Note này: hiểu vì sao đang kiểm tra lập luận thay vì chạy thêm.
-2. [[synthesis/Prior-Art Threat: Provenance Metadata and Source Selection]] → phần **Cập nhật hiện hành — 2026-10-04**: đọc bảng ba lớp và threat matrix.
+2. [[synthesis/Prior-Art Threat - Provenance Metadata and Source Selection]] → phần **Cập nhật hiện hành — 2026-10-04**: đọc bảng ba lớp và threat matrix.
 3. [[projects/reliable-tool-using-ai-agents/paper/figure-guide]]: tự trả lời vì sao zero unsafe không đồng nghĩa task recovery; sau đó đọc từng paper note nếu cần evidence.
 
 ## Bước tiếp theo ở cuối lượt search — đã thực hiện

@@ -47,8 +47,8 @@ Phần trích xuất hiện có chưa xác lập policy chọn action đã hiệ
 ## Liên hệ với research này
 
 - [[concepts/agent-recovery-policy]]
-- [[synthesis/Preliminary Gap: Selective Recovery Routing]]
-- [[synthesis/Deep Comparison: Recovery Routing Anchor Works]]
+- [[synthesis/Preliminary Gap - Selective Recovery Routing]]
+- [[synthesis/Deep Comparison - Recovery Routing Anchor Works]]
 
 ## Sources
 

@@ -4,7 +4,7 @@ title: >-
 category: synthesis
 tags: [research-protocol, provenance, external-validity, tool-use, evidence]
 sources:
-  - "synthesis/Protocol: Real-Tool Failure-Domain Metadata Survey.md"
+  - "synthesis/Protocol - Real-Tool Failure-Domain Metadata Survey.md"
   - "journal/2026-10-09-real-tool-metadata-survey-results.md"
   - "projects/reliable-tool-using-ai-agents/paper/proof-j-condition.md"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_tool_survey.py"
@@ -171,7 +171,7 @@ Dùng lại `analyze_tool_survey.py` và `analyze_tool_survey_origin.py` (đổi
 
 ## Liên quan
 
-- [[synthesis/Protocol: Real-Tool Failure-Domain Metadata Survey]]
+- [[synthesis/Protocol - Real-Tool Failure-Domain Metadata Survey]]
 - [[journal/2026-10-09-real-tool-metadata-survey-results]]
 - [[projects/reliable-tool-using-ai-agents/paper/proof-j-condition]]
 - [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]]

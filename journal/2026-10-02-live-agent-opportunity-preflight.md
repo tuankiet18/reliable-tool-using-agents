@@ -45,4 +45,4 @@ Do fault chỉ nằm ở verifier, pilot dự kiến kiểm tra **boundary conta
 
 Đã ghi [[synthesis/protocol-prospective-live-agent-opportunity-gate]] **trước** mọi 7B run mới. Chưa chạy 16 cells và chưa thay đổi RQ/paper effect claim. Trước khi dùng RTX 4060: đồng bộ code/protocol tới máy đó, đối chiếu SHA-256, chạy unit tests và dry-run 16 cells; chỉ sau đó chạy một exploratory local diagnostic nếu không có blocker. Output phải ở thư mục mới và báo toàn bộ cells, kể cả negative findings. Nếu opportunity gate fail, dừng live-agent scaling và nêu limitation trong paper. ^[inferred]
 
-Liên kết: [[journal/2026-10-02-ins32-rtx4060-validity-audit]], [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]], [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]].
+Liên kết: [[journal/2026-10-02-ins32-rtx4060-validity-audit]], [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]], [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]].

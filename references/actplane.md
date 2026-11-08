@@ -31,5 +31,5 @@ Nó đã kết nối agent context với OS-level enforcement trong coding harne
 
 ## Liên hệ
 
-- [[synthesis/Preliminary Gap: Software-Evidence-Grounded Capability Scoping]]
-- [[synthesis/Prior-Art Threat: Agent Capability Control]]
+- [[synthesis/Preliminary Gap - Software-Evidence-Grounded Capability Scoping]]
+- [[synthesis/Prior-Art Threat - Agent Capability Control]]

@@ -38,7 +38,7 @@ Paper không nhắm tới tool fault tạm thời/kéo dài không đối kháng
 ## Liên hệ với research này
 
 - [[concepts/least-privilege-tool-use]]
-- [[synthesis/Preliminary Gap: Failure-Aware Least Privilege]]
+- [[synthesis/Preliminary Gap - Failure-Aware Least Privilege]]
 
 ## Sources
 

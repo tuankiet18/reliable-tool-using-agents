@@ -6,8 +6,8 @@ tags: [research-log, research-protocol, external-validity, reproducibility, veri
 sources:
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package.md"
   - "journal/2026-09-19-workbench-full-state-gate.md"
-  - "synthesis/Protocol: Secondary Multi-Domain Benchmark-Derived Adaptation.md"
-  - "synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility.md"
+  - "synthesis/Protocol - Secondary Multi-Domain Benchmark-Derived Adaptation.md"
+  - "synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility.md"
   - "journal/2026-09-20-ai-review-provenance-correction.md"
 summary: >-
   Bốn case được AI cross-review về semantic/oracle; không có human sign-off, cohort tám safety và schema/matrix vẫn chưa freeze.
@@ -58,6 +58,6 @@ Nếu giữ `WB-295` ngoài runnable set, trần số học là `11 cases × 8 s
 
 ## Related
 
-- [[synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility]]
-- [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility]]
+- [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]
 - [[projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents]]

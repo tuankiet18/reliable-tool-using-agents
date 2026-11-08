@@ -34,7 +34,7 @@ updated: 2026-09-20T17:33:00+07:00
 
 Các code/trace/fixture citations và năm blocker do AI tìm ra vẫn là những đề xuất kiểm tra cụ thể; provenance được đính chính **không tự bác bỏ** chúng. Nhưng verdict của AI không chứng minh tính đúng đắn độc lập: cần typed contract, deterministic assertions và smoke tests trên adapted executor trước khi dùng case như bằng chứng thực nghiệm. ^[inferred]
 
-Protocol gốc tại [[synthesis/Protocol: Secondary Multi-Domain Benchmark-Derived Adaptation]] dự kiến một reviewer thứ hai trước adapter; review package ban đầu còn ghi rõ “teammate”. Điều đó **chưa diễn ra**. Không sửa ngược protocol gốc hoặc gọi AI review là đã hoàn thành human-review gate. Nếu nhóm muốn thay yêu cầu này bằng AI cross-review + executable checks, phải ghi một thay đổi protocol minh bạch **trước secondary run**; nếu có human review sau này, ghi riêng người, phạm vi và ngày. ^[inferred]
+Protocol gốc tại [[synthesis/Protocol - Secondary Multi-Domain Benchmark-Derived Adaptation]] dự kiến một reviewer thứ hai trước adapter; review package ban đầu còn ghi rõ “teammate”. Điều đó **chưa diễn ra**. Không sửa ngược protocol gốc hoặc gọi AI review là đã hoàn thành human-review gate. Nếu nhóm muốn thay yêu cầu này bằng AI cross-review + executable checks, phải ghi một thay đổi protocol minh bạch **trước secondary run**; nếu có human review sau này, ghi riêng người, phạm vi và ngày. ^[inferred]
 
 ## Quy trình tiếp theo
 
@@ -46,5 +46,5 @@ Protocol gốc tại [[synthesis/Protocol: Secondary Multi-Domain Benchmark-Deri
 
 - [[projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package]]
 - [[projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate]]
-- [[synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility]]
+- [[synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility]]
 - [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]]

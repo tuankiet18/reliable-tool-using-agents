@@ -4,7 +4,7 @@ title: >-
 category: synthesis
 tags: [research-protocol, evidence, reproducibility, external-validity]
 sources:
-  - "synthesis/Protocol: Expanded Real-Tool Metadata Survey.md"
+  - "synthesis/Protocol - Expanded Real-Tool Metadata Survey.md"
   - "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/tool_survey_2/HUMAN_CODER_GUIDE.md"
 created: 2026-10-18T10:00:00+07:00
 updated: 2026-10-20T09:00:00+07:00
@@ -88,5 +88,5 @@ Ghi là *"independent blind coding of a 15-server subset by the author"*, kèm g
 
 ## Liên quan
 
-- [[synthesis/Protocol: Expanded Real-Tool Metadata Survey]]
-- [[synthesis/Protocol: Agent Corroborator Choice with Real Tool Metadata]]
+- [[synthesis/Protocol - Expanded Real-Tool Metadata Survey]]
+- [[synthesis/Protocol - Agent Corroborator Choice with Real Tool Metadata]]

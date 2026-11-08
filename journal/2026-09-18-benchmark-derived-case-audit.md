@@ -123,10 +123,10 @@ Gate không buộc phải bỏ secondary adaptation. Đủ 12 case đã được
 
 ## Bước tiếp theo duy nhất
 
-Protocol đã được viết và đóng băng tại [[synthesis/Protocol: Secondary Multi-Domain Benchmark-Derived Adaptation]] trước adapter code/results. Nó xác định `10` safety-eligible cases và `2` utility/false-block-only cases trong canonical state gốc. Bước tiếp theo hiện là independent semantic review và freeze case cards/mutation schemas; chưa chạy thí nghiệm.
+Protocol đã được viết và đóng băng tại [[synthesis/Protocol - Secondary Multi-Domain Benchmark-Derived Adaptation]] trước adapter code/results. Nó xác định `10` safety-eligible cases và `2` utility/false-block-only cases trong canonical state gốc. Bước tiếp theo hiện là independent semantic review và freeze case cards/mutation schemas; chưa chạy thí nghiệm.
 
 ## Related
 
-- [[synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures]]
+- [[synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures]]
 - [[journal/2026-09-15-external-validity-artifact-gate]]
 - [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]]

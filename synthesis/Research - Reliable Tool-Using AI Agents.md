@@ -69,10 +69,10 @@ Goal → plan → choose action/tool → execute → observe/update state → ve
 
 ## Trạng thái các research gap đã điều tra
 
-1. [[synthesis/Preliminary Gap: Selective Recovery Routing]] — `REJECTED`: direct recovery-action-selection prior art.
-2. [[synthesis/Preliminary Gap: External Runtime Monitoring]] — `REJECTED`: direct online prefix monitoring/forecasting prior art.
+1. [[synthesis/Preliminary Gap - Selective Recovery Routing]] — `REJECTED`: direct recovery-action-selection prior art.
+2. [[synthesis/Preliminary Gap - External Runtime Monitoring]] — `REJECTED`: direct online prefix monitoring/forecasting prior art.
 3. Capability control — Task-Aware Permission Inference và Progressive Expansion bị `REJECTED`; Software-Evidence-Grounded Scoping chỉ `SURVIVES WITH REFINEMENT`; Risk-Aware Escalation là `WEAK`.
-4. [[synthesis/Preliminary Gap: Completion Verification Under Degraded Tools]] — chưa qua adversarial search mới; không được coi là accepted gap.
+4. [[synthesis/Preliminary Gap - Completion Verification Under Degraded Tools]] — chưa qua adversarial search mới; không được coi là accepted gap.
 
 ## Hướng có vẻ khả thi nhất (đã lỗi thời sau prior-art search)
 
@@ -84,13 +84,13 @@ Hướng dẫn đầu trước đây là **selective recovery routing khi tool f
 - So sánh retry cố định, replan/fallback cố định, self-reflection và selective router minh bạch.
 - Đo verified success, chi phí, action trùng/không an toàn và abstention—không chỉ success.
 
-**CẬP NHẬT 2026-09-10:** Broad idea này bị [[references/retry-switch-or-abstain]] phủ trực tiếp. Xem [[synthesis/Prior-Art Threat: Recovery-Action Selection]]. Không tạo candidate RQ cho hướng này.
+**CẬP NHẬT 2026-09-10:** Broad idea này bị [[references/retry-switch-or-abstain]] phủ trực tiếp. Xem [[synthesis/Prior-Art Threat - Recovery-Action Selection]]. Không tạo candidate RQ cho hướng này.
 
 ## Bằng chứng cần có tiếp theo — cập nhật 2026-09-12
 
 1. Không chọn broad recovery routing hoặc broad early failure detection.
 2. Giữ [[references/toolbench-x]] làm secondary stress test, không làm benchmark chính.
-3. Kiểm tra adversarial nhánh task-grounded runtime semantic verification cho schema-valid silent tool output; xem [[synthesis/Research: Early Failure Detection in Tool-Using Agents]].
+3. Kiểm tra adversarial nhánh task-grounded runtime semantic verification cho schema-valid silent tool output; xem [[synthesis/Research - Early Failure Detection in Tool-Using Agents]].
 
 ## Sources Consulted
 

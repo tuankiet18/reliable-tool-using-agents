@@ -160,7 +160,7 @@ Gate dùng `--max-steps 6` sau preflight cho thấy decision action xảy ra tr�
 
 ### Exploratory RTX 4060 safety diagnostic — `INS-00032`
 
-Theo [[synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic]], chỉ chạy case
+Theo [[synthesis/Protocol Amendment - Exploratory RTX 4060 Safety Diagnostic]], chỉ chạy case
 `INS-00032`, hai seeds `701,809`, hai regimes và hai enforced policies. Seed `809` được chọn sau
 khi xem trace cũ nên đây **chỉ là diagnostic**, không phải confirmatory effect test. Cần cùng
 upstream `trajectory-judge@d0ee54aadcaa69ea7368c2dcae71fa181cffa3f5` và model local
@@ -288,7 +288,7 @@ effect estimate và không đưa `WB-295` vào safety denominator.
 
 ## Full exploratory secondary matrix
 
-Ngày 2026-09-28, sau khi ghi [[synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix]],
+Ngày 2026-09-28, sau khi ghi [[synthesis/Protocol Amendment - Exploratory Secondary Runtime Matrix]],
 đã chạy 704 episodes offline (11 runnable cases × 8 seeds × 4 regimes × 2 policies). Amendment
 công khai rằng chỉ có AI-assisted cross-review, không có human/peer review; do vậy kết quả chỉ là
 exploratory benchmark-derived adaptation, không phải external validation hay confirmatory evidence.

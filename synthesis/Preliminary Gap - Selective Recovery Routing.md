@@ -31,7 +31,7 @@ updated: 2026-09-10T00:00:00Z
 
 ### REJECTED
 
-Phiên bản rộng của gap bị bác bỏ. [[references/retry-switch-or-abstain]] đã xây `BENCH2ROBUST` với scenario `retry_works`, `switch_needed`, `impossible`; dùng Bayesian Tool Memory (BTM) và DAPO RL để hỗ trợ/huấn luyện behavior `retry`, `switch/fallback`, `abstain/escalate`; đo S1 retry success, S2 switch success và premature escalation. [[synthesis/Prior-Art Threat: Recovery-Action Selection]] lưu bằng chứng và các phản ví dụ.
+Phiên bản rộng của gap bị bác bỏ. [[references/retry-switch-or-abstain]] đã xây `BENCH2ROBUST` với scenario `retry_works`, `switch_needed`, `impossible`; dùng Bayesian Tool Memory (BTM) và DAPO RL để hỗ trợ/huấn luyện behavior `retry`, `switch/fallback`, `abstain/escalate`; đo S1 retry success, S2 switch success và premature escalation. [[synthesis/Prior-Art Threat - Recovery-Action Selection]] lưu bằng chứng và các phản ví dụ.
 
 Điều này không phủ định giá trị thực tiễn của recovery routing. Nó phủ định phát biểu novelty rộng “chưa ai nghiên cứu chọn recovery action động dưới tool failure”.
 
@@ -89,5 +89,5 @@ Một condition hẹp có thể còn mở là: `không RL`, `auditable controlle
 
 ## Liên hệ
 
-- [[synthesis/Deep Comparison: Recovery Routing Anchor Works]]
-- [[synthesis/Prior-Art Threat: Recovery-Action Selection]]
+- [[synthesis/Deep Comparison - Recovery Routing Anchor Works]]
+- [[synthesis/Prior-Art Threat - Recovery-Action Selection]]
