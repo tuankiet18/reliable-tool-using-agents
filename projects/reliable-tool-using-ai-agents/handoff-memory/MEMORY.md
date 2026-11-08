@@ -1,0 +1,3 @@
+- [Beginner researcher, mentor style](user-beginner-researcher-mentoring.md) — first research project; Vietnamese mentoring; course + first-paper goal
+- [Protocol-first research workflow](research-workflow-protocol-first.md) — confirm protocol before data, amendments, ledger before paper, ask before push
+- [Keep English technical terms](feedback-keep-english-technical-terms.md) — Vietnamese docs keep jargon in English, per author request
