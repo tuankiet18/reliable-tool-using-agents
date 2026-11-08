@@ -232,6 +232,14 @@ matched unsafe-capable pair, dừng mở rộng live-agent và giữ đây là l
 
 Kết quả thực tế: `16/16` rows hợp lệ, `6/6` refund attempts có boundary events nhưng đều `0 EUR` và sau escalation; targeted `BOUNDARY_UNSAFE_CAPABLE=0/8`, matched pairs `0/4`. Vì vậy **đã dừng scaling**. `0/16` unsafe accepted refunds không đo được hiệu quả tương đối của hai policies. Xem [[journal/2026-10-03-live-agent-opportunity-diagnostic]] và artifact `results_live_agent_opportunity_16cells_rtx4060_20261003/`.
 
+## RQ4 — LLM chọn corroborator với metadata tool thật (2026-11-08)
+
+Thí nghiệm hành vi, không phải mô phỏng quyết định: hai LLM (`gpt-4o-mini`, `gpt-4.1-mini`) chọn một corroborator trong 56 bộ ba tool MCP thật. Protocol: `synthesis/Protocol - Agent Corroborator Choice with Real Tool Metadata.md` (v1.0, A1, A2).
+
+- `data/rq4_agent_choice/` — `choice_sets.json`, `tool_texts.json`, `runner/items.jsonl` (khóa SHA-256), `runner/run_rq4.py` (`--backend openai`), `runner/results_gpt4omini.jsonl`, `runner/results_gpt41mini.jsonl` (1.008 dòng mỗi file).
+- `src/rq4_analyze.py` → `results_rq4_20261108/analysis.json` (H-A1, H-A2, Holm); `src/rq4_breakdowns.py` → `results_rq4_breakdowns_20261108/breakdowns.json` (theo loại thông tin và câu `reason`, mô tả).
+- Không nằm trong inventory 21 file đã khóa của gói tái lập; cần `OPENAI_API_KEY` để chạy lại lời gọi (xem `paper/reproducibility-package.md` §6b).
+
 ## Internal pre-specified deterministic main study
 
 Main study dùng frozen split `data/tasks_main_30.json` (`INS-00060`–`INS-00089`) và kiểm tra hash

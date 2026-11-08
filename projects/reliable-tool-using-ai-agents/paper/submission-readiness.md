@@ -82,6 +82,9 @@ Mẫu số khác nhau phải được giữ khi export bảng/hình. Không gộ
 
 Không gọi đây là giải quyết scientific findings về novelty, constructed topology, external validity hoặc human review. Các limitations được ghi nhận, không bị xóa sau editorial pass.
 
+> [!note] Cập nhật 2026-11-08
+> Tài liệu này mô tả trạng thái v0.8 (2026-10-05) và **chưa được viết lại**. Từ đó paper đã lên v2.0: có thêm điều kiện `J`, hai survey và thí nghiệm LLM, và controlled replication được hạ thành Baseline. Xem [[projects/reliable-tool-using-ai-agents/HANDOFF-2026-11-08]] (trạng thái và việc còn lại) và [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]] (claim C33–C52). Verdict MAJOR REVISION của audit 2026-10-03 vẫn chưa được đóng; mọi review trong hồ sơ là AI-assisted.
+
 ## 4. Checklist trước khi nộp bài môn học
 
 ### Đã có bằng chứng

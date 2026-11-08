@@ -42,7 +42,7 @@ lifecycle: draft
 lifecycle_changed: 2026-09-09
 tier: core
 created: 2026-09-09T17:16:31Z
-updated: 2026-10-05T09:14:46+07:00
+updated: 2026-11-08T23:45:00+07:00
 ---
 
 # AI Agent dùng tool đáng tin cậy
@@ -67,6 +67,9 @@ Mục tiêu của dự án là tìm và kiểm chứng một can thiệp về đ
 - Không tiếp tục xây ToolBench-X hoặc local 20–30-task harness như thesis contribution.
 
 ## Candidate RQ hiện tại
+
+> [!important] Cập nhật 2026-11-08: cấu trúc hiện tại của bài
+> Sau prior-art refresh (VP-Control, EFD) câu hỏi bên dưới được trình bày là **thí nghiệm nền (Baseline)**, không còn là RQ chính. Paper v2.0 có **ba RQ chính**: **RQ1** điều kiện chất lượng nhãn `J = r − φ > 0` (có proof và kiểm định đăng ký trước), **RQ2** hai survey MCP server (42 và 78 server) và **RQ3** hành vi của hai LLM nhỏ khi chọn corroborator với metadata thật (gpt-4o-mini, gpt-4.1-mini; nhãn provider giảm việc chọn tool cùng nguồn khi prompt yêu cầu độc lập, nhưng tăng khi prompt trung tính). Trong ledger, journal và protocol, các RQ vẫn mang số cũ (Baseline = RQ1, J = RQ2, survey = RQ3, LLM = RQ4). Trạng thái và việc còn lại: [[projects/reliable-tool-using-ai-agents/HANDOFF-2026-11-08]]. Đoạn dưới đây là bối cảnh lịch sử đến 2026-10-05.
 
 Reviewer-style audit ngày 2026-10-03 cho verdict **MAJOR REVISION**: main/robustness đo **action-oracle correctness**, không thực thi refund rồi đo final state; main `false_block` gộp actor abstention với gate blocking. Targeted main condition có `0/50` correct expected-refund outcomes ở cả hai policies. Paper v0.2–v0.4 sửa construct, thêm analytical/counterfactual diagnostics và thu hẹp Contributions/Related Work; v0.5 thêm structure/appendix/reproduction package, v0.6 thêm frozen-data figures. Raw, estimates và RQ/H1 không đổi; không study episodes mới hoặc human sign-off. Course formatting/author proofreading và human methodology feedback còn mở. Xem [[projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03]] và ledger.
 
@@ -170,10 +173,12 @@ Living paper version `0.9` nằm tại [[projects/reliable-tool-using-ai-agents/
 - [[synthesis/protocol-prospective-live-agent-opportunity-gate]] — tiêu chí và 16-cell exploratory matrix cho diagnostic tương lai.
 - [[journal/2026-10-02-live-agent-opportunity-preflight]] — kiểm tra offline, code/test status và giới hạn claim trước RTX run.
 - [[journal/2026-10-03-live-agent-opportunity-diagnostic]] — kiểm tra artifact 16 cells, opportunity gate `0/4`, stop scaling và giới hạn claim live-agent.
+- [[journal/2026-11-08-rq4-agent-choice-results]] — thí nghiệm LLM chọn corroborator (RQ3 trong paper): H-A1/H-A2 đạt, prompt trung tính đảo chiều.
+- [[synthesis/Protocol - Agent Corroborator Choice with Real Tool Metadata]] — protocol, hypothesis ghi trước và Amendment A2 của thí nghiệm LLM.
 
 ## Living paper
 
-- [[projects/reliable-tool-using-ai-agents/paper/paper-draft]] — manuscript version 0.9, controlled results và clean-venv core replay; chưa submission approval.
+- [[projects/reliable-tool-using-ai-agents/paper/paper-draft]] — manuscript **v2.0** (2026-11-08): Baseline + ba RQ (điều kiện `J`, hai survey, thí nghiệm LLM); chưa submission approval. Bản rút gọn: [[projects/reliable-tool-using-ai-agents/paper/paper-short]].
 - [[projects/reliable-tool-using-ai-agents/paper/figure-guide]] — hướng dẫn đọc safety, utility và metadata sensitivity trước buổi review.
 - [[projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger]] — claim, evidence, scope và prohibited wording.
 - [[projects/reliable-tool-using-ai-agents/paper/supervisor-methodology-rq-briefing]] — briefing ngắn để giảng viên review RQ, methodology, contribution và validation plan; không yêu cầu review case/oracle chi tiết.

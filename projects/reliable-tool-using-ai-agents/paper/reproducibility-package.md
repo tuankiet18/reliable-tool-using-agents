@@ -147,6 +147,15 @@ Hai SVG và figure-data.json tại `paper/figures/frozen-evidence-v1/` được 
 
 9/9 figure tests, 7/7 main và 8/8 robustness focused tests đã đạt trong lượt figure revision; không full suite. Hai SVG đã render/kiểm trực quan trên Linux. Derived figure outputs không thay hoặc mở rộng inventory 21 frozen artifacts; generator/tests/output hashes được ghi riêng trong manifest revision.
 
+## 6b. RQ4 / RQ3 trong paper — thí nghiệm LLM (2026-11-08)
+
+Khác phần core, thí nghiệm này **cần OpenAI API** và dùng model đóng, nên chạy lại sẽ không cho đúng từng dòng (OpenAI không bảo đảm seed hoàn toàn xác định; mỗi lời gọi ghi `system_fingerprint`).
+
+- **Chạy lại lời gọi:** `python data/rq4_agent_choice/runner/run_rq4.py --backend openai --model <tên model> --out <file mới>` với `OPENAI_API_KEY` trong môi trường; runner từ chối chạy nếu `items.jsonl` khác SHA-256 `e0b33c12…be086`. Resumable theo `item_id`.
+- **Phân tích lại từ raw, không cần API:** `python src/rq4_analyze.py --results <hai file raw> --out <thư mục mới>` và `python src/rq4_breakdowns.py --results <hai file raw> --out <thư mục mới>`.
+- **Hash:** raw `gpt-4o-mini` `20e6de8d…df0a`, raw `gpt-4.1-mini` `02d2f7d9…fe59`; `breakdowns.json` `d0b1d705…51d0`; `rq4_breakdowns.py` `67ccb128…5acd`.
+- **Giới hạn:** hai model cùng hãng, đóng; model đổi sau khi khóa protocol v1.0 (Amendment A2, trước lời gọi đầu tiên); chưa nằm trong inventory 21 file đã khóa.
+
 ## 7. Tiêu chí bàn giao
 
 Danh sách này chứa cả việc hoàn thiện bài môn học và public artifact release. Hai đích không tương đương; checklist được tách theo đích và owner tại [[projects/reliable-tool-using-ai-agents/paper/submission-readiness]]. Không mặc định giảng viên yêu cầu live-agent effect hoặc independent case audit. Những claim đó vẫn bị giới hạn nếu thiếu evidence.
