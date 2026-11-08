@@ -15,6 +15,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import platform
 import random
 import re
@@ -45,10 +46,35 @@ def parse_choice(text: str) -> str | None:
     return c if c in ("A", "B", "C") else None
 
 
-def environment(host: str, model: str, dry: bool) -> dict:
-    env = {"python": sys.version.split()[0], "platform": platform.platform(), "model": model}
+OPENAI_URL = "https://api.openai.com/v1/chat/completions"
+
+
+def openai_chat(model: str, messages: list, key: str) -> dict:
+    """One OpenAI chat call (protocol amendment A2). Retries transient errors; never retries on 4xx other than 429."""
+    payload = {"model": model, "messages": messages, "temperature": OPTIONS["temperature"], "seed": OPTIONS["seed"],
+               "max_tokens": OPTIONS["num_predict"], "response_format": {"type": "json_object"}}
+    for wait in (2, 8, 30, None):
+        req = urllib.request.Request(OPENAI_URL, data=json.dumps(payload).encode(),
+                                     headers={"Content-Type": "application/json", "Authorization": f"Bearer {key}"})
+        try:
+            with urllib.request.urlopen(req, timeout=120) as r:
+                return json.loads(r.read())
+        except urllib.error.HTTPError as e:
+            body = e.read().decode(errors="replace")
+            if e.code not in (429, 500, 502, 503, 504) or wait is None or "insufficient_quota" in body:
+                raise SystemExit(f"OpenAI HTTP {e.code}: {body[:300]}")
+        except urllib.error.URLError:
+            if wait is None:
+                raise
+        time.sleep(wait)
+
+
+def environment(host: str, model: str, dry: bool, backend: str = "ollama") -> dict:
+    env = {"python": sys.version.split()[0], "platform": platform.platform(), "model": model, "backend": backend}
     if dry:
         env["dry_run"] = True
+        return env
+    if backend == "openai":
         return env
     try:
         env["ollama_version"] = json.loads(urllib.request.urlopen(f"{host}/api/version", timeout=10).read()).get("version")
@@ -70,7 +96,13 @@ def main() -> None:
     ap.add_argument("--out", required=True, type=Path)
     ap.add_argument("--host", default="http://localhost:11434")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--backend", choices=["ollama", "openai"], default="ollama")
+    ap.add_argument("--limit", type=int, default=None, help="run only the first N unfinished items (cost-checking pilot; use a separate --out)")
     args = ap.parse_args()
+    key = os.environ.get("OPENAI_API_KEY", "")
+    if args.backend == "openai" and not args.dry_run and not key:
+        raise SystemExit("set OPENAI_API_KEY in the environment first")
+    usage = {"prompt_tokens": 0, "completion_tokens": 0}
 
     items_path = HERE / "items.jsonl"
     digest = hashlib.sha256(items_path.read_bytes()).hexdigest()
@@ -86,22 +118,34 @@ def main() -> None:
     rng = random.Random(0)
     with args.out.open("a", encoding="utf-8") as out:
         if not done:
-            out.write(json.dumps({"environment": environment(args.host, args.model, args.dry_run),
+            out.write(json.dumps({"environment": environment(args.host, args.model, args.dry_run, args.backend),
                                   "items_sha256": digest, "options": OPTIONS,
                                   "started": time.strftime("%Y-%m-%dT%H:%M:%S%z")}) + "\n")
         todo = [it for it in items if it["item_id"] not in done]
+        if args.limit:
+            todo = todo[:args.limit]
         for n, it in enumerate(todo, 1):
             attempts = []
             for attempt in (1, 2):
                 t0 = time.time()
+                extra = {}
                 if args.dry_run:
                     raw = json.dumps({"choice": rng.choice("ABC"), "reason": "dry run"})
+                elif args.backend == "openai":
+                    resp = openai_chat(args.model, it["messages"], key)
+                    raw = resp["choices"][0]["message"].get("content") or ""
+                    u = resp.get("usage", {})
+                    usage["prompt_tokens"] += u.get("prompt_tokens", 0)
+                    usage["completion_tokens"] += u.get("completion_tokens", 0)
+                    extra = {"model_returned": resp.get("model"), "system_fingerprint": resp.get("system_fingerprint"),
+                             "prompt_tokens": u.get("prompt_tokens"), "completion_tokens": u.get("completion_tokens"),
+                             "finish_reason": resp["choices"][0].get("finish_reason")}
                 else:
                     resp = post(f"{args.host}/api/chat", {"model": args.model, "messages": it["messages"],
                                                           "stream": False, "format": "json", "options": OPTIONS})
                     raw = resp.get("message", {}).get("content", "")
                 choice = parse_choice(raw)
-                attempts.append({"attempt": attempt, "raw": raw, "choice": choice, "seconds": round(time.time() - t0, 2)})
+                attempts.append({"attempt": attempt, "raw": raw, "choice": choice, "seconds": round(time.time() - t0, 2), **extra})
                 if choice:
                     break
             final = attempts[-1]["choice"]
@@ -110,7 +154,7 @@ def main() -> None:
                                   "attempts": attempts}, ensure_ascii=False) + "\n")
             out.flush()
             if n % 50 == 0 or n == len(todo):
-                print(f"{n}/{len(todo)} done", flush=True)
+                print(f"{n}/{len(todo)} done; tokens in/out this run: {usage['prompt_tokens']}/{usage['completion_tokens']}", flush=True)
 
 
 if __name__ == "__main__":
