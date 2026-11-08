@@ -1,0 +1,51 @@
+\section{RQ4: LLM Choice of a Corroborator}\label{sec:rq4}
+
+RQ3 and the projection above do not measure how an LLM actually chooses a corroborator. RQ4 does, in a single-choice task on real tool descriptions.
+
+\subsection{Method}
+
+The protocol was written on 18 October 2026, before any tool description was extracted, and confirmed by the author on 20 October; it is internal, not registered with an independent registry.
+\begin{itemize}
+  \item \textbf{Items.} 56 choice sets built from the locked coder-A labels of both surveys. Each set has one primary tool and three candidates: one that shares the primary's provider and two that are independent. Each tool is shown as \code{owner/repo}, tool name and description, copied verbatim from the code at the pinned commit and truncated at 400 characters. The item file is locked by SHA-256 before the first call.
+  \item \textbf{Conditions.} C0: original descriptions. C1: a line \code{Upstream provider: <provider>} added to every description. C2: every provider name replaced by \code{[provider]}. Each set is shown with three rotations, so the shared candidate appears at positions A, B and C.
+  \item \textbf{Prompts.} The \emph{main} prompt asks for the tool ``most likely to provide an independent check, i.e.\ not relying on the same underlying data source as the primary''. The \emph{neutral} prompt asks only for the best tool to double-check the primary, without mentioning independence. The answer is JSON with a choice and a one-sentence reason.
+  \item \textbf{Models.} The locked protocol named two 7--8B open-weight models run locally. Because the author's only machine has a 4~GB GPU, \emph{Amendment A2} (8 November 2026, before the first model call, confirmed by the author) switched to \code{gpt-4o-mini-2024-07-18} and \code{gpt-4.1-mini-2025-04-14} through the OpenAI Chat Completions API with JSON output. Temperature 0, seed 0, at most 200 output tokens, one retry on invalid output. Each model makes $56\times3\times3\times2=1008$ calls.
+  \item \textbf{Hypotheses and analysis.} Let the \emph{shared-choice rate} be the fraction of calls choosing the shared candidate (random: $1/3$). \textbf{H-A1:} with the main prompt, the rate is lower under C1 than under C0. \textbf{H-A2:} under C1 the rate is below $1/3$. Each model is analysed separately; the unit is the choice set (rates are averaged over rotations); 95\% bootstrap CIs resample sets 10{,}000 times, with the paired difference for C1$-$C0; Holm correction over four tests. All other comparisons are descriptive.
+\end{itemize}
+
+\subsection{Results}
+
+Both models returned 1008 valid answers (no invalid outputs), the item file matched its locked hash, and the manipulation check passed. \Cref{tab:rq4} gives the shared-choice rate.
+
+\begin{table}[t]
+\centering
+\caption{Shared-choice rate over 56 choice sets (95\% bootstrap CI over sets; random $=0.333$).}
+\label{tab:rq4}
+\small
+\begin{tabular}{llcc}
+\toprule
+Prompt & Condition & \code{gpt-4o-mini} & \code{gpt-4.1-mini} \\
+\midrule
+Main & C0 (original) & 0.423 [0.327, 0.518] & 0.339 [0.238, 0.446] \\
+Main & C1 (provider added) & 0.107 [0.048, 0.173] & 0.054 [0.018, 0.095] \\
+Main & C2 (provider removed) & 0.435 [0.351, 0.524] & 0.387 [0.292, 0.482] \\
+Neutral & C0 (original) & 0.583 [0.476, 0.685] & 0.518 [0.411, 0.625] \\
+Neutral & C1 (provider added) & 0.804 [0.708, 0.887] & 0.786 [0.696, 0.869] \\
+Neutral & C2 (provider removed) & 0.542 [0.440, 0.643] & 0.482 [0.375, 0.595] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Preregistered hypotheses.} \textbf{H-A1 is supported for both models:} C1$-$C0 is $-0.315$ (CI $[-0.405,-0.226]$) for \code{gpt-4o-mini} and $-0.286$ (CI $[-0.381,-0.196]$) for \code{gpt-4.1-mini}, with Holm-adjusted $p<0.0001$ (bootstrap resolution). \textbf{H-A2 is supported for both:} the C1 rate is $0.107$ (CI $[0.054,0.173]$) and $0.054$ (CI $[0.018,0.095]$), both upper bounds below $1/3$.
+
+\paragraph{Descriptive findings.} With original descriptions the CIs of both models contain $1/3$: without provider names the models do no better than chance at avoiding a shared source. Removing provider names (C2) barely changes the rate relative to C0, so there is little sign that the models infer providers from repository or tool names. Position C is chosen least often ($0.13$--$0.14$); rotation balances this across conditions but increases variance.
+
+\paragraph{The neutral prompt reverses the effect.} When the prompt does not ask for independence, adding provider labels \emph{raises} the shared-choice rate from $0.583$ to $0.804$ and from $0.518$ to $0.786$, well above chance. This was not a preregistered hypothesis and has no test. We infer, without having measured a mechanism, that without a request for independence the models read ``same provider as the primary'' as a sign of a suitable checking tool. The \code{reason} strings suggest the models do read the label: when they choose the shared candidate, 52\% (\code{gpt-4o-mini}) and 65\% (\code{gpt-4.1-mini}) of reasons mention the provider, against 3\% and 14\% when they choose an independent one, and many read ``uses the same upstream provider \ldots ensuring consistency''. So the models appear to read ``double-check'' as ``find a consistent tool'' rather than ``find an independent one''. This is an inference: reasons are written by the model and may be post-hoc rationalisation, and the keyword rule was fixed after the main results were known. No experiment has separated the mechanism.
+
+\paragraph{By information type} (descriptive; 2--10 sets per type of 11). Under the main prompt the C1 rate is $0.00$ for both models for crypto, weather, movies, geocoding, air quality and books, and higher for news ($0.28$, $0.17$), web search ($0.25$, $0.17$), translation ($0.33$, $0.17$), stocks ($0.24$, $0.05$) and currency ($0.14$, $0.10$). Under the neutral prompt C1 rises for most types (crypto $1.00$ for both models) but not for web search ($0.00$, $0.17$) or translation ($0.33$, $0.50$).
+
+\paragraph{Provenance of the run.} The run was interrupted several times by API rate limits (one key was capped at 50 requests per day); the runner skips completed items, so no item is duplicated, and request content did not change across keys. A 20-item pilot was run to a separate file and is not used. OpenAI does not guarantee fully deterministic output for a fixed seed; each call records \code{system\_fingerprint}.
+
+\subsection{Limits of RQ4}
+
+The task is a single choice, with no agent loop and no injected faults, and the main prompt asks for independence outright. C1 labels are AI-coded and exactly correct by construction, so the result says nothing about missing or wrong labels. Only two small models from one vendor were tested, and RQ4 was posed after the survey results were known.

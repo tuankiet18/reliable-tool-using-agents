@@ -1,6 +1,33 @@
 {
   "research": [
     {
+      "type": "rq4_agent_choice_experiment_and_paper_update",
+      "project": "reliable-tool-using-ai-agents",
+      "topic": "RQ4 LLM corroborator choice (gpt-4o-mini, gpt-4.1-mini; Amendment A2) and paper v2.0 / short 1.1 / LaTeX update",
+      "updated_at": "2026-11-08T23:00:00+07:00",
+      "basis": "Protocol Agent Corroborator Choice with Real Tool Metadata (v1.0 + A1 + A2); journal 2026-11-08; analysis.json",
+      "source_artifacts": {
+        "items_sha256": "e0b33c12039a86cc51d724084331aa22f336aa76bbf7c222bda9ef4acd1be086",
+        "gpt-4o-mini-2024-07-18_results_sha256": "20e6de8d47ede018bc2604c49843d6a75b6b3695d9daccf5508dab1d2ee5df0a",
+        "gpt-4.1-mini-2025-04-14_results_sha256": "02d2f7d90c76bcbac2aef9c56023d40e0d9751316f0f22afc91dd3f7900bfe59",
+        "analysis": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_rq4_20261108/analysis.json"
+      },
+      "pages_created": [
+        "journal/2026-11-08-rq4-agent-choice-results.md"
+      ],
+      "pages_updated": [
+        "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
+        "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
+        "projects/reliable-tool-using-ai-agents/paper/paper-short.md",
+        "projects/reliable-tool-using-ai-agents/paper/latex/sections/06b-rq4-llm-choice.tex",
+        "synthesis/Protocol - Agent Corroborator Choice with Real Tool Metadata.md",
+        "hot.md",
+        "index.md",
+        "log.md"
+      ],
+      "status": "PRELIMINARY; not committed"
+    },
+    {
       "type": "main_study_influence_audit",
       "project": "reliable-tool-using-ai-agents",
       "topic": "Post-hoc leave-one-task/seed/stratum-out sensitivity of frozen main unsafe decision differences",
@@ -481,7 +508,7 @@
         "projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
         "journal/2026-10-04-pre-action-prior-art-audit.md",
-        "synthesis/Prior-Art Threat: Provenance Metadata and Source Selection.md",
+        "synthesis/Prior-Art Threat - Provenance Metadata and Source Selection.md",
         "index.md",
         "log.md",
         "hot.md",
@@ -499,7 +526,10 @@
       "source_count_unit": "Downloaded primary objects: 16 pinned AgentOS files, Zenodo metadata, 2 ZIP archives, 1 arXiv HTML; not 20 papers",
       "audited_works": 2,
       "halt_reason": "Sufficient depth for bounded contrast; publisher full-text/artifact clarification blockers retained, no Round 3",
-      "backends_used": ["web", "direct_primary_retrieval"],
+      "backends_used": [
+        "web",
+        "direct_primary_retrieval"
+      ],
       "optional_backends": "none: research-backends.md absent; no paid API",
       "source_artifacts": {
         "agentos_commit": "4147c7f780ccb59b83f3dba8da5f19e73a1d1a8c",
@@ -542,11 +572,14 @@
       ],
       "pages_updated": [
         "references/agentos-typed-tool-mediation.md",
-        "synthesis/Prior-Art Threat: Provenance Metadata and Source Selection.md",
+        "synthesis/Prior-Art Threat - Provenance Metadata and Source Selection.md",
         "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
         "projects/reliable-tool-using-ai-agents/paper/related-work-citation-audit-2026-10-03.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
-        "index.md", "log.md", "hot.md", ".manifest.json"
+        "index.md",
+        "log.md",
+        "hot.md",
+        ".manifest.json"
       ],
       "qmd": "skipped: QMD_WIKI_COLLECTION unset"
     },
@@ -644,7 +677,9 @@
         "projects/reliable-tool-using-ai-agents/paper/supplementary-appendix.md",
         "projects/reliable-tool-using-ai-agents/paper/reproducibility-package.md"
       ],
-      "artifacts_created": ["projects/reliable-tool-using-ai-agents/paper/artifact-inventory.json"],
+      "artifacts_created": [
+        "projects/reliable-tool-using-ai-agents/paper/artifact-inventory.json"
+      ],
       "pages_updated": [
         "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
         "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
@@ -652,7 +687,10 @@
         "projects/reliable-tool-using-ai-agents/paper/supervisor-methodology-rq-briefing.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
         "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/README.md",
-        "index.md", "hot.md", "log.md", ".manifest.json"
+        "index.md",
+        "hot.md",
+        "log.md",
+        ".manifest.json"
       ]
     },
     {
@@ -669,7 +707,22 @@
         "secondary_raw_sha256": "40a419491011308dcce04db477c4a98dbda2e543d2db531b0a4fb07c08b43c35"
       },
       "source_coverage": {
-        "citation_ids": ["RIVA26", "RLVM26", "VTC26", "ROB26", "TEA26", "PC24", "PGF26", "PGA26", "GRADE26", "AF26", "ENV26", "AGOS26", "CE25", "KL86"],
+        "citation_ids": [
+          "RIVA26",
+          "RLVM26",
+          "VTC26",
+          "ROB26",
+          "TEA26",
+          "PC24",
+          "PGF26",
+          "PGA26",
+          "GRADE26",
+          "AF26",
+          "ENV26",
+          "AGOS26",
+          "CE25",
+          "KL86"
+        ],
         "audit_note": "projects/reliable-tool-using-ai-agents/paper/related-work-citation-audit-2026-10-03.md",
         "reading_limits": "not 14 full-paper deep reads; AGOS26 metadata/README only; CE25 and PC24 metadata/abstract; KL86 metadata with publisher full-text unavailable; detailed levels in audit note",
         "additional_primary_metadata_pages": [
@@ -686,7 +739,13 @@
           "https://github.com/zhoujune/AgentOS"
         ]
       },
-      "observed": {"new_episodes": 0, "new_model_calls": 0, "new_confidence_intervals": 0, "citation_ids": 14, "provisional_contributions": 3},
+      "observed": {
+        "new_episodes": 0,
+        "new_model_calls": 0,
+        "new_confidence_intervals": 0,
+        "citation_ids": 14,
+        "provisional_contributions": 3
+      },
       "result": "EDITORIAL_SOURCE_AUDIT_ONLY; NO_HEAD_TO_HEAD_OR_ALGORITHM_NOVELTY_CLAIM; MAJOR_REVISION_AND_PRELIMINARY_NOVELTY_REMAIN",
       "validation": {
         "checked_at": "2026-10-03T22:06:56+07:00",
@@ -706,10 +765,13 @@
         "projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03.md",
         "projects/reliable-tool-using-ai-agents/paper/supervisor-methodology-rq-briefing.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
-        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
-        "synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures.md",
-        "synthesis/Prior-Art Threat: Provenance Metadata and Source Selection.md",
-        "index.md", "hot.md", "log.md", ".manifest.json"
+        "synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Prior-Art Threat - Provenance Metadata and Source Selection.md",
+        "index.md",
+        "hot.md",
+        "log.md",
+        ".manifest.json"
       ]
     },
     {
@@ -758,9 +820,12 @@
         "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
         "projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
-        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures.md",
         "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/README.md",
-        "index.md", "hot.md", "log.md", ".manifest.json"
+        "index.md",
+        "hot.md",
+        "log.md",
+        ".manifest.json"
       ]
     },
     {
@@ -774,19 +839,31 @@
         "paper_v0_2_sha256": "04535f8d6c8b47d01dd64e7abe832a042d78e8ea563ef1891654ea9b83486fc8"
       },
       "observed": {
-        "targeted_unsafe_decisions": {"random_k": "30/150", "provenance_k": "0/150"},
-        "targeted_correct_expected_refund_decisions": {"random_k": "0/50", "provenance_k": "0/50"},
-        "targeted_missed_refund_without_proposal": {"random_k": "50/50", "provenance_k": "50/50"}
+        "targeted_unsafe_decisions": {
+          "random_k": "30/150",
+          "provenance_k": "0/150"
+        },
+        "targeted_correct_expected_refund_decisions": {
+          "random_k": "0/50",
+          "provenance_k": "0/50"
+        },
+        "targeted_missed_refund_without_proposal": {
+          "random_k": "50/50",
+          "provenance_k": "50/50"
+        }
       },
       "result": "PAPER_V0_2_R1_R2_EDITORIAL_REVISION; RAW_AND_PROTOCOL_UNCHANGED; REMAINING_MAJOR_REVISION_FINDINGS_OPEN",
       "pages_created": [],
       "pages_updated": [
         "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
-        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
         "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
         "projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03.md",
-        "index.md", "hot.md", "log.md", ".manifest.json"
+        "index.md",
+        "hot.md",
+        "log.md",
+        ".manifest.json"
       ]
     },
     {
@@ -806,17 +883,31 @@
       "observed": {
         "findings": 12,
         "main_endpoint": "action-oracle correctness; not executed post-state correctness",
-        "targeted_unsafe_decisions": {"random_k": "30/150", "provenance_k": "0/150"},
-        "targeted_correct_expected_refund_outcomes": {"random_k": "0/50", "provenance_k": "0/50"},
-        "targeted_missed_refund_rows_without_proposal": {"random_k": "50/50", "provenance_k": "50/50"},
+        "targeted_unsafe_decisions": {
+          "random_k": "30/150",
+          "provenance_k": "0/150"
+        },
+        "targeted_correct_expected_refund_outcomes": {
+          "random_k": "0/50",
+          "provenance_k": "0/50"
+        },
+        "targeted_missed_refund_rows_without_proposal": {
+          "random_k": "50/50",
+          "provenance_k": "50/50"
+        },
         "existing_always_block": "secondary counterfactual pooled diagnostic; not new matched-budget baseline"
       },
       "result": "MAJOR_REVISION; CONTROLLED_COURSE_SCOPE_ACCEPTED; RAW_PRESERVED; NO_NEW_EXPERIMENTS",
-      "pages_created": ["projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03.md"],
+      "pages_created": [
+        "projects/reliable-tool-using-ai-agents/paper/reviewer-audit-2026-10-03.md"
+      ],
       "pages_updated": [
         "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
-        "index.md", "hot.md", "log.md", ".manifest.json"
+        "index.md",
+        "hot.md",
+        "log.md",
+        ".manifest.json"
       ]
     },
     {
@@ -965,12 +1056,12 @@
         "journal/2026-10-02-ins32-rtx4060-validity-audit.md"
       ],
       "pages_updated": [
-        "synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic.md",
+        "synthesis/Protocol Amendment - Exploratory RTX 4060 Safety Diagnostic.md",
         "journal/2026-09-30-rtx4060-live-agent-diagnostic.md",
         "journal/2026-10-01-live-agent-diagnostic-instrumentation.md",
         "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
-        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures.md",
         "index.md",
         "hot.md",
         "log.md",
@@ -998,7 +1089,7 @@
         "journal/2026-10-01-live-agent-diagnostic-instrumentation.md"
       ],
       "pages_updated": [
-        "synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic.md",
+        "synthesis/Protocol Amendment - Exploratory RTX 4060 Safety Diagnostic.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
         "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
         "index.md",
@@ -1026,7 +1117,7 @@
       },
       "result": "INS-00032 canonical escalation; targeted common-mode fault makes operational eligibility false-positive. Seed 701 selects independent corroborators for both policies; seed 809 selects same-domain random versus independent provenance. Exploratory post-hoc seed choice; no new model episode.",
       "pages_created": [
-        "synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic.md",
+        "synthesis/Protocol Amendment - Exploratory RTX 4060 Safety Diagnostic.md",
         "journal/2026-09-30-live-agent-safety-preflight.md"
       ],
       "pages_updated": [
@@ -1210,11 +1301,11 @@
         "references/osworld.md",
         "references/benchtrace.md",
         "references/seed-papers-and-benchmarks-reliable-agents.md",
-        "synthesis/Research: Reliable Tool-Using AI Agents.md",
-        "synthesis/Preliminary Gap: Selective Recovery Routing.md",
-        "synthesis/Preliminary Gap: External Runtime Monitoring.md",
-        "synthesis/Preliminary Gap: Failure-Aware Least Privilege.md",
-        "synthesis/Preliminary Gap: Completion Verification Under Degraded Tools.md",
+        "synthesis/Research - Reliable Tool-Using AI Agents.md",
+        "synthesis/Preliminary Gap - Selective Recovery Routing.md",
+        "synthesis/Preliminary Gap - External Runtime Monitoring.md",
+        "synthesis/Preliminary Gap - Failure-Aware Least Privilege.md",
+        "synthesis/Preliminary Gap - Completion Verification Under Degraded Tools.md",
         "journal/2026-09-09-reliable-agents-field-map.md"
       ],
       "pages_updated": [
@@ -1234,7 +1325,7 @@
       ],
       "pages_updated": [
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
-        "synthesis/Research: Reliable Tool-Using AI Agents.md",
+        "synthesis/Research - Reliable Tool-Using AI Agents.md",
         "references/seed-papers-and-benchmarks-reliable-agents.md",
         "index.md",
         "log.md",
@@ -1251,15 +1342,15 @@
         "references/adaptive-fault-injection-task-failure-forecasting.md",
         "references/retry-switch-or-abstain.md",
         "references/toolbench-x.md",
-        "synthesis/Deep Comparison: Recovery Routing Anchor Works.md",
-        "synthesis/Prior-Art Threat: Recovery-Action Selection.md",
+        "synthesis/Deep Comparison - Recovery Routing Anchor Works.md",
+        "synthesis/Prior-Art Threat - Recovery-Action Selection.md",
         "journal/2026-09-10-adversarial-prior-art-recovery-routing.md"
       ],
       "pages_updated": [
         "references/failing-tools.md",
         "references/agenttether.md",
-        "synthesis/Preliminary Gap: Selective Recovery Routing.md",
-        "synthesis/Research: Reliable Tool-Using AI Agents.md",
+        "synthesis/Preliminary Gap - Selective Recovery Routing.md",
+        "synthesis/Research - Reliable Tool-Using AI Agents.md",
         "index.md",
         "log.md",
         "hot.md"
@@ -1281,15 +1372,15 @@
         "references/actplane.md",
         "references/toolguardian.md",
         "synthesis/Agent Capability and Permission Control.md",
-        "synthesis/Prior-Art Threat: Agent Capability Control.md",
-        "synthesis/Preliminary Gap: Task-Aware Permission Inference.md",
-        "synthesis/Preliminary Gap: Software-Evidence-Grounded Capability Scoping.md",
-        "synthesis/Preliminary Gap: Progressive Capability Expansion.md",
-        "synthesis/Preliminary Gap: Risk-Aware Human Escalation for Permissions.md",
+        "synthesis/Prior-Art Threat - Agent Capability Control.md",
+        "synthesis/Preliminary Gap - Task-Aware Permission Inference.md",
+        "synthesis/Preliminary Gap - Software-Evidence-Grounded Capability Scoping.md",
+        "synthesis/Preliminary Gap - Progressive Capability Expansion.md",
+        "synthesis/Preliminary Gap - Risk-Aware Human Escalation for Permissions.md",
         "journal/2026-09-10-adversarial-prior-art-capability-control.md"
       ],
       "pages_updated": [
-        "synthesis/Preliminary Gap: Failure-Aware Least Privilege.md",
+        "synthesis/Preliminary Gap - Failure-Aware Least Privilege.md",
         "references/miniscope.md",
         "index.md",
         "log.md",
@@ -1331,15 +1422,15 @@
         "references/automata-from-agent-traces.md",
         "references/from-confident-closing-to-silent-failure.md",
         "references/trajectory-judge.md",
-        "synthesis/Research: Early Failure Detection in Tool-Using Agents.md",
+        "synthesis/Research - Early Failure Detection in Tool-Using Agents.md",
         "journal/2026-09-12-early-failure-detection-novelty-gate.md"
       ],
       "pages_updated": [
         "references/adaptive-fault-injection-task-failure-forecasting.md",
         "references/toolbench-x.md",
         "concepts/agent-observability-and-runtime-monitoring.md",
-        "synthesis/Research: Reliable Tool-Using AI Agents.md",
-        "synthesis/Preliminary Gap: External Runtime Monitoring.md",
+        "synthesis/Research - Reliable Tool-Using AI Agents.md",
+        "synthesis/Preliminary Gap - External Runtime Monitoring.md",
         "journal/2026-09-11-toolbench-x-reproducibility-pilot.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
         "index.md",
@@ -1370,15 +1461,15 @@
         "references/verified-tool-calls-non-atomic-failures.md",
         "references/reason-less-verify-more.md",
         "references/correlated-errors-in-large-language-models.md",
-        "synthesis/Research: Correlated Silent Tool Failures and Verification.md",
-        "synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures.md",
-        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Research - Correlated Silent Tool Failures and Verification.md",
+        "synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures.md",
         "journal/2026-09-13-correlated-tool-verification-rq.md"
       ],
       "pages_updated": [
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
         "concepts/reliable-tool-using-ai-agents-glossary.md",
-        "synthesis/Preliminary Gap: Completion Verification Under Degraded Tools.md",
+        "synthesis/Preliminary Gap - Completion Verification Under Degraded Tools.md",
         "index.md",
         "log.md",
         "hot.md"
@@ -1427,9 +1518,9 @@
         "journal/2026-09-13-correlated-tool-verification-pilot.md"
       ],
       "pages_updated": [
-        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
-        "synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures.md",
-        "synthesis/Research: Correlated Silent Tool Failures and Verification.md",
+        "synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Research - Correlated Silent Tool Failures and Verification.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
         "index.md",
         "log.md",
@@ -1465,8 +1556,8 @@
         "journal/2026-09-14-correlated-tool-verification-next-gate.md"
       ],
       "pages_updated": [
-        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
-        "synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures.md",
         "journal/2026-09-13-correlated-tool-verification-pilot.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
         "index.md",
@@ -1507,8 +1598,8 @@
         "journal/2026-09-14-full-live-agent-verification-gate.md"
       ],
       "pages_updated": [
-        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
-        "synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures.md",
         "journal/2026-09-14-correlated-tool-verification-next-gate.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
         "index.md",
@@ -1544,7 +1635,7 @@
         "journal/2026-09-15-main-study-manifest.md"
       ],
       "pages_updated": [
-        "synthesis/Protocol: Action-Boundary Provenance Verification Main Study.md",
+        "synthesis/Protocol - Action-Boundary Provenance Verification Main Study.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
         "index.md",
         "log.md",
@@ -1592,9 +1683,9 @@
         "journal/2026-09-15-action-boundary-main-study.md"
       ],
       "pages_updated": [
-        "synthesis/Protocol: Action-Boundary Provenance Verification Main Study.md",
-        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
-        "synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Protocol - Action-Boundary Provenance Verification Main Study.md",
+        "synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
         "index.md",
         "log.md",
@@ -1606,7 +1697,7 @@
       "topic": "Imperfect Provenance and Partial Correlation",
       "executed_at": "2026-09-15T11:13:14+07:00",
       "artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_robustness_gate",
-      "protocol": "synthesis/Protocol Amendment: Imperfect Provenance and Partial Correlation.md",
+      "protocol": "synthesis/Protocol Amendment - Imperfect Provenance and Partial Correlation.md",
       "design": {
         "tasks": 30,
         "task_ids": "INS-00090..INS-00119",
@@ -1646,12 +1737,12 @@
       },
       "result": "FAIL ROBUSTNESS; wrong_25 at leakage 0.10 upper CI touches zero; controlled RQ narrowed to accurate failure-domain metadata",
       "pages_created": [
-        "synthesis/Protocol Amendment: Imperfect Provenance and Partial Correlation.md",
+        "synthesis/Protocol Amendment - Imperfect Provenance and Partial Correlation.md",
         "journal/2026-09-15-imperfect-provenance-robustness-gate.md"
       ],
       "pages_updated": [
-        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
-        "synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
         "index.md",
         "log.md",
@@ -1671,12 +1762,12 @@
         "references/envtrustbench.md",
         "references/grade-agent-dependency-execution.md",
         "references/agentflow-agent-dependency-graphs.md",
-        "synthesis/Prior-Art Threat: Provenance Metadata and Source Selection.md",
+        "synthesis/Prior-Art Threat - Provenance Metadata and Source Selection.md",
         "journal/2026-09-15-adversarial-prior-art-provenance-metadata.md"
       ],
       "pages_updated": [
-        "synthesis/Preliminary Gap: Provenance-Aware Verification under Correlated Tool Failures.md",
-        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Preliminary Gap - Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
         "index.md",
         "log.md",
@@ -1717,8 +1808,8 @@
       "pages_updated": [
         "references/envtrustbench.md",
         "references/provenanceguard-misalignment-provenance-analysis.md",
-        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
-        "synthesis/Prior-Art Threat: Provenance Metadata and Source Selection.md",
+        "synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Prior-Art Threat - Provenance Metadata and Source Selection.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
         "index.md",
         "log.md",
@@ -1769,7 +1860,7 @@
       ],
       "pages_updated": [
         "journal/2026-09-15-external-validity-artifact-gate.md",
-        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
         "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
         "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
@@ -1782,7 +1873,7 @@
       "type": "research_protocol",
       "topic": "Secondary Multi-Domain Benchmark-Derived Adaptation",
       "frozen_at": "2026-09-19T10:34:27+07:00",
-      "protocol_path": "synthesis/Protocol: Secondary Multi-Domain Benchmark-Derived Adaptation.md",
+      "protocol_path": "synthesis/Protocol - Secondary Multi-Domain Benchmark-Derived Adaptation.md",
       "protocol_sha256": "47bd420dba05f4508dea354994955ca12b4085fb456e53d3292d817a5a129e4a",
       "case_manifest_path": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/external_case_audit_12.json",
       "case_manifest_sha256": "55e7d3fee0709f135949e9bb696a3a8e1ca37817ca36a59dcc0cabb4e16641a0",
@@ -1799,12 +1890,12 @@
       "status": "FROZEN_BEFORE_ADAPTER_CODE_AND_RESULTS",
       "required_next_gate": "independent semantic review and frozen per-case mutation schemas",
       "pages_created": [
-        "synthesis/Protocol: Secondary Multi-Domain Benchmark-Derived Adaptation.md"
+        "synthesis/Protocol - Secondary Multi-Domain Benchmark-Derived Adaptation.md"
       ],
       "pages_updated": [
         "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
-        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures.md",
         "journal/2026-09-18-benchmark-derived-case-audit.md",
         "index.md",
         "log.md",
@@ -1853,7 +1944,7 @@
       },
       "review_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package.md",
       "review_artifact_sha256": "42179af838dde8ba1539ef5fd80a7bdba7ddebeb8b9b26e4537ebbe4c422d6d1",
-      "amendment_artifact": "synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility.md",
+      "amendment_artifact": "synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility.md",
       "amendment_sha256": "efa5033b8cca1bf346da972ffc9dccdc948b9a76130c6d5dd5d1dd1659730207",
       "journal_artifact": "journal/2026-09-19-secondary-semantic-review.md",
       "journal_sha256": "4bdb6e3d4d8a05c921a9d500cef87203db0af5e9ba167478d784b2c5db811b41",
@@ -1863,7 +1954,7 @@
       "non_safety_cases": 4,
       "result": "No adapter or secondary results; WB-110 search cap and WB-433 date scope leave completeness unproved; reviewer re-sign required before schema freeze",
       "pages_created": [
-        "synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility.md",
+        "synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility.md",
         "journal/2026-09-19-secondary-semantic-review.md"
       ],
       "pages_updated": [
@@ -1901,7 +1992,7 @@
       ],
       "pages_updated": [
         "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package.md",
-        "synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility.md",
+        "synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
         "index.md",
         "log.md",
@@ -1914,7 +2005,7 @@
       "executed_at": "2026-09-20T16:42:00+07:00",
       "review_artifact": "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package.md",
       "review_artifact_sha256": "e497935b1adae0afe004593fc2b64dc1c3b51816e0f9a3b04845a6611dfc0691",
-      "amendment_artifact": "synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility.md",
+      "amendment_artifact": "synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility.md",
       "amendment_sha256": "78b81ba84f1a0170b3a6e516f55da81128aeb44feb865deb29b281156cbc1359",
       "journal_artifact": "journal/2026-09-20-secondary-resign-freeze-readiness.md",
       "journal_sha256": "86057c39cb4e4fc7f4b696839b081428e6d878884b98f0598f92a664c4bfc9f2",
@@ -1928,7 +2019,7 @@
       ],
       "pages_updated": [
         "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package.md",
-        "synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility.md",
+        "synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
         "index.md",
         "log.md",
@@ -1969,8 +2060,8 @@
       ],
       "pages_updated": [
         "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package.md",
-        "synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility.md",
-        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility.md",
+        "synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures.md",
         "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
         "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
@@ -2001,8 +2092,8 @@
       "pages_updated": [
         "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-case-review-package.md",
         "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate.md",
-        "synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility.md",
-        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility.md",
+        "synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures.md",
         "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
         "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
@@ -2104,8 +2195,8 @@
         "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/data/secondary_schema_contract_v1.json",
         "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/validate_secondary_schema_contract.py",
         "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate.md",
-        "synthesis/Protocol Amendment: Secondary Case Review and Safety Eligibility.md",
-        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Protocol Amendment - Secondary Case Review and Safety Eligibility.md",
+        "synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
         "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
         "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
@@ -2181,7 +2272,7 @@
         "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
         "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
-        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures.md",
         "index.md",
         "hot.md",
         "log.md"
@@ -2244,7 +2335,7 @@
       "external_validation": false,
       "protocol_deviation": "AI-assisted case cross-review only; exploratory-only amendment, not equivalent to human/peer review",
       "pages_created": [
-        "synthesis/Protocol Amendment: Exploratory Secondary Runtime Matrix.md",
+        "synthesis/Protocol Amendment - Exploratory Secondary Runtime Matrix.md",
         "journal/2026-09-28-secondary-exploratory-matrix.md",
         "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/run_secondary_matrix.py",
         "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/src/analyze_secondary_matrix.py",
@@ -2258,7 +2349,7 @@
         "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
         "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
-        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures.md",
         "index.md",
         "hot.md",
         "log.md"
@@ -2388,10 +2479,10 @@
         "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_secondary_varied/rerun/run-summary.json"
       ],
       "pages_updated": [
-        "synthesis/Protocol: Secondary Varied-Schedule Replication.md",
+        "synthesis/Protocol - Secondary Varied-Schedule Replication.md",
         "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
         "projects/reliable-tool-using-ai-agents/paper/paper-draft.md",
-        "synthesis/Candidate RQ: Provenance-Aware Verification under Correlated Tool Failures.md",
+        "synthesis/Candidate RQ - Provenance-Aware Verification under Correlated Tool Failures.md",
         "projects/reliable-tool-using-ai-agents/reliable-tool-using-ai-agents.md",
         "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/README.md",
         "projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/secondary-schema-gate.md",
@@ -2445,21 +2536,32 @@
       "last_ingested": "2026-10-04T10:04:00+07:00",
       "source_type": "paper_html",
       "reading_scope": "HTML sections 1-8; not supplementary or executed artifact",
-      "pages_produced": ["references/look-before-you-leap-pre-action-verification.md", "journal/2026-10-04-pre-action-prior-art-audit.md", "synthesis/Prior-Art Threat: Provenance Metadata and Source Selection.md"]
+      "pages_produced": [
+        "references/look-before-you-leap-pre-action-verification.md",
+        "journal/2026-10-04-pre-action-prior-art-audit.md",
+        "synthesis/Prior-Art Threat - Provenance Metadata and Source Selection.md"
+      ]
     },
     "https://github.com/zhoujune/AgentOS/tree/4147c7f780ccb59b83f3dba8da5f19e73a1d1a8c": {
       "last_ingested": "2026-10-04T10:04:00+07:00",
       "source_type": "pinned_repository",
       "commit": "4147c7f780ccb59b83f3dba8da5f19e73a1d1a8c",
       "reading_scope": "Targeted docs/policy/harness/snapshot; not full tree audit or benchmark execution",
-      "pages_produced": ["references/agentos-typed-tool-mediation.md", "journal/2026-10-04-pre-action-prior-art-audit.md", "synthesis/Prior-Art Threat: Provenance Metadata and Source Selection.md"]
+      "pages_produced": [
+        "references/agentos-typed-tool-mediation.md",
+        "journal/2026-10-04-pre-action-prior-art-audit.md",
+        "synthesis/Prior-Art Threat - Provenance Metadata and Source Selection.md"
+      ]
     },
     "https://zenodo.org/api/records/20046861": {
       "content_hash": "814207763c31b0bf1e32bfae5f7126860edb2d7d8ef10f7d1a09530ddff9067c",
       "last_ingested": "2026-10-04T10:04:00+07:00",
       "source_type": "artifact_metadata",
       "reading_scope": "Metadata plus two task ZIPs downloaded/integrity/parse checked; no images or model run",
-      "pages_produced": ["references/agentos-typed-tool-mediation.md", "journal/2026-10-04-pre-action-prior-art-audit.md"]
+      "pages_produced": [
+        "references/agentos-typed-tool-mediation.md",
+        "journal/2026-10-04-pre-action-prior-art-audit.md"
+      ]
     },
     "/home/kiet/Downloads/fpt-document/prn232/research/projects/reliable-tool-using-ai-agents/paper/figures/frozen-evidence-v1/figure-data.json": {
       "content_hash": "987906ada765f22d590e2a6afe0e309c56a19c51f2345e76673fe66225abbcfc",
@@ -2530,7 +2632,7 @@
       "pages_produced": [
         "journal/2026-10-02-ins32-rtx4060-validity-audit.md",
         "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
-        "synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic.md"
+        "synthesis/Protocol Amendment - Exploratory RTX 4060 Safety Diagnostic.md"
       ]
     },
     "/home/kiet/Downloads/fpt-document/prn232/research/projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_ins32_rtx4060_20261002/summary.json": {
@@ -2541,7 +2643,7 @@
       "pages_produced": [
         "journal/2026-10-02-ins32-rtx4060-validity-audit.md",
         "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
-        "synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic.md"
+        "synthesis/Protocol Amendment - Exploratory RTX 4060 Safety Diagnostic.md"
       ]
     },
     "/home/kiet/Downloads/fpt-document/prn232/research/projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_ins32_rtx4060_20261002/validity_audit.json": {
@@ -2552,7 +2654,7 @@
       "pages_produced": [
         "journal/2026-10-02-ins32-rtx4060-validity-audit.md",
         "projects/reliable-tool-using-ai-agents/paper/claim-evidence-ledger.md",
-        "synthesis/Protocol Amendment: Exploratory RTX 4060 Safety Diagnostic.md"
+        "synthesis/Protocol Amendment - Exploratory RTX 4060 Safety Diagnostic.md"
       ]
     },
     "/home/kiet/Downloads/fpt-document/prn232/research/projects/reliable-tool-using-ai-agents/experiments/correlated-tool-verification-pilot/results_live_agent_opportunity_16cells_rtx4060_20261003/source_archive.zip": {

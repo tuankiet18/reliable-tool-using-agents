@@ -1,7 +1,7 @@
 \title{When Does Failure-Domain Metadata Help Tool-Using AI Agents?\\[4pt]
-\large A Controlled Replication, a Label-Quality Condition,\\ and Two Surveys of MCP Server Metadata}
+\large A Controlled Replication, a Label-Quality Condition,\\ Two Surveys of MCP Server Metadata, and an LLM Choice Test}
 \author{Luong Tuan Kiet}
-\date{Draft, October 2026}
+\date{Draft, November 2026}
 
 \maketitle
 
@@ -10,7 +10,8 @@ Tool-using AI agents can receive outputs that are wrong yet schema-valid. When t
 (1) In a controlled refund-decision simulation with accurate metadata, choosing a corroborator from a different failure domain reduces unsafe decisions from 30/150 to 0/150 (95\% CI of the difference $[-0.273,-0.127]$); the advantage is not robust when 25\% of labels are wrong.
 (2) We prove, under stated assumptions, that metadata-guided selection beats random selection if and only if $J = r - \varphi > 0$, and is worse when $J<0$; a preregistered test on 60 new tasks confirms both directions ($J=-0.5$: $+0.133$ $[+0.070,+0.200]$).
 (3) Two surveys of open-source MCP servers (42 and 78 servers) find that 16\% and 27\% of same-type server pairs share an upstream provider. Agent-visible metadata omits the provider in about 70\% of pairs, but is mostly correct when present ($J=0.89$ with READMEs); the second survey meets 4 of 6 preregistered predictions.
-The practical bottleneck is \emph{missing} metadata rather than wrong metadata. Survey labels are AI-coded without independent human validation, and no result measures live-agent behaviour.
+(4) In a single-choice task on 56 sets of real MCP tool descriptions (1008 calls per model), adding an upstream-provider line lowers how often two small LLMs (gpt-4o-mini, gpt-4.1-mini) choose a corroborator sharing the primary's provider, from 0.423 to 0.107 and from 0.339 to 0.054, when the prompt asks for an independent source (both preregistered hypotheses supported; Holm-adjusted $p<0.0001$). With a neutral prompt the same label \emph{raises} that rate to about 0.80, so the benefit depends on what the agent is asked to do; the mechanism was not measured.
+The practical bottleneck is \emph{missing} metadata rather than wrong metadata. Survey labels are AI-coded without independent human validation; the LLM test has exactly correct labels, two models from one vendor and no agent loop, and no result measures live-agent behaviour.
 \end{abstract}
 
 \noindent\textbf{Keywords:} tool-using AI agents; correlated failures; common-mode failures; failure-domain metadata; provenance; Model Context Protocol; empirical survey.

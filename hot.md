@@ -1,12 +1,14 @@
 ---
 title: Hot Cache
-updated: 2026-10-14T13:00:00+07:00
+updated: 2026-11-08T23:00:00+07:00
 ---
 
 # Hot Cache
 
 ## Recent Activity
 
+- [2026-11-08] RQ4 + PAPER v2.0 — [[journal/2026-11-08-rq4-agent-choice-results]]: `gpt-4o-mini` và `gpt-4.1-mini` (Amendment A2, thay Qwen/Llama vì máy chỉ có GPU 4 GB), 1.008 lời gọi mỗi model, 0 invalid. Prompt chính: shared-choice C0 0.423/0.339 → C1 0.107/0.054; H-A1 và H-A2 đạt cả hai model (p Holm < 0.0001). **Prompt trung tính ngược chiều:** C1 tăng lên ~0.80 (mô tả, không kiểm định, cơ chế chưa đo). Ledger C48–C51, O7; paper-draft v2.0 (§1.1, §4.10, §5.13, §7.8), paper-short 1.1, LaTeX thêm `06b-rq4-llm-choice.tex`. Chưa commit.
+- [2026-11-08] WINDOWS MIGRATION — 29 file `synthesis/` tên có dấu `:` đổi thành ` -` (git thấy rename), link trong 109 file md và `.manifest.json` đã sửa; `core.autocrlf=false` cục bộ (hash frozen); obsidian-wiki skills cài tại `.claude/skills/`; `.env` trỏ vault vào repo này. `.py`/`.json` dữ liệu vẫn chứa tên cũ có `:` để giữ hash. Xem [[projects/reliable-tool-using-ai-agents/HANDOFF-2026-11-08]].
 - [2026-10-14] SURVEY 2 — [[journal/2026-10-14-expanded-tool-survey-results]]: 78 MCP server (74 trong ước lượng, 245 cặp). ρ 0.27 [0.18, 0.37]; m_L1 0.71; J_L2 0.89. Đạt P1, P2, P4, P6; không đạt P3 (φ_L1 3/45) và P5 (web_search ρ_origin 0.71). Amendment A2 commit trước khi tính chỉ số (`fb41192`). Ledger C42–C46; paper v1.4 (§5.12, tiêu đề mới). Nhãn người cho 20 server chưa có.
 - [2026-10-13] HANDOFF — đọc [[projects/reliable-tool-using-ai-agents/HANDOFF-2026-10-13]] trước tiên. Paper v1.3 định vị lại sau prior art VP-Control/EFD: RQ1 replication, RQ2 điều kiện `J = r − φ > 0` (đã chứng minh + kiểm định đăng ký trước), RQ3 survey 42 MCP server (16% cặp chung upstream; L1 thiếu nhãn 70%; coder B κ 0.78/1.00). Survey 2 (78 server) đã sàng lọc, **đang chờ coder A gán nhãn**.
 
@@ -36,4 +38,4 @@ Paper vẫn MAJOR REVISION, novelty SURVIVES WITH REFINEMENT — PRELIMINARY; ch
 
 ## Next Action
 
-(1) Hỏi tác giả trước khi push các commit từ `fb41192`. (2) Khi có nhãn người gán nhãn survey 2: chạy `src/analyze_coder_agreement.py` (đổi đầu vào; gồm `coding_agreement_only.csv`), cập nhật journal → ledger O5 → paper §5.12. (3) Cập nhật supervisor briefing và gửi mail giảng viên. (4) Bản tiếng Anh. Bối cảnh chung: [[projects/reliable-tool-using-ai-agents/HANDOFF-2026-10-13]].
+(1) Hạn nộp paper khoảng 2 tuần kể từ 2026-11-08. (2) RQ4 còn thiếu: phân tích theo loại thông tin và tỷ lệ `reason` nhắc nguồn (protocol §2/§7); xem lại tiêu đề paper (chưa nhắc RQ4), §5.1 và bảng §3.7. (3) Build lại `paper/latex/main.pdf`, supervisor-overview và gửi giảng viên; tác giả đọc bản tiếng Anh. (4) Hỏi tác giả trước khi commit/push (nhiều thay đổi chưa commit: rename 29 file, link rewrite, A2, `run_rq4.py`, journal, ledger, paper). (5) Xóa API key cũ trên dashboard OpenAI. Bối cảnh: [[projects/reliable-tool-using-ai-agents/HANDOFF-2026-11-08]].
