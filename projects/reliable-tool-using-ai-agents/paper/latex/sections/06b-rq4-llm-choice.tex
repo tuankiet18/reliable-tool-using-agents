@@ -1,6 +1,6 @@
-\section{RQ4: LLM Choice of a Corroborator}\label{sec:rq4}
+\section{RQ3: LLM Choice of a Corroborator}\label{sec:rq4}
 
-RQ3 and the projection above do not measure how an LLM actually chooses a corroborator. RQ4 does, in a single-choice task on real tool descriptions.
+RQ2 and the projection above do not measure how an LLM actually chooses a corroborator. RQ3 does, in a single-choice task on real tool descriptions.
 
 \subsection{Method}
 
@@ -46,6 +46,6 @@ Neutral & C2 (provider removed) & 0.542 [0.440, 0.643] & 0.482 [0.375, 0.595] \\
 
 \paragraph{Provenance of the run.} The run was interrupted several times by API rate limits (one key was capped at 50 requests per day); the runner skips completed items, so no item is duplicated, and request content did not change across keys. A 20-item pilot was run to a separate file and is not used. OpenAI does not guarantee fully deterministic output for a fixed seed; each call records \code{system\_fingerprint}.
 
-\subsection{Limits of RQ4}
+\subsection{Limits of RQ3}
 
-The task is a single choice, with no agent loop and no injected faults, and the main prompt asks for independence outright. C1 labels are AI-coded and exactly correct by construction, so the result says nothing about missing or wrong labels. Only two small models from one vendor were tested, and RQ4 was posed after the survey results were known.
+The task is a single choice, with no agent loop and no injected faults, and the main prompt asks for independence outright. C1 labels are AI-coded and exactly correct by construction, so the result says nothing about missing or wrong labels. Only two small models from one vendor were tested, and RQ3 was posed after the survey results were known.

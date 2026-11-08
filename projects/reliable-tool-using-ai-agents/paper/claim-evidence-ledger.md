@@ -78,6 +78,10 @@ Phạm vi tác giả đã chọn: controlled empirical course paper; live-agent 
 
 **Quyết định của tác giả (2026-10-06 và 2026-10-09):** RQ1 giữ nguyên nhưng được trình bày là **controlled replication trong miền refund**, không phải phát hiện mới. Đóng góp chính chuyển sang chất lượng failure-domain metadata: (RQ2) điều kiện giải tích để metadata giúp hay hại, và (RQ3) survey 42 MCP server thật. Điều này **đảo ngược** ghi chú trước đây ở O2 ("không biến thành RQ thứ hai"); lý do là prior art mới đã làm phần controlled comparison, còn metadata quality là khoảng trống mà chính VP-Control và EFD nêu là giới hạn. RQ2 và RQ3 được thêm **sau khi** có kết quả RQ1; phân tích RQ2 là post-hoc; survey RQ3 có protocol viết trước khi thu thập nhưng sau khi biết kết quả giải tích.
 
+## Đánh số RQ: vault so với paper (từ 2026-11-08)
+
+Tác giả quyết định hạ RQ1 thành thí nghiệm nền. Trong **paper** (draft v2.0, short 1.1, LaTeX) dùng: **Baseline** = RQ1 cũ (controlled replication), **RQ1** = điều kiện `J` (cũ RQ2), **RQ2** = survey MCP server (cũ RQ3), **RQ3** = LLM chọn corroborator (cũ RQ4). Ledger, journal, protocol và các ghi chú khác trong vault **giữ số cũ** để không phá liên kết lịch sử; mọi ghi chú "RQ1…RQ4" ngoài thư mục `paper/` dùng số cũ.
+
 ## Active claims
 
 | ID | Claim | Evidence | Status | Phạm vi được phép viết | Evidence còn thiếu |

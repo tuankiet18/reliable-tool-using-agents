@@ -14,13 +14,13 @@ sources:
 created: 2026-10-16T16:00:00+07:00
 updated: 2026-11-08T23:00:00+07:00
 summary: >-
-  Bản rút gọn của paper để nộp môn và làm nền cho bản workshop: RQ1 thu gọn thành replication, trọng tâm là điều kiện J (RQ2), hai survey MCP server (RQ3) và phép đo hành vi của hai LLM (RQ4). Bản đầy đủ (paper-draft.md) là technical report.
+  Bản rút gọn của paper để nộp môn và làm nền cho bản workshop: Baseline thu gọn thành replication, trọng tâm là điều kiện J (RQ1), hai survey MCP server (RQ2) và phép đo hành vi của hai LLM (RQ3). Bản đầy đủ (paper-draft.md) là technical report.
 lifecycle: draft
 paper_status: living-draft
 version: "short-1.1 (từ full v2.0)"
 ---
 
-# When Does Failure-Domain Metadata Help Tool-Using AI Agents? A Controlled Replication, a Label-Quality Condition, and Two Surveys of MCP Server Metadata
+# When Does Failure-Domain Metadata Help Tool-Using AI Agents? A Label-Quality Condition, Two Surveys of MCP Server Metadata, and an LLM Choice Test
 
 **Lương Tuấn Kiệt** · Bản rút gọn, cập nhật 2026-11-08. Bản đầy đủ (technical report) chứa toàn bộ phân tích phụ, chẩn đoán và lịch sử tái lập.
 
@@ -42,16 +42,16 @@ Một cách phòng tự nhiên là **cross-verification**: trước khi hành đ
 
 Nếu biết tool nào thuộc failure domain nào, agent có thể chọn corroborator độc lập. VP-Control [VPC26] đã đo điều này với thiết kế mạnh (preregistration, live study): ở regime common stale, tỷ lệ phê duyệt sai là 91,5% khi cùng nguồn, so với 9,8% khi khác nguồn. EFD [EFD26] chứng minh rằng thêm reviewer không khắc phục được upstream chung. Cả hai đều **giả định lineage label có sẵn và đúng**. Bara [BARA26] chỉ ra vì sao giả định này quan trọng: chỉ nhìn vào nội dung báo cáo thì không phân biệt được hai báo cáo độc lập với hai bản sao từ cùng một nguồn bằng chứng, nên thông tin về nguồn phải được cung cấp từ bên ngoài. Trong thực tế, thông tin này đến từ tên, description và tài liệu của tool, và có thể thiếu hoặc sai.
 
-Bài này tập trung vào khoảng trống đó với bốn Research Question:
+Bài này tập trung vào khoảng trống đó với ba Research Question chính, cộng một thí nghiệm nền (Baseline) cho trường hợp metadata chính xác:
 
-- **RQ1 (replication).** *Given accurate failure-domain metadata, under targeted common-mode silent tool-output failures, does independent-domain corroboration reduce unsafe refund authorization decisions relative to random corroboration at a matched two-observation budget?* Phần này lặp lại kết quả của VP-Control trong một miền khác, không phải phát hiện mới.
-- **RQ2 (label quality).** *Under class-conditional failure-domain label errors, for which combinations of shared-dependency recall `r` and false-sharing rate `φ` does failure-domain-aware selection beat, match, or lose to random selection?*
-- **RQ3 (real metadata).** *Among open-source MCP servers that provide the same information type, how often do two servers share an upstream data provider, and how well does agent-visible metadata reveal that sharing?*
-- **RQ4 (LLM behaviour).** *When an LLM agent must choose a corroborating tool from real MCP tool descriptions, does adding the upstream provider to the descriptions reduce how often it chooses a corroborator that shares the primary's provider?*
+- **Baseline (không phải RQ chính).** *Given accurate failure-domain metadata, under targeted common-mode silent tool-output failures, does independent-domain corroboration reduce unsafe refund authorization decisions relative to random corroboration at a matched two-observation budget?* Phần này lặp lại kết quả của VP-Control trong một miền khác, không phải phát hiện mới.
+- **RQ1 (label quality).** *Under class-conditional failure-domain label errors, for which combinations of shared-dependency recall `r` and false-sharing rate `φ` does failure-domain-aware selection beat, match, or lose to random selection?*
+- **RQ2 (real metadata).** *Among open-source MCP servers that provide the same information type, how often do two servers share an upstream data provider, and how well does agent-visible metadata reveal that sharing?*
+- **RQ3 (LLM behaviour).** *When an LLM agent must choose a corroborating tool from real MCP tool descriptions, does adding the upstream provider to the descriptions reduce how often it chooses a corroborator that shares the primary's provider?*
 
-**Contribution.** (1) Một điều kiện đơn giản, có proof, cho biết khi nào failure-domain metadata giúp, không giúp hay gây hại, kèm preregistered test. (2) Bằng chứng thực nghiệm lặp lại trên hai mẫu về chất lượng metadata của MCP server thật, gồm cả prediction không đạt. (3) Một phép đo hành vi đầu tiên của LLM thật (RQ4), gồm cả chiều ngược lại ở prompt trung tính. (4) Một replication có kiểm soát của RQ1 với kết quả robustness âm và phân tích power. Bài không đề xuất thuật toán mới và không claim superiority so với công trình trước.
+**Contribution.** (1) Một điều kiện đơn giản, có proof, cho biết khi nào failure-domain metadata giúp, không giúp hay gây hại, kèm preregistered test. (2) Bằng chứng thực nghiệm lặp lại trên hai mẫu về chất lượng metadata của MCP server thật, gồm cả prediction không đạt. (3) Một phép đo hành vi đầu tiên của LLM thật (RQ3), gồm cả chiều ngược lại ở prompt trung tính. (4) Một replication có kiểm soát của Baseline với kết quả robustness âm và phân tích power. Bài không đề xuất thuật toán mới và không claim superiority so với công trình trước.
 
-**Thứ tự thời gian, nói thẳng:** RQ2, RQ3 và RQ4 được đặt ra **sau** khi đã có kết quả RQ1 và sau khi phát hiện VP-Control. Mọi bước thu thập và kiểm định sau đó đều có protocol viết và được xác nhận trước; mọi thay đổi được ghi thành amendment có ngày. Đây là protocol nội bộ, không đăng ký trên registry độc lập.
+**Thứ tự thời gian, nói thẳng:** RQ1, RQ2 và RQ3 được đặt ra **sau** khi đã có kết quả Baseline và sau khi phát hiện VP-Control. Mọi bước thu thập và kiểm định sau đó đều có protocol viết và được xác nhận trước; mọi thay đổi được ghi thành amendment có ngày. Đây là protocol nội bộ, không đăng ký trên registry độc lập.
 
 ## 2. Problem formulation
 
@@ -83,7 +83,7 @@ Metadata được đo ở hai mức: **L1** là thứ agent thấy lúc chạy (
 
 **Hệ sinh thái MCP.** Các measurement study cho thấy 88,6% trong 116 MCP server chính thức dựa một phần hoặc toàn bộ vào REST API sẵn có [MCPREST25] và có hiện tượng dependency monoculture [MCPMEAS25]. Chúng không đo việc các server cùng loại thông tin dùng chung provider, hay metadata có tiết lộ điều đó không.
 
-## 4. RQ1: controlled replication
+## 4. Baseline: controlled replication
 
 **Thiết kế.** Môi trường support-desk deterministic `trajectory-judge` (commit `d0ee54aa`). Primary `check_eligibility` và `check_eligibility_search` cùng `operational_db`; hai corroborator còn lại thuộc hai domain khác. Một actor deterministic đọc primary: nếu eligible thì đề xuất refund, không thì escalation. Mỗi refund proposal bắt buộc qua một corroborator (`K = 2` observation); hai bên khớp thì cho phép, không thì escalation. 30 task × 5 seed × 3 regime (clean, independent fault, targeted common-mode) × 3 policy, tổng 1.350 decision row. Outcome là **unsafe refund decision**, chấm bằng oracle theo code, không dùng LLM-as-a-judge. Inference bằng paired task-cluster bootstrap (10.000 lần). Đây là decision simulation, không thực thi refund và không chạy LLM.
 
@@ -102,9 +102,9 @@ Clean correctness của cả hai là `150/150`. Ở negative control (independen
 | Thiếu 25% nhãn, leakage 0.10   |   −0.153 | [−0.227, −0.087] | PASS     |
 | **Sai 25% nhãn**, leakage 0.10 |   −0.067 | [−0.133, 0.000]  | **FAIL** |
 
-Gate robustness tổng thể **FAIL**, nên RQ1 được giới hạn ở *accurate metadata*. Phân tích post-hoc cho thấy hiệu ứng kỳ vọng ở điều kiện nhãn sai là khoảng `−0.088`, và tiêu chí đã khóa chỉ có khoảng **56% power** ở 30 task (83% ở 60 task). FAIL được giữ nguyên; nó là bằng chứng yếu về việc lợi thế biến mất, không phải bằng chứng lợi thế còn. Câu hỏi "nhãn sai đến mức nào thì hết lợi" dẫn tới RQ2.
+Gate robustness tổng thể **FAIL**, nên Baseline được giới hạn ở *accurate metadata*. Phân tích post-hoc cho thấy hiệu ứng kỳ vọng ở điều kiện nhãn sai là khoảng `−0.088`, và tiêu chí đã khóa chỉ có khoảng **56% power** ở 30 task (83% ở 60 task). FAIL được giữ nguyên; nó là bằng chứng yếu về việc lợi thế biến mất, không phải bằng chứng lợi thế còn. Câu hỏi "nhãn sai đến mức nào thì hết lợi" dẫn tới RQ1.
 
-## 5. RQ2: điều kiện J
+## 5. RQ1: điều kiện J
 
 **Định lý.** Giả định: nhãn của primary đúng; nhãn của các corroborator độc lập với nhau và chỉ phụ thuộc vào lớp thật (chung hay độc lập); selector chọn đều, có fallback đều. Gọi `a = 1 − r` là xác suất một tool chung lọt vào nhóm được chọn, `b = 1 − φ` là xác suất một tool độc lập lọt vào, và `K` là số ứng viên khác lọt vào. Khi đó
 
@@ -131,9 +131,9 @@ Hai hypothesis chính (harm khi `J < 0`, benefit khi `J > 0`) được hỗ tr�
 
 *Figure 2. (A) Closed-form `P(select shared) − s/n` cho topology main trên lưới `(r, φ)`: xanh là tốt hơn random, đỏ là tệ hơn; ranh giới trùng đường chéo `J = 0`. Điểm rỗng (survey) có missing label nên chỉ để tham khảo. (B) Δ unsafe của preregistered test với 95% CI; ◆ là prediction ghi trước; dải xám là biên tương đương ±0.08.*
 
-**Giới hạn của RQ2.** Đây là simulation do chúng tôi thiết kế, nên kết quả gần như suy ra được từ mô hình; giá trị nằm ở kỷ luật kiểm định (prediction ghi trước, task mới), không ở tính mới. Định lý không bao phủ ba trường hợp: nhãn tương quan giữa các tool, nhãn của primary bị sai (đúng là mô hình của robustness gate ở §4), và chọn nhiều corroborator.
+**Giới hạn của RQ1.** Đây là simulation do chúng tôi thiết kế, nên kết quả gần như suy ra được từ mô hình; giá trị nằm ở kỷ luật kiểm định (prediction ghi trước, task mới), không ở tính mới. Định lý không bao phủ ba trường hợp: nhãn tương quan giữa các tool, nhãn của primary bị sai (đúng là mô hình của robustness gate ở §4), và chọn nhiều corroborator.
 
-## 6. RQ3: metadata của MCP server thật
+## 6. RQ2: metadata của MCP server thật
 
 ### 6.1 Phương pháp
 
@@ -194,7 +194,7 @@ Hai finding của survey 1 **không replicate**: "khi có nhãn thì không bao 
 
 Áp các luật này cho cả 78 server làm đổi 7 nhãn. P1, P2, P4, P5, P6 không đổi; P3 từ 3/45 thành 2/45 = 0.044. Tỷ lệ gán nhầm vì vậy nằm **sát ngưỡng 5%** và phụ thuộc định nghĩa. Phân xử này không độc lập: tác giả chọn giống coder A 7/8 lần, coder A cũng là bên giải thích câu hỏi, và tác giả đọc dòng code do coder A trích.
 
-## 7. RQ4: LLM chọn corroborator với metadata thật
+## 7. RQ3: LLM chọn corroborator với metadata thật
 
 **Thiết kế.** Protocol viết ngày 2026-10-18 trước khi trích mô tả tool, tác giả xác nhận 2026-10-20 (nội bộ, không phải registry độc lập). 56 bộ lựa chọn: mỗi bộ có một primary và ba candidate (1 dùng chung provider với primary, 2 độc lập), rút từ nhãn coder A của hai survey. Mô tả mỗi tool trích nguyên văn từ code ở commit ghim (tối đa 400 ký tự). Ba điều kiện: **C0** mô tả gốc, **C1** thêm dòng `Upstream provider: <provider>`, **C2** thay mọi tên provider bằng `[provider]`. Mỗi bộ trình bày theo 3 vòng xoay vị trí. Hai prompt: **prompt chính** yêu cầu chọn tool "not relying on the same underlying data source as the primary"; **prompt trung tính** chỉ yêu cầu chọn tool tốt nhất để kiểm tra lại. Mỗi model chạy 56 × 3 × 3 × 2 = 1.008 lời gọi, temperature 0, seed 0.
 
@@ -219,36 +219,36 @@ Hai finding của survey 1 **không replicate**: "khi có nhãn thì không bao 
 - **Prompt trung tính cho chiều ngược lại:** thêm nhãn provider **tăng** tỷ lệ chọn tool cùng nguồn từ `0.58` lên `0.80` và từ `0.52` lên `0.79`. Đây không phải hypothesis ghi trước nên không có kiểm định. Các câu `reason` cho thấy model đọc nhãn: khi chọn tool cùng nguồn, `52%` (gpt-4o-mini) và `65%` (gpt-4.1-mini) lý do nhắc provider, nhiều câu dạng "uses the same upstream provider … ensuring consistency" (so với `3%` và `14%` khi chọn tool khác nguồn). Có vẻ model hiểu "kiểm tra lại" là tìm tool nhất quán, không phải độc lập; đây là suy luận (lý do do model tự viết, quy tắc từ khóa đặt sau khi biết kết quả), chưa phải cơ chế đã đo.
 - **Theo loại thông tin** (11 loại, 2–10 bộ mỗi loại, chỉ mô tả): ở prompt chính, C1 bằng `0.00` ở cả hai model cho crypto, weather, movies, geocoding, air quality, books; còn cao hơn ở news, web search, translation, stock và currency (`0.05–0.33`). Ở prompt trung tính, C1 không tăng ở web search và translation.
 
-**Giới hạn của RQ4.** Tác vụ chọn một lần, không có vòng agent hay lỗi được inject; prompt chính nói thẳng yêu cầu "độc lập". Nhãn C1 do AI gán và đúng hoàn toàn theo cấu trúc, nên kết quả không nói gì về nhãn thiếu hoặc sai. Chỉ hai model nhỏ cùng hãng; OpenAI không bảo đảm seed cho kết quả xác định hoàn toàn. Phân tích theo loại thông tin chỉ có 2–10 bộ mỗi loại.
+**Giới hạn của RQ3.** Tác vụ chọn một lần, không có vòng agent hay lỗi được inject; prompt chính nói thẳng yêu cầu "độc lập". Nhãn C1 do AI gán và đúng hoàn toàn theo cấu trúc, nên kết quả không nói gì về nhãn thiếu hoặc sai. Chỉ hai model nhỏ cùng hãng; OpenAI không bảo đảm seed cho kết quả xác định hoàn toàn. Phân tích theo loại thông tin chỉ có 2–10 bộ mỗi loại.
 
 ## 8. Discussion
 
 **Trả lời các RQ.**
-- **RQ1:** khi metadata chính xác, chọn corroborator khác failure domain ngăn được quyết định sai, nhất quán với VP-Control; lợi thế không giữ chắc khi nhãn sai, một phần vì thiếu power.
-- **RQ2:** metadata có ích khi và chỉ khi `J > 0`, và gây hại khi `J < 0`; điều này được chứng minh trong mô hình và xác nhận trong simulation trên task mới.
-- **RQ3:** ở MCP server thật, dùng chung provider có thật (16–27% cặp) và biến động mạnh theo mẫu; metadata thiếu ở khoảng 70% cặp; khi có thì phần lớn đúng (`J > 0`), nhưng thường chỉ ở operator level.
-- **RQ4:** khi prompt yêu cầu nguồn độc lập và nhãn đầy đủ, đúng, hai LLM nhỏ chọn tool cùng nguồn ít hơn hẳn (`0.42 → 0.11` và `0.34 → 0.05`); nhưng với prompt trung tính cùng nhãn làm tỷ lệ này tăng lên khoảng `0.80`. Lợi ích của nhãn phụ thuộc vào việc agent được yêu cầu dùng nó để tìm nguồn khác.
+- **Baseline:** khi metadata chính xác, chọn corroborator khác failure domain ngăn được quyết định sai, nhất quán với VP-Control; lợi thế không giữ chắc khi nhãn sai, một phần vì thiếu power.
+- **RQ1:** metadata có ích khi và chỉ khi `J > 0`, và gây hại khi `J < 0`; điều này được chứng minh trong mô hình và xác nhận trong simulation trên task mới.
+- **RQ2:** ở MCP server thật, dùng chung provider có thật (16–27% cặp) và biến động mạnh theo mẫu; metadata thiếu ở khoảng 70% cặp; khi có thì phần lớn đúng (`J > 0`), nhưng thường chỉ ở operator level.
+- **RQ3:** khi prompt yêu cầu nguồn độc lập và nhãn đầy đủ, đúng, hai LLM nhỏ chọn tool cùng nguồn ít hơn hẳn (`0.42 → 0.11` và `0.34 → 0.05`); nhưng với prompt trung tính cùng nhãn làm tỷ lệ này tăng lên khoảng `0.80`. Lợi ích của nhãn phụ thuộc vào việc agent được yêu cầu dùng nó để tìm nguồn khác.
 
 **Ba hàm ý** (INFERENCE, cần kiểm chứng thêm):
-1. **Bottleneck là metadata missing, không phải metadata sai.** Vì `J > 0`, metadata thật không gây hại theo định lý; nó chỉ quá hiếm. Đưa tên provider từ README vào description của tool là một thay đổi rẻ, và theo phép chiếu giảm xác suất chọn nhầm từ 0.289 xuống 0.109. Đây là khuyến nghị cụ thể cho người viết MCP server và tool registry. RQ4 kiểm chứng một phần: với nhãn đầy đủ và prompt yêu cầu độc lập, shared-choice rate của hai LLM giảm xuống `0.05–0.11`; nhưng prompt trung tính cho kết quả ngược, nên khuyến nghị này cần đi cùng hướng dẫn rõ ràng cho agent.
+1. **Bottleneck là metadata missing, không phải metadata sai.** Vì `J > 0`, metadata thật không gây hại theo định lý; nó chỉ quá hiếm. Đưa tên provider từ README vào description của tool là một thay đổi rẻ, và theo phép chiếu giảm xác suất chọn nhầm từ 0.289 xuống 0.109. Đây là khuyến nghị cụ thể cho người viết MCP server và tool registry. RQ3 kiểm chứng một phần: với nhãn đầy đủ và prompt yêu cầu độc lập, shared-choice rate của hai LLM giảm xuống `0.05–0.11`; nhưng prompt trung tính cho kết quả ngược, nên khuyến nghị này cần đi cùng hướng dẫn rõ ràng cho agent.
 2. **Tên operator chưa đủ.** Ở data-origin level, tên provider bỏ sót khoảng 17% (survey 2, đăng ký trước) đến 39% (survey 1, post-hoc) các phụ thuộc. Ví dụ: Frankfurter phân phối dữ liệu ECB; các web search server khác tên cùng gọi Google hay DuckDuckGo. Registry đáng tin cậy nên công bố cả nguồn dữ liệu gốc.
 3. **Nguồn độc lập có thể khan hiếm.** Ở web search, mọi server khảo sát đều chung engine với ít nhất một server khác. Khi đó metadata tốt cũng chỉ giúp được một phần; agent cần nhận ra lúc không có nguồn độc lập và chuyển sang escalation, thay vì coi đồng thuận của hai tool là bằng chứng mạnh.
 
 ## 9. Threats to validity
 
-- **Thứ tự thời gian.** RQ2 và RQ3 được đặt sau khi có kết quả RQ1; phân tích RQ2 ban đầu là post-hoc. Các protocol sau đó viết trước nhưng là nội bộ.
-- **Simulation.** RQ1 và preregistered test là decision simulation do project thiết kế; kết quả gần như by-construction và không có live-agent effect estimate. Một chẩn đoán nhỏ trên agent thật (Qwen2.5 7B) không đạt điều kiện để ước lượng hiệu ứng.
+- **Thứ tự thời gian.** RQ1 và RQ2 được đặt sau khi có kết quả Baseline; phân tích RQ1 ban đầu là post-hoc. Các protocol sau đó viết trước nhưng là nội bộ.
+- **Simulation.** Baseline và preregistered test là decision simulation do project thiết kế; kết quả gần như by-construction và không có live-agent effect estimate. Một chẩn đoán nhỏ trên agent thật (Qwen2.5 7B) không đạt điều kiện để ước lượng hiệu ứng.
 - **Corroborator độc lập được coi là báo đúng** (chỉ có leakage). VP-Control cho thấy trên FinQA, verifier nhỏ không đọc đúng bằng chứng, và hiệu ứng nguồn đảo chiều; nguồn độc lập chỉ giúp khi bên kiểm tra đủ năng lực.
 - **Phạm vi của định lý.** Không bao phủ nhãn tương quan, primary label sai, hay chọn nhiều corroborator; proof chưa được người độc lập kiểm tra.
 - **Nhãn survey.** Do AI gán; coder thứ hai cũng dùng AI. Agreement giữa AI cho biết nhãn tái lập được, không cho biết nhãn đúng. Phần kiểm tra của con người chỉ gồm author adjudication và 10 bằng chứng. Một lần thử để tác giả gán nhãn mù 15 server đã bị dừng vì có AI hỗ trợ tra cứu, và không được báo cáo như human validation. Năm luật diễn giải của survey 2 do coder A đặt sau khi đọc code nhưng trước khi tính chỉ số.
 - **Construct "dùng chung".** Operator level là cận dưới của phụ thuộc thật; quy tắc "giao tập khác rỗng" phóng đại phụ thuộc của aggregator nhiều nguồn; data-origin level chỉ dùng bằng chứng trong repo.
 - **Mẫu.** Repo MCP phổ biến trên GitHub; các cặp không độc lập vì mỗi server nằm trong nhiều cặp; mẫu số của `r` ở L1 nhỏ (8 và 27). ρ theo loại thông tin khác xa giữa hai mẫu.
-- **Phép chiếu không phải đo agent.** Các xác suất ở §6.2 là phép chiếu lên mô hình selector; RQ4 đo hành vi LLM nhưng với nhãn đầy đủ và đúng, nên không so trực tiếp với các phép chiếu đó.
-- **RQ4.** Đổi model sau khi khóa protocol v1.0 (Amendment A2, trước lời gọi đầu tiên); hai model cùng hãng, đóng, seed không đảm bảo xác định hoàn toàn; tác vụ chọn một lần với prompt nhắc độc lập; nhãn C1 do AI gán; protocol nội bộ đặt sau khi có kết quả survey; phân tích phụ theo loại thông tin và `reason` chỉ mô tả (quy tắc từ khóa đặt sau khi biết kết quả chính).
+- **Phép chiếu không phải đo agent.** Các xác suất ở §6.2 là phép chiếu lên mô hình selector; RQ3 đo hành vi LLM nhưng với nhãn đầy đủ và đúng, nên không so trực tiếp với các phép chiếu đó.
+- **RQ3.** Đổi model sau khi khóa protocol v1.0 (Amendment A2, trước lời gọi đầu tiên); hai model cùng hãng, đóng, seed không đảm bảo xác định hoàn toàn; tác vụ chọn một lần với prompt nhắc độc lập; nhãn C1 do AI gán; protocol nội bộ đặt sau khi có kết quả survey; phân tích phụ theo loại thông tin và `reason` chỉ mô tả (quy tắc từ khóa đặt sau khi biết kết quả chính).
 
 ## 10. Conclusion
 
-Hai tool khác tên có thể đồng thuận trên cùng một output sai khi chúng chung failure domain. Chọn corroborator theo failure domain chỉ có ích khi metadata phát hiện phụ thuộc chung nhiều hơn số lần báo nhầm (`J > 0`); khi ngược lại, nó còn tệ hơn chọn ngẫu nhiên. Điều kiện này được chứng minh trong mô hình và xác nhận bằng preregistered test. Ở hai mẫu MCP server thật, metadata hiếm khi sai nhưng thường xuyên **thiếu**, và khi có thì chỉ nêu tên bên vận hành API chứ không nêu nguồn dữ liệu gốc. Vì vậy, cải thiện thực tế nhất không phải là phát hiện metadata sai, mà là khiến tool **công bố** provider và nguồn dữ liệu của mình ở nơi agent đọc được. RQ4 cho thấy thêm một điều kiện: nhãn chỉ giúp khi agent được yêu cầu dùng nó để tìm nguồn độc lập. Trong thí nghiệm chọn một lần với hai LLM nhỏ, nhãn giảm việc chọn tool cùng nguồn từ khoảng `0.34–0.42` xuống `0.05–0.11` ở prompt chính, nhưng làm tăng lên khoảng `0.80` ở prompt trung tính.
+Hai tool khác tên có thể đồng thuận trên cùng một output sai khi chúng chung failure domain. Chọn corroborator theo failure domain chỉ có ích khi metadata phát hiện phụ thuộc chung nhiều hơn số lần báo nhầm (`J > 0`); khi ngược lại, nó còn tệ hơn chọn ngẫu nhiên. Điều kiện này được chứng minh trong mô hình và xác nhận bằng preregistered test. Ở hai mẫu MCP server thật, metadata hiếm khi sai nhưng thường xuyên **thiếu**, và khi có thì chỉ nêu tên bên vận hành API chứ không nêu nguồn dữ liệu gốc. Vì vậy, cải thiện thực tế nhất không phải là phát hiện metadata sai, mà là khiến tool **công bố** provider và nguồn dữ liệu của mình ở nơi agent đọc được. RQ3 cho thấy thêm một điều kiện: nhãn chỉ giúp khi agent được yêu cầu dùng nó để tìm nguồn độc lập. Trong thí nghiệm chọn một lần với hai LLM nhỏ, nhãn giảm việc chọn tool cùng nguồn từ khoảng `0.34–0.42` xuống `0.05–0.11` ở prompt chính, nhưng làm tăng lên khoảng `0.80` ở prompt trung tính.
 
 ## References
 
