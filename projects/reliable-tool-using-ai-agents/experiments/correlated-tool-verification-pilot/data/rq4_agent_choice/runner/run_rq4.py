@@ -98,17 +98,22 @@ def main() -> None:
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--backend", choices=["ollama", "openai"], default="ollama")
     ap.add_argument("--limit", type=int, default=None, help="run only the first N unfinished items (cost-checking pilot; use a separate --out)")
+    ap.add_argument("--items", type=Path, default=HERE / "items.jsonl", help="items file (RQ4-ext uses items_b.jsonl)")
+    ap.add_argument("--sha256", default=EXPECTED_ITEMS_SHA256, help="locked SHA-256 of the items file")
+    ap.add_argument("--only-new", action="store_true", help="skip items flagged new=false (already run in RQ4)")
     args = ap.parse_args()
     key = os.environ.get("OPENAI_API_KEY", "")
     if args.backend == "openai" and not args.dry_run and not key:
         raise SystemExit("set OPENAI_API_KEY in the environment first")
     usage = {"prompt_tokens": 0, "completion_tokens": 0}
 
-    items_path = HERE / "items.jsonl"
+    items_path = args.items
     digest = hashlib.sha256(items_path.read_bytes()).hexdigest()
-    if digest != EXPECTED_ITEMS_SHA256:
-        raise SystemExit(f"items.jsonl changed (sha256 {digest}); refusing to run")
+    if digest != args.sha256:
+        raise SystemExit(f"{items_path.name} changed (sha256 {digest}); refusing to run")
     items = [json.loads(l) for l in items_path.open(encoding="utf-8")]
+    if args.only_new:
+        items = [it for it in items if it.get("new", True)]
     done = set()
     if args.out.exists():
         for line in args.out.open(encoding="utf-8"):
@@ -151,6 +156,8 @@ def main() -> None:
             final = attempts[-1]["choice"]
             out.write(json.dumps({"item_id": it["item_id"], "model": args.model, "choice": final, "valid": final is not None,
                                   "chose_shared": (final == it["shared_letter"]) if final else None,
+                                  "chose_labelled_same": ((final == it["labelled_same_letter"]) if final else None)
+                                  if it.get("labelled_same_letter") else None,
                                   "attempts": attempts}, ensure_ascii=False) + "\n")
             out.flush()
             if n % 50 == 0 or n == len(todo):
