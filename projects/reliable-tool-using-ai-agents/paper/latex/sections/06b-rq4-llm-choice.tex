@@ -46,6 +46,28 @@ Neutral & C2 (provider removed) & 0.542 [0.440, 0.643] & 0.482 [0.375, 0.595] \\
 
 \paragraph{Provenance of the run.} The run was interrupted several times by API rate limits (one key was capped at 50 requests per day); the runner skips completed items, so no item is duplicated, and request content did not change across keys. A 20-item pilot was run to a separate file and is not used. OpenAI does not guarantee fully deterministic output for a fixed seed; each call records \code{system\_fingerprint}.
 
+\subsection{Follow-up: Label Inversion}
+
+To test causally whether the models use the label's value, we added an \emph{inverted-label} condition (C4): the truly shared candidate receives a decoy provider, one truly independent candidate (the \emph{mimic}) receives the primary's provider, and the rest keep their true labels. C4 runs on 40 of the 56 sets, because 16 sets (every currency, geocoding and books set, among others) have no decoy provider in the same category. We added a ``consistency'' prompt (choose the tool whose result is most likely to be consistent with the primary's) and a larger model, \code{gpt-4.1}, run on every cell. The protocol was confirmed before any new call. The main quantity is $d$, the probability of choosing the mimic under C4 minus the probability of choosing the same candidate, in the same position, under C0; this cancels position bias. \emph{Amendment B1} (before the first call) replaced the original contrast of shared-choice rates between C4 and C0 with $d$, because a self-test on synthetic data showed an expected effect of only about $+0.17$ even for a perfect label-follower; the original contrast is reported as secondary.
+
+\begin{table}[t]
+\centering
+\caption{Label inversion: $d$ and the consistency-prompt contrast, with 95\% bootstrap CIs. All eleven preregistered tests are supported (Holm, $\alpha=0.025$).}
+\label{tab:rq3b}
+\small
+\begin{tabular}{lccc}
+\toprule
+Test & \code{gpt-4o-mini} & \code{gpt-4.1-mini} & \code{gpt-4.1} \\
+\midrule
+H-B1: $d<0$ (main prompt) & $-0.183$ [$-0.267,-0.100$] & $-0.208$ [$-0.317,-0.108$] & $-0.258$ [$-0.383,-0.142$] \\
+H-B2: $d>0$ (neutral prompt) & $+0.242$ [$+0.150,+0.342$] & $+0.183$ [$+0.083,+0.292$] & $+0.217$ [$+0.092,+0.350$] \\
+H-B3: C1$-$C0 $>0$ (consistency) & $+0.292$ [$+0.196,+0.393$] & $+0.298$ [$+0.202,+0.393$] & $+0.333$ [$+0.226,+0.446$] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+With \code{gpt-4.1}, H-A1 and H-A2 of the main experiment replicate: C1$-$C0 is $-0.250$ [$-0.357,-0.149$] and the C1 rate is $0.036$ [$0.006,0.071$]. Under the main prompt the models almost never choose the mimic ($0.025$, $0.000$, $0.000$); under the consistency prompt the shared-choice rate with correct labels is $0.881$, $0.863$, $0.917$ against $0.589$, $0.565$, $0.583$ without labels (already above chance, so part of the similarity comes from the descriptions themselves); under the neutral prompt the mimic is chosen $0.44$--$0.48$ of the time, so behaviour is a \emph{mixture}. The neutral-prompt reversal is milder for \code{gpt-4.1} (C1 $0.607$ against C0 $0.530$) than for the small models ($0.80$ and $0.79$ against $0.58$ and $0.52$); this is descriptive. We infer, with causal support from the intervention, that the models act on the value of the label, and that whether a label raises or lowers shared choice depends on whether the prompt asks about independence or consistency. Limits: the inversion is an artificial intervention ($J=-1$ within each set), on 40 of 56 sets, and all three models come from one vendor.
+
 \subsection{Limits of RQ3}
 
 The task is a single choice, with no agent loop and no injected faults, and the main prompt asks for independence outright. C1 labels are AI-coded and exactly correct by construction, so the result says nothing about missing or wrong labels. Only two small models from one vendor were tested, and RQ3 was posed after the survey results were known.

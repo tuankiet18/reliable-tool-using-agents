@@ -1,6 +1,25 @@
 {
   "research": [
     {
+      "type": "rq4_label_inversion_experiment",
+      "project": "reliable-tool-using-ai-agents",
+      "topic": "RQ4 extension: inverted labels, consistency prompt, gpt-4.1 (Amendment B1)",
+      "updated_at": "2026-11-13T17:00:00+07:00",
+      "basis": "Protocol LLM Corroborator Choice Mechanism and Label Inversion; journal 2026-11-13; analysis_b.json",
+      "source_artifacts": {
+        "items_b_sha256": "609a39e1ec608c4e590907fc6d96c036063f992d966ebf028b23ecb99707ac26",
+        "results_b_gpt41_sha256": "88326133818fcd0f228f995b5dc69bd770494b2c8f84c83df4894edc555a1839",
+        "results_b_gpt4omini_sha256": "dfae5fb544df260130ea6fe0a241a7f8045563699c1b2ef2d65cfc9c5b6e72f7",
+        "results_b_gpt41mini_sha256": "010440095adc0e6093c92e8a5d8e451e912d313a35a37a57b2043017f5074666",
+        "analysis_b_sha256": "6fba6342552f0e3cd3109335ee6cb5bbbd9769fad1106a2c1e61b0f6e5a4c857"
+      },
+      "pages_created": [
+        "journal/2026-11-13-rq4-label-inversion-results.md",
+        "synthesis/Protocol - LLM Corroborator Choice Mechanism and Label Inversion.md"
+      ],
+      "status": "PRELIMINARY; not committed"
+    },
+    {
       "type": "rq4_agent_choice_experiment_and_paper_update",
       "project": "reliable-tool-using-ai-agents",
       "topic": "RQ4 LLM corroborator choice (gpt-4o-mini, gpt-4.1-mini; Amendment A2) and paper v2.0 / short 1.1 / LaTeX update",

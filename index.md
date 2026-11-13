@@ -90,6 +90,7 @@ title: Wiki Index
 - [[synthesis/Protocol - Secondary Varied-Schedule Replication]] — Schedule mới khóa trước runtime; replication 1.056 rows đã chạy exploratory ( #research-protocol #experiment)
 - [[synthesis/Protocol Amendment - Imperfect Provenance and Partial Correlation]] — Post-main robustness gate với noisy metadata và cross-domain fault leakage ( #research-protocol #experiment)
 - [[synthesis/Prior-Art Threat - Provenance Metadata and Source Selection]] — Adversarial novelty boundary cho metadata validation và source selection ( #prior-art #novelty)
+- [[synthesis/Protocol - LLM Corroborator Choice Mechanism and Label Inversion]] — RQ4 mở rộng: đảo nhãn, prompt consistency, gpt-4.1; Amendment B1 ( #research-protocol #experiment)
 - [[synthesis/Protocol - Agent Corroborator Choice with Real Tool Metadata]] — RQ4: LLM chọn corroborator với mô tả tool thật; H-A1/H-A2 ghi trước, Amendment A2 đổi sang OpenAI API ( #research-protocol #experiment)
 
 ## Journal
@@ -130,6 +131,7 @@ title: Wiki Index
 - [[journal/2026-10-02-ins32-rtx4060-validity-audit]] — Tám RTX cells technical pass, nhưng refund 0 EUR sau escalation khiến policy-effect validity fail ( #research-log #experiment)
 - [[journal/2026-10-02-live-agent-opportunity-preflight]] — Static preflight bốn safety tasks, seed 1111 và strict boundary opportunity metric; chưa chạy RTX ( #research-log #experiment)
 - [[journal/2026-10-03-live-agent-opportunity-diagnostic]] — Artifact RTX 4060 16 cells được kiểm tra; `0/4` matched unsafe-capable pairs, stop scaling ( #research-log #experiment)
+- [[journal/2026-11-13-rq4-label-inversion-results]] — RQ4 mở rộng: đảo nhãn, prompt nhất quán, gpt-4.1; 11/11 kiểm định đạt, model làm theo giá trị nhãn ( #research-log #evidence)
 - [[journal/2026-11-08-rq4-agent-choice-results]] — RQ4 xong với gpt-4o-mini và gpt-4.1-mini: nhãn provider giảm shared-choice (0.42→0.11, 0.34→0.05) ở prompt chính, nhưng tăng lên ~0.80 ở prompt trung tính ( #research-log #evidence)
 
 ## Projects
