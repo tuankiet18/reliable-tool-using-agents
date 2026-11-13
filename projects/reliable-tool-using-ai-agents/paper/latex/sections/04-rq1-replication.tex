@@ -1,4 +1,6 @@
-\section{Baseline: Controlled Replication}
+\section{Baseline Experiment: Controlled Replication}\label{sec:baseline}
+
+This experiment fixes what independent corroboration achieves when metadata is accurate. Because VP-Control~\cite{vpc26} measured this first, we treat it as a replication in a new domain and as the starting point for the three research questions.
 
 \paragraph{Design.} We use the deterministic support-desk environment \code{trajectory-judge} (commit \code{d0ee54aa}). The primary \code{check\_eligibility} and \code{check\_eligibility\_search} share \code{operational\_db}; the other two corroborators belong to two other domains. A deterministic actor reads the primary: if eligible it proposes a refund, otherwise it escalates. Every refund proposal must pass one corroborator ($K=2$ observations); if the two agree the refund is authorized, otherwise it is escalated. The design crosses 30 tasks, 5 seeds, 3 regimes (clean, independent fault, targeted common-mode) and 3 policies, for 1,350 decision rows. The outcome is an \emph{unsafe refund decision}, scored by a code oracle rather than an LLM judge. Inference uses a paired task-cluster bootstrap (10,000 resamples). This is a decision simulation: no refund is executed and no LLM is run.
 
