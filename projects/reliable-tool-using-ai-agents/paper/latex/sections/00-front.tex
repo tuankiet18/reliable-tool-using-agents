@@ -1,14 +1,14 @@
 \title{When Does Failure-Domain Metadata Help Tool-Using AI Agents?\\[4pt]
 \large A Label-Quality Condition, Two Surveys of MCP Server Metadata,\\ and an LLM Choice Test}
 \author{Luong Tuan Kiet}
-\date{Draft, November 2026}
+\date{November 2026}
 
 \maketitle
 
 \begin{abstract}
 Tool-using AI agents can receive outputs that are wrong yet schema-valid. Cross-checking a result with a second tool helps only if that tool does not draw on the same upstream source; otherwise both fail together. Prior work shows that choosing an independent corroborator sharply reduces unsafe decisions, but assumes that source labels exist and are correct. We ask how accurate such metadata must be, how accurate real metadata is, and whether LLMs use it.
 A controlled refund simulation first replicates the prior result: with accurate labels, independent corroborators cut unsafe decisions from 30/150 to 0/150.
-(1)~We prove, under stated assumptions, that label-guided selection beats random selection if and only if $J = r - \varphi > 0$ (recall of shared dependence minus false-sharing rate), and is worse when $J<0$; a preregistered test on 60 new tasks confirms both directions.
+(1)~We prove, under stated assumptions, that label-guided selection beats random selection if and only if $J = r - \varphi > 0$ (recall of shared dependence minus false-sharing rate), and is worse when $J<0$; an internally preregistered test on 60 new tasks confirms both directions.
 (2)~Two surveys of open-source MCP servers (42 and 78 servers) find that 16\% and 27\% of same-type pairs share an upstream provider. The metadata an agent sees names no provider in about 70\% of pairs, but is mostly correct when it does ($J=0.89$ with READMEs).
 (3)~In a single-choice test on 56 sets of real tool descriptions, adding an upstream-provider line lowers how often two small LLMs pick a same-provider corroborator, from 0.423 to 0.107 and from 0.339 to 0.054, when the prompt asks for independence, but raises it to about 0.80 under a neutral prompt. A label-inversion experiment on three models shows that they act on the label's value: they avoid the candidate carrying the primary's provider when asked for independence, and pick same-provider tools 0.86--0.92 of the time when asked for consistency (all 11 preregistered tests supported).
 The bottleneck is therefore \emph{missing} rather than wrong metadata, and a label helps only if the agent is told to look for an independent source.
